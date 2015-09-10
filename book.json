@@ -1,10 +1,22 @@
 {
   "gitbook": "2.x.x",
-  "plugins": ["edit-link"],
+  "links": {
+      "sidebar": {
+          "OpenFisca website": "http://www.openfisca.fr/"
+      }
+  },
+  "plugins": [
+    "edit-link",
+    "github",
+    "mermaid-2"
+  ],
   "pluginsConfig": {
     "edit-link": {
       "base": "https://github.com/openfisca/openfisca-gitbook/tree/master",
       "label": "Edit This Page"
+    },
+    "github": {
+      "url": "https://github.com/openfisca/openfisca-gitbook"
     }
   }
 }
