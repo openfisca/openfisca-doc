@@ -1,0 +1,10 @@
+{
+  "gitbook": "2.x.x",
+  "plugins": ["edit-link"],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/openfisca/openfisca-core/tree/master",
+      "label": "Edit This Page"
+    }
+  }
+}
