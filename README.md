@@ -42,10 +42,10 @@ npm run publish
 On the server of your choice:
 
 ```
-git clone https://github.com/openfisca/openfisca-gitbook --branch static
+git clone https://github.com/openfisca/openfisca-gitbook --branch static openfisca-gitbook-static
 
 or, the next time:
-cd openfisca-gitbook
+cd openfisca-gitbook-static
 git fetch
 git reset --hard origin/static
 ```
