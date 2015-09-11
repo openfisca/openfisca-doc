@@ -11,7 +11,7 @@
     "clean": "rimraf _book",
     "prepare": "gitbook install",
     "publish": "npm run clean && npm run build && cd _book && git init && git commit --allow-empty -m 'init book' && git checkout -b static && git add . && git commit -am 'update book' && git push git@github.com:openfisca/openfisca-gitbook static --force",
-    "watch": "npm run prepare && gitbook serve"
+    "watch": "npm run prepare && gitbook serve --port 2050"
   },
   "author": "Christophe Benz <christophe.benz@data.gouv.fr>",
   "license": "AGPL-3.0",
