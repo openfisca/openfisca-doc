@@ -15,6 +15,20 @@ It is written in [Markdown](http://help.gitbook.com/format/markdown.html)
 and the source is hosted on this GitHub repository:
 [openfisca/openfisca-gitbook](https://github.com/openfisca/openfisca-gitbook).
 
+### Collaborative editing
+
+Everybody can participate to the redaction of the documentation.
+
+On each page is a link named "Edit this page".
+Just click on it and you'll jump on GitHub on the Markdown source file of the page.
+Then edit the file as explained on this GitHub documentation page:
+[editing-files-in-another-user-s-repository](https://help.github.com/articles/editing-files-in-another-user-s-repository/).
+
+Then save the file and create a [pull request](https://help.github.com/articles/creating-a-pull-request/) which will be
+accepted if relevant.
+
+### Build it yourself
+
 If you'd like to build it by yourself, here are the steps.
 
 ```
@@ -30,7 +44,9 @@ or
 npm run watch
 ```
 
-> With watch mode, open http://localhost:4000/ in your browser once the first build is done.
+> With watch mode, open http://localhost:2050/ in your browser once the first build is done.
+
+### Deploy (for maintainers)
 
 To deploy the built documentation
 (you must be authorized to push to [openfisca/openfisca-gitbook](https://github.com/openfisca/openfisca-gitbook)):
@@ -39,12 +55,15 @@ To deploy the built documentation
 npm run publish
 ```
 
-On the server of your choice:
+Then on the server, the first time:
 
-```
+```bash
 git clone https://github.com/openfisca/openfisca-gitbook --branch static openfisca-gitbook-static
+```
 
-or, the next time:
+The next times:
+
+```bash
 cd openfisca-gitbook-static
 git fetch
 git reset --hard origin/static

@@ -5,3 +5,4 @@ Each OpenFisca project has its own issues. See [OpenFisca repositories list](htt
 When an issue does not concern a repository in particular,
 it must be stored in [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
 (ie https://github.com/openfisca/openfisca-core/issues/334).
+In this case the issue must have the "all-packages" label.
