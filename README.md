@@ -32,7 +32,7 @@ accepted if relevant.
 If you'd like to build it by yourself, here are the steps.
 
 ```
-git clone
+git clone git@github.com:openfisca/openfisca-gitbook
 npm install
 ```
 
