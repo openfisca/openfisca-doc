@@ -4,7 +4,7 @@
   "description": "OpenFisca documentation",
   "repository": {
     "type": "git",
-    "url": "https://git.framasoft.org/openfisca/legislation-explorer.git"
+    "url": "https://github.com/openfisca/openfisca-gitbook.git"
   },
   "scripts": {
     "build": "npm run prepare && gitbook build",
