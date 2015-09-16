@@ -28,47 +28,63 @@ See also:
 
 ## Steps to execute
 
-Execute tests and check that there is no error:
+### Tests
+
+Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page
+to check that the build statuses of the `next` branches of all the released projects are *passing*.
+
+> If there are pending tests, please wait for them to finish.
+>
+> If there are errors, click on a badge to open the corresponding Travis build page.
+>
+> You can also execute the tests by yourself on every released project, but this can be quite long:
+>
+>    ```bash
+>    (next) make test
+>    or
+>    (next) nosetests
+>    ```
+
+### Internationalization (i18n)
+
+If the project is internationalized with [GNU gettext](https://www.gnu.org/software/gettext/)
+via [Babel](http://babel.pocoo.org/), execute these steps.
+
+Extract strings to translate from source code:
 
 ```bash
-(next) make test
-or
-(next) nosetests
+(next) python setup.py extract_messages
 ```
 
-> This first step has to be executed on all the released repositories before continuing.
+Update catalog (aka `.po` files) from `.pot` file:
 
-If the project is internationalized with [GNU gettext](https://www.gnu.org/software/gettext/) via [Babel](http://babel.pocoo.org/):
+```bash
+(next) python setup.py update_catalog
+```
 
-* Extract strings to translate from source code:
+Translate them if needed (using [poedit](https://poedit.net/) for example):
 
-  ```bash
-  (next) python setup.py extract_messages
-  ```
+```bash
+(next) poedit xxx/i18n/fr/LC_MESSAGES/yyy.po
+```
 
-* Update catalog (aka `.po` files) from `.pot` file:
+Ensure that `Project-Id-Version` in `.pot` and `.po` files are correct.
 
-  ```bash
-  (next) python setup.py update_catalog
-  ```
+If there are modified files, commit them:
 
-* Translate them if needed (using [poedit](https://poedit.net/) for example):
+```bash
+(next) git commit -am "Update i18n translations"
+```
 
-  ```bash
-  (next) poedit xxx/i18n/fr/LC_MESSAGES/yyy.po
-  ```
+Compile catalog:
 
-* Ensure that `Project-Id-Version` in `.pot` and `.po` files are correct.
+```bash
+(next) python setup.py compile_catalog
+```
 
-* If there are modified files, commit them.
+Should display `(100%) translated`.
 
-* Compile catalog:
-
-  ```bash
-  (next) python setup.py compile_catalog
-  ```
-
-* Should display `(100%) translated`.
+### Create the release commit
 
 Close the "next release" section in `CHANGELOG.md` and fill the changes list:
 
@@ -81,14 +97,14 @@ delete line:
   * TODO Fill this changes list while developing
 ```
 
-> Use these commands to dig the Git history:
+> Take the output of this command to populate the list, keeping only the relevant items:
 
 ```bash
-(next) git log OLD_RELEASE_NUMBER..
-(next) git shortlog OLD_RELEASE_NUMBER..
+(next) git log --pretty=format:"* %s" OLD_RELEASE_NUMBER..
 ```
 
-> OLD_RELEASE_NUMBER has to be replaced by a real value (ie `0.5.0` without ".dev0" suffix), assuming the corresponding git tag was set.
+> OLD_RELEASE_NUMBER has to be replaced by a real value (ie `0.5.0` without ".dev0" suffix),
+> assuming the corresponding git tag was set.
 
 Edit `setup.py`:
 
@@ -109,49 +125,47 @@ setup(
 Comment the dependencies installed by Git in `requirements.txt`:
 
 ```
-#-e git+https://github.com/openfisca/openfisca-core.git@master#egg=OpenFisca-Core
-and others perhaps
+#--editable git+https://github.com/openfisca/openfisca-core.git@next#egg=OpenFisca-Core
 ```
 
-Commit changes (message: "Release X.Y.Z") and push.
+> Do it for all the lines starting with `--editable git`.
+>
+> Be careful to respect the branch names.
 
-Merge the `next` branch into `master`:
+Commit changes:
 
 ```bash
-(next) git checkout master
-(master) git merge next
+(next) git commit -am "Release X.Y.Z" # Replace X.Y.Z by NEW_RELEASE_NUMBER
 ```
 
-Register the package on the [PyPI test instance](https://wiki.python.org/moin/TestPyPI), only the first time, but can be done many times:
+### Publish on PyPI test instance
+
+Try the release process on the [PyPI test instance](https://wiki.python.org/moin/TestPyPI).
+
+Register the package on the PyPI test instance, only the first time  :
 
 > Note: this operation is protected by an authentication, as well as the other commands dealing with PyPI.
 
 ```bash
-(master) python setup.py register -r https://testpypi.python.org/pypi
+(next) python setup.py register -r https://testpypi.python.org/pypi
 ```
 
 Build and [upload](https://python-packaging-user-guide.readthedocs.org/en/latest/distributing.html#uploading-your-project-to-pypi) the package to the PyPI test instance:
 
 ```bash
-(master) python setup.py sdist bdist_wheel upload -r https://testpypi.python.org/pypi
+(next) python setup.py bdist_wheel upload -r https://testpypi.python.org/pypi
 ```
 
 Check if package install correctly from the PyPI test instance:
 
 ```bash
 # TODO: this does not work!
-(master) pip install -i https://testpypi.python.org/pypi <package name>
+(next) pip install -i https://testpypi.python.org/pypi <package name>
 ```
 
-Tag the new release and upload it to git server:
+### Publish on PyPI
 
-```bash
-(master) git tag NEW_RELEASE_NUMBER
-(master) git push origin NEW_RELEASE_NUMBER
-(master) git push
-```
-
-Register the package on PyPI, only the first time, but can be done many times:
+Register the package on PyPI, only the first time:
 
 ```bash
 (master) python setup.py register
@@ -160,10 +174,22 @@ Register the package on PyPI, only the first time, but can be done many times:
 Build and upload the package to PyPI:
 
 ```bash
-(master) python setup.py sdist bdist_wheel upload
+(master) python setup.py bdist_wheel upload
 ```
 
-In a new shell check if package install correctly from PyPI, using a [virtualenv](https://virtualenv.pypa.io/en/latest/):
+Merge the `next` branch into `master` and add tags:
+
+```bash
+(next) git checkout master
+(master) git merge --no-ff next
+(master) git tag NEW_RELEASE_NUMBER
+(master) git push origin NEW_RELEASE_NUMBER next master
+```
+
+### Test the package installation
+
+In a new shell check if the package is installable from PyPI without errors
+in a [virtualenv](https://virtualenv.pypa.io/en/latest/):
 
 ```bash
 cd ~/tmp
@@ -175,6 +201,8 @@ python
 import <module name> (ie openfisca_core)
 deactivate
 ```
+
+### Create the future release commit
 
 Switch back to the previous shell and checkout the `next` branch:
 
@@ -205,16 +233,23 @@ Create the next release section in `CHANGELOG.md`, ie:
 Uncomment the dependencies installed by Git in `requirements.txt`:
 
 ```
--e git+https://github.com/openfisca/openfisca-core.git@master#egg=OpenFisca-Core
-and others perhaps
+--editable git+https://github.com/openfisca/openfisca-core.git@next#egg=OpenFisca-Core
 ```
+
+> Do it for all the lines starting with `--editable git`.
+>
+> Be careful to respect the branch names.
 
 Commit changes and push:
 
 ```bash
-(next) git add setup.py
-(next) git commit -m "Update to next dev version"
+(next) git commit -am "Update to next dev version"
 (next) git push
 ```
 
-Announce the new release on the website news, Twitter, the mailing list and [TF1](http://www.tf1.fr/).
+### Next steps
+
+Do the same for the remaining repositories to release.
+
+If you just released the last repository, you can announce the new release
+on the website news, Twitter, the mailing list, etc.
