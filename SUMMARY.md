@@ -4,6 +4,7 @@
 * [Getting started](./getting-started.md)
 * [Install](./install/README.md)
   * [OpenFisca Core](./install/openfisca-core.md)
+  * [OpenFisca France](./install/openfisca-france.md)
   * [OpenFisca Web API](./install/openfisca-web-api.md)
   * [GNU/Linux Debian or Ubuntu](./install/gnu-linux-debian.md)
   * [Microsoft Windows](./install/microsoft-windows.md)

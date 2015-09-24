@@ -6,6 +6,14 @@ OpenFisca has three sorts of tests:
 * test-case tests
 * scenario tests
 
+## YAML tests
+
+In OpenFisca-France run a YAML test like this:
+
+```
+python openfisca_france/tests/test_yaml.py openfisca_france/tests/formulas/psoc.yaml
+```
+
 ## ipdb debugger
 
 If a test fails, you can execute it with the [debug](http://nose.readthedocs.org/en/latest/plugins/debug.html) nose plugin:
