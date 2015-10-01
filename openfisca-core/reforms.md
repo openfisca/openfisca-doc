@@ -1,8 +1,8 @@
 # Reforms
 
 > This documentation explains how to write a reform.
-> To know how to declare an existing reform to an instance of the OpenFisca Web API that you host, please read
-> [OpenFisca-Web-API reforms](https://github.com/openfisca/openfisca-web-api/tree/next/docs/reforms.md)
+> If you're looking how to use an existing reform with OpenFisca Web API, please read
+> [OpenFisca-Web-API reforms](/openfisca-web-api/reforms.html)
 
 ## Just show me the code! [tl;dr](https://fr.wiktionary.org/wiki/tl;dr)
 
@@ -73,9 +73,7 @@ def build_reform(tax_benefit_system):
 
 To change the JSON data structure of the legislation in the reform, you call the `reform.modify_legislation_json` method which takes as a parameter a callback.
 This callback is a function you write in which the legislation JSON will be modified.
-It takes in parameter a copy of the legislation_json of the reference tax and benefit system that you can modify (do not handle the copy yourself) and return.
-
-> This mechanism allows some optimisations: the deepcopy of the legislation_json occurs only once.
+It takes in parameter a copy of the legislation_json of the reference tax and benefit system that you can modify (do not make the copy yourself) and return.
 
 Here is an example:
 

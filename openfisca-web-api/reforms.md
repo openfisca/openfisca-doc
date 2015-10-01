@@ -1,10 +1,12 @@
 # Reforms
 
 > This documentation explains how to declare an existing reform to an instance of the OpenFisca Web API that you host.
-> To know how to write a reform, please read [OpenFisca-Core reforms](https://github.com/openfisca/openfisca-core/tree/next/docs/reforms.md)
+> If you're looking how to write a reform, please read [OpenFisca-Core reforms](/openfisca-core/reforms.md)
 
 Each OpenFisca Web API instance can handle a number of reforms.
-Once a reform is known, the user can ask to apply one or many reforms in the HTTP request (see [endpoints doc](endpoints.md)). If no reform is specified in the HTTP request, no reform will be used in the computation.
+Once a reform is known, the user can ask to apply one or many reforms in the HTTP request
+(see [endpoints doc](endpoints.md)). If no reform is specified in the HTTP request,
+no reform will be used in the computation.
 
 ## Add a reform
 
@@ -23,7 +25,7 @@ reforms =
 ;  trannoy_wasmer = openfisca_france.reforms.trannoy_wasmer.build_reform
 ```
 
-> Some reforms are commented-out here, they are the reforms bundled with [OpenFisca-France](https://github.com/openfisca/openfisca-france/tree/next/openfisca_france/reforms).
+> Some reforms are commented-out here, they are the reforms bundled with [OpenFisca-France](/openfisca-france/reforms).
 
 > Be sure to respect the indentation level of 2 spaces so the INI file parser considers it's a list.
 
@@ -94,4 +96,5 @@ You should have no error and the `value` key should be:
 ]
 ```
 
-See also [OpenFisca-Web-API endpoints doc](https://github.com/openfisca/openfisca-web-api/blob/next/endpoints.md) to know more about the JSON input request format.
+See also [OpenFisca-Web-API endpoints doc](/openfisca-web-api/endpoints.md)
+to know more about the JSON input request format.
