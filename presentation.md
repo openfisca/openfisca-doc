@@ -1,6 +1,6 @@
 # Presentation
 
-OpenFisca is an open microsimulation software of French tax-benefit system.
+OpenFisca is an open microsimulation software of the French tax-benefit system.
 It allows users to simply calculate many social benefits and taxes paid by households and simulate the impact of reforms on their budget.
 It is an educational tool intended to help citizens better understand the tax-benefit system.
 
@@ -25,7 +25,7 @@ For now the main supported country is France. The current version implements a l
 </p>
 
 <p>
-    Le moteur d'OpenFisca étant totalement indépendant du système socio-fiscale, il est possible de simuler
+    Le moteur d'OpenFisca étant totalement indépendant du système socio-fiscal, il est possible de simuler
     n'importe quel pays.
 </p>
 
@@ -42,8 +42,8 @@ For now the main supported country is France. The current version implements a l
 <p>
     Pour le moment le principal pays supporté est la
     <a href="https://github.com/openfisca/openfisca-france" rel="external" target="_blank">France</a>.
-    La versions actuelle implémente un grand nombre d'impôts, de prestations sociales et d'aides au logment
-    pour la France depuis les 10 dernières années.
+    La version actuelle implémente un grand nombre d'impôts, de prestations sociales et d'aides au logement
+    en France pour les 10 dernières années.
     La <a href="https://github.com/openfisca/openfisca-tunisia" rel="external" target="_blank">Tunisie</a>
     bénéficie d'une support plus expérimental car la modélisation de son système socio-fiscal est moins
     avancée (janvier 2015).
@@ -185,7 +185,7 @@ For now the main supported country is France. The current version implements a l
     <h4>Disclaimer</h4>
     <p>OpenFisca calculates the amounts of payroll taxes, taxes, and benefits using:</p>
     <ul>
-        <li>the household's characteristic, as indicated by the user</li>
+        <li>the household's characteristics, as indicated by the user</li>
         <li>a <em>simplified</em> and <em>approximate</em> model of the tax-benefit legislation</li>
     </ul>
     <p>
@@ -195,7 +195,7 @@ For now the main supported country is France. The current version implements a l
     </p>
     <p>
         In fact, your family situation and/or resources or those of a member of your family may change or
-        may not have been taken into account in the simulation. Some simplifying hypothesis may have been made.
+        may not have been taken into account in the simulation. Some simplifying hypotheses may have been made.
     </p>
 </div>
 
