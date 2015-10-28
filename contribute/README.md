@@ -64,7 +64,7 @@ To enable the OpenFisca developers to solve your problems quickly, please follow
 </ol>
 </p>
 
-<h2> Complete the implementation of the French tax-benefit system </h2>
+<h2> Complete the implementation of the French tax and benefit system </h2>
 <p>
     Some pieces of legislation are not yet integrated. Given the magnitude of the task, our
     ambition is to build a community of developers, economists and experts on taxes or
@@ -93,7 +93,7 @@ taxes on<a href="https://github.com/openfisca/openfisca-${conf['country']}/"> co
    You can also participate in other projects that make use of
    OpenFisca.
 <ul>
-<li> The development of tax-benefit simulators is ongoging for the following countries:</li>
+<li> The development of tax and benefit simulators is ongoging for the following countries:</li>
  <ul>
 <li> <a href="https://github.com/openfisca/openfisca-france"> France </a></li>
 <li> <a href="https://github.com/openfisca/openfisca-tunisia"> Tunisia </a></li>

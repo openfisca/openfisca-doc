@@ -97,22 +97,15 @@ delete line:
   * TODO Fill this changes list while developing
 ```
 
-> Take the output of this command to populate the list, keeping only the relevant items:
+> NEW_RELEASE_NUMBER can bump the major version number according to the commits
 
-```bash
-(next) git log --pretty=format:"* %s" OLD_RELEASE_NUMBER..
-```
-
-> OLD_RELEASE_NUMBER has to be replaced by a real value (ie `0.5.0` without ".dev0" suffix),
-> assuming the corresponding git tag was set.
-
-Edit `setup.py`:
-
-> Set the release version number which can be determined:
-> * by removing the ".dev0" suffix (ie from "X.Y.Z.dev0" to "X.Y.Z")
-> * and, depending on the changelog contents, by increasing the major or minor version number
+> Get inspiration from `git log` to populate the list, keeping only the relevant items:
 >
-> Check that everything is OK, in particular requirements (install_requires and extras_require).
+> ```bash
+> (next) git log --pretty=format:"* %s" LATEST_VERSION_TAG.. | grep -v "Merge > pull request" | xclip
+> ```
+
+Edit `setup.py` and check that everything is OK, in particular if requirements have evolved.
 
 ```python
 setup(
@@ -121,16 +114,6 @@ setup(
     [...]
     )
 ```
-
-Comment the dependencies installed by Git in `requirements.txt`:
-
-```
-#--editable git+https://github.com/openfisca/openfisca-core.git@next#egg=OpenFisca-Core
-```
-
-> Do it for all the lines starting with `--editable git`.
->
-> Be careful to respect the branch names.
 
 Commit changes:
 
@@ -168,13 +151,13 @@ Check if package install correctly from the PyPI test instance:
 Register the package on PyPI, only the first time:
 
 ```bash
-(master) python setup.py register
+(next) python setup.py register
 ```
 
 Build and upload the package to PyPI:
 
 ```bash
-(master) python setup.py bdist_wheel upload
+(next) python setup.py bdist_wheel upload
 ```
 
 Merge the `next` branch into `master` and add tags:
@@ -188,19 +171,20 @@ Merge the `next` branch into `master` and add tags:
 
 ### Test the package installation
 
-In a new shell check if the package is installable from PyPI without errors
-in a [virtualenv](https://virtualenv.pypa.io/en/latest/):
+Let's check if the package is installable from PyPI without errors
+using [virtualenv](https://virtualenv.pypa.io/en/latest/):
 
 ```bash
 cd ~/tmp
-virtualenv openfisca
-cd openfisca
+virtualenv openfisca-france
+cd openfisca-france
 source bin/activate
-pip install <package name> (ie OpenFisca-Core)
-python
-import <module name> (ie openfisca_core)
+pip install OpenFisca-France
+python -m openfisca_france.tests.test_basics
 deactivate
 ```
+
+> Do the same for OpenFisca-Web-API if you wish.
 
 ### Create the future release commit
 
@@ -230,16 +214,6 @@ Create the next release section in `CHANGELOG.md`, ie:
 
 > Keep the "TODO" list item as is.
 
-Uncomment the dependencies installed by Git in `requirements.txt`:
-
-```
---editable git+https://github.com/openfisca/openfisca-core.git@next#egg=OpenFisca-Core
-```
-
-> Do it for all the lines starting with `--editable git`.
->
-> Be careful to respect the branch names.
-
 Commit changes and push:
 
 ```bash
@@ -251,5 +225,5 @@ Commit changes and push:
 
 Do the same for the remaining repositories to release.
 
-If you just released the last repository, you can announce the new release
+When all the suited repositories are released, you can announce the new release
 on the website news, Twitter, the mailing list, etc.

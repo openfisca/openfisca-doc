@@ -4,15 +4,15 @@
 
 ### Git
 
+TODO
+
 Install [Git](http://www.git-scm.com/) for Windows. It provides a "bash" shell.
 
 ### Python
 
-Install [Python](http://www.python.org/) 2.7 for your architecture (32 or 64 bits).
+Install [Python](http://www.python.org/) 2.7.
 
-> To know your architecture, open the "Control panel" then the "System" item. You'll see the architecture under the "System" heading and "System type" item.
-
-> It is recommeneded to install the 32 bits version, some users had issues with numpy.
+> It is recommeneded to install the 32 bits version since some users had issues with numpy.
 
 ### Python pip
 

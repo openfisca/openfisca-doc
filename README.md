@@ -2,7 +2,7 @@
 
 > Note: this documentation is being written.
 
-OpenFisca is a versatile microsimulation free software.
+OpenFisca is a versatile microsimulation software.
 
 It is published under the [GNU Affero General Public License version 3.0](http://www.gnu.org/licenses/agpl-3.0.html).
 
@@ -19,7 +19,7 @@ and the source is hosted on this GitHub repository:
 
 Everybody can participate to the redaction of the documentation.
 
-On each page is a link named "Edit this page".
+On each page there is a link named "Edit this page".
 Just click on it and you'll jump on GitHub on the Markdown source file of the page.
 Then edit the file as explained on this GitHub documentation page:
 [editing-files-in-another-user-s-repository](https://help.github.com/articles/editing-files-in-another-user-s-repository/).

@@ -14,7 +14,7 @@ pip install --editable . --user # Microsoft Windows users must not use the `--us
 python setup.py compile_catalog
 ```
 
-For your information, the Tunisian tax-benefit system is also available:
+For your information, the Tunisian tax and benefit system is also available:
 [OpenFisca-Tunisia](https://github.com/openfisca/openfisca-tunisia).
 
 ## Tests
