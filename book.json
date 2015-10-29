@@ -7,8 +7,7 @@
   },
   "plugins": [
     "edit-link",
-    "github",
-    "mermaid-2"
+    "github"
   ],
   "pluginsConfig": {
     "edit-link": {
