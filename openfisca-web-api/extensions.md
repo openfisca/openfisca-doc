@@ -1,8 +1,8 @@
-# Reforms
+# Extensions
 
-This documentation explains how to declare an existing reform to an instance of the OpenFisca Web API that you host.
+This documentation explains how to declare an existing extension to an instance of the OpenFisca Web API that you host.
 
-> If you're looking how to write a reform, please read [OpenFisca-Core reforms](/openfisca-core/reforms.md)
+> If you're looking how to write an extension, please read [this section](./openfisca-in-python/extensions.md)
 
 Each OpenFisca Web API instance can handle a number of reforms.
 Once a reform is known, the user can ask to apply one or many reforms in the HTTP request
@@ -26,7 +26,7 @@ reforms =
 ;  trannoy_wasmer = openfisca_france.reforms.trannoy_wasmer.build_reform
 ```
 
-> Some reforms are commented-out here, they are the reforms bundled with [OpenFisca-France](/openfisca-france/reforms).
+> Some reforms are commented-out here, they are the reforms bundled with OpenFisca-France.
 
 > Be sure to respect the indentation level of 2 spaces so the INI file parser considers it's a list.
 
@@ -97,5 +97,5 @@ You should have no error and the `value` key should be:
 ]
 ```
 
-See also [OpenFisca-Web-API endpoints doc](/openfisca-web-api/endpoints.md)
+See also [OpenFisca-Web-API endpoints doc](./endpoints.md)
 to know more about the JSON input request format.

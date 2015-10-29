@@ -269,8 +269,14 @@ Then OpenFisca core engine can start calculating the asked variables, using the 
 calculated variable result.
 
 ## Extensions
+An extension represents a modified version of the tax and benefit legislation.
 
-A tax and benefit legislation can be enriched using extensions.
+For example it can be used to add, remove or modify a variable, or a legislation parameter.
+
+The tax and benefit system of the country knows about the laws that are already adopted, were existing in the past,
+or will exist in a near future. In contrast, the extensions are used for political reforms or
+propositions that people do but are not officially voted.
+
 Extensions do not modify the `TaxBenefitSystem` itself, they create a shallow copy and modify only what changed.
 
 Extensions are loaded given a base `TaxBenefitSystem` and return an extended one.
@@ -279,7 +285,7 @@ As a consequence extensions can be composed (`ext2(ext1(tax_benefit_system))`).
 
 Extensions can be published in their own `git` repository.
 
-How to write an extension is documented later.
+How to write an extension is documented [in this section](./openfisca-in-python/extensions.md).
 
 ## Writing some legislation
 

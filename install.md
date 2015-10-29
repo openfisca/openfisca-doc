@@ -8,7 +8,7 @@ OpenFisca has a web API instance which is hosted publically.
 
 If you're developing a web application, you'll just need to call OpenFisca with an AJAX request.
 
-See the [getting started](/getting-started.md) section for an example.
+See the [getting started](./getting-started.md) section for an example.
 
 But if you want to develop with the Python API of OpenFisca, without the HTTP overhead,
 you can install OpenFisca-France.

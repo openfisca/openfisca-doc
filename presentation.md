@@ -6,7 +6,7 @@ It is published under the [GNU Affero General Public License version 3.0](http:/
 
 OpenFisca allows users to calculate many variables of the tax and benefit legislation of a country
 (social benefits and taxes paid by households) given input variables.
-The impact of reforms also be simulated.
+The impact of reforms can also be simulated.
 
 When plugged on a survey, OpenFisca can also calculate the budgetary consequences of a reform
 and its distributional impact.

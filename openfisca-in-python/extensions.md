@@ -3,22 +3,11 @@
 This section explains how to write an extension in Python.
 
 > If you're looking how to use an existing extension with OpenFisca Web API, please read
-> [OpenFisca-Web-API extensions](/openfisca-web-api/extensions)
+> [OpenFisca-Web-API extensions](../openfisca-web-api/extensions)
 
-## What is an extension?
+See the [key concepts](../key-concepts.md#extensions) section to know what is an extension.
 
-In OpenFisca a extension represents a modified version of the tax and benefit legislation.
-
-For example it can be used to add, remove or modify a variable, or a legislation parameter.
-
-The tax and benefit system of the country knows about the laws that are already adopted, were existing in the past, or will exist in a near future. In contrast, the reforms are propositions that people do but are not officially voted.
-
-Reforms can add, change or remove simulation variables, either input variables or computed variables with formulas.
-They can change the legislation of the tax and benefit system too.
-
-Reforms can be chained as they take a reference tax and benefit system in parameter.
-
-## How to write a reform?
+## How to write an extension?
 
 [OpenFisca-Core](https://github.com/openfisca/openfisca-core) provides a `TaxBenefitSystem` class to represent a tax and benefit system. It provides too a `Reform` class which inherits `TaxBenefitSystem`.
 
