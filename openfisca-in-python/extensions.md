@@ -1,18 +1,15 @@
-# Reforms
+# Extensions
 
-> This documentation explains how to write a reform.
-> If you're looking how to use an existing reform with OpenFisca Web API, please read
-> [OpenFisca-Web-API reforms](/openfisca-web-api/reforms.html)
+This section explains how to write an extension in Python.
 
-## Just show me the code! [tl;dr](https://fr.wiktionary.org/wiki/tl;dr)
+> If you're looking how to use an existing extension with OpenFisca Web API, please read
+> [OpenFisca-Web-API extensions](/openfisca-web-api/extensions)
 
-Examples can be found in [OpenFisca-France bundled reforms](https://github.com/openfisca/openfisca-france/tree/next/openfisca_france/reforms), for example [Trannoy-Wasmer reform](https://github.com/openfisca/openfisca-france/blob/next/openfisca_france/reforms/trannoy_wasmer.py).
+## What is an extension?
 
-Some reforms exist as separate git repository, for example [Landais Piketty Saez ](https://github.com/openfisca/openfisca-france-reform-landais-piketty-saez).
+In OpenFisca a extension represents a modified version of the tax and benefit legislation.
 
-## What is a reform?
-
-In OpenFisca a reform is an extension of the tax and benefit system.
+For example it can be used to add, remove or modify a variable, or a legislation parameter.
 
 The tax and benefit system of the country knows about the laws that are already adopted, were existing in the past, or will exist in a near future. In contrast, the reforms are propositions that people do but are not officially voted.
 
@@ -103,3 +100,9 @@ For more details see the examples linked in the tl;dr section above.
 
 Please read the dedicated documentation:
 [OpenFisca-Web-API reforms](https://github.com/openfisca/openfisca-web-api/tree/next/docs/reforms.md)
+
+## Real examples
+
+Examples can be found in [OpenFisca-France bundled reforms](https://github.com/openfisca/openfisca-france/tree/next/openfisca_france/reforms), for example [Trannoy-Wasmer reform](https://github.com/openfisca/openfisca-france/blob/next/openfisca_france/reforms/trannoy_wasmer.py).
+
+Some reforms exist as separate git repository, for example [Landais Piketty Saez ](https://github.com/openfisca/openfisca-france-reform-landais-piketty-saez).

@@ -1,3 +1,0 @@
-# OpenFisca Core
-
-TODO

@@ -14,6 +14,10 @@ In OpenFisca-France run a YAML test like this:
 python openfisca_france/tests/test_yaml.py openfisca_france/tests/formulas/psoc.yaml
 ```
 
+To add tests for a formula, add a YAML file in `openfisca_france/tests/formulas/`, taking example on the existing ones.
+
+To execute the tests for a specific YAML file, run `openfisca_france/tests/test_yaml.py <path/to/file.yaml>`.
+
 ## ipdb debugger
 
 If a test fails, you can execute it with the [debug](http://nose.readthedocs.org/en/latest/plugins/debug.html) nose plugin:

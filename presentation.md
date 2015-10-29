@@ -78,7 +78,7 @@ To achieve both, computations are vectorial.
 For performance reasons the [NumPy](http://www.numpy.org/) package is used.
 It is coded in the C language under the hood, more performant than Python.
 
-# Project history
+## Project history
 
 The development of OpenFisca began in May 2011 at the
 [<abbr title="Centre d'analyse stratégique">CAS</abbr>](http://www.strategie.gouv.fr/)

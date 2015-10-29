@@ -18,6 +18,14 @@ Each Python package is versioned using [Semantic Versioning](http://semver.org/)
 
 To merge a pull-request into `next`, the tests must pass on the repository, using `make test`.
 
+Before submitting a pull request, please execute tests:
+
+    make test
+
+To download tests from [Ludwig](https://mes-aides.gouv.fr/tests/)
+(the tests tool from [Mes aides](https://mes-aides.gouv.fr/)),
+see [OpenFiscaFrance.jl](https://github.com/openfisca/OpenFiscaFrance.jl)
+
 ## Tests
 
 See [tests.md](tests.md)

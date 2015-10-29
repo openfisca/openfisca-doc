@@ -35,6 +35,7 @@ scenario = tax_benefit_system.new_scenario()
 scenario.init_single_entity(
     period = year,
     parent1 = dict(
+        birth = datetime.date(year - 30, 1, 1),
         salaire_de_base = 15000,
         ),
     enfants = [
@@ -49,11 +50,13 @@ af = simulation.calculate('af', '2015-01')
 print af
 ```
 
-The result is a vector of size 1, the number of `families` in our test case:
+Result:
 
 ```
 [ 361.52359009]
 ```
+
+The result is a vector of size 1, the number of `families` in our test case.
 
 On the line `af = simulation.calculate('af', '2015-01')`, `'2015-01'` corresponds to a period (january 2015).
 
@@ -64,7 +67,8 @@ On the line `af = simulation.calculate('af', '2015-01')`, `'2015-01'` correspond
 Let's do the same calculation using the web API hosted by the OpenFisca project.
 
 The web API is callable from any language which supports HTTP requests and JSON.
-We could write our example in Python or JavaScript, but let's use [curl](http://curl.haxx.se/).
+We could write our example in Python or JavaScript, but let's use [curl](http://curl.haxx.se/)
+and [jq](https://stedolan.github.io/jq/).
 
 ```bash
 read -d '' json << EOF
@@ -87,6 +91,7 @@ read -d '' json << EOF
         "individus": [
           {
             "id": "parent1",
+            "birth": "1985-01-01",
             "salaire_de_base": {"2015": 15000}
           },
           {
@@ -135,8 +140,6 @@ This is sightly more verbose than the previous example because we express all th
 whereas in Python we had the helper method `init_single_entity`.
 That's because most of the time the JSON payload of an HTTP request is generated programatically.
 
-> We used [jq](https://stedolan.github.io/jq/) to dig into the "value" key of the JSON repsonse, not displayed here.
-
 ## Test the impact of a reform
 
 OpenFisca can be used to test the impact of a reform. For the purpose of this tutorial we will work on a test case,
@@ -178,12 +181,14 @@ reform_impo = reform_simulation.calculate('impo', '2013')
 print reform_impo
 ```
 
-The result is a vector of size 1, the number of `foyers_fiscaux` in our test case:
+Result:
 
 ```
 [-74.39001465]
 [ 0.]
 ```
+
+The result is a vector of size 1, the number of `foyers_fiscaux` in our test case.
 
 ## Trace the calculation of a variable
 
