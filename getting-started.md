@@ -25,12 +25,9 @@ Here is the script `test1.py` available
 or in the [getting started Jupyter Notebook]:
 
 ```python
-import datetime
+import openfisca_france
 
-from openfisca_france import init_country
-
-TaxBenefitSystem = init_country()
-tax_benefit_system = TaxBenefitSystem()
+tax_benefit_system = openfisca_france.init_tax_benefit_system()
 
 year = 2015
 
@@ -38,13 +35,13 @@ scenario = tax_benefit_system.new_scenario()
 scenario.init_single_entity(
     period = year,
     parent1 = dict(
-        birth = datetime.date(year - 30, 1, 1),
+        age = 30,
         salaire_de_base = 15000,
         ),
     enfants = [
-        dict(birth = datetime.date(year - 10, 1, 1)),
-        dict(birth = datetime.date(year - 12, 1, 1)),
-        dict(birth = datetime.date(year - 18, 1, 1)),
+        dict(age = 10),
+        dict(age = 12),
+        dict(age = 18),
         ],
     )
 
@@ -94,20 +91,20 @@ read -d '' json << EOF
         "individus": [
           {
             "id": "parent1",
-            "birth": "1985-01-01",
+            "age": 30,
             "salaire_de_base": {"2015": 15000}
           },
           {
             "id": "enfant1",
-            "birth": "2005-01-01"
+            "age": 10
           },
           {
             "id": "enfant2",
-            "birth": "2003-01-01"
+            "age": 12
           },
           {
             "id": "enfant3",
-            "birth": "1997-01-01"
+            "age": 18
           }
         ],
         "menages": [
@@ -156,13 +153,10 @@ Here is the script `test2.py` available
 or in the [getting started Jupyter Notebook]:
 
 ```python
-import datetime
-
-from openfisca_france import init_country
+import openfisca_france
 from openfisca_france.reforms import plfr2014
 
-TaxBenefitSystem = init_country()
-tax_benefit_system = TaxBenefitSystem()
+tax_benefit_system = openfisca_france.init_tax_benefit_system()
 reformed_tax_benefit_system = plfr2014.build_reform(tax_benefit_system)
 
 year = 2013
@@ -171,7 +165,7 @@ scenario = reformed_tax_benefit_system.new_scenario()
 scenario.init_single_entity(
     period = year,
     parent1 = dict(
-        birth = datetime.date(year - 40, 1, 1),
+        age = 40,
         salaire_imposable = 13795,
         ),
     )
