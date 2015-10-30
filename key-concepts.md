@@ -62,7 +62,7 @@ For example [`irpp`](http://legislation.openfisca.fr/variables/irpp).
 
 Parameters are data, variables are algorithms.
 
-Each time a part of the legislation is data, we store it in a parameters file
+Each time a part of the legislation is data, it should be stored in a parameters file
 instead of creating a variable which returns a static value.
 
 Parameters are read by variables formulas.
@@ -72,6 +72,8 @@ Legislation parameters are stored in an XML file:
 
 They can be simple values or scales and are stored by date to collect the past values.
 Even with simple values, there can be many values for the same parameter because of the multiple dates.
+
+For instance, the calculation of the `irpp` variable will involve the `ir.recouvrement.min parameter`, also present in the [legislation explorer](http://legislation.openfisca.fr/parameters/ir.recouvrement.min).
 
 There are functions to extract a subset of the whole legislation at a specific instant,
 which is necessary when writing the formula of a variable.
