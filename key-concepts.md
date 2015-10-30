@@ -170,7 +170,7 @@ This is quite verbose but there are shortcuts to generate a test case in common 
 Using data as input is not documented yet. Please consult this repository:
 https://github.com/openfisca/openfisca-france-data
 
-## Thinking in vectors
+## Scenarios
 
 To support both test cases and data, and for performance reasons,
 OpenFisca is developed using vector computing via the
@@ -178,7 +178,14 @@ OpenFisca is developed using vector computing via the
 
 Whatever the input is, a test case or data, OpenFisca will transform it to vectors internally.
 
-As a consequence, even with test cases as input, we need to reason with vectors instead of values.
+Scenarios take a test cases as input and convert them into vectors.
+
+They even offer a way to simplify the declaration of test cases when it contains only a single entity of each type.
+
+## Thinking in vectors
+
+Because OpenFisca needs to accept test cases or data as input, it uses vector computing.
+So we need to reason always with vectors instead of values.
 
 Let's dive into OpenFisca's internals sightly.
 
