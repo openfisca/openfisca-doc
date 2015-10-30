@@ -20,14 +20,18 @@ Basically a tax and benefit system contains simulation variables (source code) a
 
 OpenFisca manipulates time via periods and instants.
 
-An instant can be a date whereas a period is defined by a start instant, a unit (month, year) and a quantity of units.
+The atomic unit is a day, so instants are day dates.
 
 Periods are defined using an ad-hoc strings format.
+Internally, they are stored as a start instant, a unit (month, year) and a quantity of units.
 
-For example, `"2015"` is a year, `"2015-01"` is a month, `"2015-06:3"` are the 3 months
-june, july and august of the year 2015.
+For example:
 
-There are functions to transform periods or turn them into an instant, which are documented later.
+- `"2015"` is a year, `"2015-01"` is a month, `"2015-06:3"` are the 3 months
+june, july and august of the year 2015. They are all periods.
+- `"2015-02-15"` is an instant.
+
+Functions exist to transform periods or turn them into an instant, which are documented later.
 
 ## Variables
 
