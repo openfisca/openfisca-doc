@@ -2,6 +2,8 @@
 
 This walkthrough presents what you can do with OpenFisca without installing it.
 
+See the [getting started Jupyter Notebook] which illustrates this section.
+
 ## Explore the legislation
 
 The [legislation explorer](http://legislation.openfisca.fr/) allows you to browse the variables and the parameters
@@ -19,7 +21,8 @@ Say we want to calculate the [af](http://legislation.openfisca.fr/variables/af)
 of a family with 1 parent (they divorced) and 3 children.
 
 Here is the script `test1.py` available
-[here](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/getting_started/test1.py):
+[here](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/getting_started/test1.py),
+or in the [getting started Jupyter Notebook]:
 
 ```python
 import datetime
@@ -149,7 +152,8 @@ Let's use a reform which has already been coded: the .
 A dedicated section of the documentation explains how to write an extension for coding a reform.
 
 Here is the script `test2.py` available
-[here](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/getting_started/test2.py):
+[here](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/getting_started/test2.py)
+or in the [getting started Jupyter Notebook]:
 
 ```python
 import datetime
@@ -200,8 +204,11 @@ There is a way to open the trace tool directly from Python code in your web brow
 Add this line after the scenario declaration:
 
 ```python
+from openfisca_core import web_tools
 web_tools.open_trace_tool(scenario, variables = ['af'], api_url = 'http://api-test.openfisca.fr')
 ```
 
 The requested variables (`'af' here`) will be calculated, and the trace tool will call the web API at the given
 base URL.
+
+[getting started Jupyter Notebook]: https://github.com/openfisca/openfisca-web-notebook/blob/master/documentation/getting-started.ipynb
