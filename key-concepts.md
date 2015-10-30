@@ -12,9 +12,9 @@ French names are kept as is.
 The tax and benefit system is the higher-level object in OpenFisca.
 Its goal is to model the legislation of a country.
 
-OpenFisca is able to simulate any country legislation as long as it is (partially) represented as source code.
-
 Basically a tax and benefit system contains simulation variables (source code) and legislation parameters (data).
+
+The OpenFisca core engine is able to simulate any country legislation once it is (partially) represented as source code.
 
 ## Periods and instants
 
