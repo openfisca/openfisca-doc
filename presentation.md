@@ -2,7 +2,8 @@
 
 OpenFisca is a versatile microsimulation software.
 
-It is published under the [GNU Affero General Public License version 3.0](http://www.gnu.org/licenses/agpl-3.0.html).
+It is published under the [GNU Affero General Public Licence](http://www.gnu.org/licenses/agpl.html)
+version 3 or later.
 
 OpenFisca allows users to calculate many variables of the tax and benefit legislation of a country
 (social benefits and taxes paid by households) given input variables.

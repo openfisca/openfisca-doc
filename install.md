@@ -1,6 +1,6 @@
 # Install
 
-## Without installation
+## Installation is optional!
 
 There are some use cases for which installing OpenFisca is not required.
 
