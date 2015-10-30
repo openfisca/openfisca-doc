@@ -73,7 +73,7 @@ Legislation parameters are stored in an XML file:
 They can be simple values or scales and are stored by date to collect the past values.
 Even with simple values, there can be many values for the same parameter because of the multiple dates.
 
-For instance, the calculation of the `irpp` variable will involve the `ir.recouvrement.min parameter`, also present in the [legislation explorer](http://legislation.openfisca.fr/parameters/ir.recouvrement.min).
+For instance, the calculation of the `irpp` variable will involve the `ir.recouvrement.min` parameter, also present in the [legislation explorer](http://legislation.openfisca.fr/parameters/ir.recouvrement.min).
 
 There are functions to extract a subset of the whole legislation at a specific instant,
 which is necessary when writing the formula of a variable.
@@ -96,7 +96,7 @@ OpenFisca models the real world legislation.
 Each tax and benefit concerns either individual persons or entities.
 
 Entities are groups of persons like a family, a household or a company.
-The legislation defined many entities and specifies which tax and benefit applies to which entity.
+The legislation defines many entities and specifies which tax and benefit applies to which entity.
 
 The entities definitions are closely related to a country, therefore they are defined in a Python package
 independent from the core engine (ie OpenFisca-Core / OpenFisca-France).
@@ -115,7 +115,7 @@ as input when calculating variables.
 A test case describes persons and entities with their input variables
 whereas data contains potentially a huge quantity of persons and entities.
 
-Test cases can be expressed in Python or in JSON when using the web API (see specific sections of the documentation).
+Test cases can be expressed in Python or in JSON when using the Web API (see specific sections of the documentation).
 
 Here is a test case sample in JSON for a single person with 3 children:
 
@@ -176,11 +176,11 @@ To support both test cases and data, and for performance reasons,
 OpenFisca is developed using vector computing via the
 [NumPy](http://www.numpy.org/) Python package.
 
-Whatever the input is a test case or data, OpenFisca will transform it to vectors internally.
+Whatever the input is, a test case or data, OpenFisca will transform it to vectors internally.
 
 As a consequence, even with test cases as input, we need to reason with vectors instead of values.
 
-Let's dive into OpenFisca internals sightly.
+Let's dive into OpenFisca's internals sightly.
 
 Each variable of the tax and benefit legislation is represented by a vector.
 The size of a vector is equal to the number of entities the variable is defined on.
@@ -199,12 +199,12 @@ Test cases are just a syntactic sugar to generate vectors. This is a completely 
 Entities and roles are encoded using special variables `"id*"` and `"qui*"` whose vectors contain respectively
 unique identifiers of an entity and integers corresponding to a role.
 
-For example, for `"familles"` there are
+For example, for `"familles"` we have
 [`"idfam"`](http://legislation.openfisca.fr/variables/idfam) and
 [`"quifam"`](http://legislation.openfisca.fr/variables/quifam).
 For `"quifam"` the role `0` is "chef" (head of family), the role `1` is "part" (partner).
 
-With `"id*"` and `"qui*"` variables, entities are modelized so the core engine knows which person is into which entity.
+With `"id*"` and `"qui*"` variables, entities are modeled so the core engine knows which person is into which entity.
 
 For example the following test case defined for the year `2015`:
 
@@ -295,7 +295,7 @@ How to write an extension is documented [in this section](./openfisca-in-python/
 
 ## Writing some legislation
 
-From the point of view of someone (developer, economist, etc.) who want to implement a part of the legislation,
+From the point of view of someone (developer, economist, etc.) who wants to implement a part of the legislation,
 for example a new benefit, here are some key steps:
 
 - understand the part of the legislation you want to implement
