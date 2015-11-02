@@ -13,6 +13,7 @@
   * [JSON data structures](./openfisca-web-api/json-data-structures.md)
   * [Extensions](./openfisca-web-api/extensions.md)
   * [Docker containers](./openfisca-web-api/docker-containers.md)
+* [Community](./community.md)
 * [Contribute](./contribute/README.md)
   * [Documentation](./contribute/documentation.md)
   * [Repositories](./contribute/repositories.md)
