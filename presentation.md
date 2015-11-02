@@ -28,7 +28,7 @@ Final products can be built on the top of OpenFisca.
 They trigger tax and benefit variables computations via the web API.
 For example: [Mes aides](http://mes-aides.gouv.fr/).
 
-Then, the web API of OpenFisca is used by the team itself to develop web tools like
+Then, the web API of OpenFisca is used by the team itself to develop [tools](http://www.openfisca.fr/outils) like
 the [legislation explorer](http://legislation.openfisca.fr/),
 the [demonstrator](http://ui-test.openfisca.fr/) or
 the [trace tool](http://www.openfisca.fr/outils/trace).
