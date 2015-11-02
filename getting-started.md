@@ -202,7 +202,7 @@ from openfisca_core import web_tools
 web_tools.open_trace_tool(scenario, variables = ['af'], api_url = 'http://api-test.openfisca.fr')
 ```
 
-The requested variables (`'af' here`) will be calculated, and the trace tool will call the web API at the given
+The requested variables (`'af'` here) will be calculated, and the trace tool will call the web API at the given
 base URL.
 
 [getting started Jupyter Notebook]: https://github.com/openfisca/openfisca-web-notebook/blob/master/documentation/getting-started.ipynb
