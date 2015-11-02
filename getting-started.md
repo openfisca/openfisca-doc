@@ -29,11 +29,9 @@ import openfisca_france
 
 tax_benefit_system = openfisca_france.init_tax_benefit_system()
 
-year = 2015
-
 scenario = tax_benefit_system.new_scenario()
 scenario.init_single_entity(
-    period = year,
+    period = 2015,
     parent1 = dict(
         age = 30,
         salaire_de_base = 15000,
