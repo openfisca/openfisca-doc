@@ -1,5 +1,9 @@
 # OpenFisca Web API
 
+## What is a web API?
+
+See https://en.wikipedia.org/wiki/Web_API
+
 ## Public API instance
 
 The OpenFisca project provides two free and unrestricted instances of the API:
