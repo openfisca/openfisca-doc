@@ -299,16 +299,3 @@ As a consequence extensions can be composed (`ext2(ext1(tax_benefit_system))`).
 Extensions can be published in their own `git` repository.
 
 How to write an extension is documented [in this section](./openfisca-in-python/extensions.md).
-
-## Writing some legislation
-
-From the point of view of someone (developer, economist, etc.) who wants to implement a part of the legislation,
-for example a new benefit, here are some key steps:
-
-- understand the part of the legislation you want to implement
-- identify the variable dependencies using the [legislation explorer](http://legislation.openfisca.fr/)
-- identify the new variables you need to implement
-- write the new variables with their formulas
-- store the new parameters
-- if you implement a part of the official legislation, your code should go in OpenFisca-France,
-  but if you implement a new idea or a future reform, your code should go in an extension.

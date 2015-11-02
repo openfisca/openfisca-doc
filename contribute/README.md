@@ -7,7 +7,7 @@ version 3 or later.
 Feel free to join the OpenFisca development team on [GitHub](https://github.com/openfisca) or contact us by email at
 contact@openfisca.fr
 
-# Rules
+## Rules
 
 Merci d'enrichir OpenFisca !
 
@@ -15,6 +15,18 @@ Voici les règles à suivre pour collaborer à ce projet :
 
 - Si vous modifiez le nom d'une formule ou variable, en créez ou souhaitez en faire disparaître, consultez les [règles de rédaction des messages de commit](https://github.com/openfisca/openfisca-france/wiki/Messages-de-commit).
 
+## Writing some legislation
+
+From the point of view of someone (developer, economist, etc.) who wants to implement a part of the legislation,
+for example a new benefit, here are some key steps:
+
+- understand the part of the legislation you want to implement
+- identify the variable dependencies using the [legislation explorer](http://legislation.openfisca.fr/)
+- identify the new variables you need to implement
+- write the new variables with their formulas
+- store the new parameters
+- if you implement a part of the official legislation, your code should go in OpenFisca-France,
+  but if you implement a new idea or a future reform, your code should go in an extension.
 
 ## EN
 
