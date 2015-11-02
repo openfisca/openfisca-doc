@@ -3,6 +3,7 @@
 * [Presentation](./presentation.md)
 * [Getting started](./getting-started.md)
 * [Key concepts](./key-concepts.md)
+* [Thinking in vectors](./thinking-in-vectors.md)
 * [Work with Jupyter Notebook](./jupyter-notebook.md)
 * [Install](./install.md)
 * [OpenFisca in Python](./openfisca-in-python/README.md)
