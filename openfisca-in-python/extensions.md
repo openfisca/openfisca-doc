@@ -92,6 +92,4 @@ Please read the dedicated documentation:
 
 ## Real examples
 
-Examples can be found in [OpenFisca-France bundled reforms](https://github.com/openfisca/openfisca-france/tree/next/openfisca_france/reforms), for example [Trannoy-Wasmer reform](https://github.com/openfisca/openfisca-france/blob/next/openfisca_france/reforms/trannoy_wasmer.py).
-
-Some reforms exist as separate git repository, for example [Landais Piketty Saez ](https://github.com/openfisca/openfisca-france-reform-landais-piketty-saez).
+Examples can be found [here](http://www.openfisca.fr/extensions).
