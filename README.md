@@ -6,4 +6,7 @@ It is published under the [GNU Affero General Public Licence](http://www.gnu.org
 version 3 or later.
 
 This is the documentation of OpenFisca.
-The website is http://www.openfisca.fr/
+The main website of the project is http://www.openfisca.fr/
+
+On [this page](https://www.gitbook.com/book/openfisca/documentation) you can download an offline version
+thanks to [GitBook](https://www.gitbook.com/).
