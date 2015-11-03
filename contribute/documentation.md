@@ -21,7 +21,7 @@ accepted if relevant.
 
 ## Build it yourself
 
-If you'd like to build it by yourself, here are the steps.
+If you'd like to build it by yourself to work locally, here are the steps.
 
 ```
 git clone git@github.com:openfisca/openfisca-gitbook
@@ -40,23 +40,4 @@ npm run watch
 
 ## Deploy (for maintainers)
 
-To deploy the built documentation
-(you must be authorized to push to [openfisca/openfisca-gitbook](https://github.com/openfisca/openfisca-gitbook)):
-
-```
-npm run publish
-```
-
-Then on the server, the first time:
-
-```bash
-git clone https://github.com/openfisca/openfisca-gitbook --branch static openfisca-gitbook-static
-```
-
-The next times:
-
-```bash
-cd openfisca-gitbook-static
-git fetch
-git reset --hard origin/static
-```
+To deploy the documentation just push on the `master` branch.
