@@ -7,16 +7,15 @@
     "url": "https://github.com/openfisca/openfisca-gitbook.git"
   },
   "scripts": {
-    "build": "npm run prepare && gitbook build",
-    "clean": "rimraf _book",
-    "prepare": "gitbook install",
-    "watch": "npm run prepare && gitbook serve --port 2050"
+    "build": "gitbook build",
+    "clean": "rm -rf _book",
+    "postinstall": "gitbook install",
+    "watch": "gitbook serve --port 2050"
   },
   "author": "Christophe Benz <christophe.benz@data.gouv.fr>",
   "license": "AGPL-3.0",
   "private": true,
   "dependencies": {
-    "gitbook-cli": "^0.3.6",
-    "rimraf": "^2.4.3"
+    "gitbook-cli": "^0.3.6"
   }
 }
