@@ -6,6 +6,19 @@ OpenFisca has three sorts of tests:
 * test-case tests
 * scenario tests
 
+## Run tests
+
+```bash
+# Whole test suite
+make test
+
+# Specific test
+nosetests openfisca_france/tests/test_legislations.py
+
+# If a simulation fails, a very long trace log can be printed. Use --nologcapture to disable it:
+nosetests --nologcapture openfisca_france/tests/test_legislations.py
+```
+
 ## YAML tests
 
 In OpenFisca-France run a YAML test like this:
