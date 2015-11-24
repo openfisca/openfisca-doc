@@ -166,7 +166,7 @@ Merge the `next` branch into `master` and add tags:
 (next) git checkout master
 (master) git merge --no-ff next
 (master) git tag NEW_RELEASE_NUMBER
-(master) git push origin NEW_RELEASE_NUMBER next master
+(master) git push --follow-tags origin next master
 ```
 
 ### Test the package installation
