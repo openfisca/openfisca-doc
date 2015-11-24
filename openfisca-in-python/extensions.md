@@ -1,5 +1,7 @@
 # Extensions
 
+> Note: extensions were named reforms and the renaming has not been completed yet.
+
 This section explains how to write an extension in Python.
 
 > If you're looking how to use an existing extension with OpenFisca Web API, please read
@@ -32,7 +34,7 @@ def build_reform(tax_benefit_system):
 > `reforms.make_reform` returns a `Reform` class that you can instantiate in `build_reform`.
 > You can modify this instance if needed, then return it.
 
-The `Reform` class provides a decorator to declare formulas (`@Reform.formula`) and another one to declare input variables (`@Reform.input_variable`).
+The `Reform` class provides a decorator to declare formulas (`@Reform.formula`) and a function to declare input variables (`@Reform.input_variable`).
 
 The reference `tax_benefit_system` won't be touched.
 
@@ -52,6 +54,13 @@ def build_reform(tax_benefit_system):
         reference = charges_deductibles.charges_deduc
         def function(self, simulation, period):
             return period, self.zeros() + 999
+
+    Reform.input_variable(
+        column = columns.BoolCol,
+        entity_class = entities.Menages,
+        name ='parisien',
+        label = u"Résidant à Paris au moins 3 ans dans les 5 dernières années",
+        )
 
     reform = Reform()
     return reform
