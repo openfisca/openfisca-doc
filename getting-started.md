@@ -194,8 +194,8 @@ There is a way to open the trace tool directly from Python code in your web brow
 Add this line after the scenario declaration:
 
 ```python
-from openfisca_core import web_tools
-web_tools.open_trace_tool(scenario, variables = ['af'], api_url = 'http://api-test.openfisca.fr')
+from openfisca_core import tools
+tools.get_trace_tool_link(scenario, variables = ['af'], api_url = 'http://api.openfisca.fr')
 ```
 
 The requested variables (`'af'` here) will be calculated, and the trace tool will call the web API at the given
