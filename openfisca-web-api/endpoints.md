@@ -62,8 +62,8 @@ Get information about legislation parameters.
   * `parameters` (list of objects): a list of [JSON parameters](#parameters)
 
 Examples:
-* http://api-test.openfisca.fr/api/1/parameters
-* http://api-test.openfisca.fr/api/1/parameters?name=
+* http://api.openfisca.fr/api/1/parameters
+* http://api.openfisca.fr/api/1/parameters?name=
 
 ## reforms
 
@@ -71,7 +71,7 @@ Get the list of declared reforms.
 
 TODO
 
-Example: http://api-test.openfisca.fr/api/1/reforms
+Example: http://api.openfisca.fr/api/1/reforms
 
 ## simulate
 
@@ -103,7 +103,7 @@ Get information about simulation variables.
 
 TODO
 
-Example: http://api-test.openfisca.fr/api/1/variables
+Example: http://api.openfisca.fr/api/1/variables
 
 # Deprecated endpoints
 

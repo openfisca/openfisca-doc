@@ -119,7 +119,7 @@ read -d '' json << EOF
   "variables": ["af"]
 }
 EOF
-curl -H "Content-Type: application/json" -X POST -d "$json" http://api-test.openfisca.fr/api/1/calculate | jq .value[0]
+curl -H "Content-Type: application/json" -X POST -d "$json" http://api.openfisca.fr/api/1/calculate | jq .value[0]
 ```
 
 Result:
