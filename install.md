@@ -67,7 +67,7 @@ Assuming you are in an `openfisca` directory placed where you want on your drive
 ```bash
 git clone https://github.com/openfisca/openfisca-core.git
 cd openfisca-core
-git checkout next
+git checkout master
 pip install --editable . --user # Microsoft Windows users must not use the `--user` option
 python setup.py compile_catalog
 
@@ -75,7 +75,7 @@ cd ..
 
 git clone https://github.com/openfisca/openfisca-france.git
 cd openfisca-france
-git checkout next
+git checkout master
 pip install --editable . --user # Microsoft Windows users must not use the `--user` option
 python setup.py compile_catalog
 ```
