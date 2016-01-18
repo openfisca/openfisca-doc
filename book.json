@@ -6,7 +6,7 @@
       }
   },
   "plugins": [
-    "anchors-wrapper",
+    "anchors",
     "github"
   ],
   "pluginsConfig": {
