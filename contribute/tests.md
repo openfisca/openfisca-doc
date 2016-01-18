@@ -19,6 +19,10 @@ nosetests openfisca_france/tests/test_legislations.py
 nosetests --nologcapture openfisca_france/tests/test_legislations.py
 ```
 
+## Ignored tests
+
+Note that in OpenFisca-France, for now, some tests are ignored from the test runner. See the [Makefile](https://github.com/openfisca/openfisca-france/blob/master/Makefile).
+
 ## YAML tests
 
 In OpenFisca-France run a YAML test like this:
