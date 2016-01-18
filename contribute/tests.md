@@ -19,10 +19,6 @@ nosetests openfisca_france/tests/test_legislations.py
 nosetests --nologcapture openfisca_france/tests/test_legislations.py
 ```
 
-## Ignored tests
-
-Note that in OpenFisca-France, for now, some tests are ignored from the test runner. See the [Makefile](https://github.com/openfisca/openfisca-france/blob/master/Makefile).
-
 ## YAML tests
 
 In OpenFisca-France run a YAML test like this:
@@ -34,6 +30,14 @@ python openfisca_france/tests/test_yaml.py openfisca_france/tests/formulas/psoc.
 To add tests for a formula, add a YAML file in `openfisca_france/tests/formulas/`, taking example on the existing ones.
 
 To execute the tests for a specific YAML file, run `openfisca_france/tests/test_yaml.py <path/to/file.yaml>`.
+
+## Ignored tests
+
+Note that in OpenFisca-France, for now, the test runner ignores some tests.
+
+Some Python tests are ignored: see the [Makefile](https://github.com/openfisca/openfisca-france/blob/master/Makefile).
+
+Some YAML tests are ignored. They receive a property `ignored: true` ([example](https://github.com/openfisca/openfisca-france/blob/ea869ad3c98e633ed3de84fa8618a045b5ebe4f9/openfisca_france/tests/formulas/irpp.yaml#L297)). We prefer setting this property rather than commenting the test.
 
 ## ipdb debugger
 
