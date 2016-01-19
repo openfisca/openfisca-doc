@@ -10,8 +10,8 @@
 * [Install](install.md)
 * [OpenFisca in Python](openfisca-in-python/README.md)
    * [Periods](openfisca-in-python/periods.md)
-   * [Legislation parameters](openfisca-in-python/legislation-parameters.md)
    * [Extensions](openfisca-in-python/extensions.md)
+* [Legislation parameters](openfisca-in-python/legislation-parameters.md)
 * Legislation parameters
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Endpoints](openfisca-web-api/endpoints.md)
