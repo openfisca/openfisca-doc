@@ -44,10 +44,17 @@ def function(self, simulation, period):
     return period, min_(f6eu, amax)
 ```
 
-## Next steps
+## Merge with values from IPP
 
-Work is being done to:
+This section is specific to OpenFisca-France.
 
-- use [spreadsheet files](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-xlsx) from the [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.eu/)
-- convert them into [raw YAML files](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-yaml-raw) then [clean YAML files](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-yaml-clean) using [converters](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-converters)
-- merge back to OpenFisca using [this script](https://github.com/openfisca/openfisca-france/blob/baremes-ipp/openfisca_france/scripts/merge_ipp_tax_and_benefit_tables_with_parameters.py) (`baremes-ipp` git branch)
+Each year [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.eu/) produces high quality rates and scales.
+
+The aim of the OpenFisca project is to merge its XML parameters file with those of IPP.
+
+IPP files are [Excel (XLS)](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-xlsx) files, so there is a need to convert them first in a script-friendly format (which is YAML), then merge them with OpenFisca XLS file.
+
+
+First XLS files are converted into [raw YAML files](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-yaml-raw) then into [clean YAML files](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-yaml-clean) using [these scripts](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-converters).
+
+Then these clean YAML files are merged with the existing `param.xml`  to generate OpenFisca a new XML legislation file which  using [this script](https://github.com/openfisca/openfisca-france/blob/baremes-ipp/openfisca_france/scripts/merge_ipp_tax_and_benefit_tables_with_parameters.py) (`baremes-ipp` git branch)
