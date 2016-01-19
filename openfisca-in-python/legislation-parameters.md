@@ -60,8 +60,7 @@ Then these clean YAML files are merged with the existing `param.xml` by [this sc
 
 Also these clean YAML files are transformed into [CSV files](https://git.framasoft.org/french-tax-and-benefit-tables/taxipp-parameters) to be reused at the IPP by [TAXIPP](http://www.ipp.eu/outils/taxipp-outils/) by [this script](https://git.framasoft.org/french-tax-and-benefit-tables/ipp-tax-and-benefit-tables-converters/blob/master/ipp_tax_and_benefit_tables_yaml_to_taxipp_csv.py).
 
-For now the source of truth for IPP parameters are the XLS files and for OpenFisca `param.xml`.
-
 We are still working on this merge operation.
 
-One day the source of
+For now the source of truth for IPP parameters are the XLS files and for OpenFisca `param.xml`.
+One day the source of truth will certainly be the YAML files, and their edition will probably be eased by a web tool like a modified version of the [Legislation Explorer](http://legislation.openfisca.fr/).
