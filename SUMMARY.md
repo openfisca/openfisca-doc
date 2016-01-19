@@ -12,6 +12,7 @@
    * [Periods](openfisca-in-python/periods.md)
    * [Legislation parameters](openfisca-in-python/legislation-parameters.md)
    * [Extensions](openfisca-in-python/extensions.md)
+* Legislation parameters
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Endpoints](openfisca-web-api/endpoints.md)
    * [JSON data structures](openfisca-web-api/json-data-structures.md)
@@ -27,5 +28,4 @@
    * [Debugging](contribute/debugging.md)
    * [Profiling](contribute/profiling.md)
    * [Release process](contribute/release-process.md)
-* Legislation parameters
 
