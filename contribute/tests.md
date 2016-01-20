@@ -8,16 +8,25 @@ OpenFisca has three sorts of tests:
 
 ## Run tests
 
-```bash
-# Whole test suite
-make test
+OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here are some useful commands.
 
-# Specific test
-nosetests openfisca_france/tests/test_legislations.py
-
-# If a simulation fails, a very long trace log can be printed. Use --nologcapture to disable it:
-nosetests --nologcapture openfisca_france/tests/test_legislations.py
-```
+- Run the whole test suite:
+    ```
+    make test
+    ```
+    which is available at least in Core, France and Web-API repositories.
+- Run a specific test:
+    ```
+    nosetests openfisca_france/tests/test_legislations.py
+    ```
+- Hide log of failing test:
+    ```    
+    nosetests --nologcapture openfisca_france/tests/test_legislations.py
+    ```
+- Display log of successful test:
+    ```
+    nosetests --debug=openfisca_core openfisca_france/tests/test_legislations.py
+    ```
 
 ## YAML tests
 
