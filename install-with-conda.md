@@ -17,19 +17,19 @@ conda update conda
 
 Create a new environment for OpenFisca named `OpenFisca` and packed with the required packages :
 ```
-conda create --name OpenFisca numpy=1.9.3 PyYAML requests Babel nose
-```
-
-Conda doesn't have the Biryani package... we'll use pip to install it inside our environment :
-
-```
-pip install Biryani
+conda create --name OpenFisca numpy PyYAML requests Babel nose
 ```
 
 Activate your brand new environment :
 
 ```
 source activate OpenFisca
+```
+
+Conda doesn't have the Biryani package... we'll use pip to install it inside our environment :
+
+```
+pip install Biryani
 ```
 
 Check your environment's packages :
