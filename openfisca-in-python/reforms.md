@@ -1,15 +1,13 @@
-# Extensions
+# Reforms
 
-> Note: extensions were named reforms and the renaming has not been completed yet.
+This section explains how to write a reform in Python.
 
-This section explains how to write an extension in Python.
+> If you're looking how to use an existing reform with OpenFisca Web API, please read
+> [OpenFisca-Web-API reforms](../openfisca-web-api/reforms)
 
-> If you're looking how to use an existing extension with OpenFisca Web API, please read
-> [OpenFisca-Web-API extensions](../openfisca-web-api/extensions)
+See the [key concepts](../key-concepts.md#reforms) section to know what is a reform.
 
-See the [key concepts](../key-concepts.md#extensions) section to know what is an extension.
-
-## How to write an extension?
+## How to write a reform?
 
 [OpenFisca-Core](https://github.com/openfisca/openfisca-core) provides a `TaxBenefitSystem` class to represent a tax and benefit system. It provides too a `Reform` class which inherits `TaxBenefitSystem`.
 

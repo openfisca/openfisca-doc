@@ -7,7 +7,7 @@ Here is a list of projects driven by the community.
 - http://mes-aides.gouv.fr/
 - http://embauche.sgmap.fr/
 
-## Extensions
+## Reforms
 
 See http://www.openfisca.fr/reforms
 

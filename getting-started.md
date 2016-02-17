@@ -144,7 +144,7 @@ OpenFisca can be used to test the impact of a reform. For the purpose of this tu
 but it's possible to work on population data like surveys.
 
 Let's use a reform which has already been coded: the .
-A dedicated section of the documentation explains how to write an extension for coding a reform.
+A dedicated section of the documentation explains how to code a reform.
 
 Here is the script `test2.py` available
 [here](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/getting_started/test2.py)

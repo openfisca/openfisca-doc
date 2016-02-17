@@ -182,22 +182,22 @@ Scenarios take a test cases as input and convert them into vectors.
 
 They even offer a way to simplify the declaration of test cases when it contains only a single entity of each type.
 
-## Extensions
+## Reforms
 
-An extension represents a modified version of the tax and benefit legislation.
+An reform represents a modified version of the tax and benefit legislation.
 
 For example it can be used to add, remove or modify a variable, or a legislation parameter.
 
 The tax and benefit system of the country knows about the laws that are already adopted, were existing in the past,
-or will exist in a near future. In contrast, the extensions are used for political reforms or
+or will exist in a near future. In contrast, the reforms are used for political reforms or
 propositions that people do but are not officially voted.
 
-Extensions do not modify the `TaxBenefitSystem` itself, they create a shallow copy and modify only what changed.
+Reforms do not modify the `TaxBenefitSystem` itself, they create a shallow copy and modify only what changed.
 
-Extensions are loaded given a base `TaxBenefitSystem` and return an extended one.
+Reforms are loaded given a base `TaxBenefitSystem` and return an extended one.
 
-As a consequence extensions can be composed (`ext2(ext1(tax_benefit_system))`).
+As a consequence reforms can be composed (`ext2(ext1(tax_benefit_system))`).
 
-Extensions can be published in their own `git` repository.
+Reforms can be published in their own `git` repository.
 
-How to write an extension is documented [in this section](./openfisca-in-python/extensions.md).
+How to write a reform is documented [in this section](./openfisca-in-python/reforms.md).

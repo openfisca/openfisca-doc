@@ -26,7 +26,7 @@ for example a new benefit, here are some key steps:
 - write the new variables with their formulas
 - store the new parameters
 - if you implement a part of the official legislation, your code should go in OpenFisca-France,
-  but if you implement a new idea or a future reform, your code should go in an extension.
+  but if you implement a new idea or a future reform, your code should go in a reform.
 
 ## EN
 
