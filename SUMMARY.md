@@ -28,3 +28,4 @@
    * [Debugging](contribute/debugging.md)
    * [Profiling](contribute/profiling.md)
    * [Release process](contribute/release-process.md)
+   * [Extensions](contribute/extensions.md)
