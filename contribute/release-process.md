@@ -47,7 +47,7 @@ python setup.py extract_messages update_catalog
 Translate them using [poedit](https://poedit.net/) for example:
 
 ```bash
-poedit xxx/i18n/fr/LC_MESSAGES/yyy.po
+poedit /path/to/i18n/fr/LC_MESSAGES/fr.po
 ```
 
 Ensure that `Project-Id-Version` in `.pot` and `.po` files are correct.
