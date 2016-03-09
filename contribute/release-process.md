@@ -1,7 +1,6 @@
 # Release process
 
-> This section is for maintainers who want to build and release a Python package of OpenFisca
-> on the [PyPI](https://pypi.python.org/pypi) repository.
+> This section is for maintainers who want to build and release a Python package of OpenFisca on the [PyPI](https://pypi.python.org/pypi) repository.
 
 Here are the steps to follow to build and release a Python package.
 Execute them on each Git repository you want to publish, in that order:
