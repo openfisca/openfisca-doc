@@ -68,7 +68,7 @@ It should display `(100%) translated`.
 
 ### Create the release commit
 
-Determine the next `NEW_RELEASE_NUMBER`. You can bump the major version number if breaking changes were committed to the code.
+Determine the next `NEW_RELEASE_NUMBER`. You can bump the major number if breaking changes were committed to the code.
 
 Edit `CHANGELOG.md`:
 
@@ -113,12 +113,6 @@ Build and [upload](https://python-packaging-user-guide.readthedocs.org/en/latest
 python setup.py bdist_wheel upload -r https://testpypi.python.org/pypi
 ```
 
-Check if package install correctly from the PyPI test instance (TODO: this does not work!):
-
-```bash
-pip install -i https://testpypi.python.org/pypi <package name>
-```
-
 ### Publish on PyPI
 
 Register the package on PyPI, only the first time:
@@ -130,16 +124,14 @@ python setup.py register
 Build and upload the package to PyPI:
 
 ```bash
-(next) python setup.py bdist_wheel upload
+python setup.py bdist_wheel upload
 ```
 
 Merge the `next` branch into `master` and add tags:
 
 ```bash
-(next) git checkout master
-(master) git merge --no-ff next
-(master) git tag NEW_RELEASE_NUMBER
-(master) git push --follow-tags origin next master
+git tag NEW_RELEASE_NUMBER
+git push --follow-tags origin master
 ```
 
 ### Test the package installation
@@ -161,26 +153,22 @@ deactivate
 
 ### Create the future release commit
 
-Switch back to the previous shell and checkout the `next` branch:
+Determine a `NEW_FUTURE_RELEASE_NUMBER`, by default by bumping the patch number and adding the `.dev0` suffix.
 
-```bash
-(master) git checkout next
-```
-
-Edit `setup.py` to change version number (ie increase patch number and add ".dev0" suffix):
+Edit `setup.py` and change the version number:
 
 ```python
 setup(
     [...]
-    version = 'NEW_FUTURE_RELEASE_NUMBER.dev0',
+    version = 'NEW_FUTURE_RELEASE_NUMBER',
     [...]
     )
 ```
 
 Create the next release section in `CHANGELOG.md`, ie:
 
-```
-## NEW_FUTURE_RELEASE_NUMBER.dev0 - next release
+```markdown
+## NEW_FUTURE_RELEASE_NUMBER - next release
 
 * TODO Fill this changes list while developing
 ```
@@ -190,8 +178,8 @@ Create the next release section in `CHANGELOG.md`, ie:
 Commit changes and push:
 
 ```bash
-(next) git commit -am "Update to next dev version"
-(next) git push
+git commit -am "Update to next dev version"
+git push
 ```
 
 ### Next steps
