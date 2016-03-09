@@ -92,7 +92,7 @@ setup(
 Commit changes:
 
 ```bash
-git commit -am "Release X.Y.Z" # Replace X.Y.Z by NEW_RELEASE_NUMBER
+git commit -am "Release NEW_RELEASE_NUMBER" # Replacing NEW_RELEASE_NUMBER 
 ```
 
 ### Publish on PyPI test instance
