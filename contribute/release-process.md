@@ -68,7 +68,7 @@ It should display `(100%) translated`.
 
 ### Create the release commit
 
-In `CHANGELOG.md`:
+Edit `CHANGELOG.md`:
 
 * fill the changes list
 ```bash
