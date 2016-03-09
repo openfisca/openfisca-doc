@@ -113,11 +113,10 @@ Build and [upload](https://python-packaging-user-guide.readthedocs.org/en/latest
 python setup.py bdist_wheel upload -r https://testpypi.python.org/pypi
 ```
 
-Check if package install correctly from the PyPI test instance:
+Check if package install correctly from the PyPI test instance (TODO: this does not work!):
 
 ```bash
-# TODO: this does not work!
-(next) pip install -i https://testpypi.python.org/pypi <package name>
+pip install -i https://testpypi.python.org/pypi <package name>
 ```
 
 ### Publish on PyPI
@@ -125,7 +124,7 @@ Check if package install correctly from the PyPI test instance:
 Register the package on PyPI, only the first time:
 
 ```bash
-(next) python setup.py register
+python setup.py register
 ```
 
 Build and upload the package to PyPI:
