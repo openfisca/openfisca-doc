@@ -1,31 +1,17 @@
 # Development process
 
-## Branching model
+The OpenFisca project follows the [GitHub Flow](https://guides.github.com/introduction/flow/).
 
-OpenFisca-Core, OpenFisca-France and OpenFisca-Web-API (tend to) follow this Git branching model:
+Each Python package uses [Semantic Versioning](http://semver.org/).
 
-* the `master` branch is for releases
-* the `next` branch is for preparing the next release
-* feature branches can exist
+## Submit a pull request
 
-See also: https://igor.io/2013/10/21/git-branching-model.html
+To merge a pull request into `master`, the tests must pass.
 
-## Versioning
+Let [Travis CI](https://travis-ci.org/) do the job directly from the pull request page.
 
-Each Python package is versioned using [Semantic Versioning](http://semver.org/).
-
-## Pull requests
-
-To merge a pull-request into `next`, the tests must pass on the repository, using `make test`.
-
-Before submitting a pull request, please execute tests:
+Or execute tests with:
 
     make test
 
-To download tests from [Ludwig](https://mes-aides.gouv.fr/tests/)
-(the tests tool from [Mes aides](https://mes-aides.gouv.fr/)),
-see [OpenFiscaFrance.jl](https://github.com/openfisca/OpenFiscaFrance.jl)
-
-## Tests
-
-See [tests.md](tests.md)
+To download tests from [Ludwig](https://mes-aides.gouv.fr/tests/) (the tests tool from [Mes aides](https://mes-aides.gouv.fr/)), see [OpenFiscaFrance.jl](https://github.com/openfisca/OpenFiscaFrance.jl).
