@@ -4,22 +4,14 @@
 
 Here are the steps to follow to build and release a Python package.
 Execute them on each Git repository you want to publish, in that order:
+
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
 * [OpenFisca-France](https://github.com/openfisca/openfisca-france)
 * [OpenFisca-Parsers](https://github.com/openfisca/openfisca-parsers)
 * [OpenFisca-Web-API](https://github.com/openfisca/openfisca-web-api)
 
-As explained in the [branching model](development-process.md#branching-model) section,
-each repository uses `master` and `next` git branches.
-Releasing a new version implies merging the `next` branch int `master`,
-but we want only *one merge commit* to appear in the `master` branch.
-All the pre-release related stuff is commited in the `next` branch.
-
-For each step we specify the branch on which you should be, like that:
-
-    (branch_name) command line
-
 See also:
+
 * [PEP 440: public version identifiers](http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers)
 * [distributing packages guide](https://python-packaging-user-guide.readthedocs.org/en/latest/distributing.html)
 * [setuptools](https://pythonhosted.org/setuptools/setuptools.html)
