@@ -68,6 +68,8 @@ It should display `(100%) translated`.
 
 ### Create the release commit
 
+Determine the next `NEW_RELEASE_NUMBER`. You can bump the major version number if breaking changes were committed to the code.
+
 Edit `CHANGELOG.md`:
 
 * fill the changes list
@@ -75,8 +77,6 @@ Edit `CHANGELOG.md`:
 git log --pretty=format:"* %s" LATEST_VERSION_TAG.. | grep -v "Merge > pull request"
 ```
 * ~~`NEW_RELEASE_NUMBER.dev0 - next release`~~ becomes `NEW_RELEASE_NUMBER`
-
-  Bump the major version number in NEW_RELEASE_NUMBER if relevant.
 * delete the line `TODO Fill this changes list while developing`
 
 Edit `setup.py` and check that everything is OK, in particular if requirements have evolved.
