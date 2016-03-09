@@ -75,7 +75,8 @@ In `CHANGELOG.md`:
 git log --pretty=format:"* %s" LATEST_VERSION_TAG.. | grep -v "Merge > pull request"
 ```
 * ~~`NEW_RELEASE_NUMBER.dev0 - next release`~~ becomes `NEW_RELEASE_NUMBER`
-> Bump the major version number in NEW_RELEASE_NUMBER if relevant.
+
+  Bump the major version number in NEW_RELEASE_NUMBER if relevant.
 * delete the line `TODO Fill this changes list while developing`
 
 Edit `setup.py` and check that everything is OK, in particular if requirements have evolved.
