@@ -38,22 +38,16 @@ Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page t
 If the project is internationalized with [GNU gettext](https://www.gnu.org/software/gettext/)
 via [Babel](http://babel.pocoo.org/), execute these steps.
 
-Extract strings to translate from source code:
+Extract strings to translate from source code to `.pot` file and update `.po` catalog files:
 
 ```bash
-(next) python setup.py extract_messages
+python setup.py extract_messages update_catalog
 ```
 
-Update catalog (aka `.po` files) from `.pot` file:
+Translate them using [poedit](https://poedit.net/) for example:
 
 ```bash
-(next) python setup.py update_catalog
-```
-
-Translate them if needed (using [poedit](https://poedit.net/) for example):
-
-```bash
-(next) poedit xxx/i18n/fr/LC_MESSAGES/yyy.po
+poedit xxx/i18n/fr/LC_MESSAGES/yyy.po
 ```
 
 Ensure that `Project-Id-Version` in `.pot` and `.po` files are correct.
