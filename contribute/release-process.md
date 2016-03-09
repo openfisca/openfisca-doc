@@ -44,7 +44,7 @@ Extract strings to translate from source code to `.pot` file and update `.po` ca
 python setup.py extract_messages update_catalog
 ```
 
-Translate them using [poedit](https://poedit.net/) for example:
+Translate `.po` catalog files using [poedit](https://poedit.net/) for example:
 
 ```bash
 poedit /path/to/i18n/fr/LC_MESSAGES/fr.po
