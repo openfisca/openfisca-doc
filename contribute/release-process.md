@@ -104,13 +104,13 @@ Register the package on the PyPI test instance, only the first time  :
 > Note: this operation is protected by an authentication, as well as the other commands dealing with PyPI.
 
 ```bash
-(next) python setup.py register -r https://testpypi.python.org/pypi
+python setup.py register -r https://testpypi.python.org/pypi
 ```
 
 Build and [upload](https://python-packaging-user-guide.readthedocs.org/en/latest/distributing.html#uploading-your-project-to-pypi) the package to the PyPI test instance:
 
 ```bash
-(next) python setup.py bdist_wheel upload -r https://testpypi.python.org/pypi
+python setup.py bdist_wheel upload -r https://testpypi.python.org/pypi
 ```
 
 Check if package install correctly from the PyPI test instance:
