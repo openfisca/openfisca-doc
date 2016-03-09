@@ -21,19 +21,16 @@ See also:
 
 ### Tests
 
-Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page
-to check that the build statuses of the `next` branches of all the released projects are *passing*.
+Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page to check that the build status of every project is *passing* (green color).
 
 > If there are pending tests, please wait for them to finish.
 >
-> If there are errors, click on a badge to open the corresponding Travis build page.
+> If there are errors, click on a badge to open the corresponding Travis page.
 >
-> You can also execute the tests by yourself on every released project, but this can be quite long:
+> You can also execute the tests by yourself on every released project:
 >
 >    ```bash
->    (next) make test
->    or
->    (next) nosetests
+>    make test
 >    ```
 
 ### Internationalization (i18n)
