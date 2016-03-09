@@ -64,7 +64,7 @@ Compile catalog `.po` files:
 python setup.py compile_catalog
 ```
 
-Should display `(100%) translated`.
+It should display `(100%) translated`.
 
 ### Create the release commit
 
