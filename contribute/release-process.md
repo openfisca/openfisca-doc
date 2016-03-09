@@ -55,13 +55,13 @@ Ensure that `Project-Id-Version` in `.pot` and `.po` files are correct.
 If there are modified files, commit them:
 
 ```bash
-(next) git commit -am "Update i18n translations"
+git commit -am "Update i18n translations"
 ```
 
-Compile catalog:
+Compile catalog `.po` files:
 
 ```bash
-(next) python setup.py compile_catalog
+python setup.py compile_catalog
 ```
 
 Should display `(100%) translated`.
