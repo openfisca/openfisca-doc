@@ -23,7 +23,7 @@ See also:
 
 Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page to check that the build status of every project is *passing* (green color).
 
-> If there are pending tests, please wait for them to finish.
+> Check that there are no pending tests by clicking on the badges.
 >
 > If there are errors, click on a badge to open the corresponding Travis page.
 >
