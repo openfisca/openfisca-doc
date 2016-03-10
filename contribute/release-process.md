@@ -27,11 +27,7 @@ Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page t
 >
 > If there are errors, click on a badge to open the corresponding Travis page.
 >
-> You can also execute the tests by yourself from every project source code directory:
->
-> ```bash
-> make test
-> ```
+> You can also execute the tests by yourself: do `git pull` in every project on the branch `master`, and run `make test` in each project.
 
 ### Internationalization (i18n)
 
