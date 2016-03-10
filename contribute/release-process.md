@@ -130,7 +130,7 @@ Let's check if the package is installable from PyPI without errors
 using [virtualenv](https://virtualenv.pypa.io/en/latest/):
 
 ```bash
-cd ~/tmp
+cd /tmp
 virtualenv test-openfisca
 cd test-openfisca
 source bin/activate
