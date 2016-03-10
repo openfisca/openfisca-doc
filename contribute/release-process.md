@@ -89,6 +89,7 @@ Commit changes, replacing `NEW_RELEASE_NUMBER`:
 ```bash
 git commit -am "Release NEW_RELEASE_NUMBER"
 git tag NEW_RELEASE_NUMBER
+git push origin master 0.5.3
 ```
 
 ### Publish on PyPI test instance
@@ -121,13 +122,6 @@ Build and upload the package to PyPI:
 
 ```bash
 python setup.py bdist_wheel upload
-```
-
-Merge the `next` branch into `master` and add tags:
-
-```bash
-git tag NEW_RELEASE_NUMBER
-git push --follow-tags origin master
 ```
 
 ### Test the package installation
