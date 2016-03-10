@@ -20,3 +20,4 @@ The OpenFisca team will check that these points are respected:
 
 * a relevant entry is added in the `CHANGELOG.md` file
 * tests are updated according to the changes
+* requirements are updated in the dependent projects via their `setup.py`
