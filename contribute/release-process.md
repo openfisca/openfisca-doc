@@ -31,7 +31,7 @@ Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page t
 
 ### Internationalization (i18n)
 
-If the project does not use [Python-Babel](http://babel.pocoo.org/) to translate strings, skip this section.
+If the project does not use [Python-Babel](http://babel.pocoo.org/) to translate strings, skip this section. Check by looking for the `Babel` entry in `install_requires = ` of `setup.py`.
 
 Extract strings to translate from source code to `.pot` file and update `.po` catalog files:
 
