@@ -31,8 +31,7 @@ Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page t
 
 ### Internationalization (i18n)
 
-If the project is internationalized with [GNU gettext](https://www.gnu.org/software/gettext/)
-via [Babel](http://babel.pocoo.org/), execute these steps.
+If the project does not use [Python-Babel](http://babel.pocoo.org/) to translate strings, skip this section.
 
 Extract strings to translate from source code to `.pot` file and update `.po` catalog files:
 
