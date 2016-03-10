@@ -131,8 +131,8 @@ using [virtualenv](https://virtualenv.pypa.io/en/latest/):
 
 ```bash
 cd ~/tmp
-virtualenv openfisca-france
-cd openfisca-france
+virtualenv test-openfisca
+cd test-openfisca
 source bin/activate
 pip install OpenFisca-France
 python -m openfisca_france.tests.test_basics
