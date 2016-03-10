@@ -47,7 +47,7 @@ poedit /path/to/i18n/fr/LC_MESSAGES/fr.po
 
 Ensure that `Project-Id-Version` in `.pot` and `.po` files are correct.
 
-If there are modified files, commit them:
+Commit modified files if needed:
 
 ```bash
 git commit -am "Update i18n translations"
