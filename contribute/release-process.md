@@ -21,7 +21,7 @@ See also:
 
 ### Tests
 
-Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page to check that the build status of every project is *passing* (green color).
+Open the [build-status](http://www.openfisca.fr/build-status#branch-next) page to check that the build status of every project is "passing" (green color).
 
 > Check that there are no pending tests by clicking on the badges.
 >
