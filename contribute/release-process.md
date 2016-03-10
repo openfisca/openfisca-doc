@@ -63,7 +63,7 @@ It should display `(100%) translated`.
 
 ### Create the release commit
 
-Determine the next `NEW_RELEASE_NUMBER` by removing the `.dev0` suffix. You can al bump the major number if breaking changes were committed to the code.
+Determine the next `NEW_RELEASE_NUMBER` by removing the `.dev0` suffix. You can also bump the major number if some commits introduced breaking changes since the last release.
 
 Edit `CHANGELOG.md`:
 
