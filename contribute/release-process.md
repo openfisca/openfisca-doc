@@ -89,7 +89,7 @@ Commit changes, replacing `NEW_RELEASE_NUMBER`:
 ```bash
 git commit -am "Release NEW_RELEASE_NUMBER"
 git tag NEW_RELEASE_NUMBER
-git push origin master 0.5.3
+git push origin master NEW_RELEASE_NUMBER
 ```
 
 ### Publish on PyPI test instance
