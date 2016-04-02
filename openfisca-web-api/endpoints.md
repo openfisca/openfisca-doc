@@ -24,6 +24,8 @@ Launch a simulation with an input test case, returning the computation results.
   * `value` (list or object, depending on the `output_format` value): The simulation result.
     Each output variable value is a list which length is equal to the number of entities on which the variable is defined.
 
+> To use axes, you should add `"output_format": "variables"` to the JSON payload.
+
 ## entities
 
 Get the entities metadata.
