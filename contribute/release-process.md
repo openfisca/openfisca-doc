@@ -125,42 +125,10 @@ python -m openfisca_france.tests.test_basics
 deactivate
 ```
 
-> Do the same for OpenFisca-Web-API if you wish.
-
-### Create the future release commit
-
-Determine a `NEW_FUTURE_RELEASE_NUMBER`, by default by bumping the patch number and adding the `.dev0` suffix.
-
-Edit `setup.py` and change the version number:
-
-```python
-setup(
-    [...]
-    version = 'NEW_FUTURE_RELEASE_NUMBER',
-    [...]
-    )
-```
-
-Create the next release section in `CHANGELOG.md`, ie:
-
-```markdown
-## NEW_FUTURE_RELEASE_NUMBER - next release
-
-* TODO Fill this changes list while developing
-```
-
-> Keep the "TODO" list item as is.
-
-Commit changes and push:
-
-```bash
-git commit -am "Update to next dev version"
-git push
-```
+> Test OpenFisca-Web-API installation if you wish.
 
 ### Next steps
 
 Do the same for the remaining repositories to release.
 
-When all the suited repositories are released, you can announce the new release
-on the website news, Twitter, the mailing list, etc.
+When all the suited repositories are released, you can announce the new release on the website news, Twitter, the mailing list, etc.
