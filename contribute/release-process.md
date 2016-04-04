@@ -96,14 +96,6 @@ git push origin master NEW_RELEASE_NUMBER
 
 Try the release process on the [PyPI test instance](https://wiki.python.org/moin/TestPyPI).
 
-Register the package on the PyPI test instance, only the first time  :
-
-> Note: this operation is protected by an authentication, as well as the other commands dealing with PyPI.
-
-```bash
-python setup.py register -r https://testpypi.python.org/pypi
-```
-
 Build and [upload](https://python-packaging-user-guide.readthedocs.org/en/latest/distributing.html#uploading-your-project-to-pypi) the package to the PyPI test instance:
 
 ```bash
@@ -111,12 +103,6 @@ python setup.py bdist_wheel upload -r https://testpypi.python.org/pypi
 ```
 
 ### Publish on PyPI
-
-Register the package on PyPI, only the first time:
-
-```bash
-python setup.py register
-```
 
 Build and upload the package to PyPI:
 
