@@ -23,7 +23,7 @@ for example a new benefit, here are some key steps:
 - understand the part of the legislation you want to implement
 - identify the variable dependencies using the [legislation explorer](http://legislation.openfisca.fr/)
 - identify the new variables you need to implement
-- write the new variables with their formulas
+- write the new variables with their formulas, and make sure their names respect the guidelines you can find [here](https://github.com/openfisca/openfisca-france/wiki/Openfisca-variables-naming-guidelines).
 - store the new parameters
 - if you implement a part of the official legislation, your code should go in OpenFisca-France,
   but if you implement a new idea or a future reform, your code should go in a reform.
