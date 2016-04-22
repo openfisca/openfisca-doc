@@ -91,21 +91,10 @@ Voir http://doc.openfisca.fr/en/openfisca-in-python/reforms.html
 ## Autres projets liés à OpenFisca
 
 Vous pouvez également participer à d'autres projets faisant usage d'OpenFisca.
- <ul>
-   <li> Le développement des systèmes
-   sociaux fiscaux est plus ou mois achevé pour les pays suivants :</li>
-     <ul>
- <li> <a href="https://github.com/openfisca/openfisca-france"> France </a></li>
- <li> <a href="https://github.com/openfisca/openfisca-tunisia">
-   Tunisie </a></li>
-     </ul>
-   <li> Il existe de nombreux projets autour d'OpenFisca
-   allant d'utilisation d'OpenFisca avec des données
-   d'enquêtes à des interfaces utilisateurs utilisant le
-   web. Cf <a href="https://github.com/openfisca">https://github.com/openfisca</a>.</li>
-   <li> Une utilisation d'OpenFisca à travers <a href="https://github.com/blaquans/ropenfisca">R</a>.</li>
- </ul>
-    </p>
+
+- Le développement des systèmes socio-fiscaux est plus ou moins achevé pour les pays suivants : [France](https://github.com/openfisca/openfisca-france), [Tunisie](https://github.com/openfisca/openfisca-tunisia).
+- Il existe de nombreux projets autour d'OpenFisca allant d'utilisation d'OpenFisca avec des données d'enquêtes à des interfaces utilisateurs utilisant le web. Cf https://github.com/openfisca
+   <li> Une utilisation d'OpenFisca à travers <a href="https://github.com/blaquans/ropenfisca">R</a>.
 
 ## Règles de contribution
 
