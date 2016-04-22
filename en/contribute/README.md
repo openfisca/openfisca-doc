@@ -6,13 +6,13 @@ Feel free to fork the [source code repositories](https://github.com/openfisca) o
 
 You can send us an email: contact@openfisca.fr
 
-## Rules
+Thanks for enhancing OpenFisca!
 
-Merci d'enrichir OpenFisca !
+Here are some rules to follow to collaborate on this project.
 
-Voici les règles à suivre pour collaborer à ce projet :
+## Commit messages
 
-- Si vous modifiez le nom d'une formule ou variable, en créez ou souhaitez en faire disparaître, consultez les [règles de rédaction des messages de commit](https://github.com/openfisca/openfisca-france/wiki/Messages-de-commit).
+If you modify/create/delete a simulation variable, please follow the [commit message rules](https://github.com/openfisca/openfisca-france/wiki/Messages-de-commit).
 
 ## Writing some legislation
 
