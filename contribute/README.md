@@ -1,11 +1,10 @@
 # Contribute
 
-OpenFisca is a free software project.
-Its source code is distributed under the [GNU Affero General Public Licence](http://www.gnu.org/licenses/agpl.html)
-version 3 or later.
+OpenFisca is a free software project and contributors are very welcome!
 
-Feel free to join the OpenFisca development team on [GitHub](https://github.com/openfisca) or contact us by email at
-contact@openfisca.fr
+Feel free to fork the [source code repositories](https://github.com/openfisca) on GitHub and send us pull-requests.
+
+You can send us an email: contact@openfisca.fr
 
 ## Rules
 
