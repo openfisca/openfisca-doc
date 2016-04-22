@@ -18,19 +18,14 @@ and to report any inaccuracy or error they might have found.
 If you want to participate more actively in its development,
 know that there are multiple ways contribute to the OpenFisca project.
 
-<h2> Use the API and direct its development  </h2>
-<p>
-<ul>
-<li> Share your uses: you are welcome to keep us informed of the uses
+## Use the API and direct its development
+
+- Share your uses: you are welcome to keep us informed of the uses
 you make of the API including visualizations you may create.
-We'd love to be able to include them on the OpenFisca website.</li>
-
-<li> Suggest features: please tell us about the improvements
-to the API you would like to see, so that we can make it meet your needs.</li>
-
-<li> Participate directly in the
-<a href="https://github.com/openfisca/openfisca-web-api">
-API's development</a>.</li>
+We'd love to be able to include them on the OpenFisca website.
+- Suggest features: please tell us about the improvements
+to the API you would like to see, so that we can make it meet your needs.
+- Participate directly in the [API's development](https://github.com/openfisca/openfisca-web-api).
 
 ## Test and report errors (web API)
 
@@ -38,9 +33,9 @@ You can contribute to the development of OpenFisca by reporting errors you would
 
 To enable the OpenFisca developers to solve your problems quickly, please follow these few steps:
 - try to create a minimal standard case that generates the error</li>
-- verify <a href="https://github.com/openfisca/openfisca-${conf['country']}/issues?state=open"> that this error is not already listed  </a> ;</li>
-- try to identify the source of the error by inspecting <a href="${urls.get_url(ctx, 'variables')}"> the formulas for the different benefits and taxes</a> ;</li>
-- report the error, possibly with additional information concerning <a href="https://github.com/openfisca/openfisca-${conf['country']}/issues?state=open"> the page dedicated to the of collaborative development website </a>. If possible, please provide the code that allows to reproduce the error or the json file of the standard case you created.
+- verify [that this error is not already listed](https://github.com/openfisca/openfisca-france/issues?state=open) ;
+- try to identify the source of the error by inspecting [the formulas for the different benefits and taxes](http://legislation.openfisca.fr/variables) ;
+- report the error, possibly with detailed information concerning <a href="https://github.com/openfisca/openfisca-france/issues?state=open"> the page dedicated to the of collaborative development website </a>. If possible, please provide the code that allows to reproduce the error or the JSON file of the standard case you created.
 
 ## Complete the implementation of the French tax and benefit system
 
