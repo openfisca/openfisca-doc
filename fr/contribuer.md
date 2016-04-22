@@ -1,6 +1,6 @@
-# Contribuer
+bienvenus # Contribuer
 
-OpenFisca est un logiciel libre et les contributeurs sont plus are very welcome!
+OpenFisca est un logiciel libre et les contributeurs sont plus que bienvenus !
 
 Feel free to fork the [source code repositories](https://github.com/openfisca) on GitHub and send us pull-requests.
 
