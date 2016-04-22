@@ -8,40 +8,15 @@ You can send us an email: contact@openfisca.fr
 
 Thanks for enhancing OpenFisca!
 
-Here are some rules to follow to collaborate on this project.
+## Why contribute to OpenFisca?
 
-## Commit messages
+OpenFisca is a project being developed under the GPLv3 license or later.
+The source code is freely available and modifiable.
 
-If you modify/create/delete a simulation variable, please follow the [commit message rules](https://github.com/openfisca/openfisca-france/wiki/Messages-de-commit).
-
-## Writing some legislation
-
-From the point of view of someone (developer, economist, etc.) who wants to implement a part of the legislation,
-for example a new benefit, here are some key steps:
-
-- understand the part of the legislation you want to implement
-- identify the variable dependencies using the [legislation explorer](http://legislation.openfisca.fr/)
-- identify the new variables you need to implement
-- write the new variables with their formulas, and make sure their names respect the guidelines you can find [here](https://github.com/openfisca/openfisca-france/wiki/Openfisca-variables-naming-guidelines).
-- store the new parameters
-- if you implement a part of the official legislation, your code should go in OpenFisca-France,
-  but if you implement a new idea or a future reform, your code should go in a reform.
-
-## EN
-
-<h2> Why contribute to OpenFisca </h2>
-
-<p>
-    OpenFisca is a project being developed under the GPLv3 license or later.
-    The source code is freely available and modifiable.
-</p>
-
-<p>
-    We encourage users to send their comments and suggestions for improvement,
-    and to report any inaccuracy or error they might have found.
-    If you want to participate more actively in its development,
-    know that there are multiple ways contribute to the OpenFisca project.
-</p>
+We encourage users to send their comments and suggestions for improvement,
+and to report any inaccuracy or error they might have found.
+If you want to participate more actively in its development,
+know that there are multiple ways contribute to the OpenFisca project.
 
 <h2> Use the API and direct its development  </h2>
 <p>
@@ -93,142 +68,25 @@ taxes on<a href="https://github.com/openfisca/openfisca-${conf['country']}/"> co
 <!--   Compléter les paramètres de la législation LawToCode
 <!-- </p> -->
 
+## Writing some legislation
 
-<!-- <p> -->
-<!--   Proposer des réformes: à venir -->
-<!-- </p> -->
+From the point of view of someone (developer, economist, etc.) who wants to implement a part of the legislation, for example a new benefit, here are some key steps:
 
-<h2> Other projects linked to OpenFisca</h2>
+- understand the part of the legislation you want to implement
+- identify the variable dependencies using the [legislation explorer](http://legislation.openfisca.fr/)
+- identify the new variables you need to implement
+- write the new variables with their formulas, and make sure their names respect the guidelines you can find [here](https://github.com/openfisca/openfisca-france/wiki/Openfisca-variables-naming-guidelines).
+- store the new parameters
+- if you implement a part of the official legislation, your code should go in OpenFisca-France, but if you implement a new idea or a future reform, your code should go in a reform.
 
-<p>
-   You can also participate in other projects that make use of
-   OpenFisca.
-<ul>
-<li> The development of tax and benefit simulators is ongoging for the following countries:</li>
- <ul>
-<li> <a href="https://github.com/openfisca/openfisca-france"> France </a></li>
-<li> <a href="https://github.com/openfisca/openfisca-tunisia"> Tunisia </a></li>
- </ul>
-<li> Other projetcs built around OpenFisca (use of survey
-data, web user interface) can be found on
-<a href="https://github.com/openfisca"> the OpenFisca
-github page</a>.</li>
-<li> Using OpenFisca through <a href="https://github.com/blaquans/ropenfisca"> R</a>.</li>
-</ul>
-</p>
+## Writing reforms
 
 
-## FR
+## Other projects linked to OpenFisca
 
-<h2> Pourquoi  contribuer à OpenFisca </h2>
+You can also participate in other projects that make use of
+OpenFisca.
 
-    <p>
-        OpenFisca est un projet en cours de développement sous
-        licence GPLv3 ou supérieure. Le code source est librement
-        accessible et modifiable.
-    </p>
-
-    <p>
-        Nous invitons les utilisateurs à nous transmettre leur
-        remarques, les imprécisions ou erreurs identifiées, ainsi
-        que les éventuelles propositions d'amélioration. Si vous
-        voulez participer plus activement à l'évolution du
-        programme, sachez qu'il est possible de contribuer de
-        multiples façons au projet OpenFisca.
-    </p>
-
-<h2> Utiliser l'API web et orienter son développement  </h2>
-    <p>
-<ul>
-  <li> Partager vos utilisations : vous êtes invités à nous
- tenir informer des utilisations que vous faîtes de l'API et
- notamment des visualisations que vous pourriez
- produire. Nous serions ravis de pouvoir les recenser sur le
- site d'OpenFisca.</li>
-
- <li> Suggérer des fonctionnalités : n'hésitez pas à nous
- faire part des améliorations à apporter à l'API afin qu'elle
- puisse répondre au mieux à vos besoins.</li>
-
- <li> Participer directement au
- <a href="https://github.com/openfisca/openfisca-web-api">
- développement de l'API</a>.</li>
-</ul>
-
-</p>
-
-<h2> Tester et rapporter les erreurs (API web) </h2>
-
-    <p>
- Vous pouvez contribuer au développement d'OpenFisca en
- rapportant les erreurs sur le calcul des prestations ou des
- impôts que vous constateriez. Afin de permettre aux
- développeurs d'OpenFisca de résoudre les problèmes
- rapidement, veuillez essayer de suivre la procédure
- suivante :
- <ol>
-   <li> essayer de réaliser un cas-type minimal permettant
-     de mettre en évidence l'erreur rencontrée</li>
-   <li> vérifier que <a href="https://github.com/openfisca/openfisca-${conf['country']}/issues?state=open"> cette erreur n'est pas déjà répertoriée  </a> ;</li>
-   <li> tenter d'identifier la source de l'erreur en
- inspectant <a href="${urls.get_url(ctx, 'variables')}"> les
- formules des différents prestations et impôts</a> ;</li>
-   <li> rapporter l'erreur accompagnée éventuellement
-           d'informations complémentaires
-           sur <a href="https://github.com/openfisca/openfisca-${conf['country']}/issues?state=open">
-           la page consacrée sur le site de développement
-           collaboratif</a> en fournissant si possible le code
-           permettant de reproduire l'erreur ou le fichier json du
-           cas type considéré.</li>
- </ol>
-</p>
-
-<h2> Compléter l'implémentation du système socio-fiscal français </h2>
-    <p>
-        Certains pans de la législation ne sont pas encore
-        intégrés. Étant donné l'ampleur de la tâche, notre
-        ambition est de constituer une communauté de développeurs,
-        d'économistes et de spécialistes de la fiscalité ou des
-        prestations sociales pour maintenir et améliorer le
-  logiciel. Vous pouvez y contribuer en suivant les étapes suivantes :
-
-  <ol>
-    <li> identifier les prestations ou les impôts incomplets
-    ou manquants ;</li>
-          <li> rassembler la documentation nécessaire à l'écriture
-          des formules permettant de les calculer ;</li>
-    <li> proposer les correctifs implémentant les
-    prestations et les impôts incomplets ou manquants
-    sur <a href="https://github.com/openfisca/openfisca-${conf['country']}/">le
-    site de développement collaboratif</a>.</li>
-  </ol>
-</p>
-
-    <!-- <p> -->
-<!--   Compléter les paramètres de la législation LawToCode
-    <!-- </p> -->
-
-
-    <!-- <p> -->
-<!--   Proposer des réformes: à venir -->
-    <!-- </p> -->
-
-<h2> Autres projets liés à OpenFisca </h2>
-
-    <p>
-       Vous pouvez également participer à d'autres projets faisant usage d'OpenFisca.
- <ul>
-   <li> Le développement des systèmes
-   sociaux fiscaux est plus ou mois achevé pour les pays suivants :</li>
-     <ul>
- <li> <a href="https://github.com/openfisca/openfisca-france"> France </a></li>
- <li> <a href="https://github.com/openfisca/openfisca-tunisia">
-   Tunisie </a></li>
-     </ul>
-   <li> Il existe de nombreux projets autour d'OpenFisca
-   allant d'utilisation d'OpenFisca avec des données
-   d'enquêtes à des interfaces utilisateurs utilisant le
-   web. Cf <a href="https://github.com/openfisca">https://github.com/openfisca</a>.</li>
-   <li> Une utilisation d'OpenFisca à travers <a href="https://github.com/blaquans/ropenfisca">R</a>.</li>
- </ul>
-    </p>
+- The development of tax and benefit simulators is ongoing for the following countries: [France](https://github.com/openfisca/openfisca-france), [Tunisie](https://github.com/openfisca/openfisca-tunisia).
+- Other projetcs built around OpenFisca (use of survey data, web user interface) can be found on https://github.com/openfisca
+- Using OpenFisca through [R](https://github.com/blaquans/ropenfisca)
