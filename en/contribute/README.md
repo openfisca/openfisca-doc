@@ -31,42 +31,25 @@ to the API you would like to see, so that we can make it meet your needs.</li>
 <li> Participate directly in the
 <a href="https://github.com/openfisca/openfisca-web-api">
 API's development</a>.</li>
-</ul>
 
-</p>
+## Test and report errors (web API)
 
-<h2> Test and report errors (web API) </h2>
-
-<p>
 You can contribute to the development of OpenFisca by reporting errors you would find on the calculation of benefits and taxes.
+
 To enable the OpenFisca developers to solve your problems quickly, please follow these few steps:
-<ol>
-<li> try to create a minimal standard case that generates the error</li>
-<li> verify <a href="https://github.com/openfisca/openfisca-${conf['country']}/issues?state=open"> that this error is not already listed  </a> ;</li>
-<li> try to identify the source of the error by inspecting <a href="${urls.get_url(ctx, 'variables')}"> the formulas for the different benefits and taxes</a> ;</li>
-<li> report the error, possibly with additional information concerning <a href="https://github.com/openfisca/openfisca-${conf['country']}/issues?state=open">
-       the page dedicated to the of collaborative development website </a>. If possible, please provide the code that allows to reproduce the error
-       or the json file of the standard case you created.</li>
-</ol>
-</p>
+- try to create a minimal standard case that generates the error</li>
+- verify <a href="https://github.com/openfisca/openfisca-${conf['country']}/issues?state=open"> that this error is not already listed  </a> ;</li>
+- try to identify the source of the error by inspecting <a href="${urls.get_url(ctx, 'variables')}"> the formulas for the different benefits and taxes</a> ;</li>
+- report the error, possibly with additional information concerning <a href="https://github.com/openfisca/openfisca-${conf['country']}/issues?state=open"> the page dedicated to the of collaborative development website </a>. If possible, please provide the code that allows to reproduce the error or the json file of the standard case you created.
 
-<h2> Complete the implementation of the French tax and benefit system </h2>
-<p>
-    Some pieces of legislation are not yet integrated. Given the magnitude of the task, our
-    ambition is to build a community of developers, economists and experts on taxes or
-    social benefits to maintain and improve the software. You can help by following these steps:
+## Complete the implementation of the French tax and benefit system
 
-<ol>
-<li> identify the incomplete or missing taxes or benefits;</li>
-      <li> gather the necessary documentation to fix this issue</li>
-<li> propose patches that implement the incomplete or missing benefits and
-taxes on<a href="https://github.com/openfisca/openfisca-${conf['country']}/"> collaborative development website</a>.</li>
-</ol>
-</p>
+Some pieces of legislation are not yet integrated. Given the magnitude of the task, our ambition is to build a community of developers, economists and experts on taxes or social benefits to maintain and improve the software. You can help by following these steps:
 
-<!-- <p> -->
-<!--   Compléter les paramètres de la législation LawToCode
-<!-- </p> -->
+- identify the incomplete or missing taxes or benefits;
+- gather the necessary documentation to fix this issue
+- propose patches that implement the incomplete or missing benefits and
+taxes on <a href="https://github.com/openfisca/openfisca-${conf['country']}/">collaborative development website</a>.
 
 ## Writing some legislation
 
