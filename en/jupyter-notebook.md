@@ -1,6 +1,6 @@
 # Work with Jupyter Notebook
 
-[Jupyter Notebook](http://jupyter.org/) is a useful way to develop with OpenFisca without using any source code editor or
+[Jupyter Notebook](http://jupyter.org/) is a useful way to use OpenFisca without using any source code editor or
 <abbr title="Integrated development environment">IDE</abbr>.
 
 A notebook is basically a web interface running in your browser, in which you write code and it displays results.
