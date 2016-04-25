@@ -92,26 +92,3 @@ This can be done:
 
 * by the Python installer, enabling the corresponding option during the install wizard;
 * or after the installation, see [this stackoverflow question](http://stackoverflow.com/a/20458590).
-
-## Install with pip
-
-Follow this section if you don't plan to develop on OpenFisca, but just need to run it, for example to host an instance of the web API.
-In that case you might be interested in [Docker containers](https://github.com/openfisca/openfisca-web-api/tree/master/docker-france).
-
-When you install OpenFisca using `pip`, OpenFisca can be imported like any Python package.
-
-For a basic usage in Python you just need to install OpenFisca-France:
-
-```bash
-pip install OpenFisca-France
-```
-
-You'll be able to import the `openfisca_core` and `openfisca_france` from a Python script.
-
-If you need to host an instance of the web API, you can install it too:
-
-```bash
-pip install OpenFisca-Web-API[france]
-```
-
-To run it, please read [its README](https://github.com/openfisca/openfisca-web-api).
