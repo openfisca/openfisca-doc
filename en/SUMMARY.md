@@ -25,6 +25,5 @@
    * [Extensions](contribute/extensions.md)
    * [Developer guide](contribute/developer-guide.md)
    * [Tests](contribute/tests.md)
-   * [Profiling](contribute/profiling.md)
    * [Release process](contribute/release-process.md)
 
