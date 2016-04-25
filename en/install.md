@@ -27,7 +27,7 @@ conda update conda
 Create a new environment for OpenFisca named `OpenFisca` and install the required packages:
 
 ```
-conda create --name OpenFisca numpy PyYAML requests Babel nose
+conda create --name OpenFisca python=2 numpy PyYAML requests Babel nose
 ```
 
 Activate your brand new environment:
@@ -48,7 +48,7 @@ Check your environment packages:
 conda list
 ```
 
-## Install git repositories
+### Clone git repositories
 
 You need the [Git](http://www.git-scm.com/) command line tool to be installed on your system.
 
@@ -69,8 +69,29 @@ pip install --editable .
 python setup.py compile_catalog
 ```
 
-You'll be able to import the `openfisca_core` and `openfisca_france` Python packages like with `pip` installation
-but you'll be able to contribute to the project too.
+Run `conda list` to see the installed packages: `openfisca-core` and `openfisca-france` should be listed.
+
+To exit your Conda env, type `deactivate`.
+
+Running `pip list` outside of your env, the packages we just installed should *not* be listed.
+
+## Test the installation
+
+To test if OpenFisca-France is correctly installed:
+
+```bash
+python -m openfisca_france.tests.test_basics
+```
+
+It should display `OpenFisca-France basic test was executed successfully.`.
+
+## OpenFisca on Microsoft Windows
+
+Microsoft Windows users should add the Python scripts directory to the system PATH.
+This can be done:
+
+* by the Python installer, enabling the corresponding option during the install wizard;
+* or after the installation, see [this stackoverflow question](http://stackoverflow.com/a/20458590).
 
 ## Install with pip
 
@@ -94,21 +115,3 @@ pip install OpenFisca-Web-API[france]
 ```
 
 To run it, please read [its README](https://github.com/openfisca/openfisca-web-api).
-
-## Test the installation
-
-To test if OpenFisca-France is correctly installed:
-
-```bash
-python -m openfisca_france.tests.test_basics
-```
-
-It should display `OpenFisca-France basic test was executed successfully.`.
-
-## OpenFisca on Microsoft Windows
-
-Microsoft Windows users should add the Python scripts directory to the system PATH.
-This can be done:
-
-* by the Python installer, enabling the corresponding option during the install wizard;
-* or after the installation, see [this stackoverflow question](http://stackoverflow.com/a/20458590).
