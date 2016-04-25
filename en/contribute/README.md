@@ -62,6 +62,5 @@ From the point of view of someone (developer, economist, etc.) who wants to impl
 
 ## Other projects linked to OpenFisca
 
-You can also participate in other projects that make use of
+You can also participate in [other projects](/en/community) that make use of
 OpenFisca.
-
