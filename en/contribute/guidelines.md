@@ -20,25 +20,8 @@ Some guidelines on contributing to OpenFisca:
 - Pull Requests should be tested, if feasible:
   - bugfixes should include regression tests
   - new behavior should at least get minimal exercise
-- The CHANGELOG.md file should be updated, in particular new features and backwards-incompatible changes
-- The version number should be updated
-
-Don't make 'cleanup' pull requests just to change code style. We don't follow any style guide strictly, and we consider formatting changes unnecessary noise. If you're making functional changes, you can clean up the specific pieces of code you're working on.
-Travis does a pretty good job testing IPython and Pull Requests, but it may make sense to manually perform tests (possibly with our test_pr script), particularly for PRs that affect IPython.parallel or Windows.
-
-
-To merge a pull request into `master`, the tests must pass.
-
-Let [Travis CI](https://travis-ci.org/) do the job directly from the pull request page.
-
-Or execute tests with:
-
-    make test
-
-To download tests from [Ludwig](https://mes-aides.gouv.fr/tests/) (the tests tool from [Mes aides](https://mes-aides.gouv.fr/)), see the script [download_mes_aides_tests.py](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/scripts/download_mes_aides_tests.py).
-
-The OpenFisca team will check that these points are respected:
-
-* a relevant entry is added in the `CHANGELOG.md` file
-* tests are updated according to the changes
-* requirements are updated in the dependent projects via their `setup.py`
+- The `CHANGELOG.md` file should be updated, in particular new features and backwards-incompatible changes
+- The semantic version number should be updated
+- Use atomic commits, in particular try to isolate "code-cleanup" commits
+- Travis tests must pass (they are triggered automatically and result is visible from the Pull Request page).
+- If the Pull Request depends on another opened Pull Request on another repository (like OpenFisca-Core/OpenFisca-France), the requirements should be updated in the dependent project via its `setup.py`.
