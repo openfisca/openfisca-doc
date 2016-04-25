@@ -65,6 +65,3 @@ From the point of view of someone (developer, economist, etc.) who wants to impl
 You can also participate in other projects that make use of
 OpenFisca.
 
-- The development of tax and benefit simulators is ongoing for the following countries: [France](https://github.com/openfisca/openfisca-france), [Tunisie](https://github.com/openfisca/openfisca-tunisia).
-- Other projetcs built around OpenFisca (use of survey data, web user interface) can be found on https://github.com/openfisca
-- Using OpenFisca through [R](https://github.com/blaquans/ropenfisca)
