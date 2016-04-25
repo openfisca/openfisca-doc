@@ -1,3 +1,2 @@
 # Contributor guidelines
 
-Each project 
