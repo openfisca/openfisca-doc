@@ -1,40 +1,53 @@
 # Install
 
-## Installation is optional!
+## What to install?
 
-There are some use cases for which installing OpenFisca is not required.
+Depending on your usage you'll want to install some parts of OpenFisca, or none:
 
-OpenFisca has a web API instance which is hosted publically.
+- If you need to implement some parts of the legislation as OpenFisca formulas, or fill some values for parameters of the legislation, you'll want to install OpenFisca-France.
+- If you're developing a web application and need to trigger a computation, you won't need to install anything. Just [send an AJAX request](../openfisca-web-api/index.html) to the public Web API.
+  - But if you generate too much traffic we ask you to deploy your own version of the web API. This happens with important applications like https://mes-aides.gouv.fr/
 
-If you're developing a web application, you'll just need to call OpenFisca with an AJAX request.
 
-See the [getting started](./getting-started.md) section for an example.
+## Install Miniconda
 
-But if you want to develop with the Python API of OpenFisca, without the HTTP overhead,
-you can install OpenFisca-France.
+We recommend Miniconda because it's the simplest solution we've found.
 
-Or if you want to host an instance of the web API on your own server, you can install OpenFisca-Web-API.
+Start by following their [quick install page](http://conda.pydata.org/docs/install/quick.html).
 
-## Dependencies
+## Create your env
 
-If you choose to install OpenFisca, regardless of the installation method (with `pip` or `git`),
-there are dependencies that must be installed:
-
-* [Python](http://www.python.org/) 2.7
-* [NumPy](http://www.numpy.org/)
-
-For GNU/Linux Debian, as root user:
-
-```bash
-apt-get install python-numpy python-pip
+```
+conda update conda
 ```
 
-For Microsoft Windows, please read [this specific section](#openfisca-on-microsoft-windows).
+Create a new environment for OpenFisca named `OpenFisca` and install the required packages:
+
+```
+conda create --name OpenFisca numpy PyYAML requests Babel nose
+```
+
+Activate your brand new environment:
+
+```
+source activate OpenFisca
+```
+
+Install [Biryani](https://pythonhosted.org/Biryani/):
+
+```
+pip install Biryani
+```
+
+Check your environment packages:
+
+```
+conda list
+```
 
 ## Install with pip
 
-You have to choose if you'd like to install OpenFisca with `pip` (the Python package installer) or with `git`
-(see next section).
+You have to choose if you'd like to install OpenFisca with `pip` (the Python package installer) or with `git` (see next section).
 Installation with `git` is more complex than `pip` but allows you to hack on the source code of OpenFisca itself.
 
 When you install OpenFisca using `pip`, OpenFisca becomes available as any Python package.
