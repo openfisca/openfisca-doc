@@ -6,7 +6,6 @@
 * [Key concepts](key-concepts.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Work with Jupyter Notebook](jupyter-notebook.md)
-* [Install with Conda](install-with-conda.md)
 * [Install](install.md)
 * [OpenFisca in Python](openfisca-in-python/README.md)
    * [Periods](openfisca-in-python/periods.md)
