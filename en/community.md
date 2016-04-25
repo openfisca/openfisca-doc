@@ -1,19 +1,23 @@
 # Community
 
+## Ask for help
+
+You can ask for help, or help others, via the [forum](https://forum.openfisca.fr/).
+
+You can also [chat](https://gitter.im/openfisca/openfisca-france) with the team.
+
+## Community projects
+
 The OpenFisca project publishes several softwares built around the simulator which can be found on https://github.com/openfisca. There are many other projects driven by the community detailed below.
 
-## Applications
+### Applications
 
 - http://mes-aides.gouv.fr/
 - http://embauche.sgmap.fr/
 
-## Reforms
+### Reforms
 
-See http://www.openfisca.fr/reforms
-
-## Spreadsheet
-
-- https://github.com/openfisca/openfisca-spreadsheet
+- https://github.com/openfisca/openfisca-france-extension-revenu-de-base
 
 ## Other languages
 
