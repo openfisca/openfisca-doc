@@ -1,6 +1,6 @@
 # OpenFisca extensions
 
-*Note: The following is, today, only implemented in OpenFisca-France*
+*Note: The following is, today, only implemented in OpenFisca-France.*
 
 Extensions allow you to add formulas to OpenFisca that are not included in the OpenFisca-France repository (e.g. local prestations).
 
