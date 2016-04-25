@@ -2,15 +2,13 @@
 
 ## Contact the team
 
-You can ask for help, or help others:
+You can ask for help, or help others, or simply discuss with the team:
 
 - via the [forum](https://forum.openfisca.fr/)
 - via the [chat](https://gitter.im/openfisca/openfisca-france)
 - by email: contact@openfisca.fr
 - via Twitter : @OpenFisca
-sur le forum s'il s'agit d'une question ouverte
-ou bien, pour les développeurs, s'il s'agit d'un problème avec un logiciel en particulier, ouvrez une "issue" sur GitHub
-
+- for developers, [open an issue on GitHub](../contribute/guidelines.html#opening-issues)
 
 ## Community projects
 
