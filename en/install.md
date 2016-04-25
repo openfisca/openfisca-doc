@@ -52,21 +52,38 @@ conda list
 
 You need the [Git](http://www.git-scm.com/) command line tool to be installed on your system.
 
-If not already done, activate your `OpenFisca` Conda env.
+If not already done, activate your `OpenFisca` Conda env and go to your working directory.
 
 ```bash
+source activate OpenFisca
 mkdir -p ~/Dev/openfisca
+cd ~/Dev/openfisca
+```
+
+OpenFisca-Core should be installed with pip if you want to change only the tax-benefit-system:
+
+```
+pip install OpenFisca-Core
+```
+
+Otherwise install it from git:
+
+```
 git clone https://github.com/openfisca/openfisca-core.git
 cd openfisca-core
 pip install --editable .
 python setup.py compile_catalog
-
 cd ..
+```
 
+Then install OpenFisca-France from git:
+
+```
 git clone https://github.com/openfisca/openfisca-france.git
 cd openfisca-france
 pip install --editable .
 python setup.py compile_catalog
+cd ..
 ```
 
 Run `conda list` to see the installed packages: `openfisca-core` and `openfisca-france` should be listed.
