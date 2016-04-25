@@ -20,7 +20,7 @@
    * [Docker containers](openfisca-web-api/docker-containers.md)
 * [Community](community.md)
 * [Contribute](contribute/README.md)
-   * Guidelines
+   * [Guidelines](contribute/guidelines.md)
    * [Documentation](contribute/documentation.md)
    * [Repositories](contribute/repositories.md)
    * [Development process](contribute/development-process.md)
