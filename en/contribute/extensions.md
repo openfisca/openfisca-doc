@@ -1,4 +1,4 @@
-#OpenFisca extensions
+# OpenFisca extensions
 
 *Note: The following is, today, only implemented in openfisca-france*
 
