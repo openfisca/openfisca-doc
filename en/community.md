@@ -2,9 +2,11 @@
 
 ## Ask for help
 
-You can ask for help, or help others, via the [forum](https://forum.openfisca.fr/).
+You can ask for help, or help others:
 
-You can also [chat](https://gitter.im/openfisca/openfisca-france) with the team.
+- via the [forum](https://forum.openfisca.fr/)
+- via the [chat](https://gitter.im/openfisca/openfisca-france)
+- by email: contact@openfisca.fr
 
 ## Community projects
 
