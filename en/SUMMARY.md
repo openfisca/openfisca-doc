@@ -23,7 +23,6 @@
    * [Contributor guidelines](contribute/guidelines.md)
    * [Documentation](contribute/documentation.md)
    * [Repositories](contribute/repositories.md)
-   * [Development process](contribute/development-process.md)
    * [Issues](contribute/issues.md)
    * [Tests](contribute/tests.md)
    * [Debugging](contribute/debugging.md)
