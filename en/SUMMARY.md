@@ -22,7 +22,7 @@
 * [Contribute](contribute/README.md)
    * [Contributor guidelines](contribute/guidelines.md)
    * [Enhance the documentation](contribute/documentation.md)
-   * [Developer guide](contribute/repositories.md)
+   * [Developer guide](contribute/developer-guide.md)
    * [Issues](contribute/issues.md)
    * [Tests](contribute/tests.md)
    * [Debugging](contribute/debugging.md)
