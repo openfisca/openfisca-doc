@@ -4,7 +4,7 @@ OpenFisca is a free software project and contributors are very welcome!
 
 Feel free to fork the [source code repositories](https://github.com/openfisca) on GitHub and send us pull-requests.
 
-You can send us an email: contact@openfisca.fr
+You can also send us an email: contact@openfisca.fr
 
 Thanks for enhancing OpenFisca!
 
@@ -18,7 +18,9 @@ and to report any inaccuracy or error they might have found.
 If you want to participate more actively in its development,
 know that there are multiple ways contribute to the OpenFisca project.
 
-## Use the API and direct its development
+## How to contribute?
+
+### Use the API and direct its development
 
 - Share your uses: you are welcome to keep us informed of the uses
 you make of the API including visualizations you may create.
@@ -27,7 +29,7 @@ We'd love to be able to include them on the OpenFisca website.
 to the API you would like to see, so that we can make it meet your needs.
 - Participate directly in the [API's development](https://github.com/openfisca/openfisca-web-api).
 
-## Test and report errors (web API)
+### Test and report errors (web API)
 
 You can contribute to the development of OpenFisca by reporting errors you would find on the calculation of benefits and taxes.
 
@@ -37,7 +39,7 @@ To enable the OpenFisca developers to solve your problems quickly, please follow
 - try to identify the source of the error by inspecting [the formulas for the different benefits and taxes](http://legislation.openfisca.fr/variables) ;
 - report the error, possibly with detailed information concerning <a href="https://github.com/openfisca/openfisca-france/issues?state=open"> the page dedicated to the of collaborative development website </a>. If possible, please provide the code that allows to reproduce the error or the JSON file of the standard case you created.
 
-## Complete the implementation of the French tax and benefit system
+### Complete the implementation of the French tax and benefit system
 
 Some pieces of legislation are not yet integrated. Given the magnitude of the task, our ambition is to build a community of developers, economists and experts on taxes or social benefits to maintain and improve the software. You can help by following these steps:
 
@@ -46,7 +48,7 @@ Some pieces of legislation are not yet integrated. Given the magnitude of the ta
 - propose patches that implement the incomplete or missing benefits and
 taxes on [GitHub](https://github.com/openfisca/openfisca-france/).
 
-## Writing some legislation
+### Write some legislation
 
 From the point of view of someone (developer, economist, etc.) who wants to implement a part of the legislation, for example a new benefit, here are some key steps:
 
@@ -57,10 +59,10 @@ From the point of view of someone (developer, economist, etc.) who wants to impl
 - store the new parameters
 - if you implement a part of the official legislation, your code should go in OpenFisca-France, but if you implement a new idea or a future reform, your code should go in a reform.
 
-## Writing reforms
+### Write reforms
 
 
-## Other projects linked to OpenFisca
+### Enhance other projects linked to OpenFisca
 
 You can also participate in [other projects](../community.html) that make use of
 OpenFisca.
