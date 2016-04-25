@@ -4,9 +4,9 @@ OpenFisca is a free software project and contributors are very welcome!
 
 Feel free to fork the [source code repositories](https://github.com/openfisca) on GitHub and send us pull-requests.
 
-You can also send us an email: contact@openfisca.fr
+You can [contact the community](../community.html) to ask for help.
 
-Thanks for enhancing OpenFisca!
+Thanks for enhancing OpenFisca anyway!
 
 ## Why contribute to OpenFisca?
 
