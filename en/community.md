@@ -1,6 +1,6 @@
 # Community
 
-Here is a list of projects driven by the community.
+The OpenFisca project publishes several softwares built around the simulator which can be found on https://github.com/openfisca. There are many other projects driven by the community detailed below.
 
 ## Applications
 
@@ -14,3 +14,7 @@ See http://www.openfisca.fr/reforms
 ## Spreadsheet
 
 - https://github.com/openfisca/openfisca-spreadsheet
+
+## Other languages
+
+- Using OpenFisca through [R](https://github.com/blaquans/ropenfisca)
