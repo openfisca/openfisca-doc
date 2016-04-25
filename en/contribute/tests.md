@@ -64,22 +64,20 @@ You can even [specify the exact test to launch](http://nose.readthedocs.org/en/l
 
 To download tests from [Ludwig](https://mes-aides.gouv.fr/tests/) (the tests tool from [Mes aides](https://mes-aides.gouv.fr/)), see the script [download_mes_aides_tests.py](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/scripts/download_mes_aides_tests.py).
 
-## Travis automated tests platform
+## Travis automated tests
 
 OpenFisca uses [Travis CI](https://travis-ci.org/openfisca) to run tests automatically after each `git push`.
-
-The git branches used during development are `master` and `next`.
 
 The repositories tested by Travis are:
 
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
 * [OpenFisca-France](https://github.com/openfisca/openfisca-france)
-* [OpenFisca-Web-UI](https://github.com/openfisca/openfisca-web-ui)
 * [OpenFisca-Web-API](https://github.com/openfisca/openfisca-web-api)
 
-The goal is to ensure that:
-* each repository in the `master` branch state works well with all the others in the `master` branch state
-* each repository in the `next` branch state works well with all the others in the `next` branch state
-* each repository in a release tag state works well with all the others dependent repositories in the required versions tags
+The OpenFisca website hosts a summary page of the build statuses: http://www.openfisca.fr/build-status
 
-The OpenFisca website hosts a summary page: http://www.openfisca.fr/build-status
+Travis tests other git branches than `master` too. For example: [OpenFisca-Core](https://travis-ci.org/openfisca/openfisca-core/branches).
+
+For OpenFisca-France, when testing a branch, if there is a branch in OpenFisca-Core with the same name, Travis will checkout it before running the tests. This is done by [this script](https://github.com/openfisca/openfisca-france/blob/master/run-travis-tests.sh).
+
+Idem for OpenFisca-Web-API with [this script](https://github.com/openfisca/openfisca-web-api/blob/master/run-travis-tests.sh) which is sightly different because it handles more dependencies.
