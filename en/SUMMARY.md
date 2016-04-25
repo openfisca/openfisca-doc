@@ -12,7 +12,7 @@
    * [Periods](openfisca-in-python/periods.md)
    * [Reforms](openfisca-in-python/reforms.md)
 * [Legislation parameters](legislation-parameters/README.md)
-  * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
+   * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Endpoints](openfisca-web-api/endpoints.md)
    * [JSON data structures](openfisca-web-api/json-data-structures.md)
@@ -29,3 +29,5 @@
    * [Profiling](contribute/profiling.md)
    * [Release process](contribute/release-process.md)
    * [Extensions](contribute/extensions.md)
+   * Guidelines
+
