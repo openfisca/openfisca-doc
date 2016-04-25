@@ -2,7 +2,7 @@
 
 *Note: The following is, today, only implemented in openfisca-france*
 
-Extensions allow you to add formulas to OpenFisca that are not included in the openfisca-france repository (e.g. local prestations).
+Extensions allow you to add formulas to OpenFisca that are not included in the OpenFisca-France repository (e.g. local prestations).
 
 Extensions folders located in `openfisca_france/model/extensions/` will be **automatically loaded** at the initialization of the tax benefit system.
 They can be brought there manually or by any custom mechanism up to your convenience.
@@ -13,7 +13,7 @@ If you need to import an extension located out of the `extensions` folder, you c
 openfisca_france.model.extensions.import_extension('/path/to/external/extension/folder')
 ```
 
-##Extension architecture
+## Extension architecture
 
 The architecture of an extension folder is the following:
 
