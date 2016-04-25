@@ -1,2 +1,3 @@
-# Guidelines
+# Contributor guidelines
 
+Each project 
