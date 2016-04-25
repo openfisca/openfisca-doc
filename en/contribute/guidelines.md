@@ -17,6 +17,8 @@ Some guidelines on contributing to OpenFisca:
 - All work is submitted via Pull Requests.
 - Pull Requests can be submitted as soon as there is code worth discussing. Pull Requests track the branch, so you can continue to work after the PR is submitted. Review and discussion can begin well before the work is complete, and the more discussion the better. The worst case is that the PR is closed.
 - Pull Requests should be made against master
+- If you modify/create/delete a simulation variable, please follow the [commit message rules](https://github.com/openfisca/openfisca-france/wiki/Messages-de-commit).
+- When adding new variables, please consider the [naming guidelines](https://github.com/openfisca/openfisca-france/wiki/OpenFisca-variables-naming-guidelines).
 - Pull Requests should be tested, if feasible:
   - bugfixes should include regression tests
   - new behavior should at least get minimal exercise
