@@ -1,8 +1,8 @@
-# Code architecture
+# Developer guide
 
-## Components
+## Source code repositories
 
-The OpenFisca project is split into many `git` repository:
+The OpenFisca project is distributed across many `git` repositories:
 
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
 * [OpenFisca-France](https://github.com/openfisca/openfisca-france)
