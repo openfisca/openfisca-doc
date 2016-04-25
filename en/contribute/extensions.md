@@ -28,8 +28,8 @@ extensions/{extension_name}/ # The folder name is by convention the name of the 
 ```
 All python files located directly in `extensions/{extension_name}/` are imported in the tax benefit system.
 
-Subdirectories are ignored, as well as any other xml file than `parameters.xml`.
+Subdirectories are ignored, as well as any other XML file than `parameters.xml`.
 
-The syntax of the formulas within extension python files is the same than in the general openfisca-france formulas, except that imports should not be relative (e.g. `from openfisca_france.model.base import *`).
+The syntax of the formulas within extension python files is the same than in the general OpenFisca-France formulas, except that imports should not be relative (e.g. `from openfisca_france.model.base import *`).
 
 Variables inside an extension should not have the same name than any existing formula, nor than any formula in another extension being used.
