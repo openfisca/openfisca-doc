@@ -60,6 +60,10 @@ You can even [specify the exact test to launch](http://nose.readthedocs.org/en/l
 
 > In this case, just use the `--ipdb` option rather than `--pdb`.
 
+## Ludwig tests
+
+To download tests from [Ludwig](https://mes-aides.gouv.fr/tests/) (the tests tool from [Mes aides](https://mes-aides.gouv.fr/)), see the script [download_mes_aides_tests.py](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/scripts/download_mes_aides_tests.py).
+
 ## Travis automated tests platform
 
 OpenFisca uses [Travis CI](https://travis-ci.org/openfisca) to run tests automatically after each `git push`.
