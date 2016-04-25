@@ -20,4 +20,4 @@ Warning! There is no guarantee with your data so please backup your notebooks.
 
 ## Install Jupyter Notebook
 
-If you want more performance or don't want to risk to loose your data, you can install [Jupyter Notebook](http://jupyter.readthedocs.org/en/latest/install.html) on your computer.
+If you want more performance or don't want to risk to loose your data, you can [install Jupyter Notebook](http://jupyter.readthedocs.org/en/latest/install.html) on your computer.
