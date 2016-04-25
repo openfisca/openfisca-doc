@@ -24,7 +24,6 @@
    * [Enhance the documentation](contribute/documentation.md)
    * [Extensions](contribute/extensions.md)
    * [Developer guide](contribute/developer-guide.md)
-   * [Issues](contribute/issues.md)
    * [Tests](contribute/tests.md)
    * [Debugging](contribute/debugging.md)
    * [Profiling](contribute/profiling.md)
