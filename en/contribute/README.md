@@ -44,7 +44,7 @@ Some pieces of legislation are not yet integrated. Given the magnitude of the ta
 - identify the incomplete or missing taxes or benefits;
 - gather the necessary documentation to fix this issue
 - propose patches that implement the incomplete or missing benefits and
-taxes on <a href="https://github.com/openfisca/openfisca-${conf['country']}/">collaborative development website</a>.
+taxes on [GitHub](https://github.com/openfisca/openfisca-france/).
 
 ## Writing some legislation
 
