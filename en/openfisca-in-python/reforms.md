@@ -99,4 +99,4 @@ Please read the dedicated documentation:
 
 ## Real examples
 
-Examples can be found [here](http://www.openfisca.fr/extensions).
+Examples can be found [here](../../community.html).
