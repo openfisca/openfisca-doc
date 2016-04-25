@@ -99,4 +99,4 @@ Please read the dedicated documentation:
 
 ## Real examples
 
-Examples can be found [here](../../community.html).
+Examples can be found on the [community page](../../community.html).
