@@ -21,7 +21,7 @@
 * [Community](community.md)
 * [Contribute](contribute/README.md)
    * [Contributor guidelines](contribute/guidelines.md)
-   * [Documentation](contribute/documentation.md)
+   * [Enhance the documentation](contribute/documentation.md)
    * [Repositories](contribute/repositories.md)
    * [Issues](contribute/issues.md)
    * [Tests](contribute/tests.md)
