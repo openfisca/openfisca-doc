@@ -1,7 +1,6 @@
 # Key concepts
 
-This section presents the key concepts required to have a good understanding of OpenFisca,
-without being too technical.
+This section presents the key concepts required to have a good understanding of OpenFisca, without being too technical.
 The next sections of the documentation are more specific.
 
 We use the French legislation to illustrate these concepts as it is the only actively maintained country for now.
@@ -42,8 +41,7 @@ Their value is given by the caller who runs the simulation.
 
 Calculated variable have a formula which can be bypassed if an actual value is given.
 Calculated variables have dependencies: variables involved in the formula.
-The dependencies are either calculated, either looked in input variables. If not found, default values are used
-(most of the time `0`).
+The dependencies are either calculated, either looked in input variables. If not found, default values are used (most of the time `0`).
 
 Variables values (input or calculated) are associated to a period.
 
@@ -62,8 +60,7 @@ For example [`irpp`](http://legislation.openfisca.fr/variables/irpp).
 
 Parameters are data, variables are algorithms.
 
-Each time a part of the legislation is data, it should be stored in a parameters file
-instead of creating a variable which returns a static value.
+Each time a part of the legislation is data, it should be stored in a parameters file instead of creating a variable which returns a static value.
 
 Parameters are read by variables formulas.
 
@@ -75,12 +72,10 @@ Even with simple values, there can be many values for the same parameter because
 
 For instance, the calculation of the `irpp` variable will involve the `ir.recouvrement.min` parameter, also present in the [legislation explorer](http://legislation.openfisca.fr/parameters/ir.recouvrement.min).
 
-There are functions to extract a subset of the whole legislation at a specific instant,
-which is necessary when writing the formula of a variable.
+There are functions to extract a subset of the whole legislation at a specific instant, which is necessary when writing the formula of a variable.
 
 The [legislation explorer](http://legislation.openfisca.fr/) presents each parameter under its own URL.
-For example [a simple value](http://legislation.openfisca.fr/parameters/prelsoc.rsa)
-or [a scale](http://legislation.openfisca.fr/parameters/ir.bareme)
+For example [a simple value](http://legislation.openfisca.fr/parameters/prelsoc.rsa) or [a scale](http://legislation.openfisca.fr/parameters/ir.bareme)
 
 ## Simulation
 
@@ -98,8 +93,7 @@ Each tax and benefit concerns either individual persons or entities.
 Entities are groups of persons like a family, a household or a company.
 The legislation defines many entities and specifies which tax and benefit applies to which entity.
 
-The entities definitions are closely related to a country, therefore they are defined in a Python package
-independent from the core engine (ie OpenFisca-Core / OpenFisca-France).
+The entities definitions are closely related to a country, therefore they are defined in a Python package independent from the core engine (ie OpenFisca-Core / OpenFisca-France).
 
 In France the legislation defines these entities: `"familles"`, `"foyers_fiscaux"` and `"menages"`.
 
@@ -109,11 +103,9 @@ You can define as many entities as you want and dispatch persons into them.
 
 ## Test cases or data
 
-OpenFisca can take test cases or data (surveys with aggregated data or real population data)
-as input when calculating variables.
+OpenFisca can take test cases or data (surveys with aggregated data or real population data) as input when calculating variables.
 
-A test case describes persons and entities with their input variables
-whereas data contains potentially a huge quantity of persons and entities.
+A test case describes persons and entities with their input variables whereas data contains potentially a huge quantity of persons and entities.
 
 Test cases can be expressed in Python or in JSON when using the Web API (see specific sections of the documentation).
 
@@ -162,8 +154,7 @@ Here is a test case sample in JSON for a single person with 3 children:
 }
 ```
 
-Notice the input variables associated to the `"individus"` (`"birth"` and `"salaire_de_base"`)
-and to the entity `"menages"` (`"loyer"`).
+Notice the input variables associated to the `"individus"` (`"birth"` and `"salaire_de_base"`) and to the entity `"menages"` (`"loyer"`).
 
 This is quite verbose but there are shortcuts to generate a test case in common situations.
 
@@ -173,8 +164,7 @@ https://github.com/openfisca/openfisca-france-data
 ## Scenarios
 
 To support both test cases and data, and for performance reasons,
-OpenFisca is developed using vector computing via the
-[NumPy](http://www.numpy.org/) Python package.
+OpenFisca is developed using vector computing via the [NumPy](http://www.numpy.org/) Python package.
 
 Whatever the input is, a test case or data, OpenFisca will transform it to vectors internally.
 
@@ -188,9 +178,7 @@ An reform represents a modified version of the tax and benefit legislation.
 
 For example it can be used to add, remove or modify a variable, or a legislation parameter.
 
-The tax and benefit system of the country knows about the laws that are already adopted, were existing in the past,
-or will exist in a near future. In contrast, the reforms are used for political reforms or
-propositions that people do but are not officially voted.
+The tax and benefit system of the country knows about the laws that are already adopted, were existing in the past, or will exist in a near future. In contrast, the reforms are used for political reforms or propositions that people do but are not officially voted.
 
 Reforms do not modify the `TaxBenefitSystem` itself, they create a shallow copy and modify only what changed.
 
