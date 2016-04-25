@@ -32,29 +32,21 @@ ipdb>
 
 ## Profiling code
 
-To profile the execution of a controller, for example the `calculate` endpoint, add these lines to
-`openfisca_web_api/controllers/calculate.py`:
+To profile the execution of a portion of code, wrap it with these lines:
 
 ```diff
-@wsgihelpers.wsgify
-def api1_calculate(req):
 +    import cProfile
 +    pr = cProfile.Profile()
 +    pr.enable()
 
-    total_start_time = time.time()
-
-    ctx = contexts.Ctx(req)
-
-    [...]
+     [...portion of code...]
 
 +    pr.disable()
-+    pr.dump_stats('calculate.profile')
-    return wsgihelpers.respond_json(ctx, response_data, headers = headers)
++    pr.dump_stats('result.profile')
 ```
 
-Each time you call the endpoint a `calculate.profile` file is written.
-To prevent it to be overwritten, you can rename it after each call.
+Each time you call the endpoint a `result.profile` file is written.
+To prevent it to be overwritten, generate a dynamic name with [`tempfile.mkstemp`](https://docs.python.org/2/library/tempfile.html#tempfile.mkstemp).
 
 Then you can use the [runsnakerun](http://www.vrplumber.com/programming/runsnakerun/) GUI to inspect the profile data.
 
