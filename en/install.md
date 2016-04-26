@@ -14,7 +14,7 @@ Follow these steps if you plan to develop on OpenFisca-France or OpenFisca-Core.
 
 ### Install Miniconda
 
-We recommend Miniconda because it's the simplest solution we've found.
+We recommend using Miniconda because it's the simplest solution we've found to install Python scientific packages like NumPy for the different operating systems.
 
 Start by following their [quick install page](http://conda.pydata.org/docs/install/quick.html).
 
@@ -66,15 +66,8 @@ OpenFisca-Core should be installed with pip if you want to change only the tax-b
 pip install OpenFisca-Core
 ```
 
-Otherwise install it from git:
-
-```
-git clone https://github.com/openfisca/openfisca-core.git
-cd openfisca-core
-pip install --editable .
-python setup.py compile_catalog
-cd ..
-```
+> If you need to modify OpenFisca-Core source code, follow the [install for development]() section. install it from git :
+>
 
 Then install OpenFisca-France from git:
 
