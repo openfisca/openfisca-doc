@@ -16,7 +16,7 @@ Follow these steps if you plan to develop on OpenFisca-France or OpenFisca-Core.
 
 We recommend using Miniconda because it's the simplest solution we've found to install Python scientific packages like NumPy for the different operating systems.
 
-Start by following their [quick install page](http://conda.pydata.org/docs/install/quick.html).
+Start by following their [quick install page](http://conda.pydata.org/docs/install/quick.html) (choose the installer for Python 2.7).
 
 ### Create your env
 
