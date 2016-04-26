@@ -99,6 +99,6 @@ It's up to you to choose what suits you the best.
 
 ## On Microsoft Windows
 
-The Conda installer registers by default the commands `conda` and `python` in the system PATH.
+The Conda installer adds by default the commands `conda` and `python` in the system PATH.
 
 We recommend using [ConEmu](https://conemu.github.io/) instead of the default console.
