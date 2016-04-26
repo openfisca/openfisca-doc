@@ -96,7 +96,11 @@ To test if OpenFisca-France is correctly installed:
 python -m openfisca_france.tests.test_basics
 ```
 
-It should display `OpenFisca-France basic test was executed successfully.`.
+It should display:
+
+```
+OpenFisca-France basic test was executed successfully.
+```
 
 ## Without Conda
 
