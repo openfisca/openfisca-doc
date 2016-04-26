@@ -65,10 +65,6 @@ OpenFisca-Core should be installed automatically as a requirement of OpenFisca-F
 
 Run `conda list` to see the installed packages: `openfisca-core` and `openfisca-france` should be listed.
 
-To exit your Conda env, type `deactivate`.
-
-Running `pip list` outside of your env, the packages we just installed should *not* be listed.
-
 ## Test the installation
 
 To test if OpenFisca-France is correctly installed:
