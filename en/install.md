@@ -59,7 +59,6 @@ git clone https://github.com/openfisca/openfisca-france.git
 cd openfisca-france
 pip install --editable .
 python setup.py compile_catalog
-cd ..
 ```
 
 OpenFisca-Core should be installed automatically as a requirement of OpenFisca-France.
