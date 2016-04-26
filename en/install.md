@@ -40,10 +40,16 @@ Create a new environment for OpenFisca named `OpenFisca` and install the require
 conda create --name OpenFisca python=2 numpy PyYAML requests Babel nose
 ```
 
-Activate your brand new environment:
+[Activate](http://conda.pydata.org/docs/test-drive.html#managing-environments) your brand new environment:
 
 ```
 source activate OpenFisca
+```
+
+> For Microsoft Windows:
+>
+```
+activate OpenFisca
 ```
 
 Check your environment packages:
