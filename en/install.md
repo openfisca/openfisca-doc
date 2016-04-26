@@ -52,7 +52,7 @@ Create a working directory like `~/Dev/openfisca` and go inside.
 
 > If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below. By default just continue below.
 
-Install OpenFisca-France from git:
+Install OpenFisca-France from Git:
 
 ```
 git clone https://github.com/openfisca/openfisca-france.git
