@@ -44,8 +44,6 @@ conda create --name openfisca python=2 numpy PyYAML requests Babel nose
 
 You need [Git](http://www.git-scm.com/) tool to be installed on your system.
 
-To learn some Git basics, you can follow this crash course: https://try.github.io/.
-
 It is important to have your "openfisca" Conda environment [activated](http://conda.pydata.org/docs/test-drive.html#managing-environments) starting from now.
 
 Create a working directory like `~/Dev/openfisca` and go inside.
