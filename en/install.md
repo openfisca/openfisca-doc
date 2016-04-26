@@ -50,7 +50,7 @@ It is important to have your "openfisca" Conda environment [activated](http://co
 
 Create a working directory like `~/Dev/openfisca` and go inside.
 
-> If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below.
+> If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below. By default just continue below.
 
 Install OpenFisca-France from git:
 
