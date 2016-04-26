@@ -36,12 +36,6 @@ Activate your brand new environment:
 source activate OpenFisca
 ```
 
-Install [Biryani](https://pythonhosted.org/Biryani/):
-
-```
-pip install Biryani
-```
-
 Check your environment packages:
 
 ```
