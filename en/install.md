@@ -99,8 +99,6 @@ It's up to you to choose what suits you the best.
 
 ## On Microsoft Windows
 
-Microsoft Windows users should add the Python scripts directory to the system PATH.
-This can be done:
+The Conda installer registers by default the commands `conda` and `python` in the system PATH.
 
-* by the Python installer, enabling the corresponding option during the install wizard;
-* or after the installation, see [this stackoverflow question](http://stackoverflow.com/a/20458590).
+We recommend using [ConEmu](https://conemu.github.io/) instead of the default console.
