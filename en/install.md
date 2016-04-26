@@ -1,5 +1,9 @@
 # Install
 
+The supported operating systems are GNU/Linux distributions (in particular Debian and Ubuntu), Mac OS X and Microsoft Windows.
+
+Other OS should work if they can execute Python and NumPy.
+
 ## What to install?
 
 Depending on your usage you'll want to install some parts of OpenFisca, or none:
