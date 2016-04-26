@@ -95,7 +95,16 @@ python -m openfisca_france.tests.test_basics
 
 It should display `OpenFisca-France basic test was executed successfully.`.
 
-## OpenFisca on Microsoft Windows
+## Without Conda
+
+Conda is not a strong requirement! To install the requirements of the installed packages, you can either:
+
+- install them with your operating system package manager (`apt-get` on Debian, `brew` on Mac OS X, etc.)
+- install them with `pip install` with or without a virtualenv
+
+It's up to you to choose what suits you the best.
+
+## On Microsoft Windows
 
 Microsoft Windows users should add the Python scripts directory to the system PATH.
 This can be done:
