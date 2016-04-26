@@ -7,7 +7,7 @@
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Work with Jupyter Notebook](jupyter-notebook.md)
 * [Install](install.md)
-* [OpenFisca in Python](openfisca-in-python/README.md)
+* [Coding the legislation](openfisca-in-python/README.md)
    * [Periods](openfisca-in-python/periods.md)
    * [Reforms](openfisca-in-python/reforms.md)
 * [Legislation parameters](legislation-parameters/README.md)
