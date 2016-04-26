@@ -34,22 +34,22 @@ Start by following their [quick install page](http://conda.pydata.org/docs/insta
 conda update conda
 ```
 
-Create a new environment for OpenFisca named `OpenFisca` and install the required packages:
+Create a new environment for OpenFisca named `openfisca` and install the required packages:
 
 ```
-conda create --name OpenFisca python=2 numpy PyYAML requests Babel nose
+conda create --name openfisca python=2 numpy PyYAML requests Babel nose
 ```
 
 [Activate](http://conda.pydata.org/docs/test-drive.html#managing-environments) your brand new environment:
 
 ```
-source activate OpenFisca
+source activate openfisca
 ```
 
 > For Microsoft Windows:
 >
 ```
-activate OpenFisca
+activate openfisca
 ```
 
 Check your environment packages:
@@ -62,23 +62,12 @@ conda list
 
 You need the [Git](http://www.git-scm.com/) command line tool to be installed on your system.
 
-If not already done, activate your `OpenFisca` Conda env and go to your working directory.
+If not already done, [activate](http://conda.pydata.org/docs/test-drive.html#managing-environments) your "openfisca" Conda env.
+Then create a working directory like `~/Dev/openfisca` and go inside.
 
-```bash
-source activate OpenFisca
-mkdir -p ~/Dev/openfisca
-cd ~/Dev/openfisca
-```
+> If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below.
 
-OpenFisca-Core should be installed with pip if you want to change only the tax-benefit-system:
-
-```
-pip install OpenFisca-Core
-```
-
-> If you need to modify OpenFisca-Core source code, don't install OpenFisca-Core via pip, but follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section.
-
-Then install OpenFisca-France from git:
+Install OpenFisca-France from git:
 
 ```
 git clone https://github.com/openfisca/openfisca-france.git
@@ -87,6 +76,8 @@ pip install --editable .
 python setup.py compile_catalog
 cd ..
 ```
+
+OpenFisca-Core should be installed automatically as a requirement of OpenFisca-France.
 
 Run `conda list` to see the installed packages: `openfisca-core` and `openfisca-france` should be listed.
 
@@ -107,6 +98,10 @@ It should display:
 ```
 OpenFisca-France basic test was executed successfully.
 ```
+
+This means that OpenFisca is correctly installed on your machine.
+
+The next step for you is to read the [Coding the legislation](../coding-the-legislation.html) section to know how to write legislation.
 
 ## Without Conda
 
