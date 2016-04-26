@@ -66,8 +66,7 @@ OpenFisca-Core should be installed with pip if you want to change only the tax-b
 pip install OpenFisca-Core
 ```
 
-> If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section. install it from git :
->
+> If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section.
 
 Then install OpenFisca-France from git:
 
