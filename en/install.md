@@ -40,30 +40,15 @@ Create a new environment for OpenFisca named `openfisca` and install the require
 conda create --name openfisca python=2 numpy PyYAML requests Babel nose
 ```
 
-[Activate](http://conda.pydata.org/docs/test-drive.html#managing-environments) your brand new environment:
-
-```
-source activate openfisca
-```
-
-> For Microsoft Windows:
->
-```
-activate openfisca
-```
-
-Check your environment packages:
-
-```
-conda list
-```
-
 ### Clone git repositories
 
-You need the [Git](http://www.git-scm.com/) command line tool to be installed on your system.
+You need [Git](http://www.git-scm.com/) tool to be installed on your system.
 
-If not already done, [activate](http://conda.pydata.org/docs/test-drive.html#managing-environments) your "openfisca" Conda env.
-Then create a working directory like `~/Dev/openfisca` and go inside.
+To learn some Git basics, you can follow this crash course: https://try.github.io/.
+
+It is important to have your "openfisca" Conda environment [activated](http://conda.pydata.org/docs/test-drive.html#managing-environments) starting from now.
+
+Create a working directory like `~/Dev/openfisca` and go inside.
 
 > If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below.
 
