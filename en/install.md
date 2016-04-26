@@ -101,7 +101,7 @@ OpenFisca-France basic test was executed successfully.
 
 This means that OpenFisca is correctly installed on your machine.
 
-The next step for you is to read the [Coding the legislation](../coding-the-legislation.html) section to know how to write legislation.
+The next step for you is to read the [Coding the legislation](../coding-the-legislation/index.html) section to know how to write legislation.
 
 ## Without Conda
 
