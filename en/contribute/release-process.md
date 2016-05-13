@@ -83,16 +83,6 @@ git tag X
 git push origin master X
 ```
 
-### Publish on PyPI test instance
-
-Try the release process on the [PyPI test instance](https://wiki.python.org/moin/TestPyPI).
-
-Build and [upload](https://python-packaging-user-guide.readthedocs.org/en/latest/distributing.html#uploading-your-project-to-pypi) the package to the PyPI test instance:
-
-```bash
-python setup.py bdist_wheel upload -r https://testpypi.python.org/pypi
-```
-
 ### Publish on PyPI
 
 Build and upload the package to PyPI:
