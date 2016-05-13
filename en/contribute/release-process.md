@@ -76,7 +76,7 @@ The same for the `CHANGELOG.md` file, check that it's OK.
 
 Commit changes if you made some.
 
-Then create a tag:
+Then create a release tag:
 
 ```bash
 # Replace X by the actual version number!
