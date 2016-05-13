@@ -77,6 +77,7 @@ The same for the `CHANGELOG.md` file, check that it's OK.
 Then create a release commit and a tag:
 
 ```bash
+# Replace X by the actual version number!
 git commit -am "Release X"
 git tag X
 git push origin master X
