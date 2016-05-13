@@ -63,33 +63,23 @@ It should display `(100%) translated`.
 
 ### Create the release commit
 
-Determine the next `NEW_RELEASE_NUMBER` by removing the `.dev0` suffix. You can also bump the major number if some commits introduced breaking changes since the last release.
+In `setup.py` check the `install_requires` and `version` keys.
 
-Edit `CHANGELOG.md`:
+Each Pull Request introducing a new dependency or a breaking change should have updated the `setup.py` file, but it's better to check it again.
 
-* fill the changes list
-```bash
-git log --pretty=format:"* %s" LATEST_VERSION_TAG.. | grep -v "Merge > pull request"
-```
-* ~~`NEW_RELEASE_NUMBER.dev0 - next release`~~ becomes `NEW_RELEASE_NUMBER`
-* delete the line `TODO Fill this changes list while developing`
+The same for the `CHANGELOG.md` file, check that it's OK.
 
-Edit `setup.py` and check that everything is OK, in particular if requirements have evolved.
+> If the `CHANGELOG.md` file is not enough filled-in, you can use this command to extract some useful commit messages:
+> ```bash
+> git log --pretty=format:"* %s" a..b
+> ```
 
-```python
-setup(
-    [...]
-    version = 'NEW_RELEASE_NUMBER',
-    [...]
-    )
-```
-
-Commit changes, replacing `NEW_RELEASE_NUMBER`:
+Then create a release commit and a tag:
 
 ```bash
-git commit -am "Release NEW_RELEASE_NUMBER"
-git tag NEW_RELEASE_NUMBER
-git push origin master NEW_RELEASE_NUMBER
+git commit -am "Release X"
+git tag X
+git push origin master X
 ```
 
 ### Publish on PyPI test instance
