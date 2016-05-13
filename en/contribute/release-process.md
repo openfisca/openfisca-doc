@@ -74,11 +74,12 @@ The same for the `CHANGELOG.md` file, check that it's OK.
 > git log --pretty=format:"* %s" a..b
 > ```
 
-Then create a release commit and a tag:
+Commit changes if you made some.
+
+Then create a tag:
 
 ```bash
 # Replace X by the actual version number!
-git commit -am "Release X"
 git tag X
 git push origin master X
 ```
