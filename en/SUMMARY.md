@@ -20,6 +20,7 @@
 * [Community](community.md)
 * [Contribute](contribute/README.md)
    * [Contributor guidelines](contribute/guidelines.md)
+      * [Commit messages](contribute/commit-messages.md)
       * [Variables naming](contribute/variables-naming.md)
       * [Semantic versionning](contribute/semver.md)
    * [Enhance the documentation](contribute/documentation.md)

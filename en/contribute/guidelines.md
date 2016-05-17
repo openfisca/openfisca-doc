@@ -19,7 +19,7 @@ When opening a new issue, please take the following steps:
 ## Contributing to the code
 
 ### Writing code
-- If you modify/create/delete a simulation variable, please follow the [commit message rules](https://github.com/openfisca/openfisca-france/wiki/Messages-de-commit).
+- If you modify/create/delete a simulation variable, please follow the [commit message rules](commit-messages.md).
 - When adding new variables, please consider the [naming guidelines](variables-naming.md).
 - Your code should be tested, if feasible:
   - bugfixes should include regression tests
