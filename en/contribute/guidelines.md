@@ -37,4 +37,4 @@ When opening a new issue, please take the following steps:
 Before allowing you to merge a PR, the continuous integration server (Travis) will ensure that:
 - The  automated tests are passing (they are triggered automatically and result is visible from the Pull Request page).
 - The semantic version number has been updated. Check the [semantic versionning guidelines](semver.md) to know more about how to increment the version number respecting SemVer.
-- The `CHANGELOG.md` has been updated.
+- The `CHANGELOG.md` has been updated. Make sure to briefly summarize your work, and to mention any non backward-compatible changes.
