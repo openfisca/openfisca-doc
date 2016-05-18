@@ -1,12 +1,22 @@
 # Release process
 
-> This section is for maintainers who want to build and release a Python package of OpenFisca on the [PyPI](https://pypi.python.org/pypi) repository.
+## Automated releasing
+
+The openfisca-france package is today **continously** and **automatically** released.
+
+When a Pull Request is merged to master, this CI server (travis) automatically:
+
+- Publish a version tag on github.
+- Publish a release on the [PyPI](https://pypi.python.org/pypi) repository.
+
+The behaviour will be adopted for the three other main openfisca packages in a near future.
+
+## Manual releasing
 
 Here are the steps to follow to build and release a Python package.
-Execute them on each Git repository you want to publish, in that order:
+Execute them on each Git repository you want to publish :
 
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
-* [OpenFisca-France](https://github.com/openfisca/openfisca-france)
 * [OpenFisca-Parsers](https://github.com/openfisca/openfisca-parsers)
 * [OpenFisca-Web-API](https://github.com/openfisca/openfisca-web-api)
 
@@ -17,9 +27,9 @@ See also:
 * [setuptools](https://pythonhosted.org/setuptools/setuptools.html)
 * [semver](http://semver.org/)
 
-## Steps to execute
+### Steps to execute
 
-### Tests
+#### Tests
 
 Open the [build-status](http://www.openfisca.fr/build-status) page to check that the build status of every project is "passing" (green color).
 
@@ -84,7 +94,7 @@ git tag X
 git push origin master X
 ```
 
-### Publish on PyPI
+#### Publish on PyPI
 
 Build and upload the package to PyPI:
 
@@ -92,7 +102,7 @@ Build and upload the package to PyPI:
 python setup.py bdist_wheel upload
 ```
 
-### Test the package installation
+#### Test the package installation
 
 Let's check if the package is installable from PyPI without errors
 using [virtualenv](https://virtualenv.pypa.io/en/latest/):
@@ -109,7 +119,7 @@ deactivate
 
 > Test OpenFisca-Web-API installation if you wish.
 
-### Next steps
+#### Next steps
 
 Do the same for the remaining repositories to release.
 
