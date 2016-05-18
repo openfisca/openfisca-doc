@@ -1,17 +1,18 @@
 {
-  "gitbook": "2.x.x",
-  "links": {
-      "sidebar": {
-          "OpenFisca website": "http://www.openfisca.fr/"
-      }
-  },
-  "plugins": [
-    "anchors",
-    "github"
-  ],
-  "pluginsConfig": {
-    "github": {
-      "url": "https://github.com/openfisca/openfisca-gitbook"
+    "gitbook": "2.x.x",
+    "links": {
+        "sidebar": {
+            "OpenFisca website": "http://www.openfisca.fr/"
+        }
+    },
+    "plugins": [
+        "anchors",
+        "github",
+        "edit-link"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/openfisca/openfisca-gitbook"
+        }
     }
-  }
 }
