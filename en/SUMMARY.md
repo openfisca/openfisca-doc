@@ -10,7 +10,7 @@
 * [Coding the legislation](coding-the-legislation/README.md)
    * [Periods](coding-the-legislation/periods.md)
    * [Reforms](coding-the-legislation/reforms.md)
-   * Writing tests
+   * [Writing tests](coding-the-legislation/writing_tests.md)
 * [Legislation parameters](legislation-parameters/README.md)
    * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
 * [OpenFisca Web API](openfisca-web-api/README.md)
