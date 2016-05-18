@@ -9,6 +9,7 @@
 * [Install](install.md)
 * [Coding the legislation](coding-the-legislation/README.md)
    * [Periods](coding-the-legislation/periods.md)
+   * Writing tests
    * [Reforms](coding-the-legislation/reforms.md)
        * Writing tests
 * [Legislation parameters](legislation-parameters/README.md)
