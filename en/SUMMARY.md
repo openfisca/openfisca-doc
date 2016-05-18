@@ -9,9 +9,9 @@
 * [Install](install.md)
 * [Coding the legislation](coding-the-legislation/README.md)
    * [Periods](coding-the-legislation/periods.md)
-   * Writing tests
    * [Reforms](coding-the-legislation/reforms.md)
        * Writing tests
+* Writing tests
 * [Legislation parameters](legislation-parameters/README.md)
    * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
 * [OpenFisca Web API](openfisca-web-api/README.md)
