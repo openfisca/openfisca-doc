@@ -8,8 +8,7 @@ Each Python package uses [Semantic Versioning](http://semver.org/).
 
 Each OpenFisca repository has its own issues. See [OpenFisca repositories](https://github.com/openfisca).
 
-When an issue does not concern a repository in particular,
-it must be opened in [OpenFisca-Core](https://github.com/openfisca/openfisca-core).
+When an issue does not concern a repository in particular, it must be opened in [OpenFisca-Core](https://github.com/openfisca/openfisca-core).
 In this case the issue should have the "all-packages" label.
 
 When opening a new issue, please take the following steps:
