@@ -27,6 +27,10 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/master/openf
 
 TODO
 
+## Running a test
+
+TODO
+
 ## Next steps
 
 Other kinds of tests exist, see [contribute/tests](../contribute/tests.html).
