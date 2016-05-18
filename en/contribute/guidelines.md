@@ -27,6 +27,7 @@ When opening a new issue, please take the following steps:
 - Use atomic commits, in particular try to isolate "code-cleanup" commits
 
 ### Opening a Pull Request
+
 - All code contributions are submitted via a Pull Request towards `master`. The `master` branches are thus [protected](https://help.github.com/articles/about-protected-branches/).
 - Pull Requests can be submitted as soon as there is code worth discussing.
 - If your work is in progress, add "WIP: " in front of the name of the Pull Request. In this case the maintainers will wait for a "good to merge" message.
