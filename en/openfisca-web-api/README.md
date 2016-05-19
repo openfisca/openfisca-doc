@@ -22,7 +22,7 @@ But if you prefer to be independent or if the traffic you generate on our server
 
 Let's run a simple simulation: a single person with no salary.
 
-The URL to call is `http://api.openfisca.fr/api/1/simulate` and here is the JSON payload (we'll explain it later):
+The endpoint to call is [`calculate`](endpoints.html) and here is the JSON payload (we'll explain it later):
 
 ```json
 // Stored in test_case_1.json
@@ -30,10 +30,25 @@ The URL to call is `http://api.openfisca.fr/api/1/simulate` and here is the JSON
   "scenarios": [
     {
       "test_case": {
+        "familles": [
+          {
+            "parents": ["individu0"]
+          }
+        ],
+        "foyers_fiscaux": [
+          {
+            "declarants": ["individu0"]
+          }
+        ],
         "individus": [
           {
             "date_naissance": "1980-01-01",
             "id": "individu0"
+          }
+        ],
+        "menages": [
+          {
+            "personne_de_reference": "individu0"
           }
         ]
       },
@@ -47,11 +62,90 @@ The URL to call is `http://api.openfisca.fr/api/1/simulate` and here is the JSON
 Run the simulation with [curl](https://curl.haxx.se/) from the command line prompt:
 
 ```
-curl http://api.openfisca.fr/api/1/simulate -X POST --data @./test_case_1.json --header 'content-type: application/json'
+curl http://api.openfisca.fr/api/1/calculate -X POST --data @./test_case_1.json --header 'content-type: application/json'
 ```
 
 The output is:
 
 ```json
-
+{
+  "apiVersion": 1,
+  "method": "/api/1/calculate",
+  "params": {
+    "scenarios": [
+      {
+        "test_case": {
+          "familles": [
+            {
+              "parents": [
+                "individu0"
+              ],
+              "id": 0
+            }
+          ],
+          "foyers_fiscaux": [
+            {
+              "declarants": [
+                "individu0"
+              ],
+              "id": 0
+            }
+          ],
+          "individus": [
+            {
+              "date_naissance": "1980-01-01",
+              "id": "individu0"
+            }
+          ],
+          "menages": [
+            {
+              "personne_de_reference": "individu0",
+              "id": 0
+            }
+          ]
+        },
+        "period": "2015"
+      }
+    ],
+    "variables": [
+      "revdisp"
+    ]
+  },
+  "url": "http://api.openfisca.fr/api/1/calculate",
+  "value": [
+    {
+      "familles": [
+        {
+          "id": 0,
+          "parents": [
+            "individu0"
+          ]
+        }
+      ],
+      "foyers_fiscaux": [
+        {
+          "id": 0,
+          "declarants": [
+            "individu0"
+          ]
+        }
+      ],
+      "individus": [
+        {
+          "id": "individu0",
+          "date_naissance": "1980-01-01"
+        }
+      ],
+      "menages": [
+        {
+          "id": 0,
+          "personne_de_reference": "individu0",
+          "revdisp": {
+            "2015": 5332.3701171875
+          }
+        }
+      ]
+    }
+  ]
+}
 ```
