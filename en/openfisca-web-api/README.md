@@ -16,7 +16,7 @@ Some existing clients are, among others, the [OpenFisca Demonstrator](http://ui.
 
 The OpenFisca project provides a free and unrestricted instance of the API which is hosted on http://api.openfisca.fr/ so you don't have to install it on your server.
 
-But if you prefer to be independent or if the traffic you generate on our servers is too important, we'll politely ask you to host your own instance of the API (see [installation](#installation) section).
+But if you prefer to be independent or if the traffic you generate on our servers is too important, we'll politely ask you to host your own instance of the API (see the [source code repository](https://github.com/openfisca/openfisca-web-api)).
 
 ## Run the HTTP server
 
