@@ -107,6 +107,7 @@ The output is:
         "period": "2015"
       }
     ],
+    "output_format": "variables",
     "variables": [
       "revdisp"
     ]
@@ -114,38 +115,14 @@ The output is:
   "url": "http://api.openfisca.fr/api/1/calculate",
   "value": [
     {
-      "familles": [
-        {
-          "id": 0,
-          "parents": [
-            "individu0"
-          ]
-        }
-      ],
-      "foyers_fiscaux": [
-        {
-          "id": 0,
-          "declarants": [
-            "individu0"
-          ]
-        }
-      ],
-      "individus": [
-        {
-          "id": "individu0",
-          "date_naissance": "1980-01-01"
-        }
-      ],
-      "menages": [
-        {
-          "id": 0,
-          "personne_de_reference": "individu0",
-          "revdisp": {
-            "2015": 5332.3701171875
-          }
-        }
-      ]
+      "revdisp": {
+        "2015": [
+          5332.3701171875
+        ]
+      }
     }
   ]
 }
 ```
+
+What is important is the `value` key containing the value of `revdisp` for the period `2015`: `5332.37`.
