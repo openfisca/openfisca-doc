@@ -4,13 +4,19 @@
 
 See https://en.wikipedia.org/wiki/Web_API
 
+In short this is a way to trigger OpenFisca simulations on a server from an HTTP URL.
+
+## Why should I use it?
+
+If you develop a web application in JavaScript for example, and if you'd like to call OpenFisca for a simulation, you're certainly going to use the Web API and your application will be a client of the Web API.
+
+Some existing clients are, among others, the [OpenFisca Demonstrator](http://ui.openfisca.fr/) and [mes-aides.gouv.fr](https://mes-aides.gouv.fr/).
+
 ## Public API instance
 
-The OpenFisca project provides a free and unrestricted instance of the API which is hosted on
-http://api.openfisca.fr/.
+The OpenFisca project provides a free and unrestricted instance of the API which is hosted on http://api.openfisca.fr/ so you don't have to install it on your server.
 
-You can use it or install and run your own instance of the API on your own machine/server.
-See [installation](#installation) section.
+But if you prefer to be independent or if the traffic you generate on our servers is too important, we'll politely ask you to host your own instance of the API (see [installation](#installation) section).
 
 ## Run the HTTP server
 
