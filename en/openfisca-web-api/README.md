@@ -18,14 +18,40 @@ The OpenFisca project provides a free and unrestricted instance of the API which
 
 But if you prefer to be independent or if the traffic you generate on our servers is too important, we'll politely ask you to host your own instance of the API (see the [source code repository](https://github.com/openfisca/openfisca-web-api)).
 
-## Run the HTTP server
+## Example
 
-    paster serve --reload development-france.ini
+Let's run a simple simulation: a single person with no salary.
 
-To stop the server, interrupt the command with Ctrl-C.
+The URL to call is `http://api.openfisca.fr/api/1/simulate` and here is the JSON payload (we'll explain it later):
 
-To check if it's OK, open the following URL in your browser:
-http://localhost:2000/, 2000 is the port number defined in the development-france.ini config file.
-You should see this JSON response:
+```json
+// Stored in test_case_1.json
+{
+  "scenarios": [
+    {
+      "test_case": {
+        "individus": [
+          {
+            "date_naissance": "1980-01-01",
+            "id": "individu0"
+          }
+        ]
+      },
+      "period": "2015"
+    }
+  ],
+  "variables": ["revdisp"]
+}
+```
 
-    {"apiVersion": 1, "message": "Welcome, this is OpenFisca Web API.", "method": "/"}
+Run the simulation with [curl](https://curl.haxx.se/) from the command line prompt:
+
+```
+curl http://api.openfisca.fr/api/1/simulate -X POST --data @./test_case_1.json --header 'content-type: application/json'
+```
+
+The output is:
+
+```json
+
+```
