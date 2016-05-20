@@ -46,7 +46,7 @@ Then, write one field per line, indenting the fields `period: `, `keywords: `, `
   output_variables:
 ```
 
-List the relevant parameters (and expected outcomes) of the function you want to test under `input_variables: ` (and `output_variables: `). Write each parameter on one line, indented with four spaces.
+List the relevant variables of input (and of output) of the function you want to test under `input_variables: ` (and `output_variables: `). Write each parameter on one line, indented with four spaces.
 
 ```yaml
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
@@ -60,7 +60,40 @@ List the relevant parameters (and expected outcomes) of the function you want to
 
 To test functions taking parameters related to many individuals or to a family, use the syntax implemented in the last test of [cotisations_sociales_simulateur_IPP.yaml](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/tests/fonction_publique/cotisations_sociales_simulateur_IPP.yaml#L241-L300) In this case:
 
-- do not include the field `input_variables: ` 
+- do not include the field `input_variables: `. Instead, define the components of the family and of the taxable household, and the variables related to the houseold. For instance, one can define a family, a household and a taxable household as follows:
+```yaml
+familles:
+    parents: ["parent1", "parent2"]
+    enfants: ["enfant1", "enfant2"]
+menages:
+    personne_de_reference: "parent1"
+    conjoint: "parent2"
+    enfants: ["enfant1", "enfant2"]
+    zone_apl: 2
+ foyers_fiscaux:
+    declarants: ["parent1", "parent2"]
+    personnes_a_charge: ["enfant1", "enfant2"]
+```
+
+  individus:
+    - id: "parent1"
+      date_naissance: 1972-01-01
+      depcom_entreprise: "69381"
+      primes_fonction_publique: 500
+      traitement_indiciaire_brut: 2000
+      taille_entreprise: 3  # TODO fix this
+      categorie_salarie: 'public_titulaire_etat'
+    - id: "parent2"
+      date_naissance: 1972-01-01
+      depcom_entreprise: "69381"
+      primes_fonction_publique: 500
+      traitement_indiciaire_brut: 2000
+      taille_entreprise: 3  # TODO fix this
+      categorie_salarie: 'public_titulaire_etat'
+    - id: "enfant1"
+      date_naissance: 2000-01-01
+    - id: "enfant2"
+      date_naissance: 2009-01-01
 
 - precise the expected values of the output variables for all individuals whose characteristics are defined as input parameters. Each output variable takes a list of length equal to the number of individuals defined in the test. E.g, for a family of four individuals, the output variable salaire_super_brut is defined as follows:
 ```yaml
