@@ -86,7 +86,7 @@ Vous pouvez y contribuer en suivant les étapes suivantes :
 
 OpenFisca permet d'exprimer des réformes et vous pouvez contribuer au projet en implémentant votre propre projet de réforme.
 
-Voir http://doc.openfisca.fr/en/openfisca-in-python/reforms.html
+Voir la [doc des réformes](/en/openfisca-in-python/reforms.md)
 
 ## Autres projets liés à OpenFisca
 
