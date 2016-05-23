@@ -71,22 +71,15 @@ logiciel.
 
 Vous pouvez y contribuer en suivant les étapes suivantes :
 
-<ol>
-    <li> identifier les prestations ou les impôts incomplets
-    ou manquants ;</li>
-          <li> rassembler la documentation nécessaire à l'écriture
-          des formules permettant de les calculer ;</li>
-    <li> proposer les correctifs implémentant les
-    prestations et les impôts incomplets ou manquants
-    sur <a href="https://github.com/openfisca/openfisca-${conf['country']}/">le
-    site de développement collaboratif</a>.</li>
-</ol>
+- identifier les prestations ou les impôts incomplets ou manquants ;
+- rassembler la documentation nécessaire à l'écriture des formules permettant de les calculer ;
+- proposer les correctifs implémentant les prestations et les impôts incomplets ou manquants sur le dépôt [OpenFisca-France](https://github.com/openfisca/openfisca-france).
 
 ## Proposer des réformes
 
 OpenFisca permet d'exprimer des réformes et vous pouvez contribuer au projet en implémentant votre propre projet de réforme.
 
-Voir la [doc des réformes](/en/openfisca-in-python/reforms.md)
+Voir la [doc des réformes](http://doc.openfisca.fr/en/coding-the-legislation/reforms.html).
 
 ## Autres projets liés à OpenFisca
 
