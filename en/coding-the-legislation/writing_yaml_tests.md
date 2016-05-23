@@ -2,7 +2,7 @@
 
 The recommended way to write tests is to use YAML tests.
 
-Each formula should be tested at least with one test, and better with specific boundary values (thresholds for example). // Do we need more guidelines to help determine which type of test is relevant or required ?
+Each formula should be tested at least with one test, and better with specific boundary values (thresholds for example).
 
 ## Example
 
@@ -21,13 +21,13 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/master/openf
 ## Common keys
 
 - `name: ` takes a string as argument
-- `period: ` takes a period as argument (TODO: add link to the doc summarizing the accepted period formats)
+- `period: ` takes a period as argument
 - `keywords: `  (optional)
 - `description: ` (optional)
 - `absolute_error_margin: `  (optional) takes a float or an integer as argument
 - `relative_error_margin: `  (optional) takes a float or an integer as argument
 - `input_variables: ` takes variables as arguments
-- `output_variables: `takes variables as arguments
+- `output_variables: ` takes variables as arguments
 - other: any class defined in the model
 
 ## Syntax
@@ -38,7 +38,7 @@ Start a test with `- `, which is the YAML nested series entry indicator, followe
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
 ```
 
-Then, begin listing the relevant associative arrays of your test. Usually, one specifies the values associated to the keys `period: `, `keywords: `, `description: `, `absolute_error_margin: ` (or `relative_error_margin: `), `input_variables: `, `output_variables: ` as follows:
+Then, begin listing the relevant dictionnaries (or associative arrays in YAML terminology) of your test. Usually, one specifies the values associated to the keys `period: `, `keywords: `, `description: `, `absolute_error_margin: ` (or `relative_error_margin: `), `input_variables: `, `output_variables: ` as follows:
 
 ```yaml
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
@@ -48,7 +48,7 @@ Then, begin listing the relevant associative arrays of your test. Usually, one s
   output_variables:
 ```
 
-As sublists of the associative arrays `input_variables: ` (and `output_variables: `), specify the variables of input (and of output) of the function you want to test as follows:
+As elements of subdictionnaries of the dictionnaries `input_variables: ` (and `output_variables: `), specify the variables of input (and of output) of the function you want to test, as follows:
 
 ```yaml
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
@@ -56,6 +56,7 @@ As sublists of the associative arrays `input_variables: ` (and `output_variables
   absolute_error_margin: 0.5
   input_variables:
     salaire_imposable: 20000
+    salaire_brut: 20000
   output_variables:
     irpp: -1181
 ```
@@ -64,7 +65,7 @@ As sublists of the associative arrays `input_variables: ` (and `output_variables
 
 To test functions taking variables related to many individuals or to a family as arguments, use the following syntax elements. These elements are notably implemented in the last test of [cotisations_sociales_simulateur_IPP.yaml](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/tests/fonction_publique/cotisations_sociales_simulateur_IPP.yaml#L241-L300) In this case:
 
-- do not include the field `input_variables: `. Instead, define empty family, taxable household and household as a list of associative arrays as follows:
+- do not include the field `input_variables: `. Instead, define a family, a taxable household and a household as a list of empty dictionnaries as follows:
 ```yaml
 - name: "IRPP - Famille ayant des revenus salariaux de 20 000 €"
   period: 2012
@@ -74,7 +75,7 @@ To test functions taking variables related to many individuals or to a family as
   foyers_fiscaux:
 ```
 
-- Specify the list of variables componing the family, the taxable household and the household as associated arrays of lists as follows:
+- Specify the list of variables componing the family, the taxable household and the household, and the associated values of these variables as elements of dictionnaries of lists, as follows:
 ```yaml
 familles:
     parents: ["parent1", "parent2"]
@@ -89,7 +90,7 @@ menages:
     personnes_a_charge: ["enfant1", "enfant2"]
 ```
 
-- define the variables related to each individual in the family as follows. Each individual is refered to with the key `- id:` which has for associated value the label of the individual. Define the list of associative arrays containing the variables and values related to each individual as follows:
+- define the variables related to each individual in the family as follows. Each individual is refered to with the key `- id:` which has for associated value the label of the individual. Define the dictionnary containing the variables and values related to each individual as follows:
 ```yaml
   individus:
     - id: "parent1"
@@ -107,14 +108,14 @@ menages:
       date_naissance: 2009-01-01
 ```
 
-- finally, precise the expected values of the output variables for all individuals whose characteristics are defined as input variables. The variables are listed and each variable also takes a list as associated value. Each output variable takes a list of length equal to the number of individuals defined in the test. E.g, for a family of four individuals with two working parents and two unemployed children, the output variable salaire_super_brut is defined as follows:
+- finally, define a dictionnary of the expected values of the output variables for all individuals whose characteristics are defined as input variables. Each output variable takes a list of length equal to the number of individuals defined in the test. E.g, for a family of four individuals with two working parents and two unemployed children, the output variable salaire_super_brut is defined as follows:
 ```yaml
   output_variables:
     salaire_super_brut: [3500, 2500, 0, 0]
 ```
 ### Testing functions using variables defined for multiple periods
 
-If one of the input or output variables need to be defined for multiple periods, create a list of associative arrays under the variable key. Each arrays takes a period label as a key, and the value of the variable for the period as a value. See below for an example of this element of syntax:
+If one of the input or output variables needs to be defined for multiple periods, create a dictionnary under the variable. Each element of the dictionnary is takes a period label as key, and the value of the variable for the period as associated value. See below for an example of this element of syntax:
 
 ```yaml
   individus:
