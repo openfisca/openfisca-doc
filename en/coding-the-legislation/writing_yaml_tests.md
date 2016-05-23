@@ -127,7 +127,9 @@ Some input or output variables need to be defined for multiple periods. In this 
 
 ## Running a test:
 
-In a ConEmu console, in openfisca-france, run:
+The script `test_yaml.py`allow user to run part or all YAML tests.
+
+In the console, run:
 ```
 python openfisca_france\tests\test_yaml.py openfisca_france\tests\your_test_directory\your_test_name.yaml
 ```
@@ -135,6 +137,11 @@ python openfisca_france\tests\test_yaml.py openfisca_france\tests\your_test_dire
 For instance, invoking the following will execute all tests in the fonction_publique directory:
 ```
 python openfisca_france\tests\test_yaml.py openfisca_france\tests\fonction_publique 
+```
+
+For more details
+```
+python openfisca_france\tests\test_yaml.py
 ```
 
 ## Next steps
