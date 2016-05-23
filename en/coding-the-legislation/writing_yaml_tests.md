@@ -61,7 +61,9 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/master/openf
 
 ### Testing functions taking many individuals' characteristics as arguments
 
-To test functions taking variables related to many individuals or to a family as arguments, use the following syntax elements. These elements are notably implemented in the last test of [cotisations_sociales_simulateur_IPP.yaml](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/tests/fonction_publique/cotisations_sociales_simulateur_IPP.yaml#L241-L300) In this case:
+To test functions taking variables related to many individuals or to a family as arguments, use the following syntax elements. (These elements are notably implemented in the last test of [cotisations_sociales_simulateur_IPP.yaml](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/tests/fonction_publique/cotisations_sociales_simulateur_IPP.yaml#L241-L300)).
+
+In this case:
 
 - Do not include the field `input_variables: `. Instead, define a family, a taxable household and a household as a list of empty dictionnaries as follows:
 ```yaml
