@@ -141,7 +141,7 @@ python openfisca_france\tests\test_yaml.py openfisca_france\tests\fonction_publi
 
 For more details
 ```
-python openfisca_france\tests\test_yaml.py
+python openfisca_france\tests\test_yaml.py -h
 ```
 
 ## Next steps
