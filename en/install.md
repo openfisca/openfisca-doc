@@ -44,11 +44,15 @@ conda create --name openfisca python=2 numpy PyYAML requests Babel nose
 
 You need [Git](http://www.git-scm.com/) tool to be installed on your system.
 
-It is important to have your "openfisca" Conda environment [activated](http://conda.pydata.org/docs/test-drive.html#managing-environments) starting from now.
+It is important to have your "openfisca" Conda environment [activated](http://conda.pydata.org/docs/test-drive.html#managing-environments) starting from now:
+
+```
+source  activate  openfisca
+```
 
 Create a working directory like `~/Dev/openfisca` and go inside.
 
-> If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below. By default just continue below.
+> If you need to modify **OpenFisca-Core** source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below. By default just continue below.
 
 Install OpenFisca-France from Git:
 
@@ -80,6 +84,8 @@ OpenFisca-France basic test was executed successfully.
 This means that OpenFisca is correctly installed on your machine.
 
 The next step for you is to read the [Coding the legislation](../coding-the-legislation/index.html) section to know how to write legislation.
+
+> If you want to use your local installation as an API (instead of importing it in python scripts), install **OpenFisca Web API** with [these instructions](https://github.com/openfisca/openfisca-web-api#install).
 
 ## Without Conda
 
