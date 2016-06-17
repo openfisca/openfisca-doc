@@ -53,7 +53,7 @@ This is the simplest way to test formulas when you only need to give input value
   absolute_error_margin: 0.5
 ```
 
-- The key `ignore`, specified before the input variables, allows to ignore a test when running a tests file. By default, or with ignore is set as `False`, the test is run. On the contrary, if `ignore` is set as `True`, the tests is not run. In the following case, the test is ignored:
+- The key `ignore`, specified before the input variables, allows to ignore a test when running a tests file. By default, or with ignore set to `False`, the test is run. On the contrary, if `ignore` is set to `True`, the tests is not run. In the following case, the test is ignored:
 
 ```yaml
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
