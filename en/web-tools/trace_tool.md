@@ -25,6 +25,6 @@ from openfisca_core import tools
 tools.get_trace_tool_link(scenario, variables = ['af'], api_url = 'http://api.openfisca.fr')
 ```
 
-The requested variables (`'af'` here) will be calculated, and the trace tool will call the web API at the given
-base URL.
+The requested variables (`'af'` here) will be calculated, and the trace tool will call the web API at the given base URL.
 
+Of course, the scenario JSON payload will be the one corresponding of your Python `scenario` variable.
