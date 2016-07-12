@@ -18,6 +18,7 @@
    * [JSON data structures](openfisca-web-api/json-data-structures.md)
    * [Reforms](openfisca-web-api/reforms.md)
    * [Docker containers](openfisca-web-api/docker-containers.md)
+* Web tools
 * [Community](community.md)
 * [Contribute](contribute/README.md)
    * [Contributor guidelines](contribute/guidelines.md)
@@ -29,5 +30,4 @@
    * [Developer guide](contribute/developer-guide.md)
    * [Tests](contribute/tests.md)
    * [Release process](contribute/release-process.md)
-* Web tools
 
