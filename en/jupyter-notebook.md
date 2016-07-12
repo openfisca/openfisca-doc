@@ -14,7 +14,7 @@ As a requirement you must have a [GitHub](https://github.com/) account.
 - Login with your GitHub account
 - You have now a personal space to store and run your notebooks
 
-The performance of the server are quite low.
+The performance of the server is quite low.
 
 Warning! There is no guarantee with your data so please backup your notebooks.
 
