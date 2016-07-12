@@ -19,6 +19,7 @@
    * [Reforms](openfisca-web-api/reforms.md)
    * [Docker containers](openfisca-web-api/docker-containers.md)
 * Web tools
+   * Trace tool
 * [Community](community.md)
 * [Contribute](contribute/README.md)
    * [Contributor guidelines](contribute/guidelines.md)
