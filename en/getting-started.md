@@ -17,12 +17,10 @@ For example: [af](http://legislation.openfisca.fr/variables/af)
 
 ### Using Python
 
-Say we want to calculate the [af](http://legislation.openfisca.fr/variables/af)
-of a family with 1 parent (they divorced) and 3 children.
+Say we want to calculate the [af](http://legislation.openfisca.fr/variables/af) of a family with 1 parent (they divorced) and 3 children.
 
 Here is the script `test1.py` available
-[here](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/getting_started/test1.py),
-or in the [getting started Jupyter Notebook]:
+[here](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/getting_started/test1.py), or in the [getting started Jupyter Notebook]:
 
 ```python
 import openfisca_france
