@@ -183,22 +183,3 @@ Result:
 ```
 
 The result is a vector of size 1, the number of `foyers_fiscaux` in our test case.
-
-## Trace the calculation of a variable
-
-Sometimes we would like to explain why the calculation of a variable gave a particular result.
-This is possible using the [trace tool](http://www.openfisca.fr/outils/trace).
-
-There is a way to open the trace tool directly from Python code in your web browser:
-
-Add this line after the scenario declaration:
-
-```python
-from openfisca_core import tools
-tools.get_trace_tool_link(scenario, variables = ['af'], api_url = 'http://api.openfisca.fr')
-```
-
-The requested variables (`'af'` here) will be calculated, and the trace tool will call the web API at the given
-base URL.
-
-[getting started Jupyter Notebook]: https://github.com/openfisca/openfisca-web-notebook/blob/master/documentation/getting-started.ipynb
