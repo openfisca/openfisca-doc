@@ -15,3 +15,16 @@ The tool takes as input a JSON description of a scenario as accepted by the [web
 You can open the trace tool from the OpenFisca [demonstrator](http://ui.openfisca.fr/) by clicking on the menu "Action" then on the "trace" entry. The current scenario will be pre-filled.
 
 ## Using from Python
+
+You can open the trace tool in your browser directly from Python code.
+
+Add this line after the scenario declaration:
+
+```python
+from openfisca_core import tools
+tools.get_trace_tool_link(scenario, variables = ['af'], api_url = 'http://api.openfisca.fr')
+```
+
+The requested variables (`'af'` here) will be calculated, and the trace tool will call the web API at the given
+base URL.
+
