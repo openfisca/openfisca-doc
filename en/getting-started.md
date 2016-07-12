@@ -183,3 +183,5 @@ Result:
 ```
 
 The result is a vector of size 1, the number of `foyers_fiscaux` in our test case.
+
+[getting started Jupyter Notebook]: https://github.com/openfisca/openfisca-web-notebook/blob/master/documentation/getting-started.ipynb
