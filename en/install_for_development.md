@@ -3,16 +3,30 @@
 
 Follow these steps if you plan to develop on OpenFisca-France or OpenFisca-Core.
 
+## Supported operating systems
 
-### Clone git repositories
+The supported operating systems are GNU/Linux distributions (in particular Debian and Ubuntu), Mac OS X and Microsoft Windows.
+
+Other OS should work if they can execute Python and NumPy.
+
+On Microsoft Windows:
+- The Conda installer adds by default the commands `conda` and `python` to the system PATH.
+- We recommend using [ConEmu](https://conemu.github.io/) instead of the default console.
+
+### Create a virtualenvironnement
+
+We recommend to use a virtualenv with [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) in order to solve dependancies and versions problems of packages used by Openfisca.
+
+```
+pip install virtualenvwrapper
+```
+
+## Clone git repositories
+
+> You might want to use a 
+
 
 You need [Git](http://www.git-scm.com/) tool to be installed on your system.
-
-It is important to have your "openfisca" Conda environment [activated](http://conda.pydata.org/docs/test-drive.html#managing-environments) starting from now:
-
-```
-source  activate  openfisca
-```
 
 Create a working directory like `~/Dev/openfisca` and go inside.
 
@@ -31,13 +45,7 @@ OpenFisca-Core should be installed automatically as a requirement of OpenFisca-F
 
 Run `conda list` to see the installed packages: `openfisca-core` and `openfisca-france` should be listed.
 
-### Create a virtualenvironnement
 
-We recommend to use a virtualenv with [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) in order to solve dependancies and versions problems of packages used by Openfisca.
-
-```
-pip install virtualenvwrapper
-```
 
 ## Test the installation
 
