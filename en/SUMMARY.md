@@ -7,6 +7,7 @@
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Work with Jupyter Notebook](jupyter-notebook.md)
 * [Install](install.md)
+   * Basic Use
 * [Coding the legislation](coding-the-legislation/README.md)
    * [Periods](coding-the-legislation/periods.md)
    * [Reforms](coding-the-legislation/reforms.md)
