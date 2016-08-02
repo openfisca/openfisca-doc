@@ -5,7 +5,6 @@
 * [Getting started](getting-started.md)
 * [Key concepts](key-concepts.md)
 * [Thinking in vectors](thinking-in-vectors.md)
-* [Work with Jupyter Notebook](jupyter-notebook.md)
 * [Install](install.md)
    * [Basic Use](basic_use.md)
    * [Install for Development](install_for_development.md)
