@@ -16,14 +16,4 @@ Furthermore you might use OpenFisca with two different approaches:
 
 * if you want to contribute to the source code and to develop and/or fix part of it, you will have to install OpenFisca on your machine. Just follow the section "Install for development"
 
-## Supported operating systems
 
-The supported operating systems are GNU/Linux distributions (in particular Debian and Ubuntu), Mac OS X and Microsoft Windows.
-
-Other OS should work if they can execute Python and NumPy.
-
-On Microsoft Windows:
-- The Conda installer adds by default the commands `conda` and `python` to the system PATH.
-- We recommend using [ConEmu](https://conemu.github.io/) instead of the default console.
-
-## Install for development
