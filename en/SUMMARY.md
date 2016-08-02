@@ -8,7 +8,7 @@
 * [Work with Jupyter Notebook](jupyter-notebook.md)
 * [Install](install.md)
    * [Basic Use](basic_use.md)
-   * Install for Development
+   * [Install for Development](install_for_development.md)
 * [Coding the legislation](coding-the-legislation/README.md)
    * [Periods](coding-the-legislation/periods.md)
    * [Reforms](coding-the-legislation/reforms.md)
