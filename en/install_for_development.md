@@ -1,4 +1,4 @@
-# Install for Development
+# For developers
 
 
 Follow these steps if you plan to develop on OpenFisca-France or OpenFisca-Core.
