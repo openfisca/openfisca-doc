@@ -1,9 +1,12 @@
 # About the project
 
-OpenFisca is a versatile microsimulation software.
+> You can download an [offline version](https://www.gitbook.com/book/openfisca/documentation) of the documentation (direct link to [PDF](https://www.gitbook.com/download/pdf/book/openfisca/documentation), [ePub](https://www.gitbook.com/download/epub/book/openfisca/documentation) and [Mobi](https://www.gitbook.com/download/mobi/book/openfisca/documentation)).
 
-It is published under the [GNU Affero General Public Licence](http://www.gnu.org/licenses/agpl.html)
-version 3 or later.
+[![OpenFisca logo](http://www.openfisca.fr/hotlinks/logo-openfisca.svg)](http://www.openfisca.fr/)
+
+[OpenFisca](http://www.openfisca.fr/) is a versatile microsimulation software.
+
+It is a free software published under the [GNU Affero General Public Licence](http://www.gnu.org/licenses/agpl.html) version 3 or later.
 
 OpenFisca allows users to calculate many variables of the tax and benefit legislation of a country
 (social benefits and taxes paid by households) given input variables.
