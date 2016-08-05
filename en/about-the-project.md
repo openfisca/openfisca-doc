@@ -46,9 +46,8 @@ Support for Tunisia is experimental since the modelization of its tax and benefi
 But this is only due to a shortage in manpower to enter and update the Tunisian legislation.
 
 The project is 100% free software, it is published on [GitHub](https://github.com/openfisca).
-It uses the GitHub infrastructure (issues, pull requests, etc.) to communicate internally
-or with external participants.
-The team tries to be as transparent as possible.
+It uses the GitHub infrastructure (issues, pull requests, etc.) to communicate internally or with external participants.
+The team discusses publically on those issues and pull requests and tries to be as transparent as possible.
 
 The project is multi-actors: many people and organizations are involved in the project,
 reading the legislation and transforming it into source code,
