@@ -1,4 +1,4 @@
-# Presentation
+# About the project
 
 OpenFisca is a versatile microsimulation software.
 
