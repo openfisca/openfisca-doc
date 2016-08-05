@@ -8,9 +8,10 @@
 
 It is a free software published under the [GNU Affero General Public Licence](http://www.gnu.org/licenses/agpl.html) version 3 or later.
 
-OpenFisca allows users to calculate many variables of the tax and benefit legislation of a country
-(social benefits and taxes paid by households) given input variables.
-The impact of reforms can also be simulated.
+## What's the purpose?
+
+OpenFisca allows users to calculate many variables of the tax and benefit legislation of a country (social benefits and taxes paid by households) given input variables.
+The impact of reform projects can also be simulated.
 
 When plugged on a survey, OpenFisca can also calculate the budgetary consequences of a reform
 and its distributional impact.
@@ -113,5 +114,3 @@ the [<abbr title="Institut d'économie publique">IDEP</abbr>](http://www.idep-fr
 and the [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.eu/).
 
 As of now (March 2014), the Qt version is no longer maintained and only the Python and the web APIs are being developed.
-
-The next step is to release a stable version "1.0".
