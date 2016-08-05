@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Presentation](presentation.md)
+* [About the project](presentation.md)
 * [Getting started](getting-started.md)
 * [Key concepts](key-concepts.md)
 * [Thinking in vectors](thinking-in-vectors.md)
