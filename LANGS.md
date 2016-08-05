@@ -1,2 +1,1 @@
 * [English](en/)
-* [French](fr/)
