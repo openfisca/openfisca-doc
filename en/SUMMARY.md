@@ -1,6 +1,5 @@
 # Summary
 
-* [Introduction](README.md)
 * [About the project](about-the-project.md)
 * [Getting started](getting-started.md)
 * [Key concepts](key-concepts.md)
