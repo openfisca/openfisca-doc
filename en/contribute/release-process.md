@@ -2,14 +2,62 @@
 
 ## Automated releasing
 
-The openfisca-france package is today **continously** and **automatically** released.
+The four main openfisca packages (core, france, web-api and parsers) are today **continously** and **automatically** released.
 
 When a Pull Request is merged to master, this CI server (travis) automatically:
 
 - Publish a version tag on github.
 - Publish a release on the [PyPI](https://pypi.python.org/pypi) repository.
 
-The behaviour will be adopted for the three other main openfisca packages in a near future.
+
+## Set up automated releasing on a new repository
+
+* Make sure you have installed the [Travis CI Command Line Client](https://github.com/travis-ci/travis.rb)
+
+* Log in to Travis CI using your github credentials:
+```sh
+travis login
+```
+### Automated tagging on git
+
+* Create a **new** ssh key in your repository. Do **not** push it:
+```sh
+ssh-keygen -t rsa -b 4096 -C "bot@openfisca.fr"
+```
+
+* Encrypt the private key.
+```
+travis encrypt-file $id_rsa --add
+```
+
+* Add the public key to the repository in Settings > Deploy keys, with writing rights.
+
+* Copy and **adapt the repository name** in the [`release-tag.sh`](https://github.com/openfisca/openfisca-france/blob/master/release-tag.sh) script into the repository.
+
+* Edit `.travis.yaml` to:
+    * Decrypt the ssh key in `before_deploy` instead of `before_install`.
+    * Add the [deployment instructions](https://github.com/openfisca/openfisca-france/blob/4.0.0/.travis.yml#L19).
+
+
+* Only push the encrypted key. You can remove both the private and public keys after making sure the automatic tagging works as expected.
+
+### Automated releasing on Pypy
+
+* Make sure you know the credentials for the `openfisca-bot` Pypi user.
+
+* Give `openfisca-bot` maintainer's right on Pypi.
+
+* Encrypt the `openfisca-bot` password:
+```
+travis encrypt
+```
+
+* Edit `.travis.yaml` to:
+    * [Compile](https://github.com/openfisca/openfisca-core/blob/2.0.1/.travis.yml#L21) the [internationalization]() catalog in `before_deploy`, if needed.
+    * Add the [deployment instructions](https://github.com/openfisca/openfisca-core/blob/2.0.1/.travis.yml#L30). Replace the encrypted password by what `travis encrypt` generated.
+
+
+# Deprecated
 
 ## Manual releasing
 
