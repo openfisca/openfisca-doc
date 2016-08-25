@@ -58,6 +58,19 @@ On the line `af = simulation.calculate('af', '2015-01')`, `'2015-01'` correspond
 
 > OpenFisca uses periods intensively so it defines string shortcuts to express them.
 
+#### Print the trace
+
+In Python you can print the trace of a calculation like that:
+
+```python
+# [...] Same as above
+simulation = scenario.new_simulation(trace=True)
+simulation.calculate('irpp', 2014, print_trace=True)
+simulation.calculate('irpp', 2014, print_trace=True, max_depth=1)  # Print only one level of depth
+simulation.calculate('irpp', 2014, print_trace=True, max_depth=-1)  # -1 means no max depth
+simulation.calculate('irpp', 2014, print_trace=True, max_depth=-1, show_default_values=False)  # Hide variables with values being default values (0 and False basically)
+```
+
 ### Using the web API
 
 Let's do the same calculation using the web API hosted by the OpenFisca project.
