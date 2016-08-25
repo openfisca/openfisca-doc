@@ -50,20 +50,20 @@ For example the following test case defined for the year `2015`:
   "individus": [
     {
       "id": "parent1",
-      "birth": "1980-01-01",
+      "date_naissance": "1980-01-01",
       "salaire_de_base": 15000
     },
     {
       "id": "enfant1",
-      "birth": "2005-01-01"
+      "date_naissance": "2005-01-01"
     },
     {
       "id": "enfant2",
-      "birth": "2003-01-01"
+      "date_naissance": "2003-01-01"
     },
     {
       "id": "enfant3",
-      "birth": "1997-01-01"
+      "date_naissance": "1997-01-01"
     }
   ],
   "menages": [
@@ -81,7 +81,7 @@ can be expressed with these vectors:
 ```json
 {
   "activite": [ 4, 2, 2, 4 ],
-  "birth": [ "1980-01-01", "2005-01-01", "2003-01-01", "1997-01-01" ],
+  "date_naissance": [ "1980-01-01", "2005-01-01", "2003-01-01", "1997-01-01" ],
   "idfam": [ 0, 0, 0, 0 ],
   "idfoy": [ 0, 0, 0, 0 ],
   "idmen": [ 0, 0, 0, 0 ],
