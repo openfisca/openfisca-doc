@@ -11,6 +11,7 @@
    * [Periods](coding-the-legislation/periods.md)
    * [Reforms](coding-the-legislation/reforms.md)
    * [Writing YAML tests](coding-the-legislation/writing_yaml_tests.md)
+   * Bootstrap a new country
 * [Legislation parameters](legislation-parameters/README.md)
    * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
 * [OpenFisca Web API](openfisca-web-api/README.md)
