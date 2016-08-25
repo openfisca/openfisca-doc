@@ -128,20 +128,20 @@ Here is a test case sample in JSON for a single person with 3 children:
   "individus": [
     {
       "id": "parent1",
-      "birth": "1980-01-01",
+      "date_naissance": "1980-01-01",
       "salaire_de_base": 15000
     },
     {
       "id": "enfant1",
-      "birth": "2005-01-01"
+      "date_naissance": "2005-01-01"
     },
     {
       "id": "enfant2",
-      "birth": "2003-01-01"
+      "date_naissance": "2003-01-01"
     },
     {
       "id": "enfant3",
-      "birth": "1997-01-01"
+      "date_naissance": "1997-01-01"
     }
   ],
   "menages": [
@@ -154,7 +154,7 @@ Here is a test case sample in JSON for a single person with 3 children:
 }
 ```
 
-Notice the input variables associated to the `"individus"` (`"birth"` and `"salaire_de_base"`) and to the entity `"menages"` (`"loyer"`).
+Notice the input variables associated to the `"individus"` (`"date_naissance"` and `"salaire_de_base"`) and to the entity `"menages"` (`"loyer"`).
 
 This is quite verbose but there are shortcuts to generate a test case in common situations.
 
