@@ -4,7 +4,6 @@
 * [Getting started](getting-started.md)
 * [Key concepts](key-concepts.md)
 * [Thinking in vectors](thinking-in-vectors.md)
-   * Debugging
 * [Install](install.md)
    * [Basic Use](basic_use.md)
    * [For Developers](install_for_development.md)
