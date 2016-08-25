@@ -1,6 +1,6 @@
 # Summary
 
-* [About the project](about-the-project.md)
+* [About the project](README.md)
 * [Getting started](getting-started.md)
 * [Key concepts](key-concepts.md)
 * [Thinking in vectors](thinking-in-vectors.md)
