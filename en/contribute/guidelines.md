@@ -57,7 +57,3 @@ This is mandatory for:
 To help reviewers, make sure to add to your PR a **clear text explanation** of your changes.
 
 In case of breaking changes, you **must** give details about what features were deprecated. You must also provide guidelines to help users adapt their code to be compatible with the new version of the package.
-
-
-
-
