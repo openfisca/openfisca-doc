@@ -39,5 +39,3 @@ Then run your application with your WSGI server:
 ```sh
 paster serve api_config.ini
 ```
-
-
