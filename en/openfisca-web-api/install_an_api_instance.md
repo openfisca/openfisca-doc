@@ -17,8 +17,27 @@ In your virtual environmenent, install the web-api package, and the country pack
 
 ## Run
 
+### Test
+
 You can immediately run a test version of the API, with a [default configuration file](https://github.com/openfisca/openfisca-web-api/blob/master/development-france.ini):
 ```sh
-  openfisca-serve
+  openfisca-serve --port 2000
+  # Serving on http://localhost:2000/
 ```
+Please note that this uses a basic WSGI server and may have low performances.
+
+### Production
+
+You can run the API with WSGI servers such as `paster` or `gunicorn`.
+
+First download and adapt an openfisca-web-api configuration file:
+```sh
+curl https://raw.githubusercontent.com/openfisca/openfisca-web-api/master/development-france.ini > api_config.ini
+# Edit api_config.ini with the port you want to serve on, the extensions you want to load, etc.
+```
+Then run your application with your WSGI server:
+```sh
+paster serve api_config.ini
+```
+
 
