@@ -35,8 +35,29 @@ When opening a new issue, please take the following steps:
 
 ### Merging a Pull Request
 
+#### Continuous integration
+
 Before allowing you to merge a PR, the continuous integration server (Travis) will ensure that:
 
 - The automated tests are passing (they are triggered automatically and result is visible from the Pull Request page).
 - The semantic version number has been updated. Check the [semantic versionning guidelines](semver.md) to know more about how to increment the version number.
-- The [`CHANGELOG.md`](https://github.com/openfisca/openfisca-france/blob/master/CHANGELOG.md) has been updated. Make sure to briefly summarize your work, and to mention any non backward-compatible changes.
+- The [`CHANGELOG.md`](https://github.com/openfisca/openfisca-france/blob/master/CHANGELOG.md) has been updated. Make sure to briefly summarize your work, and to **mention any non backward-compatible changes**.
+
+#### Peer reviews
+
+Pull requests should generally be **reviewed** by someone else than their authors.
+
+This is mandatory for:
+- Any Pull Request on **`openfisca-core`**
+- Any Pull Request with **breaking changes** on `openfisca-france`, `openfisca-web-api`, and `openfisca-parsers`.
+- Any Pull Request bringing **new features**, if these features are not relative to a specific scope. 
+    - Adding a new route to the API **requires** a review. 
+    - A review is yet not mandatory to add a new formula to social contributions in `openfisca-france`. It is though recommended.
+
+To help reviewers, make sure to add to your PR a **clear text explanation** of your changes.
+
+In case of breaking changes, you **must** give details about what features were deprecated. You must also provide guidelines to help users adapt their code to be compatible with the new version of the package.
+
+
+
+
