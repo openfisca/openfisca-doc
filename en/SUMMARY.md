@@ -18,6 +18,7 @@
    * [Endpoints](openfisca-web-api/endpoints.md)
    * [JSON data structures](openfisca-web-api/json-data-structures.md)
    * [Reforms](openfisca-web-api/reforms.md)
+   * [Install an api instance](openfisca-web-api/install_an_api_instance.md)
    * [Docker containers](openfisca-web-api/docker-containers.md)
 * [Web tools](web-tools/README.md)
    * [Trace tool](web-tools/trace_tool.md)
