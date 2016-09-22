@@ -22,6 +22,7 @@
    * [Docker containers](openfisca-web-api/docker-containers.md)
 * [Web tools](web-tools/README.md)
    * [Trace tool](web-tools/trace_tool.md)
+* Troubleshooting
 * [Community](community.md)
 * [Contribute](contribute/README.md)
    * [Contributor guidelines](contribute/guidelines.md)
@@ -33,5 +34,4 @@
    * [Developer guide](contribute/developer-guide.md)
    * [Tests](contribute/tests.md)
    * [Release process](contribute/release-process.md)
-* Troubleshooting
 
