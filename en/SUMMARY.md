@@ -33,4 +33,5 @@
    * [Developer guide](contribute/developer-guide.md)
    * [Tests](contribute/tests.md)
    * [Release process](contribute/release-process.md)
+* Troubleshooting
 
