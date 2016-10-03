@@ -2,6 +2,7 @@
 
 * [About the project](README.md)
 * [Key concepts](key-concepts.md)
+   * Tax and Benefit System
 * [Getting started](getting-started.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
