@@ -28,3 +28,8 @@ You can choose between two visualizations:
 Example : the revenu disponible,  [```"revdisp"```](https://legislation.openfisca.fr/variables/revdisp)
 
 if you're searching a variable which is not yet implemented you can ask our team thanks to the [forum](https://forum.openfisca.fr/).
+
+#### Variables and time
+
+Some variables are measures that were valid only for a given period or that have been modified. For exemple, the "Prime pour l'emploi" has been deleted in 2015. It will then be a *Dated_fonction* and you will see in the Legislation Explorer its validity period.   
+Example: [PPE](https://legislation.openfisca.fr/variables/ppe)
