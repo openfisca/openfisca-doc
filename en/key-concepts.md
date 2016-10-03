@@ -4,7 +4,7 @@ This section presents the key concepts required to have a good understanding of 
 The next sections of the documentation are more specific.
 
 We use the French legislation to illustrate these concepts as it is the only actively maintained country for now.
-French names are kept as is.
+French names are kept as it is.
 
 ## Tax and benefit system
 
