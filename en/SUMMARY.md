@@ -2,6 +2,7 @@
 
 * [About the project](README.md)
 * [Key concepts](key-concepts.md)
+   * Parameters
    * [Tax and Benefit System](tax_and_benefit_system.md)
    * [Variables](variables.md)
        * Parameters
