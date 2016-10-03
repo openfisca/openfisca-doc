@@ -1,8 +1,8 @@
 # Summary
 
 * [About the project](README.md)
-* [Getting started](getting-started.md)
 * [Key concepts](key-concepts.md)
+* [Getting started](getting-started.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
    * [Basic Use](basic_use.md)
