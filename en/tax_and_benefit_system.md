@@ -5,7 +5,8 @@
 The tax and benefit system is the higher-level instance in OpenFisca.
 Its goal is to model the legislation of a country.
 
-Basically a tax and benefit system contains simulation variables (source code) and legislation parameters (data).
+Basically a tax and benefit system contains simulation [variables](variables.md) (source code) and legislation parameters (data).
+
 
 This instance may host so many versions as there are countries in the world. 
 
