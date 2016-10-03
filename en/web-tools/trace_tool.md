@@ -22,7 +22,7 @@ Add this line after the scenario declaration:
 
 ```python
 from openfisca_core import tools
-print(tools.get_trace_tool_link(scenario, ['af'], api_url='http://api.openfisca.fr/', trace_tool_url='http://www.openfisca.fr/tools/trace'))
+print(tools.get_trace_tool_link(scenario, ['af'], api_url='https://api.openfisca.fr/', trace_tool_url='https://www.openfisca.fr/tools/trace'))
 ```
 
 The requested variables (`'af'` here) will be calculated, and the trace tool will call the web API at the given base URL.
