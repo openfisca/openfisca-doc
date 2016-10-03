@@ -1,14 +1,16 @@
 # Parameters
 
-
+#### Definition
 Each time a part of the legislation has a static value, we name it a *parameter*.
 
-Parameters are involved in computation of [calculated variables](variables.md).
+Parameters are involved in computation of calculated variables.
 
 Legislation parameters are stored in an XML file:
-[`param.xml`](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/param/param.xml).
+[`param.xml`](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/param/param.xml). You can browse it using the Legislation Explorer for [parameters](https://legislation.openfisca.fr/parameters).
 
-They can be simple values or scales and are stored by date to collect the past values.
+They can be simple values (["âge limite des personnes à charge pour la CMU"](https://legislation.openfisca.fr/parameters/cmu.age_limite_pac)) or scales("
+
+and are stored by date to collect the past values.
 Even with simple values, there can be many values for the same parameter because of the multiple dates.
 
 For instance, the calculation of the `irpp` variable will involve the `ir.recouvrement.min` parameter, also present in the [legislation explorer](http://legislation.openfisca.fr/parameters/ir.recouvrement.min).
