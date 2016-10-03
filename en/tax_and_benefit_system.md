@@ -7,7 +7,5 @@ Basically a tax and benefit system contains simulation variables (source code) a
 
 The OpenFisca core engine is able to simulate any country legislation once it is (partially) represented as source code.
 
-For now on there are two versions of this object :
-- One for France, which is already implemented and used.
-- One for Tunisia which is partially 
+ 
 
