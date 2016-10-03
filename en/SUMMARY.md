@@ -3,7 +3,7 @@
 * [About the project](README.md)
 * [Key concepts](key-concepts.md)
    * [Tax and Benefit System](tax_and_benefit_system.md)
-   * Variables
+   * [Variables](variables.md)
 * [Getting started](getting-started.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
