@@ -1,36 +1,19 @@
 # Key concepts
 
 This section presents the key concepts required to have a good understanding of OpenFisca, without being too technical.
-The next sections of the documentation are more specific.
+
 
 We use the French legislation to illustrate these concepts as it is the only actively maintained country for now.
 French names are kept as it is.
 
 ## Tax and benefit system
 
-The tax and benefit system is the higher-level object in OpenFisca.
+The tax and benefit system is the higher-level instance in OpenFisca.
 Its goal is to model the legislation of a country.
 
 Basically a tax and benefit system contains simulation variables (source code) and legislation parameters (data).
 
 The OpenFisca core engine is able to simulate any country legislation once it is (partially) represented as source code.
-
-## Periods and instants
-
-OpenFisca manipulates time via periods and instants.
-
-The atomic unit is a day, so instants are day dates.
-
-Periods are defined using an ad-hoc strings format.
-Internally, they are stored as a start instant, a unit (month, year) and a quantity of units.
-
-For example:
-
-- `"2015"` is a year, `"2015-01"` is a month, `"2015-06:3"` are the 3 months
-june, july and august of the year 2015. They are all periods.
-- `"2015-02-15"` is an instant.
-
-Functions exist to transform periods or turn them into an instant, which are documented later.
 
 ## Variables
 
@@ -189,3 +172,21 @@ As a consequence reforms can be composed (`ext2(ext1(tax_benefit_system))`).
 Reforms can be published in their own `git` repository.
 
 How to write a reform is documented [in this section](./openfisca-in-python/reforms.md).
+
+## Periods and instants
+
+OpenFisca manipulates time via periods and instants.
+
+The atomic unit is a day, so instants are day dates.
+
+Periods are defined using an ad-hoc strings format.
+Internally, they are stored as a start instant, a unit (month, year) and a quantity of units.
+
+For example:
+
+- `"2015"` is a year, `"2015-01"` is a month, `"2015-06:3"` are the 3 months
+june, july and august of the year 2015. They are all periods.
+- `"2015-02-15"` is an instant.
+
+Functions exist to transform periods or turn them into an instant, which are documented later.
+
