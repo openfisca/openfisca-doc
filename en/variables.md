@@ -25,19 +25,6 @@ You can choose between two visualizations:
 
 >  You will find on this website the **source code** of every variables which allows you to understand how they are computed in OpenFisca.
 
-If you're searching a variable which is not yet implemented you can ask our team 
+Example : the revenu disponible,  [```"revdisp"```](https://legislation.openfisca.fr/variables/revdisp)
 
-#### Variables and periods
-
-Variables values (input or calculated) are associated to a period.
-
-Input variables are defined given a period. For example you give a salary amount for a period of 6 months.
-
-When a variable is called, a period is given.
-For example you want to know the amount of a tax for a specific year.
-
-But sometimes the asked period isn't calculable so the core engine returns the value for another period.
-There are some strategies to deal with these periods mismatch, which are documented later.
-
-The [legislation explorer](http://legislation.openfisca.fr/) presents each variable under its own URL.
-For example [`irpp`](http://legislation.openfisca.fr/variables/irpp).
+if you're searching a variable which is not yet implemented you can ask our team thanks to the [forum](https://forum.openfisca.fr/).
