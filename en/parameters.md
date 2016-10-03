@@ -3,7 +3,7 @@
 
 Each time a part of the legislation has a static value, we name it a *parameter*.
 
-Parameters are involved in computation of [calculated variables](#calculated variables).
+Parameters are involved in computation of [calculated variables](#Variables).
 
 Legislation parameters are stored in an XML file:
 [`param.xml`](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/param/param.xml).
