@@ -5,6 +5,7 @@
    * [Tax and Benefit System](tax_and_benefit_system.md)
    * [Variables](variables.md)
    * [Parameters](parameters.md)
+   * Person, entities, role
 * [Getting started](getting-started.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
