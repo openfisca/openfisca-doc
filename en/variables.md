@@ -2,18 +2,27 @@
 
 #### Definition
 
-In Openfisca two types of variables coexist :
-- *Input variables* : information given by the user.
-- *Calculated variables* : taxes or benefits calculated by OpenFisca. 
+In Openfisca two types of variable coexist :
 
-*Input variables* are variables which are related to the situation of the user.  
+
+ ###### 1- Input variable
+ 
+It is information given by the user and related to her situation.  
+
 Examples : ```date_de_naissance``` or ```salaire_de_base```
 
-*Calculated variables* have a computation formula which will involve other variables to get the result. These variables are called the dependencies. The dependencies are either calculated, either looked in input variables. 
- > - If not dependencies are not found, default values are used (most of the time `0`).
- > - Calculated variables can be bypassed if an actual value is given.
+ ######2- Calculated variable
+
+It is the taxes or benefits calculated by OpenFisca. Therefore they have a computation formula which will involve other variables to get the result. 
 
 Examples : ```irpp``` (impôt sur le revenu) or ```rsa``` (revenu de solidarité active).
+
+ > - Calculated variables can be bypassed if an actual value is given.
+
+The other variables used for computation are called the *dependencies*. The dependencies might be either calculated or input variables.   
+
+
+ > - If dependencies are not found, default values are used (most of the time `0`).
 
 #### The Legislation Explorer tool
 
@@ -31,5 +40,6 @@ if you're searching a variable which is not yet implemented you can ask our team
 
 #### Variables and time
 
-Some variables are measures that were valid only for a given period or that have been modified. For exemple, the "Prime pour l'emploi" has been deleted in 2015. It will then be a *Dated_fonction* and you will see in the Legislation Explorer its validity period.   
+Some variables are measures that were valid only for a given period or that have been modified. For exemple, the "Prime pour l'emploi" has been deleted in 2015. It will then be a *Dated_fonction* and you will see in the Legislation Explorer its validity period. 
+
 Example: [PPE](https://legislation.openfisca.fr/variables/ppe)
