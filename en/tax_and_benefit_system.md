@@ -15,14 +15,16 @@ This instance may host so many versions as there are countries in the world.
 
 Therefore you have to call at the beginning of your work, the one corresponding to your country of interest.
 
-#### Application
+#### Application : how to call the Python module
 
 For now only France system is well implemented, your first action should then be :
 
 ```python
-from openfisca_france import FranceTaxBenefitSystem   # Call module describing the French System
+# Call module describing the French System
+from openfisca_france import FranceTaxBenefitSystem
 
-tax_benefit_system = FranceTaxBenefitSystem()  # Initialize the legislation
+# Initialize the legislation
+tax_benefit_system = FranceTaxBenefitSystem()
 
 ```
 
