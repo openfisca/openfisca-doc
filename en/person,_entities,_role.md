@@ -7,7 +7,7 @@ It might
 ###### Person
 Some measures depends only on the attributes of the *person*.  
 
-Example : the ["allocations chômage imposables"](https://legislation.openfisca.fr/variables/chomage_imposable) are calculated as the leevl of the individual.
+Example : the ["allocations chômage imposables"](https://legislation.openfisca.fr/variables/chomage_imposable) are calculated as the level of the individual.
 
 ######  Entities
 *Entities* are clusters of *persons* like the family, the household or the company.
