@@ -12,7 +12,15 @@ The interface between input information and *input variables* that OpenFisca can
 
 Whatever the input is, test case or data, the scenario converts it into vectors internally.
 
-###### In OpenFisca
+###### Application : how to create a scenario
+
+After initializing the Tax and Benefit System, you now want to create a *scenario* that will allow you in a second step to give input information.
+
+```python
+scenario = reformed_tax_benefit_system.new_scenario()
+
+```
+
 
 
 ### Test cases 
