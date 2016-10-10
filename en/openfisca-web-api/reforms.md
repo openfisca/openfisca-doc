@@ -2,7 +2,7 @@
 
 This documentation explains how to declare an existing reform to an instance of the OpenFisca Web API that you host.
 
-> If you're looking how to write a reform, please read [this section](./coding-the-legislation/reforms.md)
+> If you're looking how to write a reform, please read [this section](../coding-the-legislation/reforms.md)
 
 Each OpenFisca Web API instance can handle a number of reforms.
 Once a reform is known, the user can ask to apply one or many reforms in the HTTP request
