@@ -7,8 +7,7 @@
     },
     "plugins": [
         "github",
-        "edit-link",
-        "anchors-wrapper"
+        "edit-link"
     ],
     "pluginsConfig": {
         "github": {
