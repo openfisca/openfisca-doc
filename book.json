@@ -6,7 +6,6 @@
         }
     },
     "plugins": [
-        "-anchors",
         "github",
         "edit-link",
         "anchors-wrapper"
