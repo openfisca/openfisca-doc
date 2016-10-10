@@ -2,12 +2,11 @@
 
 #### Definition 
 Taxes and benefits are calculated at different levels of people aggregates.
-It might
 
 ###### Person
-Some measures depends only on the attributes of the *person*.  
+Some measures depend only on the attributes of the *person*.  
 
-Example : the ["allocations chômage imposables"](https://legislation.openfisca.fr/variables/chomage_imposable) are calculated as the level of the individual.
+Example : the ["allocations chômage imposables"](https://legislation.openfisca.fr/variables/chomage_imposable) are calculated as the individual level.
 
 ######  Entities
 *Entities* are clusters of *persons* like the family, the household or the company.
@@ -32,5 +31,5 @@ You can define as many entities as you want and dispatch persons into them.
 
 #### Application : module used by OpenFisca
 
-The entities definitions are closely related to a country, therefore they are defined in a Python package independent (OpenFisca-France) from the core engine (OpenFisca-Core).
+The entities definitions are closely related to a country, therefore they are defined in a Python package (OpenFisca-France) independent from the core engine (OpenFisca-Core).
 
