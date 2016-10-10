@@ -7,6 +7,7 @@
    * [Parameters](parameters.md)
    * [Person, entities, role](person,_entities,_role.md)
    * [Input Data](input_data.md)
+   * Simulation
 * [Getting started](getting-started.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
