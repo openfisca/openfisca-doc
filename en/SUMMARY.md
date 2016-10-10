@@ -20,7 +20,7 @@
    * [Bootstrap a new country](coding-the-legislation/bootstrap_a_new_country.md)
 * [Legislation parameters](legislation-parameters/README.md)
    * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
-* Reference documentation
+* [Reference documentation](reference_documentation.md)
    * Scenario
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Endpoints](openfisca-web-api/endpoints.md)
