@@ -18,7 +18,7 @@ As soon as you've loaded the TaxBenefitSystem of a country and a Scenario, you m
 simulation = scenario.new_simulation()
 ```
 
-> You can use this function with one interesting function : ```trace =True```
+> See [`new_simulation()` reference documentation](/reference-documentation/scenario.md#def-newsimulation)
 
 #### Computing variables
 
