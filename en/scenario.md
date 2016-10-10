@@ -3,7 +3,7 @@
 ## `def new_simulation`
 
 Parameters:
-- `debug=False`: print debug log during a calculation. See this [debug log section](/en/troubleshooting.html#enable-the-debug-log)
+- `debug=False`: print debug log during a calculation. See this [debug log section](/troubleshooting.md#enable-the-debug-log)
 - `debug_all=False`
 - `reference=False`
 - `trace=False`
