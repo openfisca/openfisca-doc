@@ -21,13 +21,14 @@ After initializing the [Tax and Benefit System](tax_and_benefit_system.md), you 
 scenario = tax_benefit_system.new_scenario()
 
 ```
+---
 
 ### Test cases 
 
 Test case describes persons and entities with their input variables.
 
-You may add information at individual level or at entity level.
-One input is crucial and shouldn't be forgotten : the period of the simulation.
+You may add information at *individual* level or at *entity* level.  
+One input is crucial and shouldn't be forgotten : the *period* of the simulation.
 
 ###### Application : how to intialize a scenario
 Test cases can be expressed in Python or in JSON when using the Web API (see specific sections of the documentation).
@@ -40,9 +41,10 @@ We show here the Python expression for a family constituted by :
 - a house (as attributes : the `loyer` and the `statut_occupation_logement`)
 
 ```python
-
+# Initialize test case
 scenario.init_single_entity(
-    period = 2015,
+    period = 2015, 
+# Variable describing the individuals
     parent1 = dict(
         age = 30,
         salaire_de_base = 15000,
@@ -51,24 +53,34 @@ scenario.init_single_entity(
         date_naissance = date(1980, 1, 1),
         salaire_de_base = 70000,
         ),
-    enfants = [
+     enfants = [
         dict(age = 12),
         dict(age = 18),
         ],
-    menage = dict(
-            loyer = 1000,
-            statut_occupation_logement = u'Locataire ou sous-locataire d'un logement loué vide non-HLM',
+ # Variable describing the entity
+    menage = dict(loyer = 1000,
+            statut_occupation_logement = u"Locataire ou sous-locataire 
+                                      d'un logement loué vide non-HLM",
             ),
     )
-    
-```
+   ```
 
 Notice that some input variables are associated to *individus* ("parent1" , "parent2" and "children") whereas other are related to *entity* ("menage").
 
 
 
-
+HINT : For categorical variable you may use either the modality or its number.   
+Example with the [statut d'occupation du logement](https://legislation.openfisca.fr/variables/statut_occupation_logement) :
+ ``` python
+ # Declaration of categorical variable
+ menage = dict(loyer = 1000,
+            statut_occupation_logement = 4,
+            )
+            
+```
+---
 
 ### Data
-Using data as input is not documented yet. Please consult this repository:
+Using data as input is not documented yet.    
+Please consult this repository:
 https://github.com/openfisca/openfisca-france-data
