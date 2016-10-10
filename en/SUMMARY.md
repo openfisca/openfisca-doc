@@ -20,6 +20,7 @@
    * [Bootstrap a new country](coding-the-legislation/bootstrap_a_new_country.md)
 * [Legislation parameters](legislation-parameters/README.md)
    * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
+* Reference
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Endpoints](openfisca-web-api/endpoints.md)
    * [JSON data structures](openfisca-web-api/json-data-structures.md)
@@ -40,5 +41,4 @@
    * [Developer guide](contribute/developer-guide.md)
    * [Tests](contribute/tests.md)
    * [Release process](contribute/release-process.md)
-* Reference
 
