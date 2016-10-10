@@ -1,6 +1,21 @@
 # Input Data
 
-## Test cases or data
+  You can use OpenFisca with two kind of input information :
+  - either *test case* : you simulate the legislation for one standard *entity*
+  - or *data* : you give a whole population on which you want to apply the legislation. 
+
+### Scenario
+
+The interface between input information and *input variables* that OpenFisca can handle is called *Scenario*.
+
+> Technically speaking, OpenFisca uses vector computing for performance reasons via the [NumPy](http://www.numpy.org/) Python package
+
+Whatever the input is, test case or data, the scenario converts it into vectors internally.
+
+###### In OpenFisca
+
+
+### Test cases 
 
 OpenFisca can take test cases or data (surveys with aggregated data or real population data) as input when calculating variables.
 
@@ -60,13 +75,4 @@ This is quite verbose but there are shortcuts to generate a test case in common 
 Using data as input is not documented yet. Please consult this repository:
 https://github.com/openfisca/openfisca-france-data
 
-## Scenarios
-
-To support both test cases and data, and for performance reasons,
-OpenFisca is developed using vector computing via the [NumPy](http://www.numpy.org/) Python package.
-
-Whatever the input is, a test case or data, OpenFisca will transform it to vectors internally.
-
-Scenarios take a test cases as input and convert them into vectors.
-
-They even offer a way to simplify the declaration of test cases when it contains only a single entity of each type.
+### Data
