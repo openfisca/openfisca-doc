@@ -170,8 +170,6 @@ As a consequence reforms can be composed (`ext2(ext1(tax_benefit_system))`).
 
 Reforms can be published in their own `git` repository.
 
-How to write a reform is documented [in this section](./openfisca-in-python/reforms.md).
-
 ## Periods and instants
 
 OpenFisca manipulates time via periods and instants.
