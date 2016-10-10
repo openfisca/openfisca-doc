@@ -6,7 +6,7 @@
    * [Variables](variables.md)
    * [Parameters](parameters.md)
    * [Person, entities, role](person,_entities,_role.md)
-   * [Input Data](simulation_and_scenario.md)
+   * [Input Data](input_data.md)
 * [Getting started](getting-started.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
