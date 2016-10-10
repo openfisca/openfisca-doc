@@ -8,7 +8,8 @@
     "plugins": [
         "-anchors",
         "github",
-        "edit-link"
+        "edit-link",
+        "anchors-wrapper"
     ],
     "pluginsConfig": {
         "github": {
