@@ -9,7 +9,7 @@ To calculate any variable you need to create a *Simulation* from the *TaxBenefit
 
 It's possible to run many independent simulations using the same `TaxBenefitSystem`.
 
-###### Application : how to calculate variable
+###### Application : how to launch a simulation
 
 As soon as you've loaded the TaxBenefitSystem of a country and a Scenario, you may now create a simulation.
 
@@ -18,15 +18,22 @@ As soon as you've loaded the TaxBenefitSystem of a country and a Scenario, you m
 simulation = scenario.new_simulation()
 ```
 
-> See [`new_simulation()` reference documentation](/reference-documentation/scenario.md#def-newsimulation)
+> See [`new_simulation()`](/reference-documentation/scenario.md#def-newsimulation) in the reference documentation
 
 #### Computing variables
 
 Now all the settings are given to run computation of taxes or benefits.
 
+ATTENTION : Be aware of the period over which you want to have your result. Some measures are calculated on a monthly basis other an annual one.
+
+###### Application : how to calculate a variable
+
 ```python
 # Calcul of the 'impot sur le revenu des personnes physiques'
-impot = simulation.calculate('irpp')
+impot = simulation.calculate('irpp', '2015')
+allocations_familiales = simulation.calculate('af', '2015-01')
 ```
 
-As a result you will have an array with the 'impot' for each person of your test case.
+ > HINT : Don't forget to give the period
+ 
+
