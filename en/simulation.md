@@ -14,7 +14,7 @@ It's possible to run many independent simulations using the same `TaxBenefitSyst
 As soon as you've loaded the TaxBenefitSystem of a country and a Scenario, you may now create a simulation.
 
 ```python
-# Create a simulation from a scenario
+# Create a simulation from a scenarion
 simulation = scenario.new_simulation()
 ```
 
