@@ -26,6 +26,8 @@ Now all the settings are given to run computation of taxes or benefits.
 
 ATTENTION : Be aware of the period over which you want to have your result. Some measures are calculated on a monthly basis other an annual one.
 
+> For further information : 
+
 ###### Application : how to calculate a variable
 
 ```python
@@ -34,7 +36,7 @@ impot = simulation.calculate('irpp', '2015')
 allocations_familiales = simulation.calculate('af', '2015-01')
 ```
 
- > HINT : Don't forget to give the period
+ > HINT : Don't forget to give the period.
  
  The output is an array :
  - positive if it is an amount the *entity* receives from the state.
