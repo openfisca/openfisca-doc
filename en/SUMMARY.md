@@ -9,7 +9,7 @@
    * [Input Data](input_data.md)
    * [Simulation, Computation](simulation.md)
    * [Reforms](reforms.md)
-   * [Periods, Instants](periods_instants)
+   * [Periods, Instants](periodsinstants.md)
 * [Getting started](getting-started.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
