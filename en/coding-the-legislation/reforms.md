@@ -5,7 +5,7 @@ This section explains how to write a reform in Python.
 > If you're looking how to use an existing reform with OpenFisca Web API, please read
 > [OpenFisca-Web-API reforms](../openfisca-web-api/reforms)
 
-See the [key concepts](../key-concepts/reforms.md) section to know what is a reform.
+See the [key concepts](reforms.md) section to know what is a reform.
 
 ## How to write a reform?
 
