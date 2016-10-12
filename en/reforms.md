@@ -28,4 +28,4 @@ reform = landais_piketty_saez.landais_piketty_saez(tax_benefit_system)
 ```
 Then you can follow the normal working flow (see the [Getting_Started Notebook](https://github.com/openfisca/openfisca-france/blob/master/notebooks/getting-started.ipynb)).
 
-> For coding your own reform, see the [Reform section](coding-the-legislation/reforms.md) in the "Coding the Legislation" Section
+> For coding your own reform, see the [Reform section](../coding-the-legislation/reforms.md) in the "Coding the Legislation" Section
