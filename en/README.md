@@ -42,7 +42,6 @@ and allow citizens to browse the tax and benefit legislation.
 
 The current version implements a large set of taxes, social benefits and housing provision for France
 for the last 10 years.
-Support for Tunisia is experimental since the modelization of its tax and benefit legislation is less advanced.
 But this is only due to a shortage in manpower to enter and update the Tunisian legislation.
 
 The project is 100% free software, it is published on [GitHub](https://github.com/openfisca).
@@ -65,6 +64,10 @@ and [France Stratégie](http://www.strategie.gouv.fr/).
 OpenFisca provides a basic infrastructure, in particular a public instance of its web API,
 hosted on cheap servers.
 As it is free software, anyone can reproduce the OpenFisca infrastructure on its server.
+
+## Slides
+
+In french: https://openfisca.github.io/communication/PyConFR-2016/ and https://speakerdeck.com/cbenz/ecrire-la-loi-en-python
 
 ## What is microsimulation?
 
