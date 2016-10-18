@@ -38,8 +38,6 @@ OpenFisca-Core should be installed automatically as a requirement of OpenFisca-F
 
 Run `pip freeze` to see the installed packages: `openfisca_core` and `openfisca_france` should be listed.
 
-
-
 ## Test the installation
 
 To test if OpenFisca-France is correctly installed:
@@ -59,12 +57,3 @@ This means that OpenFisca is correctly installed on your machine.
 The next step for you is to read the [Coding the legislation](../coding-the-legislation/index.html) section to know how to write legislation.
 
 > If you want to use your local installation as an API (instead of importing it in python scripts), install **OpenFisca Web API** with [these instructions](https://github.com/openfisca/openfisca-web-api#install).
-
-## Without Conda
-
-Conda is not a strong requirement! To install the requirements of the installed packages, you can either:
-
-- install them with your operating system package manager (`apt-get` on Debian, `brew` on Mac OS X, etc.)
-- install them with `pip install` with or without a virtualenv
-
-It's up to you to choose what suits you the best.
