@@ -9,24 +9,17 @@ The supported operating systems are GNU/Linux distributions (in particular Debia
 
 Other OS should work if they can execute Python and NumPy.
 
-On Microsoft Windows:
-- The Conda installer adds by default the commands `conda` and `python` to the system PATH.
-- We recommend using [ConEmu](https://conemu.github.io/) instead of the default console.
+On Microsoft Windows we recommend using [ConEmu](https://conemu.github.io/) instead of the default console.
 
-### Create a virtualenvironnement
+### Create a virtualenv
 
-We recommend to use a virtualenv with [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) in order to solve dependancies and versions problems of packages used by Openfisca.
+[Virtualenvs](https://virtualenv.readthedocs.io/en/latest/) are a recommended way to install Python packages and their dependencies in an isolated way on your machine.
 
-```
-pip install virtualenvwrapper
-```
+Virtualenvs are easier to use with tools like [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) or [pew](https://github.com/berdario/pew).
 
 ## Clone git repositories
 
-> You might want to use a 
-
-
-You need [Git](http://www.git-scm.com/) tool to be installed on your system.
+First of all, [Git](http://www.git-scm.com/) needs to be installed on your machine.
 
 Create a working directory like `~/Dev/openfisca` and go inside.
 
