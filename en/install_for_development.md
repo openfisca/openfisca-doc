@@ -23,7 +23,7 @@ First of all, [Git](http://www.git-scm.com/) needs to be installed on your machi
 
 Create a working directory like `~/Dev/openfisca` and go inside.
 
-> If you need to modify `OpenFisca-Core` source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below. By default just continue below.
+> If you need to modify OpenFisca-Core source code, follow the [install for development](https://github.com/openfisca/openfisca-core#install-for-development) section before completing the step below. By default just continue below.
 
 Install OpenFisca-France from Git:
 
@@ -36,7 +36,7 @@ python setup.py compile_catalog
 
 OpenFisca-Core should be installed automatically as a requirement of OpenFisca-France.
 
-Run `conda list` to see the installed packages: `openfisca-core` and `openfisca-france` should be listed.
+Run `pip freeze` to see the installed packages: `openfisca_core` and `openfisca_france` should be listed.
 
 
 
