@@ -14,16 +14,17 @@ Time is defined using an ad-hoc strings format:
             
             "year-month-day"
 
-Examples:
+######Examples:
+For *instants*:
+- `"2015-02-15"` is an instant, February, 15th 2015.
 
-For periods:  
-`"2015"` is a year,   
-`"2015-01"` is a month,  
-`"2015-06:3"` are the 3 months june, july and august of the year 2015. They are all periods.
-- `"2015-02-15"` is an instant.
--
+For *periods*:  
+-  `"2015"` is a year,   
+`"2015-01"` is a month of a year, January 2015     
+`"2015-06:3"` are the 3 months June, July and August of the year 2015. 
 
->Internally, it is stored as a start instant, a unit (month, year) and a quantity of units.
+
+>Internally, time is stored as a start instant, a unit (month, year) and a quantity of units.
 
 Functions exist to transform periods or turn them into an instant, which are documented later.
 
