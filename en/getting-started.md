@@ -1,7 +1,5 @@
 # Getting started
 
-This walkthrough presents what you can do with OpenFisca without installing it.
-
 See the [getting started Jupyter Notebook] which illustrates this section.
 
 ## Explore the legislation
@@ -29,10 +27,10 @@ tax_benefit_system = openfisca_france.FranceTaxBenefitSystem()
 
 scenario = tax_benefit_system.new_scenario()
 scenario.init_single_entity(
-    period = 2015,
+    period = '?',
     parent1 = dict(
-        age = 30,
-        salaire_de_base = 15000,
+        variable1 = '?',
+        variable2 = '?',
         ),
     enfants = [
         dict(age = 10),
@@ -70,84 +68,6 @@ simulation.calculate('irpp', 2014, print_trace=True, max_depth=1)  # Print only 
 simulation.calculate('irpp', 2014, print_trace=True, max_depth=-1)  # -1 means no max depth
 simulation.calculate('irpp', 2014, print_trace=True, max_depth=-1, show_default_values=False)  # Hide variables with values being default values (0 and False basically)
 ```
-
-### Using the web API
-
-Let's do the same calculation using the web API hosted by the OpenFisca project.
-
-The web API is callable from any language which supports HTTP requests and JSON.
-We could write our example in Python or JavaScript, but let's use [curl](http://curl.haxx.se/)
-and [jq](https://stedolan.github.io/jq/).
-
-```bash
-read -d '' json << EOF
-{
-  "scenarios": [
-    {
-      "test_case": {
-        "familles": [
-          {
-            "parents": ["parent1"],
-            "enfants": ["enfant1", "enfant2", "enfant3"]
-          }
-        ],
-        "foyers_fiscaux": [
-          {
-            "declarants": ["parent1"],
-            "personnes_a_charge": ["enfant1", "enfant2", "enfant3"]
-          }
-        ],
-        "individus": [
-          {
-            "id": "parent1",
-            "age": 30,
-            "salaire_de_base": {"2015": 15000}
-          },
-          {
-            "id": "enfant1",
-            "age": 10
-          },
-          {
-            "id": "enfant2",
-            "age": 12
-          },
-          {
-            "id": "enfant3",
-            "age": 18
-          }
-        ],
-        "menages": [
-          {
-            "personne_de_reference": "parent1",
-            "enfants": ["enfant1", "enfant2", "enfant3"]
-          }
-        ]
-      },
-      "period": "2015-01"
-    }
-  ],
-  "output_format": "variables",
-  "variables": ["af"]
-}
-EOF
-curl -H "Content-Type: application/json" -X POST -d "$json" http://api.openfisca.fr/api/1/calculate | jq .value[0]
-```
-
-Result:
-
-```json
-{
-  "af": {
-    "2015-01": [
-      361.5235900878906
-    ]
-  }
-}
-```
-
-This is sightly more verbose than the previous example because we express all the entities explicitly,
-whereas in Python we had the helper method `init_single_entity`.
-That's because most of the time the JSON payload of an HTTP request is generated programatically.
 
 ## Test the impact of a reform
 
