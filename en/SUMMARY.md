@@ -14,7 +14,7 @@
    * [First Step](first_step.md)
    * Tutorials
 * [Thinking in vectors](thinking-in-vectors.md)
-* [Install](install.md)
+* [Getting OpenFisca](install.md)
    * [Basic Use](basic_use.md)
    * [For Developers](install_for_development.md)
 * [Coding the legislation](coding-the-legislation/README.md)
