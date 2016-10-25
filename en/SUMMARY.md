@@ -11,7 +11,7 @@
    * [Simulation, Computation](simulation.md)
    * [Reforms](reforms.md)
 * [Getting Started](getting-started.md)
-   * Getting Started
+   * First Step
    * ghzs
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
