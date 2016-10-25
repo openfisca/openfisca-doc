@@ -11,6 +11,7 @@
    * [Simulation, Computation](simulation.md)
    * [Reforms](reforms.md)
 * [Getting started](getting-started.md)
+   * Getting Started
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
    * [Basic Use](basic_use.md)
