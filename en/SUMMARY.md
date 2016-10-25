@@ -10,7 +10,7 @@
    * [Input Data](input_data.md)
    * [Simulation, Computation](simulation.md)
    * [Reforms](reforms.md)
-* [Getting started](getting-started.md)
+* [Getting Started](getting-started.md)
    * Getting Started
    * ghzs
 * [Thinking in vectors](thinking-in-vectors.md)
