@@ -12,6 +12,7 @@
    * [Reforms](reforms.md)
 * [Getting started](getting-started.md)
    * Getting Started
+   * ghzs
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Install](install.md)
    * [Basic Use](basic_use.md)
