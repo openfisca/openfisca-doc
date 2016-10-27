@@ -4,7 +4,7 @@
 
 You might use OpenFisca with two different approaches:
 
-* if you're more an economist, you might just want to do some tax simulations, or implement fiscal reforms. Then follow instructions in Section ["Basic Use"](basic_use.md).
+* if you're more an economist, you might just want to do some tax simulations, or implement fiscal reforms. Then follow instructions in Section ["For Users"](basic_use.md).
 
 * if you want to contribute to the source code and to develop and/or fix part of it, you will have to install OpenFisca on your machine. Then follow the section ["Install for development"](install_for_development.md).
  
