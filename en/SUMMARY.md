@@ -12,7 +12,7 @@
    * [Reforms](reforms.md)
 * [Getting Started](getting-started.md)
    * [First Step](first_step.md)
-   * Tutorials
+   * [Tutorials](tutorials.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Getting OpenFisca](install.md)
    * [For Users](for_users.md)
