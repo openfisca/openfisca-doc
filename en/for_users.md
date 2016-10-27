@@ -25,4 +25,4 @@ The performance of the server is quite low.
 
 #### Launch locally
 
-If you'd like to run OpenFisca on your own computer, just follow the [For Developers] Install section.
+If you'd like to run OpenFisca on your own computer, just follow the [For Developers](for_developers.md) Install section.
