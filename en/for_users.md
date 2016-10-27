@@ -1,19 +1,24 @@
-# Basic Use
+# For users
 
-## Work with Jupyter Notebook
+#### OpenFisca with Jupyter Notebook
 
-[Jupyter Notebook](http://jupyter.org/) is a wonderful project and a useful way to use OpenFisca without installing it on your computer.
+[Jupyter Notebook](http://jupyter.org/) is a wonderful project widely used by data scientists.   
+Basically it is a web interface running in your browser, in which you write code and it displays results.
 
-A notebook is basically a web interface running in your browser, in which you write code and it displays results.
+A easy way to run OpenFisca is then to use this interface.
 
-## Use OpenFisca Jupyter Notebook
+For first insights and without any installation try the tutorial environment.
 
-As a requirement you must have a [GitHub](https://github.com/) account.
+You will find it by clicking here : [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/openfisca/tutorial) 
 
-- Go to https://jupyter.openfisca.fr/
-- Login with your GitHub account
-- You have now a personal space to store and run your notebooks
+> **WARNING**: you won't be able to save your work on this platform. But you may download it.
+
+
+
+#### Access to OpenFisca Jupyter Notebooks Hub
+
+You will have to get in contact with the [OpenFisca team](https://github.com/openfisca) to have the access rights.
 
 The performance of the server is quite low.
 
-Warning! There is no guarantee with your data so please backup your notebooks.
+>Warning! There is no guarantee with your data so please backup your notebooks.
