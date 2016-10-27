@@ -25,7 +25,7 @@
 * [Legislation parameters](legislation-parameters/README.md)
    * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
 * [Reference documentation](reference_documentation.md)
-   * [Scenario](reference-documation/scenario.md)
+   * [Scenario](en/reference-documation/scenario.md)
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Endpoints](openfisca-web-api/endpoints.md)
    * [JSON data structures](openfisca-web-api/json-data-structures.md)
