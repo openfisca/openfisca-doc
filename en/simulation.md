@@ -26,7 +26,8 @@ Now all the settings are given to run computation of taxes or benefits.
 
 ATTENTION : Be aware of the period over which you want to have your result. Some measures are calculated on a monthly basis other an annual one.
 
-> For further information : 
+> For further information : see the [tutorial]> For further information : see the [tutorial]( "How to handle periods"
+) "How to handle periods"
 
 ###### Application : how to calculate a variable
 
