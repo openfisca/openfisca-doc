@@ -1,4 +1,4 @@
-# For users
+# For Users
 
 #### OpenFisca with Jupyter Notebook
 
@@ -17,11 +17,12 @@ You will find it by clicking here : [![Binder](http://mybinder.org/badge.svg)](h
 
 #### Access to OpenFisca Jupyter Notebooks Hub
 
-You will have to get in contact with the [OpenFisca team](https://github.com/openfisca) to have the access rights.
+You can find at https://jupyter.openfisca.fr an OpenFisca platform for Notebooks. 
 
-The performance of the server is quite low.
+But to have the access rights you will have to get in contact with the [OpenFisca team](https://github.com/openfisca).
 
->Warning! There is no guarantee with your data so please backup your notebooks.
+
+  >**WARNING**: There is no guarantee with your data so please backup your notebooks.
 
 #### Launch locally
 
