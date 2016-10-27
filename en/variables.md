@@ -13,7 +13,7 @@ Examples : ```date_de_naissance``` or ```salaire_de_base```
 
  ######2- Calculated variable
 
-It is the taxes or benefits calculated by OpenFisca. Therefore they have a computation formula which will involve other variables to get the result. 
+It is the taxes or benefits calculated by OpenFisca. Therefore they have a computation formula which might involve other variables to get the result. 
 
 Examples : ```irpp``` (impôt sur le revenu) or ```rsa``` (revenu de solidarité active).
 
