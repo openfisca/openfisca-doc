@@ -22,3 +22,7 @@ You will have to get in contact with the [OpenFisca team](https://github.com/ope
 The performance of the server is quite low.
 
 >Warning! There is no guarantee with your data so please backup your notebooks.
+
+#### Launch locally
+
+If you'd like to run OpenFisca on your own computer, just follow the [For Developers] Install section.
