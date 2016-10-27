@@ -15,7 +15,7 @@
    * Tutorials
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Getting OpenFisca](install.md)
-   * [For Users](basic_use.md)
+   * [For Users](for_users.md)
    * [For Developers](install_for_development.md)
 * [Coding the legislation](coding-the-legislation/README.md)
    * [Periods](coding-the-legislation/periods.md)
