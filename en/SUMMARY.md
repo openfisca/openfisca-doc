@@ -31,7 +31,7 @@
    * [Reforms](openfisca-web-api/reforms.md)
    * [Install an api instance](openfisca-web-api/install_an_api_instance.md)
    * [Docker containers](openfisca-web-api/docker-containers.md)
-* [Web tools](web-tools/README.md)
+* [Useful Tools](web-tools/README.md)
    * [Trace tool](web-tools/trace_tool.md)
 * [Troubleshooting](troubleshooting.md)
 * [Community](community.md)
