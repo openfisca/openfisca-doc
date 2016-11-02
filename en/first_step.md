@@ -1,26 +1,13 @@
-# First Step
+# First steps
 
-# Getting started
-
-See the [getting started Jupyter Notebook] which illustrates this section.
-
-## Explore the legislation
-
-The [legislation explorer](http://legislation.openfisca.fr/) allows you to browse the variables and the parameters
-of the tax and benefit legislation.
-
-Each variable has its own URL and page, and the same for the parameters.
-
-For example: [af](http://legislation.openfisca.fr/variables/af)
 
 ## Calculate a variable
 
-### Using Python
 
-Say we want to calculate the [af](http://legislation.openfisca.fr/variables/af) of a family with 1 parent (they divorced) and 3 children.
+Say we want to calculate the [allocation familiales](http://legislation.openfisca.fr/variables/af) of a family with 1 parent (they divorced) and 3 children.
 
-Here is the script `test1.py` available
-[here](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/getting_started/test1.py), or in the [getting started Jupyter Notebook]:
+Here is the script available in the
+ [getting started Jupyter Notebook]:
 
 ```python
 import openfisca_france
@@ -117,4 +104,4 @@ Result:
 
 The result is a vector of size 1, the number of `foyers_fiscaux` in our test case.
 
-[getting started Jupyter Notebook]: https://github.com/openfisca/openfisca-web-notebook/blob/master/documentation/getting-started.ipynb
+[getting started Jupyter Notebook]: http://mybinder.org/repo/openfisca/tutorial
