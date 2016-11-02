@@ -30,10 +30,5 @@ You can have a look of all variables implemented in OpenFisca through the [Legis
 
 To understand how to use it, please see the corresponding documentation Section [here](web-tools/legislation_explorer.md).
 
+ 
 
-
-#### Variables and time
-
-Some variables are measures that were valid only for a given period or that have been modified. For example, the "Prime pour l'emploi" has been deleted in 2015. It will then be a *Dated_fonction* and you will see in the Legislation Explorer its validity period. 
-
-Example: [PPE](https://legislation.openfisca.fr/variables/ppe)
