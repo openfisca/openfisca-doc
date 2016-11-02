@@ -21,7 +21,9 @@ Here is a simple parameter sample:
 The `param.xml` file itself has a start and an end date.
 
 ## Parameters and Time
- Coding a parameter means including the interval of time over which it is defined. You just have to complete for each definition period.
+ Coding a parameter means including the interval of time over which it is defined thanks to the attributes `deb` and `fin`.
+ 
+ > HINT : Time is given as [Instant](periods.md) with string syntax
  
  Example : the threshold of the [`decote`](https://legislation.openfisca.fr/parameters/ir.decote.seuil)
 
@@ -32,7 +34,7 @@ The `param.xml` file itself has a start and an end date.
         <VALUE deb="2013-01-01" fin="2013-12-31" valeur="1016" />
         <VALUE deb="2012-01-01" fin="2012-12-31" valeur="960" />
 ```
-**The fuzzy attribute ** : if you don't know the end date of the parameters and it is still valid today you can add the attribute `fuzzy = True`.   Example: for the `decote`, it will indefinitely have the 1016 value from the 1th January 2014.
+**The fuzzy attribute ** : if we don't know the end date of the parameters and it is still valid today we add the attribute `fuzzy = True`.   Example: for the `decote`, it will indefinitely have the 1016 value from the 1th January 2014.
 
 ## Query
 
