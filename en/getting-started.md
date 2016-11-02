@@ -2,9 +2,11 @@
 
 Now let's think practical.
 
-Tutorials can be found [here](http://mybinder.org/repo/openfisca/tutorial ) to have a first grip on OpenFisca.
+You can have an overview of OpenFisca in the [First Steps Section](first_step.md) of this documentation.   
+Use it as a first glance at how works OpenFisca.
 
-You will have an overview of OpenFisca in the Getting Started Section and then tutorials on specific subjects.
+If you want more details or if you want to try by yourselves OpenFisca, please read the tutorials [here](http://mybinder.org/repo/openfisca/tutorial ).  
+> You will find in the tutorials specific use of OpenFisca written in [Jupyter Notebook](http://jupyter.org/).
 
 
 
