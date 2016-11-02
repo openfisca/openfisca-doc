@@ -28,7 +28,7 @@ You have to request for access rights by contacting the [OpenFisca team](https:/
 
 ## On your machine
 
-You can run OpenFisca locally on your own computer, then enjoy Jupyter Notebook too.
+You can run OpenFisca locally on your own computer, and enjoy Jupyter Notebook too.
 
 First follow the [For Developers](for_developers.md) install section.
 
