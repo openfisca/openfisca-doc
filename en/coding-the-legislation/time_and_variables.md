@@ -79,4 +79,4 @@ class aefa(DatedVariable):
 ```
 ### Coding parameters
 
-See the Coding Section for Parameters
+See the [Coding Section for Parameters](https://doc.openfisca.fr/en/legislation-parameters/index.html#parameters-and-time).
