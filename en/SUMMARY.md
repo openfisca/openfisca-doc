@@ -21,7 +21,7 @@
    * [For Developers](for_developers.md)
 * [Coding the legislation](coding-the-legislation/README.md)
    * [Periods](coding-the-legislation/periods.md)
-   * [Time and Variables/Parameters](coding-the-legislation/time_and_variablesparameters.md)
+   * [Time and Variables](coding-the-legislation/time_and_variablesparameters.md)
    * [Reforms](coding-the-legislation/reforms.md)
    * [Writing YAML tests](coding-the-legislation/writing_yaml_tests.md)
    * [Bootstrap a new country](coding-the-legislation/bootstrap_a_new_country.md)
