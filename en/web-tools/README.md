@@ -2,3 +2,8 @@
 
 The OpenFisca team has created several [web tools](http://www.openfisca.fr/tools) which help to understand the legislation or to write formulas.
 
+- [The Legislation Explorer](legilsation_exlorer.md) is a wonderful tool to understand the french legislation and the dependencies between OpenFisca variables.
+- [The Trace tool](trace_tool.md) is a good help to understand the computation OpenFisca has made.
+
+
+
