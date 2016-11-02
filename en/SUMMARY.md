@@ -13,7 +13,7 @@
 * [Getting Started](getting-started.md)
    * [First Steps](first_step.md)
 * [Thinking in vectors](thinking-in-vectors.md)
-* [Getting OpenFisca](install.md)
+* [Installing OpenFisca](install.md)
    * [For Users](for_users.md)
    * [For Developers](for_developers.md)
 * [Coding the legislation](coding-the-legislation/README.md)
