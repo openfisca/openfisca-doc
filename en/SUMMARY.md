@@ -14,7 +14,7 @@
    * [First Steps](first_step.md)
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Useful Tools](web-tools/README.md)
-   * Legislation Explorer
+   * [Legislation Explorer](web-tools/legislation_explorer.md)
    * [Trace tool](web-tools/trace_tool.md)
 * [Installing OpenFisca](install.md)
    * [For Users](for_users.md)
