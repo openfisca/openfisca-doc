@@ -5,7 +5,7 @@ This activity is intended primarily for economists.
 
 ######Table of Contents
 
-First sections are dedicated to the **coding of Variables and Parameters**:
+First sections are dedicated to the **coding of Variables**:
    * [Periods](coding-the-legislation/periods.md)
    * [Time and Variables](coding-the-legislation/time_and_variables.md)
 
