@@ -15,6 +15,7 @@
 * [Thinking in vectors](thinking-in-vectors.md)
 * [Useful Tools](web-tools/README.md)
    * [Trace tool](web-tools/trace_tool.md)
+   * Legislation Explorer
 * [Installing OpenFisca](install.md)
    * [For Users](for_users.md)
    * [For Developers](for_developers.md)
