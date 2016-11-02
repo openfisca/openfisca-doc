@@ -7,7 +7,7 @@ This activity is intended primarily for economists.
 
 First sections are dedicated to the **coding of Variables and Parameters**:
    * [Periods](coding-the-legislation/periods.md)
-   * [Time and Variables/Parameters](coding-the-legislation/time_and_variablesparameters.md)
+   * [Time and Variables](coding-the-legislation/time_and_variables.md)
 
 For writing your own **reforms** :
    * [Reforms](coding-the-legislation/reforms.md)
