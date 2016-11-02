@@ -78,15 +78,5 @@ class aefa(DatedVariable):
         return period, aefa
 ```
 ### Coding parameters
- Coding a parameter means including the interval of time over which it is defined. You just have to complete for each definition period.
- 
- Example : the threshold of the [`decote`](https://legislation.openfisca.fr/parameters/ir.decote.seuil)
 
-```xml
- <NODE code="decote" description="Décote">
-      <CODE code="seuil" description="Seuil de la décôte" format="integer" type="monetary">
-        <VALUE deb="2014-01-01" fuzzy="true" valeur="1016" />
-        <VALUE deb="2013-01-01" fin="2013-12-31" valeur="1016" />
-        <VALUE deb="2012-01-01" fin="2012-12-31" valeur="960" />
-```
-**The fuzzy attribute ** : if you don't know the end date of the parameters and it is still valid today you can add the attribute `fuzzy = True`.   Example: for the `decote`, it will indefinitely have the 1016 value from the 1th January 2014.
+See the Coding Section for Parameters
