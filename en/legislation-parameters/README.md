@@ -34,7 +34,7 @@ The `param.xml` file itself has a start and an end date.
         <VALUE deb="2013-01-01" fin="2013-12-31" valeur="1016" />
         <VALUE deb="2012-01-01" fin="2012-12-31" valeur="960" />
 ```
-**The fuzzy attribute ** : if we don't know the end date of the parameters and it is still valid today we add the attribute `fuzzy = True`.   Example: for the `decote`, it will indefinitely have the 1016 value from the 1th January 2014.
+**The fuzzy attribute ** : if we don't know the end date of the parameter but it is still valid today we add the attribute `fuzzy = True`.   Example: for the `decote`, it will indefinitely have the 1016 value from the 1th January 2014.
 
 ## Query
 
