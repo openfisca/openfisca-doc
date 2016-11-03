@@ -26,5 +26,5 @@ For *periods*:
 
 >Internally, time is stored as a start instant, a unit (month, year) and a quantity of units.
 
-Functions exist to transform periods or turn them into an instant, which are documented [later](periods.md).
+Functions exist to transform periods or turn them into an instant, which are documented [later](coding-the-legislation/periods.md).
 
