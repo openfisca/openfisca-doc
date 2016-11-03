@@ -44,7 +44,7 @@ class aefa(DatedVariable):
     '''
 ```
 
-- Then you define the variable over the first period of existence. Use the decorator `@dated_function` with the start date and the stop date.
+- Then you define the variable over the first period of existence. Use the decorator `@dated_function` with the start date and the stop (end) date.
 
 ```python
 @dated_function(start = date(2002, 1, 1), stop = date(2007, 12, 31))
