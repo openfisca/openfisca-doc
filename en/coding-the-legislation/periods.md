@@ -1,16 +1,16 @@
 # Periods
 
-> For a better understanding of this section please read first the [periods](periods.md) definition
+> For a better understanding of this section please read first the [periods](periods.md) definition  
 >  *The Code Source is to find  in the [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file in the `Openfisca_core` module.*
 
 Every variable formulas needs to be defined over a specific period or needs values of other variables on a specific period.  
 
 This section is dedicated to a full comprehension of coding the time in OpenFisca.
 
-First let's have a brief look on how to convert time in OpenFisca object:
-[The module `periods`](https://doc.openfisca.fr/en/coding-the-legislation/periods.html#the-module-periods)
-And then how to code 
-
+First let's have a brief look on how to **convert time** in OpenFisca object:   
+[The module `periods`](https://doc.openfisca.fr/en/coding-the-legislation/periods.html#the-module-periods)   
+And then how to **code variable** with calls to convenient period:    
+[Calling periods in variable definition](https://doc.openfisca.fr/en/coding-the-legislation/periods.html#calling-periods-in-variable-definition)
 ### The `periods` module
 
 The OpenFisca `periods` module converts [OpenFisca formatted time string](https://doc.openfisca.fr/en/periodsinstants.html#implementation-in-openfisca) to *Instant* or *Periods*.
@@ -97,7 +97,7 @@ This expression means three years starting in 2015.
 
        
 
-### Calling periods in Variable definition
+### Calling periods in variable definition
 
 We show you here how to call the right period in the definition formula of variables.
 
@@ -106,7 +106,7 @@ First note : every period of variable formulas is defined *relatively* to the pe
 For example the period given in the input data. 
 
 
-##### Calling for the current year/month
+#### Calling for the current year/month
 We call the current year/month the year/month corresponding to the period given in the input.
 
 Following previous instructions, the current year is coded as this :
