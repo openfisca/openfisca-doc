@@ -7,10 +7,11 @@ Every variable formulas needs to be defined over a specific period or needs valu
 
 This section is dedicated to a full comprehension of coding the time in OpenFisca.
 
-First let's have a brief look on how to **convert time** in OpenFisca object:   
-[The module `periods`](https://doc.openfisca.fr/en/coding-the-legislation/periods.html#the-module-periods)   
-And then how to **code variable** with calls to convenient period:    
-[Calling periods in variable definition](https://doc.openfisca.fr/en/coding-the-legislation/periods.html#calling-periods-in-variable-definition)
+###### Table of Contents :
+   
+[The  `periods` module](https://doc.openfisca.fr/en/coding-the-legislation/periods.html#the-module-periods) : how to **convert time** in OpenFisca object      
+    
+[Calling periods in variable definition](https://doc.openfisca.fr/en/coding-the-legislation/periods.html#calling-periods-in-variable-definition): how to **code variable** with calls to convenient period
 ### The `periods` module
 
 The OpenFisca `periods` module converts [OpenFisca formatted time string](https://doc.openfisca.fr/en/periodsinstants.html#implementation-in-openfisca) to *Instant* or *Periods*.
