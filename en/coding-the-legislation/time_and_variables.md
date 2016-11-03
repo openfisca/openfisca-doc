@@ -54,7 +54,7 @@ class aefa(DatedVariable):
         ...
 ```
 > If you omit the start date, the formula is valid to the stop date.   
-> If you omit the end date, it is valid from the start date.
+> If you omit the stop date, it is valid from the start date.
 
 - Repeat the process until your variable is defined for all periods.
 
