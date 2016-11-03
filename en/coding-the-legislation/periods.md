@@ -155,6 +155,6 @@ class rsa_base_ressources_minima_sociaux(Variable):
 ```
 Actually exists in OpenFisca an abbreviate expression : `last_3_month` 
 
-You will find in [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file other syntax abbreviation as `last_year` or `kast_month`.
+You will find in [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file other syntax abbreviations as `last_year` or `last_month`.
 
 
