@@ -1,6 +1,6 @@
 # How to code the evolution of definitions over time
 
-Some [variables](variables.md) or [parameters](parameters.md) were valid only for a given period or have been modified since first definition.    
+Some [variables](variables.md) or [parameters](parameters.md) are valid only for a specified period of time or may have been modified since their introduction int the legislation.    
 
 For example:
 - the ["Prime pour l'emploi"](https://legislation.openfisca.fr/variables/ppe) has been deleted in 2015.
@@ -8,12 +8,12 @@ For example:
 
 
 #### Coding Variables 
-There is two situations :
- - if the variable is only defined for a specific time interval
- - if the variable definition evolves over time.
+There are two situations :
+ - the variable is defined only for a specific time interval
+ - the variable definition evolves over time.
  
-###### Over a specific time interval
-Add as function attribute the start and/or end date of the variable.
+###### Definied for a specific time interval
+Add as function attribute the start_date and/or stop_date of the variable.
 
 Example: the [`bouclier fiscal`](https://legislation.openfisca.fr/variables/bouclier_fiscal)
 ```python
@@ -32,7 +32,7 @@ class bouclier_fiscal(Variable):
 
 ###### Evolving Definition
 
-To take it into account we use *Dated Functions*.   
+Use *Dated Functions* to deal with evolving variable function.   
 Let's take as example the [`Prime de Noël (aefa)`](https://github.com/openfisca/openfisca-france/blob/4.1.17/openfisca_france/model/prestations/minima_sociaux/aefa.py) throughout.
 
    - First you have to declare a `class` Python object with the option `DatedVariable`.
@@ -44,7 +44,7 @@ class aefa(DatedVariable):
     '''
 ```
 
-- Then you define the variable over the first period of existence. Use the decorator `@dated_function` with the start date and the end date.
+- Then you define the variable over the first period of existence. Use the decorator `@dated_function` with the start date and the stop date.
 
 ```python
 @dated_function(start = date(2002, 1, 1), stop = date(2007, 12, 31))
