@@ -1,14 +1,19 @@
 # Periods
 
 > For a better understanding of this section please read first the [periods](periods.md) definition
+>  *The Code Source is to find  in the [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file in the `Openfisca_core` module.*
 
 Every variable formulas needs to be defined over a specific period or needs values of other variables on a specific period.  
 
-But first let's have a brief look on how to convert time in OpenFisca object.
+This section is dedicated to a full comprehension of coding the time in OpenFisca.
 
-### The module `periods`
+First let's have a brief look on how to convert time in OpenFisca object:
+[The module `periods`](https://doc.openfisca.fr/en/coding-the-legislation/periods.html#the-module-periods)
+And then how to code 
 
-The OpenFisca module `periods` converts [OpenFisca formatted time string](https://doc.openfisca.fr/en/periodsinstants.html#implementation-in-openfisca) to *Instant* or *Periods*.
+### The `periods` module
+
+The OpenFisca `periods` module converts [OpenFisca formatted time string](https://doc.openfisca.fr/en/periodsinstants.html#implementation-in-openfisca) to *Instant* or *Periods*.
 
 Let's say for the seek  of the demo that we have given the date 15th March 2015 as input.
 
@@ -92,7 +97,7 @@ This expression means three years starting in 2015.
 
        
 
-### Coding Variable
+### Calling periods in Variable definition
 
 We show you here how to call the right period in the definition formula of variables.
 
@@ -148,5 +153,8 @@ class rsa_base_ressources_minima_sociaux(Variable):
         ...
      
 ```
+Actually exists in OpenFisca an abbreviate expression : `last_3_month` 
 
-> Code Source is in the [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file in the `Openfisca_core` module
+You will find in [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file other syntax abbreviation as `last_year` or `kast_month`.
+
+
