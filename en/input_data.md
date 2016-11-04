@@ -47,18 +47,18 @@ scenario.init_single_entity(
 # Variable describing the individuals
     parent1 = dict(
         age = 30,
-        salaire_de_base = 15000,
+        salaire_de_base = 15000, # Annual basis
         ),
     parent2 = dict(
         date_naissance = date(1980, 1, 1),
-        salaire_de_base = 70000,
+        salaire_de_base = 70000, # Annual basis
         ),
      enfants = [
         dict(age = 12),
         dict(age = 18),
         ],
  # Variable describing the entity
-    menage = dict(loyer = 1000,
+    menage = dict(loyer = 12000, # Annual basis
             statut_occupation_logement = u"Locataire ou sous-locataire 
                                       d'un logement loué vide non-HLM",
             ),
@@ -67,13 +67,13 @@ scenario.init_single_entity(
 
 Notice that some input variables are associated to *individus* ("parent1" , "parent2" and "children") whereas other are related to *entity* ("menage").
 
-
+> **WARNING**: Declare the *input variables* on an annual basis.
 
 HINT : For categorical variable you may use either the modality or its number.   
 Example with the [statut d'occupation du logement](https://legislation.openfisca.fr/variables/statut_occupation_logement) :
  ``` python
  # Declaration of categorical variable
- menage = dict(loyer = 1000,
+ menage = dict(loyer = 12000,
             statut_occupation_logement = 4,
             )
             
