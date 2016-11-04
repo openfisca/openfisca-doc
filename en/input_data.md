@@ -25,7 +25,7 @@ scenario = tax_benefit_system.new_scenario()
 
 ### Test cases 
 
-Test case describes persons and entities with their input variables.
+Test case describes persons and entities with their input variables or attributes.
 
 You may add information at *individual* level or at *entity* level.  
 One input is crucial and shouldn't be forgotten : the *period* of the simulation.
@@ -33,12 +33,12 @@ One input is crucial and shouldn't be forgotten : the *period* of the simulation
 ###### Application : how to initialize a scenario
 Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](openfisca-web-api/json-data-structures.md) of the documentation).
 
-In Python you have to use the `init_single_entity` function based on the *scenario*.
+In Python you have to use the `init_single_entity` function based on the *scenario*. To give to every person of your *test case* attributes, you have to use the Python dictionnary object.
 
 We show here the Python expression for a family constituted by :
-- two parents (as attributes : her `age` or her `date_naissance` and her `salaire_de_base`),
-- two children (as attribute : their `age`),
-- a house (as attributes : the `loyer` and the `statut_occupation_logement`)
+- two parents (with attributes : her `age` or her `date_naissance` and her `salaire_de_base`),
+- two children (with attribute : their `age`),
+- a house (with attributes : the `loyer` and the `statut_occupation_logement`)
 
 ```python
 # Initialize test case
