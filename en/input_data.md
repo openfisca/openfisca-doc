@@ -30,8 +30,8 @@ Test case describes persons and entities with their input variables.
 You may add information at *individual* level or at *entity* level.  
 One input is crucial and shouldn't be forgotten : the *period* of the simulation.
 
-###### Application : how to intialize a scenario
-Test cases can be expressed in Python or in JSON when using the Web API (see specific sections of the documentation).
+###### Application : how to initialize a scenario
+Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](openfisca-web-api/json-data-structures.md) of the documentation).
 
 In Python you have to use the `init_single_entity` function based on the *scenario*.
 
