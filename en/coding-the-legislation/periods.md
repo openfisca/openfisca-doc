@@ -1,7 +1,7 @@
 # Periods
 
 > For a better understanding of this section please read first the [periods](periods.md) definition  
->  *The Code Source is to find  in the [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file in the `Openfisca_core` module.*
+
 
 Every variable formulas needs to be defined over a specific period or needs values of other variables on a specific period.  
 
@@ -159,3 +159,4 @@ Actually exists in OpenFisca an abbreviate expression : `last_3_month`
 You will find in [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file other syntax abbreviations as `last_year` or `last_month`.
 
 
+> NB: *The entire Periods Code Source is to find  in the [periods.py](https://github.com/openfisca/openfisca-core/blob/master/openfisca_core/periods.py) file in the `Openfisca_core` module.*
