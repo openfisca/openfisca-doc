@@ -18,7 +18,6 @@ As soon as you've loaded the TaxBenefitSystem of a country and a Scenario, you m
 simulation = scenario.new_simulation()
 ```
 
-> See [`new_simulation()`](/reference-documentation/scenario.md#def-newsimulation) in the reference documentation
 
 #### Computing variables
 
