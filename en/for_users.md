@@ -30,15 +30,29 @@ You have to request for access rights by contacting the [OpenFisca team](https:/
 
 You can run OpenFisca locally on your own computer, and enjoy Jupyter Notebook too.
 
-First follow the [For Developers](for_developers.md) install section.
-
-Then install Jupyter Notebook:
+Here is the recommended way:
 
 ```
-pip install jupyter notebook
+pip install pew
+# Answer "Y" to the question about modifying your shell config file.
+
+pew new openfisca
+# The virtualenv you just created, named "openfisca", will be automatically activated.
+
+# Pew will automatically update pip itself. Let's check:
+pip --version
+# Should print at least 9.0 at the time we write this doc.
+
+pip install openfisca-france jupyter matplotlib
 jupyter notebook
 ```
 
 This will open a browser window on http://localhost:8080
+
+Later, you'll be able to activate the virtualenv like this:
+
+```
+pew workon openfisca
+```
 
 See also: http://jupyter.org/install.html
