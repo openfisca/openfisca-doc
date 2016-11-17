@@ -1,11 +1,10 @@
 # Coding the legislation
 
-This section explains how to implement the legislation with OpenFisca as source code.   
-This activity is intended primarily for economists.
+## Coding variables
 
-######Table of Contents
-
-First sections are dedicated to the **coding of Variables**:
+   * [Coding a formula: basic example](10_basic_example.md)
+   * [Introducing an input variable](20_input_variables.md)
+   * [Case disjunction](30_case_disjunction.md)
    * [Periods](coding-the-legislation/periods.md)
    * [Time and Variables](coding-the-legislation/time_and_variables.md)
 
