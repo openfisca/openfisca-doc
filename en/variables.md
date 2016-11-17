@@ -1,34 +1,30 @@
-# Variables
+# Variables and formulas
 
-#### Definition
+A variable is property of a person, or an entity (e.g. a family).
 
-In Openfisca two types of variable coexist :
+For instance:
 
+* The *birth date* of a person
+* The amount of *basic income* (in France, *RSA*) a family can get in a month.
+* The amount of *income tax* a household has to pay in a year.
+* Weather a family is *living in Paris*, or not.
 
- ###### 1- Input variable
- 
-It is information given by the user and related to her situation.  
+### Input variables
 
-Examples : ```date_de_naissance``` or ```salaire_de_base```
+Some variables can only be given as inputs of a simulation. For instance, the *birth date* of a person.
 
- ######2- Calculated variable
+### Formulas
 
-It is the taxes or benefits calculated by OpenFisca. Therefore they have a computation formula which might involve other variables to get the result. 
+Other variables can be calculated thanks to a **formula**.
 
-Examples : ```irpp``` (impôt sur le revenu) or ```rsa``` (revenu de solidarité active).
+A formula is a **function** that calculates the value of given variable, for a given period. To do so, it performs (usually arithmetic) operations on the values of other variables, the formula **dependencies**.
 
- > - Calculated variables can be bypassed if an actual value is given.
+For instance :
+* The *basic income* of a family can be calculated from its income, and some other information about its situation.
+* The *income tax* of a tax household can be calculated the same way.
 
-The other variables used for computation are called the *dependencies*. The dependencies might be either calculated or input variables.   
+It is important to note that **all variables can be used as inputs**. This means that even if the *basic income* can be calculated from other variables, I can, for a given simulation, provide it as an input. Then, if another formula asks for the value of *basic income* for a month, the input value will be returned, and the *basic income* formula **won't be executed.**
 
-
- > - If dependencies are not found, default values are used (most of the time `0`).
-
-#### The Legislation Explorer tool
-
-You can have a look of all variables implemented in OpenFisca through the [Legislation Explorer](https://legislation.openfisca.fr/) tool.
-
-To understand how to use it, please see the corresponding documentation Section [here](web-tools/legislation_explorer.md).
 
  
 
