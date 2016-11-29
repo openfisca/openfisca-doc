@@ -32,7 +32,7 @@ travis encrypt-file $id_rsa --add
 
 * Add the public key to the repository in Settings > Deploy keys, with writing rights.
 
-* Copy and **adapt the repository name** in the [`release-tag.sh`](https://github.com/openfisca/openfisca-france/blob/master/release-tag.sh) script into the repository.
+* Copy and **adapt the repository name** in the [`release-tag.sh`](https://github.com/openfisca/openfisca-france/blob/4.0.0/release-tag.sh) script into the repository.
 
 * Edit `.travis.yaml` to:
     * Decrypt the ssh key in `before_deploy` instead of `before_install`.
