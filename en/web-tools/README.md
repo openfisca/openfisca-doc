@@ -7,3 +7,9 @@ The OpenFisca team has created several [web tools](http://www.openfisca.fr/tools
 
 
 
+#### The Legislation Explorer tool
+
+You can have a look of all variables implemented in OpenFisca through the [Legislation Explorer](https://legislation.openfisca.fr/) tool.
+
+To understand how to use it, please see the corresponding documentation Section [here](web-tools/legislation_explorer.md).
+

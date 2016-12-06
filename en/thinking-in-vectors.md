@@ -98,7 +98,3 @@ Notice the different sizes of the vectors, and the disappearance of the person i
 
 Then OpenFisca core engine can start calculating the asked variables, using the given input variables as any
 calculated variable result.
-
-## Casting from an entity to another
-
-TODO
