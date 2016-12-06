@@ -2,11 +2,7 @@
 
 ## Limitations
 
-Openfisca calculation are all **vectorial**. This means that any calculation can be done at the same time for a big number of persons, families, etc. This enables fast calculations for a big population, but comes with some constraints.
-
-Classical control structures such as `if...else` or `switch`, and native python logical operators such as `or` and `not` **can not** be used on a openfisca variable.
-
-The following formula would for instance **break**:
+Built-in python conditionnal structures are not compatible with [vector calculus](25_vectorial_computing.md).  The following formula would for instance **break**:
 
 ```py
 # THIS IS NOT A VALID OPENFISCA FORMULA
@@ -84,9 +80,9 @@ def function(person, period):
         )
 ```
 
-## Logical operations
+## Complex conditions
 
-For complex conditions, `*` is used instead of `and`, and `+` is used instead of `or`.
+Complex conditions can be coded combining `*` as `and` and `+` as `or`.
 
 For instance, let's consider that a person will be granted `200` if either:
     - They are more than 25 *and* make less than `1000` per month

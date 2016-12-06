@@ -4,9 +4,10 @@
 
    * [Coding a formula: basic example](10_basic_example.md)
    * [Introducing an input variable](20_input_variables.md)
+   * [Vector calculus limitations](25_vectorial_computing.md)
    * [Case disjunction](30_case_disjunction.md)
+   * [Legislation evolutions](40_legislation_evolutions.md)
    * [Periods](coding-the-legislation/periods.md)
-   * [Time and Variables](coding-the-legislation/time_and_variables.md)
 
 For writing your own **reforms** :
    * [Reforms](coding-the-legislation/reforms.md)
