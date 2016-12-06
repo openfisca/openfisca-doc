@@ -6,8 +6,9 @@
    * [Introducing an input variable](20_input_variables.md)
    * [Vector calculus limitations](25_vectorial_computing.md)
    * [Case disjunction](30_case_disjunction.md)
+   * [Periods](35_periods.md)
    * [Legislation evolutions](40_legislation_evolutions.md)
-   * [Periods](coding-the-legislation/periods.md)
+   * [Entities](50_entities.md)
 
 For writing your own **reforms** :
    * [Reforms](coding-the-legislation/reforms.md)

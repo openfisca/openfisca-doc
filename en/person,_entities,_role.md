@@ -1,26 +1,25 @@
 # Person, entities, role
 
-#### Definition 
-Taxes and benefits are calculated at different levels of people aggregates.
+Taxes and benefits can be calculated for different entities: persons, household, companies, etc.
 
-###### Person
-Some measures depend only on the attributes of the *person*.  
+## Person
+Some openfisca variables are defined for a *person*.  
 
-Example : the ["allocations chômage imposables"](https://legislation.openfisca.fr/variables/chomage_imposable) are calculated as the individual level.
+Example : a ["salary"](https://legislation.openfisca.fr/variables/salaire_net) is defined as the individual level.
 
-######  Entities
-*Entities* are clusters of *persons* like the family, the household or the company.
-The legislation defines many entities and specifies each time which tax and benefit applies to which entity.
+##  Group entities
+*Group entities* are clusters of *persons* such as the family, the household or the company.
+A tax benefit system can define several entities and specifies each time which tax and benefit applies to which entity.
 
-In France the legislation has these *entities*: 
+In France the legislation has these *group entities*: 
 - `"familles"`,
 - `"foyers_fiscaux"` and 
 - `"menages"`.
 
-Example : the  ["taxe d'habitation"](https://legislation.openfisca.fr/variables/taxe_habitation) is calculated over the `"menages"`.
+Example : the  ["local tax"](https://legislation.openfisca.fr/variables/taxe_habitation) is calculated over the `"menages"`.
 
 ###### Roles
-Each person related to an *entity* has a *role* inside this entity.  
+Each person related to a *group entity* has a *role* inside this entity.  
 
 The *roles* are :
 - for '```familles```': ```parents``` and ```enfants```,

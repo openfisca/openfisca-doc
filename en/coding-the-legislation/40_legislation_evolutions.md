@@ -1,6 +1,6 @@
 # Legislation evolutions
 
-Openfisca handles the fact that the legislation change over time. Each formula is able to calculate a variable for a person (or a family) **for a given period**.
+Openfisca handles the fact that the legislation change over time.
 
 ## Parameter evolution
 
