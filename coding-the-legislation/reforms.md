@@ -1,104 +1,103 @@
 # Reforms
 
-This section explains how to write a reform in Python.
+A [reform](../reforms.md) is a set of modifications to be applied to a tax and benefit system, usually to study the quantitative impact of a possible change of the law.
 
-> If you're looking how to use an existing reform with OpenFisca Web API, please read
-> [OpenFisca-Web-API reforms](../openfisca-web-api/reforms)
+## Writing a reform
 
-See the [key concepts](reforms.md) section to know what is a reform.
+Let's for instance assume that we want to simulate the effect of a reform that changes the way the `income_tax` is calculated.
 
-## How to write a reform?
+We would write such a reform this way:
 
-[OpenFisca-Core](https://github.com/openfisca/openfisca-core) provides a `TaxBenefitSystem` class to represent a tax and benefit system. It provides too a `Reform` class which inherits `TaxBenefitSystem`.
+```py
 
-To write a reform which will work with [OpenFisca-Web-API](https://github.com/openfisca/openfisca-web-api),
-you have to implement a `build_reform` function which returns an instance of the `Reform` class.
+class income_tax(Variable):
+    entity = Household
+    label = u'Alternative formula to calculate the income tax, under experimentation'
 
-The `reforms.make_reform` function does the job.
+    def function(household, period):
+        # (...)
 
-Here is how to do a reform which does nothing, for the purpose of the example:
+class income_tax_reform(Reform):
+    name = u'Reform on income tax'
 
-```python
-def build_reform(tax_benefit_system):
-    Reform = reforms.make_reform(
-        key = 'empty',
-        name = u'Dummy empty reform',
-        reference = tax_benefit_system,
-        )
-    reform = Reform()
-    return reform
+    def apply(self):
+        self.update_variable(income_tax)
 ```
 
-> `reforms.make_reform` returns a `Reform` class that you can instantiate in `build_reform`.
-> You can modify this instance if needed, then return it.
+A `Reform` **must** define an `apply` method that describes all the modifications to be applied to the original tax and benefit system to get the reformed one.
 
-The `Reform` class provides a decorator to declare formulas (`@Reform.formula`) and a function to declare input variables (`@Reform.input_variable`).
+> Note that the reference tax and benefit system won't be modified. The `apply` function will be applied to a copy of the tax and benefit system.
 
-The reference `tax_benefit_system` won't be touched.
+All the [methods](https://openfisca.readthedocs.io/en/latest/tax-benefit-system.html) used to build a tax and benefit system can also be used to reform it.
 
-Here is an example:
+A reform that modifies a formula (such as our `income_tax_reform` example) is called a *structural reform*. It redefines the way a variable is calculated.
 
-```python
-def build_reform(tax_benefit_system):
-    Reform = reforms.make_reform(
-        key = 'change_formula',
-        name = u'Dummy reform with changed formula',
-        reference = tax_benefit_system,
-        )
 
-    @Reform.formula
-    class charges_deduc(formulas.SimpleFormulaColumn):
-        label = u"Charge déductibles always returning 999"
-        reference = charges_deductibles.charges_deduc
-        definition_period = YEAR
-        
-        def function(self, simulation, period):
-            return self.zeros() + 999
+### Parametric reforms
 
-    Reform.input_variable(
-        column = columns.BoolCol,
-        entity_class = entities.Menages,
-        name ='parisien',
-        label = u"Résidant à Paris au moins 3 ans dans les 5 dernières années",
-        )
+Unlike *structural reforms*, *parametric reforms* do not directly modify any formula: they apply changes to legislation parameters only.
 
-    reform = Reform()
-    return reform
-```
+To modify the legislation parameters in the reform, you can call the method `self.modify_legislation_json`, which takes a function as a parameter.
 
-To change the JSON data structure of the legislation in the reform, you call the `reform.modify_legislation_json` method which takes as a parameter a callback.
-This callback is a function you write in which the legislation JSON will be modified.
-It takes in parameter a copy of the legislation_json of the reference tax and benefit system that you can modify (do not make the copy yourself) and return.
+This function defines the modifications you want to apply to the legislation. It takes as a parameter a copy of the reference tax and benefit system `legislation_json`. You can then modify and return this `legislation_json`.
 
-Here is an example:
+For instance:
 
 ```python
 def modify_legislation_json(reference_legislation_json_copy):
-    reference_legislation_json_copy['children']['xxx']['values'][0]['value'] = 0
+    reference_legislation_json_copy['children']['minimum_wage']['values'][0]['value'] = 15
     return reference_legislation_json_copy
 
 
-def build_reform(tax_benefit_system):
-    Reform = reforms.make_reform(
-        key = 'new_legislation',
-        name = u'Dummy reform with new legislation',
-        reference = tax_benefit_system,
-        )
+class increase_minimum_wage(Reform):
+    name = u'Increase the minimum wage'
 
-    reform = Reform()
-    reform.modify_legislation_json(modifier_function = modify_legislation_json)
-    return reform
+    def apply(self):
+        self.modify_legislation_json(modifier_function = modify_legislation_json)
 ```
 
-> You have to know about the structure of the legislation JSON data structure to modify it.
+> Note that you have to know about the data structure of the legislation JSON to modify it.
 
-For more details see the examples linked in the tl;dr section above.
+## Using a reform in Python
 
-## Use from the Web API
+Reforms can be applied in Python with the following syntax:
+
+```py
+from openfica_france import CountryTaxBenefitSystem
+
+class income_tax_reform(Reform):
+    # (...)
+
+tax_benefit_system = CountryTaxBenefitSystem()
+
+reformed_tax_benefit_system = income_tax_reform(tax_benefit_system)
+```
+
+Reforms can be chained:
+
+```py
+from openfica_france import CountryTaxBenefitSystem
+
+class income_tax_reform(Reform):
+    # (...)
+
+class increase_minimum_wage(Reform):
+    # (...)
+
+tax_benefit_system = CountryTaxBenefitSystem()
+
+reformed_tax_benefit_system = income_tax_reform(
+    increase_minimum_wage(tax_benefit_system)
+    )
+```
+
+> The [Getting_Started Notebook](https://github.com/openfisca/openfisca-france/blob/master/notebooks/getting-started.ipynb) contains an example of reform use.
+
+## Using a reform from the Web API
 
 Please read the dedicated documentation:
-[OpenFisca-Web-API reforms](https://github.com/openfisca/openfisca-web-api/tree/next/docs/reforms.md)
+[OpenFisca-Web-API reforms](../openfisca-web-api/reforms.html)
 
 ## Real examples
 
-Examples can be found on the [community page](../../community.html).
+Examples can be found on the [community page](../../community.html), as well as on the [OpenFisca-France reforms directory](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/reforms).
