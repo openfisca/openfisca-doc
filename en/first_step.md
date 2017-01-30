@@ -25,7 +25,7 @@ scenario.init_single_entity(
         ),
     enfants = [
   # each dictionnary corresponds to a child
-        dict(age = 12 
+        dict(age = 12
         #, variable2 = '...'
         ),
         dict(age = 18),

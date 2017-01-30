@@ -30,7 +30,7 @@ You have to request for access rights by contacting the [OpenFisca team](https:/
 
 You can run OpenFisca locally on your own computer, and enjoy Jupyter Notebook too.
 
-Here is the recommended way:    
+Here is the recommended way:
 - First launch the terminal of your computer.
 
 
@@ -56,7 +56,7 @@ pip --version
 - Now you have all the requirements to install OpenFisca in your virtual environment.
 
 ```python
-pip install openfisca-france 
+pip install openfisca-france
 ```
 - If you want to use Jupyter Notebook as we recommended
 

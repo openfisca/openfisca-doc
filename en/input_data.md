@@ -2,7 +2,7 @@
 
   You can use OpenFisca with two kind of input information :
   - either *test case* : you simulate the legislation for one standard situation
-  - or *data* : you give a whole population (survey with aggregated data for example) on which you want to apply the legislation. 
+  - or *data* : you give a whole population (survey with aggregated data for example) on which you want to apply the legislation.
 
 ### Scenario
 
@@ -23,11 +23,11 @@ scenario = tax_benefit_system.new_scenario()
 ```
 ---
 
-### Test cases 
+### Test cases
 
 Test case describes persons and entities with their input variables or attributes.
 
-You may add information at *individual* level or at *entity* level.  
+You may add information at *individual* level or at *entity* level.
 One input is crucial and shouldn't be forgotten : the *period* of the simulation.
 
 ###### Application : how to initialize a scenario
@@ -43,7 +43,7 @@ We show here the Python expression for a family constituted by :
 ```python
 # Initialize test case
 scenario.init_single_entity(
-    period = 2015, 
+    period = 2015,
 # Variable describing the individuals
     parent1 = dict(
         age = 30,
@@ -59,7 +59,7 @@ scenario.init_single_entity(
         ],
  # Variable describing the entity
     menage = dict(loyer = 12000, # Annual basis
-            statut_occupation_logement = u"Locataire ou sous-locataire 
+            statut_occupation_logement = u"Locataire ou sous-locataire
                                       d'un logement loué vide non-HLM",
             ),
     )
@@ -69,18 +69,18 @@ Notice that some input variables are associated to *individus* ("parent1" , "par
 
 > **WARNING**: Declare the *input variables* on an annual basis.
 
-HINT : For categorical variable you may use either the modality or its number.   
+HINT : For categorical variable you may use either the modality or its number.
 Example with the [statut d'occupation du logement](https://legislation.openfisca.fr/variables/statut_occupation_logement) :
  ``` python
  # Declaration of categorical variable
  menage = dict(loyer = 12000,
             statut_occupation_logement = 4,
             )
-            
+
 ```
 ---
 
 ### Data
-Using data as input is not documented yet.    
+Using data as input is not documented yet.
 Please consult this repository:
 https://github.com/openfisca/openfisca-france-data

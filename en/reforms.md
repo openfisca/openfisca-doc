@@ -1,7 +1,7 @@
 # Reforms
 
 ##### Definition
- 
+
  OpenFisca can also be used to test the impact of new propositions concerning the Tax and Benefit system : it is the module `Reform`
 
 An *reform* represents a modified version of the Tax and Benefit legislation whose purpose is to be experimental.
