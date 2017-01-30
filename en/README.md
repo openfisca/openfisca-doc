@@ -2,11 +2,11 @@
 
 > You can download an [offline version](https://www.gitbook.com/book/openfisca/documentation) of the documentation (direct link to [PDF](https://www.gitbook.com/download/pdf/book/openfisca/documentation), [ePub](https://www.gitbook.com/download/epub/book/openfisca/documentation) and [Mobi](https://www.gitbook.com/download/mobi/book/openfisca/documentation)).
 
-[![OpenFisca logo](http://www.openfisca.fr/hotlinks/logo-openfisca.svg)](http://www.openfisca.fr/)
+[![OpenFisca logo](https://www.openfisca.fr/hotlinks/logo-openfisca.svg)](https://www.openfisca.fr/)
 
-[OpenFisca](http://www.openfisca.fr/) is a versatile microsimulation software.
+[OpenFisca](https://www.openfisca.fr/) is a versatile microsimulation software.
 
-It is a free software published under the [GNU Affero General Public Licence](http://www.gnu.org/licenses/agpl.html) version 3 or later.
+It is a free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
 
 ## What's the purpose?
 
@@ -30,12 +30,12 @@ economists, software developers, researchers, teachers, administrations, interes
 
 Final products can be built on the top of OpenFisca.
 They trigger tax and benefit variables computations via the web API.
-For example: [Mes aides](http://mes-aides.gouv.fr/).
+For example: [Mes aides](https://mes-aides.gouv.fr/).
 
-Then, the web API of OpenFisca is used by the team itself to develop [tools](http://www.openfisca.fr/outils) like
-the [legislation explorer](http://legislation.openfisca.fr/),
-the [demonstrator](http://ui-test.openfisca.fr/) or
-the [trace tool](http://www.openfisca.fr/outils/trace).
+Then, the web API of OpenFisca is used by the team itself to develop [tools](https://www.openfisca.fr/outils) like
+the [legislation explorer](https://legislation.openfisca.fr/),
+the [demonstrator](https://ui-test.openfisca.fr/) or
+the [trace tool](https://www.openfisca.fr/outils/trace).
 
 These tools are designed to help developers understand the legislation when they write it down into source code,
 and allow citizens to browse the tax and benefit legislation.

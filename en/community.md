@@ -16,8 +16,8 @@ The OpenFisca project publishes several softwares built around the simulator whi
 
 ### Applications
 
-- http://mes-aides.gouv.fr/
-- http://embauche.sgmap.fr/
+- https://mes-aides.gouv.fr/
+- https://embauche.sgmap.fr/
 
 ### Reforms
 

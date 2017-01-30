@@ -79,7 +79,7 @@ Let's query for example the new variable `impot_revenu_lps`. Save the following 
 
 > The `base_reforms` values must correspond to reform keys declared in the `development-france.ini` file.
 
-Then with the excellent [httpie](http://httpie.org) tool:
+Then with the excellent [httpie](https://httpie.org) tool:
 
     http :2000/api/1/calculate < landais_piketty_saez_test_1.json
 

@@ -1,6 +1,6 @@
 # Work with Jupyter Notebook
 
-[Jupyter Notebook](http://jupyter.org/) is a wonderful project and a useful way to use OpenFisca without installing it on your computer.
+[Jupyter Notebook](https://jupyter.org/) is a wonderful project and a useful way to use OpenFisca without installing it on your computer.
 
 A notebook is basically a web interface running in your browser, in which you write code and it displays results.
 

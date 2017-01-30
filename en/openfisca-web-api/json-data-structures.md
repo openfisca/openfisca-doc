@@ -7,7 +7,7 @@ A JSON axis is an object structured this way:
 * `index` (integer, >= 0, default: 0): the index of the person on which to apply the variation of the variable
 * `max` (integer or float, required): the maximum value of the varying variable
 * `min` (integer or float, required): the minimum value of the varying variable
-* `name` (string, one of available [variable names](http://legislation.openfisca.fr/variables), required): the name of the varying variable
+* `name` (string, one of available [variable names](https://legislation.openfisca.fr/variables), required): the name of the varying variable
 * `period` (a JSON period):
 
 ### Parallel axes

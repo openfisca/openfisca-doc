@@ -79,7 +79,7 @@ Vous pouvez y contribuer en suivant les étapes suivantes :
 
 OpenFisca permet d'exprimer des réformes et vous pouvez contribuer au projet en implémentant votre propre projet de réforme.
 
-Voir la [doc des réformes](http://doc.openfisca.fr/en/coding-the-legislation/reforms.html).
+Voir la [doc des réformes](https://doc.openfisca.fr/en/coding-the-legislation/reforms.html).
 
 ## Autres projets liés à OpenFisca
 

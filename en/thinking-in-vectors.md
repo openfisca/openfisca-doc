@@ -12,10 +12,10 @@ The size of a vector is equal to the number of entities the variable is defined 
 
 This applies to all variables, whether or not calculated.
 
-For example let's take the input variable [`"age"`](http://legislation.openfisca.fr/variables/age)
+For example let's take the input variable [`"age"`](https://legislation.openfisca.fr/variables/age)
 which is defined on `"individus"`. Say there are 3 persons defined, the vector contains 3 ages: `[30, 25, 15]`.
 
-Now let's take the computed tax variable [`"irpp"`](http://legislation.openfisca.fr/variables/irpp)
+Now let's take the computed tax variable [`"irpp"`](https://legislation.openfisca.fr/variables/irpp)
 which is defined on `"foyers_fiscaux"`. Say there is 1 `"foyer_fiscal"` defined, containing the 3 persons above,
 the vector contains 1 value (here is a dummy value): `[999]`.
 
@@ -25,8 +25,8 @@ Entities and roles are encoded using special variables `"id*"` and `"qui*"` whos
 unique identifiers of an entity and integers corresponding to a role.
 
 For example, for `"familles"` we have
-[`"idfam"`](http://legislation.openfisca.fr/variables/idfam) and
-[`"quifam"`](http://legislation.openfisca.fr/variables/quifam).
+[`"idfam"`](https://legislation.openfisca.fr/variables/idfam) and
+[`"quifam"`](https://legislation.openfisca.fr/variables/quifam).
 For `"quifam"` the role `0` is "chef" (head of family), the role `1` is "part" (partner).
 
 With `"id*"` and `"qui*"` variables, entities are modeled so the core engine knows which person is into which entity.

@@ -7,7 +7,7 @@ You will find the script also as a Notebook in the [Tutorials](http://mybinder.o
 ### Calculate a variable
 
 
-Say we want to calculate the [allocation familiales](http://legislation.openfisca.fr/variables/af) of a family with 1 parent (they divorced) and 3 children.
+Say we want to calculate the [allocation familiales](https://legislation.openfisca.fr/variables/af) of a family with 1 parent (they divorced) and 3 children.
 
 
 ```python
@@ -82,7 +82,7 @@ irpp@foyers_fiscaux<2014>[0.0]
 
 array([ 0.], dtype=float32)
 ```
-To understand it fully you have to know the variables (check the [Legislation Explorer](http://legislation.openfisca.fr/)) and to have understood the [syntax in Vector](thinking-in-vectors.md).
+To understand it fully you have to know the variables (check the [Legislation Explorer](https://legislation.openfisca.fr/)) and to have understood the [syntax in Vector](thinking-in-vectors.md).
 
 ### Test the impact of a reform
 

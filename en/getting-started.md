@@ -7,7 +7,7 @@ Use it as a first glance at how works OpenFisca.
 
 #### Tutorials
 If you want more details or if you want to try by yourselves OpenFisca, please read the tutorials [here](http://mybinder.org/repo/openfisca/tutorial ).  
-> You will find in the tutorials specific uses of OpenFisca written in [Jupyter Notebook](http://jupyter.org/).
+> You will find in the tutorials specific uses of OpenFisca written in [Jupyter Notebook](https://jupyter.org/).
 
 
 

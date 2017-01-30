@@ -1,9 +1,9 @@
 # About this documentation
 
 This documentation is built with the excellent [GitBook](https://github.com/GitbookIO/gitbook) tool
-(see [GitBook documentation](http://help.gitbook.com/)).
+(see [GitBook documentation](https://help.gitbook.com/)).
 
-It is written in [Markdown](http://help.gitbook.com/format/markdown.html)
+It is written in [Markdown](https://help.gitbook.com/format/markdown.html)
 and the source is hosted on this GitHub repository:
 [openfisca/openfisca-gitbook](https://github.com/openfisca/openfisca-gitbook).
 
