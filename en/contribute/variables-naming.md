@@ -4,9 +4,10 @@ Openfisca variables naming guidelines
 General philosophy
 ------------------
 
-OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the French tax and benefits system, **without necessarly being an expert**.
+If you consider naming variables, you are in a country-specific repository, where the [local language rule](language.md) apply. The domain language is thus one of the native ones of the modeled country. We consider each tax, collecting organism and country regulation as a domain-specific term. In the same fashion, well-known abbreviations of these domain-specific terms are accepted.
 
 One should be able to get a rough idea of the meaning of a variable by reading its name, or by quickly researching it on Google.
+OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the country tax and benefits system, **without necessarily being an expert**.
 
 A particular effort should be made on variables highly likely to be reused somewhere else in the code.
 
