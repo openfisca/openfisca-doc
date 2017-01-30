@@ -34,17 +34,17 @@ to the API you would like to see, so that we can make it meet your needs.
 You can contribute to the development of OpenFisca by reporting errors you would find on the calculation of benefits and taxes.
 
 To enable the OpenFisca developers to solve your problems quickly, please follow these few steps:
-- try to create a minimal standard case that generates the error</li>
-- verify [that this error is not already listed](https://github.com/openfisca/openfisca-france/issues?state=open) ;
-- try to identify the source of the error by inspecting [the formulas for the different benefits and taxes](http://legislation.openfisca.fr/variables) ;
-- report the error, possibly with detailed information concerning <a href="https://github.com/openfisca/openfisca-france/issues?state=open"> the page dedicated to the of collaborative development website </a>. If possible, please provide the code that allows to reproduce the error or the JSON file of the standard case you created.
+- try to create a minimal standard case that generates the error;
+- verify [that this error is not already listed](https://github.com/openfisca/openfisca-france/issues?state=open);
+- try to identify the source of the error by inspecting [the formulas for the different benefits and taxes](http://legislation.openfisca.fr/variables);
+- [report the error](https://github.com/openfisca/openfisca-france/issues/new), with as much information as possible. If possible, please provide the code that allows to reproduce the error or the JSON file of the standard case you created.
 
 ### Complete the implementation of the French tax and benefit system
 
 Some pieces of legislation are not yet integrated. Given the magnitude of the task, our ambition is to build a community of developers, economists and experts on taxes or social benefits to maintain and improve the software. You can help by following these steps:
 
 - identify the incomplete or missing taxes or benefits;
-- gather the necessary documentation to fix this issue
+- gather the necessary documentation to fix this issue;
 - propose patches that implement the incomplete or missing benefits and
 taxes on [GitHub](https://github.com/openfisca/openfisca-france/).
 
