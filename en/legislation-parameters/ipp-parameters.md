@@ -17,4 +17,4 @@ Also these clean YAML files are transformed into [CSV files](https://git.framaso
 [This issue](https://github.com/openfisca/openfisca-france/issues/410) tracks the work.
 
 For now the source of truth for IPP parameters are the XLS files and for OpenFisca `param.xml`.
-One day the source of truth will certainly be the YAML files, and their edition will probably be eased by a web tool like a modified version of the [Legislation Explorer](http://legislation.openfisca.fr/).
+One day the source of truth will certainly be the YAML files, and their edition will probably be eased by a web tool like a modified version of the [Legislation Explorer](https://legislation.openfisca.fr/).

@@ -19,7 +19,7 @@ Virtualenvs are easier to use with tools like [virtualenvwrapper](https://virtua
 
 ## Clone git repositories
 
-First of all, [Git](http://www.git-scm.com/) needs to be installed on your machine.
+First of all, [Git](https://www.git-scm.com/) needs to be installed on your machine.
 
 Create a working directory like `~/Dev/openfisca` and go inside.
 

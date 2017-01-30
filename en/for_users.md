@@ -1,6 +1,6 @@
 # For Users
 
-[Jupyter Notebook](http://jupyter.org/) is a wonderful project widely used by scientists.
+[Jupyter Notebook](https://jupyter.org/) is a wonderful project widely used by scientists.
 
 Basically it is a web interface running in your browser, in which you write code and it displays results.
 

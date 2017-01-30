@@ -48,11 +48,11 @@ In OpenFisca-France some YAML tests are ignored. They receive a property `ignore
 
 ## ipdb debugger
 
-If a test fails, you can execute it with the [debug](http://nose.readthedocs.org/en/latest/plugins/debug.html) nose plugin:
+If a test fails, you can execute it with the [debug](https://nose.readthedocs.org/en/latest/plugins/debug.html) nose plugin:
 
     nosetests --pdb openfisca_core/tests/test_tax_scales.py
 
-You can even [specify the exact test to launch](http://nose.readthedocs.org/en/latest/usage.html#selecting-tests):
+You can even [specify the exact test to launch](https://nose.readthedocs.org/en/latest/usage.html#selecting-tests):
 
     nosetests --pdb openfisca_core/tests/test_tax_scales.py:test_linear_average_rate_tax_scale
 
@@ -70,7 +70,7 @@ The repositories tested by Travis are:
 * [OpenFisca-France](https://github.com/openfisca/openfisca-france)
 * [OpenFisca-Web-API](https://github.com/openfisca/openfisca-web-api)
 
-The OpenFisca website hosts a summary page of the build statuses: http://www.openfisca.fr/build-status
+The OpenFisca website hosts a summary page of the build statuses: https://www.openfisca.fr/build-status
 
 Travis tests other git branches than `master` too. For example: [OpenFisca-Core](https://travis-ci.org/openfisca/openfisca-core/branches).
 
