@@ -36,7 +36,7 @@ allocations_familiales = simulation.calculate('af', '2015-01')
 ```
 
  > HINT : Don't forget to give the period.
- 
+
  The output is an array :
  - positive if it is an amount the *entity* receives from the state.
  - negative if it is an amount the *entity* has to pay.

@@ -20,7 +20,7 @@ OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here
     nosetests openfisca_france/tests/test_legislations.py
     ```
 - Hide log of failing test:
-    ```    
+    ```
     nosetests --nologcapture openfisca_france/tests/test_legislations.py
     ```
 - Display log of successful test:

@@ -2,7 +2,7 @@
 
 Now let's think practical.
 
-You can have an overview of OpenFisca in the [First Steps Section](first_step.md) of this documentation.   
+You can have an overview of OpenFisca in the [First Steps Section](first_step.md) of this documentation.
 Use it as a first glance at how works OpenFisca.
 
 #### Tutorials
