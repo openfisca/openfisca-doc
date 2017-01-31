@@ -4,17 +4,19 @@ Openfisca variables naming guidelines
 General philosophy
 ------------------
 
-OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the French tax and benefits system, **without necessarly being an expert**.
+If you consider naming variables, you are in a country-specific repository, where the [local language rule](language.md) apply. The domain language is thus one of the native ones of the modeled country. We consider each tax, collecting organism and country regulation as a domain-specific term. In the same fashion, well-known abbreviations of these domain-specific terms are accepted.
 
-One should be able to get a rough idea of the meaning of a variable by reading its name, or by quickly researching it on Google.
+OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the country tax and benefits system, **without necessarily being an expert**.
 
-A particular effort should be made on variables highly likely to be reused somewhere else in the code.
+One should be able to get a rough idea of the meaning of a variable by reading its name, or by quickly researching it on the web.
+
+A particular effort should be made on variables that are likely to be reused.
 
 **Examples:**
 
 > **Good naming**
 
-> `als_etudiant`: I don't know what `als` stands for. I look it up on Google, and I see ALS are a form of Aides Logement. I thus know this variable should be the amount of ALS for a student. This is enough to tell me if it is interesting in my context.
+> `als_etudiant`: I don't know what `als` stands for. I look it up on a search engine, and I see ALS are a form of Aides Logement. I thus know this variable should be the amount of ALS for a student. This is enough to tell me if it is interesting in my context.
 
 ----------
 
@@ -22,7 +24,7 @@ A particular effort should be made on variables highly likely to be reused somew
 
 >`apje_temp`: I could find the meaning of APJE online, but the temp suffix remains a mystery.
 
->`rto_net`. I can guess it's an amout after some kind of deduction, but looking RTO on Google doesn't give me anything.
+>`rto_net`. I can guess it's an amout after some kind of deduction, but looking RTO on a search engine doesn't give me anything.
 
 
 Do's and don'ts
