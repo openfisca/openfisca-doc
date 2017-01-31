@@ -1,5 +1,7 @@
 [![OpenFisca logo](https://www.openfisca.fr/hotlinks/logo-openfisca.svg)](https://www.openfisca.fr/)
 
+## Cette documentation en français n'est pas complète, se référer en priorité à la version anglaise.
+
 OpenFisca est un logiciel de micro-simulation.
 
 Il est publié sous [license GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3
