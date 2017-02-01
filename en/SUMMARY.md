@@ -44,6 +44,7 @@
 * [Community](community.md)
 * [Contribute](contribute/README.md)
    * [Contributor guidelines](contribute/guidelines.md)
+       * [Language](contribute/language.md)
        * [Commit messages](contribute/commit-messages.md)
        * [Variables naming](contribute/variables-naming.md)
        * [Semantic versionning](contribute/semver.md)
