@@ -8,5 +8,5 @@ It uses the [gitbook software](https://www.npmjs.com/package/gitbook) and the [g
 
 Every commit to this repository is reflected a couple of seconds later on the [online documentation](https://doc.openfisca.fr/).
 
-There is also an [online editor](https://www.gitbook.com/book/openfisca/documentation/edit) provided by gitbook which commits changes in this repository.x
+There is also an [online editor](https://www.gitbook.com/book/openfisca/documentation/edit) provided by gitbook which commits changes in this repository.
 
