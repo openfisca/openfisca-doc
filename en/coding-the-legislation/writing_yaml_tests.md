@@ -156,23 +156,14 @@ Values can be arithmetic expressions too.
 
 ## Running a test
 
-The script `test_yaml.py` can run a single YAML test file, or all.
+To run YAML tests, use the command line tool `openfisca-run-test`, documented [here](https://openfisca.readthedocs.io/en/latest/openfisca-run-test.html):
 
-In the console, run:
-
-```
-# For a single YAML test file
-python openfisca_france/tests/test_yaml.py openfisca_france/tests/your_test_directory/your_test_name.yaml
-
-# For all YAML test files of a directory
-python openfisca_france/tests/test_yaml.py openfisca_france/tests/fonction_publique
+```sh
+  openfisca-run-test path/to/file.yaml
 ```
 
-For more details:
+>You can also run tests programatically using the [`test_runner` module](https://openfisca.readthedocs.io/en/latest/test_runner.html).
 
-```
-python openfisca_france/tests/test_yaml.py -h
-```
 
 ## Next steps
 
