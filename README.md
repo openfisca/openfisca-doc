@@ -34,7 +34,7 @@ For example: [Mes aides](https://mes-aides.gouv.fr/).
 
 Then, the web API of OpenFisca is used by the team itself to develop [tools](https://www.openfisca.fr/outils) like
 the [legislation explorer](https://legislation.openfisca.fr/),
-the [demonstrator](https://ui-test.openfisca.fr/) or
+the [demonstrator](https://ui.openfisca.fr/) or
 the [trace tool](https://www.openfisca.fr/outils/trace).
 
 These tools are designed to help developers understand the legislation when they write it down into source code,
