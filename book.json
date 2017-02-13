@@ -15,7 +15,7 @@
             "url": "https://github.com/openfisca/openfisca-gitbook"
         },
         "edit-link": {
-            "base": "https://www.gitbook.com/book/openfisca/documentation/edit#/edit/master",
+            "base": "http://prose.io/#openfisca/openfisca-gitbook/edit/master",
             "label": "Edit This Page"
         }
     }
