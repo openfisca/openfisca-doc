@@ -1,144 +1,404 @@
 # Endpoints
 
+The examples on this page use [`curl`](http://curl.haxx.se/) to send the HTTP request.
+
+You may use [`jq`](https://stedolan.github.io/jq/) to format the JSON response, like so:
+```bash
+curl https://api.openfisca.fr/foo | jq .
+```
+
+> `jq` won't be mentioned on each example, feel free to add it like above.
+
+## index
+
+Displays a friendly welcome message.
+
+* URL path: `/`
+* method: GET
+
+Example:
+
+```bash
+curl https://api.openfisca.fr/
+```
+
+```json
+{"apiVersion": 1, "message": "Welcome, this is OpenFisca Web API.", "method": "/"}
+```
+
 ## calculate
 
-Launch a simulation with an input test case, returning the computation results.
+Computes a test case.
 
 * URL path: `/api/1/calculate`
 * method: POST
 * required headers:
   * `Content-Type: application/json`
 * JSON request structure:
-  * `context` (string, default: null): returned as is in the JSON response
   * `output_format` (string, one of ["test_case", "variables"], default: "test_case"): the output format of `value` field in response.
-    * `test_case`: `value` will be a list of test cases identical to the input test cases given in `scenarios` key, with computed variables dispatched in the right entity.
-    * `variables`: `value` will be a list of objects like `{<variableName>: <variableValue>}`
+    * with `test_case`: `value` will be a list of test cases identical to the input test cases given in `scenarios` key, with computed variables dispatched in the right entity.
+    * with `variables`: `value` will be a list of objects like `{<variableName>: <variableValue>}`
+  * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
   * `scenarios` (list of objects): a list of [scenarios](#scenarios)
-  * `trace` (boolean, default: false): when true a traceback
   * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are [validated](#scenarios-validation)
-  * `variables` (list of strings, one of available [variable names](https://legislation.openfisca.fr/variables)): the name of the variables to compute
+  * `variables` (list of strings): the name of the variables to compute
 * JSON response structure:
   * `suggestions` (list of objects): suggested variables values for the input test_case, actually used by the simulation. Different than variables default values since it depends on the input test_case.
-  * `tracebacks` (list of TODO, if trace is true in request body): TODO
-  * `variables` (list of TODO, if trace is true in request body): TODO
   * `value` (list or object, depending on the `output_format` value): The simulation result.
     Each output variable value is a list which length is equal to the number of entities on which the variable is defined.
 
-> To use axes, you should add `"output_format": "variables"` to the JSON payload.
+Example: let's run a simple simulation with a single person with no salary.
+
+Create a file named `test_case.json` with these contents:
+
+```json
+{
+  "scenarios": [
+    {
+      "test_case": {
+        "familles": [
+          {
+            "parents": ["individu0"]
+          }
+        ],
+        "foyers_fiscaux": [
+          {
+            "declarants": ["individu0"]
+          }
+        ],
+        "individus": [
+          {
+            "date_naissance": "1980-01-01",
+            "id": "individu0"
+          }
+        ],
+        "menages": [
+          {
+            "personne_de_reference": "individu0"
+          }
+        ]
+      },
+      "period": "2015"
+    }
+  ],
+  "variables": ["revenu_disponible"]
+}
+```
+
+```bash
+curl https://api.openfisca.fr/api/1/calculate -X POST --data @./test_case.json --header 'Content-type: application/json'
+```
+
+The output is:
+
+```json
+{
+  "apiVersion": 1,
+  "method": "/api/1/calculate",
+  "params": {
+    [...]
+  },
+  "url": "http://api.openfisca.fr/api/1/calculate",
+  "value": [
+    {
+      "familles": [
+        {
+          "id": 0,
+          "parents": [
+            "individu0"
+          ]
+        }
+      ],
+      "foyers_fiscaux": [
+        {
+          "id": 0,
+          "declarants": [
+            "individu0"
+          ]
+        }
+      ],
+      "individus": [
+        {
+          "id": "individu0",
+          "date_naissance": "1980-01-01"
+        }
+      ],
+      "menages": [
+        {
+          "id": 0,
+          "personne_de_reference": "individu0",
+          "revenu_disponible": {
+            "2015": 5305.3701171875
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+What is important is the `value` key containing the value of `revdisp` for the period `2015`: `5332.37`.
+
+> See also the `simulate` endpoint.
 
 ## entities
 
-Get the entities metadata.
+Gets the entities definition data. Entities are a [key concept of OpenFisca](../person,_entities,_role.md).
 
-TODO
+* URL path: `/api/2/entities`
+* method: GET
 
-Example: https://api.openfisca.fr/api/1/entities
+Example:
+
+```bash
+curl https://api.openfisca.fr/api/2/entities
+```
+
+```json
+{
+  "apiVersion": 1,
+  "entities": {
+    "famille": {
+      "roles": [
+        {
+          "subroles": [
+            "demandeur",
+            "conjoint"
+          ],
+          "plural": "parents",
+          "key": "parent",
+          "label": "Parents"
+        },
+        {
+          "plural": "enfants",
+          "key": "enfant",
+          "label": "Enfants"
+        }
+      ],
+      "label": "Famille"
+    },
+    "foyer_fiscal": {
+      "roles": [
+        {
+          "subroles": [
+            "declarant_principal",
+            "conjoint"
+          ],
+          "plural": "declarants",
+          "key": "declarant",
+          "label": "Déclarants"
+        },
+        {
+          "plural": "personnes_a_charge",
+          "key": "personne_a_charge",
+          "label": "Personnes à charge"
+        }
+      ],
+      "label": "Déclaration d’impôts"
+    },
+    "individu": {
+      "isPersonsEntity": true,
+      "label": "Individu"
+    },
+    "menage": {
+      "roles": [
+        {
+          "max": 1,
+          "key": "personne_de_reference",
+          "label": "Personne de référence"
+        },
+        {
+          "max": 1,
+          "key": "conjoint",
+          "label": "Conjoint"
+        },
+        {
+          "plural": "enfants",
+          "key": "enfant",
+          "label": "Enfants"
+        },
+        {
+          "plural": "autres",
+          "key": "autre",
+          "label": "Autres"
+        }
+      ],
+      "label": "Logement principal"
+    }
+  },
+  "method": "/api/2/entities",
+  "params": {
+    [...]
+  }
+}
+```
+
+This data is useful when building a dynamic UI with forms allowing the user to make a test case, for example.
 
 ## formula
 
-TODO
+Computes a formula in a RESTful way. An implicit test case is created with a single person.
 
-## graph
+* URL path: `/api/2/formula/period/variable_name`
+  * Replace `period` by a period as string and `name` by the name of a variable.
+* method: GET
+* query string parameters correspond to input variables and their values.
 
-Get the graph (nodes and edges) of the variables called during the computation of the given variable.
+Example:
 
-* URL path: `/api/1/graph`
-* GET parameters:
-  * `context` (string, default: null): returned as is in the JSON response
-  * `variable` (string, default: "revdisp", one of available [variable names](https://legislation.openfisca.fr/variables)): the name of the variable to query
-* JSON response structure:
-  * `edges` (list of objects): the oriented edges between the nodes, representing a variable dependency
-  * `nodes` (list of objects): the nodes representing variables
+```bash
+curl "https://api.openfisca.fr/api/2/formula/2017-02/cout_du_travail?salaire_de_base=2300"
+```
 
-Example: https://api.openfisca.fr/api/1/graph?variable=zone_apl
+```json
+{
+  "values": {
+    "cout_du_travail": 3078.4599609375
+  },
+  "params": {
+    "salaire_de_base": 2300
+  },
+  "period": [ "month", [ 2017, 2, 1 ], 1 ],
+  "apiVersion": "2.1.0"
+}
+```
 
 ## parameters
 
-Get information about legislation parameters.
+Gets the legislation parameters of the tax and benefit system.
 
 * URL path: `/api/1/parameters`
-* GET parameters:
-  * `instant` (a [JSON instant](#instants), default: null): if given, returns the legislation parameters at this instant. If a period is given, the API will take its start instant.
-  * `name` (string, repeated, default: null, one of available [parameter names](https://legislation.openfisca.fr/parameters)): the name(s) of the parameters to return. If null all the known parameters are returned.
+* method: GET
+* query string parameters:
+  * `instant` (a [JSON instant](./json-data-structures.md#instants), default: null): if given, returns the legislation parameters at this instant. If a period is given, the API will take its start instant.
+  * `name` (string, multi-valuated, default: null): the name(s) of the parameters to return. If null all the known parameters are returned.
 * JSON response structure:
-  * `parameters` (list of objects): a list of [JSON parameters](#parameters)
+  * `country_package_name` (string): the name of the Python package containing the tax and benefit system of the country loaded by the Web API.
+    Example: `"openfisca_france"`.
+  * `country_package_version` (string): the version of the Python package containing the tax and benefit system of the country loaded by the Web API
+  * `currency` (string): the currency of the tax and benefit system of the country loaded by the Web API
+  * `parameters` (list of objects): a list of [JSON parameters](./json-data-structures.md#parameters)
 
 Examples:
 * https://api.openfisca.fr/api/1/parameters
-* https://api.openfisca.fr/api/1/parameters?name=
+* https://api.openfisca.fr/api/1/parameters?name=impot_revenu.bareme
+
+> JSON responses are too large to be copied here.
 
 ## reforms
 
-Get the list of declared reforms.
+Get the list of reforms known by the Web API, with their keys and labels.
 
-TODO
+Those reforms keys can be passed either to the `calculate` or `simulate` endpoints.
 
-Example: https://api.openfisca.fr/api/1/reforms
+Example:
+
+```bash
+curl https://api.openfisca.fr/api/1/reforms
+```
+
+```json
+{
+  "apiVersion": 1,
+  "method": "/api/1/reforms",
+  "params": {
+    "context": null
+  },
+  "reforms": {
+    "allocations_familiales_imposables": "Allocations familiales imposables",
+    "ayrault_muet": "Amendement Ayrault-Muet au PLF2016",
+    "cesthra_invalidee": "Contribution execptionnelle sur les très hauts revenus d'activité (invalidée par le CC)",
+    "plf2015": "Projet de Loi de Finances 2015 appliquée aux revenus 2013",
+    "plf2016": "Projet de Loi de Finances 2016 appliquée aux revenus 2014",
+    "plf2016_counterfactual": "Contrefactuel du PLF 2016 sur les revenus 2015",
+    "plf2016_counterfactual_2014": "Contrefactuel 2014 du PLF 2016 sur les revenus 2015",
+    "trannoy_wasmer": "Loyer comme charge déductible (Trannoy-Wasmer)"
+  },
+  "url": "http://api.openfisca.fr/api/1/reforms"
+}
+```
 
 ## simulate
 
-Launch a simulation with an input test case, returning the computation results dispatched in a JSON decomposition
-based on [decomp.xml](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/decompositions/decomp.xml).
+Computes an input test case, returning the results dispatched in a decomposition of the tax and benefit system.
+
+> The decomposition is based on [decomp.xml](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/decompositions/decomp.xml).
 
 * URL path: `/api/1/simulate`
 * method: POST
 * required headers:
   * `Content-Type: application/json`
 * JSON request structure:
-  * `context` (string, default: null): returned as is in the JSON response
-  * `scenarios` (list of objects): a list of [JSON scenarios](#scenarios)
-  * `trace` (boolean, default: false): when true a traceback
+  * `scenarios` (list of objects): a list of [JSON scenarios](./json-data-structures.md#scenarios)
+  * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
   * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are [validated](#scenarios-validation)
 * JSON response structure:
   * `suggestions` (list of objects): suggested variables values for the input test_case, actually used by the simulation. Different than variables default values since it depends on the input test_case.
-  * `tracebacks` (list of TODO, if trace is true in request body): TODO
-  * `variables` (list of TODO, if trace is true in request body): TODO
   * `value` (object): the simulation result
 
-## swagger
 
-TODO
+Example: let's run a simple simulation with a single person with no salary.
+
+Create a file named `test_case.json` with these contents:
+
+```json
+{
+  "scenarios": [
+    {
+      "test_case": {
+        "familles": [
+          {
+            "parents": ["individu0"]
+          }
+        ],
+        "foyers_fiscaux": [
+          {
+            "declarants": ["individu0"]
+          }
+        ],
+        "individus": [
+          {
+            "date_naissance": "1980-01-01",
+            "id": "individu0"
+          }
+        ],
+        "menages": [
+          {
+            "personne_de_reference": "individu0"
+          }
+        ]
+      },
+      "period": "2015"
+    }
+  ]
+}
+```
+
+```bash
+curl https://api.openfisca.fr/api/1/simulate -X POST --data @./test_case.json --header 'Content-type: application/json'
+```
+
+The JSON output is too large to be displayed here.
+
+> See also the `calculate` endpoint.
 
 ## variables
 
-Get information about simulation variables.
+Gets simulation variables of the tax and benefit system.
 
-TODO
-
-Example: https://api.openfisca.fr/api/1/variables
-
-# Deprecated endpoints
-
-## field
-
-> Deprecated, replaced by the `variables` endpoint.
-
-Get info about a variable.
-
-* URL path: `/api/1/field`
-* GET parameters:
-  * `context` (string, default: null): returned as is in the JSON response
-  * `input_variables` (boolean, default: true): whether input variables info is inserted in each variable formula
-  * `reform` (list of strings (one of [declared reforms](#reforms)), default: null): the reforms to load in order to know the variables they contain
-  * `variable` (string, one of available [variable names](https://legislation.openfisca.fr/variables), default: "revdisp"): the name of the variable to query
+* URL path: `/api/1/variables`
+* method: GET
+* query string parameters:
+  * `name` (string, multi-valuated, default: null): the names of the variables to return. If null all the known variables are returned.
 * JSON response structure:
-  * TODO
+  * `country_package_name` (string): the name of the Python package containing the tax and benefit system of the country loaded by the Web API.
+    Example: `"openfisca_france"`.
+  * `country_package_version` (string): the version of the Python package containing the tax and benefit system of the country loaded by the Web API
+  * `currency` (string): the currency of the tax and benefit system of the country loaded by the Web API
+  * `variables` (list of objects): a list of [JSON variables](./json-data-structures.md#variables)
 
-Example: https://api.openfisca.fr/api/1/field?variable=irpp
+Examples:
+* https://api.openfisca.fr/api/1/variables
+* https://api.openfisca.fr/api/1/variables?name=irpp
 
-## fields
-
-> Deprecated, replaced by the `variables` endpoint.
-
-Get info about all known variables.
-
-* URL path: `/api/1/fields`
-* GET parameters:
-  * `context` (string, default: null): returned as is in the response JSON body
-* JSON response structure:
-  * `columns`: list of input variables
-  * `columns_tree`: tree of input variables grouped by entity name and by arbitrary categories.
-    Intended to help building user interface.
-  * `prestations`: list of calculated variables
-
-Example: https://api.openfisca.fr/api/1/fields
+> JSON responses are too large to be copied here.

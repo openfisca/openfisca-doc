@@ -1,128 +1,31 @@
 # OpenFisca Web API
 
-## What is a web API?
-
-See https://en.wikipedia.org/wiki/Web_API
-
-In short this is a way to trigger OpenFisca simulations on a server from an HTTP URL.
+The OpenFisca project provides a [web API](https://en.wikipedia.org/wiki/Web_API) in order
+to launch a simulation from an HTTP URL, sending and receiving JSON data.
 
 ## Why should I use it?
 
-If you develop a web application in JavaScript for example, and if you'd like to call OpenFisca for a simulation, you're certainly going to use the Web API and your application will be a client of the Web API.
+If you're developing a web application in JavaScript, or need to compute something from the tax and benefit system,
+you need to call the OpenFisca API.
 
-Some existing clients are, among others, the [OpenFisca Demonstrator](https://ui.openfisca.fr/) and [mes-aides.gouv.fr](https://mes-aides.gouv.fr/).
+On the contrary, if you're writing a Python script, you may want to import the [`openfisca_france`](https://pypi.python.org/pypi/OpenFisca-France)
+Python module directly from your script (or any other country available in OpenFisca).
+
+Some existing clients of the web API are, among others, [mes-aides.gouv.fr](https://mes-aides.gouv.fr/) and the [OpenFisca Demonstrator](https://ui.openfisca.fr/).
 
 ## Public API instance
 
-The OpenFisca project provides a free and unrestricted instance of the API which is hosted on https://api.openfisca.fr/ so you don't have to install it on your server.
+The OpenFisca project provides a free and unrestricted instance of the API which is hosted on https://api.openfisca.fr/
+so you don't have to install it on your server.
 
-But if you prefer to be independent or if the traffic you generate on our servers is too important, we'll politely ask you to host your own instance of the API (see the [source code repository](https://github.com/openfisca/openfisca-web-api)).
+It's OK with small applications but if you plan to develop a real application in production,
+we'll politely ask you to host your own instance of the API (see the [source code repository](https://github.com/openfisca/openfisca-web-api)).
 
-## Example
+## Endpoints and JSON payload
 
-Let's run a simple simulation: a single person with no salary.
+The web API offers many endpoints providing different data or allowing to send a simulation test case.
+See the [dedicated section](./endpoints.md).
 
-The endpoint to call is [`calculate`](endpoints.html) and here is the JSON payload (we'll explain it later):
+The client communicates with the web API with JSON data, see the [dedicated section](./json-data-structures.md) for more information.
 
-```json
-// Stored in test_case_1.json
-{
-  "scenarios": [
-    {
-      "test_case": {
-        "familles": [
-          {
-            "parents": ["individu0"]
-          }
-        ],
-        "foyers_fiscaux": [
-          {
-            "declarants": ["individu0"]
-          }
-        ],
-        "individus": [
-          {
-            "date_naissance": "1980-01-01",
-            "id": "individu0"
-          }
-        ],
-        "menages": [
-          {
-            "personne_de_reference": "individu0"
-          }
-        ]
-      },
-      "period": "2015"
-    }
-  ],
-  "variables": ["revdisp"]
-}
-```
-
-Run the simulation with [curl](https://curl.haxx.se/) from the command line prompt:
-
-```
-curl https://api.openfisca.fr/api/1/calculate -X POST --data @./test_case_1.json --header 'content-type: application/json'
-```
-
-The output is:
-
-```json
-{
-  "apiVersion": 1,
-  "method": "/api/1/calculate",
-  "params": {
-    "scenarios": [
-      {
-        "test_case": {
-          "familles": [
-            {
-              "parents": [
-                "individu0"
-              ],
-              "id": 0
-            }
-          ],
-          "foyers_fiscaux": [
-            {
-              "declarants": [
-                "individu0"
-              ],
-              "id": 0
-            }
-          ],
-          "individus": [
-            {
-              "date_naissance": "1980-01-01",
-              "id": "individu0"
-            }
-          ],
-          "menages": [
-            {
-              "personne_de_reference": "individu0",
-              "id": 0
-            }
-          ]
-        },
-        "period": "2015"
-      }
-    ],
-    "output_format": "variables",
-    "variables": [
-      "revdisp"
-    ]
-  },
-  "url": "https://api.openfisca.fr/api/1/calculate",
-  "value": [
-    {
-      "revdisp": {
-        "2015": [
-          5332.3701171875
-        ]
-      }
-    }
-  ]
-}
-```
-
-What is important is the `value` key containing the value of `revdisp` for the period `2015`: `5332.37`.
+Now continue reading the [endpoints](./endpoints.md) section, which contains several examples.
