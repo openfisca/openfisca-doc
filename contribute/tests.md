@@ -50,15 +50,33 @@ In OpenFisca-France some YAML tests are ignored. They receive a property `ignore
 
 If a test fails, you can execute it with the [debug](https://nose.readthedocs.org/en/latest/plugins/debug.html) nose plugin:
 
-    nosetests --pdb openfisca_core/tests/test_tax_scales.py
+```bash
+nosetests --pdb openfisca_core/tests/test_tax_scales.py
+```
 
-You can even [specify the exact test to launch](https://nose.readthedocs.org/en/latest/usage.html#selecting-tests):
+You'll be dropped in the `pdf` debugger shell when an error occurs.
 
-    nosetests --pdb openfisca_core/tests/test_tax_scales.py:test_linear_average_rate_tax_scale
+You can [specify the exact test to launch](https://nose.readthedocs.org/en/latest/usage.html#selecting-tests):
 
-> The [nose-ipdb](https://github.com/flavioamieiro/nose-ipdb/) plugin is more user-friendly (because it uses the [ipdb](https://github.com/gotcha/ipdb) debugger instead of pdb).
+```bash
+nosetests --pdb openfisca_core/tests/test_tax_scales.py:test_linear_average_rate_tax_scale
+```
 
+> The [nose-ipdb](https://github.com/flavioamieiro/nose-ipdb/) plugin is more user-friendly
+> (because it uses the [ipdb](https://github.com/gotcha/ipdb) debugger instead of pdb).
 > In this case, just use the `--ipdb` option rather than `--pdb`.
+> See also the `--ipdb-failure` option.
+
+In case you want to set a breakpoint manually, in order to enter the debugger shell before an errors occurs,
+copy-paste this line in your code:
+
+```python
+import nose.tools; nose.tools.set_trace(); import ipdb; ipdb.set_trace()
+```
+
+This needs [ipdb](https://github.com/gotcha/ipdb) to be installed.
+
+> Hint: use the snippets feature of your favorite text editor to save this line, for example give it the name "breakpoint".
 
 ## Travis automated tests
 
