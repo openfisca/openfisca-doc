@@ -48,42 +48,6 @@ The result is a vector of size 1, the number of `families` in our test case.
 On the line `af = simulation.calculate('af', '2015-01')`, `'2015-01'` corresponds to a period (january 2015).
 
 
-#### Print the trace
-
-In Python you can print the trace of a calculation like that:
-
-```python
-# [...] Same as above
-simulation = scenario.new_simulation(trace=True)
-simulation.calculate('irpp', 2014, print_trace=True)
-simulation.calculate('irpp', 2014, print_trace=True, max_depth=1)  # Print only one level of depth
-simulation.calculate('irpp', 2014, print_trace=True, max_depth=-1)  # -1 means no max depth
-simulation.calculate('irpp', 2014, print_trace=True, max_depth=6, show_default_values=False)  # Hide variables with values being default values (0 and False basically)
-```
-Result:
-```
-irpp@foyers_fiscaux<2014>[0.0]
-|     |     |     |     |---> nb_adult@foyers_fiscaux<2014>[1.0]
-|     |     |     |     |---> nb_pac@foyers_fiscaux<2014>[2.0]
-|     |     |     |     |---> nbptr@foyers_fiscaux<2014>[2.0]
-|     |     |     |     |---> celibataire_ou_divorce@foyers_fiscaux<2014>[True]
-|     |     |     |     |---> nbF@foyers_fiscaux<2014>[2.0]
-|     |     |     |---> decote@foyers_fiscaux<2014>[1135.0]
-|     |     |     |     |---> nb_adult@foyers_fiscaux<2014>[1.0]
-|     |     |     |     |---> decote@foyers_fiscaux<2014>[1135.0]
-|     |     |     |     |---> nb_pac2@foyers_fiscaux<2014>[2.0]
-|     |     |---> nb_pac2@foyers_fiscaux<2014>[2.0]
-|     |     |     |---> nbF@foyers_fiscaux<2014>[2.0]
-|     |     |     |     |---> enfant_a_charge@individus<2014>[False, True, True]
-|     |     |     |     |---> enfant_a_charge@individus<2014>[False, True, True]
-|     |     |     |     |---> age@individus<2014>[29, 11, 17]
-|     |---> nb_adult@foyers_fiscaux<2014>[1.0]
-|     |     |---> celibataire_ou_divorce@foyers_fiscaux<2014>[True]
-
-array([ 0.], dtype=float32)
-```
-To understand it fully you have to know the variables (check the [Legislation Explorer](https://legislation.openfisca.fr/)) and to have understood the [syntax in Vector](thinking-in-vectors.md).
-
 ### Test the impact of a reform
 
 OpenFisca can be used to test the impact of a reform. For the purpose of this tutorial we will work on a test case,
