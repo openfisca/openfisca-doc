@@ -20,7 +20,16 @@ class flat_tax_on_salary(Variable):
 Let's explain in details the different part of the code:
 - `class flat_tax_on_salary(Variable):` declares a new variable with the name `flat_tax_on_salary`.
 - Metadatas:
-  - `column = FloatCol` declares the type of the variable, here a Float. All available types are documented [here]().
+  - `column = FloatCol` declares the type of the variable. Possible types are :
+    - `column = BoolCol` : boolean
+    - `column = DateCol` : date
+    - `column = FloatCol` : float
+    - `column = IntCol` : integer
+    - `column = AgeCol` : age
+    - `column = FixedStrCol` : string with maximum length (deprecated)
+    - `column = EnumCol` : discrete value (from an enumerable)
+    - `column = StrCol` : float (deprecated)
+    - `column = PeriodSizeIndependentIntCol` : integer (deprecated)
   - `entity = Person` declares which entity the variable is defined for, e.g. a person, a family, a tax household, etc. The different available entities are defined by each tax benefit system. In `openfisca-france`, a variable can be defined for an `Individu`, a `Famille`, a `FoyerFiscal`, or a `Menage`.
   - `label = u"Individualized..."` gives, in a human-readable language, concise information about the variable.
 - Formula:
