@@ -5,8 +5,8 @@ OpenFisca manipulates time via *periods* and *instants*.
 
 - *Instant*: the atomic unit is a day, so instants are day dates.
 Example: the 15th June 2015
-- *Period*: a succession of days.
-Example: a month ("July"), a year ("2015") or several months ("July and August")
+- *Period*: a succession of days.   
+Example: a month ("July 2015"), a year ("2015") or several months ("July and August 2015")
 
 ####Implementation in OpenFisca
 

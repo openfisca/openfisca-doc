@@ -5,7 +5,7 @@ A *Simulation* is basically the OpenFisca frame for calculating taxes or benefit
 
 To calculate any variable you need to create a *Simulation* from the *TaxBenefitSystem* that is to say the framework where you will compute your result.
 
-> Technically speaking it is the cache of previously computed results.
+> Technically speaking it is the cache of input data and previously computed results.
 
 It's possible to run many independent simulations using the same `TaxBenefitSystem`.
 
