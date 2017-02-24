@@ -32,11 +32,11 @@ Let's explain in details the different part of the code:
     - `column = PeriodSizeIndependentIntCol` : integer (deprecated)
   - `entity = Person` declares which entity the variable is defined for, e.g. a person, a family, a tax household, etc. The different available entities are defined by each tax benefit system. In `openfisca-france`, a variable can be defined for an `Individu`, a `Famille`, a `FoyerFiscal`, or a `Menage`.
   - `label = u"Individualized..."` gives, in a human-readable language, concise information about the variable.
+  - `period_behavior = MONTH` states that the variable is montly.
 - Formula:
   - `def function(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`.
-  - `period = period.this_month` is an openfisca idiom that indicates that when `flat_tax_on_salary` will be called for a period different than a month (e.g. a year), it will anyway return the value for a month.
   - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax benefit system.
-  - `return period, salary * 0.25` returns the result for the given period.
+  - `return salary * 0.25` returns the result for the given period.
 
 ## Example with legislation parameters
 

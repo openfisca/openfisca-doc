@@ -1,14 +1,30 @@
 # Periods
 
+A period can be a month, a year, `n` successive months or `n` successive years.
+
+
+## Periods for variable
+
 Most of the quantities calculated in openfisca can change over time. Therefore, each formula calculates a variable for a person (or a family, etc.) **for a given period**.
 
 This period is always the second argument of the formulas :
+
 ```py
+class var(Variable):
+    column = FloatCol
+    entity = Person
+    label = u"some variable"
+    period_behavior = MONTH
+
     def function(person, period):
         ...
 ```
 
-A period can be a month, a year, `n` successive months or `n` successive years.
+The size of the period is constrained by the class attribute `period_behavior` :
+  - `period_behavior = MONTH` : The variable may have a different value each month. For example, the salary of a person. The parameter `period` is guaranteed to be a whole month.
+  - `period_behavior = YEAR` : The variable is yearly or has always the same value every month. For example, The input of a yearly declaration. The parameter `period` is guaranteed to be a whole year (from january 1st to 31th december).
+  - `period_behavior = PERMANENT` : The value of the variable is permanent. For example, the age of a person never changes. There is no guarantee about `period` which must not be used.
+
 
 ## Calculating dependencies for a specific period
 
