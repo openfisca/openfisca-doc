@@ -26,16 +26,70 @@ The size of the period is constrained by the class attribute `period_behavior` :
   - `period_behavior = PERMANENT` : The value of the variable is permanent. For example, the age of a person never changes. There is no guarantee about `period` which must not be used.
 
 
+## Calculating dependencies for a period different than the one they are defined for
+
+Calling a formula with a period that is incompatible with the attribute `period_behavior` will cause an error. For instance, if we assume that a person `salary` is paid monthly:
+
+```py
+class var(Variable):
+    column = FloatCol
+    entity = Person
+    label = u"some yearly variable"
+    period_behavior = YEAR
+
+    def function(person, period):
+        salary_past_year = person('salary', period) # THIS WILL BREAK !
+        ...
+```
+
+However, sometimes, we do need to estimate a variable for a different period that the one it is defined for.
+
+We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The `ADD` option allows you to do it:
+
+```py
+class var(Variable):
+    column = FloatCol
+    entity = Person
+    label = u"some yearly variable"
+    period_behavior = YEAR
+
+    def function(person, period):  # period is a year because period_behavior = YEAR
+        salary_last_year = person('salary', period, options = [ADD])
+        salary_last_3_months = person('salary', period.last_3_months, options = [ADD])
+        ...
+```
+
+The `DIVIDE` option allows you to do the opposite: evaluating a quantity for a month while the variable is defined for a year. For instance, in the following example, `yearly_tax_projected` will contain the value of `some_yearly_tax` for the year including `period` divided by 12.
+
+```py
+class var(Variable):
+    column = FloatCol
+    entity = Person
+    label = u"some monthly variable"
+    period_behavior = MONTH
+
+    def function(person, period):  # period is a month because period_behavior = MONTH
+        tax_projected = person('some_yearly_tax', period, options = [DIVIDE])
+```
+
+
 ## Calculating dependencies for a specific period
 
 It happens that the formula to calculate a variable at a given period needs the value of another variable for another period. Usually, the second period is defined relatively to the first one (previous month, last three month, current year).
 
 For instance:
+
 ```py
-def function(person, period):
-    salary_this_month = person('salary', period.this_month)
-    salary_last_month = person('salary', period.last_month)
-    salary_6_months_ago = person('salary', period.offset(-6, 'month'))
+class var(Variable):
+    column = FloatCol
+    entity = Person
+    label = u"some variable"
+    period_behavior = YEAR
+
+    def function(person, period):
+        salary_this_month = person('salary', period.this_month)
+        salary_last_month = person('salary', period.last_month)
+        salary_6_months_ago = person('salary', period.offset(-6, 'month'))
 ```
 
 You can generate any period with the following properties and methods:
@@ -56,59 +110,3 @@ You can generate any period with the following properties and methods:
 | `period.start.period('month', n)` | n-month-long period starting a the same time than `period`   |
 
 You can find more information on the `period` object in the [reference documentation]() (_not available yet_)
-
-## Calculating dependencies for a period different than the one they are defined for
-
-Variables and formulas are usually defined for months or years. The first line of a formula usualy precises what kind of period it is working with:
-
-```py
-    # Formula defined for years
-    def function(person, period):
-        period = period.this_year
-        ...
-
-    # Formula defined for months
-    def function(person, period):
-        period = period.this_year
-        ...
-
-    # Formula that can handle both months and years
-    def function(person, period):
-        [Ø]
-        ...
-```
-
-Calling a formula with a period it is no able to handle will cause an error. For instance, if we assume that a person `salary` is paid monthly:
-
-```py
-def function(person, period):
-    salary_past_year = person('salary', period.last_year) # THIS WILL BREAK !
-    # >>> Requested period (...) differs from (...) returned by variable salary
-```
-
-However, sometimes, we do need to estimate a variable for a different period that the one it is defined for. 
-
-We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The `ADD` option allows you to do it:
-
-```py
-def function(person, period):
-    period = period.this_month
-    salary_last_year = person('salary', period.last_year, options = [ADD])
-    salary_last_3_months = person('salary', period.last_3_months, options = [ADD])
-```
-
-The `DIVIDE` option allows you to do the opposite: evaluating a quantity for a smaller period than what it is defined for. For instance, in the following example, `yearly_tax_projected` will contain the value of `some_yearly_tax` for the year including `period` divided by 12.
-
-```py
-def function(person, period):
-    period = period.this_month
-    tax_projected = person('some_yearly_tax', period.this_month, options = [DIVIDE])
-```
-
-`ADD` and `DIVIDE` can be both used together in tricky cases, for instance if you want an estimation for the past three month of a variable that is defined yearly :
-
-```py
-def function(person, period):
-    period = period.this_month
-    tax_projected_on_last_3_months = person('some_yearly_tax', period.last_3_months, options = [ADD, DIVIDE])
-```
