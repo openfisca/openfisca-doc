@@ -47,9 +47,9 @@ class basic_income(Variable):
     column = FloatCol
     entity = Household
     label = u"Basic income paid to households"
+    period_behavior = MONTH
 
     def function(household, period):
-        period = period.this_month
         nb_adults = household.nb_persons(Household.ADULT)
         nb_children = household.nb_persons(Household.CHILD)
         salaries = household.members('salary', period)
@@ -58,7 +58,7 @@ class basic_income(Variable):
         result = nb_adults * 500 + nb_children * 200 - sum_salaries
         result = max_(result, 0)
 
-        return period, result
+        return result
 ```
 
 ## Projection
@@ -72,13 +72,13 @@ class college_scholarship(Variable):
     column = FloatCol
     entity = Person
     label = u"College Scholarship for basic income recipients."
+    period_behavior = MONTH
 
     def function(person, period):
-        period = period.this_month
         is_student = person('is_student', period)
         has_household_basic_income = person.household('basic_income', period) > 0
                 
-        return period, is_student * has_household_basic_income * 100
+        return is_student * has_household_basic_income * 100
 ```
 
 Similarly, `entity.unique_role('variable_name', period)` allows you to get the value of `variable_name` for `person` who has the role `unique_role` in `entity`.

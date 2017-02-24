@@ -52,10 +52,9 @@ Usage example ([see in context](https://github.com/openfisca/openfisca-france/bl
 
 ```python
 def function(self, simulation, period):
-    period = period.start.offset('first-of', 'year').period('year')
     f6eu = simulation.calculate('f6eu', period)
     f6ev = simulation.calculate('f6ev', period)
     acc75a = simulation.legislation_at(period.start).ir.charges_deductibles.acc75a
     amax = acc75a.max * max_(1, f6ev)
-    return period, min_(f6eu, amax)
+    return min_(f6eu, amax)
 ```

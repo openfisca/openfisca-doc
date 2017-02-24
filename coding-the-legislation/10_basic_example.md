@@ -9,12 +9,12 @@ class flat_tax_on_salary(Variable):
     column = FloatCol
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
+    period_behavior = MONTH
 
     def function(person, period):
-        period = period.this_month
         salary = person('salary', period)
 
-        return period, salary * 0.25
+        return salary * 0.25
 ```
 
 Let's explain in details the different part of the code:
@@ -38,12 +38,12 @@ class flat_tax_on_salary(Variable):
     column = FloatCol
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
+    period_behavior = MONTH
 
     def function(person, period, legislation):
-        period = period.this_month
         salary = person('salary', period)
 
-        return period, salary * legislation(period).taxes.salary.rate
+        return salary * legislation(period).taxes.salary.rate
 ```
 
 `legislation` is here a function that be be called for a given period, and returns the whole legislation (in a hierarchical tree structure). You can get the parameter you are interested in by navigating this tree with the `.` notation.

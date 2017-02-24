@@ -9,7 +9,7 @@ class salary(Variable):
     column = FloatCol
     entity = Person
     label = u"Salary earned by a person for a given month"
-
+    period_behavior = MONTH
 ```
 
 
@@ -26,6 +26,7 @@ class french_citizen(Variable):
     column = BoolCol(default = True)
     entity = Person
     label = u"Whether the person is a French citizen"
+    period_behavior = YEAR
 ```
 
 The default default value of a `Variable` is `0` for numeric variables and  `False` for boolean ones.
