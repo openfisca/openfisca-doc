@@ -23,7 +23,7 @@ class var(Variable):
 The size of the period is constrained by the class attribute `period_behavior` :
   - `period_behavior = MONTH` : The variable may have a different value each month. For example, the salary of a person. The parameter `period` is guaranteed to be a whole month.
   - `period_behavior = YEAR` : The variable is yearly or has always the same value every month. For example, The input of a yearly declaration. The parameter `period` is guaranteed to be a whole year (from january 1st to 31th december).
-  - `period_behavior = PERMANENT` : The value of the variable is permanent. For example, the age of a person never changes. There is no guarantee about `period` which must not be used.
+  - `period_behavior = PERMANENT` : The value of the variable is permanent. For example, the date of birth of a person never changes. There is no guarantee about `period` which must not be used.
 
 
 ## Calculating dependencies for a period different than the one they are defined for

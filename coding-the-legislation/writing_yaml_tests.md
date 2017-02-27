@@ -172,7 +172,7 @@ Is is possible to set an montly input variable for a year using the class attrib
 * if `set_input = set_input_dispatch_by_period`, the 12 month are set equal to input value.
 
 Is is possible to test a monthly output variable on a year using the class attribute `calculate_output` :
-* if `calculate_output = calculate_output`, the variable is computed for the 12 month and the results are added up.
+* if `calculate_output = calculate_output_add`, the variable is computed for the 12 month and the results are added up.
 
 
 ## Next steps
