@@ -50,7 +50,7 @@ def build_reform(tax_benefit_system):
     class charges_deduc(formulas.SimpleFormulaColumn):
         label = u"Charge déductibles always returning 999"
         reference = charges_deductibles.charges_deduc
-        period_behavior = YEAR
+        definition_period = YEAR
         def function(self, simulation, period):
             return self.zeros() + 999
 

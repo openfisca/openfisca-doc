@@ -14,28 +14,28 @@ class var(Variable):
     column = FloatCol
     entity = Person
     label = u"some variable"
-    period_behavior = MONTH
+    definition_period = MONTH
 
     def function(person, period):
         ...
 ```
 
-The size of the period is constrained by the class attribute `period_behavior` :
-  - `period_behavior = MONTH` : The variable may have a different value each month. For example, the salary of a person. The parameter `period` is guaranteed to be a whole month.
-  - `period_behavior = YEAR` : The variable is yearly or has always the same value every month. For example, The input of a yearly declaration. The parameter `period` is guaranteed to be a whole year (from january 1st to 31th december).
-  - `period_behavior = PERMANENT` : The value of the variable is permanent. For example, the date of birth of a person never changes. There is no guarantee about `period` which must not be used.
+The size of the period is constrained by the class attribute `definition_period` :
+  - `definition_period = MONTH` : The variable may have a different value each month. For example, the salary of a person. The parameter `period` is guaranteed to be a whole month.
+  - `definition_period = YEAR` : The variable is yearly or has always the same value every month. For example, The input of a yearly declaration. The parameter `period` is guaranteed to be a whole year (from january 1st to 31th december).
+  - `definition_period = ETERNITY` : The value of the variable is constant. For example, the date of birth of a person never changes. There is no guarantee about `period` which must not be used.
 
 
 ## Calculating dependencies for a period different than the one they are defined for
 
-Calling a formula with a period that is incompatible with the attribute `period_behavior` will cause an error. For instance, if we assume that a person `salary` is paid monthly:
+Calling a formula with a period that is incompatible with the attribute `definition_period` will cause an error. For instance, if we assume that a person `salary` is paid monthly:
 
 ```py
 class var(Variable):
     column = FloatCol
     entity = Person
     label = u"some yearly variable"
-    period_behavior = YEAR
+    definition_period = YEAR
 
     def function(person, period):
         salary_past_year = person('salary', period) # THIS WILL BREAK !
@@ -51,9 +51,9 @@ class var(Variable):
     column = FloatCol
     entity = Person
     label = u"some yearly variable"
-    period_behavior = YEAR
+    definition_period = YEAR
 
-    def function(person, period):  # period is a year because period_behavior = YEAR
+    def function(person, period):  # period is a year because definition_period = YEAR
         salary_last_year = person('salary', period, options = [ADD])
         salary_last_3_months = person('salary', period.last_3_months, options = [ADD])
         ...
@@ -66,9 +66,9 @@ class var(Variable):
     column = FloatCol
     entity = Person
     label = u"some monthly variable"
-    period_behavior = MONTH
+    definition_period = MONTH
 
-    def function(person, period):  # period is a month because period_behavior = MONTH
+    def function(person, period):  # period is a month because definition_period = MONTH
         tax_projected = person('some_yearly_tax', period, options = [DIVIDE])
 ```
 
@@ -84,7 +84,7 @@ class var(Variable):
     column = FloatCol
     entity = Person
     label = u"some variable"
-    period_behavior = YEAR
+    definition_period = YEAR
 
     def function(person, period):
         salary_this_month = person('salary', period.this_month)

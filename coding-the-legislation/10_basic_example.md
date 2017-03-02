@@ -9,7 +9,7 @@ class flat_tax_on_salary(Variable):
     column = FloatCol
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
-    period_behavior = MONTH
+    definition_period = MONTH
 
     def function(person, period):
         salary = person('salary', period)
@@ -32,7 +32,7 @@ Let's explain in details the different part of the code:
     - `column = PeriodSizeIndependentIntCol` : integer (deprecated)
   - `entity = Person` declares which entity the variable is defined for, e.g. a person, a family, a tax household, etc. The different available entities are defined by each tax benefit system. In `openfisca-france`, a variable can be defined for an `Individu`, a `Famille`, a `FoyerFiscal`, or a `Menage`.
   - `label = u"Individualized..."` gives, in a human-readable language, concise information about the variable.
-  - `period_behavior = MONTH` states that the variable is montly.
+  - `definition_period = MONTH` states that the variable is montly.
 - Formula:
   - `def function(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`.
   - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax benefit system.
@@ -47,7 +47,7 @@ class flat_tax_on_salary(Variable):
     column = FloatCol
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
-    period_behavior = MONTH
+    definition_period = MONTH
 
     def function(person, period, legislation):
         salary = person('salary', period)

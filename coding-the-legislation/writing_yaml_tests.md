@@ -165,7 +165,7 @@ To run YAML tests, use the command line tool `openfisca-run-test`, documented [h
 >You can also run tests programatically using the [`test_runner` module](https://openfisca.readthedocs.io/en/latest/test_runner.html).
 
 
-## Testing variables on periods conflicting with their attribute `period_behavior`
+## Testing variables on periods conflicting with their attribute `definition_period`
 
 Is is possible to set an montly input variable for a year using the class attribute `set_input` :
 * if `set_input = set_input_divide_by_period`, the 12 month are set equal to the 12th of the input value,

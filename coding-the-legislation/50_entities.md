@@ -47,7 +47,7 @@ class basic_income(Variable):
     column = FloatCol
     entity = Household
     label = u"Basic income paid to households"
-    period_behavior = MONTH
+    definition_period = MONTH
 
     def function(household, period):
         nb_adults = household.nb_persons(Household.ADULT)
@@ -72,7 +72,7 @@ class college_scholarship(Variable):
     column = FloatCol
     entity = Person
     label = u"College Scholarship for basic income recipients."
-    period_behavior = MONTH
+    definition_period = MONTH
 
     def function(person, period):
         is_student = person('is_student', period)
