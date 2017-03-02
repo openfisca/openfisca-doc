@@ -21,20 +21,20 @@ Let's explain in details the different part of the code:
 - `class flat_tax_on_salary(Variable):` declares a new variable with the name `flat_tax_on_salary`.
 - Metadatas:
   - `column = FloatCol` declares the type of the variable. Possible types are :
-    - `column = BoolCol` : boolean
-    - `column = DateCol` : date
-    - `column = FloatCol` : float
-    - `column = IntCol` : integer
-    - `column = AgeCol` : age
-    - `column = FixedStrCol` : string with maximum length (deprecated)
-    - `column = EnumCol` : discrete value (from an enumerable)
-    - `column = StrCol` : string (deprecated)
-    - `column = PeriodSizeIndependentIntCol` : integer (deprecated)
+    - `BoolCol`: boolean
+    - `DateCol`: date
+    - `FloatCol`: float
+    - `IntCol`: integer
+    - `AgeCol`: age
+    - `FixedStrCol`: string with maximum length (deprecated)
+    - `EnumCol`: discrete value (from an enumerable)
+    - `StrCol`: string (deprecated)
+    - `PeriodSizeIndependentIntCol`: integer (deprecated)
   - `entity = Person` declares which entity the variable is defined for, e.g. a person, a family, a tax household, etc. The different available entities are defined by each tax benefit system. In `openfisca-france`, a variable can be defined for an `Individu`, a `Famille`, a `FoyerFiscal`, or a `Menage`.
   - `label = u"Individualized..."` gives, in a human-readable language, concise information about the variable.
-  - `definition_period = MONTH` states that the variable is montly.
+  - `definition_period = MONTH` states that the variable will be computed on months.
 - Formula:
-  - `def function(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`.
+  - `def function(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH`, `period` is constrained to be a month.
   - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax benefit system.
   - `return salary * 0.25` returns the result for the given period.
 

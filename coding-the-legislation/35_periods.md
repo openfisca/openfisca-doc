@@ -10,10 +10,10 @@ Most of the quantities calculated in openfisca can change over time. Therefore, 
 This period is always the second argument of the formulas :
 
 ```py
-class var(Variable):
+class salary(Variable):
     column = FloatCol
     entity = Person
-    label = u"some variable"
+    label = u"Salary for a month"
     definition_period = MONTH
 
     def function(person, period):
@@ -21,9 +21,9 @@ class var(Variable):
 ```
 
 The size of the period is constrained by the class attribute `definition_period` :
-  - `definition_period = MONTH` : The variable may have a different value each month. For example, the salary of a person. The parameter `period` is guaranteed to be a whole month.
-  - `definition_period = YEAR` : The variable is yearly or has always the same value every month. For example, The input of a yearly declaration. The parameter `period` is guaranteed to be a whole year (from january 1st to 31th december).
-  - `definition_period = ETERNITY` : The value of the variable is constant. For example, the date of birth of a person never changes. There is no guarantee about `period` which must not be used.
+  - `definition_period = MONTH` : The variable may have a different value each month. *For example*, the salary of a person. When `function` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `function`.
+  - `definition_period = YEAR` : The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `function` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
+  - `definition_period = ETERNITY` : The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `function`. However when `function` is executed, the parameter `period` can be anything and it should not be used.
 
 
 ## Calculating dependencies for a period different than the one they are defined for
@@ -31,26 +31,26 @@ The size of the period is constrained by the class attribute `definition_period`
 Calling a formula with a period that is incompatible with the attribute `definition_period` will cause an error. For instance, if we assume that a person `salary` is paid monthly:
 
 ```py
-class var(Variable):
+class taxes(Variable):
     column = FloatCol
     entity = Person
-    label = u"some yearly variable"
+    label = u"Taxes for a whole year"
     definition_period = YEAR
 
-    def function(person, period):
-        salary_past_year = person('salary', period) # THIS WILL BREAK !
+    def function(person, period):  # period is a year because definition_period = YEAR
+        salary_past_year = person('salary', period)  # salary is computed on a year while it's a montly variable, openfisca will complain
         ...
 ```
 
 However, sometimes, we do need to estimate a variable for a different period that the one it is defined for.
 
-We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The `ADD` option allows you to do it:
+We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The option `ADD` tells openfisca to split the period into months, compute the variable for each month and sum up the results :
 
 ```py
-class var(Variable):
+class taxes(Variable):
     column = FloatCol
     entity = Person
-    label = u"some yearly variable"
+    label = u"Taxes for a whole year"
     definition_period = YEAR
 
     def function(person, period):  # period is a year because definition_period = YEAR
@@ -59,17 +59,23 @@ class var(Variable):
         ...
 ```
 
-The `DIVIDE` option allows you to do the opposite: evaluating a quantity for a month while the variable is defined for a year. For instance, in the following example, `yearly_tax_projected` will contain the value of `some_yearly_tax` for the year including `period` divided by 12.
+The option `DIVIDE` allows you to do the opposite: evaluating a quantity for a month while the variable is defined for a year. Openfisca computes the variable for the whole year that contains the specified month and then divides the result by 12.
 
 ```py
-class var(Variable):
+class salary_net_of_taxes(Variable):
     column = FloatCol
     entity = Person
-    label = u"some monthly variable"
+    label = u"Monthly salary, net of taxes"
     definition_period = MONTH
 
     def function(person, period):  # period is a month because definition_period = MONTH
-        tax_projected = person('some_yearly_tax', period, options = [DIVIDE])
+        # The variable taxes is computed on a year, monthly_taxes equals the 12th of that result
+        monthly_taxes = person('taxes', period, options = [DIVIDE])
+
+        # salary is a monthly variable, period is a month : no option is required
+        salary = person('salary', period)
+
+        return salary - monthly_taxes
 ```
 
 
@@ -77,19 +83,21 @@ class var(Variable):
 
 It happens that the formula to calculate a variable at a given period needs the value of another variable for another period. Usually, the second period is defined relatively to the first one (previous month, last three month, current year).
 
-For instance:
+For instance, we want to compute an unemployment benefit that equals half of last year's salary, if the person had no income for the past 3 months.
 
 ```py
-class var(Variable):
+class unemployment_benefit(Variable):
     column = FloatCol
     entity = Person
-    label = u"some variable"
-    definition_period = YEAR
+    label = u"Unemployment benefit"
+    definition_period = MONTH
 
     def function(person, period):
-        salary_this_month = person('salary', period.this_month)
-        salary_last_month = person('salary', period.last_month)
-        salary_6_months_ago = person('salary', period.offset(-6, 'month'))
+        salary_last_3_months = person('salary', period.last_3_month)
+        salary_last_year = person('salary', period.last_year)
+
+        is_unemployed = (salary_last_3_months == 0)
+        return 0.5 * salary_last_year * is_unemployed
 ```
 
 You can generate any period with the following properties and methods:

@@ -51,6 +51,7 @@ def build_reform(tax_benefit_system):
         label = u"Charge déductibles always returning 999"
         reference = charges_deductibles.charges_deduc
         definition_period = YEAR
+        
         def function(self, simulation, period):
             return self.zeros() + 999
 
