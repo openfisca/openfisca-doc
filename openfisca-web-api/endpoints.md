@@ -270,8 +270,8 @@ Gets the legislation parameters of the tax and benefit system.
 * URL path: `/api/1/parameters`
 * method: GET
 * query string parameters:
-  * `instant` (a [JSON instant](./json-data-structures.md#instants), default: null): if given, returns the legislation parameters at this instant. If a period is given, the API will take its start instant.
   * `name` (string, multi-valuated, default: null): the name(s) of the parameters to return. If null all the known parameters are returned.
+  * `instant` (a [JSON instant](./json-data-structures.md#instants), default: null): if given, returns the legislation parameters at this instant. Can only be used in conjunction with the `name` query string parameter.
 * JSON response structure:
   * `country_package_name` (string): the name of the Python package containing the tax and benefit system of the country loaded by the Web API.
     Example: `"openfisca_france"`.
