@@ -11,7 +11,7 @@ you need to call the OpenFisca API.
 On the contrary, if you're writing a Python script, you may want to import the [`openfisca_france`](https://pypi.python.org/pypi/OpenFisca-France)
 Python module directly from your script (or any other country available in OpenFisca).
 
-Some existing clients of the web API are, among others, [mes-aides.gouv.fr](https://mes-aides.gouv.fr/) and the [OpenFisca Demonstrator](https://ui.openfisca.fr/).
+[mes-aides.gouv.fr](https://mes-aides.gouv.fr/) is an ambitious project, client of the web API.
 
 ## Public API instance
 
