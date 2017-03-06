@@ -22,6 +22,7 @@
    * [Vector calculus limitations](coding-the-legislation/25_vectorial_computing.md)
    * [Case disjunction](coding-the-legislation/30_case_disjunction.md)
    * [Periods](coding-the-legislation/35_periods.md)
+   * [Inferences](coding-the-legislation/37_inferences.md)
    * [Legislation evolutions](coding-the-legislation/40_legislation_evolutions.md)
    * [Entities](coding-the-legislation/50_entities.md)
    * [Reforms](coding-the-legislation/reforms.md)
