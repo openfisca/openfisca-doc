@@ -22,9 +22,9 @@ The `param.xml` file itself has a start and an end date.
 
 ## Parameters and Time
  Coding a parameter means including the interval of time over which it is defined thanks to the attributes `deb` and `fin`.
- 
- > HINT : Time is given as [Instant](periods.md) with string syntax
- 
+
+ > HINT : Time is given as [Instant](../periodsinstants.md) with string syntax
+
  Example : the threshold of the [`decote`](https://legislation.openfisca.fr/parameters/ir.decote.seuil)
 
 ```xml
