@@ -62,7 +62,7 @@ travis encrypt
 ## Manual releasing
 
 Here are the steps to follow to build and release a Python package.
-Execute them on each Git repository you want to publish :
+Execute them on each Git repository you want to publish:
 
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
 * [OpenFisca-Parsers](https://github.com/openfisca/openfisca-parsers)

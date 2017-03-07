@@ -2,7 +2,7 @@
 
 Every variable is defined for a type of [entity](../person,_entities,_role.md): for instance persons or households.
 
-However, I may for instance :
+However, I may for instance:
 - in a formula defined for a person, want to know some property of their household.
 - in a formula defined for a household, want to know some property of the household members.
 
@@ -65,7 +65,7 @@ class basic_income(Variable):
 
 `person.entity('variable_name, period)` allows you to get the value of `variable_name` for the entity containing `person`.
 
-Let's for example consider that any college student whose family benefits from the basic income will also individually be granted a scholarship of 100€ per month :
+Let's for example consider that any college student whose family benefits from the basic income will also individually be granted a scholarship of 100€ per month:
 
 ```py
 class college_scholarship(Variable):

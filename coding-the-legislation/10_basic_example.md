@@ -20,7 +20,7 @@ class flat_tax_on_salary(Variable):
 Let's explain in details the different part of the code:
 - `class flat_tax_on_salary(Variable):` declares a new variable with the name `flat_tax_on_salary`.
 - Metadatas:
-  - `column = FloatCol` declares the type of the variable. Possible types are :
+  - `column = FloatCol` declares the type of the variable. Possible types are:
     - `BoolCol`: boolean
     - `DateCol`: date
     - `FloatCol`: float

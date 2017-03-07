@@ -10,7 +10,7 @@
    * [Legislation evolutions](40_legislation_evolutions.md)
    * [Entities](50_entities.md)
 
-For writing your own **reforms** :
+For writing your own **reforms**:
    * [Reforms](reforms.md)
 
 This section provides the syntax for writing automatic **testing**:

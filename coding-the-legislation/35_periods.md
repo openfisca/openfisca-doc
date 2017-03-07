@@ -7,7 +7,7 @@ A period can be a month, a year, `n` successive months or `n` successive years.
 
 Most of the quantities calculated in openfisca can change over time. Therefore, each formula calculates a variable for a person (or a family, etc.) **for a given period**.
 
-This period is always the second argument of the formulas :
+This period is always the second argument of the formulas:
 
 ```py
 class salary(Variable):
@@ -20,10 +20,10 @@ class salary(Variable):
         ...
 ```
 
-The size of the period is constrained by the class attribute `definition_period` :
-  - `definition_period = MONTH` : The variable may have a different value each month. *For example*, the salary of a person. When `function` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `function`.
-  - `definition_period = YEAR` : The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `function` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
-  - `definition_period = ETERNITY` : The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `function`. However when `function` is executed, the parameter `period` can be anything and it should not be used.
+The size of the period is constrained by the class attribute `definition_period`:
+  - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `function` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `function`.
+  - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `function` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
+  - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `function`. However when `function` is executed, the parameter `period` can be anything and it should not be used.
 
 
 ## Calculating dependencies for a period different than the one they are defined for

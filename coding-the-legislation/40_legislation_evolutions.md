@@ -21,7 +21,7 @@ class flat_tax_on_salary(Variable):
         return period, salary * legislation(period).taxes.salary.rate
 ```
 
- and let's assume we have in one of our parameter files the value of the rate for the past couple of years :
+ and let's assume we have in one of our parameter files the value of the rate for the past couple of years:
 
 ```xml
 <NODE code="taxes">

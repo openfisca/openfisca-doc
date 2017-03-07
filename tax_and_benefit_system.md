@@ -15,9 +15,9 @@ This instance may host so many versions as there are countries in the world.
 
 Therefore you have to call at the beginning of your work, the one corresponding to your country of interest.
 
-#### Application : how to call the Python module
+#### Application: how to call the Python module
 
-For now only France system is well implemented, your first action should then be :
+For now only France system is well implemented, your first action should then be:
 
 ```python
 # Call module describing the French System
