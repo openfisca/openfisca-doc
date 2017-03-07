@@ -119,13 +119,28 @@ You can generate any period with the following properties and methods:
 You can find more information on the `period` object in the [reference documentation]() (_not available yet_)
 
 
-## Automatically set input of compute variables on periods conflicting with their attribute `definition_period`
+## Automatically process variable inputs defined for periods not matching the `definition_period`
 
-Is is possible to set a montly input variable for a year using the class attribute `set_input`:
+By default, when you provide a simulation inputs, you won't a able to set a variable value for a period that doesn't match its `definition_period`.
+
+For instance, as the `definition_period` of `salary` is `MONTH`, if you provide as an input a value of `salary` for `2015`, an error will be raised.
+
+It is however possible to define an automatic behaviour to cast yearly inputs into monthy values. To do this, add a `set_input` class attribute to a variable.
 
 * if `set_input = set_input_divide_by_period`, the 12 months are set equal to the 12th of the input value,
 * if `set_input = set_input_dispatch_by_period`, the 12 months are set equal to input value.
 
-Is is possible to compute a monthly output variable on a year using the class attribute `calculate_output`:
+For instance, let's slightly modify the code of `salary`:
+```py
+class salary(Variable):
+    column = FloatCol
+    entity = Person
+    label = u"Salary for a month"
+    definition_period = MONTH
+    set_input = set_input_divide_by_period
 
-* if `calculate_output = calculate_output_add`, the variable is computed for the 12 months and the results are added up. The option ADD is not needed.
+    def function(person, period):
+        ...
+```
+
+We can now provide an input for `2015` for `salary`: no error will be raised, and the value will be automatically split between the 12 months of `2015.
