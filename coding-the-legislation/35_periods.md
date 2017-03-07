@@ -1,6 +1,6 @@
 # Periods
 
-A period can be a month, a year, `n` successive months or `n` successive years.
+A period can be a month, a year, `n` successive months, `n` successive years or the eternity.
 
 
 ## Periods for variable
@@ -42,9 +42,9 @@ class taxes(Variable):
         ...
 ```
 
-However, sometimes, we do need to estimate a variable for a different period that the one it is defined for.
+However, sometimes, we do need to estimate a variable for a different period than the one it is defined for.
 
-We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The option `ADD` tells openfisca to split the period into months, compute the variable for each month and sum up the results :
+We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The option `ADD` tells openfisca to split the period into months, compute the variable for each month and sum up the results:
 
 ```py
 class taxes(Variable):
@@ -55,7 +55,6 @@ class taxes(Variable):
 
     def function(person, period):  # period is a year because definition_period = YEAR
         salary_last_year = person('salary', period, options = [ADD])
-        salary_last_3_months = person('salary', period.last_3_months, options = [ADD])
         ...
 ```
 
@@ -72,7 +71,7 @@ class salary_net_of_taxes(Variable):
         # The variable taxes is computed on a year, monthly_taxes equals the 12th of that result
         monthly_taxes = person('taxes', period, options = [DIVIDE])
 
-        # salary is a monthly variable, period is a month : no option is required
+        # salary is a monthly variable, period is a month: no option is required
         salary = person('salary', period)
 
         return salary - monthly_taxes
@@ -118,3 +117,15 @@ You can generate any period with the following properties and methods:
 | `period.start.period('month', n)` | n-month-long period starting a the same time than `period`   |
 
 You can find more information on the `period` object in the [reference documentation]() (_not available yet_)
+
+
+## Automatically set input of compute variables on periods conflicting with their attribute `definition_period`
+
+Is is possible to set a montly input variable for a year using the class attribute `set_input`:
+
+* if `set_input = set_input_divide_by_period`, the 12 months are set equal to the 12th of the input value,
+* if `set_input = set_input_dispatch_by_period`, the 12 months are set equal to input value.
+
+Is is possible to compute a monthly output variable on a year using the class attribute `calculate_output`:
+
+* if `calculate_output = calculate_output_add`, the variable is computed for the 12 months and the results are added up. The option ADD is not needed.
