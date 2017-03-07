@@ -26,7 +26,7 @@
    * [Entities](coding-the-legislation/50_entities.md)
    * [Reforms](coding-the-legislation/reforms.md)
    * [Writing YAML tests](coding-the-legislation/writing_yaml_tests.md)
-   * [Bootstrap a new country](coding-the-legislation/bootstrap_a_new_country.md)
+   * [Bootstrapping a new country package](coding-the-legislation/bootstrapping_a_new_country_package.md)
 * [Legislation parameters](legislation-parameters/README.md)
    * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
 * [OpenFisca Web API](openfisca-web-api/README.md)

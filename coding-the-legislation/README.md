@@ -18,4 +18,4 @@ This section provides the syntax for writing automatic **testing**:
 
 This section helps you to deploy OpenFisca for new country.
 
-   * [Bootstrap a new country](bootstrap_a_new_country.md)
+   * [Bootstrapping a new country package](bootstrapping_a_new_country_package.md)
