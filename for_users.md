@@ -34,7 +34,7 @@ Here is the recommended way:
 - First launch the terminal of your computer.
 
 
-To avoid any dependencies problem we recommend you to use a [virtual environment](https://virtualenv.pypa.io/en/stable/), for example with the tool : [pew](https://github.com/berdario/pew#command-reference).
+To avoid any dependencies problem we recommend you to use a [virtual environment](https://virtualenv.pypa.io/en/stable/), for example with the tool: [pew](https://github.com/berdario/pew#command-reference).
 
 ```python
 pip install pew

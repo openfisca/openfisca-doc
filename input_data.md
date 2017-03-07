@@ -1,8 +1,8 @@
 # Input Data
 
-  You can use OpenFisca with two kind of input information :
-  - either *test case* : you simulate the legislation for one standard situation
-  - or *data* : you give a whole population (survey with aggregated data for example) on which you want to apply the legislation.
+  You can use OpenFisca with two kind of input information:
+  - either *test case*: you simulate the legislation for one standard situation
+  - or *data*: you give a whole population (survey with aggregated data for example) on which you want to apply the legislation.
 
 ### Scenario
 
@@ -12,7 +12,7 @@ The interface between input information and *input variables* that OpenFisca can
 
 Whatever the input is, *test case* or *data*, the scenario converts it into vectors internally.
 
-###### Application : how to create a scenario
+###### Application: how to create a scenario
 
 After initializing the [Tax and Benefit System](tax_and_benefit_system.md), you now want to create a *scenario* that will allow you in a second step to give input information.
 
@@ -28,17 +28,17 @@ scenario = tax_benefit_system.new_scenario()
 Test case describes persons and entities with their input variables or attributes.
 
 You may add information at *individual* level or at *entity* level.
-One input is crucial and shouldn't be forgotten : the *period* of the simulation.
+One input is crucial and shouldn't be forgotten: the *period* of the simulation.
 
-###### Application : how to initialize a scenario
+###### Application: how to initialize a scenario
 Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](openfisca-web-api/json-data-structures.md) of the documentation).
 
 In Python you have to use the `init_single_entity` function based on the *scenario*. To give to every person of your *test case* attributes, you have to use the Python dictionnary object.
 
-We show here the Python expression for a family constituted by :
-- two parents (with attributes : her `age` or her `date_naissance` and her `salaire_de_base`),
-- two children (with attribute : their `age`),
-- a house (with attributes : the `loyer` and the `statut_occupation_logement`)
+We show here the Python expression for a family constituted by:
+- two parents (with attributes: her `age` or her `date_naissance` and her `salaire_de_base`),
+- two children (with attribute: their `age`),
+- a house (with attributes: the `loyer` and the `statut_occupation_logement`)
 
 ```python
 # Initialize test case
@@ -69,8 +69,8 @@ Notice that some input variables are associated to *individus* ("parent1" , "par
 
 > **WARNING**: Declare the *input variables* on an annual basis.
 
-HINT : For categorical variable you may use either the modality or its number.
-Example with the [statut d'occupation du logement](https://legislation.openfisca.fr/variables/statut_occupation_logement) :
+HINT: For categorical variable you may use either the modality or its number.
+Example with the [statut d'occupation du logement](https://legislation.openfisca.fr/variables/statut_occupation_logement):
  ``` python
  # Declaration of categorical variable
  menage = dict(loyer = 12000,

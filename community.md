@@ -7,7 +7,7 @@ You can ask for help, or help others, or simply discuss with the team:
 - via the [forum](https://forum.openfisca.fr/)
 - via the [chat](https://gitter.im/openfisca/openfisca-france)
 - by email: contact@openfisca.fr
-- via Twitter : @OpenFisca
+- via Twitter: @OpenFisca
 - for developers, [open an issue on GitHub](../contribute/guidelines.html#opening-issues)
 
 ## Community projects

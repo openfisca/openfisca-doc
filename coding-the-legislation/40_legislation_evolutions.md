@@ -13,15 +13,15 @@ class flat_tax_on_salary(Variable):
     column = FloatCol
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
+    definition_period = MONTH
 
     def function(person, period, legislation):
-        period = period.this_month
         salary = person('salary', period)
 
         return period, salary * legislation(period).taxes.salary.rate
 ```
 
- and let's assume we have in one of our parameter files the value of the rate for the past couple of years :
+ and let's assume we have in one of our parameter files the value of the rate for the past couple of years:
 
 ```xml
 <NODE code="taxes">
@@ -73,6 +73,7 @@ class flat_tax_on_salary(Variable):
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
     start_date = date(2014, 01, 01)
+    definition_period = MONTH
 
     def function(person, period, legislation):
         ...
@@ -82,6 +83,7 @@ class progressive_income_tax(Variable):
     entity = Person
     label = u"Former tax replaced by the flat tax on the 1st of Jan 2014"
     stop_date = date(2013, 12, 31)
+    definition_period = MONTH
 
     def function(person, period, legislation):
         ...
@@ -103,17 +105,16 @@ class flat_tax_on_salary(DatedVariable):
     column = FloatCol
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
+    definition_period = MONTH
 
     @dated_function(start = date(2017, 1, 1))
     def function_2017(self, simulation, period):
-        period = period.this_month
         salary = person('salary', period)
         salary_above_1000 = min_(salary - 1000, 0)
         return period, salary_above_1000 * legislation(period).taxes.salary.rate
 
     @dated_function(start = date(2014, 01, 01), stop = date(2016, 12, 31))
     def function_2014(self, simulation, period):
-        period = period.this_month
         salary = person('salary', period)
 
         return period, salary * legislation(period).taxes.salary.rate

@@ -9,9 +9,9 @@ Built-in python conditionnal structures are not compatible with [vector calculus
 def function(person, period):
     salary = person('salary', period)
     if salary < 1000:
-        return period, 200
+        return 200
     else:
-        return period, 0
+        return 0
 ```
 
 Some solutions though exist to emulate these structures.
@@ -23,7 +23,7 @@ Applying a condition is in many cases equivalent to a simple multiplication. For
 ```py
 def function(person, period):
     condition_salary = person('salary', period) < 1000
-    return period, condition_salary * 200
+    return condition_salary * 200
 ```
 
 For a person, if  `condition_salary` is `True` (equivalent to `1` in logical algebra), the returned result will be `200`. However, if `condition_salary` is `False` (equivalent to `0`), the returned result will be `0.
@@ -37,7 +37,7 @@ The helper function `where` offers a simple syntax to handle these cases.
 ```py
 def function(person, period):
     condition_salary = person('salary', period) < 1000
-    return period, where(condition_salary, 200, 100)
+    return where(condition_salary, 200, 100)
 ```
 
 `where` takes 3 arguments: the condition, the value to return if the condition is met, and the value to return otherwise.
@@ -55,7 +55,7 @@ We can use the helper function `select` to implement this behaviour:
 ```py
 def function(person, period):
     salary = person('salary', period)
-    return period, select(
+    return select(
         [salary <= 500, salary <= 1000, salary <= 1500, salary > 1500],
         [200, 100, 50, 0],
         )
@@ -74,7 +74,7 @@ If no condition is met, `0` will be returned. The previous function is thus stri
 ```py
 def function(person, period):
     salary = person('salary', period)
-    return period, select(
+    return select(
         [salary <= 500, salary <= 1000, salary <= 1500],
         [200, 100, 50],
         )
@@ -94,7 +94,7 @@ def function(person, period):
     condition_salary = person('salary', period) < 1000
     condition_handicap = person('handicap')
     condition = condition_age * condition_salary + condition_handicap
-    return period, condition * 200
+    return condition * 200
 ```
 
 It is considered a good practice to always use helpers `where` and `select` when they are relevant, and not to emulate their behaviour manually with logical operations.

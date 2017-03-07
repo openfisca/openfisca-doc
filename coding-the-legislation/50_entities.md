@@ -2,7 +2,7 @@
 
 Every variable is defined for a type of [entity](../person,_entities,_role.md): for instance persons or households.
 
-However, I may for instance :
+However, I may for instance:
 - in a formula defined for a person, want to know some property of their household.
 - in a formula defined for a household, want to know some property of the household members.
 
@@ -47,9 +47,9 @@ class basic_income(Variable):
     column = FloatCol
     entity = Household
     label = u"Basic income paid to households"
+    definition_period = MONTH
 
     def function(household, period):
-        period = period.this_month
         nb_adults = household.nb_persons(Household.ADULT)
         nb_children = household.nb_persons(Household.CHILD)
         salaries = household.members('salary', period)
@@ -58,27 +58,27 @@ class basic_income(Variable):
         result = nb_adults * 500 + nb_children * 200 - sum_salaries
         result = max_(result, 0)
 
-        return period, result
+        return result
 ```
 
 ## Projection
 
 `person.entity('variable_name, period)` allows you to get the value of `variable_name` for the entity containing `person`.
 
-Let's for example consider that any college student whose family benefits from the basic income will also individually be granted a scholarship of 100€ per month :
+Let's for example consider that any college student whose family benefits from the basic income will also individually be granted a scholarship of 100€ per month:
 
 ```py
 class college_scholarship(Variable):
     column = FloatCol
     entity = Person
     label = u"College Scholarship for basic income recipients."
+    definition_period = MONTH
 
     def function(person, period):
-        period = period.this_month
         is_student = person('is_student', period)
         has_household_basic_income = person.household('basic_income', period) > 0
                 
-        return period, is_student * has_household_basic_income * 100
+        return is_student * has_household_basic_income * 100
 ```
 
 Similarly, `entity.unique_role('variable_name', period)` allows you to get the value of `variable_name` for `person` who has the role `unique_role` in `entity`.

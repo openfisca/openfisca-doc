@@ -19,7 +19,7 @@ Other variables can be calculated thanks to a **formula**.
 
 A formula is a **function** that calculates the value of given variable, for a given period. To do so, it performs (usually arithmetic) operations on the values of other variables, the formula **dependencies**.
 
-For instance :
+For instance:
 * The *basic income* of a family can be calculated from its income, and some other information about its situation.
 * The *income tax* of a tax household can be calculated the same way.
 
