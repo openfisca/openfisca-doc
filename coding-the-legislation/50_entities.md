@@ -63,7 +63,7 @@ class basic_income(Variable):
 
 ## Projection
 
-`person.entity('variable_name, period)` allows you to get the value of `variable_name` for the entity containing `person`.
+`person.entity('variable_name', period)` allows you to get the value of `variable_name` for the entity containing `person`.
 
 Let's for example consider that any college student whose family benefits from the basic income will also individually be granted a scholarship of 100€ per month:
 
