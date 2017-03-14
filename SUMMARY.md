@@ -16,6 +16,7 @@
 * [Installing OpenFisca](install.md)
    * [For Users](for_users.md)
    * [For Developers](for_developers.md)
+   * [In an offline environment](offline-environment.md)
 * [Coding the legislation](coding-the-legislation/README.md)
    * [Coding a formula: basic example](coding-the-legislation/10_basic_example.md)
    * [Introducing an input variable](coding-the-legislation/20_input_variables.md)
