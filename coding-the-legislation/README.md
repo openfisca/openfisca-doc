@@ -7,9 +7,11 @@
    * [Vector calculus limitations](25_vectorial_computing.md)
    * [Case disjunction](30_case_disjunction.md)
    * [Periods](35_periods.md)
-   * [Inferences](37_inferences.md)
    * [Legislation evolutions](40_legislation_evolutions.md)
    * [Entities](50_entities.md)
+
+To understand the inferences used in OpenFisca:
+   * [Inferences](inferences.md)
 
 For writing your own **reforms**:
    * [Reforms](reforms.md)
