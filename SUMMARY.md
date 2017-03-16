@@ -25,6 +25,7 @@
    * [Legislation evolutions](coding-the-legislation/40_legislation_evolutions.md)
    * [Entities](coding-the-legislation/50_entities.md)
    * [Reforms](coding-the-legislation/reforms.md)
+   * [Inferences](coding-the-legislation/inferences.md)
    * [Writing YAML tests](coding-the-legislation/writing_yaml_tests.md)
    * [Bootstrapping a new country package](coding-the-legislation/bootstrapping_a_new_country_package.md)
 * [Legislation parameters](legislation-parameters/README.md)

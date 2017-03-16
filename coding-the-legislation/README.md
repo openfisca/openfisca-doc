@@ -10,6 +10,9 @@
    * [Legislation evolutions](40_legislation_evolutions.md)
    * [Entities](50_entities.md)
 
+To understand the inferences used in OpenFisca:
+   * [Inferences](inferences.md)
+
 For writing your own **reforms**:
    * [Reforms](reforms.md)
 
