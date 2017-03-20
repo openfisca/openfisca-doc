@@ -10,22 +10,23 @@ Example: a month ("July 2015"), a year ("2015"), several months ("July and Augus
 
 #### Implementation in OpenFisca
 
-Time is defined using an ad-hoc strings format:
+In OpenFisca, periods are encoded in strings. All the valid period formats are referenced in this table:
 
-            "year-month-day"
+| Period               |   Period type    | Example                                                                    |
+|----------------------|-----------------------------------------------------------------------------------------------|
+| `AAAA`               | Calendar year    | `'2010'` is the year 2010                                                  | 
+| `AAAA-MM`            | Month            | `'2010-04'` is april 2010                                                  | 
+| `year:AAAA-MM`       | Rolling year     | `'year:2010-04'` is the 12 months period starting from april 2010          | 
+| `year:AAAA:N`        | N years          | `'year:2010:3'` is the 3 years period starting from 2010                   |
+| `year:AAAA-MM:N`     | N rolling years  | `'year:2010:3'` is the 3 years (36 months) period starting from april 2010 |
+| `month:AAAA-MM:N`    | N months         | `'month:2010-04:3'` is the 3 months period starting from april 2010        |
 
-#### Examples:
+The smallest unit for OpenFisca periods is the **month**. Therefore:
 
-For *instants*:
-- `"2015-02-15"` is an instant, February, 15th 2015.
-
-For *periods*:
-- `"2015"` is a year,
-- `"2015-01"` is a month of a year, January 2015
-- `"2015-06:3"` are the 3 months June, July and August of the year 2015.
-
+- All periods are presumed to start on the first day of their first month
+- A period cannot be smaller than a month
 
 >Internally, time is stored as a start instant, a unit (MONTH, YEAR) and a quantity of units.
 
-Functions exist to transform periods or turn them into an instant, which are documented [later](coding-the-legislation/35_periods.md).
+Functions exist to transform periods or turn them into an instant. They are documented [further](coding-the-legislation/35_periods.md).
 
