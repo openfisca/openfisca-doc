@@ -12,7 +12,7 @@ _Example: the 15th June 2015._
 
 _Example: a month ("July 2015"), a year ("2015"), several months ("July and August 2015") or the eternity._
 
-#### Implementation in OpenFisca
+#### API
 
 In OpenFisca, periods are encoded in strings. All the valid period formats are referenced in this table:
 
