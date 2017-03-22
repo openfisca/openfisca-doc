@@ -5,7 +5,7 @@ This documentation is built with the excellent [GitBook](https://github.com/Gitb
 
 It is written in [Markdown](https://help.gitbook.com/format/markdown.html)
 and the source is hosted on this GitHub repository:
-[openfisca/openfisca-gitbook](https://github.com/openfisca/openfisca-gitbook).
+[openfisca/openfisca-doc](https://github.com/openfisca/openfisca-doc).
 
 ## Collaborative editing
 
@@ -24,7 +24,7 @@ accepted if relevant.
 If you'd like to build it by yourself to work locally, here are the steps.
 
 ```
-git clone git@github.com:openfisca/openfisca-gitbook
+git clone git@github.com:openfisca/openfisca-doc
 npm install
 ```
 

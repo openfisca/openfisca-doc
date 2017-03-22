@@ -12,10 +12,10 @@
     ],
     "pluginsConfig": {
         "github": {
-            "url": "https://github.com/openfisca/openfisca-gitbook"
+            "url": "https://github.com/openfisca/openfisca-doc"
         },
         "edit-link": {
-            "base": "http://prose.io/#openfisca/openfisca-gitbook/edit/master",
+            "base": "http://prose.io/#openfisca/openfisca-doc/edit/master",
             "label": "Edit This Page"
         }
     }

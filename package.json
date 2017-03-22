@@ -1,10 +1,10 @@
 {
-  "name": "openfisca-gitbook",
+  "name": "openfisca-doc",
   "version": "0.5.0",
   "description": "OpenFisca documentation",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openfisca/openfisca-gitbook.git"
+    "url": "https://github.com/openfisca/openfisca-doc.git"
   },
   "scripts": {
     "build": "gitbook build",
