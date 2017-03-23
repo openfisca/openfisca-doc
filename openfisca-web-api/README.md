@@ -19,9 +19,11 @@ The OpenFisca project provides a free and unrestricted instance of the API which
 so you don't have to install it on your server.
 
 It's OK with small applications but if you plan to develop a real application in production,
-we'll politely ask you to host your own instance of the API (see the [source code repository](https://github.com/openfisca/openfisca-web-api)).
+we'll politely ask you to host your own instance of the API to reduce the load of our small server.
 
 The public instance of the Web API is auto-updated and you may want to decide when to upgrade it, otherwise your application may break suddently (see [this issue (in French)](https://github.com/openfisca/openfisca-france/issues/716#issuecomment-288689289) for example).
+
+To deploy an instance of the Web API in production, please follow [these instructions](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
 
 ## Endpoints and JSON payload
 
