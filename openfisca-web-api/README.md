@@ -21,6 +21,8 @@ so you don't have to install it on your server.
 It's OK with small applications but if you plan to develop a real application in production,
 we'll politely ask you to host your own instance of the API (see the [source code repository](https://github.com/openfisca/openfisca-web-api)).
 
+The public instance of the Web API is auto-updated and you may want to decide when to upgrade it, otherwise your application may break suddently (see [this issue (in French)](https://github.com/openfisca/openfisca-france/issues/716#issuecomment-288689289) for example).
+
 ## Endpoints and JSON payload
 
 The web API offers many endpoints providing different data or allowing to send a simulation test case.
