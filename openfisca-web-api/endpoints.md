@@ -28,6 +28,8 @@ curl https://api.openfisca.fr/
 
 ## calculate
 
+> This endpoint is quite complex and you may want to use the [`formula`](#formula) endpoint.
+
 Computes a test case.
 
 * URL path: `/api/1/calculate`
@@ -271,13 +273,13 @@ Gets the legislation parameters of the tax and benefit system.
 * method: GET
 * query string parameters:
   * `name` (string, multi-valuated, default: null): the name(s) of the parameters to return. If null all the known parameters are returned.
-  * `instant` (a [JSON instant](./json-data-structures.md#instants), default: null): if given, returns the legislation parameters at this instant. Can only be used in conjunction with the `name` query string parameter.
+  * `instant` (a [JSON instant](./input-output-data.md#instants), default: null): if given, returns the legislation parameters at this instant. Can only be used in conjunction with the `name` query string parameter.
 * JSON response structure:
   * `country_package_name` (string): the name of the Python package containing the tax and benefit system of the country loaded by the Web API.
     Example: `"openfisca_france"`.
   * `country_package_version` (string): the version of the Python package containing the tax and benefit system of the country loaded by the Web API
   * `currency` (string): the currency of the tax and benefit system of the country loaded by the Web API
-  * `parameters` (list of objects): a list of [JSON parameters](./json-data-structures.md#parameters)
+  * `parameters` (list of objects): a list of [JSON parameters](./input-output-data.md#parameters)
 
 Examples:
 * https://api.openfisca.fr/api/1/parameters
@@ -320,6 +322,8 @@ curl https://api.openfisca.fr/api/1/reforms
 
 ## simulate
 
+> This endpoint is quite complex and you may want to use the [`formula`](#formula) endpoint.
+
 Computes an input test case, returning the results dispatched in a decomposition of the tax and benefit system.
 
 > The decomposition is based on [decomp.xml](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/decompositions/decomp.xml).
@@ -329,7 +333,7 @@ Computes an input test case, returning the results dispatched in a decomposition
 * required headers:
   * `Content-Type: application/json`
 * JSON request structure:
-  * `scenarios` (list of objects): a list of [JSON scenarios](./json-data-structures.md#scenarios)
+  * `scenarios` (list of objects): a list of [JSON scenarios](./input-output-data.md#scenarios)
   * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
   * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are [validated](#scenarios-validation)
 * JSON response structure:
@@ -395,7 +399,7 @@ Gets simulation variables of the tax and benefit system.
     Example: `"openfisca_france"`.
   * `country_package_version` (string): the version of the Python package containing the tax and benefit system of the country loaded by the Web API
   * `currency` (string): the currency of the tax and benefit system of the country loaded by the Web API
-  * `variables` (list of objects): a list of [JSON variables](./json-data-structures.md#variables)
+  * `variables` (list of objects): a list of [JSON variables](./input-output-data.md#variables)
 
 Examples:
 * https://api.openfisca.fr/api/1/variables
