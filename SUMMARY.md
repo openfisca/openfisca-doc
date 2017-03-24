@@ -35,7 +35,6 @@
    * [Endpoints](openfisca-web-api/endpoints.md)
    * [JSON data structures](openfisca-web-api/json-data-structures.md)
    * [Reforms](openfisca-web-api/reforms.md)
-   * [Install an api instance](openfisca-web-api/install_an_api_instance.md)
 * [Troubleshooting](troubleshooting.md)
 * [Community](community.md)
 * [Contribute](contribute/README.md)
