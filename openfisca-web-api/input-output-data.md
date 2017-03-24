@@ -1,8 +1,8 @@
 # Input and output data
 
-## values by period
+## Values by period
 
-The value of a variable is always expressed in function of a definition period.
+The value of a variable always exists in a specific period.
 
 Example: `{salaire_de_base: {"2015-01": 5000}}`
 
@@ -10,24 +10,20 @@ When the period is not given, for example `enfant_a_charge: false`, the global p
 
 Example: `{salaire_de_base: 5000}` is equivalent to `{salaire_de_base: {<scenario_period>: 5000}}`, `<scenario_period>` being defined in the [scenario](#scenarios).
 
-If a `set_input` attribute is defined in the simulation variable, it's possible to specify a different period unit and let the Core dispatch the value. See also: [periods section](../coding-the-legislation/35_periods.md).
-
-Example: `{salaire_de_base: {"2015": 5000}}`, given [`salaire_de_base`](https://legislation.openfisca.fr/salaire_de_base) defines `set_input = set_input_divide_by_period`.
-
-## scenarios
+## Scenarios
 
 A JSON scenario is an object structured this way:
 * `axes` (a list of objects, default: null): the axes of the scenario, see [axes](#axes)
 * `input_variables` (an object, mutually exclusive with `test_case`): the input variables, structured this way:
   * `<variable name (string)>` (the [value by period](#values-by-period)): an input variable
-* `period` (a [JSON period](#periods), default: the current year): the period on which the variables of the decomposition will be computed
+* `period` (see [periods and instants](../periodsinstants.md), default: the current year): the period on which the variables of the decomposition will be computed
 * `test_case` (an object, mutually exclusive with `input_variables`): the test case of the scenario, see [test cases](#test-cases)
 
 > Either `test_case` or `input_variables` must be provided, not both.
 
 > `axes` can't be used with `input_variables`, only `test_case`.
 
-## test cases
+## Test cases
 
 A test case describes persons, entities and their associations.
 
@@ -73,7 +69,7 @@ Example:
 }
 ```
 
-## axes
+## Axes
 
 A JSON axis is an object structured this way:
 * `count` (integer, >= 1, required): the number of steps to go from min to max
@@ -81,26 +77,4 @@ A JSON axis is an object structured this way:
 * `max` (integer or float, required): the maximum value of the varying variable
 * `min` (integer or float, required): the minimum value of the varying variable
 * `name` (string, one of available [variable names](https://legislation.openfisca.fr/variables), required): the name of the varying variable
-* `period` (a JSON period):
-
-### Parallel axes
-
-TODO
-
-### Perpendicular axes
-
-TODO
-
-## instants
-
-TODO
-
-## parameters
-
-TODO
-
-## periods
-
-A JSON period can be:
-* a `string` like "2014", "2014-01", "2014-03:2"
-* an `object` like `{start: "2014", unit: "year"}`
+* `period` (see [periods and instants](../periodsinstants.md))

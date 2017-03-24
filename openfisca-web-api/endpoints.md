@@ -3,7 +3,7 @@
 The examples on this page use [`curl`](http://curl.haxx.se/) to send the HTTP request.
 
 You may use [`jq`](https://stedolan.github.io/jq/) to format the JSON response, like so:
-```bash
+```sh
 curl https://api.openfisca.fr/foo | jq .
 ```
 
@@ -18,12 +18,40 @@ Displays a friendly welcome message.
 
 Example:
 
-```bash
+```sh
 curl https://api.openfisca.fr/
 ```
 
 ```json
 {"apiVersion": 1, "message": "Welcome, this is OpenFisca Web API.", "method": "/"}
+```
+
+## formula
+
+Computes a formula in a RESTful way. An implicit test case is created with a single person.
+
+* URL path: `/api/2/formula/period/variable_name`
+  * Replace `period` by a period as string and `name` by the name of a variable.
+* method: GET
+* query string parameters correspond to input variables and their values.
+
+Example:
+
+```sh
+curl "https://api.openfisca.fr/api/2/formula/2017-02/cout_du_travail?salaire_de_base=2300"
+```
+
+```json
+{
+  "values": {
+    "cout_du_travail": 3078.4599609375
+  },
+  "params": {
+    "salaire_de_base": 2300
+  },
+  "period": [ "month", [ 2017, 2, 1 ], 1 ],
+  "apiVersion": "2.1.0"
+}
 ```
 
 ## calculate
@@ -87,7 +115,7 @@ Create a file named `test_case.json` with these contents:
 }
 ```
 
-```bash
+```sh
 curl https://api.openfisca.fr/api/1/calculate -X POST --data @./test_case.json --header 'Content-type: application/json'
 ```
 
@@ -152,7 +180,7 @@ Gets the entities definition data. Entities are a [key concept of OpenFisca](../
 
 Example:
 
-```bash
+```sh
 curl https://api.openfisca.fr/api/2/entities
 ```
 
@@ -237,34 +265,6 @@ curl https://api.openfisca.fr/api/2/entities
 
 This data is useful when building a dynamic UI with forms allowing the user to make a test case, for example.
 
-## formula
-
-Computes a formula in a RESTful way. An implicit test case is created with a single person.
-
-* URL path: `/api/2/formula/period/variable_name`
-  * Replace `period` by a period as string and `name` by the name of a variable.
-* method: GET
-* query string parameters correspond to input variables and their values.
-
-Example:
-
-```bash
-curl "https://api.openfisca.fr/api/2/formula/2017-02/cout_du_travail?salaire_de_base=2300"
-```
-
-```json
-{
-  "values": {
-    "cout_du_travail": 3078.4599609375
-  },
-  "params": {
-    "salaire_de_base": 2300
-  },
-  "period": [ "month", [ 2017, 2, 1 ], 1 ],
-  "apiVersion": "2.1.0"
-}
-```
-
 ## parameters
 
 Gets the legislation parameters of the tax and benefit system.
@@ -273,7 +273,7 @@ Gets the legislation parameters of the tax and benefit system.
 * method: GET
 * query string parameters:
   * `name` (string, multi-valuated, default: null): the name(s) of the parameters to return. If null all the known parameters are returned.
-  * `instant` (a [JSON instant](./input-output-data.md#instants), default: null): if given, returns the legislation parameters at this instant. Can only be used in conjunction with the `name` query string parameter.
+  * `instant` (see [periods and instants](../periodsinstants.md), default: null): if given, returns the legislation parameters at this instant. Can only be used in conjunction with the `name` query string parameter.
 * JSON response structure:
   * `country_package_name` (string): the name of the Python package containing the tax and benefit system of the country loaded by the Web API.
     Example: `"openfisca_france"`.
@@ -295,7 +295,7 @@ Those reforms keys can be passed either to the `calculate` or `simulate` endpoin
 
 Example:
 
-```bash
+```sh
 curl https://api.openfisca.fr/api/1/reforms
 ```
 
@@ -378,7 +378,7 @@ Create a file named `test_case.json` with these contents:
 }
 ```
 
-```bash
+```sh
 curl https://api.openfisca.fr/api/1/simulate -X POST --data @./test_case.json --header 'Content-type: application/json'
 ```
 
