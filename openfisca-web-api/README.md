@@ -30,11 +30,6 @@ If you use this host, it is your responsibility to stay up-to-date with all legi
 Once you've developed your application and want to decrease the rhythm of development, the safer and more scalable way to use the API is to [deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
 
 
-## Endpoints and JSON payload
+## Architecture
 
-The web API offers many endpoints providing different data or allowing to send a simulation test case.
-See the [dedicated section](./endpoints.md).
-
-The client communicates with the web API with JSON data, see the [dedicated section](./json-data-structures.md) for more information.
-
-Now continue reading the [endpoints](./endpoints.md) section, which contains several examples.
+The web API supports different use-cases, from getting information on the available tax benefit system to full-fledged simulation. Different [endpoints](endpoints.md) support each of them. Each endpoint encodes its information in a [JSON object](json-data-structures.md).
