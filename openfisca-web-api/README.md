@@ -3,7 +3,7 @@
 The OpenFisca project provides a web API package in order to do computations over HTTP, sending and receiving JSON data.
 
 
-## When should I use it?
+## Use cases
 
 If you cannot or don't want to interact directly with the Python API, for example if you're developing a web application.
 
@@ -16,7 +16,7 @@ Those projects use the OpenFisca Web API:
 - [PA-comp](https://pa-comp.firebaseapp.com), a divorce fiscal impact simulator.
 
 
-## How can I use it?
+## Public or hosted
 
 ### Public API instance
 
