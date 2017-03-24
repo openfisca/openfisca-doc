@@ -10,6 +10,7 @@
     "build": "gitbook build",
     "clean": "rm -rf _book",
     "postinstall": "gitbook install",
+    "test": "sh run-tests.sh",
     "watch": "gitbook serve --port 2050"
   },
   "author": "Christophe Benz <christophe.benz@data.gouv.fr>",
