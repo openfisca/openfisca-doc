@@ -18,7 +18,7 @@ Those projects use the OpenFisca Web API:
 
 ## Architecture
 
-The web API supports different use-cases, from getting information on the available tax benefit system to full-fledged simulation. Different [endpoints](endpoints.md) support each of them. Each endpoint encodes its information in a [JSON object](json-data-structures.md).
+The web API supports different use-cases, from getting information on the available tax and benefit system to full-fledged simulation. Different [endpoints](endpoints.md) support each of them. Each endpoint encodes its information in a [JSON object](json-data-structures.md).
 
 
 ## Public or hosted
@@ -27,14 +27,14 @@ The OpenFisca API is available through two different means, each coming with its
 
 ### Public API instance
 
-The OpenFisca project provides a free and unrestricted instance of the API, complete with the French tax benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr).
+The OpenFisca project provides a free and unrestricted instance of the API, complete with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr).
 
-This instance is great for getting a feel of the API, testing, or even deploying small applications, but please note that it is continuously updated. Every update to the endpoints, or to the tax benefit system, will be automatically deployed to this host without prior notice, including breaking changes.
+This instance is great for getting a feel of the API, testing, or even deploying small applications, but please note that it is continuously updated. Every update to the endpoints, or to the tax and benefit system, will be automatically deployed to this host without prior notice, including breaking changes.
 If you use this host, it is your responsibility to stay up-to-date with all legislation changes that could impact your application.
 
 #### Conditions
 
-The public instance comes with no warranty at all. We provide it on a _best-effort_ basis, with no SLA and no performance engagement.
+The public instance comes with no warranty at all. We provide it on a _best-effort_ basis, with no [SLA](https://en.wikipedia.org/wiki/Service-level_agreement) and no performance engagement.
 
 ### Host your own instance
 
