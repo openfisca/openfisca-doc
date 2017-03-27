@@ -7,18 +7,20 @@
     "url": "https://github.com/openfisca/openfisca-doc.git"
   },
   "scripts": {
+    "prebuild": "npm run clean",
     "build": "gitbook build",
-    "clean": "rm -rf _book",
+    "clean": "del _book",
+    "deploy": "npm run build && npm run deploy:rsync && git fetch",
+    "deploy:rsync": "rsync -avz --delete _book/ openfisca@doc.openfisca.fr:doc.openfisca.fr",
     "postinstall": "gitbook install",
-    "test": "sh run-tests.sh",
-    "watch": "gitbook serve --port 2050"
+    "start": "gitbook serve --port 2050",
+    "test": "sh run-tests.sh"
   },
   "author": "Christophe Benz <christophe.benz@data.gouv.fr>",
   "license": "AGPL-3.0",
   "private": true,
-  "dependencies": {
-    "gitbook-cli": "^2.3.0",
-    "gitbook-plugin-anchors": "^0.7.1",
-    "gitbook-plugin-github": "^2.0.0"
+  "devDependencies": {
+    "del-cli": "^0.2.1",
+    "gitbook-cli": "^2.3.0"
   }
 }
