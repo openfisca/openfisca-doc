@@ -74,7 +74,7 @@ https://en.wikipedia.org/wiki/Microsimulation
 
 ## Technical choices
 
-OpenFisca is written in the [Python](http://www.python.org/) programming language.
+OpenFisca is written in the [Python](http://www.python.org/) programming language. It is compatible with version 2.7.
 
 OpenFisca can calculate tax and benefit variables on test cases (a person or a household)
 or population data (real data or survey data).
