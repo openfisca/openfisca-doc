@@ -1,74 +1,48 @@
 # For Users
 
-[Jupyter Notebook](https://jupyter.org/) is a wonderful project widely used by scientists.
+## First try online
 
-Basically it is a web interface running in your browser, in which you write code and it displays results.
+For first insights and without any installation, try the [OpenFisca tutorial](http://mybinder.org/repo/openfisca/tutorial) on Binder. This might take a couple of minutes to initialize, but will offer a fresh environment with the latest version of OpenFisca-France.
 
-A easy way to run OpenFisca is then to use this interface. There are several ways to use Jupyter Notebook:
+Beware, this is only for trying out OpenFisca and see if it can suit your needs: **your changes won't be saved.** If you want to keep your work, use the notebook menu to download it.
 
-|                          | registration | persistence | price |
-| --                       | --           | --          | --    |
-| Binder service           | no           | no          | [free](http://docs.mybinder.org/faq)  |
-| OpenFisca private server | [yes](https://www.openfisca.fr/contact)          | yes         | free  |
-| On your machine          | no           | yes         | free  |
+> Binder is a [free](http://docs.mybinder.org/faq) service which allows running [Jupyter](https://jupyter.org/) notebooks.
+> Basically it is a web interface running in your browser, in which you write code and it displays results.
 
-## Binder service
+## Saving your progress
 
-For first insights – and without any installation – try the tutorial on Binder. Just click on this link: http://mybinder.org:/repo/openfisca/tutorial 
+To go further you can install OpenFisca on your computer.
 
-> **WARNING**: you won't be able to save your work on this platform. But you may download it.
+We recommend you use a [virtual environment](https://virtualenv.pypa.io/en/stable/) (abbreviated as "virtualenv") with [pew](https://github.com/berdario/pew).
 
-## OpenFisca private server
+Launch a terminal on your computer and follow these instructions:
 
-The OpenFisca team provides a private Jupyter Notebook server: https://jupyter.openfisca.fr/
+```sh
+pip install --update pip
+pip install pew  # answer "Y" to the question about modifying your shell config file.
 
-You have to request for access rights by contacting the [OpenFisca team](https://github.com/openfisca).
-
-  >**WARNING**: There is no guarantee with your data so please backup your notebooks.
-
-## On your machine
-
-You can run OpenFisca locally on your own computer, and enjoy Jupyter Notebook too.
-
-Here is the recommended way:
-- First launch the terminal of your computer.
-
-
-To avoid any dependencies problem we recommend you to use a [virtual environment](https://virtualenv.pypa.io/en/stable/), for example with the tool: [pew](https://github.com/berdario/pew#command-reference).
-
-```python
-pip install pew
-# Answer "Y" to the question about modifying your shell config file.
-```
-- Now create the virtual environment with the command `pew new`
-
-```python
-pew new openfisca
-# It creates a virtual environment with the name openfisca
+# This command creates a virtual environment named "openfisca".
 # The virtualenv you just created will be automatically activated.
-```
-For OpenFisca you need an updated version of `pip`.
-```python
-# Pew will automatically update pip itself. Let's check:
-pip --version
-# Should print at least 9.0 at the time we write this doc.
-```
-- Now you have all the requirements to install OpenFisca in your virtual environment.
+# You can exit the virtualenv with "exit" (or Ctrl-D), and re-enter with "pew workon openfisca"
+pew new openfisca
 
-```python
+pip --version  # should print at least 9.0 at the time we write this doc.
+
+# Install OpenFisca in the virtual environment.
 pip install openfisca-france
-```
-- If you want to use Jupyter Notebook as we recommended
 
-```python
+# Test OpenFisca-France is installed correctly.
+python -m openfisca_france.tests.test_basics  # "OpenFisca-France basic test was executed successfully"
+```
+
+If you are not comfortable editing code directly, you can also install Jupyter Notebook in order to get an interactive web editor just like on Binder.
+
+```sh
 pip install jupyter
-```
-This will open a browser window on http://localhost:8080
 
-> Other Python modules can be of your interest to install as matplotlib.
-
-Later, you'll be able to activate the virtualenv to access to OpenFisca from the terminal like this:
-
+# Open a browser at http://localhost:8080
+jupyter notebook
 ```
-pew workon openfisca
-```
+
+Depending on what you want to do with OpenFisca, you may want to install yet other packages in your virtualenv.
+For example, if you want to plot simulation results you may install [matplotlib](http://matplotlib.org/), or if you want to manage data you may install [pandas](http://pandas.pydata.org/).
