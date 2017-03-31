@@ -38,7 +38,7 @@ A JSON test case is an object structured this way:
 
 Entities and roles can be fetched dynamically with the [entities](#entities) API endpoint.
 
-Example:
+Example using OpenFisca-France entities and roles:
 
 ```json
 {
