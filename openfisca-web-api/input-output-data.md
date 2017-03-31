@@ -16,7 +16,7 @@ A JSON scenario is an object structured this way:
 * `axes` (a list of objects, default: null): the axes of the scenario, see [axes](#axes)
 * `input_variables` (an object, mutually exclusive with `test_case`): the input variables, structured this way:
   * `<variable name (string)>` (the [value by period](#values-by-period)): an input variable
-* `period` (see [periods and instants](../periodsinstants.md), default: the current year): the period on which the variables of the decomposition will be computed
+* `period` (see [periods and instants](../periodsinstants.md)): the period on which the variables of the decomposition will be computed
 * `test_case` (an object, mutually exclusive with `input_variables`): the test case of the scenario, see [test cases](#test-cases)
 
 > Either `test_case` or `input_variables` must be provided, not both.
