@@ -6,7 +6,7 @@ You can ask for help, or help others, or simply discuss with the team:
 
 - by email: contact@openfisca.fr
 - via Twitter: @OpenFisca
-- for developers, [open an issue on GitHub](../contribute/guidelines.html#opening-issues)
+- for developers, [open an issue on GitHub](./contribute/guidelines.md#opening-issues)
 
 ## Community projects
 

@@ -54,6 +54,6 @@ OpenFisca-France basic test was executed successfully.
 
 This means that OpenFisca is correctly installed on your machine.
 
-The next step for you is to read the [Coding the legislation](../coding-the-legislation/index.html) section to know how to write legislation.
+The next step for you is to read the [Coding the legislation](../coding-the-legislation/) section to know how to write legislation.
 
 > If you want to use your local installation as an API (instead of importing it in python scripts), install **OpenFisca Web API** with [these instructions](https://github.com/openfisca/openfisca-web-api#install).

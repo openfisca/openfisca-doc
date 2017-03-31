@@ -4,7 +4,7 @@ OpenFisca is a free software project and contributors are very welcome!
 
 Feel free to fork the [source code repositories](https://github.com/openfisca) on GitHub and send us pull-requests.
 
-You can [contact the community](../community.html) to ask for help.
+You can [contact the community](../community.md) to ask for help.
 
 Thanks for enhancing OpenFisca anyway!
 
@@ -65,5 +65,5 @@ From the point of view of someone (developer, economist, etc.) who wants to impl
 
 ### Enhance other projects linked to OpenFisca
 
-You can also participate in [other projects](../community.html) that make use of
+You can also participate in [other projects](../community.md) that make use of
 OpenFisca.

@@ -167,4 +167,4 @@ To run YAML tests, use the command line tool `openfisca-run-test`, documented [h
 
 ## Next steps
 
-Other kinds of tests exist, see [contribute/tests](../contribute/tests.html).
+Other kinds of tests exist, see [contribute/tests](../contribute/tests.md).
