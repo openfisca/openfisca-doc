@@ -9,7 +9,7 @@ Example: a ["salary"](https://legislation.openfisca.fr/variables/salaire_net) is
 
 ##  Group entities
 *Group entities* are clusters of *persons* such as the family, the household or the company.
-A tax benefit system can define several entities and specifies each time which tax and benefit applies to which entity.
+A tax and benefit system can define several entities and specifies each time which tax and benefit applies to which entity.
 
 In France the legislation has these *group entities*: 
 - `"familles"`,
