@@ -100,4 +100,4 @@ Please read the dedicated documentation:
 
 ## Real examples
 
-Examples can be found on the [community page](../../community.md), as well as on the [OpenFisca-France reforms directory](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/reforms).
+Examples can be found on the [OpenFisca-France reforms directory](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/reforms).
