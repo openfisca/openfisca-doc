@@ -13,7 +13,7 @@
     "deploy": "rsync -avz --delete _book/ openfisca@doc.openfisca.fr:doc.openfisca.fr",
     "postinstall": "gitbook install",
     "start": "gitbook serve --port 2050",
-    "test": "sh run-tests.sh"
+    "test": "! (npm run build | grep 'warn:')"
   },
   "author": "Christophe Benz <christophe.benz@data.gouv.fr>",
   "license": "AGPL-3.0",
