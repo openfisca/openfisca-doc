@@ -21,10 +21,10 @@ Launch a terminal on your computer and follow these instructions:
 pip install --update pip
 pip install pew  # answer "Y" to the question about modifying your shell config file.
 
-# This command creates a virtual environment named "openfisca".
+# This command creates a virtual environment named "openfisca" with Python 2 configured.
 # The virtualenv you just created will be automatically activated.
 # You can exit the virtualenv with "exit" (or Ctrl-D), and re-enter with "pew workon openfisca"
-pew new openfisca
+pew new openfisca --python=python2
 
 pip --version  # should print at least 9.0 at the time we write this doc.
 
