@@ -10,8 +10,7 @@
     "prebuild": "npm run clean",
     "build": "gitbook build",
     "clean": "del _book",
-    "deploy": "npm run build && npm run deploy:rsync && git fetch",
-    "deploy:rsync": "rsync -avz --delete _book/ openfisca@doc.openfisca.fr:doc.openfisca.fr",
+    "deploy": "rsync -avz --delete _book/ openfisca@doc.openfisca.fr:doc.openfisca.fr",
     "postinstall": "gitbook install",
     "start": "gitbook serve --port 2050",
     "test": "sh run-tests.sh"

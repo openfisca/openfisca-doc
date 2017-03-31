@@ -2,4 +2,4 @@ deployment:
   production:
     branch: master
     commands:
-      - npm run deploy:rsync
+      - npm run deploy
