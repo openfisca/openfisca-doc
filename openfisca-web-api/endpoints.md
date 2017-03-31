@@ -31,7 +31,7 @@ curl https://api.openfisca.fr/
 Computes a formula in a RESTful way. An implicit test case is created with a single person.
 
 * URL path: `/api/2/formula/period/variable_name`
-  * Replace `period` by a period as string and `name` by the name of a variable.
+  * Replace `period` by a [period as string](../periodsinstants.md) and `variable_name` by the name of a variable.
 * method: GET
 * query string parameters correspond to input variables and their values.
 
