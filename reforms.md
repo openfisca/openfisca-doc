@@ -1,31 +1,14 @@
 # Reforms
 
-##### Definition
+OpenFisca can be used to evaluate the quantitative impact of legislation changes.
 
- OpenFisca can also be used to test the impact of new propositions concerning the Tax and Benefit system: it is the module `Reform`
+You may for instance use it to determine who would win or lose from an income tax reform, what would be the impact of a social welfare redesign, or how to finance a universal basic income.
 
-An *reform* represents a modified version of the Tax and Benefit legislation whose purpose is to be experimental.
+To do so, we use OpenFisca **reforms**. A reform is a set of modifications to be applied to a **reference** tax and benefit system. It generates a reformed tax and benefit system that slightly differs from the original one. We can then run calculations on both of them, and compare results.
 
-It can be for adding, removing or modifying a variable, or a legislation parameter.
+To use reforms or code your own ones, check the [reform documentation](coding-the-legislation/reforms.md).
+
+> Note that OpenFisca simulates only the *mechanics* of taxes and benefits, but doesn't take into account the retro-action of economic agents. For instance, you can estimate the increase of the households disposable income in case a universal basic income is introduced, but OpenFisca won't tell you anything about the consumption increase this policy may generate.
 
 
 
-
-##### Implementation in OpenFisca
-
-*Reforms* do not modify the *TaxBenefitSystem* itself, they create a shallow copy and modify only what changed.
-
-Reforms are loaded given a *TaxBenefitSystem* and return an extended one.
-They are published in their own `git` [repository](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/reforms).
-
-###### Application: how to call a reform
-
-Here we test a reform project already implemented: the fiscal reform of Landais, Piketty and Saez on the income tax (http://www.revolution-fiscale.fr/la-reforme-proposee)
-
-```python
-from openfisca_france.reforms import landais_piketty_saez
-reform = landais_piketty_saez.landais_piketty_saez(tax_benefit_system)
-```
-Then you can follow the normal working flow (see the [Getting_Started Notebook](https://github.com/openfisca/openfisca-france/blob/master/notebooks/getting-started.ipynb)).
-
-> For coding your own reform, see the [Reform section](coding-the-legislation/reforms.md) in the "Coding the Legislation" Section

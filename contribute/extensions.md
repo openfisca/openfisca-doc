@@ -4,7 +4,7 @@
 
 Extensions allow you to add formulas to OpenFisca that are not included in the OpenFisca-France repository (e.g. local prestations).
 
-Extensions folders located in `openfisca_france/model/extensions/` will be **automatically loaded** at the initialization of the tax benefit system.
+Extensions folders located in `openfisca_france/model/extensions/` will be **automatically loaded** at the initialization of the tax and benefit system.
 They can be brought there manually or by any custom mechanism up to your convenience.
 
 If you need to import an extension located out of the `extensions` folder, you can use the following function:
@@ -26,7 +26,7 @@ extensions/{extension_name}/ # The folder name is by convention the name of the 
     extensions/{extension_name}/{some_formula}.yaml # Optional test files
     extensions/{extension_name}/{other_formula}.yaml
 ```
-All python files located directly in `extensions/{extension_name}/` are imported in the tax benefit system.
+All python files located directly in `extensions/{extension_name}/` are imported in the tax and benefit system.
 
 Subdirectories are ignored, as well as any other XML file than `parameters.xml`.
 
