@@ -16,14 +16,14 @@ _Example: a month ("July 2015"), a year ("2015"), several months ("July and Augu
 
 In OpenFisca, periods are encoded in strings. All the valid period formats are referenced in this table:
 
-| Period format     | Period type     | Example                                                                               |
-|-------------------|-----------------|---------------------------------------------------------------------------------------|
-| `AAAA`            | Calendar year   | `'2010'` represents the year 2010                                                     |
-| `AAAA-MM`         | Month           | `'2010-04'` represents april 2010                                                     |
-| `year:AAAA-MM`    | Rolling year    | `'year:2010-04'` represents the 12 months period starting from april 2010             |
-| `year:AAAA:N`     | N years         | `'year:2010:3'` represents the 3 years period starting from 2010                      |
-| `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'` represents the 3 years (36 months) period starting from april 2010 |
-| `month:AAAA-MM:N` | N months        | `'month:2010-04:3'` represents the 3 months period starting from april 2010           |
+| Period format     | Period type     | Example             | Represents                                       | Disambiguation                                                        |
+|-------------------|-----------------|---------------------|--------------------------------------------------|-----------------------------------------------------------------------|
+| `AAAA`            | Calendar year   | `'2010'`            | The year 2010.                                   | From the 1st of January 2010 to the 31st of December 2010, inclusive. |
+| `AAAA-MM`         | Month           | `'2010-04'`         | The month of April 2010.                         | From the 1st of April 2010 to the 30th of April 2010, inclusive.      |
+| `year:AAAA-MM`    | Rolling year    | `'year:2010-04'`    | The 1 year period starting in April 2010. | From the 1st of April 2010 to the 31st of March 2011, inclusive       |
+| `year:AAAA:N`     | N years         | `'year:2010:3'`     | The years 2010, 2011 and 2012.                   | From the 1st of January 2010 to the 31st of December 2012, inclusive. |
+| `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'`  | The three years period starting in April 2010.   | From the 1st of April 2010 to the 31st of March 2013, inclusive.      |
+| `month:AAAA-MM:N` | N months        | `'month:2010-04:3'` | The three months from April to June 2010.        | From the 1st of April 2010 to the 30th of June 2010, inclusive.       |
 
 The smallest unit for OpenFisca periods is the **month**. Therefore:
 
