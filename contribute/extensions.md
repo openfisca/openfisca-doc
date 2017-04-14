@@ -1,6 +1,8 @@
 # OpenFisca extensions
 
-*Note: The following is, today, only implemented in OpenFisca-France.*
+> The following is, today, only implemented in OpenFisca-France.
+>
+> Also, please note that there is also another mechanism to modify a tax and benefit system: [reforms](../coding-the-legislation/reforms.md). They allow to compute before and after modifying the legislation.
 
 Extensions allow you to add formulas to OpenFisca that are not included in the OpenFisca-France repository (e.g. local prestations).
 
