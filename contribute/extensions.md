@@ -1,35 +1,30 @@
 # OpenFisca extensions
 
-*Note: The following is, today, only implemented in OpenFisca-France.*
+Extensions allow you to define new variables or parameters for a tax and benefit system, while keeping their code separated from the main country package. They can only _add_ variables and parameters to the tax and benefit system: they cannot _modify_ or _neutralize_ existing ones.
 
-Extensions allow you to add formulas to OpenFisca that are not included in the OpenFisca-France repository (e.g. local prestations).
+They are for instance used to code local prestations.
 
-Extensions folders located in `openfisca_france/model/extensions/` will be **automatically loaded** at the initialization of the tax and benefit system.
-They can be brought there manually or by any custom mechanism up to your convenience.
+> Extensions are sometimes confused with another mechanism: reforms. [Read more about their respective uses](../reforms.md#differences-between-reforms-and-extensions).
 
-If you need to import an extension located out of the `extensions` folder, you can use the following function:
-
-```py
-openfisca_france.model.extensions.import_extension('/path/to/external/extension/folder')
-```
+Extensions can be manually loaded to a tax and benefit system using the [load_extension](http://openfisca.readthedocs.io/en/latest/tax-benefit-system.html#openfisca_core.taxbenefitsystems.TaxBenefitSystem.load_extension) method.
 
 ## Extension architecture
 
 The architecture of an extension folder is the following:
 
 ```sh
-extensions/{extension_name}/ # The folder name is by convention the name of the extension.
-    extensions/{extension_name}/__init__.py # Empty file.
-    extensions/{extension_name}/parameters.xml # Optional parameters file.
-    extensions/{extension_name}/{some_formula}.py # File containing formulas
-    extensions/{extension_name}/{other_formula}.py
-    extensions/{extension_name}/{some_formula}.yaml # Optional test files
-    extensions/{extension_name}/{other_formula}.yaml
+{extension_name}/ # The folder name is by convention the name of the extension.
+    {extension_name}/__init__.py # Empty file.
+    {extension_name}/parameters.xml # Optional parameters file.
+    {extension_name}/{some_formula}.py # File containing formulas
+    {extension_name}/{other_formula}.py
+    {extension_name}/{some_formula}.yaml # Optional test files
+    {extension_name}/{other_formula}.yaml
 ```
-All python files located directly in `extensions/{extension_name}/` are imported in the tax and benefit system.
+All python files located directly in `{extension_name}/` are imported in the tax and benefit system.
 
 Subdirectories are ignored, as well as any other XML file than `parameters.xml`.
 
-The syntax of the formulas within extension python files is the same than in the general OpenFisca-France formulas, except that imports should not be relative (e.g. `from openfisca_france.model.base import *`).
+The syntax of the formulas within extension python files is the same than in the general country package formulas (e.g. `from openfisca_france.model.base import *`).
 
 Variables inside an extension should not have the same name than any existing formula, nor than any formula in another extension being used.
