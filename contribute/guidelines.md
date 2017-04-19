@@ -45,7 +45,7 @@ Before allowing you to merge a PR, the continuous integration server (Travis) wi
 
 #### Web API version number
 
-Due to a limitation with `pip`, the Python package manager, it is required to increment the major version number of OpenFisca-Web-API when it is adapted to a new major version of OpenFisca-Core. This rule avoids installing a version of OpenFisca-Core incompatible with the loaded country package (for example OpenFisca-France).
+Due to a `pip` limitation, it is required to increment the major version number of OpenFisca-Web-API when it is adapted to a new major version of OpenFisca-Core. This rule avoids installing a version of OpenFisca-Core incompatible with the loaded country package (for example OpenFisca-France).
 
 > See also:
 > - this [old `pip` issue](https://github.com/pypa/pip/issues/988)
