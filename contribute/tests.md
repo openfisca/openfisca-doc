@@ -30,15 +30,7 @@ OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here
 
 ## YAML tests
 
-In OpenFisca-France run a YAML test like this:
-
-```
-python openfisca_france/tests/test_yaml.py openfisca_france/tests/formulas/psoc.yaml
-```
-
-To add tests for a formula, add a YAML file in `openfisca_france/tests/formulas/`, taking example on the existing ones.
-
-To execute the tests for a specific YAML file, run `openfisca_france/tests/test_yaml.py <path/to/file.yaml>`.
+[Read more about YAML tests](../coding-the-legislation/writing_yaml_tests.md)
 
 
 ## ipdb debugger
