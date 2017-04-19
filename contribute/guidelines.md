@@ -43,6 +43,14 @@ Before allowing you to merge a PR, the continuous integration server (Travis) wi
 - The semantic version number has been updated. Check the [semantic versionning guidelines](semver.md) to know more about how to increment the version number.
 - The [`CHANGELOG.md`](https://github.com/openfisca/openfisca-france/blob/master/CHANGELOG.md) has been updated. Make sure to briefly summarize your work, and to **mention any non backward-compatible changes**.
 
+#### Web API version number
+
+Due to a `pip` limitation, it is required to increment the major version number of OpenFisca-Web-API when it is adapted to a new major version of OpenFisca-Core. This rule avoids installing a version of OpenFisca-Core incompatible with the loaded country package (for example OpenFisca-France).
+
+> See also:
+> - this [old `pip` issue](https://github.com/pypa/pip/issues/988)
+> - the [issue](https://github.com/openfisca/openfisca-ops/issues/4#issuecomment-291900286) leading to this decision
+
 #### Peer reviews
 
 Pull requests should generally be **reviewed** by someone else than their authors.
@@ -50,8 +58,8 @@ Pull requests should generally be **reviewed** by someone else than their author
 This is mandatory for:
 - Any Pull Request on **`openfisca-core`**
 - Any Pull Request with **breaking changes** on `openfisca-france`, `openfisca-web-api`, and `openfisca-parsers`.
-- Any Pull Request bringing **new features**, if these features are not relative to a specific scope. 
-    - Adding a new route to the API **requires** a review. 
+- Any Pull Request bringing **new features**, if these features are not relative to a specific scope.
+    - Adding a new route to the API **requires** a review.
     - A review is yet not mandatory to add a new formula to social contributions in `openfisca-france`. It is though recommended.
 
 To help reviewers, make sure to add to your PR a **clear text explanation** of your changes.
