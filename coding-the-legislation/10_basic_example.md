@@ -40,7 +40,7 @@ Let's explain in details the different part of the code:
 
 ## Testing a formula
 
-To make sure that the formula you have just written works the way you expect, it is **strongly recommended** to test it. Tests about legislation are written in YAML. The `flat_tax_on_salary` formula can for instance be tested with the following test file:
+To make sure that the formula you have just written works the way you expect, you have to test it. Tests about legislation are written in a [YAML syntax](writing_yaml_tests.md). The `flat_tax_on_salary` formula can for instance be tested with the following test file:
 
 ```yaml
 
