@@ -19,3 +19,4 @@ Here is a summary of the structures and operations you cannot use, and their lic
 | `or`                  | `x + y`                                                                 |
 | `min`                 | `min_(x,y)`                                                             |
 | `max`                 | `max_(x,y)`                                                             |
+| `round`               | `round_(x,y)`                                                           |

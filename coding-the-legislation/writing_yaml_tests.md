@@ -28,7 +28,6 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/master/openf
 - `description` (string, optional, multiline)
 - `absolute_error_margin` (number, optional)
 - `relative_error_margin` (number, optional)
-- `ignore` (boolean, optional, False by default)
 - `input_variables` (associative array, keys are variable names, values are numbers)
 - `output_variables` (associative array, keys are variable names, values are numbers)
 - other any key defined in the model
@@ -51,15 +50,6 @@ This is the simplest way to test formulas when you only need to give input value
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
   period: 2012
   absolute_error_margin: 0.5
-```
-
-- The key `ignore`, specified before the input variables, allows to ignore a test when running a tests file. By default, or with ignore set to `False`, the test is run. On the contrary, if `ignore` is set to `True`, the tests is not run. In the following case, the test is ignored:
-
-```yaml
-- name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
-  period: 2012
-  absolute_error_margin: 0.5
-  ignore: True
 ```
 
 - Create nested dictionnaries within the keys `input_variables` and `output_variables`,

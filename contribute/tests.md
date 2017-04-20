@@ -30,21 +30,8 @@ OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here
 
 ## YAML tests
 
-In OpenFisca-France run a YAML test like this:
+Formulas are tested with [YAML tests](../coding-the-legislation/writing_yaml_tests.md).
 
-```
-python openfisca_france/tests/test_yaml.py openfisca_france/tests/formulas/psoc.yaml
-```
-
-To add tests for a formula, add a YAML file in `openfisca_france/tests/formulas/`, taking example on the existing ones.
-
-To execute the tests for a specific YAML file, run `openfisca_france/tests/test_yaml.py <path/to/file.yaml>`.
-
-## Ignored tests
-
-In OpenFisca-France some YAML tests are ignored. They receive a property `ignored: true` ([example](https://github.com/openfisca/openfisca-france/blob/ea869ad3c98e633ed3de84fa8618a045b5ebe4f9/openfisca_france/tests/formulas/irpp.yaml#L297)).
-
-> Some tests written in Python were ignored. They are now deleted and put aside in the `deleted-tests` branch, see the old [`Makefile`](https://github.com/openfisca/openfisca-france/blob/deleted-tests/Makefile#L1).
 
 ## ipdb debugger
 

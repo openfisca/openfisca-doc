@@ -38,6 +38,29 @@ Let's explain in details the different part of the code:
   - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax and benefit system.
   - `return salary * 0.25` returns the result for the given period.
 
+## Testing a formula
+
+To make sure that the formula you have just written works the way you expect, you have to test it. Tests about legislation are written in a [YAML syntax](writing_yaml_tests.md). The `flat_tax_on_salary` formula can for instance be tested with the following test file:
+
+```yaml
+
+- name: "Flax tax on salary - No income"
+  period: 2017-01
+  input_variables:
+    salary: 0
+  output_variables:
+    flat_tax_on_salary: 0
+
+- name: "Flax tax on salary - With income"
+  period: 2017-01
+  input_variables:
+    salary: 2000
+  output_variables:
+    flat_tax_on_salary: 500
+```
+
+You can check the [YAML tests documentation](writing_yaml_tests.md) to learn more about how to write YAML tests, and how to run them.
+
 ## Example with legislation parameters
 
 To access a common legislation parameter, a third parameter can be added to the function signature. The previous formulas could thus be rewritten:
