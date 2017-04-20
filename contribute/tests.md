@@ -30,7 +30,7 @@ OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here
 
 ## YAML tests
 
-[Read more about YAML tests](../coding-the-legislation/writing_yaml_tests.md)
+Formulas are tested with [YAML tests](../coding-the-legislation/writing_yaml_tests.md).
 
 
 ## ipdb debugger
