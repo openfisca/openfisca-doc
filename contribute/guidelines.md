@@ -16,6 +16,7 @@ Each OpenFisca repository has its own issues. See [OpenFisca repositories](https
 ## Contributing to the code
 
 ### Writing code
+
 - If you modify/create/delete a simulation variable, please follow the [commit message rules](commit-messages.md).
 - When adding new variables, please consider the [naming guidelines](variables-naming.md).
 - Your code should be tested, if feasible:
@@ -52,6 +53,7 @@ Due to a `pip` limitation, it is required to increment the major version number 
 Pull requests should generally be **reviewed** by someone else than their authors.
 
 This is mandatory for:
+
 - Any Pull Request with **breaking changes** on `openfisca-france`, `openfisca-web-api`, and `openfisca-parsers`.
 - Any Pull Request bringing **new features**, if these features are not relative to a specific scope.
     - Adding a new route to the API **requires** a review.
