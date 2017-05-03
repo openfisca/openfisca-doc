@@ -28,9 +28,7 @@ When opening a new issue, please take the following steps:
 ### Opening a Pull Request
 
 - All code contributions are submitted via a Pull Request towards `master`. The `master` branches are thus [protected](https://help.github.com/articles/about-protected-branches/).
-- Pull Requests can be submitted as soon as there is code worth discussing.
-- If your work is in progress, add "WIP: " in front of the name of the Pull Request. In this case the maintainers will wait for a "good to merge" message.
-- Pull Requests track the branch, so you can continue to work after the PR is submitted. Review and discussion can begin well before the work is complete, and the more discussion the better. In the worst case, the PR will be closed.
+- Opening a Pull Request means you want that code to be merged. If you want to only discuss it, send a link to your branch along with your questions through whichever communication channel you prefer.
 - If the Pull Request depends on another opened Pull Request on another repository (like OpenFisca-Core/OpenFisca-France), the requirements should be updated in the dependent project via its `setup.py`.
 
 ### Merging a Pull Request
