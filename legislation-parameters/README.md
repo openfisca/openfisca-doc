@@ -2,59 +2,82 @@
 
 ## Definition
 
-The legislation parameters are stored in a file named [`param.xml`](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/param/param.xml).
+The legislation parameters are stored in XML files in the directory `parameters` ([example in OpenFisca-France](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/parameters)).
 
-It contains parameters which can be simple parameters (`<CODE>` tags) or scales (`<BAREME>` tags).
+Those files contain parameters which can be simple parameters (`<CODE>` tags) or scales (`<BAREME>` tags).
 
-It is ordered as a tree defined by `<NODE>` tags.
+Parameters are organised in a tree defined by `<NODE>` tags.
 
-Here is a simple parameter sample:
+Here is a simple parameter example:
 
 ```xml
-<CODE code="taux_plein" description="taux plein de la CSG déductible" format="percent">
-  <VALUE deb="2005-01-01" fin="2014-12-31" valeur=".042" />
-  <VALUE deb="1998-01-01" fin="2004-12-31" valeur=".038" />
-  <VALUE deb="1997-01-01" fin="1997-12-31" valeur=".01" />
+<CODE code="full_rate" description="Full rate of social security protections" format="percent">
+  <VALUE deb="2005-01-01" valeur=".042" />
+  <VALUE deb="1998-01-01" valeur=".038" />
+  <VALUE deb="1997-01-01" valeur=".01" />
 </CODE>
 ```
 
-The `param.xml` file itself has a start and an end date.
+## Parameters and time
 
-## Parameters and Time
- Coding a parameter means including the interval of time over which it is defined thanks to the attributes `deb` and `fin`.
+Coding a parameter means defining a list of values, and for each value the date at which it starts to hold.
 
- > HINT: Time is given as [Instant](../periodsinstants.md) with string syntax
-
- Example : the threshold of the [`decote`](https://legislation.openfisca.fr/parameters/ir.decote.seuil)
+Example: a minimum wage
 
 ```xml
- <NODE code="decote" description="Décote">
-      <CODE code="seuil" description="Seuil de la décôte" format="integer" type="monetary">
-        <VALUE deb="2014-01-01" fuzzy="true" valeur="1016" />
-        <VALUE deb="2013-01-01" fin="2013-12-31" valeur="1016" />
-        <VALUE deb="2012-01-01" fin="2012-12-31" valeur="960" />
+  <NODE code="labour" description="Labour parameters">
+    <CODE code="minimum_wage" description="Minimum wage" format="integer" type="monetary">
+      <VALUE deb="2014-01-01" valeur="1084" />
+      <VALUE deb="2013-01-01" valeur="1016" />
+      <VALUE deb="2012-01-01" valeur="960" />
+      <VALUE deb="2010-01-01" valeur="878" />
+    </CODE>
+    ...
+  </NODE>
 ```
-**The fuzzy attribute **: if we don't know the end date of the parameter but it is still valid today we add the attribute `fuzzy = True`.   Example: for the `decote`, it will indefinitely have the 1016 value from the 1th January 2014.
 
-## Query
+Example: the threshold of the [`decote`](https://legislation.openfisca.fr/parameters/impot_revenu.decote.seuil)
 
-Formulas retrieve parameters using the `simulation.legislation_at(instant)` method.
+### The `<PLACEHOLDER>` tag
 
-- if `instant` >= `root_end_date`
-  - if value_end_date >= root_end_date return last known value
-  - else return `0`
-- else if `instant` <= `root_start_date`
-  - if value_start_date <= root_start_date return first known value
-  - else return `0`
-- else return value
+When a value is expected to change at a given date but the value is not published yet, a tag `<PLACEHOLDER>` is used.
 
-Usage example ([see in context](https://github.com/openfisca/openfisca-france/blob/6d82367a761ed36401f9b78e0fa5ed50d62673d1/openfisca_france/model/prelevements_obligatoires/impot_revenu/charges_deductibles.py#L436)):
+Example: if the minimum wage is expected to change in 2018, the previous example would become
 
-```python
-def function(self, simulation, period):
-    f6eu = simulation.calculate('f6eu', period)
-    f6ev = simulation.calculate('f6ev', period)
-    acc75a = simulation.legislation_at(period.start).ir.charges_deductibles.acc75a
-    amax = acc75a.max * max_(1, f6ev)
-    return min_(f6eu, amax)
+```xml
+  <NODE code="labour" description="Labour parameters">
+    <CODE code="minimum_wage" description="Minimum wage" format="integer" type="monetary">
+      <PLACEHOLDER deb="2018-01-01" />
+      <VALUE deb="2014-01-01" valeur="1084" />
+      <VALUE deb="2013-01-01" valeur="1016" />
+      <VALUE deb="2012-01-01" valeur="960" />
+      <VALUE deb="2010-01-01" valeur="878" />
+    </CODE>
+    ...
+  </NODE>
 ```
+
+The script [`find_placeholders.py`](https://github.com/openfisca/openfisca-core/tree/master/openfisca_core/scripts/find_placeholders.py) finds all placeholders in a legislation. It can be used periodically to alert on parameters about to change.
+
+### The `<END>` tag 
+
+When a parameter is removed from the legislation, a tag `<END>` is used.
+
+Example: if the minimum wage is removed from legislation in 2017, the previous example would become
+
+```xml
+  <NODE code="labour" description="Labour parameters">
+    <CODE code="minimum_wage" description="Minimum wage" format="integer" type="monetary">
+      <END deb="2017-01-01" />
+      <VALUE deb="2014-01-01" valeur="1084" />
+      <VALUE deb="2013-01-01" valeur="1016" />
+      <VALUE deb="2012-01-01" valeur="960" />
+      <VALUE deb="2010-01-01" valeur="878" />
+    </CODE>
+    ...
+  </NODE>
+```
+
+## Usage in formulas
+
+See [this example](coding-the-legislation/10_basic_example.html#example-with-legislation-parameters).
