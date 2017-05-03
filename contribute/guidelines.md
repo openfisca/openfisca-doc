@@ -56,7 +56,6 @@ Due to a `pip` limitation, it is required to increment the major version number 
 Pull requests should generally be **reviewed** by someone else than their authors.
 
 This is mandatory for:
-- Any Pull Request on **`openfisca-core`**
 - Any Pull Request with **breaking changes** on `openfisca-france`, `openfisca-web-api`, and `openfisca-parsers`.
 - Any Pull Request bringing **new features**, if these features are not relative to a specific scope.
     - Adding a new route to the API **requires** a review.
