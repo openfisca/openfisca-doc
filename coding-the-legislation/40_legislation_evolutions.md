@@ -18,7 +18,7 @@ class flat_tax_on_salary(Variable):
     def function(person, period, legislation):
         salary = person('salary', period)
 
-        return period, salary * legislation(period).taxes.salary.rate
+        return salary * legislation(period).taxes.salary.rate
 ```
 
  and let's assume we have in one of our parameter files the value of the rate for the past couple of years:
@@ -108,16 +108,16 @@ class flat_tax_on_salary(DatedVariable):
     definition_period = MONTH
 
     @dated_function(start = date(2017, 1, 1))
-    def function_2017(self, simulation, period):
+    def function_2017(person, period, legislation):
         salary = person('salary', period)
         salary_above_1000 = min_(salary - 1000, 0)
-        return period, salary_above_1000 * legislation(period).taxes.salary.rate
+        return salary_above_1000 * legislation(period).taxes.salary.rate
 
     @dated_function(start = date(2014, 01, 01), stop = date(2016, 12, 31))
-    def function_2014(self, simulation, period):
+    def function_2014(person, period, legislation):
         salary = person('salary', period)
 
-        return period, salary * legislation(period).taxes.salary.rate
+        return salary * legislation(period).taxes.salary.rate
 ```
 
 
