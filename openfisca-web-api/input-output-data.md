@@ -7,18 +7,20 @@ In OpenFisca, the value of a variable is always defined for a specific period.
 This is encoded in JSON using the following format:
 
 ```JSON
-{salary: {"2015-01": 2000}}
+{"salary": {"2015-01": 2000}}
 ```
 
 This format allows you to encode an evolution of the variable over time:
 
 ```JSON
-{salary: {
-  "2015-01": 2000,
-  "2015-02": 2000,
-  "2015-03": 2100,
-  "2015-04": 2100,
-}}
+{
+  "salary": {
+    "2015-01": 2000,
+    "2015-02": 2000,
+    "2015-03": 2100,
+    "2015-04": 2100,
+  }
+}
 ```
 
 When you define the inputs of a simulation, you should in general define the period for which you are setting values (except for variables which cannot change over time, such as a birth date).
