@@ -3,13 +3,13 @@
 The examples on this page use [`curl`](http://curl.haxx.se/) to send the HTTP request.
 
 You may use [`jq`](https://stedolan.github.io/jq/) to format the JSON response, like so:
-```bash
+```sh
 curl https://api.openfisca.fr/foo | jq .
 ```
 
 > `jq` won't be mentioned on each example, feel free to add it like above.
 
-## index
+## `/`
 
 Displays a friendly welcome message.
 
@@ -18,7 +18,7 @@ Displays a friendly welcome message.
 
 Example:
 
-```bash
+```sh
 curl https://api.openfisca.fr/
 ```
 
@@ -26,7 +26,40 @@ curl https://api.openfisca.fr/
 {"apiVersion": 1, "message": "Welcome, this is OpenFisca Web API.", "method": "/"}
 ```
 
-## calculate
+## `/formula`
+
+Computes a variable in a RESTful way.
+
+> An implicit test case is created with a single person.
+
+* URL path: `/api/2/formula/<period>/<variable_name>`
+  * `<period>` is a [period encoded as a string](../periodsinstants.md#api)
+  * `variable_name` is the name of you variable you want to compute.
+* method: GET
+* Inputs are given as query string parameters
+
+Example:
+
+```sh
+curl "https://api.openfisca.fr/api/2/formula/2017-02/cout_du_travail?salaire_de_base=2300"
+```
+
+```json
+{
+  "values": {
+    "cout_du_travail": 3078.4599609375
+  },
+  "params": {
+    "salaire_de_base": 2300
+  },
+  "period": [ "month", [ 2017, 2, 1 ], 1 ],
+  "apiVersion": "2.1.0"
+}
+```
+
+## `/calculate`
+
+> This endpoint is quite complex and you may want to use the [`formula`](#formula) endpoint.
 
 Computes a test case.
 
@@ -39,8 +72,8 @@ Computes a test case.
     * with `test_case`: `value` will be a list of test cases identical to the input test cases given in `scenarios` key, with computed variables dispatched in the right entity.
     * with `variables`: `value` will be a list of objects like `{<variableName>: <variableValue>}`
   * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
-  * `scenarios` (list of objects): a list of [scenarios](#scenarios)
-  * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are [validated](#scenarios-validation)
+  * `scenarios` (list of objects): a list of [scenarios](./input-output-data.md#scenarios)
+  * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are validated.
   * `variables` (list of strings): the name of the variables to compute
 * JSON response structure:
   * `suggestions` (list of objects): suggested variables values for the input test_case, actually used by the simulation. Different than variables default values since it depends on the input test_case.
@@ -85,7 +118,7 @@ Create a file named `test_case.json` with these contents:
 }
 ```
 
-```bash
+```sh
 curl https://api.openfisca.fr/api/1/calculate -X POST --data @./test_case.json --header 'Content-type: application/json'
 ```
 
@@ -141,16 +174,16 @@ What is important is the `value` key containing the value of `revdisp` for the p
 
 > See also the `simulate` endpoint.
 
-## entities
+## `/entities`
 
-Gets the entities definition data. Entities are a [key concept of OpenFisca](../person,_entities,_role.md).
+Gets the entities definition data. [Entities](../person,_entities,_role.md) are a key concept of OpenFisca.
 
 * URL path: `/api/2/entities`
 * method: GET
 
 Example:
 
-```bash
+```sh
 curl https://api.openfisca.fr/api/2/entities
 ```
 
@@ -235,35 +268,7 @@ curl https://api.openfisca.fr/api/2/entities
 
 This data is useful when building a dynamic UI with forms allowing the user to make a test case, for example.
 
-## formula
-
-Computes a formula in a RESTful way. An implicit test case is created with a single person.
-
-* URL path: `/api/2/formula/period/variable_name`
-  * Replace `period` by a period as string and `name` by the name of a variable.
-* method: GET
-* query string parameters correspond to input variables and their values.
-
-Example:
-
-```bash
-curl "https://api.openfisca.fr/api/2/formula/2017-02/cout_du_travail?salaire_de_base=2300"
-```
-
-```json
-{
-  "values": {
-    "cout_du_travail": 3078.4599609375
-  },
-  "params": {
-    "salaire_de_base": 2300
-  },
-  "period": [ "month", [ 2017, 2, 1 ], 1 ],
-  "apiVersion": "2.1.0"
-}
-```
-
-## parameters
+## `/parameters`
 
 Gets the legislation parameters of the tax and benefit system.
 
@@ -271,13 +276,13 @@ Gets the legislation parameters of the tax and benefit system.
 * method: GET
 * query string parameters:
   * `name` (string, multi-valuated, default: null): the name(s) of the parameters to return. If null all the known parameters are returned.
-  * `instant` (a [JSON instant](./json-data-structures.md#instants), default: null): if given, returns the legislation parameters at this instant. Can only be used in conjunction with the `name` query string parameter.
+  * `instant` (see [periods and instants](../periodsinstants.md), default: null): if given, returns the legislation parameters at this instant. Can only be used in conjunction with the `name` query string parameter.
 * JSON response structure:
   * `country_package_name` (string): the name of the Python package containing the tax and benefit system of the country loaded by the Web API.
     Example: `"openfisca_france"`.
   * `country_package_version` (string): the version of the Python package containing the tax and benefit system of the country loaded by the Web API
   * `currency` (string): the currency of the tax and benefit system of the country loaded by the Web API
-  * `parameters` (list of objects): a list of [JSON parameters](./json-data-structures.md#parameters)
+  * `parameters` (list of objects): a list of OpenFisca parameters.
 
 Examples:
 * https://api.openfisca.fr/api/1/parameters
@@ -285,7 +290,7 @@ Examples:
 
 > JSON responses are too large to be copied here.
 
-## reforms
+## `/reforms`
 
 Get the list of reforms known by the Web API, with their keys and labels.
 
@@ -293,7 +298,7 @@ Those reforms keys can be passed either to the `calculate` or `simulate` endpoin
 
 Example:
 
-```bash
+```sh
 curl https://api.openfisca.fr/api/1/reforms
 ```
 
@@ -318,7 +323,9 @@ curl https://api.openfisca.fr/api/1/reforms
 }
 ```
 
-## simulate
+## `/simulate`
+
+> This endpoint is quite complex and you may want to use the [`formula`](#formula) endpoint.
 
 Computes an input test case, returning the results dispatched in a decomposition of the tax and benefit system.
 
@@ -329,9 +336,9 @@ Computes an input test case, returning the results dispatched in a decomposition
 * required headers:
   * `Content-Type: application/json`
 * JSON request structure:
-  * `scenarios` (list of objects): a list of [JSON scenarios](./json-data-structures.md#scenarios)
+  * `scenarios` (list of objects): a list of [JSON scenarios](./input-output-data.md#scenarios)
   * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
-  * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are [validated](#scenarios-validation)
+  * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are validated.
 * JSON response structure:
   * `suggestions` (list of objects): suggested variables values for the input test_case, actually used by the simulation. Different than variables default values since it depends on the input test_case.
   * `value` (object): the simulation result
@@ -374,17 +381,17 @@ Create a file named `test_case.json` with these contents:
 }
 ```
 
-```bash
+```sh
 curl https://api.openfisca.fr/api/1/simulate -X POST --data @./test_case.json --header 'Content-type: application/json'
 ```
 
-The JSON output is too large to be displayed here.
+> The JSON output is too large to be displayed here.
 
 > See also the `calculate` endpoint.
 
-## variables
+## `/variables`
 
-Gets simulation variables of the tax and benefit system.
+Gets the variables defined in the tax and benefit system.
 
 * URL path: `/api/1/variables`
 * method: GET
@@ -395,10 +402,10 @@ Gets simulation variables of the tax and benefit system.
     Example: `"openfisca_france"`.
   * `country_package_version` (string): the version of the Python package containing the tax and benefit system of the country loaded by the Web API
   * `currency` (string): the currency of the tax and benefit system of the country loaded by the Web API
-  * `variables` (list of objects): a list of [JSON variables](./json-data-structures.md#variables)
+  * `variables` (list of objects): a list of [JSON variables](./input-output-data.md#variables)
 
 Examples:
 * https://api.openfisca.fr/api/1/variables
 * https://api.openfisca.fr/api/1/variables?name=irpp
 
-> JSON responses are too large to be copied here.
+> The JSON output is too large to be displayed here.

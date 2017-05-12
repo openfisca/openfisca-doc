@@ -31,7 +31,7 @@ You may add information at *individual* level or at *entity* level.
 One input is crucial and shouldn't be forgotten: the *period* of the simulation.
 
 ###### Application: how to initialize a scenario
-Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](openfisca-web-api/json-data-structures.md) of the documentation).
+Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](openfisca-web-api/input-output-data.md) of the documentation).
 
 In Python you have to use the `init_single_entity` function based on the *scenario*. To give to every person of your *test case* attributes, you have to use the Python dictionnary object.
 

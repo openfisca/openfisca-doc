@@ -34,7 +34,7 @@
    * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Endpoints](openfisca-web-api/endpoints.md)
-   * [JSON data structures](openfisca-web-api/json-data-structures.md)
+   * [Input and output data](openfisca-web-api/input-output-data.md)
    * [Reforms](openfisca-web-api/reforms.md)
 * [Troubleshooting](troubleshooting.md)
 * [Community](community.md)

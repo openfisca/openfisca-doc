@@ -18,7 +18,7 @@ Those projects use the OpenFisca Web API:
 
 ## Architecture
 
-The web API supports different use-cases, from getting information on the available tax and benefit system to full-fledged simulation. Different [endpoints](endpoints.md) support each of them. Each endpoint encodes its information in a [JSON object](json-data-structures.md).
+The web API supports different use-cases, from getting information on the available tax and benefit system to full-fledged simulation. Different [endpoints](endpoints.md) support each of them. Each endpoint encodes its information in a [JSON object](input-output-data.md).
 
 
 ## Public or hosted
