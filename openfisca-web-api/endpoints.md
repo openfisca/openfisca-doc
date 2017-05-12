@@ -33,7 +33,7 @@ Computes a variable in a RESTful way.
 > An implicit test case is created with a single person.
 
 * URL path: `/api/2/formula/<period>/<variable_name>`
-  * `<period>` is a [period encoded as a string](../periodsinstants.md)
+  * `<period>` is a [period encoded as a string](../periodsinstants.md#api)
   * `variable_name` is the name of you variable you want to compute.
 * method: GET
 * Inputs are given as query string parameters
@@ -72,8 +72,8 @@ Computes a test case.
     * with `test_case`: `value` will be a list of test cases identical to the input test cases given in `scenarios` key, with computed variables dispatched in the right entity.
     * with `variables`: `value` will be a list of objects like `{<variableName>: <variableValue>}`
   * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
-  * `scenarios` (list of objects): a list of [scenarios](#scenarios)
-  * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are [validated](#scenarios-validation)
+  * `scenarios` (list of objects): a list of [scenarios](./input-output-data.md#scenarios)
+  * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are validated.
   * `variables` (list of strings): the name of the variables to compute
 * JSON response structure:
   * `suggestions` (list of objects): suggested variables values for the input test_case, actually used by the simulation. Different than variables default values since it depends on the input test_case.
@@ -176,7 +176,7 @@ What is important is the `value` key containing the value of `revdisp` for the p
 
 ## `/entities`
 
-Gets the entities definition data. Entities are a [key concept of OpenFisca](../person,_entities,_role.md).
+Gets the entities definition data. [Entities](../person,_entities,_role.md) are a key concept of OpenFisca.
 
 * URL path: `/api/2/entities`
 * method: GET
@@ -282,7 +282,7 @@ Gets the legislation parameters of the tax and benefit system.
     Example: `"openfisca_france"`.
   * `country_package_version` (string): the version of the Python package containing the tax and benefit system of the country loaded by the Web API
   * `currency` (string): the currency of the tax and benefit system of the country loaded by the Web API
-  * `parameters` (list of objects): a list of [JSON parameters](./input-output-data.md#parameters)
+  * `parameters` (list of objects): a list of OpenFisca parameters.
 
 Examples:
 * https://api.openfisca.fr/api/1/parameters
@@ -338,7 +338,7 @@ Computes an input test case, returning the results dispatched in a decomposition
 * JSON request structure:
   * `scenarios` (list of objects): a list of [JSON scenarios](./input-output-data.md#scenarios)
   * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
-  * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are [validated](#scenarios-validation)
+  * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are validated.
 * JSON response structure:
   * `suggestions` (list of objects): suggested variables values for the input test_case, actually used by the simulation. Different than variables default values since it depends on the input test_case.
   * `value` (object): the simulation result
