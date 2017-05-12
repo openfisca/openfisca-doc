@@ -9,7 +9,7 @@ curl https://api.openfisca.fr/foo | jq .
 
 > `jq` won't be mentioned on each example, feel free to add it like above.
 
-## index
+## `/`
 
 Displays a friendly welcome message.
 
@@ -26,14 +26,17 @@ curl https://api.openfisca.fr/
 {"apiVersion": 1, "message": "Welcome, this is OpenFisca Web API.", "method": "/"}
 ```
 
-## formula
+## `/formula`
 
-Computes a formula in a RESTful way. An implicit test case is created with a single person.
+Computes a variable in a RESTful way.
 
-* URL path: `/api/2/formula/period/variable_name`
-  * Replace `period` by a [period as string](../periodsinstants.md) and `variable_name` by the name of a variable.
+> An implicit test case is created with a single person.
+
+* URL path: `/api/2/formula/<period>/<variable_name>`
+  * `<period>` is a [period encoded as a string](../periodsinstants.md)
+  * `variable_name` is the name of you variable you want to compute.
 * method: GET
-* query string parameters correspond to input variables and their values.
+* Inputs are given as query string parameters
 
 Example:
 
@@ -54,7 +57,7 @@ curl "https://api.openfisca.fr/api/2/formula/2017-02/cout_du_travail?salaire_de_
 }
 ```
 
-## calculate
+## `/calculate`
 
 > This endpoint is quite complex and you may want to use the [`formula`](#formula) endpoint.
 
@@ -171,7 +174,7 @@ What is important is the `value` key containing the value of `revdisp` for the p
 
 > See also the `simulate` endpoint.
 
-## entities
+## `/entities`
 
 Gets the entities definition data. Entities are a [key concept of OpenFisca](../person,_entities,_role.md).
 
@@ -265,7 +268,7 @@ curl https://api.openfisca.fr/api/2/entities
 
 This data is useful when building a dynamic UI with forms allowing the user to make a test case, for example.
 
-## parameters
+## `/parameters`
 
 Gets the legislation parameters of the tax and benefit system.
 
@@ -287,7 +290,7 @@ Examples:
 
 > JSON responses are too large to be copied here.
 
-## reforms
+## `/reforms`
 
 Get the list of reforms known by the Web API, with their keys and labels.
 
@@ -320,7 +323,7 @@ curl https://api.openfisca.fr/api/1/reforms
 }
 ```
 
-## simulate
+## `/simulate`
 
 > This endpoint is quite complex and you may want to use the [`formula`](#formula) endpoint.
 
@@ -382,13 +385,13 @@ Create a file named `test_case.json` with these contents:
 curl https://api.openfisca.fr/api/1/simulate -X POST --data @./test_case.json --header 'Content-type: application/json'
 ```
 
-The JSON output is too large to be displayed here.
+> The JSON output is too large to be displayed here.
 
 > See also the `calculate` endpoint.
 
-## variables
+## `/variables`
 
-Gets simulation variables of the tax and benefit system.
+Gets the variables defined in the tax and benefit system.
 
 * URL path: `/api/1/variables`
 * method: GET
@@ -405,4 +408,4 @@ Examples:
 * https://api.openfisca.fr/api/1/variables
 * https://api.openfisca.fr/api/1/variables?name=irpp
 
-> JSON responses are too large to be copied here.
+> The JSON output is too large to be displayed here.
