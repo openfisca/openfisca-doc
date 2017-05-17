@@ -270,6 +270,8 @@ This data is useful when building a dynamic UI with forms allowing the user to m
 
 ## `/parameters`
 
+**This route is now available in a simpler and more developper-friendly version. Please check our [preview API](preview-api.md) and give us feedback!**
+
 Gets the legislation parameters of the tax and benefit system.
 
 * URL path: `/api/1/parameters`
@@ -390,6 +392,8 @@ curl https://api.openfisca.fr/api/1/simulate -X POST --data @./test_case.json --
 > See also the `calculate` endpoint.
 
 ## `/variables`
+
+**This route is now available in a simpler and more developper-friendly version. Please check our [preview API](preview-api.md) and give us feedback!**
 
 Gets the variables defined in the tax and benefit system.
 
