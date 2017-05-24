@@ -26,7 +26,7 @@ def function(person, period):
     return condition_salary * 200
 ```
 
-For a person, if  `condition_salary` is `True` (equivalent to `1` in logical algebra), the returned result will be `200`. However, if `condition_salary` is `False` (equivalent to `0`), the returned result will be `0.
+For a person, if  `condition_salary` is `True` (equivalent to `1` in logical algebra), the returned result will be `200`. However, if `condition_salary` is `False` (equivalent to `0`), the returned result will be `0`.
 
 ## Ternary condition
  
