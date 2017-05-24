@@ -31,7 +31,6 @@
    * [Writing YAML tests](coding-the-legislation/writing_yaml_tests.md)
    * [Bootstrapping a new country package](coding-the-legislation/bootstrapping_a_new_country_package.md)
 * [Legislation parameters](legislation-parameters/README.md)
-   * [Future: IPP parameters](legislation-parameters/ipp-parameters.md)
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Preview API](openfisca-web-api/preview-api.md)
    * [Official API](openfisca-web-api/endpoints.md)
