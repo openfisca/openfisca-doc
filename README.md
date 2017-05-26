@@ -68,30 +68,34 @@ OpenFisca is a modular project. Depending on your goals, you will install and in
 [![OpenFisca schema](https://raw.githubusercontent.com/openfisca/openfisca-doc/bird_eye_view/schema_openfisca.svg)](openfisca-doc/schema_openfisca.svg)
 
 ### Web API
-The Web API lets you access the legislation parameters and variable to be used in an app.
-(e.g. [Mes Aides](https://mes-aides.gouv.fr) uses the OpenFisca API to calculate OpenFisca-France benefits along with Paris and Rennes extensions ))
+The Web API lets you access the legislation Parameters and Variables.
 
-- To use the OpenFisca-France web API in your app, use out [Legistation Explorer](https://legislation.openfisca.fr/)
-- To host your own instance of the Openfisca API, go out [documentation](https://doc.openfisca.fr/openfisca-web-api/index.html)
+Example: [Mes Aides](https://mes-aides.gouv.fr) uses the OpenFisca Web API to calculate OpenFisca-France benefits.
+
+- To explore the OpenFisca-France Web API services, use our [French Legistation Explorer](https://legislation.openfisca.fr/)
+- To query the OpenFisca-France Web API in your app, see our [Web API endpoints description](https://doc.openfisca.fr/openfisca-web-api/endpoints.html)
+- To host your own instance of the Openfisca API, go to our [installation documentation](https://doc.openfisca.fr/openfisca-web-api/index.html)
 
 ### Extensions Packages
 Extensions add on the capacities of a country-package.
 
-e.g. Paris extension and Rennes extension on top of OpenFisca France, Pension extension on top of OpenFisca-Tunisia
+Example: See Paris extension and Rennes extension on top of OpenFisca France, Pension extension on top of OpenFisca-Tunisia
 
 - To install an Extension, head to the [documentation](https://doc.openfisca.fr/contribute/extensions.html)
-- To create a new Extension, head to the OpenFisca-extension-template on [GitHub](https://doc.openfisca.fr/contribute/extensions.html)
+- To create a new Extension, head to the [Extension Template on GitHub](https://doc.openfisca.fr/contribute/extensions.html)
 
 ### Country package
-Country Packages are the basic modules of OpenFisca. They define the Agents, Parameters and Variables of a country.
+Country Packages are the basic modules of OpenFisca. They define the [Parameters](https://doc.openfisca.fr/parameters.html), [Entities](https://doc.openfisca.fr/person,_entities,_role.html) and [Variables](https://doc.openfisca.fr/variables.html) of a country.
 
 - To install an existing Country-Package, head to the [OpenFisca First Steps page](https://doc.openfisca.fr/first_step.html)
-- To create a new Country Package, head to the Country template on [GitHub](https://github.com/openfisca/country-template)
+- To create a new Country Package, head to the [Country Template on GitHub](https://github.com/openfisca/openfisca-extension-template)
 
-### Open-Fisca Core
-OpenFisca core is the simulation engine that calculates the variables used in country-packages and Extension-packages. It also defines the way users interact with the OpenFisca Web API.
+### OpenFisca Core
+OpenFisca-Core is the main engine: it is the common interface to every Country Package. 
 
-To install OpenFisca Core our [Install Manual](https://doc.openfisca.fr/install.html)
+It binds the Web API, Country Package, Extensions and the engine together. 
+
+To install OpenFisca-Core, read our [Install Manual](https://doc.openfisca.fr/install.html).
 
 ## Slides
 
