@@ -65,7 +65,7 @@ As it is free software, anyone can reproduce the OpenFisca infrastructure on its
 ## Project Components
 OpenFisca is a modular project. Depending on your goals, you will install and interact with one or several of the OpenFisca Components.
 
-[![OpenFisca schema](https://raw.githubusercontent.com/openfisca/openfisca-doc/bird_eye_view/schema_openfisca.svg)](openfisca-doc/schema_openfisca.svg)
+[![OpenFisca schema](openfisca-doc/schema_openfisca.svg?raw=true)](openfisca-doc/schema_openfisca.svg)
 
 ### Web API
 The Web API lets you access the legislation Parameters and Variables.
