@@ -62,6 +62,40 @@ OpenFisca provides a basic infrastructure, in particular a public instance of it
 hosted on cheap servers.
 As it is free software, anyone can reproduce the OpenFisca infrastructure on its server.
 
+## Project Components
+OpenFisca is a modular project. Depending on your goals, you will install and interact with one or several of the OpenFisca Component.
+
+[![OpenFisca schema](openfisca-doc/schema_openfisca.svg)](openfisca-doc/schema_openfisca.svg)
+
+### Web API
+The Web API lets you access the legislation parameters and variable to be used in an app.
+The OpenFisca **Web API** is used in  :
+- https://legislation.openfisca.fr/ (documents and serves all Parameters and Variables calls for the Openfisca-France API)
+- https://mes-aides.gouv.fr (Use the OpenFisca API to serve France along with Paris and Rennes extentions )
+
+To use the Open-fisca France web API in your app, go here : legislation.openfisca.fr/
+To host your own instance of the Openfisca API, go here : https://doc.openfisca.fr/openfisca-web-api/index.html
+
+### Extensions Packages
+Extension Packages extend the capacities included in a country-package.
+Extension are used for :
+- adding legislation specific to a city (e.g. Paris extension and Rennes extension on top of OpenFisca France)
+- adding legislation pertaining to a specific population (e.g. Pension extension on top of OpenFisca-Tunisia)
+
+To install an Extension, head to the [documentation](https://doc.openfisca.fr/contribute/extensions.html)
+To create a new Extension, head to the OpenFisca-extension-template on [GitHub](https://doc.openfisca.fr/contribute/extensions.html)
+
+### Country package
+Country Packages are the basic modules of OpenFisca. They define the Agents, Parameters and Variables of a country.
+
+To install an existing Country-Package, head to the [OpenFisca First Steps page](https://doc.openfisca.fr/first_step.html)
+To create a new Country Package, head to the Country template on [GitHub](https://github.com/openfisca/country-template)
+
+### Open-Fisca Core
+OpenFisca core is the simulation engine that calculates the variables used in country-packages and Extension-packages. It also defines the way users interact with the OpenFisca Web API.
+
+To install OpenFisca Core our [Install Manual](https://doc.openfisca.fr/install.html)
+
 ## Slides
 
 In french: https://openfisca.github.io/communication/PyConFR-2016/ and https://speakerdeck.com/cbenz/ecrire-la-loi-en-python
