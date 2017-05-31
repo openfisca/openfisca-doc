@@ -16,7 +16,7 @@ For now the main supported country is France.
 
 OpenFisca is a modular project. Depending on your goals, you will install and interact with one or several of the OpenFisca Components.
 
-[![OpenFisca schema](https://cdn.rawgit.com/openfisca/openfisca-doc/0207413e/img/architecture.svg)](https://github.com/openfisca/openfisca-doc/blob/master/img/architecture.svg)
+[![OpenFisca schema](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/architecture.svg)](https://github.com/openfisca/openfisca-doc/blob/master/img/architecture.svg)
 
 ### Web API
 
