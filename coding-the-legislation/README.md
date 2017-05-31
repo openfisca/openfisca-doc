@@ -1,6 +1,6 @@
 # Coding the legislation
 
-## Coding variables
+## Tutorial
 
    * [Coding a formula: basic example](10_basic_example.md)
    * [Introducing an input variable](20_input_variables.md)
@@ -10,15 +10,10 @@
    * [Legislation evolutions](40_legislation_evolutions.md)
    * [Entities](50_entities.md)
 
-To understand the inferences used in OpenFisca:
-   * [Inferences](inferences.md)
+## Additional documentation
 
-For writing your own **reforms**:
-   * [Reforms](reforms.md)
-
-This section provides the syntax for writing automatic **testing**:
-   * [Writing YAML tests](writing_yaml_tests.md)
-
-This section helps you to deploy OpenFisca for new country.
-
+   * [Writing tests](writing_yaml_tests.md)
+   * [Coding Parameters](legislation_parameters.md)
+   * [Coding Reforms](reforms.md)
    * [Bootstrapping a new country package](bootstrapping_a_new_country_package.md)
+   * [Inferences used in OpenFisca](inferences.md)

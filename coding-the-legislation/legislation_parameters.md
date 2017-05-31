@@ -59,7 +59,7 @@ Example: if the minimum wage is expected to change in 2018, the previous example
 
 The script [`find_placeholders.py`](https://github.com/openfisca/openfisca-core/tree/master/openfisca_core/scripts/find_placeholders.py) finds all placeholders in a legislation. It can be used periodically to alert on parameters about to change.
 
-### The `<END>` tag 
+### The `<END>` tag
 
 When a parameter is removed from the legislation, a tag `<END>` is used.
 
@@ -80,4 +80,14 @@ Example: if the minimum wage is removed from legislation in 2017, the previous e
 
 ## Usage in formulas
 
-See [this example](coding-the-legislation/10_basic_example.html#example-with-legislation-parameters).
+See [this example](./10_basic_example.md#example-with-legislation-parameters).
+
+## Importing from IPP tables
+
+> This section applies only to OpenFisca-France.
+
+The [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.eu/) is a French centre in economics which produces tax and benefit tables in the `XLSX` format, with parameters history.
+
+The OpenFisca team works on importing those data into the XML parameter files of OpenFisca-France.
+
+See [this README](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/parameters/baremes_ipp) for more information.

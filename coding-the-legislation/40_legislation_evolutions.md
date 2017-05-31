@@ -58,7 +58,7 @@ we get the output:
         2014-01: 440
 ```
 
-[Read more about how to code parameters](../legislation-parameters/README.md#parameters-and-time).
+[Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
 
 ## Variable defined only for a specific time intervale
 
