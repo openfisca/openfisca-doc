@@ -38,7 +38,7 @@ Extensions add on the capacities of a country-package.
 ### Country package
 Country Packages are the basic modules of OpenFisca. They define the [Parameters](./parameters.md), [Entities](./person,_entities,_role.md) and [Variables](./variables.md) of a country.
 
-- To install an existing Country-Package, either head to the [OpenFisca First Steps page](./first_step.html) or to the [Installation page](./for_users.md#saving-your-progress)
+- To install an existing Country-Package, head to the [Installation page](./for_users.md#saving-your-progress). 
 - To create a new Country Package, head to the [Country Template on GitHub](https://github.com/openfisca/country-template)
 
 ### OpenFisca Core
