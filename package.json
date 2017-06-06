@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "gitbook build",
-    "clean": "del _book",
+    "clean": "rm -rf _book",
     "deploy": "rsync -avz --delete _book/ openfisca@doc.openfisca.fr:doc.openfisca.fr",
     "postinstall": "gitbook install",
     "start": "gitbook serve --port 2050",
