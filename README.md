@@ -40,7 +40,9 @@ Extensions add on the capacities of a country-package.
 
 Country Packages are the basic modules of OpenFisca. They define the [Parameters](./parameters.md), [Entities](./person,_entities,_role.md) and [Variables](./variables.md) of a country.
 
-- To install an existing Country-Package, head to the [Installation page](./for_users.md#saving-your-progress). 
+- To install an existing Country-Package, head to that package's documentation.
+>**Example**: [Openfisca-france's documentation](https://github.com/openfisca/openfisca-france)
+
 
 ### OpenFisca Core
 
@@ -48,7 +50,7 @@ OpenFisca-Core is the main engine: it is the common interface to every Country P
 It binds the Country Package(s), Extension(s) and the engine together. 
 OpenFisca-Core is also where the API is packaged.
 
-- To install OpenFisca-Core, read the [Install Manual](./install.md).
+- To install OpenFisca-Core, read the [OpenFisca-core Documentation](https://github.com/openfisca/openfisca-core).
 
 ## What's the purpose?
 
