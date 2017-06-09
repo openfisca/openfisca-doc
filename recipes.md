@@ -1,5 +1,9 @@
 # Recipes for OpenFisca
 
-Sometimes, the OpenFisca community comes up with clever ways to deal with issues that affect a small percentage of users.
+As the OpenFisca community becomes larger, issues that only affect a small percentage of users arise (e.g. some users need to install OpenFisca in an offline environment).
+
+The purpose of this section is to bring together the clever solutions the community came up with and share them  with all OpenFisca users.
+
+- [How to install OpenFisca in an offline environment](./offline-environment.md)
 
 
