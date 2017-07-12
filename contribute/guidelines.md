@@ -54,10 +54,10 @@ Pull requests should generally be **reviewed** by someone else than their author
 
 This is mandatory for:
 
-- Any Pull Request with **breaking changes** on `openfisca-france`, `openfisca-web-api`, and `openfisca-parsers`.
+- Any Pull Request with **breaking changes** on `openfisca-france`, `openfisca-web-api`.
 - Any Pull Request bringing **new features**, if these features are not relative to a specific scope.
     - Adding a new route to the API **requires** a review.
-    - A review is yet not mandatory to add a new formula to social contributions in `openfisca-france`. It is though recommended.
+    - A review is yet not mandatory to add a new formula to social contributions in `openfisca-france`. It is though recommended.
 
 To help reviewers, make sure to add to your PR a **clear text explanation** of your changes.
 

@@ -2,7 +2,7 @@
 
 ## Automated releasing
 
-The four main openfisca packages (core, france, web-api and parsers) are today **continously** and **automatically** released.
+The main openfisca packages (core, france, and web-api) are today **continously** and **automatically** released.
 
 When a Pull Request is merged to master, this CI server (travis) automatically:
 
@@ -65,7 +65,6 @@ Here are the steps to follow to build and release a Python package.
 Execute them on each Git repository you want to publish:
 
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
-* [OpenFisca-Parsers](https://github.com/openfisca/openfisca-parsers)
 * [OpenFisca-Web-API](https://github.com/openfisca/openfisca-web-api)
 
 See also:
