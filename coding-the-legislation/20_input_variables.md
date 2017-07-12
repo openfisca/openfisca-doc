@@ -19,6 +19,8 @@ If we ask the value of `salary` for a given month, the returned result will be:
 * The **input** that was provided when initializing the simulation if it exists.
 * The **default value** of the Variable if no input has been provided.
 
+## Setting a default value
+
 When declaring an input variable, you can change its default value by adding the argument `default` to the `column` attribute:
 
 ```py
