@@ -3,14 +3,19 @@
 
 # Introduction
 
-[OpenFisca](https://www.openfisca.fr/) is a versatile microsimulation software.
+[OpenFisca](https://www.openfisca.fr/) is a versatile [microsimulation](https://en.wikipedia.org/wiki/Microsimulation) software.
 OpenFisca allows users to :
-- Calculate many variables of the tax and benefit system of a country (social benefits and taxes paid by households) given input variables.
+- Calculate many variables of the tax and benefit system of a country given input variables.
+  > OpenFisca can calculate social benefits and taxes on test cases (a person or a household).
 - Simulate the budgetary consequences of a reform and its distributional impact when plugged on a survey.
+  > OpenFisca can calculate social benefits and taxes on population data (real data or survey data)
+
+To achieve both, computations are vectorial and use [NumPy](http://www.numpy.org/) package. It is coded in the C language under the hood, more performant than Python.
 Its engine is independent of the country, it is therefore possible to simulate any country.
 For now the main supported country is France.
 
 [OpenFisca](https://www.openfisca.fr/) is a free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
+It is written in the [Python](http://www.python.org/) programming language (compatible with version 2.7).
 
 ## Project Components
 
@@ -91,20 +96,3 @@ and [France Stratégie](http://www.strategie.gouv.fr/).
 OpenFisca provides a basic infrastructure, in particular a public instance of its web API,
 hosted on cheap servers.
 As it is free software, anyone can reproduce the OpenFisca infrastructure on its server.
-
-
-## What is microsimulation?
-
-TODO
-
-https://en.wikipedia.org/wiki/Microsimulation
-
-## Technical choices
-
-OpenFisca is written in the [Python](http://www.python.org/) programming language. It is compatible with version 2.7.
-
-OpenFisca can calculate tax and benefit variables on test cases (a person or a household)
-or population data (real data or survey data).
-To achieve both, computations are vectorial.
-For performance reasons the [NumPy](http://www.numpy.org/) package is used.
-It is coded in the C language under the hood, more performant than Python.

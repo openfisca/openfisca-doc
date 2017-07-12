@@ -1,5 +1,8 @@
 # From law to code
 
+Now let's think practical. The following tutorial and documentation offer you an overview of OpenFisca principles.
+> If you want to try OpenFisca quickly by yourselves in a [Jupyter Notebook](https://jupyter.org/), please read the tutorials [here](http://mybinder.org/repo/openfisca/tutorial).
+
 ## Tutorial
 
    * [Coding a formula: basic example](10_basic_example.md)

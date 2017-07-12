@@ -50,7 +50,7 @@ The OpenFisca project publishes several softwares built around the simulator whi
 - https://mes-aides.gouv.fr/
 - https://embauche.sgmap.fr/
 
-## Communication slides
+## Presentation slides
 
 In french: https://openfisca.github.io/communication/PyConFR-2016/ and https://speakerdeck.com/cbenz/ecrire-la-loi-en-python
 

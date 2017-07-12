@@ -1,5 +1,6 @@
 {
     "gitbook": "2.x.x",
+    "title": "OpenFisca",
     "links": {
         "sidebar": {
             "OpenFisca website": "https://www.openfisca.fr/"
