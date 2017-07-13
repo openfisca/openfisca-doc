@@ -13,7 +13,7 @@
 * [From law to code](from-law-to-code/README.md)
    * [Coding a formula: basic example](from-law-to-code/10_basic_example.md)
    * [Introducing an input variable](from-law-to-code/20_input_variables.md)
-   * [Thinking in vectors](from-law-to-code/25_vectorial_computing.md)
+   * [Vector calculus limitations](from-law-to-code/25_vectorial_computing.md)
    * [Case disjunction](from-law-to-code/30_case_disjunction.md)
    * [Periods](from-law-to-code/35_periods.md)
    * [Legislation evolutions](from-law-to-code/40_legislation_evolutions.md)
