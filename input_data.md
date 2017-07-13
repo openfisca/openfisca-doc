@@ -8,7 +8,7 @@
 
 The interface between input information and *input variables* that OpenFisca can handle is called *Scenario*.
 
-> Technically speaking, OpenFisca is using [vector computing](thinking-in-vectors.md) for performance reasons via the [NumPy](http://www.numpy.org/) Python package
+> Technically speaking, OpenFisca is using [vector computing](coding-the-legislation/25_vectorial_computing.md) for performance reasons via the [NumPy](http://www.numpy.org/) Python package
 
 Whatever the input is, *test case* or *data*, the scenario converts it into vectors internally.
 
