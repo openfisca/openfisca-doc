@@ -4,7 +4,8 @@ Openfisca handles the fact that the legislation change over time.
 
 ## Parameter evolution
 
-Many legislation parameters are regularly re-evaluated. In that case, formulas usually don't need to be modified: adding the new parameter value in the parameter file is enough.
+Many legislation parameters are regularly re-evaluated.  
+In that case, formulas usually don't need to be modified: adding the new parameter value in the parameter file is enough.
 
 Let's go back to our [previous example](10_basic_example.md#example-with-legislation-parameters):
 
@@ -60,38 +61,32 @@ we get the output:
 
 [Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
 
-## Variable defined only for a specific time intervale
+## Variable defined only for until a specific date
 
-As the legislation evolves, some fiscal or benefit mechanism appear and disapear. When creating a variable, you can specify the attribute `start_date` and `stop_date` to defines in which time intervale this variable make sense.
+As the legislation evolves, some fiscal or benefit mechanism appear and disapear.  
+For every variable, you can specify the attribute `end`; it defines until when this variable makes sense.
 
-When called outside of its definition intervale, a variable will **not** execute its formula and instead **return its default value**.
+If called outside of its definition time, a variable will **not** execute its formula and instead **return its default value**.
 
 For instance:
 ```py
-class flat_tax_on_salary(Variable):
-    column = FloatCol
-    entity = Person
-    label = u"Individualized and monthly paid tax on salaries"
-    start_date = date(2014, 01, 01)
-    definition_period = MONTH
-
-    def function(person, period, legislation):
-        ...
-
 class progressive_income_tax(Variable):
     column = FloatCol
     entity = Person
     label = u"Former tax replaced by the flat tax on the 1st of Jan 2014"
-    stop_date = date(2013, 12, 31)
+    end = '2013-12-31'
     definition_period = MONTH
 
-    def function(person, period, legislation):
+    def formula(self, simulation, period):
         ...
 ```
 
+will return a value calculated by its `formula` function if it is called for any date that goes until the `end = '2013-12-31'` date. 
+While the `progressive_income_tax` will be set to the default OpenFisca value for `FloatCol` if it is called after its `end` date.
+
 Note that:
-- A variable can of course have both a `start_date` and a `stop_date`.
-- The `stop_date` is the last day a formula is valid, and not the first day it is not valid anymore.
+- The `end` is the last day a variable and its formulas are valid (not the first day of unvalidity).
+- The `end` value is a string of 'YYYY-MM-DD' format where YYYY, MM and DD are respectively a year, month and day.
 - When defining a date, the month is given **before** the day.
 
 ## Formula evolving over time
@@ -108,13 +103,13 @@ class flat_tax_on_salary(DatedVariable):
     definition_period = MONTH
 
     @dated_function(start = date(2017, 1, 1))
-    def function_2017(person, period, legislation):
+    def function_2017(self, simulation, period):
         salary = person('salary', period)
         salary_above_1000 = min_(salary - 1000, 0)
         return salary_above_1000 * legislation(period).taxes.salary.rate
 
     @dated_function(start = date(2014, 01, 01), stop = date(2016, 12, 31))
-    def function_2014(person, period, legislation):
+    def function_2014(self, simulation, period):
         salary = person('salary', period)
 
         return salary * legislation(period).taxes.salary.rate
