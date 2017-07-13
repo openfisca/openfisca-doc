@@ -1,8 +1,25 @@
 # Vector calculus limitations
 
-## Vector calculus
+Openfisca calculation are all **vectorial**. This means that any calculation can be done at the same time for a big number of persons, families, etc.
+This enables fast calculations for a big population, but comes with some constraints.
 
-Openfisca calculation are all **vectorial**. This means that any calculation can be done at the same time for a big number of persons, families, etc. This enables fast calculations for a big population, but comes with some constraints.
+## Vectors
+
+Each computation in OpenFisca returns a **vector**. For instance, for a simulation containing 3 persons whose ages are 45, 42, and 41, executing the following formula:
+
+```py
+def function(person, period):
+    age = person('age', period)
+    print(age)     
+```
+
+will print:
+```
+array([45, 42, 17])
+```
+
+Basic operations such as `+` or `*` behave the same way on vectors than on numbers, you can thus use them in OpenFisca. However, some operations and structures must be adapted.
+
 
 ## Forbidden operations and alternatives
 

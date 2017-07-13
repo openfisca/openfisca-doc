@@ -1,6 +1,6 @@
 # Summary
 
-* [About the project](README.md)
+* [Introduction](README.md)
 * [Key concepts](key-concepts.md)
    * [Tax and Benefit System](tax_and_benefit_system.md)
    * [Variables](variables.md)
@@ -10,11 +10,7 @@
    * [Input Data](input_data.md)
    * [Simulation, Computation](simulation.md)
    * [Reforms](reforms.md)
-* [Getting Started](getting-started.md)
-   * [First Steps](first_step.md)
-* [Thinking in vectors](thinking-in-vectors.md)
-* [Publishing results](publishing.md)
-* [Coding the legislation](coding-the-legislation/README.md)
+* [From law to code](coding-the-legislation/README.md)
    * [Coding a formula: basic example](coding-the-legislation/10_basic_example.md)
    * [Introducing an input variable](coding-the-legislation/20_input_variables.md)
    * [Vector calculus limitations](coding-the-legislation/25_vectorial_computing.md)
@@ -35,6 +31,7 @@
 * [Troubleshooting](troubleshooting.md)
 * [Recipes](recipes.md)
     * [Install OpenFisca in an offline environment](offline-environment.md)
+* [Publishing results](publishing.md)
 * [Community](community.md)
 * [Contribute](contribute/README.md)
    * [Contributor guidelines](contribute/guidelines.md)
