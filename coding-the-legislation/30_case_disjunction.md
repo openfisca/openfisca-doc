@@ -2,11 +2,12 @@
 
 ## Limitations
 
-Built-in python conditionnal structures are not compatible with [vector calculus](25_vectorial_computing.md).  The following formula would for instance **break**:
+Built-in python conditionnal structures are not compatible with [vector calculus](25_vectorial_computing.md).  
+The following formula would for instance **break**:
 
 ```py
 # THIS IS NOT A VALID OPENFISCA FORMULA
-def function(person, period):
+def formula(person, period):
     salary = person('salary', period)
     if salary < 1000:
         return 200
@@ -21,12 +22,13 @@ Some solutions though exist to emulate these structures.
 Applying a condition is in many cases equivalent to a simple multiplication. For instance, our previous example can be rewritten:
 
 ```py
-def function(person, period):
+def formula(person, period):
     condition_salary = person('salary', period) < 1000
     return condition_salary * 200
 ```
 
-For a person, if  `condition_salary` is `True` (equivalent to `1` in logical algebra), the returned result will be `200`. However, if `condition_salary` is `False` (equivalent to `0`), the returned result will be `0`.
+For a person, if  `condition_salary` is `True` (equivalent to `1` in logical algebra), the returned result will be `200`. 
+However, if `condition_salary` is `False` (equivalent to `0`), the returned result will be `0`.
 
 ## Ternary condition
  
@@ -35,7 +37,7 @@ Let's now write a formula that still returns `200` if the person salary is lower
 The helper function `where` offers a simple syntax to handle these cases.
 
 ```py
-def function(person, period):
+def formula(person, period):
     condition_salary = person('salary', period) < 1000
     return where(condition_salary, 200, 100)
 ```
@@ -53,7 +55,7 @@ Let's consider a more complex case, where we want to attribute to a person:
 We can use the helper function `select` to implement this behaviour:
 
 ```py
-def function(person, period):
+def formula(person, period):
     salary = person('salary', period)
     return select(
         [salary <= 500, salary <= 1000, salary <= 1500, salary > 1500],
@@ -69,10 +71,10 @@ If the first condition is met, the first value will be returned, without conside
 
 If the first condition is not met, then only the second condition will be considered.
 
-If no condition is met, `0` will be returned. The previous function is thus strictly equivalent to:
+If no condition is met, `0` will be returned. The previous formula is thus strictly equivalent to:
 
 ```py
-def function(person, period):
+def formula(person, period):
     salary = person('salary', period)
     return select(
         [salary <= 500, salary <= 1000, salary <= 1500],
@@ -89,7 +91,7 @@ For instance, let's consider that a person will be granted `200` if either:
     - They are in a situation of handicap
 
  ```py
-def function(person, period):
+def formula(person, period):
     condition_age = person('age') >= 25
     condition_salary = person('salary', period) < 1000
     condition_handicap = person('handicap')

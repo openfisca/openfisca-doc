@@ -16,14 +16,14 @@ class salary(Variable):
     label = u"Salary for a month"
     definition_period = MONTH
 
-    def function(person, period):
+    def formula(person, period):
         ...
 ```
 
 The size of the period is constrained by the class attribute `definition_period`:
-  - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `function` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `function`.
-  - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `function` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
-  - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `function`. However when `function` is executed, the parameter `period` can be anything and it should not be used.
+  - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `formula`.
+  - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `formula` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
+  - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `formula`. However when `formula` is executed, the parameter `period` can be anything and it should not be used.
 
 
 ## Calculating dependencies for a period different than the one they are defined for
@@ -37,7 +37,7 @@ class taxes(Variable):
     label = u"Taxes for a whole year"
     definition_period = YEAR
 
-    def function(person, period):  # period is a year because definition_period = YEAR
+    def formula(person, period):  # period is a year because definition_period = YEAR
         salary_past_year = person('salary', period)  # salary is computed on a year while it's a montly variable, openfisca will complain
         ...
 ```
@@ -53,7 +53,7 @@ class taxes(Variable):
     label = u"Taxes for a whole year"
     definition_period = YEAR
 
-    def function(person, period):  # period is a year because definition_period = YEAR
+    def formula(person, period):  # period is a year because definition_period = YEAR
         salary_last_year = person('salary', period, options = [ADD])
         ...
 ```
@@ -67,7 +67,7 @@ class salary_net_of_taxes(Variable):
     label = u"Monthly salary, net of taxes"
     definition_period = MONTH
 
-    def function(person, period):  # period is a month because definition_period = MONTH
+    def formula(person, period):  # period is a month because definition_period = MONTH
         # The variable taxes is computed on a year, monthly_taxes equals the 12th of that result
         monthly_taxes = person('taxes', period, options = [DIVIDE])
 
@@ -91,7 +91,7 @@ class unemployment_benefit(Variable):
     label = u"Unemployment benefit"
     definition_period = MONTH
 
-    def function(person, period):
+    def formula(person, period):
         salary_last_3_months = person('salary', period.last_3_month)
         salary_last_year = person('salary', period.last_year)
 
@@ -139,7 +139,7 @@ class salary(Variable):
     definition_period = MONTH
     set_input = set_input_divide_by_period
 
-    def function(person, period):
+    def formula(person, period):
         ...
 ```
 

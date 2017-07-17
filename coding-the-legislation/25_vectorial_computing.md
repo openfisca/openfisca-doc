@@ -8,7 +8,7 @@ This enables fast calculations for a big population, but comes with some constra
 Each computation in OpenFisca returns a **vector**. For instance, for a simulation containing 3 persons whose ages are 45, 42, and 41, executing the following formula:
 
 ```py
-def function(person, period):
+def formula(person, period):
     age = person('age', period)
     print(age)     
 ```

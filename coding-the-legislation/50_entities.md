@@ -11,7 +11,7 @@ However, I may for instance:
 You can get the number of person with a given role in an entity with the `nb_persons(role)` method. If no role is given, it will return the numbers of people in the entity.
 
 ```py
-    def function(household, period):
+    def formula(household, period):
         nb_persons = household.nb_persons()
         nb_adults = household.nb_persons(Household.ADULT)
         nb_children = household.nb_persons(Household.CHILD)
@@ -24,7 +24,7 @@ Note that roles are constants that can be accessed from their entity with the no
 You can know whether a person has a certain role with the `has_role(role)` method:
 
 ```py
-    def function(person, period):
+    def formula(person, period):
         is_adult = person.has_role(Household.ADULT)
         is_child = person.has_role(Household.CHILD)
 ```
@@ -49,7 +49,7 @@ class basic_income(Variable):
     label = u"Basic income paid to households"
     definition_period = MONTH
 
-    def function(household, period):
+    def formula(household, period):
         nb_adults = household.nb_persons(Household.ADULT)
         nb_children = household.nb_persons(Household.CHILD)
         salaries = household.members('salary', period)
@@ -74,7 +74,7 @@ class college_scholarship(Variable):
     label = u"College Scholarship for basic income recipients."
     definition_period = MONTH
 
-    def function(person, period):
+    def formula(person, period):
         is_student = person('is_student', period)
         has_household_basic_income = person.household('basic_income', period) > 0
                 
@@ -86,7 +86,7 @@ Similarly, `entity.unique_role('variable_name', period)` allows you to get the v
 For instance, let's assume `Household` has two unique roles, `main_declarant` and `partner`.
 
 ```py
-def function(household, period):
+def formula(household, period):
     household.main_declarant('salary', period) # main declarant's salary
     household.partner('salary', period) # partner's salary
 ```
