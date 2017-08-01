@@ -28,9 +28,9 @@ class flat_tax_on_salary(Variable):
 <NODE code="taxes">
     <NODE code='salary'>
       <CODE code="rate" description="Rate for the flat tax on salaries">
-        <VALUE deb="2016-01-01" fuzzy="true" valeur="0.25" />
-        <VALUE deb="2015-01-01" fin="2015-12-31" valeur="0.20" />
-        <VALUE deb="2014-01-01" fin="2014-12-31" valeur="0.22" />
+        <VALUE deb="2016-01-01" valeur="0.25" />
+        <VALUE deb="2015-01-01" valeur="0.20" />
+        <VALUE deb="2014-01-01" valeur="0.22" />
       </CODE>
     </NODE>
 </NODE>
