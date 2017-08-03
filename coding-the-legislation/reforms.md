@@ -63,7 +63,7 @@ class increase_minimum_wage(Reform):
 
 #### Add new parameters
 
-You can add new parameters from a directory containing YAML files, similarly to the [parameters of the original tax benefit system](legislative_parameters.md).
+You can add new parameters from a directory containing YAML files, similarly to the [parameters of the original tax benefit system](legislation_parameters.md).
 
 ```python
 import os
