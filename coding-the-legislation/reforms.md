@@ -2,6 +2,9 @@
 
 A [reform](../reforms.md) is a set of modifications to be applied to a tax and benefit system, usually to study the quantitative impact of a possible change of the law.
 
+> See the reference documentation of the class [Reform](https://openfisca.readthedocs.io/en/latest/reforms.html).
+
+
 ## Writing a reform
 
 Let's for instance assume that we want to simulate the effect of a reform that changes the way the `income_tax` is calculated.
@@ -24,9 +27,9 @@ class income_tax_reform(Reform):
         self.update_variable(income_tax)
 ```
 
-A `Reform` **must** define an `apply` method that describes all the modifications to be applied to the original tax and benefit system to get the reformed one.
+A `Reform` **must** define an `apply()` method that describes all the modifications to be applied to the original tax and benefit system to get the reformed one.
 
-> Note that the reference tax and benefit system won't be modified. The `apply` function will be applied to a copy of the tax and benefit system.
+> Note that the reference tax and benefit system won't be modified. The `apply()` function will be applied to a copy of the tax and benefit system.
 
 All the [methods](https://openfisca.readthedocs.io/en/latest/tax-benefit-system.html) used to build a tax and benefit system can also be used to reform it.
 
@@ -35,28 +38,79 @@ A reform that modifies a formula (such as our `income_tax_reform` example) is ca
 
 ### Parametric reforms
 
-Unlike *structural reforms*, *parametric reforms* do not directly modify any formula: they apply changes to legislation parameters only.
+A reform that apply changes to legislation parameters is called a *parametric reforms*. 
 
-To modify the legislation parameters in the reform, you can call the method `self.modify_legislation_json`, which takes a function as a parameter.
+> Note that a reform can be both structural and parametric, modifying and/or adding variables *and* parameters.
 
-This function defines the modifications you want to apply to the legislation. It takes as a parameter a copy of the reference tax and benefit system `legislation_json`. You can then modify and return this `legislation_json`.
+To modify the legislation parameters in the reform, you can call the method `self.modify_legislation`, which takes a function as a parameter.
 
-For instance:
+This function defines the modifications you want to apply to the legislation. It takes as a parameter a copy of the reference tax and benefit system parameters: `legislation`. You can then modify and return this `legislation`.
+
+#### Update the value of a parameter
 
 ```python
-def modify_legislation_json(reference_legislation_json_copy):
-    reference_legislation_json_copy['children']['minimum_wage']['values'][0]['value'] = 15
-    return reference_legislation_json_copy
+def modify_legislation(legislation):
+    legislation.tax_on_salary.scale[1].threshold.update(period=reform_period, value=new_value)
+    return legislation
 
 
 class increase_minimum_wage(Reform):
     name = u'Increase the minimum wage'
 
     def apply(self):
-        self.modify_legislation_json(modifier_function = modify_legislation_json)
+        self.modify_legislation(modifier_function = modify_legislation)
 ```
 
-> Note that you have to know about the data structure of the legislation JSON to modify it.
+#### Add new parameters
+
+You can add new parameters from a directory containing YAML files, similarly to the [parameters of the original tax benefit system](legislative_parameters.md).
+
+```python
+import os
+from openfisca_core import legislations
+
+dir_path = os.path.dirname(__file__)
+
+def modify_legislation(legislation):
+    file_path = os.path.join(dir_path, 'plf2016.yaml')
+    reform_legislation_subtree = legislations.load_file(name='plf2016', file_path=file_path)
+    legislation.add_child('plf2016', reform_legislation_subtree)
+    return legislation
+
+class some_reform(Reform):
+    def apply(self):
+        self.modify_legislation(modifier_function = modify_legislation)
+```
+
+> Note that you have to know about the data structure of the legislative parameters to modify it.
+
+#### Add new parameters dynamically
+
+In some cases, loading new parameters from YAML files is not practical. Fox example, you may want to add parameters from values computed dynamically. In such cases you can use the internal domain specific language of the [legislations module](http://openfisca.readthedocs.io/en/latest/legislations.html)
+:
+
+```python
+from openfisca_core.legislations import Node, Parameter, ValueAtInstant
+
+def modify_legislation(legislation):
+    reform_legislation_subtree = Node('new_tax', children = {
+        'first_tax': Parameter('first_tax', values_list = [
+            ValueAtInstant('first_tax', "2015-01-01", value=f(a, b, c)),
+            ValueAtInstant('first_tax', "2016-01-01", value=None),
+            ]),
+        'second_tax': Parameter('second_tax', values_list = [
+            ValueAtInstant('second_tax', "2015-01-01", value=g(a, b, c)),
+            ValueAtInstant('second_tax', "2016-01-01", value=None),
+            ]),
+        })
+    legislation.add_child('new_tax', reform_legislation_subtree)
+
+
+class some_reform(Reform):
+    def apply(self):
+        self.modify_legislation(modifier_function = modify_legislation)
+```
+
 
 ## Using a reform in Python
 
