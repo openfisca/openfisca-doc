@@ -2,7 +2,6 @@
 
 Here are the places in which inferences take place in OpenFisca:
 
-- In parameters values, through the `fuzzy` attribute, which artificially extends the validity period of a value.
 - In period management, through `calculate_output`, which can automatically sum or divide values over periods to match the requested period.
 - In period management, through `set_input`, which can automatically sum or divide input values over periods to match the computable period.
 - In some formulas, through `base_function`, which can yield values that the original requested formula could not compute on its own.
@@ -12,12 +11,6 @@ These inferences are not considered good practice, as they tend to make computat
 
 
 ## Known issues
-
-### With `fuzzy`
-
-This parameter introduces a major production risk: if the end date of a parameter used in a computation is reached, and `fuzzy` is not used, then the program will crash
-
-The advised workaround is to _always_ add the `fuzzy` parameter to the last known value.
 
 ### With `base_function`
 

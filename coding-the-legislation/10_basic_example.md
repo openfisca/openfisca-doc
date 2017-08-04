@@ -11,7 +11,7 @@ class flat_tax_on_salary(Variable):
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
 
-    def function(person, period):
+    def formula(person, period):
         salary = person('salary', period)
 
         return salary * 0.25
@@ -34,7 +34,7 @@ Let's explain in details the different part of the code:
   - `label = u"Individualized..."` gives, in a human-readable language, concise information about the variable.
   - `definition_period = MONTH` states that the variable will be computed on months.
 - Formula:
-  - `def function(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH`, `period` is constrained to be a month.
+  - `def formula(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH`, `period` is constrained to be a month.
   - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax and benefit system.
   - `return salary * 0.25` returns the result for the given period.
 
@@ -72,7 +72,7 @@ class flat_tax_on_salary(Variable):
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
 
-    def function(person, period, legislation):
+    def formula(person, period, legislation):
         salary = person('salary', period)
 
         return salary * legislation(period).taxes.salary.rate

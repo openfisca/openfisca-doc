@@ -14,7 +14,7 @@ class income_tax(Variable):
     entity = Household
     label = u'Alternative formula to calculate the income tax, under experimentation'
 
-    def function(household, period):
+    def formula(household, period):
         # (...)
 
 class income_tax_reform(Reform):
