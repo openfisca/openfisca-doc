@@ -31,6 +31,8 @@ class french_citizen(Variable):
     definition_period = YEAR
 ```
 
-The default default value of a `Variable` is `0` for numeric variables and  `False` for boolean ones.
+If you do not explicitly define a default value, the following will be used:
 
-> For example, an EnumCol variable default value is the item of index `0` in the enumeration.
+  - For numeric variables: `0`.
+  - For boolean variables: `False`.
+  - For enum variables: the item of index `0`.
