@@ -39,10 +39,10 @@ If you do not explicitly define a default value, the following will be used:
 
 ## Advanced example
 
-Let's say you want to calculate a housing tax. This tax amount depends on the occupancy status of the inhabitants.  
+Let's say you want to calculate a housing tax. This tax amount depends on the occupancy status of the inhabitants. 
+So, the occupancy status could be defined as an input variable.  
 
-This occupancy status could be defined as an input variable.
-As your legislation defines a limited set of occupancy statuses, you can name them in an enumeration:
+The input variable `housing_occupancy_status` will have a limited set of possible values defined by your legislation. You can name these statuses in a `HOUSING_OCCUPANCY_STATUS` enumeration:
 
 ```py
 HOUSING_OCCUPANCY_STATUS = Enum([
@@ -55,7 +55,7 @@ HOUSING_OCCUPANCY_STATUS = Enum([
 This also indexes them starting at `0`.
 > For example, `HOUSING_OCCUPANCY_STATUS['Owner']` will return `1`, `HOUSING_OCCUPANCY_STATUS['Free lodger']` will return `2`, ...
 
-Now, you can declare an enumeration variable `housing_occupancy_status` of `HOUSING_OCCUPANCY_STATUS` for a specific entity and period (`Household` and `MONTH` here):
+Now, you can declare the `housing_occupancy_status` variable of `HOUSING_OCCUPANCY_STATUS` for a specific entity and period (`Household` and `MONTH` here):
 
 ```py
 class housing_occupancy_status(Variable):
@@ -75,7 +75,7 @@ A default value could also be added and taken into account when no input is prov
         )
 ```
 
-Thus, to get this variable for a given `month` you will call `household('housing_occupancy_status', month)`. Its value is an index of `HOUSING_OCCUPANCY_STATUS` Enum.
+Thus, to get `housing_occupancy_status` for a given `month` you will call `household('housing_occupancy_status', month)`. Its value is an index of `HOUSING_OCCUPANCY_STATUS` Enum.
 Nevertheless, in your tests and calls to the Web API, favor its string definition as it is more readable than the enumeration index. A YAML test would look as follows:
 
 ```yaml
