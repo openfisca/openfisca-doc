@@ -61,54 +61,6 @@ To make sure that the formula you have just written works the way you expect, yo
 
 You can check the [YAML tests documentation](writing_yaml_tests.md) to learn more about how to write YAML tests, and how to run them.
 
-## Example with Enum variable
-
-Let's say we have a `HOUSING_OCCUPANCY_STATUS` enumeration:
-
-```py
-HOUSING_OCCUPANCY_STATUS = Enum([
-    u'Tenant',
-    u'Owner',
-    u'Free lodger',
-    u'Homeless'])
-```
-
-To declare an enumeration variable `housing_occupancy_status` of `HOUSING_OCCUPANCY_STATUS` in your legislation, the `EnumCol` type should be defined as follow:
-
-```py
-class housing_occupancy_status(Variable):
-    column = EnumCol(
-        enum = HOUSING_OCCUPANCY_STATUS
-        )
-    entity = Household
-    definition_period = MONTH
-    label = u"Legal housing situation of the household concerning their main residence"
-```
-
-A default value could also be added:
-```py
-    column = EnumCol(
-        enum = HOUSING_OCCUPANCY_STATUS,
-        default = 1
-        )
-```
-
-Thus, to get this variable for a given `month` you would call `household('housing_occupancy_status', month)`. Its value is an index of `HOUSING_OCCUPANCY_STATUS` Enum.
-Nevertheless, in a YAML test, favor its string definition as it is more readable than the enumeration index:
-
-```yaml
-
-- name: Household with free lodger status living in a 100 sq.meters accomodation
-  period: 2017
-  input_variables:
-    accomodation_size:
-      2017-01: 100
-    housing_occupancy_status:
-      2017-01: Free lodger
-  output_variables:
-    housing_tax: 0
-```
-
 ## Example with legislation parameters
 
 To access a common legislation parameter, a third parameter can be added to the function signature. The previous formulas could thus be rewritten:
