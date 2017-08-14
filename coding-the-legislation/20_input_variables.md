@@ -32,3 +32,5 @@ class french_citizen(Variable):
 ```
 
 The default default value of a `Variable` is `0` for numeric variables and  `False` for boolean ones.
+
+> For example, an EnumCol variable default value is the item of index `0` in the enumeration.
