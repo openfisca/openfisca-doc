@@ -37,12 +37,18 @@ If you do not explicitly define a default value, the following will be used:
 - For boolean variables: `False`.
 - For enum variables: the item of index `0`.
 
-## Advanced example
+## Advanced example: enumerations (enum)
 
-Let's say you want to calculate a housing tax. This tax amount depends on the occupancy status of the inhabitants. 
-So, the occupancy status has to be defined as an input variable.  
+### When to use enums?
 
-The input variable `housing_occupancy_status` will have a limited set of possible values defined by your legislation. You can name these statuses in a `HOUSING_OCCUPANCY_STATUS` [enumerated type](https://en.wikipedia.org/wiki/Enumerated_type):
+Let's say you want to calculate a housing tax that depends on the occupancy status of the inhabitants.  
+
+The input variable `housing_occupancy_status` will be an input variable, and have a limited set of possible values (e.g. Owner, Tenant ...). 
+We can express this through the enum type.  
+
+### How to use the enum in an input variable?
+
+1. Create an [enumerated type](https://en.wikipedia.org/wiki/Enumerated_type) `HOUSING_OCCUPANCY_STATUS`:  
 
 ```py
 HOUSING_OCCUPANCY_STATUS = Enum([
@@ -52,10 +58,10 @@ HOUSING_OCCUPANCY_STATUS = Enum([
     u'Homeless'])
 ```
 
-This also indexes them starting at `0`.
-> For example, `HOUSING_OCCUPANCY_STATUS['Owner']` will return `1`, `HOUSING_OCCUPANCY_STATUS['Free lodger']` will return `2`, ...
+Enum items can be references by their index (starting at `0`).
+> For example, `HOUSING_OCCUPANCY_STATUS['Tenant']` will return `0`, `HOUSING_OCCUPANCY_STATUS['Owner']` will return `1`, `HOUSING_OCCUPANCY_STATUS['Free lodger']` will return `2`, ...
 
-Now, you can declare the `housing_occupancy_status` variable of `HOUSING_OCCUPANCY_STATUS` for a specific entity and period (`Household` and `MONTH` here):
+2. Create an OpenFisca variable `housing_occupancy_status`:  
 
 ```py
 class housing_occupancy_status(Variable):
@@ -66,8 +72,10 @@ class housing_occupancy_status(Variable):
     definition_period = MONTH
     label = u"Legal housing situation of the household concerning their main residence"
 ```
+It's a `HOUSING_OCCUPANCY_STATUS` for a specific entity and period (`Household` and `MONTH` here).  
 
 A default value could also be added and taken into account when no input is provided for this variable:
+
 ```py
     column = EnumCol(
         enum = HOUSING_OCCUPANCY_STATUS,
@@ -75,11 +83,16 @@ A default value could also be added and taken into account when no input is prov
         )
 ```
 
-Thus, to get `housing_occupancy_status` for a given `month` you will call `household('housing_occupancy_status', month)`. Its value is an index of `HOUSING_OCCUPANCY_STATUS` Enum.
-Nevertheless, in your tests and calls to the Web API, favor its string definition as it is more readable than the enum index. A YAML test would look as follows:
+3. Use the enum in a variable formula:  
+
+To get `housing_occupancy_status` for a given `month`, call `household('housing_occupancy_status', month)`. 
+Its value is an index of `HOUSING_OCCUPANCY_STATUS` Enum.
+
+4. Test the formula by inputing the enum:  
+
+A YAML test would look as follows:
 
 ```yaml
-
 - name: Household with free lodger status living in a 100 sq.meters accomodation
   period: 2017
   input_variables:
@@ -90,3 +103,5 @@ Nevertheless, in your tests and calls to the Web API, favor its string definitio
   output_variables:
     housing_tax: 0
 ```
+
+In your tests and calls to the Web API, favor its string definition as it is more readable than the enum index. 
