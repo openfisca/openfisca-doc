@@ -42,7 +42,7 @@ If you do not explicitly define a default value, the following will be used:
 Let's say you want to calculate a housing tax. This tax amount depends on the occupancy status of the inhabitants. 
 So, the occupancy status has to be defined as an input variable.  
 
-The input variable `housing_occupancy_status` will have a limited set of possible values defined by your legislation. You can name these statuses in a `HOUSING_OCCUPANCY_STATUS` enumeration:
+The input variable `housing_occupancy_status` will have a limited set of possible values defined by your legislation. You can name these statuses in a `HOUSING_OCCUPANCY_STATUS` [enumerated type](https://en.wikipedia.org/wiki/Enumerated_type):
 
 ```py
 HOUSING_OCCUPANCY_STATUS = Enum([
@@ -76,7 +76,7 @@ A default value could also be added and taken into account when no input is prov
 ```
 
 Thus, to get `housing_occupancy_status` for a given `month` you will call `household('housing_occupancy_status', month)`. Its value is an index of `HOUSING_OCCUPANCY_STATUS` Enum.
-Nevertheless, in your tests and calls to the Web API, favor its string definition as it is more readable than the enumeration index. A YAML test would look as follows:
+Nevertheless, in your tests and calls to the Web API, favor its string definition as it is more readable than the enum index. A YAML test would look as follows:
 
 ```yaml
 
