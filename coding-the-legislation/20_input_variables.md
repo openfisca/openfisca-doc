@@ -40,7 +40,7 @@ If you do not explicitly define a default value, the following will be used:
 ## Advanced example
 
 Let's say you want to calculate a housing tax. This tax amount depends on the occupancy status of the inhabitants. 
-So, the occupancy status could be defined as an input variable.  
+So, the occupancy status has to be defined as an input variable.  
 
 The input variable `housing_occupancy_status` will have a limited set of possible values defined by your legislation. You can name these statuses in a `HOUSING_OCCUPANCY_STATUS` enumeration:
 
