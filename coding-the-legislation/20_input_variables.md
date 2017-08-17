@@ -33,9 +33,9 @@ class french_citizen(Variable):
 
 If you do not explicitly define a default value, the following will be used:
 
-  - For numeric variables: `0`.
-  - For boolean variables: `False`.
-  - For enum variables: the item of index `0`.
+- For numeric variables: `0`.
+- For boolean variables: `False`.
+- For enum variables: the item of index `0`.
 
 ## Advanced example
 
