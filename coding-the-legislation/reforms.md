@@ -42,73 +42,76 @@ A reform that apply changes to legislation parameters is called a *parametric re
 
 > Note that a reform can be both structural and parametric, modifying and/or adding variables *and* parameters.
 
-To modify the legislation parameters in the reform, you can call the method `self.modify_legislation`, which takes a function as a parameter.
+To modify the legislation parameters in the reform, you can call the method `self.modify_parameters`, which takes a function as a parameter.
 
-This function defines the modifications you want to apply to the legislation. It takes as a parameter a copy of the reference tax and benefit system parameters: `legislation`. You can then modify and return this `legislation`.
+This function performs the modifications you want to apply to the legislation. It takes as a parameter a copy of the reference tax and benefit system parameters: `parameters`. You can then modify and return `parameters`.
 
 #### Update the value of a parameter
 
 ```python
-def modify_legislation(legislation):
-    legislation.tax_on_salary.scale[1].threshold.update(period=reform_period, value=new_value)
-    return legislation
+def modify_parameters(parameters):
+    parameters.tax_on_salary.scale[1].threshold.update(period=reform_period, value=new_value)
+    return parameters
 
 
 class increase_minimum_wage(Reform):
     name = u'Increase the minimum wage'
 
     def apply(self):
-        self.modify_legislation(modifier_function = modify_legislation)
+        self.modify_parameters(modifier_function = modify_parameters)
 ```
 
 #### Add new parameters
 
-You can add new parameters from a directory containing YAML files, similarly to the [parameters of the original tax benefit system](legislation_parameters.md).
+You can load new parameters from a directory containing YAML files and add them to the reference parameters.
 
 ```python
 import os
-from openfisca_core import legislations
+from openfisca_core.parameters import load_file
 
 dir_path = os.path.dirname(__file__)
 
-def modify_legislation(legislation):
+def modify_parameters(parameters):
     file_path = os.path.join(dir_path, 'plf2016.yaml')
-    reform_legislation_subtree = legislations.load_file(name='plf2016', file_path=file_path)
-    legislation.add_child('plf2016', reform_legislation_subtree)
-    return legislation
+    reform_parameters_subtree = load_file(name='plf2016', file_path=file_path)
+    parameters.add_child('plf2016', reform_parameters_subtree)
+    return parameters
 
 class some_reform(Reform):
     def apply(self):
-        self.modify_legislation(modifier_function = modify_legislation)
+        self.modify_parameters(modifier_function = modify_parameters)
 ```
-
-> Note that you have to know about the data structure of the legislative parameters to modify it.
 
 #### Add new parameters dynamically
 
-In some cases, loading new parameters from YAML files is not practical. Fox example, you may want to add parameters from values computed dynamically. In such cases you can use the internal domain specific language of the [legislations module](http://openfisca.readthedocs.io/en/latest/legislations.html)
+In some cases, loading new parameters from YAML files is not practical. For example, you may want to add parameters from values computed dynamically. In such cases you can use the internal domain specific language of the [parameters module](http://openfisca.readthedocs.io/en/latest/parameters.html)
 :
 
 ```python
-from openfisca_core.legislations import Node, Parameter, ValueAtInstant
+from openfisca_core.parameters import Node, Parameter, ValueAtInstant
 
-def modify_legislation(legislation):
-    reform_legislation_subtree = Node('new_tax', children = {
-        'first_tax': Parameter('first_tax', values_list = [
-            ValueAtInstant('first_tax', "2015-01-01", value=f(a, b, c)),
-            ValueAtInstant('first_tax', "2016-01-01", value=None),
-            ]),
-        'second_tax': Parameter('second_tax', values_list = [
-            ValueAtInstant('second_tax', "2015-01-01", value=g(a, b, c)),
-            ValueAtInstant('second_tax', "2016-01-01", value=None),
-            ]),
+def modify_parameters(parameters):
+    reform_parameters_subtree = Node('new_tax', validated_yaml = {
+        'decote_seuil_celib': {
+            'values': {
+                "2015-01-01": {'value': f(a, b, c)},
+                "2016-01-01": {'value': None}
+                }
+            },
+        'decote_seuil_couple': {
+            'values': {
+                "2015-01-01": {'value': g(a, b, c)},
+                "2016-01-01": {'value': None}
+                }
+            },
         })
-    legislation.add_child('new_tax', reform_legislation_subtree)
+
+    parameters.add_child('new_tax', reform_parameters_subtree)
 
 
 class some_reform(Reform):
     def apply(self):
-        self.modify_legislation(modifier_function = modify_legislation)
+        self.modify_parameters(modifier_function = modify_parameters)
 ```
 
 

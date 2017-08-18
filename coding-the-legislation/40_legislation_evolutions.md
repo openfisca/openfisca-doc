@@ -14,11 +14,8 @@ In that case, add the new parameter values and their start dates in the appropri
 #### Open the file where the parameter is described
 
 ```yaml
-type: node
 taxes:
-  type: node
   salary:
-    type: node
     rate:
       description: Rate for the flat tax on salaries
       values:
@@ -53,6 +50,7 @@ After this change `legislation(period).taxes.salary.rate` will return the corres
 - `legislation('2015-04').taxes.salary.rate` will return `0.2`
 - `legislation('2017-01').taxes.salary.rate` will return `0.3`
 - `legislation('2022-01').taxes.salary.rate` will return `0.3`
+
 
 [Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
 

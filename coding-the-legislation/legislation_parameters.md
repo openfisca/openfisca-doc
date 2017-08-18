@@ -15,12 +15,12 @@ The structure of the directory follows the tree structure of the parameters.
 Example:
 ```
 * parameters
-  * _.yaml
+  * index.yaml
   * tax_on_salary
-    * _.yaml
+    * index.yaml
     * tax_scale.yaml
     * public_sector
-      * _.yaml
+      * index.yaml
       * rate.yaml
   * universal_income
     * minimum_age.yaml
@@ -30,12 +30,11 @@ This file structure defines the nodes `tax_on_salaries`, `tax_on_salary.public_s
 
 ### Nodes
 
-A node is defined by a directory of the same name. Such a directory contains a file `_.yaml` that describe the node with the following attributes:
-* `type`: Must be set to `node`
+A node is defined by a directory of the same name. Such a directory contains an optional file `index.yaml` that describes the node with the following attributes:
 * `description`: (optional) Description of the node
 * `reference`: (optional) Reference to a legislative text, or a URL
 
-Sample `parameters/tax_on_salary/_.yaml`:
+Sample `parameters/tax_on_salary/index.yaml`:
 ```yaml 
 type: node
 description: Tax on salaries
@@ -65,7 +64,6 @@ public_sector:
 ### Parameters
 
 A legislative parameter is defined by a YAML file of the same name. Possible attributes are:
-* `type`: Must be `parameter`
 * `description` (optional) Description
 * `reference` (optional) Legislative reference
 * `unit` (optional) Can be:
@@ -76,7 +74,6 @@ A legislative parameter is defined by a YAML file of the same name. Possible att
 
 Sample file `parameters/universal_income/amount.yaml`
 ```yaml
-type: parameter
 description: Universal income
 unit: currency
 values:
@@ -109,7 +106,6 @@ Scales are constituted of brackets. Brackets are defined by amounts, bases, rate
 
 Sample `parameters/tax_on_salary/tax_scale.yaml`:
 ```yaml
-type: scale
 description: Scale for tax on salaries
 brackets:
 - rate:
