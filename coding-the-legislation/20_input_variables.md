@@ -42,7 +42,7 @@ If you do not explicitly define a default value, the following will be used:
 ### When to use enums?
 
 Let's say you want to write a `housing_tax` that depends on the occupancy status of the inhabitants. 
-> Example:. Only Tenants and Owners pay the housing tax.Free Lodgers & Homeless people are exempted. 
+> Example: Only Tenants and Owners pay the housing tax. Free Lodgers and Homeless people are exempted. 
 
 `housing_occupancy_status` will be an input variable, and have a limited set of possible values (e.g. Owner, Tenant ...). 
 We can express this through the enum type.  
@@ -125,4 +125,4 @@ A YAML test would look as follows:
     housing_tax: 0
 ```
 
-As described in the Yaml example above, favor the enum's string definition in your tests and Web API calls, as it is more readable than the enum index. 
+As described in the YAML example above, favor the enum's string definition in your tests and Web API calls, as it is more readable than the enum index. 
