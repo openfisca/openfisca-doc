@@ -24,7 +24,7 @@ Example:
       * rate.yaml
   * universal_income
     * minimum_age.yaml
-    * amount.yuml
+    * amount.yaml
 ```
 This file structure defines the nodes `tax_on_salaries`, `tax_on_salary.public_sector`, `universal_income` and the parameters (or scales) `tax_on_salaries.tax_scale`, `tax_on_salary.public_sector.rate`, `universal_income.minimum_age`, `universal_income.amount`.
 
@@ -105,7 +105,7 @@ The ordering of the dates has no effect. Optional legilative references can be a
 
 ### Scales
 
-Scales are constituted of brackets. Brackets are defined by amounts, bases, rates and thresholds.
+Scales are constituted of brackets. Brackets are defined by amounts, bases, rates, average rates and thresholds.
 
 Sample `parameters/tax_on_salary/tax_scale.yaml`:
 ```yaml
@@ -130,6 +130,12 @@ brackets:
 
 Example: [the french tax scale on salaries](https://legislation.openfisca.fr/parameters/impot_revenu.bareme)
 
+
+### Names and reserved words
+
+Names should begin with a lowercase letter and should contain only lowercase letters and the underscore (`_`).
+
+The following keywords are reserved and should not be used as names : `description`, `reference`, `index`, `values`, `brackets`.
 
 ## Usage in formulas
 
