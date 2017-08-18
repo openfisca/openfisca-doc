@@ -43,7 +43,6 @@ Let's explain in details the different part of the code:
 To make sure that the formula you have just written works the way you expect, you have to test it. Tests about legislation are written in a [YAML syntax](writing_yaml_tests.md). The `flat_tax_on_salary` formula can for instance be tested with the following test file:
 
 ```yaml
-
 - name: "Flax tax on salary - No income"
   period: 2017-01
   input_variables:
