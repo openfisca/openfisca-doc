@@ -43,6 +43,26 @@ If you do not explicitly define a default value, the following will be used:
 
 Let's say you want to calculate a housing tax that depends on the occupancy status of the inhabitants.  
 
+```py
+class housing_tax(Variable):
+    column = FloatCol
+    entity = Household
+    definition_period = YEAR  # This housing tax is defined for a year.
+    label = u"Tax paid by each household proportionnally to the size of its accommodation"
+
+    def formula(household, period, legislation):
+        # The housing tax is defined for a year, but depends on the `accomodation_size` and `housing_occupancy_status` on the first month of the year.
+        january = period.first_month
+        accommodation_size = household('accomodation_size', january)
+
+        occupancy_status = household('housing_occupancy_status', january)
+        tenant = (occupancy_status == HOUSING_OCCUPANCY_STATUS['Tenant'])
+        owner = (occupancy_status == HOUSING_OCCUPANCY_STATUS['Owner'])
+
+        # The tax is applied only if the household owns or rents its main residency
+        return (owner + tenant) * accommodation_size * 10
+```
+
 The input variable `housing_occupancy_status` will be an input variable, and have a limited set of possible values (e.g. Owner, Tenant ...). 
 We can express this through the enum type.  
 
@@ -87,6 +107,7 @@ A default value could also be added and taken into account when no input is prov
 
 To get `housing_occupancy_status` for a given `month`, call `household('housing_occupancy_status', month)`. 
 Its value is an index of `HOUSING_OCCUPANCY_STATUS` Enum.
+> In `housing_tax` formula described above, the status is calculated using `occupancy_status = household('housing_occupancy_status', january)`
 
 4. Test the formula by inputing the enum:  
 
