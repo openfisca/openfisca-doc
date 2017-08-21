@@ -51,7 +51,6 @@ After this change `legislation(period).taxes.salary.rate` will return the corres
 - `legislation('2017-01').taxes.salary.rate` will return `0.3`
 - `legislation('2022-01').taxes.salary.rate` will return `0.3`
 
-
 [Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
 
 ## Formula evolution
