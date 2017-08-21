@@ -1,75 +1,43 @@
-# Legislation parameters
+# Implementing legislation parameters
 
+[Legislation parameters](../parameters.md) can be found in the `parameters` directory of your country package.
 
-## Hierarchical structure
+The parameters are organized with in a [tree structure](https://en.wikipedia.org/wiki/Tree_structure).
 
-The parameters are organized with a [tree structure](https://en.wikipedia.org/wiki/Tree_structure). Each node of the tree can contain scales, parameters or other nodes ("children nodes").
+>**Example**: `tax_on_salary.public_sector.rate` can be found in `parameters/tax_on_salary/public_sector/rate.yml`.
 
-
-## Writing parameters
-
-The legislation parameters are stored in YAML files in the directory `parameters` ([example in OpenFisca-France](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/parameters)).
-
-The structure of the directory follows the tree structure of the parameters.
-
-Example:
-```
+Example of a `parameters` directory:
 * parameters
-  * index.yaml
   * tax_on_salary
-    * index.yaml
-    * tax_scale.yaml
+    * **tax_scale.yaml**
     * public_sector
-      * index.yaml
-      * rate.yaml
+      * **rate.yaml**
   * universal_income
-    * minimum_age.yaml
-    * amount.yaml
-```
-This file structure defines the nodes `tax_on_salaries`, `tax_on_salary.public_sector`, `universal_income` and the parameters (or scales) `tax_on_salaries.tax_scale`, `tax_on_salary.public_sector.rate`, `universal_income.minimum_age`, `universal_income.amount`.
+    * **minimum_age.yaml**
+    * **amount.yaml**
 
-### Nodes
 
-A node is defined by a directory of the same name. Such a directory contains an optional file `index.yaml` that describes the node with the following attributes:
-* `description`: (optional) Description of the node
-* `reference`: (optional) Reference to a legislative text, or a URL
+In this file structure:
+ - `tax_on_salaries`, `tax_on_salary.public_sector`, `universal_income` are **nodes**;
+ - `tax_on_salaries.tax_scale`, `tax_on_salary.public_sector.rate`,`universal_income.minimum_age`,`universal_income.amount` are **parameters** (or scales).
 
-Sample `parameters/tax_on_salary/index.yaml`:
-```yaml 
-type: node
-description: Tax on salaries
-reference: http://fiscaladministration.government/tax_on_salaries.html
-```
+## How to write a new parameter
+> if you wish to update a parameter, read our [legislation evolution page](./40_legislation_evolutions.md).
 
-Alternativelly, a node can be defined with a YAML file instead of a directory. In such a case, the name of the file defines the name of the node. Such a file can define children nodes (which can define grandchildren...).
+1. Find where the parameter fits
 
-Sample `parameters/tax_on_salary.yaml`:
-```yaml
-type: node
-description: Tax on salaries
-reference: http://fiscaladministration.government/tax_on_salaries.html
-tax_scale:
-  type: scale
-  bracket:
-    ...
-public_sector:
-  type: node:
-  description: Tax on salaries for public sector
-  rate:
-    type: parameter
-    values:
-     ...
-```
+A parameter is located inside a **node**, that has the same name as the directory it is contained in.
+>**Example**: `tax_on_salary.public_sector` is the node that contains the `tax_on_salary.public_sector.rate`parameter.
 
-### Parameters
+2. Create a new parameter YAML file
 
 A legislative parameter is defined by a YAML file of the same name. Possible attributes are:
-* `description` (optional) Description
-* `reference` (optional) Legislative reference
+* `description` (optional) Description;
+* `reference` (optional) Legislative reference;
 * `unit` (optional) Can be:
-  - `year` : The values are years
-  - `currency`: The values are in the unit of currency of the country
-  - `/1`: The values are percentages, with `1.0`=100%
+  - `year` : The values are years;
+  - `currency`: The values are in the unit of currency of the country;
+  - `/1`: The values are percentages, with `1.0`=100%;
 * `values`: Value of the parameter for several dates.
 
 Sample file `parameters/universal_income/amount.yaml`
@@ -90,17 +58,52 @@ values:
     expected: 1700
 ```
 
-On this example, the parameter `universal_income.amount` is:
-* undefined before 1993
-* equal to 1000 "local currency" from 1993 to 1994
-* removed from the legislation from 1995 to 2009
-* equal to 1500 "local currency" from 2010 to 2014
-* raised to 1600 "local currency" from 2015 to 2019
-* expected to be raised to 1700 "local currency" in 2020
+In this example, the parameter `universal_income.amount` is:
+* undefined before 1993;
+* equal to 1000 "local currency" from 1993 to 1994;
+* removed from the legislation from 1995 to 2009;
+* equal to 1500 "local currency" from 2010 to 2014;
+* raised to 1600 "local currency" from 2015 to 2019;
+* expected to be raised to 1700 "local currency" in 2020.
 
-The ordering of the dates has no effect. Optional legilative references can be added for each value.
+The ordering of the dates has no effect. Optional legislative references can be added for each value.
 
-### Scales
+3. Use the parameter in a variable
+
+See [this example of a variable using legislation parameters](./10_basic_example.md#example-with-legislation-parameters).
+
+### Naming conventions and reserved words
+
+Names should begin with a lowercase letter and should contain only lowercase letters and the underscore (`_`).
+
+The following keywords are reserved and should not be used as names : `description`, `reference`, `index`, `values`, `brackets`.
+
+### Advanced uses
+
+#### Use a YAML files to define nodes
+
+A node can be defined with a YAML file instead of a directory. In such a case, the name of the file defines the name of the node. Such a file can define children nodes (which can define grandchildren...).
+
+Sample `parameters/tax_on_salary.yaml`:
+
+```yaml
+type: node
+description: Tax on salaries
+reference: http://fiscaladministration.government/tax_on_salaries.html
+tax_scale:
+  type: scale
+  bracket:
+    ...
+public_sector:
+  type: node:
+  description: Tax on salaries for public sector
+  rate:
+    type: parameter
+    values:
+     ...
+```
+
+#### Create Scales
 
 Scales are constituted of brackets. Brackets are defined by amounts, bases, rates, average rates and thresholds.
 
@@ -126,19 +129,7 @@ brackets:
 
 Example: [the french tax scale on salaries](https://legislation.openfisca.fr/parameters/impot_revenu.bareme)
 
-
-### Names and reserved words
-
-Names should begin with a lowercase letter and should contain only lowercase letters and the underscore (`_`).
-
-The following keywords are reserved and should not be used as names : `description`, `reference`, `index`, `values`, `brackets`.
-
-## Usage in formulas
-
-See [this example](./10_basic_example.md#example-with-legislation-parameters).
-
-
-## Importing from IPP tables
+#### Import parameters from IPP tables
 
 > This section applies only to OpenFisca-France.
 
@@ -147,3 +138,19 @@ The [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.
 The OpenFisca team works on importing those data into the YAML parameter files of OpenFisca-France.
 
 See [this README](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/parameters/baremes_ipp) for more information.
+
+#### Use a index.yaml file
+
+Information about the node can be added in the directory of the same name, in an optional `index.yaml` file.
+>**Example**: Information pertaining to the `tax_on_salary.public_sector` node can be found in `parameters/tax_on_salary/public_sector/index.yaml`file.
+
+The index.yml file contains the following information :
+* `description`: (optional) Description of the node
+* `reference`: (optional) Reference to a legislative text, or a URL
+
+>**Example**: `parameters/tax_on_salary/index.yaml`:
+```yaml 
+type: node
+description: Tax on salaries
+reference: http://fiscaladministration.government/tax_on_salaries.html
+```
