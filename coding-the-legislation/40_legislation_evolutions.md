@@ -1,28 +1,17 @@
 # Legislation evolutions
 
-Openfisca handles legislation changes over time.
+Openfisca handles the fact that the legislation changes over time.
 
 ## Parameter evolution
 
-Many legislation parameters are regularly re-evaluated. 
-In that case, formulas usually don't need to be modified: adding the new parameter value in the parameter file is enough.
+Many legislation parameters are regularly re-evaluated while the variables using them stay the same.
+>Example: the `taxes` parameter can change without altering the code of the `flat_tax_on_salary` variable that uses that parameter.
 
-Let's go back to our [previous example](10_basic_example.md#example-with-legislation-parameters):
+In that case, add the new parameter values and their start dates in the appropriate parameter files.
 
-```py
-class flat_tax_on_salary(Variable):
-    column = FloatCol
-    entity = Person
-    label = u"Individualized and monthly paid tax on salaries"
-    definition_period = MONTH
+### How to update a parameter
 
-    def formula(person, period, legislation):
-        salary = person('salary', period)
-
-        return salary * legislation(period).taxes.salary.rate
-```
-
-and let's assume we have in one of our parameter files the value of the rate for the past couple of years:
+1. Open the file where the parameter is described
 
 ```xml
 <NODE code="taxes">
@@ -30,33 +19,28 @@ and let's assume we have in one of our parameter files the value of the rate for
       <CODE code="rate" description="Rate for the flat tax on salaries">
         <VALUE deb="2016-01-01" valeur="0.25" />
         <VALUE deb="2015-01-01" valeur="0.20" />
-        <VALUE deb="2014-01-01" valeur="0.22" />
       </CODE>
     </NODE>
 </NODE>
 ```
-
-In the formula, when `legislation(period).path.to.parameter` is called, the parameter corresponding to the **requested period** will be returned.
-
-For the following inputs:
-```yaml
-    salary:
-        2016-01: 2000
-        2015-12: 2000
-        2015-01: 2000
-        2014-12: 2000
-        2014-01: 2000
+2. Change the parameter with its new start date
+```xml
+<NODE code="taxes">
+    <NODE code='salary'>
+      <CODE code="rate" description="Rate for the flat tax on salaries">
+        <VALUE deb="2017-01-01" valeur="0.30" />
+        <VALUE deb="2016-01-01" valeur="0.25" />
+        <VALUE deb="2015-01-01" valeur="0.20" />
+      </CODE>
+    </NODE>
+</NODE>
 ```
+3. Conclusion
 
-we get the output:
-```yaml
-    flat_tax_on_salary:
-        2016-01: 500
-        2015-12: 400
-        2015-01: 400
-        2014-12: 440
-        2014-01: 440
-```
+After this change `legislation(period).path.to.taxes_parameter` will return the corresponding value:
+- `legislation(2015-01).path.to.taxes_parameter` will return `0.2`
+- `legislation(2017-01).path.to.taxes_parameter` will return `0.3`
+
 
 [Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
 
