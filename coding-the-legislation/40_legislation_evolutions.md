@@ -37,10 +37,10 @@ In that case, add the new parameter values and their start dates in the appropri
 </NODE>
 ```
 
-After this change `legislation(period).path.to.taxes_parameter` will return the corresponding value:
-- `legislation(2015-01).path.to.taxes_parameter` will return `0.2`
+After this change `legislation(period).path.to.taxes_parameter` will return the corresponding values:
+- `legislation(2015-04).path.to.taxes_parameter` will return `0.2`
 - `legislation(2017-01).path.to.taxes_parameter` will return `0.3`
-
+- `legislation(2022-01).path.to.taxes_parameter` will return `0.3`
 
 [Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
 
