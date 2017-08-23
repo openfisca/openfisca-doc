@@ -11,31 +11,31 @@ In that case, add the new parameter values and their start dates in the appropri
 
 ### How to update a parameter
 
-1. Open the file where the parameter is described
+#### Open the file where the parameter is described
 
 ```xml
+# in parameters/taxes.xml
 <NODE code="taxes">
-    <NODE code='salary'>
+    <NODE code="salary">
       <CODE code="rate" description="Rate for the flat tax on salaries">
-        <VALUE deb="2016-01-01" valeur="0.25" />
-        <VALUE deb="2015-01-01" valeur="0.20" />
+        <VALUE deb="2016-01-01" valeur="0.25" reference="https://www.legislation-source.com/2016"/>
+        <VALUE deb="2015-01-01" valeur="0.20" reference="https://www.legislation-source.com/2015"/>
       </CODE>
     </NODE>
 </NODE>
 ```
-2. Change the parameter with its new start date
+#### Add a new value to this parameter
 ```xml
 <NODE code="taxes">
-    <NODE code='salary'>
+    <NODE code="salary">
       <CODE code="rate" description="Rate for the flat tax on salaries">
-        <VALUE deb="2017-01-01" valeur="0.30" />
-        <VALUE deb="2016-01-01" valeur="0.25" />
-        <VALUE deb="2015-01-01" valeur="0.20" />
+        <VALUE deb="2017-01-01" valeur="0.30" reference="https://www.legislation-source.com/2017"/>
+        <VALUE deb="2016-01-01" valeur="0.25" reference="https://www.legislation-source.com/2016"/>
+        <VALUE deb="2015-01-01" valeur="0.20" reference="https://www.legislation-source.com/2015"/>
       </CODE>
     </NODE>
 </NODE>
 ```
-3. Conclusion
 
 After this change `legislation(period).path.to.taxes_parameter` will return the corresponding value:
 - `legislation(2015-01).path.to.taxes_parameter` will return `0.2`
