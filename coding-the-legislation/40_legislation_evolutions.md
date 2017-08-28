@@ -68,15 +68,15 @@ class flat_tax_on_salary(Variable):
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
 
-    def formula_2017(self, simulation, period):
+    def formula_2017(person, period, parameters):
         salary = person('salary', period)
         salary_above_1000 = min_(salary - 1000, 0)
-        return salary_above_1000 * legislation(period).taxes.salary.rate
+        return salary_above_1000 * parameters(period).taxes.salary.rate
 
-    def formula(self, simulation, period):
+    def formula(person, period, parameters):
         salary = person('salary', period)
 
-        return salary * legislation(period).taxes.salary.rate
+        return salary * parameters(period).taxes.salary.rate
 ```
 
 If the `flat_tax_on_salary` is calculated for a person **before** the 31st of Dec. 2016 (included), `formula` is used. If it is called **after** the 1st of Jan 2017 (included), `formula_2017` is used.
@@ -112,12 +112,12 @@ class flat_tax_on_salary(Variable):
     def formula_2017(person, period, parameters):
         salary = person('salary', period)
         salary_above_1000 = min_(salary - 1000, 0)
-        return salary_above_1000 * legislation(period).taxes.salary.rate
+        return salary_above_1000 * parameters(period).taxes.salary.rate
 
     def formula_2005_06(person, period, parameters):
         salary = person('salary', period)
 
-        return salary * legislation(period).taxes.salary.rate
+        return salary * parameters(period).taxes.salary.rate
 ```
 
 Only a few characters changed in comparison with the last example: the suffix `_2005_06` has been added to the second formula name.

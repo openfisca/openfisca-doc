@@ -71,10 +71,10 @@ class flat_tax_on_salary(Variable):
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
 
-    def formula(person, period, legislation):
+    def formula(person, period, parameters):
         salary = person('salary', period)
 
-        return salary * legislation(period).taxes.salary.rate
+        return salary * parameters(period).taxes.salary.rate
 ```
 
-`legislation` is here a function that be be called for a given period, and returns the whole legislation parameters (in a hierarchical tree structure). You can get the parameter you are interested in by navigating this tree with the `.` notation.
+`parameters` is here a function that be be called for a given period, and returns the whole legislation parameters (in a hierarchical tree structure). You can get the parameter you are interested in by navigating this tree with the `.` notation.
