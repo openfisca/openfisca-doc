@@ -100,12 +100,12 @@ class flat_tax_on_salary(Variable):
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
 
-    def formula_2017(self, simulation, period):
+    def formula_2017(person, period, parameters):
         salary = person('salary', period)
         salary_above_1000 = min_(salary - 1000, 0)
         return salary_above_1000 * legislation(period).taxes.salary.rate
 
-    def formula_2005_06(self, simulation, period):
+    def formula_2005_06(person, period, parameters):
         salary = person('salary', period)
 
         return salary * legislation(period).taxes.salary.rate
