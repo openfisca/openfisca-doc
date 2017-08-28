@@ -19,10 +19,10 @@ taxes:
     rate:
       description: Rate for the flat tax on salaries
       values:
-        '2016-01-01':
+        2016-01-01:
           value: 0.25
           reference: https://www.legislation-source.com/2016
-        '2015-01-01':
+        2015-01-01:
           value: 0.20
           reference: https://www.legislation-source.com/2015
 ```

@@ -45,28 +45,22 @@ Sample file `parameters/universal_income/amount.yaml`
 description: Universal income
 unit: currency
 values:
-  '1993-01-01':
+  1993-01-01:
     value: 1000
-  '1995-01-01':
-    value: null
-  '2010-01-01':
+  2010-01-01:
     value: 1500
-  '2015-01-01':
-    value: 1600
-    reference: Link to text of law
-  '2020-01-01':
+    reference: http://law.reference.org/universal_income
+  2020-01-01:
     expected: 1700
 ```
 
 In this example, the parameter `universal_income.amount` is:
 * undefined before 1993;
-* equal to 1000 "local currency" from 1993 to 1994;
-* removed from the legislation from 1995 to 2009;
-* equal to 1500 "local currency" from 2010 to 2014;
-* raised to 1600 "local currency" from 2015 to 2019;
+* equal to 1000 from 1993 to 2010;
+* equal to 1500 in 2010
 * expected to be raised to 1700 "local currency" in 2020.
 
-The ordering of the dates has no effect. Optional legislative references can be added for each value.
+The ordering of the dates has no effect. It is recommended to add legislative references for every value?
 
 3. Use the parameter in a variable
 
@@ -76,7 +70,9 @@ See [this example of a variable using legislation parameters](./10_basic_example
 
 Names should begin with a lowercase letter and should contain only lowercase letters and the underscore (`_`).
 
-The following keywords are reserved and should not be used as names : `description`, `reference`, `index`, `values`, `brackets`.
+The following keywords are reserved and should not be used as names : `description`, `reference`, `values`, `brackets`.
+
+YAML parameter files should not be name `index.yaml`.
 
 ### Advanced uses
 
@@ -87,18 +83,14 @@ A node can be defined with a YAML file instead of a directory. In such a case, t
 Sample `parameters/tax_on_salary.yaml`:
 
 ```yaml
-type: node
 description: Tax on salaries
 reference: http://fiscaladministration.government/tax_on_salaries.html
 tax_scale:
-  type: scale
   bracket:
     ...
 public_sector:
-  type: node:
   description: Tax on salaries for public sector
   rate:
-    type: parameter
     values:
      ...
 ```
@@ -112,18 +104,18 @@ Sample `parameters/tax_on_salary/tax_scale.yaml`:
 description: Scale for tax on salaries
 brackets:
 - rate:
-    '1950-01-01':
+    1950-01-01:
       value: 0.0
-    '2010-01-01':
+    2010-01-01:
       value: 0.02
   threshold:
-    '1950-01-01':
+    1950-01-01:
       value: 0.0
 - rate:
-    '1950-01-01':
+    1950-01-01:
       value: 0.2
   threshold:
-    '1950-01-01':
+    1950-01-01:
       value: 2000
 ```
 

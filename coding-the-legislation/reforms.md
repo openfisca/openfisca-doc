@@ -50,7 +50,8 @@ This function performs the modifications you want to apply to the legislation. I
 
 ```python
 def modify_parameters(parameters):
-    parameters.tax_on_salary.scale[1].threshold.update(period=reform_period, value=new_value)
+    reform_period = periods.period("2015")
+    parameters.tax_on_salary.scale[1].threshold.update(period = reform_period, value = 4000)
     return parameters
 
 
@@ -67,13 +68,13 @@ You can load new parameters from a directory containing YAML files and add them 
 
 ```python
 import os
-from openfisca_core.parameters import load_file
+from openfisca_core.parameters import load_parameter_file
 
 dir_path = os.path.dirname(__file__)
 
 def modify_parameters(parameters):
     file_path = os.path.join(dir_path, 'plf2016.yaml')
-    reform_parameters_subtree = load_file(name='plf2016', file_path=file_path)
+    reform_parameters_subtree = load_parameter_file(file_path, name='plf2016')
     parameters.add_child('plf2016', reform_parameters_subtree)
     return parameters
 
@@ -84,14 +85,14 @@ class some_reform(Reform):
 
 #### Add new parameters dynamically
 
-In some cases, loading new parameters from YAML files is not practical. For example, you may want to add parameters from values computed dynamically. In such cases you can use the internal domain specific language of the [parameters module](http://openfisca.readthedocs.io/en/latest/parameters.html)
+In some cases, loading new parameters from YAML files is not practical. For example, you may want to add parameters from values computed dynamically. In such cases you can use the python objects defined in the [parameters module](http://openfisca.readthedocs.io/en/latest/parameters.html)
 :
 
 ```python
-from openfisca_core.parameters import Node, Parameter, ValueAtInstant
+from openfisca_core.parameters import ParameterNode
 
 def modify_parameters(parameters):
-    reform_parameters_subtree = Node('new_tax', validated_yaml = {
+    reform_parameters_subtree = ParameterNode('new_tax', validated_yaml = {
         'decote_seuil_celib': {
             'values': {
                 "2015-01-01": {'value': f(a, b, c)},
