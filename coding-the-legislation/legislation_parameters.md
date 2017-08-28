@@ -130,19 +130,3 @@ The [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.
 The OpenFisca team works on importing those data into the YAML parameter files of OpenFisca-France.
 
 See [this README](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/parameters/baremes_ipp) for more information.
-
-#### Use a index.yaml file
-
-Information about the node can be added in the directory of the same name, in an optional `index.yaml` file.
->**Example**: Information pertaining to the `tax_on_salary.public_sector` node can be found in `parameters/tax_on_salary/public_sector/index.yaml`file.
-
-The index.yml file contains the following information :
-* `description`: (optional) Description of the node
-* `reference`: (optional) Reference to a legislative text, or a URL
-
->**Example**: `parameters/tax_on_salary/index.yaml`:
-```yaml 
-type: node
-description: Tax on salaries
-reference: http://fiscaladministration.government/tax_on_salaries.html
-```
