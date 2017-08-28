@@ -2,6 +2,9 @@
 
 A [reform](../reforms.md) is a set of modifications to be applied to a tax and benefit system, usually to study the quantitative impact of a possible change of the law.
 
+> See the reference documentation of the class [Reform](https://openfisca.readthedocs.io/en/latest/reforms.html).
+
+
 ## Writing a reform
 
 Let's for instance assume that we want to simulate the effect of a reform that changes the way the `income_tax` is calculated.
@@ -24,9 +27,9 @@ class income_tax_reform(Reform):
         self.update_variable(income_tax)
 ```
 
-A `Reform` **must** define an `apply` method that describes all the modifications to be applied to the original tax and benefit system to get the reformed one.
+A `Reform` **must** define an `apply()` method that describes all the modifications to be applied to the original tax and benefit system to get the reformed one.
 
-> Note that the reference tax and benefit system won't be modified. The `apply` function will be applied to a copy of the tax and benefit system.
+> Note that the reference tax and benefit system won't be modified. The `apply()` function will be applied to a copy of the tax and benefit system.
 
 All the [methods](https://openfisca.readthedocs.io/en/latest/tax-benefit-system.html) used to build a tax and benefit system can also be used to reform it.
 
@@ -35,28 +38,83 @@ A reform that modifies a formula (such as our `income_tax_reform` example) is ca
 
 ### Parametric reforms
 
-Unlike *structural reforms*, *parametric reforms* do not directly modify any formula: they apply changes to legislation parameters only.
+A reform that apply changes to legislation parameters is called a *parametric reforms*. 
 
-To modify the legislation parameters in the reform, you can call the method `self.modify_legislation_json`, which takes a function as a parameter.
+> Note that a reform can be both structural and parametric, modifying and/or adding variables *and* parameters.
 
-This function defines the modifications you want to apply to the legislation. It takes as a parameter a copy of the reference tax and benefit system `legislation_json`. You can then modify and return this `legislation_json`.
+To modify the legislation parameters in the reform, you can call the method `self.modify_parameters`, which takes a function as a parameter.
 
-For instance:
+This function performs the modifications you want to apply to the legislation. It takes as a parameter a copy of the reference tax and benefit system parameters: `parameters`. You can then modify and return `parameters`.
+
+#### Update the value of a parameter
 
 ```python
-def modify_legislation_json(reference_legislation_json_copy):
-    reference_legislation_json_copy['children']['minimum_wage']['values'][0]['value'] = 15
-    return reference_legislation_json_copy
+def modify_parameters(parameters):
+    reform_period = periods.period("2015")
+    parameters.tax_on_salary.scale[1].threshold.update(period = reform_period, value = 4000)
+    return parameters
 
 
 class increase_minimum_wage(Reform):
     name = u'Increase the minimum wage'
 
     def apply(self):
-        self.modify_legislation_json(modifier_function = modify_legislation_json)
+        self.modify_parameters(modifier_function = modify_parameters)
 ```
 
-> Note that you have to know about the data structure of the legislation JSON to modify it.
+#### Add new parameters
+
+You can load new parameters from a directory containing YAML files and add them to the reference parameters.
+
+```python
+import os
+from openfisca_core.parameters import load_parameter_file
+
+dir_path = os.path.dirname(__file__)
+
+def modify_parameters(parameters):
+    file_path = os.path.join(dir_path, 'plf2016.yaml')
+    reform_parameters_subtree = load_parameter_file(file_path, name='plf2016')
+    parameters.add_child('plf2016', reform_parameters_subtree)
+    return parameters
+
+class some_reform(Reform):
+    def apply(self):
+        self.modify_parameters(modifier_function = modify_parameters)
+```
+
+#### Add new parameters dynamically
+
+In some cases, loading new parameters from YAML files is not practical. For example, you may want to add parameters from values computed dynamically. In such cases you can use the python objects defined in the [parameters module](http://openfisca.readthedocs.io/en/latest/parameters.html)
+:
+
+```python
+from openfisca_core.parameters import ParameterNode
+
+def modify_parameters(parameters):
+    reform_parameters_subtree = ParameterNode('new_tax', validated_yaml = {
+        'decote_seuil_celib': {
+            'values': {
+                "2015-01-01": {'value': f(a, b, c)},
+                "2016-01-01": {'value': None}
+                }
+            },
+        'decote_seuil_couple': {
+            'values': {
+                "2015-01-01": {'value': g(a, b, c)},
+                "2016-01-01": {'value': None}
+                }
+            },
+        })
+
+    parameters.add_child('new_tax', reform_parameters_subtree)
+
+
+class some_reform(Reform):
+    def apply(self):
+        self.modify_parameters(modifier_function = modify_parameters)
+```
+
 
 ## Using a reform in Python
 

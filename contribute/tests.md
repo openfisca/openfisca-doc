@@ -17,15 +17,15 @@ OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here
     which is available at least in Core, France and Web-API repositories.
 - Run a specific test:
     ```
-    nosetests openfisca_france/tests/test_legislations.py
+    nosetests openfisca_france/tests/test_parameters.py
     ```
 - Hide log of failing test:
     ```
-    nosetests --nologcapture openfisca_france/tests/test_legislations.py
+    nosetests --nologcapture openfisca_france/tests/test_parameters.py
     ```
 - Display log of successful test:
     ```
-    nosetests --debug=openfisca_core openfisca_france/tests/test_legislations.py
+    nosetests --debug=openfisca_core openfisca_france/tests/test_parameters.py
     ```
 
 ## YAML tests

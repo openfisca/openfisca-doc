@@ -15,15 +15,15 @@ The architecture of an extension folder is the following:
 ```sh
 {extension_name}/ # The folder name is by convention the name of the extension.
     {extension_name}/__init__.py # Empty file.
-    {extension_name}/parameters.xml # Optional parameters file.
     {extension_name}/{some_formula}.py # File containing formulas
     {extension_name}/{other_formula}.py
-    {extension_name}/{some_formula}.yaml # Optional test files
-    {extension_name}/{other_formula}.yaml
+    {extension_name}/parameters # Optional parameters directory.
+    {extension_name}/parameters/{new_tax}
+    {extension_name}/parameters/{new_tax}/{rate}.yaml
+    {extension_name}/tests/{some_formula}.yaml # Optional test files
+    {extension_name}/tests/{other_formula}.yaml
 ```
 All python files located directly in `{extension_name}/` are imported in the tax and benefit system.
-
-Subdirectories are ignored, as well as any other XML file than `parameters.xml`.
 
 The syntax of the formulas within extension python files is the same than in the general country package formulas (e.g. `from openfisca_france.model.base import *`).
 

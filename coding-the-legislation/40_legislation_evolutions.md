@@ -13,34 +13,43 @@ In that case, add the new parameter values and their start dates in the appropri
 
 #### Open the file where the parameter is described
 
-```xml
-# in parameters/taxes.xml
-<NODE code="taxes">
-    <NODE code="salary">
-      <CODE code="rate" description="Rate for the flat tax on salaries">
-        <VALUE deb="2016-01-01" valeur="0.25" reference="https://www.legislation-source.com/2016"/>
-        <VALUE deb="2015-01-01" valeur="0.20" reference="https://www.legislation-source.com/2015"/>
-      </CODE>
-    </NODE>
-</NODE>
-```
-#### Add a new value to this parameter
-```xml
-<NODE code="taxes">
-    <NODE code="salary">
-      <CODE code="rate" description="Rate for the flat tax on salaries">
-        <VALUE deb="2017-01-01" valeur="0.30" reference="https://www.legislation-source.com/2017"/>
-        <VALUE deb="2016-01-01" valeur="0.25" reference="https://www.legislation-source.com/2016"/>
-        <VALUE deb="2015-01-01" valeur="0.20" reference="https://www.legislation-source.com/2015"/>
-      </CODE>
-    </NODE>
-</NODE>
+```yaml
+taxes:
+  salary:
+    rate:
+      description: Rate for the flat tax on salaries
+      values:
+        2016-01-01:
+          value: 0.25
+          reference: https://www.legislation-source.com/2016
+        2015-01-01:
+          value: 0.20
+          reference: https://www.legislation-source.com/2015
 ```
 
-After this change `legislation(period).path.to.taxes_parameter` will return the corresponding values:
-- `legislation(2015-04).path.to.taxes_parameter` will return `0.2`
-- `legislation(2017-01).path.to.taxes_parameter` will return `0.3`
-- `legislation(2022-01).path.to.taxes_parameter` will return `0.3`
+#### Add a new value to this parameter
+
+```yaml
+taxes:
+  salary:
+    rate:
+      description: Rate for the flat tax on salaries
+      values:
+        2017-01-01:
+          value: 0.25
+          reference: https://www.legislation-source.com/2017
+        2016-01-01:
+          value: 0.25
+          reference: https://www.legislation-source.com/2016
+        2015-01-01:
+          value: 0.20
+          reference: https://www.legislation-source.com/2015
+```
+
+After this change `legislation(period).taxes.salary.rate` will return the corresponding values:
+- `legislation('2015-04').taxes.salary.rate` will return `0.2`
+- `legislation('2017-01').taxes.salary.rate` will return `0.3`
+- `legislation('2022-01').taxes.salary.rate` will return `0.3`
 
 [Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
 
@@ -59,15 +68,15 @@ class flat_tax_on_salary(Variable):
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
 
-    def formula_2017(self, simulation, period):
+    def formula_2017(person, period, parameters):
         salary = person('salary', period)
         salary_above_1000 = min_(salary - 1000, 0)
-        return salary_above_1000 * legislation(period).taxes.salary.rate
+        return salary_above_1000 * parameters(period).taxes.salary.rate
 
-    def formula(self, simulation, period):
+    def formula(person, period, parameters):
         salary = person('salary', period)
 
-        return salary * legislation(period).taxes.salary.rate
+        return salary * parameters(period).taxes.salary.rate
 ```
 
 If the `flat_tax_on_salary` is calculated for a person **before** the 31st of Dec. 2016 (included), `formula` is used. If it is called **after** the 1st of Jan 2017 (included), `formula_2017` is used.
@@ -100,15 +109,15 @@ class flat_tax_on_salary(Variable):
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
 
-    def formula_2017(self, simulation, period):
+    def formula_2017(person, period, parameters):
         salary = person('salary', period)
         salary_above_1000 = min_(salary - 1000, 0)
-        return salary_above_1000 * legislation(period).taxes.salary.rate
+        return salary_above_1000 * parameters(period).taxes.salary.rate
 
-    def formula_2005_06(self, simulation, period):
+    def formula_2005_06(person, period, parameters):
         salary = person('salary', period)
 
-        return salary * legislation(period).taxes.salary.rate
+        return salary * parameters(period).taxes.salary.rate
 ```
 
 Only a few characters changed in comparison with the last example: the suffix `_2005_06` has been added to the second formula name.

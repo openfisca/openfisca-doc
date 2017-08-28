@@ -1,93 +1,132 @@
-# Legislation parameters
+# Implementing legislation parameters
 
-## Definition
+[Legislation parameters](../parameters.md) can be found in the `parameters` directory of your country package.
 
-The legislation parameters are stored in XML files in the directory `parameters` ([example in OpenFisca-France](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/parameters)).
+The parameters are organized with in a [tree structure](https://en.wikipedia.org/wiki/Tree_structure).
 
-Those files contain parameters which can be simple parameters (`<CODE>` tags) or scales (`<BAREME>` tags).
+>**Example**: `tax_on_salary.public_sector.rate` can be found in `parameters/tax_on_salary/public_sector/rate.yml`.
 
-Parameters are organised in a tree defined by `<NODE>` tags.
+Example of a `parameters` directory:
+* parameters
+  * tax_on_salary
+    * **tax_scale.yaml**
+    * public_sector
+      * **rate.yaml**
+  * universal_income
+    * **minimum_age.yaml**
+    * **amount.yaml**
 
-Here is a simple parameter example:
 
-```xml
-<CODE code="full_rate" description="Full rate of social security protections" format="percent">
-  <VALUE deb="2005-01-01" valeur=".042" />
-  <VALUE deb="1998-01-01" valeur=".038" />
-  <VALUE deb="1997-01-01" valeur=".01" />
-</CODE>
+In this file structure:
+ - `tax_on_salaries`, `tax_on_salary.public_sector`, `universal_income` are **nodes**;
+ - `tax_on_salaries.tax_scale`, `tax_on_salary.public_sector.rate`,`universal_income.minimum_age`,`universal_income.amount` are **parameters** (or scales).
+
+## How to write a new parameter
+> if you wish to update a parameter, read our [legislation evolution page](./40_legislation_evolutions.md).
+
+1. Find where the parameter fits
+
+A parameter is located inside a **node**, that has the same name as the directory it is contained in.
+>**Example**: `tax_on_salary.public_sector` is the node that contains the `tax_on_salary.public_sector.rate`parameter.
+
+2. Create a new parameter YAML file
+
+A legislative parameter is defined by a YAML file of the same name. Possible attributes are:
+* `description` (optional) Description;
+* `reference` (optional) Legislative reference;
+* `unit` (optional) Can be:
+  - `year` : The values are years;
+  - `currency`: The values are in the unit of currency of the country;
+  - `/1`: The values are percentages, with `1.0`=100%;
+* `values`: Value of the parameter for several dates.
+
+Sample file `parameters/universal_income/amount.yaml`
+```yaml
+description: Universal income
+unit: currency
+values:
+  1993-01-01:
+    value: 1000
+  2010-01-01:
+    value: 1500
+    reference: http://law.reference.org/universal_income
+  2020-01-01:
+    expected: 1700
 ```
 
-## Parameters and time
+In this example, the parameter `universal_income.amount` is:
+* undefined before 1993;
+* equal to 1000 from 1993 to 2010;
+* equal to 1500 in 2010
+* expected to be raised to 1700 "local currency" in 2020.
 
-Coding a parameter means defining a list of values, and for each value the date at which it starts to hold.
+The ordering of the dates has no effect. It is recommended to add legislative references for every value?
 
-Example: a minimum wage
+3. Use the parameter in a variable
 
-```xml
-  <NODE code="labour" description="Labour parameters">
-    <CODE code="minimum_wage" description="Minimum wage" format="integer" type="monetary">
-      <VALUE deb="2014-01-01" valeur="1084" />
-      <VALUE deb="2013-01-01" valeur="1016" />
-      <VALUE deb="2012-01-01" valeur="960" />
-      <VALUE deb="2010-01-01" valeur="878" />
-    </CODE>
+See [this example of a variable using legislation parameters](./10_basic_example.md#example-with-legislation-parameters).
+
+### Naming conventions and reserved words
+
+Names should begin with a lowercase letter and should contain only lowercase letters and the underscore (`_`).
+
+The following keywords are reserved and should not be used as names : `description`, `reference`, `values`, `brackets`.
+
+YAML parameter files should not be name `index.yaml`.
+
+### Advanced uses
+
+#### Use a YAML files to define nodes
+
+A node can be defined with a YAML file instead of a directory. In such a case, the name of the file defines the name of the node. Such a file can define children nodes (which can define grandchildren...).
+
+Sample `parameters/tax_on_salary.yaml`:
+
+```yaml
+description: Tax on salaries
+reference: http://fiscaladministration.government/tax_on_salaries.html
+tax_scale:
+  bracket:
     ...
-  </NODE>
+public_sector:
+  description: Tax on salaries for public sector
+  rate:
+    values:
+     ...
 ```
 
-Example: the threshold of the [`decote`](https://legislation.openfisca.fr/parameters/impot_revenu.decote.seuil)
+#### Create Scales
 
-### The `<PLACEHOLDER>` tag
+Scales are constituted of brackets. Brackets are defined by amounts, bases, rates, average rates and thresholds.
 
-When a value is expected to change at a given date but the value is not published yet, a tag `<PLACEHOLDER>` is used.
-
-Example: if the minimum wage is expected to change in 2018, the previous example would become
-
-```xml
-  <NODE code="labour" description="Labour parameters">
-    <CODE code="minimum_wage" description="Minimum wage" format="integer" type="monetary">
-      <PLACEHOLDER deb="2018-01-01" />
-      <VALUE deb="2014-01-01" valeur="1084" />
-      <VALUE deb="2013-01-01" valeur="1016" />
-      <VALUE deb="2012-01-01" valeur="960" />
-      <VALUE deb="2010-01-01" valeur="878" />
-    </CODE>
-    ...
-  </NODE>
+Sample `parameters/tax_on_salary/tax_scale.yaml`:
+```yaml
+description: Scale for tax on salaries
+brackets:
+- rate:
+    1950-01-01:
+      value: 0.0
+    2010-01-01:
+      value: 0.02
+  threshold:
+    1950-01-01:
+      value: 0.0
+- rate:
+    1950-01-01:
+      value: 0.2
+  threshold:
+    1950-01-01:
+      value: 2000
 ```
 
-The script [`find_placeholders.py`](https://github.com/openfisca/openfisca-core/tree/master/openfisca_core/scripts/find_placeholders.py) finds all placeholders in a legislation. It can be used periodically to alert on parameters about to change.
+Example: [the french tax scale on salaries](https://legislation.openfisca.fr/parameters/impot_revenu.bareme)
 
-### The `<END>` tag
-
-When a parameter is removed from the legislation, a tag `<END>` is used.
-
-Example: if the minimum wage is removed from legislation in 2017, the previous example would become
-
-```xml
-  <NODE code="labour" description="Labour parameters">
-    <CODE code="minimum_wage" description="Minimum wage" format="integer" type="monetary">
-      <END deb="2017-01-01" />
-      <VALUE deb="2014-01-01" valeur="1084" />
-      <VALUE deb="2013-01-01" valeur="1016" />
-      <VALUE deb="2012-01-01" valeur="960" />
-      <VALUE deb="2010-01-01" valeur="878" />
-    </CODE>
-    ...
-  </NODE>
-```
-
-## Usage in formulas
-
-See [this example](./10_basic_example.md#example-with-legislation-parameters).
-
-## Importing from IPP tables
+#### Import parameters from IPP tables
 
 > This section applies only to OpenFisca-France.
 
 The [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.eu/) is a French centre in economics which produces tax and benefit tables in the `XLSX` format, with parameters history.
 
-The OpenFisca team works on importing those data into the XML parameter files of OpenFisca-France.
+The OpenFisca team works on importing those data into the YAML parameter files of OpenFisca-France.
 
 See [this README](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/parameters/baremes_ipp) for more information.
