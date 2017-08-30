@@ -3,7 +3,7 @@
     "title": "OpenFisca",
     "links": {
         "sidebar": {
-            "OpenFisca website": "https://www.openfisca.org/"
+            "OpenFisca website": "http://www.openfisca.org/doc"
         }
     },
     "plugins": [

@@ -10,7 +10,7 @@ git config --global user.name "OpenFisca-Bot"
 git config --global user.email "contact@openfisca.fr"
 git commit -m "Push from openfisca doc"
 git push https://github.com/openfisca/openfisca.org.git gh-pages
-if git status -uno ; then
+if git status --untracked-files=no ; then
 	echo "There was an issue pushing to openfisca.org"
 fi
 

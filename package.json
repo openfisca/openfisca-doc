@@ -9,7 +9,6 @@
     "prebuild": "npm run clean",
     "build": "gitbook build",
     "clean": "del _book",
-    "deploy": "node deploy.js" ,
     "postinstall": "gitbook install",
     "start": "gitbook serve --port 2050",
     "test": "! (npm run build | grep 'warn:')"
