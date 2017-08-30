@@ -3,7 +3,7 @@
     "title": "OpenFisca",
     "links": {
         "sidebar": {
-            "OpenFisca website": "https://www.openfisca.fr/"
+            "OpenFisca website": "http://www.openfisca.org/doc"
         }
     },
     "plugins": [
@@ -16,7 +16,7 @@
             "url": "https://github.com/openfisca/openfisca-doc"
         },
         "edit-link": {
-            "base": "http://prose.io/#openfisca/openfisca-doc/edit/master",
+            "base": "https://github.com/openfisca/openfisca-doc",
             "label": "Edit This Page"
         }
     }

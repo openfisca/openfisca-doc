@@ -9,7 +9,6 @@
     "prebuild": "npm run clean",
     "build": "gitbook build",
     "clean": "del _book",
-    "deploy": "rsync -avz --delete _book/ openfisca@doc.openfisca.fr:doc.openfisca.fr",
     "postinstall": "gitbook install",
     "start": "gitbook serve --port 2050",
     "test": "! (npm run build | grep 'warn:')"
@@ -21,6 +20,7 @@
   "private": true,
   "devDependencies": {
     "del-cli": "^0.2.1",
-    "gitbook-cli": "^2.3.0"
+    "gitbook-cli": "^2.3.0",
+    "gh-pages": "^1.0.0"
   }
 }
