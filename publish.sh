@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -ex
+
 git clone --branch gh-pages https://github.com/openfisca/openfisca.org.git
 mv _book doc
 rm --recursive --force openfisca.org/doc
