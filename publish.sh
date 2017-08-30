@@ -12,5 +12,9 @@ git commit -m "Push from openfisca doc"
 git push https://github.com/openfisca/openfisca.org.git doc-branch-publish
 if git status -uno ; then
 	echo "There was an issue pushing to openfisca.org"
-    exit 1
 fi
+
+git filter-branch --tree-filter 'rm -rf $(git ls-files | egrep -v doc)' -- --all
+git add .
+git commit -m "Push from openfisca doc"
+git push https://github.com/openfisca/openfisca.org.git doc-branch-publish:doc-html -f
