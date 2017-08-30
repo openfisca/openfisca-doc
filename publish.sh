@@ -1,20 +1,24 @@
 #!/bin/sh
 
-git clone -b gh-pages https://github.com/openfisca/openfisca.org.git
+git clone --branch gh-pages https://github.com/openfisca/openfisca.org.git
 mv _book doc
-rm -rf openfisca.org/doc
+rm --recursive --force openfisca.org/doc
 mv doc openfisca.org/doc
 cd openfisca.org
 git add .
 git config --global user.name "OpenFisca-Bot"
 git config --global user.email "contact@openfisca.fr"
-git commit -m "Push from openfisca doc"
+git commit --message="Push from openfisca doc"
 git push https://github.com/openfisca/openfisca.org.git gh-pages
 if git status --untracked-files=no ; then
 	echo "There was an issue pushing to openfisca.org"
 fi
-
-git filter-branch --tree-filter 'rm -rf $(git ls-files | egrep -v doc)' -- --all
+# the following line removes all files in the branch exept the doc file.
+git filter-branch --tree-filter 'rm --recursive --force $(git ls-files | grep --invert-match doc)' -- --all
+# the following lines keep the context while changing branch.
+git checkout --detach
+git reset --soft doc-html
+git checkout doc-html
 git add .
-git commit -m "Push from openfisca doc"
-git push https://github.com/openfisca/openfisca.org.git gh-pages:doc-html -f
+git commit --message="Push from openfisca doc"
+git push https://github.com/openfisca/openfisca.org.git gh-pages:doc-html
