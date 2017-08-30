@@ -1,5 +1,5 @@
 deployment:
   production:
-    branch: html-branch-master
+    branch: master
     commands:
       - ./publish.sh
