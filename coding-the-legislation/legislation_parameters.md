@@ -130,3 +130,128 @@ The [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.
 The OpenFisca team works on importing those data into the YAML parameter files of OpenFisca-France.
 
 See [this README](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/parameters/baremes_ipp) for more information.
+
+## Computing a parameter that depends on a variable (fancy indexing)
+
+Sometimes, the value of a parameter depends on a variable (e.g. a housing benefit that depends on the zone the house is built on).
+
+To be more specific, let's assume that:
+  - Households who rent their accomodation can get a `housing_benefit`
+  - The amount of this benefit depends on which `zone` the household lives in. The `zone` can take only three values: `zone_1`, `zone_2` or `zone_3`.
+  - The amount also depends on the composition of the household.
+
+The parameters of this benefit can be defined in a `housing_benefit.yaml` file:
+
+```YAML
+zone_1:
+  single:
+    description: "Amount of housing benefit for a single person, in zone 1"
+    values:
+      2015-01-01:
+        value: 150
+  couple:
+    description: "Amount of housing benefit for a couple, in zone 1"
+    values:
+      2015-01-01:
+        value: 250
+  single:
+    description: "Amount of housing benefit per child, in zone 1"
+    values:
+      2015-01-01:
+        value: 80
+zone_2:
+  single:
+    description: "Amount of housing benefit for a single person, in zone 2"
+    values:
+      2015-01-01:
+        value: 120
+  couple:
+    description: "Amount of housing benefit for a couple, in zone 2"
+    values:
+      2015-01-01:
+        value: 220
+  per_child:
+    description: "Amount of housing benefit per child, in zone 2"
+    values:
+      2015-01-01:
+        value: 60
+zone_3:
+  single:
+    description: "Amount of housing benefit for a single person, in zone 3"
+    values:
+      2015-01-01:
+        value: 100
+  couple:
+    description: "Amount of housing benefit for a couple, in zone 3"
+    values:
+      2015-01-01:
+        value: 180
+  per_child:
+    description: "Amount of housing benefit per child, in zone 3"
+    values:
+      2015-01-01:
+        value: 50
+```
+
+Then the formula calculting `housing_benefit` can be implemented with:
+
+```py
+def formula(household, period, parameters):
+  is_couple = household('couple', period)
+  nb_children = household('nb_children', period)
+  zone = household('zone', period)
+
+  P = parameters(period).housing_benefit[zone]
+
+  return where(is_couple, P.couple, P.single) + nb_children * P.per_children
+```
+
+`parameters(period).housing_benefit[zone]` return the parameters for the zone corresponding to the household.
+
+If there are many households in your simulation, this parameter will be **vectorial** : it may have a different value for each household of your entity.
+
+To be able to use this notation, all the children node of the parameter node `housing_benefit` must be **homogenous**. In the previous example, `housing_benefit.zone_1`, `housing_benefit.zone_2`, `housing_benefit.zone_3` are homogenous, as they have the same subnodes.
+
+However, let's imagine that `housing_benefit.yaml` had another subnode named `coeff_furnished`, which described a coefficient to apply to the benefit is the accomodation is rented furnished:
+
+`housing_benefit.yaml` content:
+
+```
+coeff_furnished:
+  description: "Coefficient to apply if the accomodation is rented furnished"
+    values:
+      2015-01-01:
+        value: 0.75
+zone_1:
+  single:
+    description: "Amount of housing benefit for a single person, in zone 1"
+    values:
+      2015-01-01:
+        value: 150
+(...)
+```
+
+In this case, `parameters(period).housing_benefit[zone]` would raise en error, whatever `zone` contains, as **the homogeneity condition is not respected**: `housing_benefit.zone_1` is a node, while `housing_benefit.coeff_furnished` is a parameter.
+
+To solve this issue, the good practice would be to create an intermediate node `amount_by_node`:
+
+`housing_benefit.yaml` content:
+
+```
+coeff_furnished:
+  description: "Coefficient to apply if the accomodation is rented furnished"
+    values:
+      2015-01-01:
+        value: 0.75
+
+amount_by_zone:
+  zone_1:
+    single:
+      description: "Amount of housing benefit for a single person, in zone 1"
+      values:
+        2015-01-01:
+          value: 150
+  (...)
+```
+
+And then to get `parameters(period).housing_benefit.amount_by_zone[zone]`  

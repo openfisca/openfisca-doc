@@ -90,7 +90,7 @@ For instance, let's consider that a person will be granted `200` if either:
     - They are more than 25 *and* make less than `1000` per month
     - They are in a situation of handicap
 
- ```py
+```py
 def formula(person, period):
     condition_age = person('age') >= 25
     condition_salary = person('salary', period) < 1000
@@ -100,3 +100,7 @@ def formula(person, period):
 ```
 
 It is considered a good practice to always use helpers `where` and `select` when they are relevant, and not to emulate their behaviour manually with logical operations.
+
+## Using a dynamic parameter calculation
+
+If the result of your formula depends on a variable that can take only a finite amount of values, check out the [Computing a parameter that depends on a variable](legislation_parameters.md#computing-a-parameter-that-depends-on-a-variable) section.
