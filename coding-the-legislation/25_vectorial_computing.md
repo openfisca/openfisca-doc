@@ -37,3 +37,4 @@ Here is a summary of the structures and operations you cannot use, and their lic
 | `min`                 | `min_(x,y)`                                                             |
 | `max`                 | `max_(x,y)`                                                             |
 | `round`               | `round_(x,y)`                                                           |
+| `+` _(on strings)_    | `concat(x,y)`                                                           |
