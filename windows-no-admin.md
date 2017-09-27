@@ -37,7 +37,7 @@ To check that everything worked correctly, type in Git Bash:
 pip --version
 ```
 
-A version number should be printed, and no error message should appear. Congrats, you just set up a Python working environment !
+A version number should be printed, and no error message should appear. Congrats, you just set up a Python working environment!
 
 ## 3. Install OpenFisca
 
@@ -52,7 +52,7 @@ To check that everything worked correctly, type in Git Bash:
 python -c "from openfisca_france import CountryTaxBenefitSystem; CountryTaxBenefitSystem()"
 ```
 
-No error message should appear. Congrats, you just installed OpenFisca-France !
+No error message should appear. Congrats, you just installed OpenFisca-France!
 
 ## 4. Install atom
 
