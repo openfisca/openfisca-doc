@@ -7,11 +7,11 @@
   },
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "gitbook build",
+    "build": "gitbook build && gitbook pdf . ./_book/openfisca-doc.pdf",
     "clean": "del _book",
     "postinstall": "gitbook install",
     "start": "gitbook serve --port 2050",
-    "test": "! (npm run build | grep 'warn:')"
+    "test": "! (npm run build | grep 'warn:' | grep -v openfisca-doc.pdf)"
   },
   "engines" : {
     "node" : ">=0.12 <7"
@@ -21,6 +21,7 @@
   "devDependencies": {
     "del-cli": "^0.2.1",
     "gitbook-cli": "^2.3.0",
-    "gh-pages": "^1.0.0"
+    "gh-pages": "^1.0.0",
+    "svgexport": "0.3.2"
   }
 }
