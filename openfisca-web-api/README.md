@@ -32,8 +32,7 @@ Calculs effectués par <a href="https://openfisca.fr">OpenFisca</a>, le moteur <
 ```
 ## Hosting an API instance
 
-To allow app developers to access your country package information and computation, you can host your own API.
-[deploy your own instance](https://github.com/openfisca/openfisca-core#serving-the-api).
+To allow app developers to access your country package information and computation, you [deploy your own instance](https://github.com/openfisca/openfisca-core#serving-the-api).
 
 ### Track your API
 

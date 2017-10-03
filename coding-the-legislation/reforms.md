@@ -151,11 +151,6 @@ reformed_tax_benefit_system = income_tax_reform(
 
 > The [Getting_Started Notebook](https://github.com/openfisca/openfisca-france/blob/master/notebooks/getting-started.ipynb) contains an example of reform use.
 
-## Using a reform from the Web API
-
-Please read the dedicated documentation:
-[OpenFisca-Web-API reforms](../openfisca-web-api/reforms.md)
-
 ## Real examples
 
 Examples can be found on the [OpenFisca-France reforms directory](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/reforms).
