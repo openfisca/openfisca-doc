@@ -29,7 +29,11 @@ Each endpoint encodes its information in a [JSON object](input-output-data.md).
 ## Hosting an API instance
 
 To allow app developers to access your country package information and computation, you can host your own API.
-[deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
+[deploy your own instance](https://github.com/openfisca/openfisca-core#serving-the-api).
+
+### Track your API
+
+If you want to track how your API is being used, you can install the [OpenFisca Tracker](https://github.com/openfisca/tracker)
 
 ## Licence and copyright information
 
