@@ -1,13 +1,7 @@
 # OpenFisca Web API
 
-The OpenFisca project provides a web API package in order to do computations over HTTP, sending and receiving JSON data.
-
-
-## Use cases
-
-If you cannot or don't want to interact directly with the Python API, for example if you're developing a web application.
-
-### Examples
+The OpenFisca project provides a web API package compatible with all country packages.
+With the web API, interested App developers can access information and computations by sending and receiving JSON data.
 
 Those projects use the OpenFisca Web API:
 
@@ -16,31 +10,28 @@ Those projects use the OpenFisca Web API:
 - [PA-comp](https://pa-comp.firebaseapp.com), a divorce fiscal impact simulator.
 
 
-## Architecture
+## Endpoints
 
-The web API supports different use-cases, from getting information on the available tax and benefit system to full-fledged simulation. Different [endpoints](endpoints.md) support each of them. Each endpoint encodes its information in a [JSON object](input-output-data.md).
+OpenFisca endpoints are the entry points to the web API :
+the consultation endpoints use the [GET](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) method, whereas the computation endpoint uses the [POST](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) method. 
 
+To request information from OpenFisca, several endpoints are available.
+ - GET `/parameters` ([Documentation](http://openfisca.readthedocs.io/en/latest/parameters.html))
+ - GET `/parameter/<parameter_id>`([Documentation](http://openfisca.readthedocs.io/en/latest/parameter.html))
+ - GET `/variables`([Documentation](http://openfisca.readthedocs.io/en/latest/variables.html))
+ - GET `/variable/<variable_id>`([Documentation](http://openfisca.readthedocs.io/en/latest/variable.html))
+ - POST `/calculate`([Documentation](http://openfisca.readthedocs.io/en/latest/variable.html))
 
-## Public or hosted
+Each endpoint encodes its information in a [JSON object](input-output-data.md).
 
-The OpenFisca API is available through two different means, each coming with its set of constraints.
+> If you are interested in testing OpenFisca-France Web API, we host a [public instance](https://fr.openfisca.org/api/v18) with a dedicated [Open API documentation](legislation.openfisca.fr/swagger).
 
-### Public API instance
+## Hosting an API instance
 
-The OpenFisca project provides a free and unrestricted instance of the API, complete with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr).
+To allow app developers to access your country package information and computation, you can host your own API.
+[deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
 
-This instance is great for getting a feel of the API, testing, or even deploying small applications, but please note that it is continuously updated. Every update to the endpoints, or to the tax and benefit system, will be automatically deployed to this host without prior notice, including breaking changes.
-If you use this host, it is your responsibility to stay up-to-date with all legislation changes that could impact your application.
-
-#### Conditions
-
-The public instance comes with no warranty at all. We provide it on a _best-effort_ basis, with no [SLA](https://en.wikipedia.org/wiki/Service-level_agreement) and no performance engagement.
-
-### Host your own instance
-
-Once you've developed your application and want to decrease the rhythm of development, the safer and more scalable way to use the API is to [deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
-
-#### Conditions
+## Licence and copyright information
 
 Please remember that OpenFisca is free software, licensed under an [Affero GPL license](https://choosealicense.com/licenses/agpl-3.0/). That means you have to provide access to the source code of the API you make available, including any changes you might have made on the original code. You also have to provide a link to the OpenFisca source code, and state its license, in a place that is easily discoverable by users of your software.
 
