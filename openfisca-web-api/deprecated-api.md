@@ -1,16 +1,13 @@
 # Deprecated API
 
-```
-This is the documentation for the old OpenFisca web API.  
-Please use our [last API](http://openfisca.org/doc/openfisca-web-api) instead.
-```
+> This is the documentation for the old OpenFisca web API.  
+> Note that it isn't updated and that its stability isn't guaranteed anymore.  
+> Please use our [last API](http://openfisca.org/doc/openfisca-web-api) instead.  
 
 ## Public instance for France
 
-The OpenFisca project provides a free and unrestricted instance of the API, complete with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr).
-
-This instance is great for getting a feel of the API, testing, or even deploying small applications, but please note that it is continuously updated. Every update to the endpoints, or to the tax and benefit system, will be automatically deployed to this host without prior notice, including breaking changes.
-If you use this host, it is your responsibility to stay up-to-date with all legislation changes that could impact your application.
+The OpenFisca project still provides an instance of the deprecated API, complete with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr). But we recommand you an instance of the last API serving the French tax and benefit system.  
+For more information, see this documentation on the [public France API](http://openfisca.org/doc/openfisca-web-api#public-france-api).
 
 ### Conditions
 
@@ -18,12 +15,13 @@ The public instance comes with no warranty at all. We provide it on a _best-effo
 
 ## Hosting an API instance
 
-To allow app developers to access your country package information and computation, you can host your own API.
-[deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
+Once you've developed your application and want to decrease the rhythm of development, the safer and more scalable way to use the API is to [deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
 
 ## Endpoints
 
-The examples on this page use [`curl`](http://curl.haxx.se/) to send the HTTP request.
+The endpoints on this page are the entry points to the deprecated API.  
+
+The following examples use [`curl`](http://curl.haxx.se/) to send the HTTP request.
 
 You may use [`jq`](https://stedolan.github.io/jq/) to format the JSON response, like so:
 ```sh
@@ -293,8 +291,6 @@ This data is useful when building a dynamic UI with forms allowing the user to m
 
 ### `/parameters`
 
-**This route is now available in a simpler and more developper-friendly version. Please check our [official API](README.md) and give us feedback!**
-
 Gets the legislation parameters of the tax and benefit system.
 
 * URL path: `/api/1/parameters`
@@ -417,8 +413,6 @@ curl https://api.openfisca.fr/api/1/simulate -X POST --data @./test_case.json --
 > See also the `calculate` endpoint.
 
 ### `/variables`
-
-**This route is now available in a simpler and more developper-friendly version. Please check our [official API](README.md) and give us feedback!**
 
 Gets the variables defined in the tax and benefit system.
 
