@@ -1,3 +1,8 @@
+## Hosting an API instance
+
+To allow app developers to access your country package information and computation, you can host your own API.
+[deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
+
 # Endpoints
 
 The examples on this page use [`curl`](http://curl.haxx.se/) to send the HTTP request.
