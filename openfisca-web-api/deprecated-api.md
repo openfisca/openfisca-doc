@@ -1,9 +1,27 @@
+# Deprecated API
+
+```
+This is the documentation for the old OpenFisca web API.  
+Please use our [last API](http://openfisca.org/doc/openfisca-web-api) instead.
+```
+
+## Public instance for France
+
+The OpenFisca project provides a free and unrestricted instance of the API, complete with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr).
+
+This instance is great for getting a feel of the API, testing, or even deploying small applications, but please note that it is continuously updated. Every update to the endpoints, or to the tax and benefit system, will be automatically deployed to this host without prior notice, including breaking changes.
+If you use this host, it is your responsibility to stay up-to-date with all legislation changes that could impact your application.
+
+### Conditions
+
+The public instance comes with no warranty at all. We provide it on a _best-effort_ basis, with no [SLA](https://en.wikipedia.org/wiki/Service-level_agreement) and no performance engagement.
+
 ## Hosting an API instance
 
 To allow app developers to access your country package information and computation, you can host your own API.
 [deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
 
-# Endpoints
+## Endpoints
 
 The examples on this page use [`curl`](http://curl.haxx.se/) to send the HTTP request.
 
@@ -14,7 +32,7 @@ curl https://api.openfisca.fr/foo | jq .
 
 > `jq` won't be mentioned on each example, feel free to add it like above.
 
-## `/`
+### `/`
 
 Displays a friendly welcome message.
 
@@ -31,7 +49,7 @@ curl https://api.openfisca.fr/
 {"apiVersion": 1, "message": "Welcome, this is OpenFisca Web API.", "method": "/"}
 ```
 
-## `/formula`
+### `/formula`
 
 Computes a variable in a RESTful way.
 
@@ -62,7 +80,7 @@ curl "https://api.openfisca.fr/api/2/formula/2017-02/cout_du_travail?salaire_de_
 }
 ```
 
-## `/calculate`
+### `/calculate`
 
 > This endpoint is quite complex and you may want to use the [`formula`](#formula) endpoint.
 
@@ -77,7 +95,7 @@ Computes a test case.
     * with `test_case`: `value` will be a list of test cases identical to the input test cases given in `scenarios` key, with computed variables dispatched in the right entity.
     * with `variables`: `value` will be a list of objects like `{<variableName>: <variableValue>}`
   * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
-  * `scenarios` (list of objects): a list of [scenarios](./input-output-data.md#scenarios)
+  * `scenarios` (list of objects): a list of [scenarios](#scenarios)
   * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are validated.
   * `variables` (list of strings): the name of the variables to compute
 * JSON response structure:
@@ -179,7 +197,7 @@ What is important is the `value` key containing the value of `revdisp` for the p
 
 > See also the `simulate` endpoint.
 
-## `/entities`
+### `/entities`
 
 Gets the entities definition data. [Entities](../person,_entities,_role.md) are a key concept of OpenFisca.
 
@@ -273,7 +291,7 @@ curl https://api.openfisca.fr/api/2/entities
 
 This data is useful when building a dynamic UI with forms allowing the user to make a test case, for example.
 
-## `/parameters`
+### `/parameters`
 
 **This route is now available in a simpler and more developper-friendly version. Please check our [official API](README.md) and give us feedback!**
 
@@ -297,7 +315,7 @@ Examples:
 
 > JSON responses are too large to be copied here.
 
-## `/reforms`
+### `/reforms`
 
 Get the list of reforms known by the Web API, with their keys and labels.
 
@@ -330,7 +348,9 @@ curl https://api.openfisca.fr/api/1/reforms
 }
 ```
 
-## `/simulate`
+To declare an existing reform to an instance of the OpenFisca Web API that you host, see the [Reforms section](#Reforms).
+
+### `/simulate`
 
 > This endpoint is quite complex and you may want to use the [`formula`](#formula) endpoint.
 
@@ -343,7 +363,7 @@ Computes an input test case, returning the results dispatched in a decomposition
 * required headers:
   * `Content-Type: application/json`
 * JSON request structure:
-  * `scenarios` (list of objects): a list of [JSON scenarios](./input-output-data.md#scenarios)
+  * `scenarios` (list of objects): a list of [JSON scenarios](#scenarios)
   * `reforms` (list of strings, one of the keys given by the [`reforms`](#reforms) endpoint, default: null): applies mentioned reforms to the simulation and returns results for before and after application.
   * `validate` (boolean, default: false): when true the simulation isn't launched, but the scenarios are validated.
 * JSON response structure:
@@ -396,7 +416,7 @@ curl https://api.openfisca.fr/api/1/simulate -X POST --data @./test_case.json --
 
 > See also the `calculate` endpoint.
 
-## `/variables`
+### `/variables`
 
 **This route is now available in a simpler and more developper-friendly version. Please check our [official API](README.md) and give us feedback!**
 
@@ -411,7 +431,7 @@ Gets the variables defined in the tax and benefit system.
     Example: `"openfisca_france"`.
   * `country_package_version` (string): the version of the Python package containing the tax and benefit system of the country loaded by the Web API
   * `currency` (string): the currency of the tax and benefit system of the country loaded by the Web API
-  * `variables` (list of objects): a list of [JSON variables](./input-output-data.md#variables)
+  * `variables` (list of objects): a list of [JSON variables](#variables)
 
 Examples:
 * https://api.openfisca.fr/api/1/variables
@@ -419,9 +439,9 @@ Examples:
 
 > The JSON output is too large to be displayed here.
 
-# Input and output data
+## Input and output data: JSON content
 
-## Values by period
+### Values by period
 
 In OpenFisca, the value of a variable is always defined for a specific period.
 
@@ -450,7 +470,7 @@ If no period is given, for example `{enfant_a_charge: false}`, your input will *
 
 Example: `{salaire_de_base: 5000}` is equivalent to `{salaire_de_base: {<scenario_period>: 5000}}`, `<scenario_period>` being defined in the [scenario](#scenarios).
 
-## Scenarios
+### Scenarios
 
 A JSON scenario is an object structured this way:
 * `axes` (a list of objects, default: null): the axes of the scenario, see [axes](#axes)
@@ -463,7 +483,7 @@ A JSON scenario is an object structured this way:
 
 > `axes` can't be used with `input_variables`, only `test_case`.
 
-## Test cases
+### Test cases
 
 A test case describes persons, entities and their associations.
 
@@ -514,7 +534,7 @@ Example using OpenFisca-France entities and roles:
 }
 ```
 
-## Axes
+### Axes
 
 A JSON axis is an object structured this way:
 * `count` (integer, >= 1, required): the number of steps to go from min to max
@@ -528,11 +548,9 @@ A JSON axis is an object structured this way:
 
 This documentation explains how to declare an existing reform to an instance of the OpenFisca Web API that you host.
 
-> If you're looking how to write a reform, please read [this section](../coding-the-legislation/reforms.md)
-
 Each OpenFisca Web API instance can handle a number of reforms.
 Once a reform is known, the user can ask to apply one or many reforms in the HTTP request
-(see [endpoints doc](endpoints.md)). If no reform is specified in the HTTP request,
+(see [endpoints section](#endpoints)). If no reform is specified in the HTTP request,
 no reform will be used in the computation.
 
 ## Add a reform
@@ -623,5 +641,5 @@ You should have no error and the `value` key should be:
 ]
 ```
 
-See also [OpenFisca-Web-API endpoints doc](./endpoints.md)
+See also [OpenFisca-Web-API endpoints doc](#endpoints)
 to know more about the JSON input request format.
