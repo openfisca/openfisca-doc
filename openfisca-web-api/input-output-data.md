@@ -291,4 +291,4 @@ The API will return an identical JSON file where all the `null` (the variable th
   }
 }
 ```
-> note that elements might appear in a different order in the response. However the structure of the file stay the same.
+> Note that elements might appear in a different order in the response. However the structure of the file stays the same.
