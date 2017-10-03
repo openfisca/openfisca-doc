@@ -1,13 +1,14 @@
 # Deprecated API
 
-> This is the documentation for the old OpenFisca web API.  
-> Note that it isn't updated and that its stability isn't guaranteed anymore.  
-> Please use our [last API](http://openfisca.org/doc/openfisca-web-api) instead.  
+> This is the documentation for the deprecated OpenFisca web API.  
+> You can still find it on [GitHub](https://github.com/openfisca/openfisca-web-api) but note that it won't be updated and that its stability isn't guaranteed. 
+> Please use our [latest API](http://openfisca.org/doc/openfisca-web-api) instead.  
 
 ## Public instance for France
 
-The OpenFisca project still provides an instance of the deprecated API, complete with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr). But we recommand you an instance of the last API serving the French tax and benefit system.  
-For more information, see this documentation on the [public France API](http://openfisca.org/doc/openfisca-web-api#public-france-api).
+Even though this API is deprecated, the OpenFisca project still provides an instance with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr).  
+
+Check out the new API instance informations [here](http://openfisca.org/doc/openfisca-web-api#public-france-api).
 
 ### Conditions
 
