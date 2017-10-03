@@ -6,7 +6,7 @@ Using a web interface, App Developers can access information and computations wi
 ## Public France API
 
 the latest version of the France web api is [`https://fr.openfisca.org/api/v18`](https://fr.openfisca.org/api/v18).
-Its roots are documented in [`legislation.openfisca.fr/swagger`](legislation.openfisca.fr/swagger).
+Its roots are documented in [`legislation.openfisca.fr/swagger`](https://legislation.openfisca.fr/swagger).
 The stability  of this API is guaranteed over time.
 
 ## Use Cases
