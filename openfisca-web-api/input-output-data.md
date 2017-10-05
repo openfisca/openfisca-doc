@@ -1,16 +1,16 @@
-# Describing a situation in OpenFisca
+# Using the /calculate endpoint
 
-> All the example provided here are from the [country package template](https://github.com/openfisca/country-template).
+> All the examples provided here are from the [country package template](https://github.com/openfisca/country-template).
 
-When using the API `/calculate` endpoint, you will need to send information to the API concerning :
-- The situation, meaning describe the entities (e.g. individuals, households) that you want to base your calulations on
+In order to run a computation on the Web API, you will need to send information to the API concerning:
+- The situation, meaning describe the entities (e.g. individuals, households) that you want to base your calculations on.
 - The variable you need to compute.
 
 ## Describing the situation
 
 ### Describing entities
 
-The most important rule in describing a situation in OpenFisca is :
+The most important rule in describing a situation in OpenFisca is:
 
 Every person has to belong to one of each group entity (e.g. household).
 Every person in a group entity needs a role (e.g. parent)
@@ -49,7 +49,7 @@ Every person in a group entity needs a role (e.g. parent)
 To run a precise calculation, you can provide information on each person and group entity.
 
 
-These information are called input variables and they have three caracteristics :
+These information are called input variables and they have three caracteristics:
  - An entity type (e.g. Salary is an input variable for an Person, housing occupancy status is an input variable for a household)
  - A date format (e.g. Yearly, monthly ...),
  - A formula or a default value, that are used for computations when the input variable was not provided.
@@ -57,7 +57,7 @@ These information are called input variables and they have three caracteristics 
 
 To provide an input variable, insert the value in the json, for the corresponding time period and entity.
 
-> For example, if Ricarda has a salary (defined monthly for a Person) of 3500/month until september 2016, and 4000/month after that and if household_2 were tenant and became homeowners in march 2016 (housing_occupancy_status is defined monthly for a household) of the 57 sqm apartment they live in, you would write :
+> For example, if Ricarda has a salary (defined monthly for a Person) of 3500/month until september 2016, and 4000/month after that and if household_2 were tenant and became homeowners in march 2016 (housing_occupancy_status is defined monthly for a household) of the 57 sqm apartment they live in, you would write:
 
 ```json
 {
@@ -136,7 +136,7 @@ Once you have described the situation, you can compute all variables that have a
 
 To indicate you want a variable computed, insert the variable in the corresponding entity and indicate the time period followed by the term `null`.
 
-> for example, to compute Ricarda's june income tax (defined monthly for a person) and household_2's housing tax (defined yearly for a household), you would write :
+> for example, to compute Ricarda's june income tax (defined monthly for a person) and household_2's housing tax (defined yearly for a household), you would write:
 
 ```json
 {
@@ -156,8 +156,8 @@ To indicate you want a variable computed, insert the variable in the correspondi
         "2016-11": 4000,
         "2016-12": 4000
       },
-      "income_tax" : {
-        "2016-06" : null
+      "income_tax": {
+        "2016-06": null
       }
     },
     "Bob": {},
@@ -205,8 +205,8 @@ To indicate you want a variable computed, insert the variable in the correspondi
         "2016-11": 57,
         "2016-12": 57
       },
-      "housing_tax" : {
-        "2016" : null
+      "housing_tax": {
+        "2016": null
       }
     }
   }
