@@ -4,6 +4,8 @@
 > You can still find it on [GitHub](https://github.com/openfisca/openfisca-web-api) but note that it won't be updated and that its stability isn't guaranteed. 
 > Please use our [latest API](http://openfisca.org/doc/openfisca-web-api) instead.  
 
+The OpenFisca API is available through two different means: public or hosted, each coming with its set of constraints.
+
 ## Public instance for France
 
 Even though this API is deprecated, the OpenFisca project still provides an instance with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr).  
@@ -17,6 +19,11 @@ The public instance comes with no warranty at all. We provide it on a _best-effo
 ## Hosting an API instance
 
 Once you've developed your application and want to decrease the rhythm of development, the safer and more scalable way to use the API is to [deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
+
+## Architecture
+
+The web API supports different use-cases, from getting information on the available tax and benefit system to full-fledged simulation.  
+Different [endpoints](#endpoints) support each of them. Each endpoint encodes its information in a [JSON object](#input-output-data).
 
 ## Endpoints
 
@@ -536,7 +543,7 @@ A JSON axis is an object structured this way:
 * `index` (integer, >= 0, default: 0): the index of the person on which to apply the variation of the variable
 * `max` (integer or float, required): the maximum value of the varying variable
 * `min` (integer or float, required): the minimum value of the varying variable
-* `name` (string, one of available [variable names](https://legislation.openfisca.fr/variables), required): the name of the varying variable
+* `name` (string, one of available variable names, required): the name of the varying variable
 * `period` (see [periods and instants](../periodsinstants.md))
 
 # Reforms
