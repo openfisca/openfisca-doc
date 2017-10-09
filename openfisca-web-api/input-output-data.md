@@ -52,7 +52,9 @@ To run a precise calculation, you can provide information on each person and gro
 
 These are the input [variables](../variables.md) of your simulation. 
 
-To provide an input variable, insert the value in the json, for the corresponding time period and entity.
+To provide an input variable, insert the value in the json, for the corresponding time period (e.g. '2015-06') and entity (e.g. 'person', 'household').
+
+The time period must respect the [definition period](../coding-the-legislation/35_periods.md) of the variable, and the entity must be the one the variable is defined for.
 
 > For example, if Ricarda has a salary (defined monthly for a Person) of 3500/month until september 2016, and 4000/month after that and if household_2 were tenant and became homeowners in march 2016 (housing_occupancy_status is defined monthly for a household) of the 57 sqm apartment they live in, you would write:
 
