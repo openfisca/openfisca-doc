@@ -16,8 +16,8 @@ Every person has to belong to one of each group entity (e.g. household).
 Every person in a group entity needs a role (e.g. parent)
 
 > For example, if you wish to run a calculation on 2 households:
-> - Household_1 is composed of two adults;
-> - Household_2 is composed of one adult and one child.
+> - household_1 is composed of two adults;
+> - household_2 is composed of one adult and one child.
 
 
 ```json
