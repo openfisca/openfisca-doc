@@ -50,12 +50,7 @@ Every person in a group entity needs a role (e.g. parent)
 
 To run a precise calculation, you can provide information on each person and group entity.
 
-
-These information are called "input variables" and they have three characteristics:
- - An entity type (e.g. Salary is an input variable for an Person, housing occupancy status is an input variable for a household)
- - A date format (e.g. Yearly, monthly ...),
- - A formula or a default value, that are used for computations when the input variable was not provided.
-
+These are the input [variables](../variables.md) of your simulation. 
 
 To provide an input variable, insert the value in the json, for the corresponding time period and entity.
 
@@ -129,7 +124,7 @@ To provide an input variable, insert the value in the json, for the correspondin
   }
 }
 ```
-**Note that because of the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their default value.**  
+**Note that due to the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their [default value](../variables.md#default-values).**  
 
 
 ## Computing a variable
