@@ -15,7 +15,9 @@ The most important rule in describing a situation in OpenFisca is:
 Every person has to belong to one of each group entity (e.g. household).
 Every person in a group entity needs a role (e.g. parent)
 
-> For example, if you wish to run a calculation on 2 households. One composed of to adults, the other of one adult and one child.
+> For example, if you wish to run a calculation on 2 households:
+> - Household_1 is composed of two adults;
+> - Household_2 is composed of one adult and one child.
 
 
 ```json
@@ -44,12 +46,12 @@ Every person in a group entity needs a role (e.g. parent)
 }
 ```
 
-## Adding information to entities
+### Adding information to entities
 
 To run a precise calculation, you can provide information on each person and group entity.
 
 
-These information are called input variables and they have three caracteristics:
+These information are called "input variables" and they have three characteristics:
  - An entity type (e.g. Salary is an input variable for an Person, housing occupancy status is an input variable for a household)
  - A date format (e.g. Yearly, monthly ...),
  - A formula or a default value, that are used for computations when the input variable was not provided.
@@ -127,12 +129,12 @@ To provide an input variable, insert the value in the json, for the correspondin
   }
 }
 ```
-> note that because of the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their default value.  
+**Note that because of the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their default value.**  
 
 
 ## Computing a variable
 
-Once you have described the situation, you can compute all variables that have a formula.
+Once you have described the situation, you can compute all variables in the Country Package.
 
 To indicate you want a variable computed, insert the variable in the corresponding entity and indicate the time period followed by the term `null`.
 

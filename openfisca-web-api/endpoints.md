@@ -1,12 +1,8 @@
 # Endpoints
 
-OpenFisca endpoints allow you to access legislation elements and run calculation providing a [situation](input-output-data.md):
-the consultation endpoints use the [GET](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) method, whereas the computation endpoint uses the [POST](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) method. 
+Each OpenFisca Country Package web API comes with a set of endpoints including an OpenAPI specification on the `/spec` route.
+You can check out the `OpenFisca-France` [swagger documentation](https://legislation.openfisca.fr/swagger) to see how their endpoints work.
 
-To request information from OpenFisca, several endpoints are available.
- - GET `/spec` document the API in the OpenAPI format
- - GET `/parameters` 
- - GET `/parameter/<parameter_id>`
- - GET `/variables`
- - GET `/variable/<variable_id>`
- - POST `/calculate` with a [situation](input-output-data.md) 
+The Openfisca Web API can be used to:
+ - access information about the parameters (e.g. `/parameters`) and variables (e.g. `/variables`) of the Country Package.
+ - run simulations (e.g. `/calculate`) on a specific situation. To describe a situation, learn more about the Web API [inputs and outputs](input-output-data.md). 

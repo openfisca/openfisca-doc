@@ -1,6 +1,6 @@
 # OpenFisca Web API
 
-The OpenFisca project provides a web API package compatible with all country packages.
+OpenFisca provides a web API package compatible with all country packages.
 Using a web interface, App Developers can access information and computations without installing anything locally.
 
 ## Public France API
@@ -11,7 +11,7 @@ The stability of this API is guaranteed over time.
 
 ## Use Cases
 
-Those projects use the OpenFisca Web API:
+The following services use the OpenFisca Web API:
 
 - [legislation.openfisca.fr](https://legislation.openfisca.fr), giving you information on available OpenFisca variables.
 - [Mes Aides](https://mes-aides.gouv.fr), the French social benefits simulator.
@@ -32,7 +32,7 @@ Calculs effectués par <a href="https://openfisca.fr">OpenFisca</a>, le moteur <
 ```
 ## Hosting an API instance
 
-Let App Developers access your country package information and computations by serving the web API that comes bundled with OpenFisca-Core module. See the [technical documentation](https://github.com/openfisca/openfisca-core#serving-the-api) for serving instructions.
+Let App Developers access your country package information and computations by serving the web API that comes bundled with the OpenFisca-Core module. See the [technical documentation](https://github.com/openfisca/openfisca-core#serving-the-api) for serving instructions.
 
 ### Track your API
 
