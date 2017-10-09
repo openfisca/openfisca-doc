@@ -1,104 +1,293 @@
-# Input and output data
+# Using the /calculate endpoint
 
-## Values by period
+> All the examples provided here are from the [country package template](https://github.com/openfisca/country-template).
 
-In OpenFisca, the value of a variable is always defined for a specific period.
+In order to run a computation on the Web API, you will need to send information to the API concerning:
+- The situation, meaning describe the entities (e.g. individuals, households) that you want to base your calculations on.
+- The variable you need to compute.
 
-This is encoded in JSON using the following format:
+## Describing the situation
 
-```JSON
-{"salary": {"2015-01": 2000}}
-```
+### Describing entities
 
-This format allows you to encode an evolution of the variable over time:
+The most important rule in describing a situation in OpenFisca is:
 
-```JSON
+Every person has to belong to one of each group entity (e.g. household).
+Every person in a group entity needs a role (e.g. parent)
+
+> For example, if you wish to run a calculation on 2 households:
+> - household_1 is composed of two adults;
+> - household_2 is composed of one adult and one child.
+
+
+```json
 {
-  "salary": {
-    "2015-01": 2000,
-    "2015-02": 2000,
-    "2015-03": 2100,
-    "2015-04": 2100,
+  "persons": { 
+    "Ricarda": {},
+    "Bob": {},
+    "Bill": {},
+    "Janet": {}
+    },
+  "households": {
+    "household_1": {
+      "parents": [
+        "Ricarda", "Bob"
+      ]
+    },
+    "household_2": {
+      "parents": [
+        "Bill"
+      ],
+      "children":[
+        "Janet"
+      ]
+    }
   }
 }
 ```
 
-When you define the inputs of a simulation, you should in general define the period for which you are setting values (except for variables which cannot change over time, such as a birth date).
+### Adding information to entities
 
-If no period is given, for example `{enfant_a_charge: false}`, your input will **only** be set for the global period of the [scenario](#scenarios).
+To run a precise calculation, you can provide information on each person and group entity.
 
-Example: `{salaire_de_base: 5000}` is equivalent to `{salaire_de_base: {<scenario_period>: 5000}}`, `<scenario_period>` being defined in the [scenario](#scenarios).
+These are the input [variables](../variables.md) of your simulation. 
 
-## Scenarios
+To provide an input variable, insert the value in the json, for the corresponding time period (e.g. '2015-06') and entity (e.g. 'person', 'household').
 
-A JSON scenario is an object structured this way:
-* `axes` (a list of objects, default: null): the axes of the scenario, see [axes](#axes)
-* `input_variables` (an object, mutually exclusive with `test_case`): the input variables, encoded with the [value by period](#values-by-period) structure. For instance:
-  * `{"salary": {"2015-04": 2000}, age: {"2015-04": 30}}`
-* `period` (see [periods and instants](../periodsinstants.md)): the period on which the variables of the decomposition will be computed
-* `test_case` (an object, mutually exclusive with `input_variables`): the test case of the scenario, see [test cases](#test-cases)
+The time period must respect the [definition period](../coding-the-legislation/35_periods.md) of the variable, and the entity must be the one the variable is defined for.
 
-> Either `test_case` or `input_variables` must be provided, not both.
-
-> `axes` can't be used with `input_variables`, only `test_case`.
-
-## Test cases
-
-A test case describes persons, entities and their associations.
-
-Let's assume that your tax and benefit system defines a [person entity](../person,_entities,_role.md#person) named `persons`, and a [group entity]](../person,_entities,_role.md#group-entities) named `households`.
-
-Let's also assume that within a `household`, you have `parents` and `children`.
-
-A JSON test case is an object structured this way:
-* `persons` (list of objects): defines persons with their input variables, structured this way:
-  * `id` (string): the ID of the person
-  * `<variable name (string)>` (the [value by period](#values-by-period)): an input variable
-* `households` (list of objects): the definition of the entity, structured this way:
-  * `id` (string): the ID of the entity
-  * `parents` (list of strings): a list of persons IDs referencing the ones defined under the persons key
-  * `children` (list of strings): a list of persons IDs referencing the ones defined under the persons key
-  * `<variable name (string)>` (the [value by period](#values-by-period)): an input variable
-
-Entities and roles can be fetched dynamically with the [entities](#entities) API endpoint.
-
-Example using OpenFisca-France entities and roles:
+> For example, if Ricarda has a salary (defined monthly for a Person) of 3500/month until september 2016, and 4000/month after that and if household_2 were tenant and became homeowners in march 2016 (housing_occupancy_status is defined monthly for a household) of the 57 sqm apartment they live in, you would write:
 
 ```json
 {
-  "individus": [
-    {
-      "id": "Personne 1",
-      "salaire_de_base": 50000
+  "persons": { 
+    "Ricarda": {
+      "salary": {
+        "2016-01": 3500,
+        "2016-02": 3500,
+        "2016-03": 3500,
+        "2016-04": 3500,
+        "2016-05": 3500,
+        "2016-06": 3500,
+        "2016-07": 3500,
+        "2016-08": 3500,
+        "2016-09": 4000,
+        "2016-10": 4000,
+        "2016-11": 4000,
+        "2016-12": 4000
+      }
+    },
+    "Bob": {},
+    "Bill": {},
+    "Janet": {}
+  },
+  "households": {
+    "household_1": {
+      "parents": [
+        "Ricarda", "Bob"
+      ]
+    },
+    "household_2": {
+      "parents": [
+        "Bill"
+      ],
+      "children":[
+        "Janet"
+      ],
+      "housing_occupancy_status": {
+        "2016-01": "Tenant",
+        "2016-02": "Tenant",
+        "2016-03": "Owner",
+        "2016-04": "Owner",
+        "2016-05": "Owner",
+        "2016-06": "Owner",
+        "2016-07": "Owner",
+        "2016-08": "Owner",
+        "2016-09": "Owner",
+        "2016-10": "Owner",
+        "2016-11": "Owner",
+        "2016-12": "Owner"
+      },
+      "accommodation_size": {
+        "2016-01": 57,
+        "2016-02": 57,
+        "2016-03": 57,
+        "2016-04": 57,
+        "2016-05": 57,
+        "2016-06": 57,
+        "2016-07": 57,
+        "2016-08": 57,
+        "2016-09": 57,
+        "2016-10": 57,
+        "2016-11": 57,
+        "2016-12": 57
+      }
     }
-  ],
-  "familles": [
-    {
-      "id": "Famille 1",
-      "parents": ["Personne 1"]
+  }
+}
+```
+**Note that due to the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their [default value](../variables.md#default-values).**  
+
+
+## Computing a variable
+
+Once you have described the situation, you can compute all variables in the Country Package.
+
+To indicate you want a variable computed, insert the variable in the corresponding entity and indicate the time period followed by the term `null`.
+
+> for example, to compute Ricarda's june income tax (defined monthly for a person) and household_2's housing tax (defined yearly for a household), you would write:
+
+```json
+{
+  "persons": { 
+    "Ricarda": {
+      "salary": {
+        "2016-01": 3500,
+        "2016-02": 3500,
+        "2016-03": 3500,
+        "2016-04": 3500,
+        "2016-05": 3500,
+        "2016-06": 3500,
+        "2016-07": 3500,
+        "2016-08": 3500,
+        "2016-09": 4000,
+        "2016-10": 4000,
+        "2016-11": 4000,
+        "2016-12": 4000
+      },
+      "income_tax": {
+        "2016-06": null
+      }
+    },
+    "Bob": {},
+    "Bill": {},
+    "Janet": {}
+  },
+  "households": {
+    "household_1": {
+      "parents": [
+        "Ricarda", "Bob"
+      ]
+    },
+    "household_2": {
+      "parents": [
+        "Bill"
+      ],
+      "children":[
+        "Janet"
+      ],
+      "housing_occupancy_status": {
+        "2016-01": "Tenant",
+        "2016-02": "Tenant",
+        "2016-03": "Owner",
+        "2016-04": "Owner",
+        "2016-05": "Owner",
+        "2016-06": "Owner",
+        "2016-07": "Owner",
+        "2016-08": "Owner",
+        "2016-09": "Owner",
+        "2016-10": "Owner",
+        "2016-11": "Owner",
+        "2016-12": "Owner"
+      },
+      "accomodation_size": {
+        "2016-01": 57,
+        "2016-02": 57,
+        "2016-03": 57,
+        "2016-04": 57,
+        "2016-05": 57,
+        "2016-06": 57,
+        "2016-07": 57,
+        "2016-08": 57,
+        "2016-09": 57,
+        "2016-10": 57,
+        "2016-11": 57,
+        "2016-12": 57
+      },
+      "housing_tax": {
+        "2016": null
+      }
     }
-  ],
-  "foyers_fiscaux": [
-    {
-      "id": "Déclaration d'impôt 1",
-      "declarants": ["Personne 1"]
-    }
-  ],
-  "menages": [
-    {
-      "id": "Logement principal 1",
-      "personne_de_reference": "Personne 1"
-    }
-  ]
+  }
 }
 ```
 
-## Axes
+## Understanding the result
 
-A JSON axis is an object structured this way:
-* `count` (integer, >= 1, required): the number of steps to go from min to max
-* `index` (integer, >= 0, default: 0): the index of the person on which to apply the variation of the variable
-* `max` (integer or float, required): the maximum value of the varying variable
-* `min` (integer or float, required): the minimum value of the varying variable
-* `name` (string, one of available [variable names](https://legislation.openfisca.fr/variables), required): the name of the varying variable
-* `period` (see [periods and instants](../periodsinstants.md))
+The API will return an identical JSON file where all the `null` (the variable that you asked OpenFisca to compute, see above for details) have been replace by the computed value.
+```json
+{
+  "households": {
+    "household_1": {
+      "parents": [
+        "Ricarda", 
+        "Bob"
+      ]
+    }, 
+    "household_2": {
+      "accomodation_size": {
+        "2016-01": 57, 
+        "2016-02": 57, 
+        "2016-03": 57, 
+        "2016-04": 57, 
+        "2016-05": 57, 
+        "2016-06": 57, 
+        "2016-07": 57, 
+        "2016-08": 57, 
+        "2016-09": 57, 
+        "2016-10": 57, 
+        "2016-11": 57, 
+        "2016-12": 57
+      }, 
+      "children": [
+        "Janet"
+      ], 
+      "housing_occupancy_status": {
+        "2016-01": "Tenant", 
+        "2016-02": "Tenant", 
+        "2016-03": "Owner", 
+        "2016-04": "Owner", 
+        "2016-05": "Owner", 
+        "2016-06": "Owner", 
+        "2016-07": "Owner", 
+        "2016-08": "Owner", 
+        "2016-09": "Owner", 
+        "2016-10": "Owner", 
+        "2016-11": "Owner", 
+        "2016-12": "Owner"
+      }, 
+      "housing_tax": {
+        "2016": 570.0
+      }, 
+      "parents": [
+        "Bill"
+      ]
+    }
+  }, 
+  "persons": {
+    "Bill": {}, 
+    "Bob": {}, 
+    "Janet": {}, 
+    "Ricarda": {
+      "income_tax": {
+        "2016-06": 525.0
+      }, 
+      "salary": {
+        "2016-01": 3500, 
+        "2016-02": 3500, 
+        "2016-03": 3500, 
+        "2016-04": 3500, 
+        "2016-05": 3500, 
+        "2016-06": 3500, 
+        "2016-07": 3500, 
+        "2016-08": 3500, 
+        "2016-09": 4000, 
+        "2016-10": 4000, 
+        "2016-11": 4000, 
+        "2016-12": 4000
+      }
+    }
+  }
+}
+```
+> Note that elements might appear in a different order in the response. However the structure of the file stays the same.

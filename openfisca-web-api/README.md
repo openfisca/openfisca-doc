@@ -1,46 +1,23 @@
 # OpenFisca Web API
 
-The OpenFisca project provides a web API package in order to do computations over HTTP, sending and receiving JSON data.
+OpenFisca provides a web API package compatible with all country packages.
+Using a web interface, App Developers can access information and computations without installing anything locally.
 
+## Public France API
 
-## Use cases
+The latest version of the France web api is [`https://fr.openfisca.org/api/v18`](https://fr.openfisca.org/api/v18).
+Its endpoints are documented in [`legislation.openfisca.fr/swagger`](https://legislation.openfisca.fr/swagger).
+The stability of this API is guaranteed over time.
 
-If you cannot or don't want to interact directly with the Python API, for example if you're developing a web application.
+## Use Cases
 
-### Examples
-
-Those projects use the OpenFisca Web API:
+The following services use the OpenFisca Web API:
 
 - [legislation.openfisca.fr](https://legislation.openfisca.fr), giving you information on available OpenFisca variables.
 - [Mes Aides](https://mes-aides.gouv.fr), the French social benefits simulator.
 - [PA-comp](https://pa-comp.firebaseapp.com), a divorce fiscal impact simulator.
 
-
-## Architecture
-
-The web API supports different use-cases, from getting information on the available tax and benefit system to full-fledged simulation. Different [endpoints](endpoints.md) support each of them. Each endpoint encodes its information in a [JSON object](input-output-data.md).
-
-
-## Public or hosted
-
-The OpenFisca API is available through two different means, each coming with its set of constraints.
-
-### Public API instance
-
-The OpenFisca project provides a free and unrestricted instance of the API, complete with the French tax and benefit system, on [`api.openfisca.fr`](https://api.openfisca.fr).
-
-This instance is great for getting a feel of the API, testing, or even deploying small applications, but please note that it is continuously updated. Every update to the endpoints, or to the tax and benefit system, will be automatically deployed to this host without prior notice, including breaking changes.
-If you use this host, it is your responsibility to stay up-to-date with all legislation changes that could impact your application.
-
-#### Conditions
-
-The public instance comes with no warranty at all. We provide it on a _best-effort_ basis, with no [SLA](https://en.wikipedia.org/wiki/Service-level_agreement) and no performance engagement.
-
-### Host your own instance
-
-Once you've developed your application and want to decrease the rhythm of development, the safer and more scalable way to use the API is to [deploy your own instance](https://github.com/openfisca/openfisca-web-api/tree/master/production-config).
-
-#### Conditions
+## Conditions
 
 Please remember that OpenFisca is free software, licensed under an [Affero GPL license](https://choosealicense.com/licenses/agpl-3.0/). That means you have to provide access to the source code of the API you make available, including any changes you might have made on the original code. You also have to provide a link to the OpenFisca source code, and state its license, in a place that is easily discoverable by users of your software.
 
@@ -53,3 +30,10 @@ Computations done by <a href="https://openfisca.fr">OpenFisca</a>, the <a href="
 ```html
 Calculs effectués par <a href="https://openfisca.fr">OpenFisca</a>, le moteur <a href="https://choosealicense.com/licenses/agpl-3.0/" title="AGPL-3.0">libre et ouvert</a> du système social et fiscal. Code source disponible sur <a href="https://github.com/openfisca">github.com/openfisca</a>.
 ```
+## Hosting an API instance
+
+Let App Developers access your country package information and computations by serving the web API that comes bundled with the OpenFisca-Core module. See the [technical documentation](https://github.com/openfisca/openfisca-core#serving-the-api) for serving instructions.
+
+### Track your API
+
+If you want to track how your API is being used, you can install the [OpenFisca Tracker](https://github.com/openfisca/openfisca-core#tracker).
