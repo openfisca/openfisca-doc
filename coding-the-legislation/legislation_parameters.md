@@ -119,7 +119,7 @@ brackets:
       value: 2000
 ```
 
-Example: [the french tax scale on salaries](https://legislation.openfisca.fr/parameters/impot_revenu.bareme)
+Example: [the french tax scale on income](https://legislation.openfisca.fr/parameters/impot_revenu.bareme)
 
 #### Import parameters from IPP tables
 
