@@ -16,7 +16,7 @@
             "url": "https://github.com/openfisca/openfisca-doc"
         },
         "edit-link": {
-            "base": "https://github.com/openfisca/openfisca-doc",
+            "base": "https://github.com/openfisca/openfisca-doc/edit/master",
             "label": "Edit This Page"
         }
     }
