@@ -6,11 +6,11 @@ The following piece of code creates a variable named `flat_tax_on_salary`, repre
 
 ```py
 class flat_tax_on_salary(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
-    label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
-
+    label = u"Individualized and monthly paid tax on salaries"
+    
     def formula(person, period):
         salary = person('salary', period)
 
@@ -20,16 +20,13 @@ class flat_tax_on_salary(Variable):
 Let's explain in details the different part of the code:
 - `class flat_tax_on_salary(Variable):` declares a new variable with the name `flat_tax_on_salary`.
 - Metadatas:
-  - `column = FloatCol` declares the type of the variable. Possible types are:
-    - `AgeCol`: age
-    - `BoolCol`: boolean
-    - `DateCol`: date
-    - `EnumCol`: discrete value (from an enumerable)
-    - `FixedStrCol`: string with maximum length
-    - `FloatCol`: float
-    - `IntCol`: integer
-    - `StrCol`: string
-    - *`PeriodSizeIndependentIntCol`: integer (deprecated)*
+  - `value_type = float` declares the type of the variable. Possible types are:
+    - `bool`: boolean
+    - `date`: date
+    - `Enum`: discrete value (from an enumerable)
+    - `float`: float
+    - `int`: integer
+    - `str`: string
   - `entity = Person` declares which entity the variable is defined for, e.g. a person, a family, a tax household, etc. The different available entities are defined by each tax and benefit system. In `openfisca-france`, a variable can be defined for an `Individu`, a `Famille`, a `FoyerFiscal`, or a `Menage`.
   - `label = u"Individualized..."` gives, in a human-readable language, concise information about the variable.
   - `definition_period = MONTH` states that the variable will be computed on months.
@@ -66,7 +63,7 @@ To access a common legislation parameter, a third parameter can be added to the 
 
 ```py
 class flat_tax_on_salary(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH

@@ -44,7 +44,7 @@ For instance, let's imagine a basic income paid to households with the following
 
 ```py
 class basic_income(Variable):
-    column = FloatCol
+    value_type = float
     entity = Household
     label = u"Basic income paid to households"
     definition_period = MONTH
@@ -69,7 +69,7 @@ Let's for example consider that any college student whose family benefits from t
 
 ```py
 class college_scholarship(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"College Scholarship for basic income recipients."
     definition_period = MONTH

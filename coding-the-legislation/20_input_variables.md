@@ -6,7 +6,7 @@ For instance:
 
 ```py
 class salary(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Salary earned by a person for a given month"
     definition_period = MONTH
@@ -21,11 +21,12 @@ If we ask the value of `salary` for a given month, the returned result will be:
 
 ## Setting a default value
 
-When declaring an input variable, you can change its default value by adding the argument `default` to the `column` attribute:
+When declaring an input variable, you can change its default value by adding the `default_value` attribute:
 
 ```py
 class french_citizen(Variable):
-    column = BoolCol(default = True)
+    value_type = bool
+    default_value = True
     entity = Person
     label = u"Whether the person is a French citizen"
     definition_period = YEAR
@@ -66,22 +67,30 @@ Enum items are referenced by their index (starting at `0`).
 
 ```py
 class housing_occupancy_status(Variable):
-    column = EnumCol(
-        enum = HOUSING_OCCUPANCY_STATUS
-        )
+    value_type = Enum
+    possible_values = Enum([
+        u'Tenant',
+        u'Owner',
+        u'Free logder',
+        u'Homeless'
+        ])
     entity = Household
     definition_period = MONTH
     label = u"Legal housing situation of the household concerning their main residence"
 ```
-This variable links the `HOUSING_OCCUPANCY_STATUS` to a specific entity and period (`Household` and `MONTH` here).  
 
-A default value can also be added:
+A `default_value` can also be added:
 
 ```py
-    column = EnumCol(
-        enum = HOUSING_OCCUPANCY_STATUS,
-        default = 1  # 'Owner'
-        )
+    value_type = Enum
+    possible_values = Enum([
+        u'Tenant',
+        u'Owner',
+        u'Free logder',
+        u'Homeless'
+        ])
+    default_value = 1  # 'Owner'
+        
 ```
 
 3. Use the enum in a variable formula:  
@@ -90,7 +99,7 @@ In a formula, get `housing_occupancy_status` for a given `month` by calling `hou
 
 ```py
 class housing_tax(Variable):
-    column = FloatCol
+    value_type = bool
     entity = Household
     definition_period = YEAR  # This housing tax is defined for a year.
     label = u"Tax paid by each household proportionnally to the size of its accommodation"
