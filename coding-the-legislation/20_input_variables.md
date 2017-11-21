@@ -63,8 +63,18 @@ HOUSING_OCCUPANCY_STATUS = Enum([
 Enum items are referenced by their index (starting at `0`).
 > For example, `HOUSING_OCCUPANCY_STATUS['Tenant']` will return `0`, `HOUSING_OCCUPANCY_STATUS['Owner']` will return `1`, `HOUSING_OCCUPANCY_STATUS['Free lodger']` will return `2`, ...
 
-2. Create an OpenFisca variable `housing_occupancy_status`:  
+2. Create an OpenFisca variable `housing_occupancy_status`. The Enum can be referenced or declared in the Variable:  
 
+> Referenced: 
+```py
+class housing_occupancy_status(Variable):
+    value_type = Enum
+    possible_values = HOUSING_OCCUPANCY_STATUS
+    entity = Household
+    definition_period = MONTH
+    label = u"Legal housing situation of the household concerning their main residence"
+```
+> Declared in the variable: 
 ```py
 class housing_occupancy_status(Variable):
     value_type = Enum
