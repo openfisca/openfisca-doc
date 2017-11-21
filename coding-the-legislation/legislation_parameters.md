@@ -274,7 +274,7 @@ To access a point in the parameter tree, call `tax_benefit_system.parameters`
 > tax_benefit_system.parameters.benefits
 > ```
 > Returns: 
-> ```
+> ```sh
 > basic_income:
 >     2015-12-01: 600.0
 > housing_allowance:
@@ -287,7 +287,7 @@ To access a point in the parameter tree, call `tax_benefit_system.parameters`
 > tax_benefit_system.parameters.benefits.basic_income
 > ```
 > Returns
-> ```py
+> ```sh
 > 2015-12-01: 600.0
 > ```
 ### Access a parameter for a specific period
@@ -304,7 +304,7 @@ To add an entry to an existing parameter, use `update:
 > tax_benefit_system.parameters.benefits.basic_bro
 > ```
 > Returns:
-> ```py
+> ```sh
 > 2017-01-01: 2000
 > 2015-12-01: 600.0
 >```
