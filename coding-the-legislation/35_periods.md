@@ -11,7 +11,7 @@ This period is always the second argument of the formulas:
 
 ```py
 class salary(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Salary for a month"
     definition_period = MONTH
@@ -32,7 +32,7 @@ Calling a formula with a period that is incompatible with the attribute `definit
 
 ```py
 class taxes(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Taxes for a whole year"
     definition_period = YEAR
@@ -48,7 +48,7 @@ We may for example want to get the sum of the salaries perceived on the past yea
 
 ```py
 class taxes(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Taxes for a whole year"
     definition_period = YEAR
@@ -62,7 +62,7 @@ The option `DIVIDE` allows you to do the opposite: evaluating a quantity for a m
 
 ```py
 class salary_net_of_taxes(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Monthly salary, net of taxes"
     definition_period = MONTH
@@ -86,7 +86,7 @@ For instance, we want to compute an unemployment benefit that equals half of las
 
 ```py
 class unemployment_benefit(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Unemployment benefit"
     definition_period = MONTH
@@ -133,7 +133,7 @@ It is however possible to define an automatic behaviour to cast yearly inputs in
 For instance, let's slightly modify the code of `salary`:
 ```py
 class salary(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Salary for a month"
     definition_period = MONTH

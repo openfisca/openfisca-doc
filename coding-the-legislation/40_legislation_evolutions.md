@@ -63,7 +63,7 @@ We implement this rule by adding a new formula to our variable, and _dating_ it:
 
 ```py
 class flat_tax_on_salary(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
@@ -104,7 +104,7 @@ This is easily implemented by _dating_ the two formulas:
 
 ```py
 class flat_tax_on_salary(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Individualized and monthly paid tax on salaries"
     definition_period = MONTH
@@ -135,7 +135,7 @@ This is implemented with an `end` attribute that define the _last day_ a variabl
 
 ```py
 class progressive_income_tax(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     label = u"Former tax replaced by the flat tax on the 1st of June 2005"
     definition_period = MONTH
