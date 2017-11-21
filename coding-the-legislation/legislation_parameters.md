@@ -281,7 +281,7 @@ To access a point in the parameter tree, call `tax_benefit_system.parameters`
 >   2016-12-01: None
 >   2010-01-01: 0.25
 > ```
-
+>
 > Access `basic_income`, a parameter of the `benefits` branch.
 > ```py
 > tax_benefit_system.parameters.benefits.basic_income
@@ -298,10 +298,13 @@ Request a branch of a parameter at a given date with the `parameters.benefits('2
 
 To add an entry to an existing parameter, use `update:
 
-```
-tax_benefit_system.parameters.benefits.basic_bro.update("2017-01", value = 2000)
-tax_benefit_system.parameters.benefits.basic_bro
-
->>>2017-01-01: 2000
->>>2015-12-01: 600.0
-````
+> Example:
+> ```py
+> tax_benefit_system.parameters.benefits.basic_bro.update("2017-01", value = 2000)
+> tax_benefit_system.parameters.benefits.basic_bro
+> ```
+> Returns:
+> ```py
+> 2017-01-01: 2000
+> 2015-12-01: 600.0
+>```
