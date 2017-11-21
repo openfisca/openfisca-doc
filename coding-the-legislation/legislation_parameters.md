@@ -233,7 +233,7 @@ zone_1:
 
 In this case, `parameters(period).housing_benefit[zone]` would raise en error, whatever `zone` contains, as **the homogeneity condition is not respected**: `housing_benefit.zone_1` is a node, while `housing_benefit.coeff_furnished` is a parameter.
 
-To solve this issue, the good practice would be to create an intermediate node `amount_by_node`:
+To solve this issue, the good practice would be to create an intermediate node `amount_by_zone`:
 
 `housing_benefit.yaml` content:
 
@@ -286,7 +286,7 @@ To access a point in the parameter tree, call `tax_benefit_system.parameters`
 > ```py
 > tax_benefit_system.parameters.benefits.basic_income
 > ```
-> Returns
+> Returns:
 > ```sh
 > 2015-12-01: 600.0
 > ```
@@ -296,7 +296,7 @@ Request a branch of a parameter at a given date with the `parameters.benefits('2
 
 ## How to update parameters in python
 
-To add an entry to an existing parameter, use `update:
+To add an entry to an existing parameter, use `update`:
 
 > Example:
 > ```py
