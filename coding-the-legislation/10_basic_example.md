@@ -13,14 +13,13 @@ class flat_tax_on_salary(Variable):
     
     def formula(person, period):
         salary = person('salary', period)
-
         return salary * 0.25
 ```
 
-Let's explain in details the different part of the code:
+Let's explain in details the different parts of the code:
 - `class flat_tax_on_salary(Variable):` declares a new variable with the name `flat_tax_on_salary`.
 - Metadatas:
-  - `value_type = float` declares the type of the variable. Possible types are:
+  - `value_type = float` declares the type of the variable. Possible types are the basic python types:
     - `bool`: boolean
     - `date`: date
     - `Enum`: discrete value (from an enumerable)
@@ -34,7 +33,7 @@ Let's explain in details the different part of the code:
   - `def formula(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH`, `period` is constrained to be a month.
   - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax and benefit system.
   - `return salary * 0.25` returns the result for the given period.
-
+  - [Dated Formulas](40_legislation_evolutions.md) have a start and/or an end date.
 ## Testing a formula
 
 To make sure that the formula you have just written works the way you expect, you have to test it. Tests about legislation are written in a [YAML syntax](writing_yaml_tests.md). The `flat_tax_on_salary` formula can for instance be tested with the following test file:
