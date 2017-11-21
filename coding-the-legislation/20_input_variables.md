@@ -66,28 +66,28 @@ Enum items are referenced by their index (starting at `0`).
 2. Create an OpenFisca variable `housing_occupancy_status`. The Enum can be referenced or declared in the Variable:  
 
 > Referenced: 
-```py
-class housing_occupancy_status(Variable):
-    value_type = Enum
-    possible_values = HOUSING_OCCUPANCY_STATUS
-    entity = Household
-    definition_period = MONTH
-    label = u"Legal housing situation of the household concerning their main residence"
-```
+> ```py
+> class housing_occupancy_status(Variable):
+>     value_type = Enum
+>     possible_values = HOUSING_OCCUPANCY_STATUS
+>     entity = Household
+>     definition_period = MONTH
+>     label = u"Legal housing situation of the household concerning their main residence"
+> ```
 > Declared in the variable: 
-```py
-class housing_occupancy_status(Variable):
-    value_type = Enum
-    possible_values = Enum([
-        u'Tenant',
-        u'Owner',
-        u'Free logder',
-        u'Homeless'
-        ])
-    entity = Household
-    definition_period = MONTH
-    label = u"Legal housing situation of the household concerning their main residence"
-```
+> ```py
+> class housing_occupancy_status(Variable):
+>     value_type = Enum
+>     possible_values = Enum([
+>         u'Tenant',
+>         u'Owner',
+>         u'Free logder',
+>         u'Homeless'
+>         ])
+>     entity = Household
+>     definition_period = MONTH
+>     label = u"Legal housing situation of the household concerning their main residence"
+> ```
 
 A `default_value` can also be added:
 
@@ -99,8 +99,7 @@ A `default_value` can also be added:
         u'Free logder',
         u'Homeless'
         ])
-    default_value = 1  # 'Owner'
-        
+    default_value = 1  # 'Owner'    
 ```
 
 3. Use the enum in a variable formula:  
