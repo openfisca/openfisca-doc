@@ -265,6 +265,7 @@ Set-up your python file by importing a `country package` and building the `tax a
 > import openfisca_country_template
 > tax_benefit_system = openfisca_country_template.CountryTaxBenefitSystem()
 > ```
+
 ### Access a parameter for all periods
 
 To access a point in the parameter tree, call `tax_benefit_system.parameters` 
@@ -290,6 +291,7 @@ To access a point in the parameter tree, call `tax_benefit_system.parameters`
 > ```sh
 > 2015-12-01: 600.0
 > ```
+
 ### Access a parameter for a specific period
 
 Request a branch of a parameter at a given date with the `parameters.benefits('2015-07-01')` notation.
