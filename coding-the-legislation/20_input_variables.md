@@ -50,21 +50,22 @@ We can express this through the enum type.
 
 ### How to use the enum in an input variable?
 
-1. Create an [enumerated type](https://en.wikipedia.org/wiki/Enumerated_type) `HOUSING_OCCUPANCY_STATUS`:
+1. Create an [enumerated type](https://en.wikipedia.org/wiki/Enumerated_type) `HousingOccupancyStatus`:
 
 ```py
-class HOUSING_OCCUPANCY_STATUS(Variable):
-    tenant = u'Tenant or lodger who pays a monthly rent',
-    owner = u'Owner',
-    free_lodger = u'Free lodger',
-    homeless = u'Homeless'])
+class HousingOccupancyStatus(Enum):
+    tenant = u'Tenant or lodger who pays a rent'
+    owner = u'Owner'
+    free_lodger = u'Free logder'
+    homeless = u'Homeless'
+
 ```
 
 > Each enum item has:
 > - a `name` property that contains its key (e.g. `tenant`)
 > - a `value` property that contains its description (e.g. `"Tenant or lodger who pays a monthly rent"`)
 
-> For example, `HOUSING_OCCUPANCY_STATUS.tenant.name` will return `tenant`.
+> For example, `HousingOccupancyStatus.tenant.name` will return `tenant`.
 
 2. Create an OpenFisca variable `housing_occupancy_status`. The Enum can be referenced or declared in the Variable:
 
@@ -97,13 +98,14 @@ A `default_value` can also be added:
 ```py
 class housing_occupancy_status(Variable):
     value_type = Enum
-    possible_values = HOUSING_OCCUPANCY_STATUS
-    default_value = HOUSING_OCCUPANCY_STATUS.tenant #The default is mandatory
+    possible_values = HousingOccupancyStatus
+    default_value = HousingOccupancyStatus.tenant #The default is mandatory
     entity = Household
     definition_period = MONTH
     label = u"Legal housing situation of the household concerning their main residence"
 ```
-This variable links the `HOUSING_OCCUPANCY_STATUS` to a specific entity and period (`Household` and `MONTH` here).
+
+This variable links the `HousingOccupancyStatus` to a specific entity and period (`Household` and `MONTH` here).
 
 
 3. Use the enum in a variable formula:
@@ -124,8 +126,8 @@ class housing_tax(Variable):
         accommodation_size = household('accomodation_size', january)
 
         housing_occupancy_status = household('housing_occupancy_status', january)
-        tenant = (housing_occupancy_status == HOUSING_OCCUPANCY_STATUS.tenant)
-        owner = (housing_occupancy_status == HOUSING_OCCUPANCY_STATUS.owner)
+        tenant = (housing_occupancy_status == HousingOccupancyStatus.tenant)
+        owner = (housing_occupancy_status == HousingOccupancyStatus.owner)
 
         # The tax is applied only if the household owns or rents its main residency
         return (owner + tenant) * accommodation_size * 10
