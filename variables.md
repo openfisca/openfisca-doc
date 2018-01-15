@@ -7,7 +7,7 @@ For instance:
 * The *birth date* of a person
 * The amount of *basic income* (in France, *RSA*) a family can get in a month.
 * The amount of *income tax* a household has to pay in a year.
-* Weather a family is *living in Paris*, or not.
+* Whether a family is *living in Paris*, or not.
 
 ### Input variables
 
