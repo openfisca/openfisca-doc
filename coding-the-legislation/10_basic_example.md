@@ -10,7 +10,7 @@ class flat_tax_on_salary(Variable):
     entity = Person
     definition_period = MONTH
     label = u"Individualized and monthly paid tax on salaries"
-    
+
     def formula(person, period):
         salary = person('salary', period)
         return salary * 0.25
@@ -22,7 +22,7 @@ Let's explain in details the different parts of the code:
   - `value_type = float` declares the type of the variable. Possible types are the basic python types:
     - `bool`: boolean
     - `date`: date
-    - `Enum`: discrete value (from an enumerable)
+    - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md#advanced-example-enumerations-enum) in the next section.
     - `float`: float
     - `int`: integer
     - `str`: string
