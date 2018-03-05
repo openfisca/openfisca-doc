@@ -6,4 +6,5 @@ The purpose of this section is to bring together the clever solutions the commun
 
 - [How to install OpenFisca in an offline environment](./offline-environment.md)
 - [How to work on OpenFisca on a Windows without being administrator](./windows-no-admin.md)
+- [How to test your changes on "ready to use" situations](./test_situations.md)
 
