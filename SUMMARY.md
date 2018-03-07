@@ -31,6 +31,7 @@
 * [Recipes](recipes.md)
     * [Install OpenFisca in an offline environment](offline-environment.md)
     * [Work on OpenFisca on a Windows without being administrator](windows-no-admin.md)
+    * [How to test your changes on "ready to use" situations](test_situations.md)
 * [Publishing results](publishing.md)
 * [Community](community.md)
 * [Contribute](contribute/README.md)
