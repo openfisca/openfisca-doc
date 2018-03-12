@@ -88,10 +88,10 @@ developing external products, etc.
 
 Among them:
 [Etalab](https://www.etalab.gouv.fr/),
-the [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.eu/),
-the "startups d'état" of the
-[<abbr title="Secrétariat général pour la modernisation de l'action publique">SGMAP</abbr>](http://www.modernisation.gouv.fr/),
-the [<abbr title="Institut d'économie publique">IDEP</abbr>](http://www.idep-fr.org/)
+the [Incubateur des services numériques](https://beta.gouv.fr/),
+the [<abbr title="Institut des politiques publiques">IPP</abbr>](https://www.ipp.eu/),
+the [<abbr title="Institut d'économie publique">IDEP</abbr>](https://www.idep-fr.org/),
+the [<abbr title="Sécurité sociale agricole">MSA</abbr>](http://www.msa.fr/lfy),
 and [France Stratégie](http://www.strategie.gouv.fr/).
 
 OpenFisca provides a basic infrastructure, in particular a public instance of its web API,
