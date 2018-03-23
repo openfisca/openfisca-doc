@@ -13,7 +13,9 @@ Thanks for enhancing OpenFisca anyway!
 OpenFisca is a project being developed under the AGPL-3.0 license.
 The source code is freely available and modifiable.
 
-We encourage improvements and evolutions of the software to be shared back, for it allows the community to grow through improvements to the core engine and updates to the modeled tax-benefix systems.
+We ask for improvements and evolutions of the software to be shared back, for it allows the community to grow through improvements to the _core engine_ and updates to the _modeled tax-benefix systems (countries and cities)_.
+
+Although, we do not consider _extensions_ as being a form of derivative work, and as such you're free to license them as you wish.
 
 We encourage users to send their comments and suggestions for improvement,
 and to report any inaccuracy or error they might have found.
