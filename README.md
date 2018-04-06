@@ -1,4 +1,4 @@
-[![OpenFisca logo](http://openfisca.org/img/logo-openfisca.svg)](https://www.openfisca.fr/)
+[![OpenFisca logo](http://openfisca.org/img/logo-openfisca.svg)](https://fr.openfisca.org)
 
 > Download a [PDF offline version](./openfisca-doc.pdf) of this documentation.
 
