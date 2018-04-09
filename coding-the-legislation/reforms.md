@@ -38,9 +38,10 @@ A reform that modifies a formula (such as our `income_tax_reform` example) is ca
 
 ### Parametric reforms
 
-A reform that apply changes to legislation parameters is called a *parametric reforms*. 
+A reform that apply changes to legislation parameters is called a *parametric reform*.
 
-> Note that a reform can be both structural and parametric, modifying and/or adding variables *and* parameters.
+> Note that a reform can be both structural and parametric, modifying and/or adding variables *and* parameters. In that case, it is common practice to call it a structural reform anyway, the structural part outweighting the parametric one. 
+
 
 To modify the legislation parameters in the reform, you can call the method `self.modify_parameters`, which takes a function as a parameter.
 
