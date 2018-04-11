@@ -5,23 +5,30 @@ Let's see how to use OpenFisca on one of those services: [repl.it](https://repl.
 
 ## Instructions
 
-1. Go to [repl.it](https://repl.it) and select `Python` (i.e. `python2.7`):
+1. Go to [repl.it](https://repl.it) and select `Python` (i.e. `python2.7`):  
 
-[![OpenFisca schema](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-homepage.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-homepage.png)
+    [![OpenFisca schema](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-homepage.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-homepage.png)
 
 2. Write the OpenFisca code you wish to run python files. The default entry point is `main.py` file. Example of `main.py` content using `openfisca-country-template`:
 
-```py
-from openfisca_country_template import CountryTaxBenefitSystem
+    ```py
+    from openfisca_country_template import CountryTaxBenefitSystem
 
-tax_benefit_system = CountryTaxBenefitSystem()
-parameters = tax_benefit_system.parameters
+    tax_benefit_system = CountryTaxBenefitSystem()
+    parameters = tax_benefit_system.parameters
 
-print parameters
-```
+    print parameters
+    ```
 
-3. Clic on `run` button to execute your code check its result on the right sided python interpreter.
+    > You can also import files (e.g. JSON files describing input [situation](http://openfisca.org/doc/openfisca-web-api/input-output-data.html#describing-the-situation)) by clicking on the `import or drop` button.  
+    [![OpenFisca schema](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-upload-drop-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-upload-drop-button.png)
 
-[![OpenFisca schema](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-run-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-run-button.png)
+3. Clic on `run` button to execute your code [![OpenFisca schema](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-run-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-run-button.png).
 
-> Your code dependencies are automaticly analyzed and imported. If you still want to manually add a package, see this [repl.it article](https://repl.it/site/blog/python-import).
+    > Your code dependencies are automaticly analyzed and imported. If you still want to manually add a package, see this [repl.it article](https://repl.it/site/blog/python-import).
+
+4. You're all set. Check your code results on the right sided python interpreter.
+
+## Full repl.it example: reform on OpenFisca-France
+
+To see a repl.it in action with the [tutorial](https://github.com/openfisca/tutorial) reform framework applied to France tax and benefit system check this [framework-openfisca-france repl](https://repl.it/@openfisca/framework-openfisca-france) (in French)!
