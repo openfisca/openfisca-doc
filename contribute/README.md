@@ -37,7 +37,7 @@ To enable the OpenFisca developers to solve your problems quickly, please follow
 
 - try to create a minimal standard case that generates the error;
 - verify [that this error is not already listed](https://github.com/openfisca/openfisca-france/issues?state=open);
-- try to identify the source of the error by inspecting [the formulas for the different benefits and taxes](https://legislation.openfisca.fr/variables);
+- try to identify the source of the error by inspecting [the formulas for the different benefits and taxes](https://fr.openfisca.org/legislation);
 - [report the error](https://github.com/openfisca/openfisca-france/issues/new), with as much information as possible. If possible, please provide the code that allows to reproduce the error or the JSON file of the standard case you created.
 
 ### Complete the implementation of the French tax and benefit system
@@ -54,7 +54,7 @@ taxes on [GitHub](https://github.com/openfisca/openfisca-france/).
 From the point of view of someone (developer, economist, etc.) who wants to implement a part of the legislation, for example a new benefit, here are some key steps:
 
 - understand the part of the legislation you want to implement
-- identify the variable dependencies using the [legislation explorer](https://legislation.openfisca.fr/)
+- identify the variable dependencies using the [legislation explorer](https://fr.openfisca.org/legislation/)
 - identify the new variables you need to implement
 - write the new variables with their formulas, and make sure their names respect the guidelines you can find [here](https://github.com/openfisca/openfisca-france/wiki/Openfisca-variables-naming-guidelines).
 - store the new parameters

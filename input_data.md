@@ -70,7 +70,7 @@ Notice that some input variables are associated to *individus* ("parent1" , "par
 > **WARNING**: Declare the *input variables* on an annual basis.
 
 HINT: For categorical variable you may use either the modality or its number.
-Example with the [statut d'occupation du logement](https://legislation.openfisca.fr/variables/statut_occupation_logement):
+Example with the [statut d'occupation du logement](https://fr.openfisca.org/legislation/statut_occupation_logement):
  ``` python
  # Declaration of categorical variable
  menage = dict(loyer = 12000,

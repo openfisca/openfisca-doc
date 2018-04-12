@@ -119,7 +119,7 @@ brackets:
       value: 2000
 ```
 
-Example: [the french tax scale on income](https://legislation.openfisca.fr/parameters/impot_revenu.bareme)
+Example: [the french tax scale on income](https://fr.openfisca.org/legislation/impot_revenu.bareme)
 
 #### Import parameters from IPP tables
 
@@ -254,27 +254,27 @@ amount_by_zone:
   (...)
 ```
 
-And then to get `parameters(period).housing_benefit.amount_by_zone[zone]`  
+And then to get `parameters(period).housing_benefit.amount_by_zone[zone]`
 
 ## How to navigate the parameters in Python
 
 Set-up your python file by importing a `country package` and building the `tax and benefits system`
 
 > Example :
-> ``` 
+> ```
 > import openfisca_country_template
 > tax_benefit_system = openfisca_country_template.CountryTaxBenefitSystem()
 > ```
 
 ### Access a parameter for all periods
 
-To access a point in the parameter tree, call `tax_benefit_system.parameters` 
-> Example : 
+To access a point in the parameter tree, call `tax_benefit_system.parameters`
+> Example :
 > Access the `benefit` branch of the `openfisca-country-template` legislation
 > ```py
 > tax_benefit_system.parameters.benefits
 > ```
-> Returns: 
+> Returns:
 > ```sh
 > basic_income:
 >     2015-12-01: 600.0
