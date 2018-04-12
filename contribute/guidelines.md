@@ -30,6 +30,14 @@ Each OpenFisca repository has its own issues. See [OpenFisca repositories](https
 - Opening a Pull Request means you want that code to be merged. If you want to only discuss it, send a link to your branch along with your questions through whichever communication channel you prefer.
 - If the Pull Request depends on another opened Pull Request on another repository (like OpenFisca-Core/OpenFisca-France), the requirements should be updated in the dependent project via its `setup.py`.
 
+It is considered a good practice to begin the name of the pull request with a verb in the present imperative tense:
+
+    # Good
+    Propose a new reform according to the French finance bill 2018
+
+    # Bad
+    new reform PLF 2018
+
 ### Merging a Pull Request
 
 #### Continuous integration
