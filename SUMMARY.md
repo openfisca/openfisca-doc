@@ -30,6 +30,7 @@
 * [Troubleshooting](troubleshooting.md)
 * [Recipes](recipes.md)
     * [Use OpenFisca on the web (no installation required on your computer)](./howto-web-no-local-install.md)
+    * [Use OpenFisca with Docker](./howto_docker.md)
     * [Install OpenFisca in an offline environment](offline-environment.md)
     * [Work on OpenFisca on a Windows without being administrator](windows-no-admin.md)
     * [Test your changes on "ready to use" situations](test_situations.md)
