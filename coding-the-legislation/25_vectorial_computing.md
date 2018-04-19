@@ -31,7 +31,7 @@ def formula(person):
 Unfortunately, this will generate an error similar to
 > The formula ‘rates_rebate@2016’ should return a Numpy array; instead it returned ‘610.0’ of ’<type ‘float’>’.
 
-Indeed, formulas receive an array of entity (*n* _people_ or *m* _households_ in `country_template`) and OpenFisca expects formulas to return array with the same shape.
+Indeed, formulas receive an array of entity (*n* _people_ or *m* _households_ in `country_template`) and OpenFisca expects formulas to return an array of the same shape.
 
 If you really want to return the same value for every entity, here is a snippet (that should work with any number of entity)
 ```py
