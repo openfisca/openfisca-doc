@@ -20,6 +20,33 @@ array([45, 42, 17])
 
 Basic operations such as `+` or `*` behave the same way on vectors than on numbers, you can thus use them in OpenFisca. However, some operations and structures must be adapted.
 
+## Scalars
+
+As a first-time developer, it is natural to write such a formula
+```py
+def formula(person):
+    rebate = 610
+    return rebate
+```
+Unfortunately, this will generate an error similar to
+> The formula ‘rates_rebate@2016’ should return a Numpy array; instead it returned ‘610.0’ of ’<type ‘float’>’.
+
+Indeed, formulas receive an array of entity (*n* _people_ or *m* _households_ in `country_template`) and OpenFisca expects formulas to return array with the same shape.
+
+If you really want to return the same value for every entity, here is a snippet (that should work with any number of entity)
+```py
+def formula(person, period, parameters):
+    rebate = 610 # or parameters(period).rebate
+    return np.ones(person.count) * rebate
+```
+
+However, generally formulas will refer to other variables and numpy will do the appropriate computation.
+```py
+def formula(person, period, parameters):
+    eligible = person('eligible', period)
+    rebate = 610 # or parameters(period).rebate
+    return eligible * rebate
+```
 
 ## Forbidden operations and alternatives
 
