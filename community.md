@@ -1,9 +1,20 @@
 # Community
 
+## Slack
+
 The OpenFisca community gathers around a [Slack space](https://openfisca.slack.com), which you can ask to join by sending a mail to [contact@openfisca.org](mailto:contact@openfisca.org?subject=Slack).
 
 This space provides both community and official support, and centralises all countries’ channels.
 
+### Channels and naming conventions
+
+In order to increase discoverability of channels and ease navigation, the following prefixes are used:
+
+- `of-` channels are about quick discussions and requests for help on a technical module. They don’t replace GitHub issues and Pull requests as the mean to reach consensus.
+- `country-` channels centralise discussions around country tax and benefit systems.
+- `ext-CY-` channels centralise discussions around extensions to countries tax and benefit systems. The `CY` part is the two-letter ISO code of the extended country.
+- `group-CY-` channels are campfires around which some specific groups of contributors to a country gather. When a country becomes large enough, it often happens that several employers of contributors work concurrently on different parts of the model, and the main `country-` channel would become unreadable. The `CY` part is the two-letter ISO code of the extended country.
+- `share-` channels are newsrooms on which everyone is encouraged to share their learnings.
 
 ## Contact
 
