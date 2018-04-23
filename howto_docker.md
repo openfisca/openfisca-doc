@@ -20,7 +20,7 @@ docker run -it openfisca-country-template bash
 
 ## Interface local files with OpenFisca on Docker
 
-If you need to run local files with your Docker image, you can interface (i.e. mont) a local directory with a directory.
+If you need to run local files with your Docker image, you can interface (i.e. mount) a local directory with a directory.
 E.g. You need to update a country package such as `openfisca-country-template`
 
 1. Create a Dockerfile with `openfisca-core` in your `project` directory
