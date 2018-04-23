@@ -46,23 +46,3 @@ and the [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.
 
 As of now (March 2014), the Qt version is no longer maintained and only the Python and the web APIs are being developed.
 
-## Community projects
-
-The OpenFisca project publishes several softwares built around the simulator which can be found on https://github.com/openfisca. There are many other projects driven by the community detailed below.
-
-### Applications
-
-- https://mes-aides.gouv.fr/
-- https://embauche.beta.gouv.fr/
-
-## Presentation slides
-
-In french: https://openfisca.github.io/communication/PyConFR-2016/ and https://speakerdeck.com/cbenz/ecrire-la-loi-en-python
-
-### Reforms
-
-- https://github.com/openfisca/openfisca-france-extension-revenu-de-base
-
-## Other languages
-
-- Using OpenFisca through [R](https://github.com/blaquans/ropenfisca)
