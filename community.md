@@ -1,13 +1,18 @@
 # Community
 
+The OpenFisca community gathers around a [Slack space](https://openfisca.slack.com), which you can ask to join by sending a mail to [contact@openfisca.org](mailto:contact@openfisca.org?subject=Slack).
 
-## Contact the team
+This space provides both community and official support, and centralises all countries’ channels.
 
-You can ask for help, or help others, or simply discuss with the team:
 
-- by email: contact@openfisca.fr
-- via Twitter: @OpenFisca
-- for developers, [open an issue on GitHub](./contribute/guidelines.md#opening-issues)
+## Contact
+
+You can contact the OpenFisca maintainers through:
+
+- [GitHub](./contribute/guidelines.md#opening-issues) if you have any technical issue.
+- Twitter [@OpenFisca](https://twitter.com/OpenFisca) for general inquiries and feedback.
+- [email](mailto:contact@openfisca.org) for collaboration opportunities.
+
 
 ## Project history
 
