@@ -10,11 +10,11 @@ This space provides both community and official support, and centralises all cou
 
 In order to increase discoverability of channels and ease navigation, the following prefixes are used:
 
-- `of-` channels are about quick discussions and requests for help on a technical module. They don’t replace GitHub issues and Pull requests as the mean to reach consensus.
+- `of-` channels are about quick discussions and requests for help on a technical module. To make decisions on changes to apply to these modules, we use GitHub issues and Pull Requests on dedicated repositories.
 - `country-` channels centralise discussions around a specific tax and benefit system. The name of the tax and benefit system in the Slack channel is the same name as the distributed module.
 - `ext-CY-` channels centralise discussions around extensions to countries tax and benefit systems. The `CY` part is the two-letter ISO code of the extended country.
 - `group-CY-` channels are campfires around which some specific groups of contributors to a country gather. When a country becomes large enough, it often happens that several employers of contributors work concurrently on different parts of the model, and the main `country-` channel would become unreadable. The `CY` part is the two-letter ISO code of the extended country.
-- `share-` channels are newsrooms on which everyone is encouraged to share their learnings.
+- `share-` channels are newsrooms on which everyone is encouraged to share their news, learnings and accomplishments  :)
 
 ## Contact
 
