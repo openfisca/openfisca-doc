@@ -1,13 +1,18 @@
 # Community
 
+The OpenFisca community gathers around a [Slack space](https://openfisca.slack.com), which you can ask to join by sending a mail to [contact@openfisca.org](mailto:contact@openfisca.org?subject=Slack).
 
-## Contact the team
+This space provides both community and official support, and centralises all countries’ channels.
 
-You can ask for help, or help others, or simply discuss with the team:
 
-- by email: contact@openfisca.fr
-- via Twitter: @OpenFisca
-- for developers, [open an issue on GitHub](./contribute/guidelines.md#opening-issues)
+## Contact
+
+You can contact the OpenFisca maintainers through:
+
+- [GitHub](./contribute/guidelines.md#opening-issues) if you have any technical issue.
+- Twitter [@OpenFisca](https://twitter.com/OpenFisca) for general inquiries and feedback.
+- [email](mailto:contact@openfisca.org) for collaboration opportunities.
+
 
 ## Project history
 
@@ -41,23 +46,3 @@ and the [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.
 
 As of now (March 2014), the Qt version is no longer maintained and only the Python and the web APIs are being developed.
 
-## Community projects
-
-The OpenFisca project publishes several softwares built around the simulator which can be found on https://github.com/openfisca. There are many other projects driven by the community detailed below.
-
-### Applications
-
-- https://mes-aides.gouv.fr/
-- https://embauche.beta.gouv.fr/
-
-## Presentation slides
-
-In french: https://openfisca.github.io/communication/PyConFR-2016/ and https://speakerdeck.com/cbenz/ecrire-la-loi-en-python
-
-### Reforms
-
-- https://github.com/openfisca/openfisca-france-extension-revenu-de-base
-
-## Other languages
-
-- Using OpenFisca through [R](https://github.com/blaquans/ropenfisca)
