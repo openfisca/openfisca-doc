@@ -150,7 +150,7 @@ reformed_tax_benefit_system = income_tax_reform(
     )
 ```
 
-> The [Getting_Started Notebook](https://github.com/openfisca/openfisca-france/blob/master/notebooks/getting-started.ipynb) contains an example of reform use.
+> The [Getting_Started Notebook](https://github.com/openfisca/tutorial/blob/master/notebooks/getting_started.ipynb) contains an example of reform use.
 
 ## Real examples
 
