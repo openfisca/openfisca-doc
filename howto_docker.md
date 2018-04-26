@@ -6,17 +6,19 @@ If you do not want the OpenFisca environment to interfere with you pre-existing 
 
 ## Run OpenFisca on Docker
 
-1. Install Docker
-2. create a docker file in the directory you wish to work on.
+1. Install [Docker](https://docs.docker.com/install/)
+2. Create a docker file in the directory you wish to work on
 ```
 FROM python:2-stretch 
-RUN pip install OpenFisca-country-template
+RUN pip install openfisca_country_template
 WORKDIR /app
 ```
+
 3. Build the container
 ```sh
 docker build --rm -t openfisca-country-template .
 ```
+
 4. Run the container
 ```sh
 docker run -it openfisca-country-template bash
@@ -24,7 +26,7 @@ docker run -it openfisca-country-template bash
 
 ## Interface local files with OpenFisca on Docker
 
-If you need to run local files with your Docker image, you can interface (i.e. mount) a local directory with a directory.
+If you need to run local files with your Docker image, you can interface (i.e. mount) a local directory with a directory in your docker interface.
 E.g. You need to update a country package such as `openfisca-country-template`
 
 1. Create a Dockerfile with `openfisca-core` in your `project` directory
@@ -55,7 +57,7 @@ docker build --rm -t openfisca-core .
 4. Run the container
 
 ```sh
-docker run -it -v /path/to/directory/project/country-template/:/country-template openfisca-core bash
+docker run -it -v /absolute/path/to/country-template/:/country-template openfisca-core bash
 ```
 
 5. Use `country-template` in the Docker container
