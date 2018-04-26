@@ -1,4 +1,8 @@
-# How to use Docker and Openfisca
+# How to use OpenFisca with Docker
+
+When you want to use OpenFisca, either for running simulation or editing a country package, you will need to setup a specific environement.
+If you do not want the OpenFisca environment to interfere with you pre-existing setup, you can use a container, such as a Docker container, that will set everything up for you.
+
 
 ## Run OpenFisca on Docker
 
