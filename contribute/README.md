@@ -11,11 +11,7 @@ Thanks for enhancing OpenFisca anyway!
 ## Why contribute to OpenFisca?
 
 OpenFisca is a project being developed under the [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.en.html) license.
-The source code is freely available and modifiable.
-
-Therefore, if you improve or update modelled tax-benefit systems (country packages, extensions, reforms, etc.) or the core engine, we ask you to share them back, for it allows the community to grow :)
-
-However, as long as the software you build with OpenFisca can't be considered an improvement or an evolution of OpenFisca, we won't consider it a form of derivative work. If the latter holds true, we won't ever ask you to share your software's source code, whether you're using the Python API, the Web API or both.
+The source code is freely available and modifiable. Please refer to the [Publishing results based on OpenFisca](../publishing.md) page for a detailed explanation of the implications of this provision.
 
 We encourage users to send their comments and suggestions for improvement,
 and to report any inaccuracy or error they might have found.
