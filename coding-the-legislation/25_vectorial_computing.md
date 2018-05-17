@@ -48,6 +48,10 @@ OpenFisca will help you notice this mistake by raising an error:
 
 > The formula ‘tax_rebate@2018’ should return a Numpy array; instead it returned ‘1000.0’ of ’<type ‘float’>’.
 
+If you expect a formula to return a boolean and forget that you will actually get an array of boolean values (one for each entity in the situation), you will receive the following safeguard error:
+
+> ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().
+
 The rest of this page gives practical replacements for situations in which you get such errors.
 
 
