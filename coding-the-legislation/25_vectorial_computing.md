@@ -176,8 +176,3 @@ Basic arithmetic operations such as `+` or `*` behave the same way on vectors th
 ## String concatenation
 
 The `+` operator, as well as formatted `%s` strings for concatenation should be replaced by a call to `concat(x, y)`.
-
-
-## Returning a single value for all entities
-
-If you really need to return the same value for every entity, the `np.ones` function allows you to create a vector of 1 of arbitrary length: `np.ones(persons.count) * some_parameter` will thus create a vector of the same length as the passed entities.
