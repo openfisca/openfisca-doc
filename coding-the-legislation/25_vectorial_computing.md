@@ -122,16 +122,7 @@ def formula(person, period):
 
 If the first condition is met, the first value will be assigned, without considering the other conditions. For instance, if `salary = 100`, `salary <= 500` is true and therefore `200` will be assigned. It doesn't matter that `salary <= 1000` is also true.
 
-If no condition is met, `0` will be returned. The previous formula is thus strictly equivalent to:
-
-```py
-def formula(person, period):
-    salary = person('salary', period)
-    return select(
-        [salary <= 500, salary <= 1000, salary <= 1500],
-        [200, 100, 50],
-        )
-```
+If the first condition is not met, then only the second condition will be considered, and so on. If no condition is met, `0` will be assigned.
 
 ### Complex conditions
 
