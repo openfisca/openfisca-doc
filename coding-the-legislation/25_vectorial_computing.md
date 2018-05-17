@@ -22,7 +22,7 @@ will print `array([41, 42, 45])`.
 
 This formula code will work the same if there is one Person or three or three million in the modelled situation. Formulas always receive as their first parameter an array of the [entity](./50_entities.md) on which they operate (e.g. *n* Person, Household…) and they should return an array of the same length.
 
-Most of the time, formulas will refer to other variables and Numpy will do the appropriate computation without you even noticing:
+Most of the time, formulas will refer to other variables and NumPy will do the appropriate computation without you even noticing:
 
 ```py
 def formula(persons, period, parameters):
@@ -45,7 +45,7 @@ def formula(persons, period, parameters):
 
 OpenFisca will help you notice this mistake by raising an error:
 
-> The formula 'tax_rebate@2018' should return a Numpy array; instead it returned '1000.0' of type 'float'.
+> The formula 'tax_rebate@2018' should return a NumPy array; instead it returned '1000.0' of type 'float'.
 
 In a similar fashion, if you expect a formula to return a boolean and forget that you will actually get an array of boolean values (one for each entity in the situation), you will receive the following safeguard error:
 
@@ -89,7 +89,7 @@ What happens is that for every Person in `persons`, if `condition_salary` is `Tr
 
 Let's now write a formula that returns `200` if the Person’s salary is lower than `1000`, and `100` otherwise.
 
-The Numpy function [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) offers a simple syntax to handle these cases.
+The NumPy function [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) offers a simple syntax to handle these cases.
 
 ```py
 def formula(persons, period):
@@ -99,7 +99,7 @@ def formula(persons, period):
 
 [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) takes 3 arguments: a vector of boolean values (the “condition”), the value to set for this element in the vector if the condition is met, and the value to set otherwise.
 
-This `where` function is provided directly by Numpy. There are many other [Numpy functions](https://docs.scipy.org/doc/numpy/reference/routines.math.html#sums-products-differences) provided that can be useful.
+This `where` function is provided directly by NumPy. There are many other [NumPy functions](https://docs.scipy.org/doc/numpy/reference/routines.math.html#sums-products-differences) provided that can be useful.
 
 ### Multiples conditions
 
@@ -109,7 +109,7 @@ Let's consider a more complex case, where we want to attribute to a person:
 - `50` if their salary is strictly more than `1000`, but less than `1500;`
 - `0` otherwise.
 
-We can use the Numpy function [`select`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.select.html) to implement this behaviour:
+We can use the NumPy function [`select`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.select.html) to implement this behaviour:
 
 ```py
 def formula(person, period):
@@ -126,7 +126,7 @@ If the first condition is not met, then only the second condition will be consid
 
 ### Complex conditions
 
-If no [Numpy function](https://docs.scipy.org/doc/numpy/reference/routines.math.html#sums-products-differences) helps you express a very specific condition, you can code arbitrary conditions using `*` instead of `and`, and `+` instead of `or`.
+If no [NumPy function](https://docs.scipy.org/doc/numpy/reference/routines.math.html#sums-products-differences) helps you express a very specific condition, you can code arbitrary conditions using `*` instead of `and`, and `+` instead of `or`.
 
 For instance, let's consider that a person will be granted `200` if either:
 
@@ -142,7 +142,7 @@ def formula(person, period):
     return condition * 200
 ```
 
-> You should always use [Numpy function](https://docs.scipy.org/doc/numpy/reference/routines.math.html#sums-products-differences) such as [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) and [`select`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.select.html) when they are relevant: logical operations using arithmetic operators should be used as last resort as they are not very readable.
+> You should always use [NumPy function](https://docs.scipy.org/doc/numpy/reference/routines.math.html#sums-products-differences) such as [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) and [`select`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.select.html) when they are relevant: logical operations using arithmetic operators should be used as last resort as they are not very readable.
 
 
 ## Arithmetic operations
