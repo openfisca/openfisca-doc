@@ -2,27 +2,25 @@
 
 OpenFisca calculation are all **vectorial**. That means they operate on arrays rather than single (“scalar”) values.
 
-The practical benefit is that computations are almost as expensive to do for one entity as they are for several hundred thousands. This is how datasets can be analysed and how reforms can be modelled accurately. However, to support this feature, you will need to apply some constraints on the way you write formulas.
+The practical benefit is that computations are almost as expensive for one entity as they are for hundred thousands. This is how datasets can be analysed and how reforms can be modelled accurately. However, to support this feature, you will need to apply some constraints on how you write formulas.
 
 
 ## Formulas always return vectors
 
-Each computation in OpenFisca must return a vector. For instance, for a simulation containing 3 persons whose ages are 41, 42 and 45, executing the following formula:
+Each [formula](../variables.md#formulas) computation in OpenFisca must return a vector.
+
+For instance, for a simulation containing 3 persons whose ages are 41, 42 and 45, executing the following formula:
 
 ```py
 def formula(persons, period, parameters):
     age = persons('age', period)
     print(age)
+    …  # do some computation and return a value
 ```
 
-will print:
-
-```
-array([41, 42, 45])
-```
+will print `array([41, 42, 45])`.
 
 This formula code will work the same if there is one Person or three or three million in the modelled situation. Formulas always receive as their first parameter an array of the [entity](./50_entities.md) on which they operate (e.g. *n* Person, Household…) and they should return an array of the same length.
-
 
 Most of the time, formulas will refer to other variables and Numpy will do the appropriate computation without you even noticing:
 
@@ -35,10 +33,11 @@ def formula(persons, period, parameters):
 
 ### What happens if you don't return a vector
 
-As programmers, we are used to work with scalars rather than vectors. We thus have a tendency to write straightforward code that returns a scalar rather than a unidimensional vector, and to loop over it:
+As programmers, we more often work with scalars than vectors. We thus have a tendency to write straightforward code that returns a scalar rather than a unidimensional vector (in other words, an array of length 1), and get stuck when wanting to loop over it:
 
 ```py
-def formula(persons, period, parameters):  # this code will NOT work
+# THIS IS NOT A VALID OPENFISCA FORMULA
+def formula(persons, period, parameters):
     tax_rebate = parameters(period).tax_rebate  # let's say this is worth 500
     rebate_threshold = tax_rebate * persons[0].eligibility_multiplier  # so this is 1000; see how we've accidentally left out other Persons?
     return rebate_threshold  # and this returns 1000. But it's not a vector!
@@ -46,9 +45,9 @@ def formula(persons, period, parameters):  # this code will NOT work
 
 OpenFisca will help you notice this mistake by raising an error:
 
-> The formula ‘tax_rebate@2018’ should return a Numpy array; instead it returned ‘1000.0’ of ’<type ‘float’>’.
+> The formula 'tax_rebate@2018' should return a Numpy array; instead it returned '1000.0' of type 'float'.
 
-If you expect a formula to return a boolean and forget that you will actually get an array of boolean values (one for each entity in the situation), you will receive the following safeguard error:
+In a similar fashion, if you expect a formula to return a boolean and forget that you will actually get an array of boolean values (one for each entity in the situation), you will receive the following safeguard error:
 
 > ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all().
 
@@ -57,12 +56,12 @@ The rest of this page gives practical replacements for situations in which you g
 
 ## Control structures
 
-Some classical control structures such as `if...else` or `switch`, as well native Python logical operators such as `or` and `not` do not work with vectors. Luckily, they all have alternatives, and the only change is in syntax.
+Some usual control structures such as `if...else`, `switch`, and native Python logical operators such as `or` and `not` do not work with vectors. Semantically however, they all have alternatives, and the only change is in syntax.
 
 
 ### `if` / `else`
 
-Let's say you want to write something like:
+Let's say you want to write that logically reads as:
 
 ```py
 # THIS IS NOT A VALID OPENFISCA FORMULA
@@ -88,7 +87,7 @@ What happens is that for every Person in `persons`, if `condition_salary` is `Tr
 
 ### Ternaries
 
-Let's now write a formula that still returns `200` if the Person’s salary is lower than `1000`, and `100` if this condition is not met.
+Let's now write a formula that returns `200` if the Person’s salary is lower than `1000`, and `100` otherwise.
 
 The Numpy function [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) offers a simple syntax to handle these cases.
 
@@ -98,7 +97,7 @@ def formula(persons, period):
     return where(condition_salary, 200, 100)
 ```
 
-[`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) takes 3 arguments: the condition, the value to return if the condition is met, and the value to return otherwise.
+[`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) takes 3 arguments: a vector of boolean values (the “condition”), the value to set for this element in the vector if the condition is met, and the value to set otherwise.
 
 This `where` function is provided directly by Numpy. There are many other [Numpy functions](https://docs.scipy.org/doc/numpy/reference/routines.math.html#sums-products-differences) provided that can be useful.
 
@@ -121,9 +120,7 @@ def formula(person, period):
         )
 ```
 
-If the first condition is met, the first value will be returned, without considering the other conditions. For instance, if `salary = 100`, `salary <= 500` is true and therefore `200` will be returned. It doesn't matter that `salary <= 1000` is also true.
-
-If the first condition is not met, then only the second condition will be considered.
+If the first condition is met, the first value will be assigned, without considering the other conditions. For instance, if `salary = 100`, `salary <= 500` is true and therefore `200` will be assigned. It doesn't matter that `salary <= 1000` is also true.
 
 If no condition is met, `0` will be returned. The previous formula is thus strictly equivalent to:
 
