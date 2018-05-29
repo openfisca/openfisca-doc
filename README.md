@@ -53,7 +53,7 @@ Country Packages are the basic modules of OpenFisca. They define the [Parameters
 ### OpenFisca Core
 
 OpenFisca-Core is the main engine: it is the common interface to every Country Package.
-It binds the Country Package(s), Extension(s) and the engine together. 
+It binds the Country Package(s), Extension(s) and the engine together.
 OpenFisca-Core is also where the API is packaged.
 
 - To install OpenFisca-Core, read the [OpenFisca-core Documentation](https://github.com/openfisca/openfisca-core).
