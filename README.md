@@ -4,7 +4,7 @@
 
 # Introduction
 
-[OpenFisca](https://www.openfisca.fr/) is a versatile [microsimulation](https://en.wikipedia.org/wiki/Microsimulation) software.
+[OpenFisca](https://openfisca.org/) is a versatile [microsimulation](https://en.wikipedia.org/wiki/Microsimulation) software.
 OpenFisca allows users to :
 - Calculate many variables of the tax and benefit system of a country given input variables.
   > OpenFisca can calculate social benefits and taxes on test cases (a person or a household).
@@ -15,7 +15,7 @@ To achieve both, computations are vectorial and use [NumPy](http://www.numpy.org
 Its engine is independent of the country, it is therefore possible to simulate any country.
 For now the main supported country is France.
 
-[OpenFisca](https://www.openfisca.org/) is a free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
+[OpenFisca](https://openfisca.org/) is a free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
 It is written in the [Python](http://www.python.org/) programming language (compatible with version 2.7).
 
 ## Project Components

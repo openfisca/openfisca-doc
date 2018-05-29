@@ -13,7 +13,7 @@ The following HTML snippet can be used to credit OpenFisca in your articles and 
 
 ```html
 <a href="https://openfisca.org" target="_blank" rel="noopener">
-  Computed by <img alt="OpenFisca" src="https://www.openfisca.org/hotlinks/logo-openfisca.svg" height="24" />.
+  Computed by <img alt="OpenFisca" src="https://openfisca.org/hotlinks/logo-openfisca.svg" height="24" />.
 </a>
 ```
 
@@ -21,7 +21,7 @@ The following HTML snippet can be used to credit OpenFisca in your articles and 
 
 ```html
 <a href="https://openfisca.org" target="_blank" rel="noopener">
-  Calculé par <img alt="OpenFisca" src="https://www.openfisca.org/hotlinks/logo-openfisca.svg" height="24" />.
+  Calculé par <img alt="OpenFisca" src="https://openfisca.org/hotlinks/logo-openfisca.svg" height="24" />.
 </a>
 ```
 
@@ -37,7 +37,7 @@ Please make sure to update the destination of the source code link if you use a 
 
 ```html
 <span>Computations powered by
-  <a href="https://openfisca.org" target="_blank" rel="noopener"><img alt="OpenFisca" src="https://www.openfisca.org/hotlinks/logo-openfisca.svg" height="24" /></a>,
+  <a href="https://openfisca.org" target="_blank" rel="noopener"><img alt="OpenFisca" src="https://openfisca.org/hotlinks/logo-openfisca.svg" height="24" /></a>,
   whose <a href="https://github.com/openfisca/openfisca-core">source code</a>
   is used under an <a href="https://choosealicense.com/licenses/agpl-3.0/" target="_blank" rel="noopener">AGPL</a> license.
 </span>
@@ -47,7 +47,7 @@ Please make sure to update the destination of the source code link if you use a 
 
 ```html
 <span>Calculs fournis par
-  <a href="https://openfisca.org" target="_blank" rel="noopener"><img alt="OpenFisca" src="https://www.openfisca.org/hotlinks/logo-openfisca.svg" height="24" /></a>,
+  <a href="https://openfisca.org" target="_blank" rel="noopener"><img alt="OpenFisca" src="https://openfisca.org/hotlinks/logo-openfisca.svg" height="24" /></a>,
   dont le <a href="https://github.com/openfisca/openfisca-core">code source</a>
   est utilisé sous licence <a href="https://choosealicense.com/licenses/agpl-3.0/" target="_blank" rel="noopener">AGPL</a>.
 </span>
