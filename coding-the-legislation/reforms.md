@@ -40,19 +40,23 @@ A reform that modifies a formula (such as our `income_tax_reform` example) is ca
 
 A reform that apply changes to legislation parameters is called a *parametric reform*.
 
-> Note that a reform can be both structural and parametric, modifying and/or adding variables *and* parameters. In that case, it is common practice to call it a structural reform anyway, the structural part outweighting the parametric one. 
+> Note that a reform can be both structural and parametric, modifying and/or adding variables *and* parameters. In that case, it is common practice to call it a structural reform anyway, the structural part outweighting the parametric one.
 
 
 To modify the legislation parameters in the reform, you can call the method `self.modify_parameters`, which takes a function as a parameter.
 
 This function performs the modifications you want to apply to the legislation. It takes as a parameter a copy of the reference tax and benefit system parameters: `parameters`. You can then modify and return `parameters`.
 
+The reform is applied for a certain fixed period. To define the period for which you want to apply the reform, it's necessary to import `periods` from `openfisca_core`.
+
 #### Update the value of a parameter
 
 ```python
+from openfisca_core import periods
+
 def modify_parameters(parameters):
     reform_period = periods.period("2015")
-    parameters.tax_on_salary.scale[1].threshold.update(period = reform_period, value = 4000)
+    parameters.tax_on_salary.brackets[1].threshold.update(period = reform_period, value = 4000)
     return parameters
 
 
