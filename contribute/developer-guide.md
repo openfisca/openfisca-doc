@@ -6,8 +6,6 @@ The OpenFisca project is distributed across many Git repositories:
 
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
 * [OpenFisca-France](https://github.com/openfisca/openfisca-france)
-* [OpenFisca-Web-API](https://github.com/openfisca/openfisca-web-api)
-* [OpenFisca-Web-UI](https://github.com/openfisca/openfisca-web-api)
 
 ## Debugging code
 
@@ -17,7 +15,7 @@ If you install [ipdb](https://github.com/gotcha/ipdb) (`pip install ipdb`) the A
 $ paster serve --reload development-france.ini
 Starting server in PID 3815.
 serving on 0.0.0.0:2000 view at http://127.0.0.1:2000
-> /home/harold/Dev/openfisca/openfisca-web-api/openfisca_web_api/model.py(52)get_cached_composed_reform()
+model.py(52)get_cached_composed_reform()
      51
 ---> 52     full_key = '.'.join(
      53         tax_benefit_system.full_key + reform_keys
