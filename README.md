@@ -32,7 +32,6 @@ The Web API lets you access the legislation [Parameters](./parameters.md) and [V
 
 - To explore the OpenFisca-France Web API services, use the [French Legistation Explorer](https://legislation.openfisca.fr/)
 - To query the Openfisca Web API in your app, see the [Web API endpoints description](./openfisca-web-api/endpoints.md)
-- To make sure the OpenFisca-France Web API (and all the related services) are still up and running, check out our [status page](https://status.openfisca.fr/)
 - To host your own instance of the Openfisca API, go to the [installation documentation](./openfisca-web-api/README.md)
 
 ### Extensions Packages

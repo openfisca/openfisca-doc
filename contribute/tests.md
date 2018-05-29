@@ -65,24 +65,6 @@ This needs [ipdb](https://github.com/gotcha/ipdb) to be installed.
 
 > Hint: use the snippets feature of your favorite text editor to save this line, for example give it the name "breakpoint".
 
-## Travis automated tests
+## Continuous integration
 
-OpenFisca uses [Travis CI](https://travis-ci.org/openfisca) to run tests automatically after each `git push`.
-
-The repositories tested by Travis are:
-
-* [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
-* [OpenFisca-France](https://github.com/openfisca/openfisca-france)
-* [OpenFisca-Web-API](https://github.com/openfisca/openfisca-web-api)
-
-The OpenFisca website hosts a summary page of the build statuses: https://www.openfisca.fr/build-status
-
-Travis tests other git branches than `master` too. For example: [OpenFisca-Core](https://travis-ci.org/openfisca/openfisca-core/branches).
-
-For OpenFisca-France, when testing a branch, if there is a branch in OpenFisca-Core with the same name, Travis will checkout it before running the tests. This is done by [this script](https://github.com/openfisca/openfisca-france/blob/master/run-travis-tests.sh).
-
-Idem for OpenFisca-Web-API with [this script](https://github.com/openfisca/openfisca-web-api/blob/master/run-travis-tests.sh) which is sightly different because it handles more dependencies.
-
-## Ludwig tests
-
-To download tests from [Ludwig](https://mes-aides.gouv.fr/tests/) (the tests tool from [Mes aides](https://mes-aides.gouv.fr/)), see the script [download_mes_aides_tests.py](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/scripts/download_mes_aides_tests.py).
+All OpenFisca official packages are continuously tested. All tests run automatically after each `git push`.
