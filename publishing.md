@@ -55,7 +55,7 @@ Please make sure to update the destination of the source code link if you use a 
 
 ## Distributing changes
 
-If you use and either modify or extend OpenFisca, and that you distribute those changes, you are [legally required](https://choosealicense.com/licenses/agpl-3.0/) to make those changes available to the community. The easiest way to do it is to publish your fork, country package, extension or reform on a source hosting platform such as GitHub, and to [notify](./community.md) the core team of this publication.
+If you modify or extend OpenFisca, and that you distribute those changes, you are [legally required](https://choosealicense.com/licenses/agpl-3.0/) to make those changes available to the community. The easiest way to do it is to publish your fork, country package, extension or reform on a source hosting platform such as GitHub, and to [notify](./community.md) the core team of this publication.
 
 Distributing changes means any way of sharing changes to the software with others. Providing software that integrate your changes in any format (source code, package, etc.) is considered as distribution, which means you also have to make your changes available.
 
