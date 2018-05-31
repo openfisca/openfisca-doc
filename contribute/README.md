@@ -27,7 +27,7 @@ you make of the API including visualizations you may create.
 We'd love to be able to include them on the OpenFisca website.
 - Suggest features: please tell us about the improvements
 to the API you would like to see, so that we can make it meet your needs.
-- Participate directly in the [API's development](https://github.com/openfisca/openfisca-web-api).
+- Participate directly in the [API's development](https://github.com/openfisca/openfisca-core).
 
 ### Test and report errors (web API)
 
