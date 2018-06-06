@@ -10,7 +10,7 @@ cd openfisca.org
 git fetch  # Make sure we are up to date with git remote branches
 git add .
 git config --global user.name "OpenFisca-Bot"
-git config --global user.email "contact@openfisca.fr"
+git config --global user.email "bot@openfisca.org"
 git commit --message="Push from openfisca doc"
 git push https://github.com/openfisca/openfisca.org.git gh-pages
 if git status --untracked-files=no ; then

@@ -72,4 +72,4 @@ To run it, save your modifications, go to the directory containing it, right cli
 python name-of-the-script.py
 ```
 
-In case you run into a problem, you can [open an issue](https://github.com/openfisca/openfisca-france/issues/new) or send an email to `contact@openfisca.fr`.
+In case you run into a problem, please [open an issue](https://github.com/openfisca/openfisca-core/issues/new).

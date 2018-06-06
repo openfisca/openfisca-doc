@@ -1,10 +1,10 @@
-[![OpenFisca logo](http://openfisca.org/img/logo-openfisca.svg)](https://fr.openfisca.org)
+[![OpenFisca logo](https://openfisca.org/img/logo-openfisca.svg)](https://openfisca.org)
 
 > Download a [PDF offline version](./openfisca-doc.pdf) of this documentation.
 
 # Introduction
 
-[OpenFisca](https://www.openfisca.fr/) is a versatile [microsimulation](https://en.wikipedia.org/wiki/Microsimulation) software.
+[OpenFisca](https://openfisca.org/) is a versatile [microsimulation](https://en.wikipedia.org/wiki/Microsimulation) software.
 OpenFisca allows users to :
 - Calculate many variables of the tax and benefit system of a country given input variables.
   > OpenFisca can calculate social benefits and taxes on test cases (a person or a household).
@@ -15,7 +15,7 @@ To achieve both, computations are vectorial and use [NumPy](http://www.numpy.org
 Its engine is independent of the country, it is therefore possible to simulate any country.
 For now the main supported country is France.
 
-[OpenFisca](https://www.openfisca.fr/) is a free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
+[OpenFisca](https://openfisca.org/) is a free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
 It is written in the [Python](http://www.python.org/) programming language (compatible with version 2.7).
 
 ## Project Components
@@ -30,7 +30,7 @@ The Web API lets you access the legislation [Parameters](./parameters.md) and [V
 
 >**Example**: [Mes Aides](https://mes-aides.gouv.fr) uses the OpenFisca Web API to calculate OpenFisca-France benefits.
 
-- To explore the OpenFisca-France Web API services, use the [French Legistation Explorer](https://legislation.openfisca.fr/)
+- To explore the OpenFisca-France Web API services, use the [French Legistation Explorer](https://fr.openfisca.org/legislation/)
 - To query the Openfisca Web API in your app, see the [Web API endpoints description](./openfisca-web-api/endpoints.md)
 - To host your own instance of the Openfisca API, go to the [installation documentation](./openfisca-web-api/README.md)
 
@@ -67,7 +67,7 @@ Final products can be built on the top of OpenFisca.
 They trigger tax and benefit variables computations via the web API.
 For example: [Mes aides](https://mes-aides.gouv.fr/).
 
-Then, the web API of OpenFisca is used by the team itself to develop tools like the [legislation explorer](https://legislation.openfisca.fr/).
+Then, the web API of OpenFisca is used by the team itself to develop tools like the [legislation explorer](https://fr.openfisca.org/legislation/).
 
 These tools are designed to help developers understand the legislation when they write it down into source code,
 and allow citizens to browse the tax and benefit legislation.

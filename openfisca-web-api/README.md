@@ -24,11 +24,11 @@ Please remember that OpenFisca is free software, licensed under an [Affero GPL l
 You could for example add one the following lines to a “credits” page:
 
 ```html
-Computations done by <a href="https://openfisca.fr">OpenFisca</a>, the <a href="https://choosealicense.com/licenses/agpl-3.0/" title="AGPL-3.0">free and open-source</a> social and fiscal computation engine. Source code available at <a href="https://github.com/openfisca">github.com/openfisca</a>.
+Computations done by <a href="https://openfisca.org">OpenFisca</a>, the <a href="https://choosealicense.com/licenses/agpl-3.0/" title="AGPL-3.0">free and open-source</a> social and fiscal computation engine. Source code available at <a href="https://github.com/openfisca">github.com/openfisca</a>.
 ```
 
 ```html
-Calculs effectués par <a href="https://openfisca.fr">OpenFisca</a>, le moteur <a href="https://choosealicense.com/licenses/agpl-3.0/" title="AGPL-3.0">libre et ouvert</a> du système social et fiscal. Code source disponible sur <a href="https://github.com/openfisca">github.com/openfisca</a>.
+Calculs effectués par <a href="https://openfisca.org">OpenFisca</a>, le moteur <a href="https://choosealicense.com/licenses/agpl-3.0/" title="AGPL-3.0">libre et ouvert</a> du système social et fiscal. Code source disponible sur <a href="https://github.com/openfisca">github.com/openfisca</a>.
 ```
 ## Hosting an API instance
 
