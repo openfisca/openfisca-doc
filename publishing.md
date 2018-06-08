@@ -61,4 +61,4 @@ Distributing changes means any way of sharing changes to the software with other
 
 Please also note that, under AGPL provisions, serving over the network is considered as distribution, which means you also have to make your changes available, even if you don't keep the running instance on your servers.
 
-Finally note that it isn't required that the source code of the software integrating your changes be published.
+For a detailed explanation of what you can do and what you can't please [read this](https://softwareengineering.stackexchange.com/questions/107883/agpl-what-you-can-do-and-what-you-cant/314908/).
