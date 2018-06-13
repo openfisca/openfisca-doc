@@ -59,6 +59,6 @@ If you modify or extend OpenFisca, and if you distribute those changes, you are 
 
 "Distributing changes" means sharing with others, in any way, the changes you made to the software. Providing software that integrates your changes in any format (source code, package, etc.) is considered as distribution, which means you also have to make your changes available.
 
-Please also note that, under AGPL provisions, serving over the network is considered as distribution, which means you also have to make your changes available, even if you don't keep the running instance on your servers.
+Please also note that, under AGPL provisions, serving over the network is considered as distribution, which means you also have to make your changes available.
 
 For a detailed explanation of what you can do and what you can't please [read this](https://softwareengineering.stackexchange.com/questions/107883/agpl-what-you-can-do-and-what-you-cant/314908/).
