@@ -154,7 +154,7 @@ zone_1:
     values:
       2015-01-01:
         value: 250
-  single:
+  per_child:
     description: "Amount of housing benefit per child, in zone 1"
     values:
       2015-01-01:
