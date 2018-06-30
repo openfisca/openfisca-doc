@@ -30,7 +30,7 @@ The Web API lets you access the legislation [Parameters](./parameters.md) and [V
 
 >**Example**: [Mes Aides](https://mes-aides.gouv.fr) uses the OpenFisca Web API to calculate OpenFisca-France benefits.
 
-- To explore the OpenFisca-France Web API services, use the [French Legistation Explorer](https://fr.openfisca.org/legislation/)
+- To explore the OpenFisca-France Web API services, use the [French Legislation Explorer](https://fr.openfisca.org/legislation/)
 - To query the Openfisca Web API in your app, see the [Web API endpoints description](./openfisca-web-api/endpoints.md)
 - To host your own instance of the Openfisca API, go to the [installation documentation](./openfisca-web-api/README.md)
 
