@@ -10,8 +10,8 @@ Thanks for enhancing OpenFisca anyway!
 
 ## Why contribute to OpenFisca?
 
-OpenFisca is a project being developed under the GPLv3 license or later.
-The source code is freely available and modifiable.
+OpenFisca is a project being developed under the [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.en.html) license.
+The source code is freely available and modifiable. Please refer to the [Publishing results based on OpenFisca](../publishing.md) page for a detailed explanation of the implications of this provision.
 
 We encourage users to send their comments and suggestions for improvement,
 and to report any inaccuracy or error they might have found.
