@@ -53,12 +53,10 @@ Please make sure to update the destination of the source code link if you use a 
 </span>
 ```
 
-## Distributing changes
+## Changes
 
-If you modify or extend OpenFisca, and if you distribute those changes, you are [legally required](https://choosealicense.com/licenses/agpl-3.0/) to make those changes available to the community. The easiest way to do it is to publish your fork, country package, extension or reform on a source hosting platform such as GitHub, and to [notify](./community.md) the core team of this publication.
+If you modify or extend OpenFisca, you are [legally required](https://choosealicense.com/licenses/agpl-3.0/) to make those changes available to the community. The easiest way to do it is to publish your fork of the core package, and of any country package, extension or reform, on a source hosting platform such as GitHub, and to [notify](./community.md) the core team of this publication.
 
-"Distributing changes" means sharing with others, in any way, the changes you made to the software. Providing software that integrates your changes in any format (source code, package, etc.) is considered as distribution, which means you also have to make your changes available.
+You can read [this analysis](https://softwareengineering.stackexchange.com/questions/107883/agpl-what-you-can-do-and-what-you-cant/314908/) to get more insight on what you can and can't do with APGL licensed software.
 
-Please also note that, under AGPL provisions, serving over the network is considered as distribution, which means you also have to make your changes available.
-
-For a detailed explanation of what you can do and what you can't please [read this](https://softwareengineering.stackexchange.com/questions/107883/agpl-what-you-can-do-and-what-you-cant/314908/).
+If you see opportunities in developping services/business/tools on top of OpenFisca but are concerned with the AGPL3 license implications, please [open an issue](https://github.com/openfisca/openfisca-doc/issues/new) to have a public discussion on the topic.
