@@ -13,11 +13,11 @@ This instance may host as many versions as there are countries in the world.
 > The OpenFisca core engine is able to simulate any country legislation once it is (partially) represented as source code.
 
 
-Therefore you have to call at the beginning of your work, the one corresponding to your country of interest.
+Therefore you have to instantiate and use the version corresponding to your country of interest.
 
 #### Application: how to call the Python module
 
-For now only France system is well implemented, your first action should then be:
+The system for France is currently the only one well implemented, so your first action should be:
 
 ```python
 # Call module describing the French System
