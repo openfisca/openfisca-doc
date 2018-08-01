@@ -8,7 +8,7 @@ Its goal is to model the legislation of a country.
 Basically a tax and benefit system contains simulation [variables](variables.md) (source code) and [legislation parameters](parameters.md) (data).
 
 
-This instance may host so many versions as there are countries in the world. 
+This instance may host as many versions as there are countries in the world. 
 
 > The OpenFisca core engine is able to simulate any country legislation once it is (partially) represented as source code.
 
