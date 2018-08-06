@@ -17,19 +17,31 @@ class flat_tax_on_salary(Variable):
 ```
 
 Let's explain in details the different parts of the code:
-- `class flat_tax_on_salary(Variable):` declares a new variable with the name `flat_tax_on_salary`.
-- Metadatas:
-  - `value_type = float` declares the type of the variable. Possible types are the basic python types:
+
+### The name of the variable
+
+`class flat_tax_on_salary(Variable):` declares a new variable named `flat_tax_on_salary`.  You can check out our recommended [naming conventions](../contribute/variables-naming.md).
+
+### The variable attributes
+
+All variables have a set of metadata.
+* Possible types are the basic python types. 
+Note however that OpenFisca uses NumPy to [run calculations vectorially](25_vectorial_computing.md),
+so the actual type of data may be slightly different from the builtin Python ones.
+Available types are :
     - `bool`: boolean
     - `date`: date
     - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md#advanced-example-enumerations-enum) in the next section.
-    - `float`: float
+    - `float`: float (Note that to reduce memory usage, float are stored on 32 bits using NumPy's `float32`)
     - `int`: integer
     - `str`: string
-  - `entity = Person` declares which entity the variable is defined for, e.g. a person, a family, a tax household, etc. The different available entities are defined by each tax and benefit system. In `openfisca-france`, a variable can be defined for an `Individu`, a `Famille`, a `FoyerFiscal`, or a `Menage`.
-  - `label = u"Individualized..."` gives, in a human-readable language, concise information about the variable.
-  - `definition_period = MONTH` states that the variable will be computed on months.
-- Formula:
+* `entity` defines who or what group the variable concerns, e.g. individuals, households, families. 
+* `definition_period` defines the period on which the variable is calculated. It can be `MONTH` (e.g.salary), `YEAR` (e.g. income taxes), or ETERNITY (e.g. Postal code)
+* `label` is a human friendly way to describe the variable
+* `reference` is a list of relevant legislative reference for this variables (usually URLs the text of the law or another trustworthy source)
+
+### The formula
+
   - `def formula(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH`, `period` is constrained to be a month.
   - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax and benefit system.
   - `return salary * 0.25` returns the result for the given period.
