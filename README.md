@@ -91,7 +91,3 @@ the [<abbr title="Institut des politiques publiques">IPP</abbr>](https://www.ipp
 the [<abbr title="Institut d'économie publique">IDEP</abbr>](https://www.idep-fr.org/),
 the [<abbr title="Sécurité sociale agricole">MSA</abbr>](http://www.msa.fr/lfy),
 and [France Stratégie](http://www.strategie.gouv.fr/).
-
-OpenFisca provides a basic infrastructure, in particular a public instance of its web API,
-hosted on cheap servers.
-As it is free software, anyone can reproduce the OpenFisca infrastructure on its server.
