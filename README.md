@@ -69,12 +69,7 @@ Final products can be built on the top of OpenFisca, mainly to compute tax and b
 
 Another use can be to improve the discoverability and readability of law, using reflexivity possibilities demonstrated by the [legislation explorer](https://fr.openfisca.org/legislation/).
 
-These tools are designed to help developers understand the legislation when they write it down into source code,
-and allow citizens to browse the tax and benefit legislation.
-
-The current version implements a large set of taxes, social benefits and housing provision for France
-for the last 10 years.
-But this is only due to a shortage in manpower to enter and update the Tunisian legislation.
+Independent researchers can use OpenFisca to publish articles exploring the impact of reforms, focusing on testing hypotheses rather than on modelling. For example, the impact of changing [how children are taken into account for social benefits](https://www.idep-fr.org/sites/default/files/idep/idep_analyses_n6.pdf) or of creating a [universal basic income in France](https://www.ipp.eu/projet/simulation-dun-revenu-de-base/). [NGOs can also use](https://www.revenudebase.info/2017/04/07/apprehender-cout-dun-revenu-de-base/) that same power to back their own suggestions.
 
 The project is 100% free software, it is published on [GitHub](https://github.com/openfisca).
 It uses the GitHub infrastructure (issues, pull requests, etc.) to communicate internally or with external participants.
