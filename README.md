@@ -65,9 +65,7 @@ OpenFisca-Core is also where the API is packaged.
 OpenFisca is more a platform than an application: its first target is not the end user but
 economists, software developers, researchers, teachers, administrations, interested citizens, etc.
 
-Final products can be built on the top of OpenFisca.
-They trigger tax and benefit variables computations via the web API.
-For example: [Mes aides](https://mes-aides.gouv.fr/).
+Final products can be built on the top of OpenFisca, mainly to compute tax and benefit variables through the web API. For example: [Mes aides](https://mes-aides.gouv.fr/) allows French citizens to assess their entitlement to social benefits across agencies.
 
 Another use can be to improve the discoverability and readability of law, using reflexivity possibilities demonstrated by the [legislation explorer](https://fr.openfisca.org/legislation/).
 
