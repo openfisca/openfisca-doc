@@ -17,7 +17,7 @@ Its engine is independent of the country, it is therefore possible to simulate a
 
 > For a deep dive into the context and difficulties that are encountered when modelling legislation as code that OpenFisca aims at solving, read the [Better Rules for Government](https://www.digital.govt.nz/showcase/better-rules-for-government-discovery-report) report.
 
-[OpenFisca](https://openfisca.org/) is a free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
+[OpenFisca](https://openfisca.org/) is free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
 It is written in the [Python](http://www.python.org/) programming language (compatible with version 2.7).
 
 ## Project Components
@@ -69,7 +69,7 @@ Final products can be built on the top of OpenFisca.
 They trigger tax and benefit variables computations via the web API.
 For example: [Mes aides](https://mes-aides.gouv.fr/).
 
-Then, the web API of OpenFisca is used by the team itself to develop tools like the [legislation explorer](https://fr.openfisca.org/legislation/).
+Another use can be to improve the discoverability and readability of law, using reflexivity possibilities demonstrated by the [legislation explorer](https://fr.openfisca.org/legislation/).
 
 These tools are designed to help developers understand the legislation when they write it down into source code,
 and allow citizens to browse the tax and benefit legislation.
@@ -80,12 +80,9 @@ But this is only due to a shortage in manpower to enter and update the Tunisian 
 
 The project is 100% free software, it is published on [GitHub](https://github.com/openfisca).
 It uses the GitHub infrastructure (issues, pull requests, etc.) to communicate internally or with external participants.
-The team discusses publically on those issues and pull requests and tries to be as transparent as possible.
+The team discusses publicly on those issues and pull requests as transparently as possible.
 
-The project is multi-actors: many people and organizations are involved in the project,
-reading the legislation and transforming it into source code,
-developing the Core or web tools,
-developing external products, etc.
+The project has many contributors: many people and organizations are involved in the project, reading the legislation and transforming it into source code, developing the Core or web tools, developing external products, etc.
 
 Among them:
 [Etalab](https://www.etalab.gouv.fr/),
