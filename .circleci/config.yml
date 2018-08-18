@@ -19,8 +19,11 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Run tests
-          command: npm test
+          name: Build app
+          command: npm run build > build-log.txt
+      - run:
+          name: Check there was no warning during build
+          command: "! (cat build-log.txt | grep 'warn:' | grep -v openfisca-doc.pdf)"
   deploy:
     docker:
       - image: circleci/node:6-jessie-browsers
