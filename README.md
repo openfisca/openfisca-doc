@@ -17,7 +17,7 @@ Its engine is independent of the country, it is therefore possible to simulate a
 
 > For a deep dive into the context and difficulties that are encountered when modelling legislation as code that OpenFisca aims at solving, read the [Better Rules for Government](https://www.digital.govt.nz/showcase/better-rules-for-government-discovery-report) report.
 
-[OpenFisca](https://openfisca.org/) is a free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
+[OpenFisca](https://openfisca.org/) is free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
 It is written in the [Python](http://www.python.org/) programming language (compatible with version 2.7).
 
 ## Project Components
@@ -65,27 +65,17 @@ OpenFisca-Core is also where the API is packaged.
 OpenFisca is more a platform than an application: its first target is not the end user but
 economists, software developers, researchers, teachers, administrations, interested citizens, etc.
 
-Final products can be built on the top of OpenFisca.
-They trigger tax and benefit variables computations via the web API.
-For example: [Mes aides](https://mes-aides.gouv.fr/).
+Final products can be built on the top of OpenFisca, mainly to compute tax and benefit variables through the web API. For example: [Mes aides](https://mes-aides.gouv.fr/) allows French citizens to assess their entitlement to social benefits across agencies.
 
-Then, the web API of OpenFisca is used by the team itself to develop tools like the [legislation explorer](https://fr.openfisca.org/legislation/).
+Another use can be to improve the discoverability and readability of law, using reflexivity possibilities demonstrated by the [legislation explorer](https://fr.openfisca.org/legislation/).
 
-These tools are designed to help developers understand the legislation when they write it down into source code,
-and allow citizens to browse the tax and benefit legislation.
-
-The current version implements a large set of taxes, social benefits and housing provision for France
-for the last 10 years.
-But this is only due to a shortage in manpower to enter and update the Tunisian legislation.
+Independent researchers can use OpenFisca to publish articles exploring the impact of reforms, focusing on testing hypotheses rather than on modelling. For example, the impact of changing [how children are taken into account for social benefits](https://www.idep-fr.org/sites/default/files/idep/idep_analyses_n6.pdf) or of creating a [universal basic income in France](https://www.ipp.eu/projet/simulation-dun-revenu-de-base/). [NGOs can also use](https://www.revenudebase.info/2017/04/07/apprehender-cout-dun-revenu-de-base/) that same power to back their own suggestions.
 
 The project is 100% free software, it is published on [GitHub](https://github.com/openfisca).
 It uses the GitHub infrastructure (issues, pull requests, etc.) to communicate internally or with external participants.
-The team discusses publically on those issues and pull requests and tries to be as transparent as possible.
+The team discusses publicly on those issues and pull requests as transparently as possible.
 
-The project is multi-actors: many people and organizations are involved in the project,
-reading the legislation and transforming it into source code,
-developing the Core or web tools,
-developing external products, etc.
+The project has many contributors: many people and organizations are involved in the project, reading the legislation and transforming it into source code, developing the Core or web tools, developing external products, etc.
 
 Among them:
 [Etalab](https://www.etalab.gouv.fr/),
@@ -94,7 +84,3 @@ the [<abbr title="Institut des politiques publiques">IPP</abbr>](https://www.ipp
 the [<abbr title="Institut d'économie publique">IDEP</abbr>](https://www.idep-fr.org/),
 the [<abbr title="Sécurité sociale agricole">MSA</abbr>](http://www.msa.fr/lfy),
 and [France Stratégie](http://www.strategie.gouv.fr/).
-
-OpenFisca provides a basic infrastructure, in particular a public instance of its web API,
-hosted on cheap servers.
-As it is free software, anyone can reproduce the OpenFisca infrastructure on its server.
