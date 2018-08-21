@@ -32,7 +32,7 @@ OpenFisca has mechanisms in place to define changes in the legislation that uses
 
 ### Define a start date and an end date for a formula
 
-The formula that calculate can change. To learn more, checkout the our [legislation evolutions page](coding-the-legislation/40_legislation_evolutions.md/#formula-evolution)
+The formula that calculate can change. To learn more, checkout the our [legislation evolutions page](coding-the-legislation/40_legislation_evolutions.md#formula-evolution)
 
 ```py
 class salary(Variable):
@@ -48,7 +48,7 @@ class salary(Variable):
 ```
 ### How to update a parameter
 
-The value for a parameter also can evolve. To learn more, checkout the our[legislation evolutions page](coding-the-legislation/40_legislation_evolutions.md/#how-to-update-a-parameter)
+The value for a parameter also can evolve. To learn more, checkout the our[legislation evolutions page](coding-the-legislation/40_legislation_evolutions.md#how-to-update-a-parameter)
 
 ```yaml
 taxes:
