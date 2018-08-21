@@ -26,6 +26,7 @@ In OpenFisca, Periods are encoded in strings. All the valid Period formats are r
 | `year:AAAA:N`     | N years         | `'year:2010:3'`     | The years 2010, 2011 and 2012.                   | From the 1st of January 2010 to the 31st of December 2012, inclusive. |
 | `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'`  | The three years Period starting in April 2010.   | From the 1st of April 2010 to the 31st of March 2013, inclusive.      |
 | `month:AAAA-MM:N` | N months        | `'month:2010-04:3'` | The three months from April to June 2010.        | From the 1st of April 2010 to the 30th of June 2010, inclusive.       |
+| `ETERNITY` | Forever        | `ETERNITY` | All of time.        | All past, present and future day, month or year|
 
 ```yaml
 
@@ -66,8 +67,6 @@ The size of the Period is constrained by the class attribute `definition_period`
 Each formula calculates a variable **for the given definition Period**. This Period is always the second argument of the formulas.
 
 ## Periods in formulas
-
-### Define different formulas for different 
 
 ### Calculate dependencies for a Period different than the one they are defined for
 
@@ -190,8 +189,8 @@ We can now provide an input for `2015` for `salary`: no error will be raised, an
 
 ## How to use Instants to represent cutoff dates.
 
-Sometimes, there are some results that depend on a value at a specific date.
-Instants can be used to calculate the value of a parameter or a variable at such date, for example, a scholarship that is awarded only if the student is yonger than 25 on july first of the same year.
+Sometimes, some results depend on a value calculted at a specific date.
+Instants can be used to calculate the value of a parameter or a variable at such date, for example, a scholarship that is awarded only if the student is yonger than 25 on july first of the same year:
 
 ```py
 from openfisca_core.periods import Instant
