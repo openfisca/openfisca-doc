@@ -1,10 +1,10 @@
 # Periods, Instants
 
-Most of the quantities calculated in OpenFisca, such as `income tax`, and `housing allowance`, can change over time. 
+Most of the values calculated in OpenFisca, such as `income tax`, and `housing allowance`, can change over time. 
 
 ## Time concepts in OpenFisca
 
-In simulations, tests and parameters, variables and formulas, OpenFisca manipulates time via *periods* and *instants*.
+In [simulations](http://openfisca.org/doc/simulation.html), tests and parameters, variables and formulas, OpenFisca manipulates time via *periods* and *instants*.
 
 - *Instant*: the atomic unit is a day, so instants are day dates.
 
@@ -25,14 +25,14 @@ The largest unit for OpenFisca periods is the **eternity**. The value of the var
 [Implementation options and helper functions](coding-the-legislation/35_periods.md) exist to transform periods or turn them into an instant.
 
 
-## Legislation Evolution 
+## Legislation evolution 
 
-Both the formulas that calculates a variable, and the values of a parameters can change over time.
+Both the formulas that calculate a variable and the values of a parameter can change over time.
 OpenFisca has mechanisms in place to define changes in the legislation that uses Instants.
 
 ### Define a start date and an end date for a formula
 
-The formula that calculate can change. To learn more, checkout the our [legislation evolutions page](coding-the-legislation/40_legislation_evolutions.md#formula-evolution)
+The formula that calculates a variable might only be valid from a start date and before an end date. 
 
 ```py
 class salary(Variable):
@@ -40,15 +40,18 @@ class salary(Variable):
     entity = Person
     label = u"Salary for a month"
     definition_period = MONTH
-    end = '2016-11-30'
+    end = '2018-11-30'
     def formula_2017_01_01(person, period, parameters):
         ...
     def formula(person, period):
         ...
 ```
+
+To learn more, check out our [legislation evolutions page](coding-the-legislation/40_legislation_evolutions.md#formula-evolution).
+
 ### How to update a parameter
 
-The value for a parameter also can evolve. To learn more, checkout the our[legislation evolutions page](coding-the-legislation/40_legislation_evolutions.md#how-to-update-a-parameter)
+The value for a parameter also can evolve over time. 
 
 ```yaml
 taxes:
@@ -64,6 +67,5 @@ taxes:
           reference: https://www.legislation-source.com/2015
 ```
 
-
-
+To learn more, checkout the our [legislation evolutions page](coding-the-legislation/40_legislation_evolutions.md#how-to-update-a-parameter).
 
