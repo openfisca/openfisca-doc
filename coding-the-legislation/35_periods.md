@@ -5,7 +5,10 @@ The smallest unit for OpenFisca Periods is the **month**. Therefore:
 
 - All Periods are presumed to start on the first day of their first month.
 - A Period cannot be smaller than a month.
-
+- To manipulate periods (e.g. create a new Period, create an Instant, ...), you will need to import the `periods` module like this :
+```py
+from openfisca_core import periods
+```
 
 An Instant is a specific day, such as a cutoff date.
 
