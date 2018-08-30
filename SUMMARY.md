@@ -14,7 +14,7 @@
    * [Coding a formula: basic example](coding-the-legislation/10_basic_example.md)
    * [Introducing an input variable](coding-the-legislation/20_input_variables.md)
    * [Vectorial computing](coding-the-legislation/25_vectorial_computing.md)
-   * [Periods](coding-the-legislation/35_periods.md)
+   * [Periods and instants](coding-the-legislation/35_periods.md)
    * [Legislation evolutions](coding-the-legislation/40_legislation_evolutions.md)
    * [Entities](coding-the-legislation/50_entities.md)
    * [Reforms](coding-the-legislation/reforms.md)

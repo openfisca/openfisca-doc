@@ -19,7 +19,7 @@ An Instant is a specific day, such as a cutoff date.
 
 ## Periods in simulations
 
-In OpenFisca, Periods are encoded in strings. All the valid Period formats are referenced in this table:
+In OpenFisca inputs, Periods are encoded in strings. All the valid Period formats are referenced in this table:
 
 | Period format     | Period type     | Example             | Represents                                       | Disambiguation                                                        |
 |-------------------|-----------------|---------------------|--------------------------------------------------|-----------------------------------------------------------------------|
@@ -62,15 +62,14 @@ class salary(Variable):
         ...
 ```
 
-Most of the values calculated in OpenFisca, such as `income tax`, and `housing allowance`, can change over time. 
+Most of the values calculated in OpenFisca, such as `income_tax`, and `housing_allowance`, can change over time. 
 
-Therefore, all OpenFisca variables have a `definition_period` attribute.
-The size of the Period is constrained by the class attribute `definition_period`:
+Therefore, all OpenFisca variables have a `definition_period` attribute:
   - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a Period that is not a month will raise an error before entering `formula`.
   - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `formula` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
   - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `formula`. However when `formula` is executed, the parameter `period` can be anything and it should not be used.
 
-Each formula calculates a variable **for the given definition Period**. This Period is always the second argument of the formulas.
+Each formula calculates the value of a variable for a Period the size of **the given definition Period**. This Period is always the second argument of the formulas.
 
 ## Periods in formulas
 

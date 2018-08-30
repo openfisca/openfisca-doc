@@ -1,10 +1,10 @@
 # Periods, Instants
 
-Most of the values calculated in OpenFisca, such as `income tax`, and `housing allowance`, can change over time. 
+Most of the values calculated in OpenFisca, such as an _income tax_, or a _housing allowance_, can change over time.  
 
 ## Time concepts in OpenFisca
 
-In [simulations](http://openfisca.org/doc/simulation.html), tests and parameters, variables and formulas, OpenFisca manipulates time via *periods* and *instants*.
+In [simulations](simulation.md), parameters and variables, OpenFisca handles time via *periods* and *instants*.
 
 - *Instant*: the atomic unit is a day, so instants are day dates.
 
@@ -20,10 +20,9 @@ The smallest unit for OpenFisca periods is the **month**. Therefore:
 - All periods are presumed to start on the first day of their first month.
 - A period cannot be smaller than a month.
 
-The largest unit for OpenFisca periods is the **eternity**. The value of the variable is constant over time, e.g. a date of birth.
+The largest unit for OpenFisca periods is the **eternity**, i.e. value of the variable is constant over time, e.g. a date of birth.
 
-[Implementation options and helper functions](coding-the-legislation/35_periods.md) exist to transform periods or turn them into an instant.
-
+[Read more about the periods implementation in OpenFisca](coding-the-legislation/35_periods.md)
 
 ## Legislation evolution 
 
