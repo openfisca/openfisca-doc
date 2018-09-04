@@ -5,10 +5,6 @@ The smallest unit for OpenFisca periods is the **month**. Therefore:
 
 - All periods are presumed to start on the first day of their first month.
 - A period cannot be smaller than a month.
-- To manipulate periods (e.g. create a new period), you will need to import the `periods` module like this :
-```py
-from openfisca_core import periods
-```
 
 An Instant is a specific day, such as a cutoff date.
 
@@ -191,28 +187,3 @@ class salary(Variable):
 ```
 
 We can now provide an input for `2015` for `salary`: no error will be raised, and the value will be automatically split between the 12 months of `2015`.
-
-## How to use Instants to represent cutoff dates.
-
-Sometimes, some results depend on a value calculted at a specific date.
-Instants can be used to calculate the value of a parameter or a variable at such date, for example, a scholarship that is awarded only if the student is yonger than 25 on july first of the same year:
-
-```py
-from openfisca_core.periods import Instant
-
-class eligible_for_scholarship(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = YEAR
-
-    def formula(person, period, parameters):
-        july_first = Instant(
-            (period.start.year, 7, 1)
-        ).period('month')
-
-        age_condition = person('age', july_first) <= 25
-
-        return age_condition    
-```
-
-
