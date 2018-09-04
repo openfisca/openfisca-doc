@@ -27,7 +27,7 @@ In OpenFisca inputs, periods are encoded in strings. All the valid period format
 | `month:AAAA-MM:N` | N months        | `'month:2010-04:3'` | The three months from April to June 2010.        | From the 1st of April 2010 to the 30th of June 2010, inclusive.       |
 | `ETERNITY` | Forever        | `ETERNITY` | All of time.        | All past, present and future day, month or year|
 
-This YAML test on `income_tax` evolution over time shows periods' impact on a variable
+This [YAML test](writing_yaml_tests.md) on `income_tax` evolution over time shows periods' impact on a variable
 
 ```yaml
 
