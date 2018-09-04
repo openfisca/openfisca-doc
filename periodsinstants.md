@@ -18,6 +18,6 @@ The smallest unit for OpenFisca periods is the **month**. Therefore:
 - All periods are presumed to start on the first day of their first month.
 - A period cannot be smaller than a month.
 
-The largest unit for OpenFisca periods is the **eternity**, i.e. value of the variable is constant over time, e.g. a date of birth.
+The largest unit for OpenFisca periods is the **eternity**, which is used for variables that are constant over time, e.g. a date of birth.
 
 [Read more about the periods implementation in OpenFisca](coding-the-legislation/35_periods.md)
