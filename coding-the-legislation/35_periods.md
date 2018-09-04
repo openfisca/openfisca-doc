@@ -1,37 +1,37 @@
 # Periods and instants
 
-A Period can be a month, a year, `n` successive months, `n` successive years or the eternity.
-The smallest unit for OpenFisca Periods is the **month**. Therefore:
+A period can be a month, a year, `n` successive months, `n` successive years or the eternity.
+The smallest unit for OpenFisca periods is the **month**. Therefore:
 
-- All Periods are presumed to start on the first day of their first month.
-- A Period cannot be smaller than a month.
-- To manipulate periods (e.g. create a new Period, create an Instant, ...), you will need to import the `periods` module like this :
+- All periods are presumed to start on the first day of their first month.
+- A period cannot be smaller than a month.
+- To manipulate periods (e.g. create a new period), you will need to import the `periods` module like this :
 ```py
 from openfisca_core import periods
 ```
 
 An Instant is a specific day, such as a cutoff date.
 
-> Internally, Periods are stored as:
+> Internally, periods are stored as:
 > - a start instant
 > - a unit (MONTH, YEAR)
 > - a quantity of units.
 
 ## Periods in simulations
 
-In OpenFisca inputs, Periods are encoded in strings. All the valid Period formats are referenced in this table:
+In OpenFisca inputs, periods are encoded in strings. All the valid period formats are referenced in this table:
 
 | Period format     | Period type     | Example             | Represents                                       | Disambiguation                                                        |
 |-------------------|-----------------|---------------------|--------------------------------------------------|-----------------------------------------------------------------------|
 | `AAAA`            | Calendar year   | `'2010'`            | The year 2010.                                   | From the 1st of January 2010 to the 31st of December 2010, inclusive. |
 | `AAAA-MM`         | Month           | `'2010-04'`         | The month of April 2010.                         | From the 1st of April 2010 to the 30th of April 2010, inclusive.      |
-| `year:AAAA-MM`    | Rolling year    | `'year:2010-04'`    | The 1 year Period starting in April 2010. | From the 1st of April 2010 to the 31st of March 2011, inclusive       |
+| `year:AAAA-MM`    | Rolling year    | `'year:2010-04'`    | The 1 year period starting in April 2010. | From the 1st of April 2010 to the 31st of March 2011, inclusive       |
 | `year:AAAA:N`     | N years         | `'year:2010:3'`     | The years 2010, 2011 and 2012.                   | From the 1st of January 2010 to the 31st of December 2012, inclusive. |
-| `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'`  | The three years Period starting in April 2010.   | From the 1st of April 2010 to the 31st of March 2013, inclusive.      |
+| `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'`  | The three years period starting in April 2010.   | From the 1st of April 2010 to the 31st of March 2013, inclusive.      |
 | `month:AAAA-MM:N` | N months        | `'month:2010-04:3'` | The three months from April to June 2010.        | From the 1st of April 2010 to the 30th of June 2010, inclusive.       |
 | `ETERNITY` | Forever        | `ETERNITY` | All of time.        | All past, present and future day, month or year|
 
-This YAML test on `income_tax` evolution over time shows Periods' impact on a variable
+This YAML test on `income_tax` evolution over time shows periods' impact on a variable
 
 ```yaml
 
@@ -45,7 +45,7 @@ This YAML test on `income_tax` evolution over time shows Periods' impact on a va
       2014-01: 388.8889
       2015-01: 416.6667 # The income tax rate changes in 2015
       2016-01: 416.6667
-      2017-01: 0 # The salary is not set for this Period and defaults to 0 
+      2017-01: 0 # The salary is not set for this period and defaults to 0 
 
 ```
 
@@ -65,17 +65,17 @@ class salary(Variable):
 Most of the values calculated in OpenFisca, such as `income_tax`, and `housing_allowance`, can change over time. 
 
 Therefore, all OpenFisca variables have a `definition_period` attribute:
-  - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a Period that is not a month will raise an error before entering `formula`.
+  - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `formula`.
   - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `formula` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
   - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `formula`. However when `formula` is executed, the parameter `period` can be anything and it should not be used.
 
-Each formula calculates the value of a variable for a Period the size of **the given definition Period**. This Period is always the second argument of the formulas.
+Each formula calculates the value of a variable for a period the size of **the given definition period**. This period is always the second argument of the formulas.
 
 ## Periods in formulas
 
-### Calculate dependencies for a Period different than the variable's `definition_period`
+### Calculate dependencies for a period different than the variable's `definition_period`
 
-Calling a formula with a Period that is incompatible with the attribute `definition_period` will cause an error. For instance, if we assume that a person `salary` is paid monthly:
+Calling a formula with a period that is incompatible with the attribute `definition_period` will cause an error. For instance, if we assume that a person `salary` is paid monthly:
 
 ```py
 class taxes(Variable):
@@ -89,9 +89,9 @@ class taxes(Variable):
         ...
 ```
 
-However, sometimes, we do need to estimate a variable for a different Period than the one it is defined for.
+However, sometimes, we do need to estimate a variable for a different period than the one it is defined for.
 
-We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The option `ADD` tells openfisca to split the Period into months, compute the variable for each month and sum up the results:
+We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The option `ADD` tells openfisca to split the period into months, compute the variable for each month and sum up the results:
 
 ```py
 class taxes(Variable):
@@ -118,16 +118,16 @@ class salary_net_of_taxes(Variable):
         # The variable taxes is computed on a year, monthly_taxes equals the 12th of that result
         monthly_taxes = person('taxes', period, options = [DIVIDE])
 
-        # salary is a monthly variable, Period is a month: no option is required
+        # salary is a monthly variable, period is a month: no option is required
         salary = person('salary', period)
 
         return salary - monthly_taxes
 ```
 
 
-### Calculate dependencies for a specific Period
+### Calculate dependencies for a specific period
 
-It happens that the formula to calculate a variable at a given Period needs the value of another variable for another Period. Usually, the second Period is defined relatively to the first one (previous month, last three month, current year).
+It happens that the formula to calculate a variable at a given period needs the value of another variable for another period. Usually, the second period is defined relatively to the first one (previous month, last three month, current year).
 
 For instance, we want to compute an unemployment benefit that equals half of last year's salary, if the person had no income for the past 3 months.
 
@@ -146,29 +146,29 @@ class unemployment_benefit(Variable):
         return 0.5 * salary_last_year * is_unemployed
 ```
 
-You can generate any Period with the following properties and methods:
+You can generate any period with the following properties and methods:
 
 | Period                            | Meaning                                                      |
 |-----------------------------------|--------------------------------------------------------------|
-| `period.this_month`               | First month-length Period that includes the start of `period`|
+| `period.this_month`               | First month-length period that includes the start of `period`|
 | `period.last_month`               | Month preceding `period.this_month`                          |
-| `period.this_year`                | First year-length Period that includes the start of `period` |
+| `period.this_year`                | First year-length period that includes the start of `period` |
 | `period.last_year`                | Year preceding `period.this_year`                            |
 | `period.n_2`                      | 2 years before `period.this_year`                            |
-| `period.last_3_months`            | The three-month Period preceding `period.this_month`         |
+| `period.last_3_months`            | The three-month period preceding `period.this_month`         |
 | `period.offset(n, 'month')`       | `period` translated by n months (backwards if n <0)          |
 | `period.offset(n, 'year')`        | `period` translated by n years (backwards if n <0)           |
-| `period.start.period('year')`     | Year-long Period starting a the same time than `period`      |
-| `period.start.period('month')`    | Month-long Period starting a the same time than `period`     |
-| `period.start.period('year', n)`  | n-year-long Period starting a the same time than `period`    |
-| `period.start.period('month', n)` | n-month-long Period starting a the same time than `period`   |
+| `period.start.period('year')`     | Year-long period starting a the same time than `period`      |
+| `period.start.period('month')`    | Month-long period starting a the same time than `period`     |
+| `period.start.period('year', n)`  | n-year-long period starting a the same time than `period`    |
+| `period.start.period('month', n)` | n-month-long period starting a the same time than `period`   |
 
 You can find more information on the `Period` object in the [reference documentation]() (_not available yet_)
 
 
-## `set_input`: Automatically process variable inputs defined for Periods not matching the `definition_period`
+## `set_input`: Automatically process variable inputs defined for periods not matching the `definition_period`
 
-By default, when you provide a simulation input, you won't be able to set a variable value for a Period that doesn't match its `definition_period`.
+By default, when you provide a simulation input, you won't be able to set a variable value for a period that doesn't match its `definition_period`.
 
 For instance, if the `definition_period` of `salary` is `MONTH`, and you input a value for `salary` for `2015`, an error will be raised.
 
