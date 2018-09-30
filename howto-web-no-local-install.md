@@ -6,7 +6,7 @@ Let's see how to use OpenFisca on one of those services: [repl.it](https://repl.
 
 ## Instructions
 
-1. Go to [repl.it](https://repl.it) and select `Python` (i.e. `python2.7`):
+1. Go to [repl.it](https://repl.it) and select `Python`:
 
     [![repl.it homepage](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-homepage.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-homepage.png)
 

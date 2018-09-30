@@ -18,7 +18,7 @@ Its engine is independent of the country, it is therefore possible to simulate a
 > For a deep dive into the context and difficulties that are encountered when modelling legislation as code that OpenFisca aims at solving, read the [Better Rules for Government](https://www.digital.govt.nz/showcase/better-rules-for-government-discovery-report) report.
 
 [OpenFisca](https://openfisca.org/) is free software published under the [GNU Affero General Public Licence](https://www.gnu.org/licenses/agpl.html) version 3 or later.
-It is written in the [Python](http://www.python.org/) programming language (compatible with version 2.7).
+It is written in the [Python](http://www.python.org/) programming language (compatible with version 3.7).
 
 ## Project Components
 
