@@ -14,7 +14,7 @@ Here we use [pew](https://github.com/berdario/pew) to simplify virtualenv manage
 
 ```sh
 pip install pew
-pew new openfisca-packages --python=python2.7
+pew new openfisca-packages --python=python3.7
 
 # Upgrade pip itself
 pip install --upgrade pip

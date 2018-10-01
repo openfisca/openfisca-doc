@@ -7,7 +7,7 @@
   },
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "gitbook build && gitbook pdf . ./_book/openfisca-doc.pdf",
+    "build": "gitbook build && node_modules/.bin/gitbook pdf . ./_book/openfisca-doc.pdf",
     "clean": "del _book",
     "postinstall": "gitbook install",
     "start": "gitbook serve --port 2050",
