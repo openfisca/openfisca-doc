@@ -36,18 +36,18 @@ taxes:
       description: Rate for the flat tax on salaries
       values:
         2017-01-01:
-          value: 0.25
+          value: 0.3
           reference: https://www.legislation-source.com/2017
         2016-01-01:
           value: 0.25
           reference: https://www.legislation-source.com/2016
         2015-01-01:
-          value: 0.20
+          value: 0.2
           reference: https://www.legislation-source.com/2015
 ```
 
-After this change, in a formula, `parameters(period).taxes.salary.rate`'s value will depend on `period`:
-- `parameters('2015-04').taxes.salary.rate` is `0.2`
+After this change, in a formula:
+- `parameters('2016-04').taxes.salary.rate` is `0.25`
 - `parameters('2017-01').taxes.salary.rate` is `0.3`
 - `parameters('2022-01').taxes.salary.rate` is `0.3`
 
