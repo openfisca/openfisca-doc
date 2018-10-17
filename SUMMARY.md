@@ -25,6 +25,7 @@
 * [OpenFisca Web API](openfisca-web-api/README.md)
    * [Endpoints](openfisca-web-api/endpoints.md)
    * [Input and output data](openfisca-web-api/input-output-data.md)
+   * [OpenAPI specification config](openfisca-web-api/config-openapi.md)
 * [Troubleshooting](troubleshooting.md)
 * [Recipes](recipes.md)
     * [Use OpenFisca on the web (no installation required on your computer)](./howto-web-no-local-install.md)
