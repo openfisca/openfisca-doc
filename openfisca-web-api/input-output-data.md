@@ -3,7 +3,7 @@
 > All the examples provided here are from the [country package template](https://github.com/openfisca/country-template).
 
 In order to run a computation on the Web API, you will need to send information to the API concerning:
-- The situation, meaning describe the entities (e.g. individuals, households) that you want to base your calculations on.
+- The situation, meaning describe the [entities](http://openfisca.org/doc/person,_entities,_role.html) (e.g. individuals, households) that you want to base your calculations on.
 - The variable you need to compute.
 
 ## Describing the situation
