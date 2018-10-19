@@ -36,20 +36,20 @@ taxes:
       description: Rate for the flat tax on salaries
       values:
         2017-01-01:
-          value: 0.25
+          value: 0.3
           reference: https://www.legislation-source.com/2017
         2016-01-01:
           value: 0.25
           reference: https://www.legislation-source.com/2016
         2015-01-01:
-          value: 0.20
+          value: 0.2
           reference: https://www.legislation-source.com/2015
 ```
 
-After this change `legislation(period).taxes.salary.rate` will return the corresponding values:
-- `legislation('2015-04').taxes.salary.rate` will return `0.2`
-- `legislation('2017-01').taxes.salary.rate` will return `0.3`
-- `legislation('2022-01').taxes.salary.rate` will return `0.3`
+After this change, in a formula:
+- `parameters('2016-04').taxes.salary.rate` is `0.25`
+- `parameters('2017-01').taxes.salary.rate` is `0.3`
+- `parameters('2022-01').taxes.salary.rate` is `0.3`
 
 [Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
 
@@ -98,7 +98,7 @@ Formula naming rules:
 
 In our previous example, we assumed that `flat_tax_on_salary` had _always_ had a formula, since the dawn of time. This is a reasonable hypothesis if we are only interested in running computations for recent years.
 
-But most fiscal and benefit mechanisms have been introduced at some point. Let's for instance assume that our `flat_tax_on_salary` only appeared in our legislation on the 1st of June 2005. 
+But most fiscal and benefit mechanisms have been introduced at some point. Let's for instance assume that our `flat_tax_on_salary` only appeared in our legislation on the 1st of June 2005.
 
 This is easily implemented by _dating_ the two formulas:
 
@@ -148,7 +148,7 @@ class progressive_income_tax(Variable):
 
 If `progressive_income_tax` is called **before** `2005-05-31`(included), `formula` will be used.
 
-However, if `progressive_income_tax` is calculated **after** `2005-06-01` (included), `formula` is **not** used, as it is not active anymore at this time. Instead, **the variable [default value](../variables.md#default-values) is returned**. 
+However, if `progressive_income_tax` is calculated **after** `2005-06-01` (included), `formula` is **not** used, as it is not active anymore at this time. Instead, **the variable [default value](../variables.md#default-values) is returned**.
 
 Note that:
 - The `end` day is **inclusive**: it is the last day a variable and its formulas are active (and not the first day it is not active anymore).
