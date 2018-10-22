@@ -1,4 +1,4 @@
-Openfisca reference documentation
+Openfisca Python API
 =================================
 
 Modules:
