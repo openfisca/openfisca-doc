@@ -16,6 +16,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# Manage avanced Markdown files with AutoStructify
+import recommonmark
+from recommonmark.transform import AutoStructify
+from recommonmark.parser import CommonMarkParser
 
 # -- Project information -----------------------------------------------------
 
@@ -48,16 +52,19 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'recommonmark'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-#
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
@@ -184,7 +191,6 @@ epub_exclude_files = ['search.html']
 
 # -- Extension configuration -------------------------------------------------
 
-extensions = ['recommonmark']
 
 # -- Options for intersphinx extension ---------------------------------------
 
@@ -195,3 +201,12 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/master/'
+
+def setup(app):
+   app.add_config_value('recommonmark_config', {
+           'url_resolver': lambda url: github_doc_root + url,
+           'auto_toc_tree_section': 'Contents',
+           }, True)
+   app.add_transform(AutoStructify)
