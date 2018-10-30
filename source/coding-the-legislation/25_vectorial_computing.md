@@ -15,7 +15,7 @@ For instance, for a simulation containing 3 persons whose ages are 41, 42 and 45
 def formula(persons, period, parameters):
     age = persons('age', period)
     print(age)
-    …  # do some computation and return a value
+    # ... do some computation and return a value
 ```
 
 will print `array([41, 42, 45])`.
