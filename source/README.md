@@ -28,7 +28,7 @@ OpenFisca is a modular project. Depending on your goals, you will install and in
 
 ### Web API
 
-The Web API lets you access the legislation [Parameters](./parameters.md) and [Variables](./variables.md).
+The Web API lets you access the legislation [Parameters](./key-concepts/parameters.md) and [Variables](./key-concepts/variables.md).
 
 >**Example**: [Mes Aides](https://mes-aides.gouv.fr) uses the OpenFisca Web API to calculate OpenFisca-France benefits.
 
