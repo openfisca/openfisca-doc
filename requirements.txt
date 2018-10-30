@@ -4,3 +4,4 @@ recommonmark
 sphinx_rtd_theme
 m2r
 sphinx_argparse
+sphinx-markdown-tables
