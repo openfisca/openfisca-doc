@@ -5,3 +5,26 @@
   padding: 5px;
   padding-left: 10px;
 }
+
+
+#right-column img {
+  max-width: 750px;
+}
+
+blockquote {
+  margin: 0 0 .85em;
+  padding: 0 15px;
+  color: #858585;
+  border: none;
+  border-left: 4px solid #e5e5e5;
+  background-color: inherit;
+}
+
+blockquote p {
+  color: #858585;
+}
+
+
+pre {
+  background: #f7f7f7;
+}

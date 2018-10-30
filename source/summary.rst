@@ -4,15 +4,13 @@
    contain the root `toctree` directive.
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
 
    index
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Key concepts:
+   :caption: Key concepts
 
    key-concepts/README
    key-concepts/tax_and_benefit_system
@@ -25,9 +23,8 @@
    key-concepts/reforms
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Coding the legislation:
+   :caption: Coding the legislation
 
    coding-the-legislation/README
    coding-the-legislation/10_basic_example
@@ -43,25 +40,22 @@
    coding-the-legislation/bootstrapping_a_new_country_package
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Web API:
+   :caption: Web API
 
    openfisca-web-api/README
    openfisca-web-api/endpoints
    openfisca-web-api/input-output-data
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Troubleshooting:
+   :caption: Troubleshooting
 
    troubleshooting
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Recipes:
+   :caption: Recipes
 
    recipes
    howto-web-no-local-install
@@ -71,23 +65,20 @@
    test_situations
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Publishing:
+   :caption: Publishing
 
    publishing
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Community:
+   :caption: Community
 
    community
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Contribute:
+   :caption: Contribute
 
    contribute/README
    contribute/guidelines
@@ -102,9 +93,8 @@
    contribute/release-process
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
-   :caption: Python API:
+   :caption: Python API
 
    openfisca-python-api/index
    openfisca-python-api/tax-benefit-system

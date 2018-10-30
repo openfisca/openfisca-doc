@@ -1,4 +1,5 @@
-# How to use OpenFisca on your browser (no installation required on your computer)
+# Use OpenFisca on the web
+
 
 If you want to use OpenFisca for running a simulation or evaluating the impact of a reform, without installing anything in your computer, these online services allow you to run OpenFisca directly on your browser, no installation required: [repl.it](https://repl.it), [python anywhere](https://www.pythonanywhere.com) and [jupyterlab](https://jupyterlab.readthedocs.io/en/stable/).
 

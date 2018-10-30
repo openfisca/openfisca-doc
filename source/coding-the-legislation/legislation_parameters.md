@@ -1,4 +1,4 @@
-# Implementing legislation parameters
+# Parameters
 
 [Legislation parameters](../parameters.md) can be found in the `parameters` directory of your country package.
 
