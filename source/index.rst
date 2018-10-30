@@ -8,15 +8,14 @@ Welcome to OpenFisca's documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
 
    README
 
 .. toctree::
    :maxdepth: 1
    :caption: Key concepts:
-   
-   README
+
+   key-concepts/README
    key-concepts/tax_and_benefit_system
    key-concepts/variables
    key-concepts/parameters
@@ -45,25 +44,6 @@ Welcome to OpenFisca's documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: Python API:
-
-   openfisca-python-api/index
-   openfisca-python-api/tax-benefit-system
-   openfisca-python-api/variables
-   openfisca-python-api/parameters
-   openfisca-python-api/reforms
-   openfisca-python-api/simulations
-   openfisca-python-api/entities
-   openfisca-python-api/test_runner
-   openfisca-python-api/tracer
-   openfisca-python-api/enum_array
-   openfisca-python-api/holder
-   openfisca-python-api/simulation_generator
-   openfisca-python-api/openfisca-run-test
-   openfisca-python-api/openfisca_serve
-
-.. toctree::
-   :maxdepth: 1
    :caption: Web API:
 
    openfisca-web-api/README
@@ -73,9 +53,9 @@ Welcome to OpenFisca's documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Troubleshooting:
-   
+
    troubleshooting
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Recipes:
@@ -115,10 +95,21 @@ Welcome to OpenFisca's documentation!
    contribute/tests
    contribute/release-process
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Python API:
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   openfisca-python-api/index
+   openfisca-python-api/tax-benefit-system
+   openfisca-python-api/variables
+   openfisca-python-api/parameters
+   openfisca-python-api/reforms
+   openfisca-python-api/simulations
+   openfisca-python-api/entities
+   openfisca-python-api/test_runner
+   openfisca-python-api/tracer
+   openfisca-python-api/enum_array
+   openfisca-python-api/holder
+   openfisca-python-api/simulation_generator
+   openfisca-python-api/openfisca-run-test
+   openfisca-python-api/openfisca_serve
