@@ -6,13 +6,19 @@
 Welcome to OpenFisca's documentation!
 =====================================
 
+
+
+.. mdinclude:: README.md
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    README
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Key concepts:
 
    key-concepts/README
@@ -27,6 +33,7 @@ Welcome to OpenFisca's documentation!
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Coding the legislation:
 
    coding-the-legislation/README
@@ -44,6 +51,7 @@ Welcome to OpenFisca's documentation!
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Web API:
 
    openfisca-web-api/README
@@ -52,12 +60,14 @@ Welcome to OpenFisca's documentation!
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Troubleshooting:
 
    troubleshooting
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Recipes:
 
    recipes
@@ -69,18 +79,21 @@ Welcome to OpenFisca's documentation!
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Publishing:
 
    publishing
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Community:
 
    community
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Contribute:
 
    contribute/README
@@ -97,6 +110,7 @@ Welcome to OpenFisca's documentation!
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
    :caption: Python API:
 
    openfisca-python-api/index
