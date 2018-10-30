@@ -1,3 +1,3 @@
-pip install docutils==0.12
-pip install Sphinx==1.5
-pip install recommonmark
+docutils==0.12
+Sphinx==1.5
+recommonmark
