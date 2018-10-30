@@ -12,14 +12,14 @@ Welcome to OpenFisca's documentation!
 
    README
    key-concepts
-      tax_and_benefit_system
-      variables
-      parameters
-      person,_entities,_role
-      periodsinstants
-      input_data
-      simulation
-      reforms
+      key-concepts/tax_and_benefit_system
+      key-concepts/variables
+      key-concepts/parameters
+      key-concepts/person,_entities,_role
+      key-concepts/periodsinstants
+      key-concepts/input_data
+      key-concepts/simulation
+      key-concepts/reforms
    coding-the-legislation/README
       coding-the-legislation/10_basic_example
       coding-the-legislation/20_input_variables
