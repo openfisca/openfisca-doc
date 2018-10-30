@@ -1,4 +1,7 @@
-.wy-menu-vertical .caption {
+.sphinxsidebar .caption {
   background-color: #2980B9;
-  color: white
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 10px;
 }

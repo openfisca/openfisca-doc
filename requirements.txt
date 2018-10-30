@@ -1,7 +1,6 @@
 docutils==0.12
 Sphinx==1.5
 recommonmark
-sphinx_rtd_theme
-m2r
+guzzle_sphinx_theme
 sphinx_argparse
 sphinx-markdown-tables
