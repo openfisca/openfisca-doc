@@ -1,5 +1,21 @@
 # Contribute
 
+```eval_rst
+.. toctree::
+   :hidden:
+
+   guidelines
+   language
+   commit-messages
+   variables-naming
+   semver
+   documentation
+   extensions
+   developer-guide
+   tests
+   release-process
+```
+
 OpenFisca is a free software project and contributors are very welcome!
 
 Feel free to fork the [source code repositories](https://github.com/openfisca) on GitHub and send us pull-requests.

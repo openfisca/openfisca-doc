@@ -1,5 +1,13 @@
 # OpenFisca Web API
 
+```eval_rst
+.. toctree::
+   :hidden:
+
+   endpoints
+   input-output-data
+```
+
 OpenFisca provides a web API package compatible with all country packages.
 Using a web interface, App Developers can access information and computations without installing anything locally.
 

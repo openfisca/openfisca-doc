@@ -1,5 +1,16 @@
 # Recipes for OpenFisca
 
+```eval_rst
+.. toctree::
+   :hidden:
+
+   howto-web-no-local-install
+   howto_docker
+   offline-environment
+   windows-no-admin
+   test_situations
+```
+
 As the OpenFisca community becomes larger, issues that only affect a small percentage of users arise.
 
 The purpose of this section is to bring together the clever solutions the community came up with and share them with all OpenFisca users.
