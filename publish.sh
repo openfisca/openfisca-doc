@@ -3,7 +3,7 @@
 set -ex
 
 git clone --branch gh-pages https://github.com/openfisca/openfisca.org.git
-mv _book doc
+mv build/html doc
 rm --recursive --force openfisca.org/doc
 mv doc openfisca.org/doc
 cd openfisca.org

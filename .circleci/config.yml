@@ -3,40 +3,45 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:6-jessie-browsers
+      - image: python:3.7
     steps:
-      - run:
-          name: Install calibre
-          command: sudo apt-get update && sudo apt-get install calibre
       - checkout
+
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "requirements.txt" }}
+
+      - run:
+          name: Create a virtualenv
+          command: |
+            mkdir -p /tmp/venv/openfisca_doc
+            python -m venv /tmp/venv/openfisca_doc
+            echo "source /tmp/venv/openfisca_doc/bin/activate" >> $BASH_ENV
+
       - run:
           name: Install app dependencies
-          command: npm install
+          command: pip install -r requirements.txt
+
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "requirements.txt" }}
           paths:
-            - node_modules
+            - /tmp/venv/openfisca_doc
+
       - run:
           name: Build app
-          command: npm run build | tee build-log.txt
-      - run:
-          name: Check there was no warning during build
-          command: "! (cat build-log.txt | grep 'warn:' | grep -v openfisca-doc.pdf)"
+          command: make html
+
+      - save_cache:
+          key: build-cache-{{ .Revision }}
+          paths:
+            - build
+
   deploy:
     docker:
-      - image: circleci/node:6-jessie-browsers
+      - image: python:3.7
     steps:
-      - run:
-          name: Install calibre
-          command: sudo apt-get update && sudo apt-get install calibre
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Build app
-          command: npm run build
+          key: build-cache-{{ .Revision }}
       - run:
           name: Publish openfisca.org/doc
           command: ./publish.sh
