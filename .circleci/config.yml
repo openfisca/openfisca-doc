@@ -30,6 +30,15 @@ jobs:
           name: Build app
           command: make html
 
+      - run:
+          name: Run app
+          command: python -m http.server 8000 --directory build/html
+          background: true
+
+      - run:
+          name: Check for internal dead links
+          command: wget --spider --recursive --page-requisites http://localhost:8000
+
       - save_cache:
           key: build-cache-{{ .Revision }}
           paths:
