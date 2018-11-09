@@ -122,7 +122,7 @@ class flat_tax_on_salary(Variable):
 
 Only a few characters changed in comparison with the last example: the suffix `_2005_06` has been added to the second formula name.
 
-Note that if `flat_tax_on_salary` is calculated **before** `2005-05-31` (included), _none_ of the two formulas is used, as they are _both inactive_ at this time. Instead, **the variable [default value](../variables.md#default-values) is returned**.
+Note that if `flat_tax_on_salary` is calculated **before** `2005-05-31` (included), _none_ of the two formulas is used, as they are _both inactive_ at this time. Instead, **the variable [default value](../key-concepts/variables.md#default-values) is returned**.
 
 
 ## Variable end
@@ -148,7 +148,7 @@ class progressive_income_tax(Variable):
 
 If `progressive_income_tax` is called **before** `2005-05-31`(included), `formula` will be used.
 
-However, if `progressive_income_tax` is calculated **after** `2005-06-01` (included), `formula` is **not** used, as it is not active anymore at this time. Instead, **the variable [default value](../variables.md#default-values) is returned**.
+However, if `progressive_income_tax` is calculated **after** `2005-06-01` (included), `formula` is **not** used, as it is not active anymore at this time. Instead, **the variable [default value](../key-concepts/variables.md#default-values) is returned**.
 
 Note that:
 - The `end` day is **inclusive**: it is the last day a variable and its formulas are active (and not the first day it is not active anymore).

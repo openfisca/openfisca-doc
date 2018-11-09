@@ -1,6 +1,6 @@
 # Reforms
 
-A [reform](../reforms.md) is a set of modifications to be applied to a tax and benefit system, usually to study the quantitative impact of a possible change of the law.
+A [reform](../key-concepts/reforms.md) is a set of modifications to be applied to a tax and benefit system, usually to study the quantitative impact of a possible change of the law.
 
 > See the reference documentation of the class [Reform](https://openfisca.readthedocs.io/en/latest/reforms.html).
 

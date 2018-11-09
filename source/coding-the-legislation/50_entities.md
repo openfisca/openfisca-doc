@@ -1,6 +1,6 @@
 # Entities
 
-Every variable is defined for a type of [entity](../person,_entities,_role.md): for instance persons or households.
+Every variable is defined for a type of [entity](../key-concepts/person,_entities,_role.md): for instance persons or households.
 
 However, I may for instance:
 - in a formula defined for a person, want to know some property of their household.
@@ -54,7 +54,7 @@ class basic_income(Variable):
         nb_children = household.nb_persons(Household.CHILD)
         salaries = household.members('salary', period)
         sum_salaries = household.sum(salaries)
-        
+
         result = nb_adults * 500 + nb_children * 200 - sum_salaries
         result = max_(result, 0)
 
@@ -77,7 +77,7 @@ class college_scholarship(Variable):
     def formula(person, period):
         is_student = person('is_student', period)
         has_household_basic_income = person.household('basic_income', period) > 0
-                
+
         return is_student * has_household_basic_income * 100
 ```
 

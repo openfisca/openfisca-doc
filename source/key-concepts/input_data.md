@@ -8,7 +8,7 @@
 
 The interface between input information and *input variables* that OpenFisca can handle is called *Scenario*.
 
-> Technically speaking, OpenFisca is using [vector computing](coding-the-legislation/25_vectorial_computing.md) for performance reasons via the [NumPy](http://www.numpy.org/) Python package
+> Technically speaking, OpenFisca is using [vector computing](../coding-the-legislation/25_vectorial_computing.md) for performance reasons via the [NumPy](http://www.numpy.org/) Python package
 
 Whatever the input is, *test case* or *data*, the scenario converts it into vectors internally.
 
@@ -31,7 +31,7 @@ You may add information at *individual* level or at *entity* level.
 One input is crucial and shouldn't be forgotten: the *period* of the simulation.
 
 ###### Application: how to initialize a scenario
-Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](openfisca-web-api/input-output-data.md) of the documentation).
+Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](../openfisca-web-api/input-output-data.md) of the documentation).
 
 In Python you have to use the `init_single_entity` function based on the *scenario*. To give to every person of your *test case* attributes, you have to use the Python dictionnary object.
 

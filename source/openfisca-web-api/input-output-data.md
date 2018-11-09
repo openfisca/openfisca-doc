@@ -22,7 +22,7 @@ Every person in a group entity needs a role (e.g. parent)
 
 ```json
 {
-  "persons": { 
+  "persons": {
     "Ricarda": {},
     "Bob": {},
     "Bill": {},
@@ -50,7 +50,7 @@ Every person in a group entity needs a role (e.g. parent)
 
 To run a precise calculation, you can provide information on each person and group entity.
 
-These are the input [variables](../variables.md) of your simulation. 
+These are the input [variables](../key-concepts/variables.md) of your simulation.
 
 To provide an input variable, insert the value in the json, for the corresponding time period (e.g. '2015-06') and entity (e.g. 'person', 'household').
 
@@ -60,7 +60,7 @@ The time period must respect the [definition period](../coding-the-legislation/3
 
 ```json
 {
-  "persons": { 
+  "persons": {
     "Ricarda": {
       "salary": {
         "2016-01": 3500,
@@ -126,7 +126,7 @@ The time period must respect the [definition period](../coding-the-legislation/3
   }
 }
 ```
-**Note that due to the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their [default value](../variables.md#default-values).**  
+**Note that due to the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their [default value](../key-concepts/variables.md#default-values).**
 
 
 ## Computing a variable
@@ -139,7 +139,7 @@ To indicate you want a variable computed, insert the variable in the correspondi
 
 ```json
 {
-  "persons": { 
+  "persons": {
     "Ricarda": {
       "salary": {
         "2016-01": 3500,
@@ -220,70 +220,70 @@ The API will return an identical JSON file where all the `null` (the variable th
   "households": {
     "household_1": {
       "parents": [
-        "Ricarda", 
+        "Ricarda",
         "Bob"
       ]
-    }, 
+    },
     "household_2": {
       "accomodation_size": {
-        "2016-01": 57, 
-        "2016-02": 57, 
-        "2016-03": 57, 
-        "2016-04": 57, 
-        "2016-05": 57, 
-        "2016-06": 57, 
-        "2016-07": 57, 
-        "2016-08": 57, 
-        "2016-09": 57, 
-        "2016-10": 57, 
-        "2016-11": 57, 
+        "2016-01": 57,
+        "2016-02": 57,
+        "2016-03": 57,
+        "2016-04": 57,
+        "2016-05": 57,
+        "2016-06": 57,
+        "2016-07": 57,
+        "2016-08": 57,
+        "2016-09": 57,
+        "2016-10": 57,
+        "2016-11": 57,
         "2016-12": 57
-      }, 
+      },
       "children": [
         "Janet"
-      ], 
+      ],
       "housing_occupancy_status": {
-        "2016-01": "Tenant", 
-        "2016-02": "Tenant", 
-        "2016-03": "Owner", 
-        "2016-04": "Owner", 
-        "2016-05": "Owner", 
-        "2016-06": "Owner", 
-        "2016-07": "Owner", 
-        "2016-08": "Owner", 
-        "2016-09": "Owner", 
-        "2016-10": "Owner", 
-        "2016-11": "Owner", 
+        "2016-01": "Tenant",
+        "2016-02": "Tenant",
+        "2016-03": "Owner",
+        "2016-04": "Owner",
+        "2016-05": "Owner",
+        "2016-06": "Owner",
+        "2016-07": "Owner",
+        "2016-08": "Owner",
+        "2016-09": "Owner",
+        "2016-10": "Owner",
+        "2016-11": "Owner",
         "2016-12": "Owner"
-      }, 
+      },
       "housing_tax": {
         "2016": 570.0
-      }, 
+      },
       "parents": [
         "Bill"
       ]
     }
-  }, 
+  },
   "persons": {
-    "Bill": {}, 
-    "Bob": {}, 
-    "Janet": {}, 
+    "Bill": {},
+    "Bob": {},
+    "Janet": {},
     "Ricarda": {
       "income_tax": {
         "2016-06": 525.0
-      }, 
+      },
       "salary": {
-        "2016-01": 3500, 
-        "2016-02": 3500, 
-        "2016-03": 3500, 
-        "2016-04": 3500, 
-        "2016-05": 3500, 
-        "2016-06": 3500, 
-        "2016-07": 3500, 
-        "2016-08": 3500, 
-        "2016-09": 4000, 
-        "2016-10": 4000, 
-        "2016-11": 4000, 
+        "2016-01": 3500,
+        "2016-02": 3500,
+        "2016-03": 3500,
+        "2016-04": 3500,
+        "2016-05": 3500,
+        "2016-06": 3500,
+        "2016-07": 3500,
+        "2016-08": 3500,
+        "2016-09": 4000,
+        "2016-10": 4000,
+        "2016-11": 4000,
         "2016-12": 4000
       }
     }

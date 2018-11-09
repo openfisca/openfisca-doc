@@ -34,7 +34,7 @@ The Web API lets you access the legislation [Parameters](./key-concepts/paramete
 
 - To explore the OpenFisca-France Web API services, use the [French Legislation Explorer](https://fr.openfisca.org/legislation/)
 - To query the Openfisca Web API in your app, see the [Web API endpoints description](./openfisca-web-api/endpoints.md)
-- To host your own instance of the Openfisca API, go to the [installation documentation](./openfisca-web-api/README.md)
+- To host your own instance of the Openfisca API, go to the [installation documentation](./openfisca-web-api/index.md)
 
 ### Extensions Packages
 
@@ -46,7 +46,7 @@ Extensions add on the capacities of a country-package.
 
 ### Country package
 
-Country Packages are the basic modules of OpenFisca. They define the [Parameters](./parameters.md), [Entities](./person,_entities,_role.md) and [Variables](./variables.md) of a country.
+Country Packages are the basic modules of OpenFisca. They define the [Parameters](./key-concepts/parameters.md), [Entities](./key-concepts/person,_entities,_role.md) and [Variables](./key-concepts/variables.md) of a country.
 
 - To install an existing Country Package, head to that package's documentation.
 >**Example**: [Openfisca-france's repository](https://github.com/openfisca/openfisca-france)
@@ -82,5 +82,5 @@ Among them:
 the [Incubateur des services numériques](https://beta.gouv.fr/),
 the [<abbr title="Institut des politiques publiques">IPP</abbr>](https://www.ipp.eu/),
 the [<abbr title="Institut d'économie publique">IDEP</abbr>](https://www.idep-fr.org/),
-the [<abbr title="Sécurité sociale agricole">MSA</abbr>](http://www.msa.fr/lfy),
+the [<abbr title="Sécurité sociale agricole">MSA</abbr>](http://www.msa.fr/),
 and [France Stratégie](http://www.strategie.gouv.fr/).

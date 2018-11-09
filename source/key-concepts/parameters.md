@@ -12,4 +12,4 @@ For instance:
 
 Parameters are used in [formulas](./variables.md#formulas) to calculate variable values.
 
-[Read more about their implementation in OpenFisca](./coding-the-legislation/legislation_parameters.md)
+[Read more about their implementation in OpenFisca](../coding-the-legislation/legislation_parameters.md)

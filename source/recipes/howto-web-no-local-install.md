@@ -22,7 +22,7 @@ Let's see how to use OpenFisca on one of those services: [repl.it](https://repl.
     print parameters
     ```
 
-    > You can also import files (e.g. JSON files describing input [situations](./openfisca-web-api/input-output-data.md#describing-the-situation)) by clicking on the `import or drop` button.
+    > You can also import files (e.g. JSON files describing input [situations](../openfisca-web-api/input-output-data.md#describing-the-situation)) by clicking on the `import or drop` button.
     [![repl.it upload & drop button](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-upload-drop-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-upload-drop-button.png)
 
 3. Click the `run` button to execute your code [![repl.it run button](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-run-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-run-button.png).

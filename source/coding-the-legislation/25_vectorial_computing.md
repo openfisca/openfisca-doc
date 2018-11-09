@@ -7,7 +7,7 @@ The practical benefit is that computations are almost as expensive for one entit
 
 ## Formulas always return vectors
 
-Each [formula](../variables.md#formulas) computation in OpenFisca must return a vector.
+Each [formula](../key-concepts/variables.md#formulas) computation in OpenFisca must return a vector.
 
 For instance, for a simulation containing 3 persons whose ages are 41, 42 and 45, executing the following formula:
 

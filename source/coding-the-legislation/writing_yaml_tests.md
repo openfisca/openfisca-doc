@@ -8,7 +8,7 @@ Each formula should be tested at least with one test, and better with specific b
 
 ## Example
 
-In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/tests/formulas/irpp.yaml) we see:
+In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/29.3.7/tests/formulas/irpp.yaml) we see:
 
 ```yaml
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
@@ -73,7 +73,7 @@ For instance:
 This is the simplest way to test formulas when you need to give input values for many individuals
 which are dispatched into entities.
 
-> See the last test of [cotisations_sociales_simulateur_IPP.yaml](https://github.com/openfisca/openfisca-france/blob/master/openfisca_france/tests/fonction_publique/cotisations_sociales_simulateur_IPP.yaml#L241-L300)
+> See the last test of [cotisations_sociales_simulateur_IPP.yaml](https://github.com/openfisca/openfisca-france/blob/29.3.7/tests/cotisations_sociales_simulateur_IPP.yaml#L244-L303)
 
 In this case, there is another convention:
 

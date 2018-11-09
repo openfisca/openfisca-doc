@@ -8,7 +8,7 @@ _If you do not have a choice other than using a restricted Windows, this guide s
 
 Git is a tool that will help you version your work. It also comes with a shell **terminal** that allows you to type commands in a more standard way than the Windows command line tool.
 
-- Download git from [https://git-for-windows.github.io](https://git-for-windows.github.io).
+- Download git from [https://gitforwindows.org/](https://gitforwindows.org/).
 - Install it. While installing, keep the default options.
 
 ## 2. Install python

@@ -1,6 +1,6 @@
 # Parameters
 
-[Legislation parameters](../parameters.md) can be found in the `parameters` directory of your country package.
+[Legislation parameters](../key-concepts/parameters.md) can be found in the `parameters` directory of your country package.
 
 The parameters are organized with in a [tree structure](https://en.wikipedia.org/wiki/Tree_structure).
 

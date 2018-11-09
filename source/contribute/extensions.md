@@ -4,7 +4,7 @@ Extensions allow you to define new variables or parameters for a tax and benefit
 
 They are for instance used to code local prestations.
 
-> Extensions are sometimes confused with another mechanism: reforms. [Read more about their respective uses](../reforms.md#differences-between-reforms-and-extensions).
+> Extensions are sometimes confused with another mechanism: reforms. [Read more about their respective uses](../key-concepts/reforms.md#differences-between-reforms-and-extensions).
 
 Extensions can be manually loaded to a tax and benefit system using the [load_extension](http://openfisca.readthedocs.io/en/latest/tax-benefit-system.html#openfisca_core.taxbenefitsystems.TaxBenefitSystem.load_extension) method.
 

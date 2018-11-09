@@ -3,7 +3,7 @@
 This documentation is built with the excellent [GitBook](https://github.com/GitbookIO/gitbook) tool
 (see [GitBook documentation](https://help.gitbook.com/)).
 
-It is written in [Markdown](https://help.gitbook.com/format/markdown.html)
+It is written in [Markdown](https://toolchain.gitbook.com/syntax/markdown.html)
 and the source is hosted on this GitHub repository:
 [openfisca/openfisca-doc](https://github.com/openfisca/openfisca-doc).
 
