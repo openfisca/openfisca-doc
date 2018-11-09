@@ -5,12 +5,12 @@ Summary
    :maxdepth: 1
 
    index
-   key-concepts/README
-   coding-the-legislation/README
-   openfisca-web-api/README
+   key-concepts/index
+   coding-the-legislation/index
+   openfisca-web-api/index
    troubleshooting
-   recipes
+   recipes/index
    publishing
    community
-   contribute/README
+   contribute/index
    openfisca-python-api/index
