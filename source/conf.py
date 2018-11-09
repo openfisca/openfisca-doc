@@ -59,9 +59,10 @@ github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/master/'
 suppress_warnings = ['image.nonlocal_uri']
 
 def setup(app):
-   app.add_config_value('recommonmark_config', {
-           'url_resolver': lambda url: url.replace('.md', '.html'),
-           'enable_auto_toc_tree': False
-           }, True)
-   app.add_transform(AutoStructify)  # Manage avanced Markdown files with AutoStructify
-   app.add_stylesheet('style.css')
+    app.add_config_value('recommonmark_config', {
+        'url_resolver': lambda url: url.replace('.md', '.html'),
+        'enable_auto_toc_tree': False
+        }, True)
+    app.add_transform(AutoStructify)  # Manage avanced Markdown files with AutoStructify
+    app.add_stylesheet('style.css')
+    app.add_javascript('scripts.js')
