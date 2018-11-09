@@ -27,3 +27,8 @@ blockquote p {
 pre {
   background: #f7f7f7;
 }
+
+/* Trick to avoid local links to appear in the side bar. We want only pages theres, but mixing markdown and rst creates some confusion. */
+.toctree-l2 a[href*="index.html#"], .toctree-l2 a[href^="#"] {
+  display: none;
+}
