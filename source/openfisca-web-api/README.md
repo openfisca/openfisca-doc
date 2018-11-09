@@ -6,6 +6,7 @@
 
    endpoints
    input-output-data
+   config-openapi
 ```
 
 OpenFisca provides a web API package compatible with all country packages.
