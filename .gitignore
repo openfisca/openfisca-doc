@@ -1,4 +1,2 @@
-/_book
-/node_modules
 build/*
 .DS_Store
