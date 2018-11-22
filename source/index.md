@@ -1,6 +1,6 @@
 [![OpenFisca logo](https://openfisca.org/img/logo-openfisca.svg)](https://openfisca.org)
 
-> Download a [PDF offline version](https://media.readthedocs.org/pdf/openfisca-doc/latest/openfisca-doc.pdf) of this documentation.
+> Download a [PDF offline version](https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf) of this documentation.
 
 # Introduction
 

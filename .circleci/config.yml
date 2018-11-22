@@ -39,8 +39,8 @@ jobs:
           name: Check for internal dead links
           command: wget --spider --recursive --page-requisites http://localhost:8000
 
-      - save_cache:
-          key: build-cache-{{ .Revision }}
+      - persist_to_workspace:
+          root: .
           paths:
             - build
 
@@ -49,8 +49,8 @@ jobs:
       - image: python:3.7
     steps:
       - checkout
-      - restore_cache:
-          key: build-cache-{{ .Revision }}
+      - attach_workspace:
+          at: .
       - run:
           name: Publish openfisca.org/doc
           command: ./publish.sh
