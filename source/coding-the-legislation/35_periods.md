@@ -135,7 +135,7 @@ class unemployment_benefit(Variable):
     definition_period = MONTH
 
     def formula(person, period):
-        salary_last_3_months = person('salary', period.last_3_month)
+        salary_last_3_months = person('salary', period.last_3_months)
         salary_last_year = person('salary', period.last_year)
 
         is_unemployed = (salary_last_3_months == 0)
