@@ -1,4 +1,4 @@
---editable git+https://github.com/openfisca/openfisca-core.git@master#egg=OpenFisca-Core[dev]
+--editable git+https://github.com/openfisca/openfisca-core.git@uniformize-tests-api#egg=OpenFisca-Core[dev]
 docutils==0.12
 guzzle_sphinx_theme
 recommonmark
