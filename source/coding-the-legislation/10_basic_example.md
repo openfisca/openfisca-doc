@@ -25,7 +25,7 @@ Let's explain in details the different parts of the code:
 ### The variable attributes
 
 All variables have a set of attributes.
-* `value_type` defines the type of the formula output. Possible types are the basic python types. 
+* `value_type` defines the type of the formula output. Possible types are the basic python types.
 Note however that OpenFisca uses NumPy to [run calculations vectorially](25_vectorial_computing.md),
 so the actual type of data may be slightly different from the builtin Python ones.
 Available types are :
@@ -35,7 +35,7 @@ Available types are :
     - `float`: float (Note that to reduce memory usage, float are stored on 32 bits using NumPy's `float32`)
     - `int`: integer
     - `str`: string
-* `entity` defines who or what group the variable concerns, e.g. individuals, households, families. 
+* `entity` defines who or what group the variable concerns, e.g. individuals, households, families.
 * `definition_period` defines the period on which the variable is calculated. It can be `MONTH` (e.g. salary), `YEAR` (e.g. income taxes), or ETERNITY (e.g. date of birth)
 * `label` is a human friendly way to describe the variable
 * `reference` is a list of relevant legislative reference for this variables (usually URLs the text of the law or another trustworthy source)
@@ -46,7 +46,7 @@ Available types are :
   - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax and benefit system.
   - `return salary * 0.25` returns the result for the given period.
   - [Dated Formulas](40_legislation_evolutions.md) have a start and/or an end date.
-  
+
 ## Testing a formula
 
 To make sure that the formula you have just written works the way you expect, you have to test it. Tests about legislation are written in a [YAML syntax](writing_yaml_tests.md). The `flat_tax_on_salary` formula can for instance be tested with the following test file:
@@ -54,16 +54,16 @@ To make sure that the formula you have just written works the way you expect, yo
 ```yaml
 - name: "Flax tax on salary - No income"
   period: 2017-01
-  input_variables:
+  input:
     salary: 0
-  output_variables:
+  output:
     flat_tax_on_salary: 0
 
 - name: "Flax tax on salary - With income"
   period: 2017-01
-  input_variables:
+  input:
     salary: 2000
-  output_variables:
+  output:
     flat_tax_on_salary: 500
 ```
 
