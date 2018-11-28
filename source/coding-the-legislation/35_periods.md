@@ -33,15 +33,15 @@ This [YAML test](writing_yaml_tests.md) on `income_tax` evolution over time show
 
 - name: Income tax over time
   period: 2016-01
-  input_variables:
+  input:
     salary:
       year:2014:3: 100000 # This person earned 100,000 between 2014 and 2016
-  output_variables:
+  output:
     income_tax:
       2014-01: 388.8889
       2015-01: 416.6667 # The income tax rate changes in 2015
       2016-01: 416.6667
-      2017-01: 0 # The salary is not set for this period and defaults to 0 
+      2017-01: 0 # The salary is not set for this period and defaults to 0
 
 ```
 
@@ -58,7 +58,7 @@ class salary(Variable):
         ...
 ```
 
-Most of the values calculated in OpenFisca, such as `income_tax`, and `housing_allowance`, can change over time. 
+Most of the values calculated in OpenFisca, such as `income_tax`, and `housing_allowance`, can change over time.
 
 Therefore, all OpenFisca variables have a `definition_period` attribute:
   - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `formula`.

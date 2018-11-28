@@ -14,9 +14,9 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/29.3.7/tests
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
   period: 2012
   absolute_error_margin: 0.5
-  input_variables:
+  input:
     salaire_imposable: 20000
-  output_variables:
+  output:
     irpp: -1181
 ```
 
@@ -60,10 +60,10 @@ For instance:
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"
   period: 2012
   absolute_error_margin: 0.5
-  input_variables:
+  input:
     salaire_imposable: 20000
     salaire_brut: 20000
-  output_variables:
+  output:
     irpp: -1181
 ```
 
@@ -125,7 +125,7 @@ In this case, there is another convention:
 - finally, define a dictionnary of the expected values of the output variables. Each output variable takes a list of length equal to the number of individuals defined in the test. E.g, for a family of four individuals with two working parents and two unemployed children, the output variable salaire_super_brut is defined as follows:
 
     ```yaml
-    output_variables:
+    output:
         salaire_super_brut: [3500, 2500, 0, 0]
     ```
 
@@ -146,10 +146,10 @@ Values can be arithmetic expressions too.
 
 ## Running a test
 
-To run YAML tests, use the command line tool `openfisca-run-test`, documented [here](https://openfisca.readthedocs.io/en/latest/openfisca-run-test.html):
+To run YAML tests, use the command line tool `openfisca test`, documented [here](https://openfisca.readthedocs.io/en/latest/openfisca-run-test.html):
 
 ```sh
-  openfisca-run-test path/to/file.yaml
+openfisca test path/to/file.yaml
 ```
 
 >You can also run tests programatically using the [`test_runner` module](https://openfisca.readthedocs.io/en/latest/test_runner.html).

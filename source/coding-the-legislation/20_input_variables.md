@@ -125,12 +125,12 @@ You can now test the formula in a YAML test:
 ```yaml
 - name: Household with free lodger status living in a 100 sq.meters accomodation
   period: 2017
-  input_variables:
+  input:
     accomodation_size:
       2017-01: 100
     housing_occupancy_status:
       2017-01: free_lodger
-  output_variables:
+  output:
     housing_tax: 0
 ```
 
