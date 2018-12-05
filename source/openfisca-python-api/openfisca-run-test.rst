@@ -1,6 +1,6 @@
-===============
-openfiscan test
-===============
+==============
+openfisca test
+==============
 
 .. argparse::
    :module: openfisca_core.scripts.openfisca_command
