@@ -11,6 +11,7 @@ Modules:
    parameters
    reforms
    simulations
+   simulation_builder
    entities
    test_runner
    tracer

@@ -1,11 +1,12 @@
-==================
-openfisca-run-test
-==================
+==============
+openfisca test
+==============
 
 .. argparse::
-   :module: openfisca_core.scripts.run_test
-   :func: build_parser
-   :prog: openfisca-run-test
+   :module: openfisca_core.scripts.openfisca_command
+   :func: get_parser
+   :prog: openfisca
+   :path: test
 
 Examples
 --------
@@ -21,19 +22,19 @@ Basic use
 
     - name: "Basic test"
       period: 2015
-      input_variables:
+      input:
         gross_salary: 2000
-      output_variables:
+      output:
         net_salary: 2000 * 0.8
 
 **Command line:**
 
 .. code-block:: shell
 
-  openfisca-run-test -c openfisca_france test.yaml
+  openfisca test -c openfisca_france test.yaml
   # Success
 
-  openfisca-run-test test.yaml
+  openfisca test test.yaml
   # Success: the country package is automatically detected.
   # May fail if several country packages are installed in your environment.
   # In that case, specify which package to use with the --country_package option
@@ -49,17 +50,17 @@ Error margin
     - name: "Test defining a relative error margin"
       period: 2015
       relative_error_margin: 0.05
-      input_variables:
+      input:
         gross_salary: 1000
-      output_variables:
+      output:
         net_salary: 780 # the right value is 800
 
     - name: "Test defining an absolute error margin"
       absolute_error_margin: 10
       period: 2015
-      input_variables:
+      input:
         gross_salary: 1000
-      output_variables:
+      output:
         net_salary: 790 # the right value is 800
 
 **test_3.yaml:**
@@ -68,9 +69,9 @@ Error margin
 
     - name: "Test not defining any error margin"
       period: 2015
-      input_variables:
+      input:
         gross_salary: 1000
-      output_variables:
+      output:
         net_salary: 795 # the right value is 800
 
 
@@ -78,10 +79,10 @@ Error margin
 
 .. code-block:: shell
 
-  openfisca-run-test test_2.yaml
+  openfisca test test_2.yaml
   # Success: the test pass, as the actual results are within the error margins
 
-  openfisca-run-test test_3.yaml
+  openfisca test test_3.yaml
   # Failure: the test does not pass, as its error margin is by default 0
 
 
@@ -94,9 +95,9 @@ Name filter
 
     - name: "Test containing the word openfisca in its name"
       period: 2015
-      input_variables:
+      input:
         gross_salary: 1000
-      output_variables:
+      output:
         net_salary: 800
 
     - name: "Test that contains the magic word in its keywords"
@@ -104,26 +105,26 @@ Name filter
         - some keyword
         - openfisca
       period: 2015
-      input_variables:
+      input:
         gross_salary: 1000
-      output_variables:
+      output:
         net_salary: 800
 
     - name: "Some other test that fails"
       period: 2015
-      input_variables:
+      input:
         gross_salary: 1000
-      output_variables:
+      output:
         net_salary: 0
 
 **Command line:**
 
 .. code-block:: shell
 
-  openfisca-run-test test_4.yaml
+  openfisca test test_4.yaml
   # Failure: the third test does not pass
 
-  openfisca-run-test -n openfisca test_4.yaml
+  openfisca test -n openfisca test_4.yaml
   # Success: the third test is not executed, as it doesn't contain the word 'openfisca'
 
 Note that if a test file name contains the name filter, all the inner tests will be executed.
@@ -141,9 +142,9 @@ Let's now assume an extension to ``openfisca_france``, ``openfisca_paris`` is in
 
     - name: "Test using an extension"
       period: 2015
-      input_variables:
+      input:
         net_salary: 0
-      output_variables:
+      output:
         paris_housing_benefit: 200
 
 
@@ -151,11 +152,11 @@ Let's now assume an extension to ``openfisca_france``, ``openfisca_paris`` is in
 
 .. code-block:: shell
 
-  openfisca-run-test test_5.yaml
+  openfisca test test_5.yaml
   # Failure: the test returns an error:
   # the country package openfisca_france does not references a variable named paris_housing_benefit
 
-  openfisca-run-test -e openfisca_paris test_5.yaml
+  openfisca test -e openfisca_paris test_5.yaml
   # Success: The test passes, as the extension is loaded in the tax benefit system before running the test
 
 
@@ -173,9 +174,9 @@ This reform is called ``increase_cotisation`` and available in the python module
 
     - name: "Test on a reform"
       period: 2015
-      input_variables:
+      input:
         gross_salary: 1000
-      output_variables:
+      output:
         net_salary: 600
 
 
@@ -183,8 +184,8 @@ This reform is called ``increase_cotisation`` and available in the python module
 
 .. code-block:: shell
 
-  openfisca-run-test test_6.yaml
+  openfisca test test_6.yaml
   # Failure: the test does not pass, as the regular openfisca_france is used
 
-  openfisca-run-test -r openfisca_france.reforms.increase_cotisation.increase_cotisation test_5.yaml
+  openfisca test -r openfisca_france.reforms.increase_cotisation.increase_cotisation test_5.yaml
   # Success: The test passes, as the increase_cotisation reform is applied
