@@ -84,3 +84,36 @@ Example with the [statut d'occupation du logement](https://fr.openfisca.org/legi
 ### Data
 
 OpenFisca input data can contain multiple situations: from more than one situation to a whole population. This data could come from a survey with aggregated data or data files extracted, for example, from a database.
+
+#### CSV data
+
+To apply the legislation on data described in CSV file(s), you can use OpenFisca Python API.
+
+Let's say you have the following `data.csv` and you want to calculate the [income_tax](https://demo.openfisca.org/legislation/income_tax) for all persons:
+
+```csv
+person_id,salary,age
+1,2694,40
+2,2720,43
+3,1865,45
+4,1941,23
+5,2393,31
+6,3008,47
+7,2286,23
+8,3386,28
+9,2929,38
+10,3981,37
+11,3643,38
+12,2078,23
+```
+
+1. Load the legislation and `data.csv` content with [pandas](https://pandas.pydata.org) library:
+
+```python
+from openfisca_country_template import CountryTaxBenefitSystem
+import pandas as pds
+
+tax_benefit_system = CountryTaxBenefitSystem()
+data = pds.read_csv('./data.csv')  # pandas.DataFrame object
+n = len(data)  # without csv header
+```
