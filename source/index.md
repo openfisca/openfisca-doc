@@ -1,4 +1,7 @@
-[![OpenFisca logo](https://openfisca.org/img/logo-openfisca.svg)](https://openfisca.org)
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+<div class="button">
+  <a class="button_link" href="https://openfisca.org/"><i class="fas fa-home"></i> OpenFisca</a>
+</div>
 
 > Download a [PDF offline version](https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf) of this documentation.
 

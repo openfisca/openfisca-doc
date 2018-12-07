@@ -6,6 +6,18 @@
   padding-left: 10px;
 }
 
+.button {
+  float: right;
+  padding: 10px !important;
+  border-radius: 5px;
+  background: #971640;
+  display: inline-block;
+}
+
+.button_link {
+  color: #fff !important;
+  text-decoration: none;
+}
 
 #right-column img {
   max-width: 750px;
