@@ -2,7 +2,7 @@
 
   You can use OpenFisca with two kind of input information:
   - either *test case*: you simulate the legislation for one standard situation
-  - or *data*: you give a whole population (survey with aggregated data for example) on which you want to apply the legislation.
+  - or *data*: you give a whole population (survey with aggregated data or csv files for example) on which you want to apply the legislation.
 
 ### Scenario
 
@@ -31,6 +31,7 @@ You may add information at *individual* level or at *entity* level.
 One input is crucial and shouldn't be forgotten: the *period* of the simulation.
 
 ###### Application: how to initialize a scenario
+
 Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](../openfisca-web-api/input-output-data.md) of the documentation).
 
 In Python you have to use the `init_single_entity` function based on the *scenario*. To give to every person of your *test case* attributes, you have to use the Python dictionnary object.
@@ -81,6 +82,5 @@ Example with the [statut d'occupation du logement](https://fr.openfisca.org/legi
 ---
 
 ### Data
-Using data as input is not documented yet.
-Please consult this repository:
-https://github.com/openfisca/openfisca-france-data
+
+OpenFisca input data can contain multiple situations: from more than one situation to a whole population. This data could come from a survey with aggregated data or data files extracted, for example, from a database.
