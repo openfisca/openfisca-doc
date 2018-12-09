@@ -1,8 +1,9 @@
 # Input Data
 
-  You can use OpenFisca with two kind of input information:
-  - either *test case*: you simulate the legislation for one standard situation
-  - or *data*: you give a whole population (survey with aggregated data or csv files for example) on which you want to apply the legislation.
+You can use OpenFisca with two kind of input information:
+
+- either *test cases*: you simulate the legislation for one standard situation
+- or *data*: you give a whole population (survey with aggregated data, csv files, etc.) on which you want to apply the legislation
 
 ### Scenario
 
@@ -21,24 +22,23 @@ After initializing the [Tax and Benefit System](tax_and_benefit_system.md), you 
 scenario = tax_benefit_system.new_scenario()
 
 ```
----
 
 ### Test cases
 
-Test case describes persons and entities with their input variables or attributes.
+A test case describes persons and entities with their input variables or attributes.
 
-You may add information at *individual* level or at *entity* level.
-One input is crucial and shouldn't be forgotten: the *period* of the simulation.
+You may add information at the *individual* level or at the *entity* level. One input is crucial and shouldn't be forgotten: the *period* of the simulation.
 
 ###### Application: how to initialize a scenario
 
-Test cases can be expressed in Python or in JSON when using the Web API (see the [specific section](../openfisca-web-api/input-output-data.md) of the documentation).
+Test cases can be expressed in Python, or in JSON when using the Web API (see the [specific section](../openfisca-web-api/input-output-data.md) of the documentation).
 
-In Python you have to use the `init_single_entity` function based on the *scenario*. To give to every person of your *test case* attributes, you have to use the Python dictionnary object.
+In Python, you have to use the `init_single_entity` function based on the *scenario*. To give to every person of your *test case* attributes, you have to use the Python dictionary object.
 
 We show here the Python expression for a family constituted by:
-- two parents (with attributes: her `age` or her `date_naissance` and her `salaire_de_base`),
-- two children (with attribute: their `age`),
+
+- two parents (with attributes: her `age` or her `date_naissance` and her `salaire_de_base`)
+- two children (with attribute: their `age`)
 - a house (with attributes: the `loyer` and the `statut_occupation_logement`)
 
 ```python
@@ -70,7 +70,7 @@ Notice that some input variables are associated to *individus* ("parent1" , "par
 
 > **WARNING**: Declare the *input variables* on an annual basis.
 
-HINT: For categorical variable you may use either the modality or its number.
+HINT: For categorical variables you may use either the modality or its number.
 Example with the [statut d'occupation du logement](https://fr.openfisca.org/legislation/statut_occupation_logement):
  ``` python
  # Declaration of categorical variable
@@ -79,17 +79,18 @@ Example with the [statut d'occupation du logement](https://fr.openfisca.org/legi
             )
 
 ```
----
 
 ### Data
 
-OpenFisca input data can contain multiple situations: from more than one situation to a whole population. This data could come from a survey with aggregated data or data files extracted, for example, from a database.
+OpenFisca input data can vary from one situation to a whole population. This data could come from a survey with aggregated data, data files extracted from a database, etc.
 
 #### CSV data
 
-To apply the legislation on data described in CSV file(s), you can use OpenFisca Python API.
+To apply the legislation on data described in one or more CSV files, you can use the OpenFisca Python API.
 
-Let's say you are using the the [country-template](https://github.com/openfisca/country-template)legislation. You have the following `data.csv` and you want to calculate [income_tax](https://demo.openfisca.org/legislation/income_tax) for all persons:
+Let's say you are using the [country-template](https://github.com/openfisca/country-template), who describes the legislation of a yet to be country.
+
+Let's also say you have the following `data.csv` and you want to calculate [income_tax](https://demo.openfisca.org/legislation/income_tax) for all persons:
 
 ```csv
 person_id,person_salary,person_age
@@ -107,7 +108,7 @@ person_id,person_salary,person_age
 12,2078,23
 ```
 
-1. Load the `country-template` legislation and `data.csv` content with [pandas](https://pandas.pydata.org) library:
+1. Load the `country-template` legislation and, then, the content of the `data.csv` file with the [pandas](https://pandas.pydata.org) library:
 
 ```python
 from openfisca_country_template import CountryTaxBenefitSystem
@@ -121,7 +122,7 @@ n = len(data)  # ignores csv header
 You can now access the `person_salary` column values with `data.person_salary`.
 
 
-2. Build a simulation according to your data length:
+2. Build a simulation according to your data's length:
 
 ```python
 from openfisca_core.simulation_builder import SimulationBuilder
@@ -129,23 +130,23 @@ from openfisca_core.simulation_builder import SimulationBuilder
 simulation = SimulationBuilder().build_default_simulation(tax_benefit_system, n)
 ```
 
-3. Configure the simulation and calculate [income_tax](https://demo.openfisca.org/legislation/income_tax) OpenFisca variable for all persons on same period:
+3. Configure the simulation and calculate the [income_tax](https://demo.openfisca.org/legislation/income_tax) variable for all persons on the same period:
 
 ```python
 import numpy as np
 
 period = '2018-01'
 
-# match data from 'person_salary' column
-# with 'salary' variable of the tax and benefit system
+# match data from the 'person_salary' column
+# with the 'salary' variable of our yet to be country's tax-benefit system
 simulation.set_input('salary', period, np.array(data.person_salary))
 
 income_tax = simulation.calculate('income_tax', period)
 ```
 
-You are all set! The `income_tax` have been calculated on all `data.csv` persons.
+You are all set! The `income_tax` has been calculated for each person on your `data.csv` file.
 
-Persons' order is kept and `income_tax` is a `numpy.ndarray`:
+Persons' order is kept and `income_tax` is an instance of `numpy.ndarray`:
 
 ```python
 >> print(data.person_id.values)
