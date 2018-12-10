@@ -90,7 +90,7 @@ To apply the legislation on data described in one or more CSV files, you can use
 
 ###### Application: calculate a population's income tax from a CSV file
 
-Let's say you are using the [country-template](https://github.com/openfisca/country-template), who describes the legislation of a yet to be country.
+Let's say you are using the [country-template](https://github.com/openfisca/country-template), which describes the legislation of a yet to be country.
 
 Let's also say you have the following `data.csv` and that you want to calculate [income_tax](https://demo.openfisca.org/legislation/income_tax) for all persons:
 
