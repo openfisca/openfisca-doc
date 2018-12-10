@@ -9,13 +9,22 @@
    config-openapi
 ```
 
-OpenFisca provides a web API package compatible with all country packages.
-Using a web interface, App Developers can access information and computations without installing anything locally.
+OpenFisca provides a web API package, compatible with all country packages.
+Using a web interface, app developers can access information and computations without installing anything locally.
 
 ## Public France API
 
-The latest version of the France web api is [`fr.openfisca.org/api/v21`](https://fr.openfisca.org/api/v21).
-Its endpoints are documented in [`fr.openfisca.org/legislation/swagger`](https://fr.openfisca.org/legislation/swagger).
+The latest version of the France web api is [`fr.openfisca.org/api/latest`](https://fr.openfisca.org/api/latest). Its endpoints are documented in [`fr.openfisca.org/legislation/swagger`](https://fr.openfisca.org/legislation/swagger). This API has no guarantee of stability over time. Building a web app on top of it is not recommended.
+
+The [DINSIC's OpenFisca Team](https://github.com/orgs/openfisca/teams/france-contrib-dinsic) maintains two stable versions of the Web API. Every 6 months, on January 1st and July 1st, the oldest stable API is shut down, and the current newest version of France is served instead. This means every Web API version is maintained for a year.
+
+Currently served Web API versions are listed in [https://fr.openfisca.org/api](https://fr.openfisca.org/api)
+
+These stable Web APIs are meant to be used for building minimum viable products, proofs of concept and prototypes. The idea is to help web app developers quickly test out new ideas, find their first users or secure funding.
+
+Please keep in mind they become outdated relatively quickly. Anyone wanting an up-to-date and stable OpenFisca Web API is invited to [host their own](#hosting-an-api-instance).
+
+
 The stability of this API is guaranteed over time.
 
 ## Use Cases
@@ -41,7 +50,7 @@ Calculs effectués par <a href="https://openfisca.org">OpenFisca</a>, le moteur 
 ```
 ## Hosting an API instance
 
-Let App Developers access your country package information and computations by serving the web API that comes bundled with the OpenFisca-Core module. See the [technical documentation](https://github.com/openfisca/openfisca-core#serving-the-api) for serving instructions.
+Let app developers access your country package information and computations by serving the web API that comes bundled with the OpenFisca-Core module. See the [technical documentation](https://github.com/openfisca/openfisca-core#serving-the-api) for serving instructions.
 
 ### Track your API
 
