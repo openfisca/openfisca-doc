@@ -3,7 +3,7 @@
 You can use OpenFisca with two kinds of input information:
 
 - either *test cases*: you simulate the legislation for one standard situation
-- or *data*: you give a whole population (survey with aggregated data, csv files, etc.) on which you want to apply the legislation
+- or *data*: you provide a whole population (survey with aggregated data, csv files, etc.) on which you want to apply the legislation
 
 ### Scenario
 
