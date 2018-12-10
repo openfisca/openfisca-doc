@@ -3,7 +3,7 @@
 You can use OpenFisca with two kinds of input information:
 
 - either *test cases*: you simulate the legislation for one standard situation
-- or *data*: you provide a whole population (survey with aggregated data, csv files, etc.) on which you want to apply the legislation
+- or *data*: you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation
 
 ### Scenario
 
@@ -129,7 +129,7 @@ In [3]: tax_benefit_system = CountryTaxBenefitSystem()
 
 In [4]: data = pandas.read_csv('./data.csv')  # pandas.DataFrame object
 
-In [5]: length = len(data)  # ignores csv header
+In [5]: length = len(data)  # ignores CSV header
 ```
 
 You can now access the `person_salary` column values:
