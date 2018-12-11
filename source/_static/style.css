@@ -9,6 +9,7 @@
 .button {
   float: right;
   padding: 10px !important;
+  margin-left: 15px;
   border-radius: 5px;
   background: #971640;
   display: inline-block;
