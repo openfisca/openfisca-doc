@@ -1,9 +1,11 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
-<div class="button">
-  <a class="button_link" href="https://github.com/openfisca"><i class="fab fa-github"></i> GitHub</a>
-</div>
-<div class="button">
-  <a class="button_link" href="https://openfisca.org/"><i class="fas fa-home"></i> OpenFisca</a>
+<div class="buttons-header">
+  <div class="button">
+    <a class="button_link" href="https://github.com/openfisca"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="button">
+    <a class="button_link" href="https://openfisca.org/"><i class="fas fa-home"></i> OpenFisca</a>
+  </div>
 </div>
 
 > Download a [PDF offline version](https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf) of this documentation.

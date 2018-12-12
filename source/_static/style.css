@@ -20,6 +20,14 @@
   text-decoration: none;
 }
 
+.buttons-header {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-right: 90px;
+  margin-top: 15px;
+}
+
 #right-column img {
   max-width: 750px;
 }
