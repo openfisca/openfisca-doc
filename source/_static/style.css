@@ -8,7 +8,7 @@
 
 .button {
   float: right;
-  padding: 10px !important;
+  padding: 10px;
   margin-left: 15px;
   border-radius: 5px;
   background: #971640;
@@ -20,12 +20,14 @@
   text-decoration: none;
 }
 
-.buttons-header {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  margin-right: 90px;
-  margin-top: 15px;
+@media all and (min-width: 800px) {
+  .buttons-header {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-right: 90px;
+    margin-top: 15px;
+  }
 }
 
 #right-column img {
