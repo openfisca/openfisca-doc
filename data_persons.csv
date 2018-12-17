@@ -1,0 +1,13 @@
+person_id,household_id,role_in_household,salary,age
+1,a,first_parent,2694,40
+2,a,second_parent,2720,43
+3,b,first_parent,3865,45
+4,b,child,1300,23
+5,c,child,0,12
+6,c,child,0,14
+7,c,first_parent,2884,44
+12,e,second_parent,1200,38
+8,d,first_parent,3386,27
+9,d,second_parent,2929,28
+10,e,child,0,10
+11,e,trolol,1600,35
