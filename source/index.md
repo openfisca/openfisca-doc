@@ -8,7 +8,12 @@
   </div>
 </div>
 
-> Download a [PDF offline version](https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf) of this documentation.
+<div class="download-text">
+Get an offline version of this documentation.
+</div>
+<div class="button-download"><a class="button_link" href="https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf"><i class="fas fa-download"></i> Documentation</a></div>
+
+<div class="header-end"></div>
 
 # Introduction
 

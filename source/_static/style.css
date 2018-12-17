@@ -30,6 +30,18 @@
   }
 }
 
+.button-download {
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  background: #337AB7;
+  display: block;
+}
+
+.header-end {
+  margin-top: 75px;
+}
+
 #right-column img {
   max-width: 750px;
 }
