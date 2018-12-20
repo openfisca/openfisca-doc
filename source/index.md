@@ -1,17 +1,21 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
-<div class="buttons-header">
-  <div class="button">
-    <a class="button_link" href="https://github.com/openfisca"><i class="fab fa-github"></i> GitHub</a>
+<div class="buttons-header buttons-header-margin">
+  <div class="button-header-link">
+    <a class="button-appearance" href="https://github.com/openfisca"><i class="fab fa-github"></i> GitHub</a>
   </div>
-  <div class="button">
-    <a class="button_link" href="https://openfisca.org/"><i class="fas fa-home"></i> OpenFisca</a>
+  <div class="button-header-link">
+    <a class="button-appearance" href="https://openfisca.org/"><i class="fas fa-home"></i> OpenFisca</a>
   </div>
 </div>
+
+<a class="reference external" href="https://openfisca.org" target="_blank">
+  <img alt="OpenFisca logo" class="logo-margin" src="https://openfisca.org/img/logo-openfisca.svg">
+</a>
 
 <div class="download-text">
 Get an offline version of this documentation.
 </div>
-<div class="button-download"><a class="button_link" href="https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf"><i class="fas fa-download"></i> Documentation</a></div>
+<div class="button-download"><a class="button-appearance" href="https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf"><i class="fas fa-download"></i> Documentation</a></div>
 
 <div class="header-end"></div>
 
