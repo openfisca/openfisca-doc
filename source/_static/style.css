@@ -6,6 +6,65 @@
   padding-left: 10px;
 }
 
+.button-header-link {
+  float: right;
+  padding: 10px;
+  margin-right: 15px;
+  border-radius: 5px;
+  background: #971640;
+  display: inline-block;
+}
+
+.button-appearance {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+@media all and (min-width: 700px) {
+  .buttons-header {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 15px;
+  }
+}
+
+@media all and (max-width: 386px) {
+  .logo-margin {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (min-width: 1220px) {
+  .buttons-header-margin {
+    margin-right: 60px;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .buttons-header-margin {
+    margin-right: 160px;
+  }
+}
+
+@media all and (min-width: 1370px) {
+  .buttons-header-margin {
+    margin-right: 260px;
+  }
+}
+
+.button-download {
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  background: #337AB7;
+  display: block;
+}
+
+.header-end {
+  margin-top: 75px;
+}
 
 #right-column img {
   max-width: 750px;
