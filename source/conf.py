@@ -52,7 +52,7 @@ html_theme_options = {
     "homepage": "index",  # Different than the master doc
 }
 
-html_static_path = ['_static']
+html_static_path = ['static']
 
 github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/master/'
 
