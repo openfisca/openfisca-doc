@@ -1,8 +1,8 @@
 --editable git+https://github.com/openfisca/openfisca-core.git@master#egg=OpenFisca-Core[dev]
 docutils==0.12
-guzzle_sphinx_theme
-recommonmark
-sphinx-autobuild
-sphinx-markdown-tables
+guzzle_sphinx_theme==0.7.11
+recommonmark==0.4
+sphinx-autobuild==0.7.1
+sphinx-markdown-tables==0.0.9
 Sphinx==1.5
-sphinx_argparse
+sphinx_argparse==0.2.5
