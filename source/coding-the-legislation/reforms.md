@@ -2,7 +2,7 @@
 
 A [reform](../key-concepts/reforms.md) is a set of modifications to be applied to a tax and benefit system, usually to study the quantitative impact of a possible change of the law.
 
-> See the reference documentation of the class [Reform](https://openfisca.readthedocs.io/en/latest/reforms.html).
+> See the reference documentation of the class [Reform](../../openfisca-python-api/reforms.html).
 
 
 ## Writing a reform
@@ -31,7 +31,7 @@ A `Reform` **must** define an `apply()` method that describes all the modificati
 
 > Note that the reference tax and benefit system won't be modified. The `apply()` function will be applied to a copy of the tax and benefit system.
 
-All the [methods](https://openfisca.readthedocs.io/en/latest/tax-benefit-system.html) used to build a tax and benefit system can also be used to reform it.
+All the [methods](../../openfisca-python-api/tax-benefit-system.html) used to build a tax and benefit system can also be used to reform it.
 
 A reform that modifies a formula (such as our `income_tax_reform` example) is called a *structural reform*. It redefines the way a variable is calculated.
 
@@ -90,7 +90,7 @@ class some_reform(Reform):
 
 #### Add new parameters dynamically
 
-In some cases, loading new parameters from YAML files is not practical. For example, you may want to add parameters from values computed dynamically. In such cases you can use the python objects defined in the [parameters module](http://openfisca.readthedocs.io/en/latest/parameters.html)
+In some cases, loading new parameters from YAML files is not practical. For example, you may want to add parameters from values computed dynamically. In such cases you can use the python objects defined in the [parameters module](../../openfisca-python-api/parameters.html)
 :
 
 ```python
