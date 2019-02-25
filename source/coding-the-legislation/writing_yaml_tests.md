@@ -92,18 +92,18 @@ In this case, there is another convention:
 
     ```yaml
     individus:
-        - id: "parent1"
+      parent1:
         date_naissance: 1972-01-01
         depcom_entreprise: "69381"
         primes_fonction_publique: 500
-        - id: "parent2"
+      parent2:
         date_naissance: 1972-01-01
         depcom_entreprise: "69381"
         primes_fonction_publique: 500
         traitement_indiciaire_brut: 2000
-        - id: "enfant1"
+      enfant1:
         date_naissance: 2000-01-01
-        - id: "enfant2"
+      enfant2:
         date_naissance: 2009-01-01
     ```
 
