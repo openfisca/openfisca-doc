@@ -83,9 +83,10 @@ In this case, there is another convention:
     - name: "IRPP - Famille ayant des revenus salariaux de 20 000 €"
     period: 2012
     absolute_error_margin: 0.5
-    familles:
-    menages:
-    foyers_fiscaux:
+    input:
+      familles:
+      menages:
+      foyers_fiscaux:
     ```
 
 - define the individuals with their `id` and their variables:
