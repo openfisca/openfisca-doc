@@ -83,27 +83,28 @@ In this case, there is another convention:
     - name: "IRPP - Famille ayant des revenus salariaux de 20 000 €"
     period: 2012
     absolute_error_margin: 0.5
-    familles:
-    menages:
-    foyers_fiscaux:
+    input:
+      familles:
+      menages:
+      foyers_fiscaux:
     ```
 
 - define the individuals with their `id` and their variables:
 
     ```yaml
     individus:
-        - id: "parent1"
+      parent1:
         date_naissance: 1972-01-01
         depcom_entreprise: "69381"
         primes_fonction_publique: 500
-        - id: "parent2"
+      parent2:
         date_naissance: 1972-01-01
         depcom_entreprise: "69381"
         primes_fonction_publique: 500
         traitement_indiciaire_brut: 2000
-        - id: "enfant1"
+      enfant1:
         date_naissance: 2000-01-01
-        - id: "enfant2"
+      enfant2:
         date_naissance: 2009-01-01
     ```
 
