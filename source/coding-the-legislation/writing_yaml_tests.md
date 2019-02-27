@@ -15,7 +15,7 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/29.3.7/tests
   period: 2012
   absolute_error_margin: 0.5
   input:
-    disposable_income: 20000
+    taxable_income: 20000
   output:
     irpp: -1181
 ```
@@ -61,7 +61,7 @@ For instance:
   period: 2012
   absolute_error_margin: 0.5
   input:
-    disposable_income: 20000
+    taxable_income: 20000
     gross_income: 20000
   output:
     irpp: -1181
