@@ -170,7 +170,7 @@ For instance, if the `definition_period` of `salary` is `MONTH`, and you input a
 
 It is however possible to define an automatic behaviour to cast yearly inputs into monthy values. To do this, add a `set_input` class attribute to a variable.
 
-* `set_input = set_input_divide_by_period`: the 12 months are set equal to the 12th of the input value,
+* `set_input = set_input_divide_by_period`: the 12 months are set equal to 1/12th of the input value,
 * `set_input = set_input_dispatch_by_period`: the 12 months are set equal to input value.
 
 For instance, let's slightly modify the code of `salary`:
