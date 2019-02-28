@@ -1,7 +1,7 @@
 # Using OpenFisca with Docker
 
 When you want to use OpenFisca, either to run it or edit its code, you need to setup a specific environement.
-If you don't want the OpenFisca environment to interfere with your pre-existing setup, or if you don't have one, you can use a container platform such as Docker that will set everything up for you.
+If you don't want the OpenFisca environment to interfere with your pre-existing setup, or if you don't have one, you can use a container platform such as [Docker](https://www.docker.com) that will set everything up for you.
 
 > On Windows operating system, you need to have Windows 10 or higher to use Docker.
 
@@ -10,14 +10,13 @@ If you don't want the OpenFisca environment to interfere with your pre-existing 
 Docker allows you to run a minimal image of operating system.
 In this docker container, you will have an isolated environment with user rights to install OpenFisca.
 
-* Install free [Docker Community Edition](https://docs.docker.com/install/) (also named `Docker Desktop`).
-  * Follow default installation instructions.
+* Install free [Docker Community Edition](https://docs.docker.com/install/#supported-platforms) (also named `Docker Desktop`).
+  * Follow default installation instructions (you will need to create a free Docker ID).
   * Run installed Docker application (to activate docker daemon). 
 
 ## How to install OpenFisca on Docker
 
-Let's say that you want to install the [openfisca-country-template](https://github.com/openfisca/country-template) model. And you want to work in a directory named `openfisca` where any change you do is visible on both sides, locally and on Docker.
-
+Let's say that you want to install the [openfisca-country-template](https://github.com/openfisca/country-template) model (or your specific country model). And you want to work in a directory named `openfisca` where any change you do is visible on both sides, locally and on Docker.
 
 
 1. Build a container with Python 3.7, Git and terminal commands.
@@ -28,7 +27,7 @@ Let's say that you want to install the [openfisca-country-template](https://gith
     docker run --rm -it -v $PWD:/openfisca -w /openfisca python:3.7 bash
     ```
 
-   * For Windows operating system, open a powershell and run:
+   * For Windows operating system, open a `cmd.exe` and run:
     ```sh
     docker run --rm -it -v %cd%:/openfisca -w /openfisca python:3.7 powershell
     ``` 
