@@ -71,4 +71,4 @@ Let's say that you want to install the [openfisca-country-template](https://gith
 
 
 You're all set! You can now use `openfisca-country-template`.  
-Any changes to your `my-openfisca/` local files will affect the `my-openfisca/` files in Docker.
+Any changes to your `my-openfisca/` local files will be reflected to `my-openfisca/` files in Docker, and vice-versa.
