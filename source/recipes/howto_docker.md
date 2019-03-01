@@ -7,7 +7,7 @@ If you don't want the OpenFisca environment to interfere with your pre-existing 
 
 ## Install Docker
 
-Docker allows you to run a minimal image of operating system.
+Docker allows you to run a minimal image of Unix operating system.
 In this docker container, you will have an isolated environment with user rights to install OpenFisca.
 
 * Install free [Docker Community Edition](https://docs.docker.com/install/#supported-platforms) (also named `Docker Desktop`).
@@ -16,51 +16,59 @@ In this docker container, you will have an isolated environment with user rights
 
 ## How to install OpenFisca on Docker
 
-Let's say that you want to install the [openfisca-country-template](https://github.com/openfisca/country-template) model (or your specific country model). And you want to work in a directory named `openfisca` where any change you do is visible on both sides, locally and on Docker.
+Let's say that you want to install the [openfisca-country-template](https://github.com/openfisca/country-template) model (or your specific country model). And you want to work in a directory named `my-openfisca` where any change you do is visible on both sides, locally and on Docker.
 
+1. Go to your working directory:  
+   * If you don't have one, create a new directory named `my-openfisca`.
+   
+   * Open your system console (`cmd.exe` for Windows OS, a bash Terminal for Unix/Linux/Mac) and run: 
+        ```sh
+        cd my-openfisca # Updated with the real path to your working directory
+        ```   
 
-1. Build a container with Python 3.7, Git and terminal commands.
+2. Build a container with Python 3.7, Git and console commands.
    > Git comes with Python image.
 
-   * For Linux/Unix/Mac operating systems, open a Terminal and run:
+   * For Linux/Unix/Mac operating systems, run:
+        ```sh
+        docker run --rm -it -v $PWD:/my-openfisca -w /my-openfisca python:3.7 bash
+        ```
+
+   * For Windows operating system, run:
+        ```sh
+        docker run --rm -it -v %cd%:/my-openfisca -w /my-openfisca python:3.7 bash
+        ``` 
+
+3. Check for installed libraries with `pip list` command.
+   You should get this list of packages:
     ```sh
-    docker run --rm -it -v $PWD:/openfisca -w /openfisca python:3.7 bash
+     Package    Version
+     ---------- -------
+     pip        *.*.*   
+     setuptools *.*.* 
+     wheel      *.*.* 
     ```
 
-   * For Windows operating system, open a `cmd.exe` and run:
-    ```sh
-    docker run --rm -it -v %cd%:/openfisca -w /openfisca python:3.7 powershell
-    ``` 
-
-2. Check for installed libraries with `pip list` command.
-   You should get this list of packages:
-   ```sh
-    Package    Version
-    ---------- -------
-    pip        *.*   
-    setuptools *.*.* 
-    wheel      *.*.* 
-   ```
-
-3. Install [openfisca-country-template](https://github.com/openfisca/country-template):
+4. Install [openfisca-country-template](https://github.com/openfisca/country-template). Here are two main options: you can run it without modifying it or install it to edit its code.
    
    * To edit `openfisca-country-template`, get its source code with:
-   ```sh
-   git clone https://github.com/openfisca/country-template.git
-   ```
-   And, install it with:
-   ```sh
-   make install
-   ``` 
+        ```sh
+        git clone https://github.com/openfisca/country-template.git
+        ```
+        And, install it with:
+        ```sh
+        cd country-template
+        make install
+        ``` 
 
    * Or, to run `openfisca-country-template` without modifying it, install it as a library with:
-   ```sh
-   pip install openfisca_country_template
-   ```
+        ```sh
+        pip install openfisca_country_template
+        ```
 
-   In both cases, the installation should end without error.
+   In both cases, the installation should end without error.  
    And, now, `pip list` response shoud contain `OpenFisca-Country-Template`.
 
 
-You're all set! You can know use `openfisca-country-template`.
-Any changes to your `openfisca/` local files will affect the `openfisca/` files in Docker.
+You're all set! You can now use `openfisca-country-template`.  
+Any changes to your `my-openfisca/` local files will affect the `my-openfisca/` files in Docker.
