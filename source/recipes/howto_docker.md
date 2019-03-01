@@ -14,7 +14,7 @@ In this docker container, you will have an isolated environment with user rights
   * Follow default installation instructions (you will need to create a free Docker ID).
   * Run installed Docker application (to activate docker daemon). 
 
-## How to install OpenFisca on Docker
+## Install OpenFisca in a Docker container
 
 Let's say that you want to install the [openfisca-country-template](https://github.com/openfisca/country-template) model (or your specific country model). And you want to work in a directory named `my-openfisca` where any change you do is visible on both sides, locally and on Docker.
 
