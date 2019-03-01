@@ -1,4 +1,4 @@
-# Recipes for OpenFisca
+# Installation recipes
 
 ```eval_rst
 .. toctree::
