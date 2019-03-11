@@ -1,9 +1,16 @@
 # Input Data
 
-You can use OpenFisca with two kinds of input information:
+OpenFisca can calculate social benefits and taxes on people situations.  
+Those situations should be defined as input data.
 
-- either *test cases*: you simulate the legislation for one standard situation
-- or *data*: you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation
+OpenFisca looks for two kinds of inputs to describe situations:
+- how persons are dispatched in group entities 
+- what variables' values are already known
+
+OpenFisca will work the same if there is one Person or seven or seven million in the modelled situation. Nevertheless, you won't have the same experience defining those various situations sizes. So, multiple options could be used to describe this information:
+
+- either *test cases*: you simulate the legislation for small number of situations
+- or *data*: you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation.
 
 ### Scenario
 
