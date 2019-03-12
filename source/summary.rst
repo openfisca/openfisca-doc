@@ -9,7 +9,6 @@ Summary
    coding-the-legislation/index
    running-simulation
    openfisca-web-api/index
-   troubleshooting
    recipes/index
    publishing
    community
