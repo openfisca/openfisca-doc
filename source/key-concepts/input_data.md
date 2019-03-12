@@ -4,37 +4,31 @@ OpenFisca can calculate social benefits and taxes on people situations.
 Those situations should be defined as input data.
 
 OpenFisca looks for two kinds of inputs to describe situations:
-- how persons are dispatched in group entities 
-- what variables' values are already known
+- how persons are dispatched in other entities, 
+- what variables' values are already known.
 
-OpenFisca will work the same if there is one Person or seven or seven million in the modelled situation. Nevertheless, you won't have the same experience defining those various situations sizes. So, multiple options could be used to describe this information:
+OpenFisca will work the same if there is one Person or seven or seven million in the modelled situation. 
+
+> Technically speaking, OpenFisca is using [vector computing](../coding-the-legislation/25_vectorial_computing.md) for performance reasons via the [NumPy](http://www.numpy.org/) Python package
+
+Nevertheless, you won't have the same experience defining those various situations sizes. So, multiple options could be used to describe this information:
 
 - either *test cases*: you simulate the legislation for small number of situations
 - or *data*: you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation.
 
-### Scenario
+### Simulation
 
-The interface between input information and *input variables* that OpenFisca can handle is called *Scenario*.
+The interface between input data and a tax and benefits system that OpenFisca can handle is called *Simulation*.
 
-> Technically speaking, OpenFisca is using [vector computing](../coding-the-legislation/25_vectorial_computing.md) for performance reasons via the [NumPy](http://www.numpy.org/) Python package
+A simulation has another crucial input: the calculation *period*.
 
-Whatever the input is, *test case* or *data*, the scenario converts it into vectors internally.
-
-###### Application: how to create a scenario
-
-After initializing the [Tax and Benefit System](tax_and_benefit_system.md), you now want to create a *scenario* that will allow you in a second step to give input information.
-
-```python
-# Create a scenario
-scenario = tax_benefit_system.new_scenario()
-
-```
+Whatever the input is, *test case* or *data*, the simulation converts it into [vectors](../coding-the-legislation/25_vectorial_computing.md) internally.
 
 ### Test cases
 
-A test case describes persons and entities with their input variables or attributes.
+A test case describes persons and other entities with their input variables or attributes.
 
-You may add information at the *individual* level or at the *entity* level. One input is crucial and shouldn't be forgotten: the *period* of the simulation.
+You may add information at the *individual* level or at the *group entity* level. 
 
 ###### Application: how to initialize a scenario
 
