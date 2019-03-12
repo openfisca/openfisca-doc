@@ -1,4 +1,4 @@
-# How to calculate the legislation on people situations
+# How to calculate taxes and benefits on people situations
 
 You have an OpenFisca tax and benefits system and you want to calculate some legislation variables on people situations.
 
@@ -68,11 +68,16 @@ print("housing_allowance", housing_allowance)
 
 ## How to run a simulation on data
 
-#### CSV data
+You can build a *Simulation* on multiple data formats.
+Any well structured tabular input shoud be fine as long as you are able to iterate over its items in Python.
+
+In the following example, will use the [pandas](https://pandas.pydata.org) library to do so.
+
+### CSV data
 
 To apply the legislation on data described in one or more CSV files, you can use the OpenFisca Python API.
 
-###### Application: calculate a population's income tax from a CSV file
+#### Application: calculate a population's income tax from a CSV file
 
 Let's say you are using the [country-template](https://github.com/openfisca/country-template), which describes the legislation of a yet to be country.
 
@@ -180,5 +185,3 @@ array([404.1    , 408.00003, 279.75   , 291.15002, 358.95   , 451.2    ,
 In [15]: income_tax.item(2)  # person_id == 3
 Out[15]: 279.75
 ```
-
-
