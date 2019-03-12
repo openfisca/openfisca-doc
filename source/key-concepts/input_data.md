@@ -56,7 +56,7 @@ Here is the updated test case:
 TEST_CASE = {
     'persons': {
         'Ari': {
-            'salary': {'2019-01': 1000}
+            'salary': {'2011-01': 1000}
         }, 
         'Paul': {}, 
         'Leila': {}, 
@@ -66,14 +66,14 @@ TEST_CASE = {
         'h1': {
             'children': ['Leila'], 
             'parents': ['Ari', 'Paul'],
-            'housing_occupancy_status': {'2019-01': 'tenant'}
+            'rent': {'2011-01': 300}
         },
         'h2': {'parents': ['Javier']}
     },
 }
 ```
 
-Where `salary` and `housing_occupancy_status` names come from the [salary](https://demo.openfisca.org/legislation/salary) and [housing_occupancy_status](https://demo.openfisca.org/legislation/housing_occupancy_status) variables of the `OpenFisca-Country-Template`.
+Where `salary` and `rent` names come from the [salary](https://demo.openfisca.org/legislation/salary) and [rent](https://demo.openfisca.org/legislation/rent) variables of the `OpenFisca-Country-Template`.
 
 ### Data
 
