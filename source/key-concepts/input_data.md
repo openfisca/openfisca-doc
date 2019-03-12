@@ -26,9 +26,11 @@ Whatever the input is, *test case* or *data*, the simulation converts it into [v
 
 ### Test cases
 
-A test case describes persons and other entities with their input variables or attributes.
+A test case describes persons and other entities with their input variables or attributes.  
+It's the usual solution to define a small number of situations.
 
 You may add information at the *individual* level or at the *group entity* level. 
+
 
 ###### Application: how to initialize a scenario
 
@@ -83,7 +85,11 @@ Example with the [statut d'occupation du logement](https://fr.openfisca.org/legi
 
 ### Data
 
-OpenFisca input data can vary from one situation to a whole population. This data could come from a survey with aggregated data, data files extracted from a database, etc.
+Data sets describe multiple people situations. It could define a whole population.
+This data could come from a survey with aggregated data (see [example](https://www.casd.eu/en/source/tax-and-social-incomes-survey/)), data files extracted from a database, etc.
+
+> For example, a survey usually goes from 50 000 households to 500 000.
+
 
 #### CSV data
 
