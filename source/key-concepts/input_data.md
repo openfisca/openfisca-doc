@@ -26,12 +26,54 @@ Whatever the input is, *test case* or *data*, the simulation converts it into [v
 
 ### Test cases
 
-A test case describes persons and other entities with their input variables or attributes.  
-It's the usual solution to define a small number of situations.
+A test case describes persons and other entities with their variables values.  
+It's the usual solution to define a small number of situations. 
 
-You may add information at the *individual* level or at the *group entity* level. 
+Here is an example of test case (in Python):
 
+```python
+BASIC_TEST_CASE = {
+    'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
+    'households': {
+        'h1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
+        'h2': {'parents': ['Javier']}
+        },
+    }
+```
 
+This test case defines 4 persons, `Ari`, `Paul`, `Leila` and `Javier`.
+They belong to 2 households named `h1` and `h2`.
+For example, `Ari` and `Paul` are parents in `h1` and have one child, `Leila`.
+
+You may add information at the *individual* level or at the *group entity* level:
+- known variable values,
+- and period of definition for those variable values.
+
+Let's say that we want to add a salary to `Ari` and a `housing_occupancy_status` to `h1`.
+Here is the updated test case:
+
+```python
+TEST_CASE = {
+    'persons': {
+        'Ari': {
+            'salary': {'2019-01': 1000}
+        }, 
+        'Paul': {}, 
+        'Leila': {}, 
+        'Javier': {}
+    },
+    'households': {
+        'h1': {
+            'children': ['Leila'], 
+            'parents': ['Ari', 'Paul'],
+            'housing_occupancy_status': {'2019-01': 'tenant'}
+        },
+        'h2': {'parents': ['Javier']}
+    },
+}
+```
+
+Where `salary` and `housing_occupancy_status` names come from the [salary](https://demo.openfisca.org/legislation/salary) and [housing_occupancy_status](https://demo.openfisca.org/legislation/housing_occupancy_status) variables of the `OpenFisca-Country-Template`.
 
 ### Data
 
