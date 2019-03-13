@@ -74,7 +74,7 @@ Where `salary` and `rent` names come from the [salary](https://demo.openfisca.or
 
 It's a Python dictionary object that we will use to build a *Simulation*.
 
-### Calculate
+#### Application: calculate two households housing allowances
 
 Let's assume that you want to calculate households' `housing_allowance` for the same period.
 You have to follow these steps:
@@ -107,8 +107,6 @@ print("households", simulation.household.ids)
 print("housing_allowance", housing_allowance)
 ```
 
-
-
 ## How to run a simulation on data
 
 You can build a *Simulation* on multiple data formats.
@@ -125,7 +123,7 @@ This data could come from a survey with aggregated data, data files extracted fr
 
 Here is a minimal example of data (in CSV format):
 
-```csv
+```
 person_id,household_id,person_salary,age
 1,a,2694,40
 2,a,2720,43
@@ -159,7 +157,7 @@ Let's say you are using the [country-template](https://github.com/openfisca/coun
 
 Let's also say you have the following `data.csv` and that you want to calculate [income_tax](https://demo.openfisca.org/legislation/income_tax) for all persons:
 
-```csv
+```
 person_id,person_salary,person_age
 1,2694,40
 2,2720,43
