@@ -33,3 +33,4 @@ allocations_familiales = simulation.calculate('af', '2015-01')
  - positive if it is an amount the *entity* receives from the state.
  - negative if it is an amount the *entity* has to pay.
 
+[Read more about how to run a simulation](./running-simulation.md).

@@ -9,7 +9,6 @@
    parameters
    person,_entities,_role
    periodsinstants
-   input_data
    simulation
    reforms
 ```
@@ -22,9 +21,6 @@ The first entries are dedicated to the **definitions of the structure** of OpenF
    * [Parameters](parameters.md)
    * [Person, entities, role](person,_entities,_role.md)
    * [Periods, Instants](periodsinstants.md)
-
-*Input Data Section* gives an insight on the **data** used to compute in OpenFisca.
-   * [Input Data](input_data.md)
 
 Last sections present different **applications** of OpenFisca.
 
