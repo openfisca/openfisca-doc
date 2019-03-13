@@ -1,10 +1,10 @@
 # How to run a simulation
 
-You have an OpenFisca tax and benefits system and you want to calculate some legislation variables on people situations.
+When you have an OpenFisca tax and benefits system and you want to calculate some legislation variables on people situations, you need to create and run a new *Simulation*.
 
-OpenFisca will work the same if there is one Person or seven or seven million in the modelled situation. 
+OpenFisca will work the same if there is one person or seven or seven million in the modelled situation. 
 
-Nevertheless, you won't have the same experience defining those various situations sizes. So, multiple options could be used to describe this information:
+Nevertheless, you won't have the same experience defining those various situations sizes and linking them to your simulation. So, multiple options could be used to describe this information:
 
 - either [test cases](./running-simulation.md#test-cases): you simulate the legislation for small number of situations
 - or [data](./running-simulation.md#data): you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation.
