@@ -4,7 +4,6 @@ OpenFisca has three sorts of tests:
 
 * unit tests
 * test-case tests
-* scenario tests
 
 ## Run tests
 

@@ -9,23 +9,15 @@ To calculate any variable you need to create a *Simulation* from the *TaxBenefit
 
 It's possible to run many independent simulations using the same `TaxBenefitSystem`.
 
-###### Application: how to launch a simulation
-
-As soon as you've loaded the TaxBenefitSystem of a country and a Scenario, you may now create a simulation.
-
-```python
-# Create a simulation from a scenario
-simulation = scenario.new_simulation()
-```
-
-
 #### Computing variables
+
+To compute taxes and benefits, you need to define on who you want to do that and what already know about those persons groups of persons. This is what you will set as input data to your *Simulation*.
+
+Then, be aware of the period over which you want to have your result. Some measures are calculated on a monthly basis other an annual one.
 
 Now all the settings are given to run computation of taxes or benefits.
 
-WARNING: Be aware of the period over which you want to have your result. Some measures are calculated on a monthly basis other an annual one.
-
-> For further information: see the [tutorial](http://mybinder.org:/repo/openfisca/tutorial) "How to handle periods"
+> For further information: see how to run a simulation in [this section](../running-simulation.md) and the following [tutorial](http://mybinder.org:/repo/openfisca/tutorial) "How to handle periods"
 
 ###### Application: how to calculate a variable
 
@@ -41,3 +33,4 @@ allocations_familiales = simulation.calculate('af', '2015-01')
  - positive if it is an amount the *entity* receives from the state.
  - negative if it is an amount the *entity* has to pay.
 
+[Read more about how to run a simulation](../running-simulation.md).
