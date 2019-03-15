@@ -1,6 +1,7 @@
 # Simulation, Computation
 
 #### Simulation: the framework of computation
+
 A *Simulation* is basically the OpenFisca frame for calculating taxes or benefits.
 
 To calculate any variable you need to create a *Simulation* from the *TaxBenefitSystem* that is to say the framework where you will compute your result.

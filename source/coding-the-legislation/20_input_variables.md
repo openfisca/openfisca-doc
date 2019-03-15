@@ -133,4 +133,3 @@ You can now test the formula in a YAML test:
   output:
     housing_tax: 0
 ```
-
