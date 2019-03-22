@@ -32,9 +32,10 @@ Let's say that you want to calculate the `disposable_income` for one person earn
 ```
 
 If you send this situation to your `country-template` model Web API or try it out on the `/trace` endpoint in [swagger interface](https://demo.openfisca.org/legislation/swagger), you get the following response composed of three sections:
-    * `entitiesDescription`: lists the persons and how they belong to the model group entities,
-    * `requestedCalculations`: lists the asked calculations (e.g. variables with values at `null`),
-    * `trace`: lists the calculation steps.
+
+* `entitiesDescription`: lists the persons and how they belong to the model group entities,
+* `requestedCalculations`: lists the asked calculations (e.g. variables with values at `null`),
+* `trace`: lists the calculation steps.
 
 ```json
 {
@@ -139,41 +140,44 @@ As we calculated the `disposable_income` for `2017-01`, let's see how the `trace
 ```
 
 It contains these sub-sections:
-    * `value`: the calculated `disposable_income` on `2017-01` period,
-    * `dependencies`: the [variables](../key-concepts/variables.md) called by `disposable_income` formula and their calculation periods,
-    * `parameters`: the [parameters](../key-concepts/parameters.md) called by `disposable_income` formula and their periods.
+
+* `value`: the calculated `disposable_income` on `2017-01` period,
+* `dependencies`: the [variables](../key-concepts/variables.md) called by `disposable_income` formula and their calculation periods,
+* `parameters`: the [parameters](../key-concepts/parameters.md) called by `disposable_income` formula and their periods.
 
 You can see those variables and parameters in [disposable_income definition](https://demo.openfisca.org/legislation/disposable_income).
 
 Following `dependencies` list, we can also see that:
 
-    * OpenFisca doen't need to calculate the `salary` value as it was given in situation inputs ; thus the `/trace` doesn't evaluate its `dependencies` and `parameters`:
-        ```json
-        "salary<2017-01>": {
-        "dependencies": [],
-        "parameters": {},
-        "value": [
-          4000
-        ]
-        },
-        ```
-    * OpenFisca needed to calculate the next variable, `basic_income`, before `disposable_income` evaluation:
-        ```json
-        "basic_income<2017-01>": {
-        "dependencies": [
-          "age<2017-01>"
-        ],
-        "parameters": {
-          "benefits.basic_income<2017-01-01>": 600,
-          "general.age_of_majority<2017-01-01>": 18
-        },
-        "value": [
-          600
-        ]
-        },
-        ```
-        Note that, as a parameter depends only on its validity period, its evaluation is described in one line that includes its value.
+* OpenFisca didn't need to calculate the `salary` value as it was given in situation inputs; thus the `/trace` doesn't evaluate its `dependencies` and `parameters`:
+    ```json
+    "salary<2017-01>": {
+      "dependencies": [],
+      "parameters": {},
+      "value": [
+        4000
+      ]
+    },
+    ```
+* OpenFisca needed to calculate the next variable, `basic_income`, before `disposable_income` evaluation:
+    ```json
+    "basic_income<2017-01>": {
+      "dependencies": [
+        "age<2017-01>"
+      ],
+      "parameters": {
+        "benefits.basic_income<2017-01-01>": 600,
+        "general.age_of_majority<2017-01-01>": 18
+      },
+      "value": [
+        600
+      ]
+    },
+    ```
+
+    Note that, as a parameter depends only on its validity period, its evaluation is described in one line that includes its value.
+
 
 So, with `/trace` endpoint, you can follow calculation steps by following the variable names and periods in its response `trace` section.
 
-Try it out on the [swagger interface](https://demo.openfisca.org/legislation/swagger) of `country-template` model.
+> Try it out on the [swagger interface](https://demo.openfisca.org/legislation/swagger) of `country-template` model.
