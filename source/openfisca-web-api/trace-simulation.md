@@ -118,3 +118,27 @@ If you send it to your `country-template` model Web API or try it out on the `/t
   }
 }
 ```
+
+As we calculated the `disposable_income` for `2017-01`, let's see how the `trace` section describes it:
+
+```json
+    "disposable_income<2017-01>": {
+      "dependencies": [
+        "salary<2017-01>",
+        "basic_income<2017-01>",
+        "income_tax<2017-01>",
+        "social_security_contribution<2017-01>"
+      ],
+      "parameters": {},
+      "value": [
+        3920
+      ]
+    },
+```
+
+It contains these sub-sections:
+    * `value`: the calculated `disposable_income` on `2017-01` period,
+    * `dependencies`: the [variables](../key-concepts/variables.md) called by `disposable_income` formula and their calculation periods,
+    * `parameters`: the [parameters](../key-concepts/parameters.md) called by `disposable_income` formula and their periods.
+
+You can see those variables and parameters on [disposable_income page](https://demo.openfisca.org/legislation/disposable_income).
