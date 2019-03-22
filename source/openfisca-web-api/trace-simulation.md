@@ -2,4 +2,116 @@
 
 > All the examples provided here are from the [country package template](https://github.com/openfisca/country-template).
 
-When you [run a simulation](input-output-data.md) on a specific situation (e.g. use the `/calculate` endpoint), you might want to understand the calculation or be surprised by its result. The `/trace` endpoint is here to help you analyse the simulation calculation step by step. 
+When you [run a simulation](input-output-data.md) on a specific situation (e.g. use the `/calculate` endpoint), you might want to understand the calculation. The `/trace` endpoint is here to help you analyse the simulation calculation step by step.
+
+Let's say that you want to calculate the `disposable_income` for one person earning a `salary` on the same period:
+
+```json
+{
+  "households": {
+    "_": {
+      "parents": ["Alicia"]
+    }
+  },
+  "persons": {
+    "Alicia": {
+      "birth": {
+        "ETERNITY": "1980-01-01"
+      },
+      "disposable_income": {
+        "2017-01": null
+      },
+      "salary": {
+        "2017-01": 4000
+      }
+    }
+  }
+}
+```
+
+Response:
+
+```json
+{
+  "entitiesDescription": {
+    "households": [
+      "_"
+    ],
+    "persons": [
+      "Alicia"
+    ]
+  },
+  "requestedCalculations": [
+    "disposable_income<2017-01>"
+  ],
+  "trace": {
+    "age<2017-01>": {
+      "dependencies": [
+        "birth<2017-01>"
+      ],
+      "parameters": {},
+      "value": [
+        37
+      ]
+    },
+    "basic_income<2017-01>": {
+      "dependencies": [
+        "age<2017-01>"
+      ],
+      "parameters": {
+        "benefits.basic_income<2017-01-01>": 600,
+        "general.age_of_majority<2017-01-01>": 18
+      },
+      "value": [
+        600
+      ]
+    },
+    "birth<2017-01>": {
+      "dependencies": [],
+      "parameters": {},
+      "value": [
+        "Tue, 01 Jan 1980 00:00:00 GMT"
+      ]
+    },
+    "disposable_income<2017-01>": {
+      "dependencies": [
+        "salary<2017-01>",
+        "basic_income<2017-01>",
+        "income_tax<2017-01>",
+        "social_security_contribution<2017-01>"
+      ],
+      "parameters": {},
+      "value": [
+        3920
+      ]
+    },
+    "income_tax<2017-01>": {
+      "dependencies": [
+        "salary<2017-01>"
+      ],
+      "parameters": {
+        "taxes.income_tax_rate<2017-01-01>": 0.15
+      },
+      "value": [
+        600
+      ]
+    },
+    "salary<2017-01>": {
+      "dependencies": [],
+      "parameters": {},
+      "value": [
+        4000
+      ]
+    },
+    "social_security_contribution<2017-01>": {
+      "dependencies": [
+        "salary<2017-01>"
+      ],
+      "parameters": {},
+      "value": [
+        80
+      ]
+    }
+  }
+}
+```
