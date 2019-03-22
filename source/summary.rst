@@ -8,9 +8,9 @@ Summary
    key-concepts/index
    coding-the-legislation/index
    running-simulation
+   openfisca-python-api/index
    openfisca-web-api/index
    recipes/index
    publishing
    community
    contribute/index
-   openfisca-python-api/index
