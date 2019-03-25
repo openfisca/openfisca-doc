@@ -6,7 +6,7 @@ When you [run a simulation](input-output-data.md) on a specific situation (e.g. 
 
 ## Application: analyse disposable income calculation for one person
 
-Let's say that you want to calculate the `disposable_income` for one person earning a `salary` on the same period. You get the following JSON situation description:
+Let's say that you want to calculate the `disposable_income` for one person earning a `salary` on the same period. You start with the following JSON situation description:
 
 ```json
 {
@@ -31,10 +31,10 @@ Let's say that you want to calculate the `disposable_income` for one person earn
 }
 ```
 
-If you send this situation to your `country-template` model Web API or try it out on the `/trace` endpoint in [swagger interface](https://demo.openfisca.org/legislation/swagger), you get the following response composed of three sections:
+If you send this situation to your `country-template` model Web API or try it out on the `/trace` endpoint in the [Swagger interface](https://demo.openfisca.org/legislation/swagger), you get the following response composed of three sections:
 
 * `entitiesDescription`: lists the persons and how they belong to the model group entities,
-* `requestedCalculations`: lists the asked calculations (e.g. variables with values at `null`),
+* `requestedCalculations`: lists the requested calculations (i.e. variables with values at `null`),
 * `trace`: lists the calculation steps.
 
 ```json
@@ -180,4 +180,4 @@ Following `dependencies` list, we can also see that:
 
 So, with `/trace` endpoint, you can follow calculation steps by following the variable names and periods in its response `trace` section.
 
-> Try it out on the [swagger interface](https://demo.openfisca.org/legislation/swagger) of `country-template` model.
+> Try it out on the [Swagger interface](https://demo.openfisca.org/legislation/swagger) of `country-template` model.
