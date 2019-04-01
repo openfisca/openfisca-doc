@@ -6,6 +6,7 @@
 
    endpoints
    input-output-data
+   trace-simulation
    config-openapi
 ```
 
