@@ -1,16 +1,16 @@
 # Periods and instants
 
-A period can be a month, a year, `n` successive months, `n` successive years or the eternity.
-The smallest unit for OpenFisca periods is the **month**. Therefore:
+A period can be a day, a month, a year, `n` successive days, `n` successive months, `n` successive years or the eternity.
+The smallest unit for OpenFisca periods is the **day**. Therefore:
 
 - All periods are presumed to start on the first day of their first month.
-- A period cannot be smaller than a month.
+- A period cannot be smaller than a day.
 
 An Instant is a specific day, such as a cutoff date.
 
 > Internally, periods are stored as:
 > - a start instant
-> - a unit (MONTH, YEAR)
+> - a unit (DAY, MONTH, YEAR)
 > - a quantity of units.
 
 ## Periods in simulations
@@ -25,9 +25,10 @@ In OpenFisca inputs, periods are encoded in strings. All the valid period format
 | `year:AAAA:N`     | N years         | `'year:2010:3'`     | The years 2010, 2011 and 2012.                   | From the 1st of January 2010 to the 31st of December 2012, inclusive. |
 | `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'`  | The three years period starting in April 2010.   | From the 1st of April 2010 to the 31st of March 2013, inclusive.      |
 | `month:AAAA-MM:N` | N months        | `'month:2010-04:3'` | The three months from April to June 2010.        | From the 1st of April 2010 to the 30th of June 2010, inclusive.       |
+| `day:AAAA-MM-DD:N` | N days        | `'day:2010-04-01:30'` | The thirty days of April 2010. | From the 1st of April 2010 to the 30th of April 2010, inclusive.       |
 | `ETERNITY` | Forever        | `ETERNITY` | All of time.        | All past, present and future day, month or year|
 
-This [YAML test](writing_yaml_tests.md) on `income_tax` evolution over time shows periods' impact on a variable
+This [YAML test](writing_yaml_tests.md) on `income_tax` evolution over time shows periods' impact on a variable:
 
 ```yaml
 
@@ -61,6 +62,7 @@ class salary(Variable):
 Most of the values calculated in OpenFisca, such as `income_tax`, and `housing_allowance`, can change over time.
 
 Therefore, all OpenFisca variables have a `definition_period` attribute:
+  - `definition_period = DAY`: The variable may have a different value each day.
   - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `formula`.
   - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `formula` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
   - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `formula`. However when `formula` is executed, the parameter `period` can be anything and it should not be used.
