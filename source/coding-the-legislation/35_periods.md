@@ -1,17 +1,37 @@
-# Periods and instants
+# Periods and Instants
 
-A period can be a day, a month, a year, `n` successive days, `n` successive months, `n` successive years or the eternity.
+A `Period` can be a day, a month, a year, `n` successive days, `n` successive months, `n` successive years or the eternity.
+
 The smallest unit for OpenFisca periods is the **day**. Therefore:
 
 - All periods are presumed to start on the first day of their first month.
 - A period cannot be smaller than a day.
 
-An Instant is a specific day, such as a cutoff date.
+An `Instant` is a specific day, such as a cutoff date.
 
-> Internally, periods are stored as:
-> - a start instant
-> - a unit (DAY, MONTH, YEAR)
-> - a quantity of units.
+
+## Periods creation
+
+To create a `Period`, you can use a simplified syntax. Here is an example for a period of one year covering `2015`:
+
+```py
+from openfisca_core import periods
+
+period_2015 = periods.period('2015')
+```
+
+Internally, periods are stored as:
+- a start `Instant`
+- a unit (`DAY`, `MONTH`, `YEAR`)
+- a quantity of units.
+
+Thus, the previous example could also be defined as:
+
+```py
+from openfisca_core import periods
+
+period_2015 = periods.Period(('month', periods.Instant((2015, 1, 1)), 12))
+```
 
 ## Periods in simulations
 
@@ -57,14 +77,17 @@ The same syntax could also be used to calculate a variable when the variable has
 ```py
 simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
 
-two_years_salary = simulation.calculate_add('salary', 'year:2014:2')
-print(two_years_salary)  # prints [40000. 40000.]
+two_years_salaries = simulation.calculate_add('salary', 'year:2014:2')
+print(two_years_salaries)  # prints [40000. 40000.]
 ```
 
 
 ## Periods in variable definition
 
 ```py
+...
+from openfisca_core.periods import MONTH  # openfisca_core is the architecture of OpenFisca
+
 class salary(Variable):
     value_type = float
     entity = Person
