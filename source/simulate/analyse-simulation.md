@@ -7,7 +7,7 @@ When you run a simulation with the Python API, you might want to understand how 
 
 ## Call simulation tracer
 
-Let's say that you already have a `Simulation` object called `simulation` and, following [run a simulation](running-simulation.md) example, you tried to calculate the `housing_allowance` for a set of households.
+Let's say that you already have a `Simulation` object called `simulation` and, following [run a simulation](simulate/run-simulation.md) example, you tried to calculate the `housing_allowance` for a set of households.
 
 To call the `tracer`, you should activate the `trace` option with `simulation.trace = True`. This allows you log calculation steps and print them with `simulation.tracer.print_computation_log()`.
 
