@@ -31,7 +31,6 @@ In OpenFisca inputs, periods are encoded in strings. All the valid period format
 This [YAML test](writing_yaml_tests.md) on `income_tax` evolution over time shows periods' impact on a variable:
 
 ```yaml
-
 - name: Income tax over time
   period: 2016-01
   input:
@@ -43,8 +42,25 @@ This [YAML test](writing_yaml_tests.md) on `income_tax` evolution over time show
       2015-01: 416.6667 # The income tax rate changes in 2015
       2016-01: 416.6667
       2017-01: 0 # The salary is not set for this period and defaults to 0
-
 ```
+
+This syntax could also be used in Python.  
+This example sets salaries for two persons:
+
+```py
+# Each person earned 60,000 between 2014 and 2016
+simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
+```
+
+The same syntax could also be used to calculate a variable when the variable has a [set_input](coding-the-legislation/35_periods.html#set-input-automatically-process-variable-inputs-defined-for-periods-not-matching-the-definition-period) attribute:
+
+```py
+simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
+
+two_years_salary = simulation.calculate_add('salary', 'year:2014:2')
+print(two_years_salary)  # prints [40000. 40000.]
+```
+
 
 ## Periods in variable definition
 
