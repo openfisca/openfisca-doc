@@ -1,5 +1,13 @@
 # Run a simulation
 
+```eval_rst
+.. toctree::
+   :hidden:
+
+   run-simulation
+   analyse-simulation
+```
+
 When you have an OpenFisca tax and benefits system and you want to calculate some legislation variables on people situations, you need to create and run a new *Simulation*.
 
 OpenFisca will work the same if there is one person or seven or seven million in the modelled situation. 
