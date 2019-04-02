@@ -1,8 +1,8 @@
 # Analysing or debugging a simulation
 
-When you run a simulation with the Python API, you might want to understand how the result was calculated and what intermediate variables and parameters has been taken into account.
+When running a simulation with the Python API, you might want to understand how the result was calculated and what intermediate variables and parameters have been taken into account.
 
-> To trace a simulation calculation with the Web API, please see [/trace endpoint documentation](openfisca-web-api/trace-simulation.md).
+> To trace a simulation calculation with the Web API, please see [/trace endpoint documentation](../openfisca-web-api/trace-simulation.md).
 
 
 ## Call simulation tracer
@@ -31,7 +31,7 @@ simulation = simulation_builder.build_from_entities(tax_benefit_system, TEST_CAS
 # activate the trace
 simulation.trace = True
 
-# call a calculation
+# calculate a variable
 housing_allowance = simulation.calculate('housing_allowance', '2011-01')
 
 # print calculation steps
