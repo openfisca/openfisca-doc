@@ -38,11 +38,11 @@ housing_allowance = simulation.calculate('housing_allowance', '2011-01')
 simulation.tracer.print_computation_log()
 ```
 
-> For more information on the `tracer` functions, see this [Tracer class interface](openfisca-python-api/tracer.html)
+> For more information on the `tracer` methods, see this [Tracer class interface](../openfisca-python-api/tracer.html)
 
 ## Analyse simulation steps
 
-If we call the tracer with the following `TEST_CASE`:
+If we use the tracer with the following `TEST_CASE`:
 
 ```python
 TEST_CASE = {
@@ -67,7 +67,7 @@ TEST_CASE = {
 
 The previous code example would give us this output:
 
-```sh
+```py
   housing_allowance<2011-01> >> [75.  0.]
     rent<2011-01> >> [300.   0.]
 ```

@@ -16,7 +16,7 @@ OpenFisca will work the same if there is one person or seven or seven million in
 
 Nevertheless, you won't have the same experience defining those various situations sizes and linking them to your simulation. So, multiple options could be used to describe this information:
 
-- either [test cases](simulate/run-simulation.md#test-cases): you simulate the legislation for small number of situations
-- or [data](simulate/run-simulation.md#data): you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation.
+- either [test cases](./run-simulation.md#test-cases): you simulate the legislation for a small number of persons
+- or [data](./run-simulation.md#data): you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation.
 
 Then, you might want to understand how your simulation result was calculated. To follow its steps, you can use the `trace` functions as described in [this section](simulate/analyse-simulation.md).
