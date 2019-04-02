@@ -76,7 +76,7 @@ The `rent` variable is here indented to the right. This says that `housing_allow
 
 Thus, on the left side, you can read the trace from top to bottom to see the dependencies between the variables. And, on the right side, you can read it from bottom to top to see how the simulation result is built.
 
-Likewise if you are calculating this `housing_allowance` on data (a big number of test cases), you will be able to check your calculation results with aggregated outputs. To do so, you can add the `aggregate=True` option as follows:
+Likewise if you are calculating this `housing_allowance` on a large population, you will be able to check your calculation results with aggregated outputs. To do so, you can add the `aggregate=True` option as follows:
 
 ```
 simulation.tracer.print_computation_log(aggregate=True)
