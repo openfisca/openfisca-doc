@@ -1,6 +1,6 @@
 # How to run a simulation
 
-To calculate some legislation variables on people situations, you need to create and run a new *Simulation*. Whether people situations are described with [test cases](simulate/run-simulation.md#test-cases) or [data](simulate/run-simulation.md#data), OpenFisca looks for two kinds of inputs:
+To calculate some legislation variables on people's situations, you need to create and run a new *Simulation*. Whether situations are described with [test cases](run-simulation.md#test-cases) or [data](run-simulation.md#data), OpenFisca looks for two kinds of inputs:
 - how persons are dispatched in other entities, 
 - what variables' values are already known.
 
@@ -130,7 +130,7 @@ person_id,household_id,person_salary,age
 As for the *test case* content, you will need the following information:
 - unique indentifiers for persons and *group entities*
   > like `person_id` and `household_id` columns information in the CSV example
-- if you have multiple [entities](./key-concepts/person,_entities,_role.md) types (persons, households, ...), you need to know how your persons list is dispatched over your *group entities*
+- if you have multiple [entities](../key-concepts/person,_entities,_role.md) types (persons, households, ...), you need to know how your persons list is dispatched over your *group entities*
   > in CSV example, every `person_id` is associated with a `household_id` on the same line
 - the name of the corresponding variable in your model for every set of values 
   > `person_salary` values become [salary](https://demo.openfisca.org/legislation/salary) values in `OpenFisca-Country-Template` model
