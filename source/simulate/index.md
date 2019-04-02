@@ -1,4 +1,4 @@
-# Run a simulation
+# Running a simulation
 
 ```eval_rst
 .. toctree::

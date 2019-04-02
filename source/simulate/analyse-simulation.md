@@ -1,4 +1,4 @@
-# How to analyse a simulation
+# Analysing or debugging a simulation
 
 When you run a simulation with the Python API, you might want to understand how the result was calculated and what intermediate variables and parameters has been taken into account.
 
