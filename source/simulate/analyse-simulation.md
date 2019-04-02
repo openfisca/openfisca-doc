@@ -5,11 +5,11 @@ When running a simulation with the Python API, you might want to understand how 
 > To trace a simulation calculation with the Web API, please see [/trace endpoint documentation](../openfisca-web-api/trace-simulation.md).
 
 
-## Call simulation tracer
+## Activate the simulation tracer
 
-Let's say that you already have a `Simulation` object called `simulation` and, following [run a simulation](simulate/run-simulation.md) example, you tried to calculate the `housing_allowance` for a set of households.
+Let's suppose you ran a simulation, calculated the `housing_allowance` for a set of households, and would like to understand in details where the final results come from. 
 
-To call the `tracer`, you should activate the `trace` option with `simulation.trace = True`. This allows you log calculation steps and print them with `simulation.tracer.print_computation_log()`.
+To use the tracer, you should activate the `trace` option with `simulation.trace = True` _before_ running any calculation with a `simulation` object. This will allow you to inspect calculation steps and print them with `simulation.tracer.print_computation_log()`.
 
 Here is an example:
 
