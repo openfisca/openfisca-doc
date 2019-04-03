@@ -137,7 +137,7 @@ If `salary` is `3000` and period is `2015-06`, the output of the formula will be
 
 
 The scales built-in OpenFisca are:
-- Marginal rate scake:
+- Marginal rate scale:
   - Split the input into several brackets according the thresholds, and apply the corresponding rate to each bracket
   - See previous example
 - Marginal amount tax scale:
@@ -150,7 +150,7 @@ The scales built-in OpenFisca are:
 
 Example: [the french tax scale on income](https://fr.openfisca.org/legislation/impot_revenu.bareme)
 
-#### Parameter depending on a variable (fancy indexing)
+#### Computing a parameter that depends on a variable (fancy indexing)
 
 Sometimes, the value of a parameter depends on a variable (e.g. a housing benefit that depends on the zone the house is built on).
 
