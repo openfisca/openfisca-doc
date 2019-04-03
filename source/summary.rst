@@ -7,7 +7,7 @@ Summary
    index
    key-concepts/index
    coding-the-legislation/index
-   running-simulation
+   simulate/index
    openfisca-python-api/index
    openfisca-web-api/index
    recipes/index

@@ -1,19 +1,8 @@
 # How to run a simulation
 
-When you have an OpenFisca tax and benefits system and you want to calculate some legislation variables on people situations, you need to create and run a new *Simulation*.
-
-OpenFisca will work the same if there is one person or seven or seven million in the modelled situation. 
-
-Nevertheless, you won't have the same experience defining those various situations sizes and linking them to your simulation. So, multiple options could be used to describe this information:
-
-- either [test cases](running-simulation.md#test-cases): you simulate the legislation for small number of situations
-- or [data](running-simulation.md#data): you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation.
-
-In both cases, OpenFisca looks for two kinds of inputs to describe situations:
+To calculate some legislation variables on people's situations, you need to create and run a new *Simulation*. Whether situations are described with [test cases](run-simulation.md#test-cases) or [data](run-simulation.md#data), OpenFisca looks for two kinds of inputs:
 - how persons are dispatched in other entities, 
 - what variables' values are already known.
-
-> Technically speaking, OpenFisca is using [vector computing](../coding-the-legislation/25_vectorial_computing.md) for performance reasons via the [NumPy](http://www.numpy.org/) Python package
 
 ## How to run a simulation on a test case
 
@@ -141,7 +130,7 @@ person_id,household_id,person_salary,age
 As for the *test case* content, you will need the following information:
 - unique indentifiers for persons and *group entities*
   > like `person_id` and `household_id` columns information in the CSV example
-- if you have multiple [entities](./key-concepts/person,_entities,_role.md) types (persons, households, ...), you need to know how your persons list is dispatched over your *group entities*
+- if you have multiple [entities](../key-concepts/person,_entities,_role.md) types (persons, households, ...), you need to know how your persons list is dispatched over your *group entities*
   > in CSV example, every `person_id` is associated with a `household_id` on the same line
 - the name of the corresponding variable in your model for every set of values 
   > `person_salary` values become [salary](https://demo.openfisca.org/legislation/salary) values in `OpenFisca-Country-Template` model

@@ -18,7 +18,7 @@ Then, be aware of the period over which you want to have your result. Some measu
 
 Now all the settings are given to run computation of taxes or benefits.
 
-> For further information: see how to run a simulation in [this section](../running-simulation.md) and the following [tutorial](http://mybinder.org:/repo/openfisca/tutorial) "How to handle periods"
+> For further information: see how to run a simulation in [this section](../simulate/run-simulation.md) and the following [tutorial](http://mybinder.org:/repo/openfisca/tutorial) "How to handle periods"
 
 ###### Application: how to calculate a variable
 
@@ -34,4 +34,4 @@ allocations_familiales = simulation.calculate('af', '2015-01')
  - positive if it is an amount the *entity* receives from the state.
  - negative if it is an amount the *entity* has to pay.
 
-[Read more about how to run a simulation](../running-simulation.md).
+[Read more about how to run a simulation](../simulate/run-simulation.md).
