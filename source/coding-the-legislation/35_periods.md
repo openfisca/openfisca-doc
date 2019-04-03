@@ -9,30 +9,6 @@ The smallest unit for OpenFisca periods is the **day**. Therefore:
 
 An `Instant` is a specific day, such as a cutoff date.
 
-
-## Periods creation
-
-To create a `Period`, you can use a simplified syntax. Here is an example for a period of one year covering `2015`:
-
-```py
-from openfisca_core import periods
-
-period_2015 = periods.period('2015')
-```
-
-Internally, periods are stored as:
-- a start `Instant`
-- a unit (`DAY`, `MONTH`, `YEAR`)
-- a quantity of units.
-
-Thus, the previous example could also be defined as:
-
-```py
-from openfisca_core import periods
-
-period_2015 = periods.Period(('month', periods.Instant((2015, 1, 1)), 12))
-```
-
 ## Periods in simulations
 
 In OpenFisca inputs, periods are encoded in strings. All the valid period formats are referenced in this table:
@@ -81,6 +57,28 @@ one_month_salaries = simulation.calculate('salary', 'month:2014-01:1')
 print(one_month_salaries)  # prints [1666.6666 1666.6666]
 ```
 
+## Manipulating Period objects in Python
+
+To create a `Period`, you can use a simplified syntax. Here is an example for a period of one year covering `2015`:
+
+```py
+from openfisca_core import periods
+
+period_2015 = periods.period('2015')
+```
+
+> Internally, periods are stored as:
+> - a start `Instant`
+> - a unit (`DAY`, `MONTH`, `YEAR`)
+> - a quantity of units.
+
+Thus, the previous example could also be defined as:
+
+```py
+from openfisca_core import periods
+
+period_2015 = periods.Period(('month', periods.Instant((2015, 1, 1)), 12))
+```
 
 ## Periods in variable definition
 
