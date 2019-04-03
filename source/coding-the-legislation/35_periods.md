@@ -6,7 +6,7 @@ OpenFisca gives you a convenient string syntax to define periods.
 
 The general structure is `unit:instant:quantity` (see the [definition of a period](../key-concepts/periodsinstants.md)). Some of the structure can be omitted. 
 
-All the valid period formats are referenced in this table:
+The main valid period formats are referenced in this table:
 
 | Period format     | Period type     | Example             | Represents                                       | Disambiguation                                                        |
 |-------------------|-----------------|---------------------|--------------------------------------------------|-----------------------------------------------------------------------|
@@ -38,41 +38,6 @@ This is equivalent to this more precise variant:
 simulation.calculate('housing_allowance', 'month:2019-05-01:1')
 ```
 
-## Using periods in tests
-
-This [YAML test](writing_yaml_tests.md) on `income_tax` evolution over time shows periods' impact on a variable:
-
-```yaml
-- name: Income tax over time
-  period: 2016-01
-  input:
-    salary:
-      year:2014:3: 100000 # This person earned 100,000 between 2014 and 2016
-  output:
-    income_tax:
-      2014-01: 388.8889
-      2015-01: 416.6667 # The income tax rate changes in 2015
-      2016-01: 416.6667
-      2017-01: 0 # The salary is not set for this period and defaults to 0
-```
-
-This syntax could also be used in Python.  
-This example sets salaries for two persons:
-
-```py
-# Each person earned 60,000 between 2014 and 2016
-simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
-```
-
-The same syntax could also be used to calculate a variable when the variable has a [set_input](35_periods.html#set-input-automatically-process-variable-inputs-defined-for-periods-not-matching-the-definition-period) attribute:
-
-```py
-simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
-
-one_month_salaries = simulation.calculate('salary', 'month:2014-01:1')
-print(one_month_salaries)  # prints [1666.6666 1666.6666]
-```
-
 ## Manipulating Period objects in Python
 
 To create a `Period`, you can use a simplified syntax. Here is an example for a period of one year covering `2015`:
@@ -97,7 +62,17 @@ from openfisca_core import periods
 period_2015 = periods.Period(('month', periods.Instant((2015, 1, 1)), 12))
 ```
 
-## Periods in variable definition
+## Periods in variable definitions
+
+With OpenFisca you can calculate variables such as `salary` that can change over time. You can also evaluate the impact of this `salary` on the `income_tax`.
+
+These variables can evolve through time at a diffent periodicity. Here for example, `salary` changes from month to month while the `income_tax` is calculated on a yearly basis.
+
+Therefore, all OpenFisca variables have a `definition_period` attribute:
+  - `definition_period = DAY`: The variable may have a different value each day.
+  - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `formula`.
+  - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `formula` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
+  - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `formula`. However when `formula` is executed, the parameter `period` can be anything and it should not be used.
 
 ```py
 ...
@@ -112,14 +87,6 @@ class salary(Variable):
     def formula(person, period):
         ...
 ```
-
-Most of the values calculated in OpenFisca, such as `income_tax`, and `housing_allowance`, can change over time.
-
-Therefore, all OpenFisca variables have a `definition_period` attribute:
-  - `definition_period = DAY`: The variable may have a different value each day.
-  - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `formula`.
-  - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `formula` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
-  - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `formula`. However when `formula` is executed, the parameter `period` can be anything and it should not be used.
 
 Each formula calculates the value of a variable for a period the size of **the given definition period**. This period is always the second argument of the formulas.
 
@@ -218,11 +185,11 @@ You can generate any period with the following properties and methods:
 You can find more information on the `Period` object in the [reference documentation]() (_not available yet_)
 
 
-## `set_input`: Automatically process variable inputs defined for periods not matching the `definition_period`
+## Automatically process variable inputs defined for periods not matching the `definition_period`
 
 By default, when you provide a simulation input, you won't be able to set a variable value for a period that doesn't match its `definition_period`.
 
-For instance, if the `definition_period` of `salary` is `MONTH`, and you input a value for `salary` for `2015`, an error will be raised.
+For instance, if the `definition_period` of `salary` is `MONTH`, and you input a value for `salary` for `2015` or more than one month, an error will be raised.
 
 It is however possible to define an automatic behaviour to cast yearly inputs into monthy values. To do this, add a `set_input` class attribute to a variable.
 
@@ -243,3 +210,29 @@ class salary(Variable):
 ```
 
 We can now provide an input for `2015` for `salary`: no error will be raised, and the value will be automatically split between the 12 months of `2015`.
+  
+This example sets 3 years salaries for two persons and calculates how much they get for one month:
+
+```py
+# Each person earned 60,000 between 2014 and 2016
+simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
+
+one_month_salaries = simulation.calculate('salary', 'month:2014-01:1')
+print(one_month_salaries)  # prints [1666.6666 1666.6666]
+```
+
+This syntax is also available in [YAML tests](writing_yaml_tests.md):
+
+```yaml
+- name: Income tax over time
+  period: 2016-01
+  input:
+    salary:
+      year:2014:3: 100000 # This person earned 100,000 between 2014 and 2016
+  output:
+    income_tax:
+      2014-01: 388.8889
+      2015-01: 416.6667 # The income tax rate changes in 2015
+      2016-01: 416.6667
+      2017-01: 0 # The salary is not set for this period and defaults to 0
+```
