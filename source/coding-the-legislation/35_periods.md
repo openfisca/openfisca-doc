@@ -72,13 +72,13 @@ This example sets salaries for two persons:
 simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
 ```
 
-The same syntax could also be used to calculate a variable when the variable has a [set_input](coding-the-legislation/35_periods.html#set-input-automatically-process-variable-inputs-defined-for-periods-not-matching-the-definition-period) attribute:
+The same syntax could also be used to calculate a variable when the variable has a [set_input](35_periods.html#set-input-automatically-process-variable-inputs-defined-for-periods-not-matching-the-definition-period) attribute:
 
 ```py
 simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
 
-two_years_salaries = simulation.calculate_add('salary', 'year:2014:2')
-print(two_years_salaries)  # prints [40000. 40000.]
+one_month_salaries = simulation.calculate('salary', 'month:2014-01:1')
+print(one_month_salaries)  # prints [1666.6666 1666.6666]
 ```
 
 
