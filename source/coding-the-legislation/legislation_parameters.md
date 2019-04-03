@@ -76,7 +76,7 @@ YAML parameter files should not be name `index.yaml`.
 
 ### Advanced uses
 
-#### Nodes defined in a YAML file
+#### Defining parameter nodes in a YAML file
 
 A node can be defined with a YAML file instead of a directory. In such a case, the name of the file defines the name of the node. Such a file can define children nodes (which can define grandchildren...).
 
@@ -95,7 +95,7 @@ public_sector:
      ...
 ```
 
-#### Scales
+#### Creating scales
 
 Scales are complex parameters constituted of brackets. They offer convenient built-in tools for recurring calculation patterns.
 
