@@ -1,13 +1,12 @@
 # Periods and Instants
 
-A `Period` can be a day, a month, a year, `n` successive days, `n` successive months, `n` successive years or the eternity.
-
-The smallest unit for OpenFisca periods is the **day**. Therefore:
-
-- All periods are presumed to start on the first day of their first month.
-- A period cannot be smaller than a day.
-
+A `Period` can be a day, a month, a year, `n` successive days, `n` successive months, `n` successive years or the eternity.  
 An `Instant` is a specific day, such as a cutoff date.
+
+You will mainly use `Period` objects.
+
+The smallest unit for OpenFisca periods is the **day**.  
+Larger periods, like `month` or `year`, are presumed to start on the first day of their first month.
 
 ## Periods in simulations
 
@@ -17,6 +16,7 @@ In OpenFisca inputs, periods are encoded in strings. All the valid period format
 |-------------------|-----------------|---------------------|--------------------------------------------------|-----------------------------------------------------------------------|
 | `AAAA`            | Calendar year   | `'2010'`            | The year 2010.                                   | From the 1st of January 2010 to the 31st of December 2010, inclusive. |
 | `AAAA-MM`         | Month           | `'2010-04'`         | The month of April 2010.                         | From the 1st of April 2010 to the 30th of April 2010, inclusive.      |
+| `AAAA-MM-DD`      | Day             | `'2010-04-06'`      | The day of the 6th of April 2010.                | The whole day of the 6th of April 2010.      |
 | `year:AAAA-MM`    | Rolling year    | `'year:2010-04'`    | The 1 year period starting in April 2010. | From the 1st of April 2010 to the 31st of March 2011, inclusive       |
 | `year:AAAA:N`     | N years         | `'year:2010:3'`     | The years 2010, 2011 and 2012.                   | From the 1st of January 2010 to the 31st of December 2012, inclusive. |
 | `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'`  | The three years period starting in April 2010.   | From the 1st of April 2010 to the 31st of March 2013, inclusive.      |
@@ -72,7 +72,7 @@ period_2015 = periods.period('2015')
 > - a unit (`DAY`, `MONTH`, `YEAR`)
 > - a quantity of units.
 
-Thus, the previous example could also be defined as:
+The previous example could also be defined as:
 
 ```py
 from openfisca_core import periods
