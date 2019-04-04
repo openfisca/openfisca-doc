@@ -27,4 +27,4 @@ Last sections present different **applications** of OpenFisca.
    * [Simulation, Computation](simulation.md)
    * [Reforms](reforms.md)
 
-We use the French legislation to illustrate these concepts as it is the only actively maintained country for now. French names are kept as it is.
+We use the French legislation to illustrate these concepts. French names are kept as it is.
