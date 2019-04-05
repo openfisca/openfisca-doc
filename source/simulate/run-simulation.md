@@ -257,7 +257,7 @@ So far we've seen two ways of populating a Simulation object with data:
 
 A third possibility exists: you can set up a small-scale situation, as in test cases; and use it to generate a number of "copies" of this situation, in which one or more variables of your choice take on a range of values.
 
-We do this by adding an 'axes' entry to a test case:
+We do this by adding an "axes" entry to a test case:
 
 ```python
 WITH_AXES = {
