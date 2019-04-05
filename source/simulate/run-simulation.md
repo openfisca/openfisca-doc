@@ -358,7 +358,9 @@ WITH_PARALLEL_AXES = {
 The result should be as follows, with both age and salary changing in lockstep:
 
 ```python
->>> np.reshape(simulation.calculate('age', '2018-11'),(10,4))
+>>> simulation_builder = SimulationBuilder() 
+>>> simulation = simulation_builder.build_from_entities(tax_benefit_system, WITH_PARALLEL_AXES)
+>>> numpy.reshape(simulation.calculate('age', '2018-11'),(10,4))
 array([[18,  0,  0,  0],
        [24,  0,  0,  0],
        [31,  0,  0,  0],
@@ -405,6 +407,8 @@ WITH_PERPENDICULAR_AXES = {
 Note the difference in nesting: we no longer have an inner set of two axes, but two sets of one axis each. The result is more complex:
 
 ```python
+>>> simulation_builder = SimulationBuilder()
+>>> simulation = simulation_builder.build_from_entities(tax_benefit_system, WITH_PERPENDICULAR_AXES)
 >>> len(simulation.calculate('salary', '2018-11'))
 64
 ```
