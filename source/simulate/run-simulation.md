@@ -456,4 +456,4 @@ array([[18,  0,  0,  0],
 
 We can see that both the `age` and the `salary` variables vary by increments, so that **all combinations are present**: for each `age` increment, there exists a variant with each `salary` increment.
 
-This allows us to use OpenFisca for `multivariate observation`: charting how two variables interact to control a third, as in [this example](https://nbviewer.jupyter.org/github/adrienpacifico/adrienpacifico.github.io/blob/master/Notebooks/plotly_openfisca_cohabitants.ipynb).
+This allows us to use OpenFisca for `multivariate observation`: charting how two variables interact to control a third, as in [this example](https://mybinder.org/v2/gh/adrienpacifico/adrienpacifico.github.io/master?filepath=Notebooks/plotly_openfisca_cohabitants.ipynb).
