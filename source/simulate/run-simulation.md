@@ -337,7 +337,7 @@ Axes are particularly interesting when you want to chart how one variable relate
 
 ### Adding axes: parallel axes
 
-We noted above that the "axes" are in fact an array of arrays. This allows us to use several axes at one, and the nesting allows for a particularly exciting opportunity: using parallel **or** perpendicular axes.
+We noted above that the "axes" are in fact an array of arrays, which allows us to use several axes at once : parallel **or** perpendicular axes.
 
 Sets of axes in the inner array are "parallel". They allow additional variables to be generated in increments. For instance (again take careful note of the position of square brackets):
 
