@@ -339,7 +339,7 @@ Axes are particularly interesting when you want to chart how one variable relate
 
 We noted above that the "axes" are in fact an array of arrays, which allows us to use several axes at once : parallel **or** perpendicular axes.
 
-Sets of axes in the inner array are "parallel". They allow additional variables to be generated in increments. For instance (again take careful note of the position of square brackets):
+Sets of axes in the inner array are "parallel". They allow additional variables to be generated in increments. For instance (again take careful note of the position of the square brackets):
 
 ```python
 WITH_PARALLEL_AXES = {
