@@ -333,7 +333,7 @@ array([[   0.     ,    0.     ,    0.     ,    0.     ],
        [   0.     ,    0.     ,    0.     , 3000.     ]], dtype=float32)
 ```
 
-Axes are particularly interesting when you want to chart how one variable relates to another, as in [this tutorial notebook](https://hub.mybinder.org/user/openfisca-tutorial-44m08koe/notebooks/notebooks/how_to_handle_axes.ipynb).
+Axes are particularly interesting when you want to chart how one variable relates to another, as in [this tutorial notebook](https://mybinder.org/v2/gh/openfisca/tutorial/master?filepath=notebooks/how_to_handle_axes.ipynb).
 
 ### Adding axes: parallel axes
 
