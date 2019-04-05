@@ -255,7 +255,7 @@ So far we've seen two ways of populating a Simulation object with data:
 - either describe a small population with fine control over input variables and over the relationship between individuals and group entities;
 - or provide inputs in bulk, typically using tabular data (CSV, Excel, etc.)
 
-A third possibility exists: you can set up a small-scale situation, as in test cases; and use it to generate a number of "copies" of this situation, in which one or more variable of your choice take on a range of values.
+A third possibility exists: you can set up a small-scale situation, as in test cases; and use it to generate a number of "copies" of this situation, in which one or more variables of your choice take on a range of values.
 
 We do this by adding an 'axes' entry to a test case:
 
