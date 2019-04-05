@@ -355,7 +355,7 @@ WITH_PARALLEL_AXES = {
     }
 ```
 
-The result would be as follows, with both age and salary changing in lockstep:
+The result should be as follows, with both age and salary changing in lockstep:
 
 ```python
 >>> np.reshape(simulation.calculate('age', '2018-11'),(10,4))
