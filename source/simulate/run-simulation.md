@@ -320,7 +320,7 @@ WITH_AXES = {
 And the result is now:
 
 ```python
->>> np.reshape(simulation.calculate('salary', '2018-11'),(10,4))
+>>> numpy.reshape(simulation.calculate('salary', '2018-11'),(10,4))
 array([[   0.     ,    0.     ,    0.     ,    0.     ],
        [   0.     ,    0.     ,    0.     ,  333.33334],
        [   0.     ,    0.     ,    0.     ,  666.6667 ],
@@ -369,7 +369,7 @@ array([[18,  0,  0,  0],
        [64,  0,  0,  0],
        [71,  0,  0,  0],
        [78,  0,  0,  0]], dtype=int32)
->>> np.reshape(simulation.calculate('salary', '2018-11'),(10,4))
+>>> numpy.reshape(simulation.calculate('salary', '2018-11'),(10,4))
 array([[   0.     ,    0.     ,    0.     ,    0.     ],
        [ 333.33334,    0.     ,    0.     ,    0.     ],
        [ 666.6667 ,    0.     ,    0.     ,    0.     ],
@@ -414,7 +414,7 @@ Why? Because we are varying `age` and `salary` independently, and each axis resu
 What does the data look like?
 
 ```python
->>> np.reshape(simulation.calculate('salary', '2018-11'),(16,4))
+>>> numpy.reshape(simulation.calculate('salary', '2018-11'),(16,4))
 array([[   0.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.],
@@ -431,7 +431,7 @@ array([[   0.,    0.,    0.,    0.],
        [3000.,    0.,    0.,    0.],
        [3000.,    0.,    0.,    0.],
        [3000.,    0.,    0.,    0.]], dtype=float32)
->>> np.reshape(simulation.calculate('age', '2018-11'),(16,4))
+>>> numpy.reshape(simulation.calculate('age', '2018-11'),(16,4))
 array([[18,  0,  0,  0],
        [38,  0,  0,  0],
        [58,  0,  0,  0],
