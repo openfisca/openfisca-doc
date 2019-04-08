@@ -53,6 +53,8 @@ html_theme_options = {
 }
 
 html_static_path = ['static']
+templates_path = ['_templates']
+html_sidebars = {'**': ['sidebar.html']}
 
 github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/master/'
 
