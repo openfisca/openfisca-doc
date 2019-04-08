@@ -76,7 +76,7 @@ YAML parameter files should not be name `index.yaml`.
 
 ### Advanced uses
 
-#### Use a YAML files to define nodes
+#### Defining parameter nodes in a YAML file
 
 A node can be defined with a YAML file instead of a directory. In such a case, the name of the file defines the name of the node. Such a file can define children nodes (which can define grandchildren...).
 
@@ -95,43 +95,62 @@ public_sector:
      ...
 ```
 
-#### Create Scales
+#### Creating scales
 
-Scales are constituted of brackets. Brackets are defined by amounts, bases, rates, average rates and thresholds.
+Scales are complex parameters constituted of brackets. They offer convenient built-in tools for recurring calculation patterns.
 
-Sample `parameters/tax_on_salary/tax_scale.yaml`:
+For instance, a marginal rate test scale can be defined in a YAML file with:
+
+File `parameters/tax_on_salary/tax_scale.yaml`
 ```yaml
 description: Scale for tax on salaries
 brackets:
-- rate:
-    1950-01-01:
-      value: 0.0
-    2010-01-01:
-      value: 0.02
-  threshold:
-    1950-01-01:
-      value: 0.0
-- rate:
-    1950-01-01:
-      value: 0.2
-  threshold:
-    1950-01-01:
-      value: 2000
+  - rate: # Define a 1st bracket
+      1950-01-01:
+        value: 0.0  # The rate applied to the first bracket was 0% from 1950 to 2009
+      2010-01-01:
+        value: 0.02  # The rate applied to the first bracket has changed to 2% in 2010
+    threshold:
+      1950-01-01:
+        value: 0.0
+  - rate: # Define a 2nd bracket
+      1950-01-01:
+        value: 0.2  # The rate applied to the second bracket has been 20% since 1950
+    threshold:
+      1950-01-01:
+        value: 2000  # The 2nd bracket starts for wages beyond 2000
+metadata:
+  type: marginal_rate
+  threshold_unit: currency-EUR
+  rate_unit: /1
 ```
+
+It can then be used in a formula with:
+```py
+def formula(person, period, parameters):
+    salary = person('salary', period)
+    scale = parameters(period).tax_on_salary.tax_scale
+    return scale.calc(salary)
+```
+
+If `salary` is `3000` and period is `2015-06`, the output of the formula will be `2000 * 0.02 + 1000 * 0.2`
+
+
+The scales built-in OpenFisca are:
+- Marginal rate scale:
+  - Split the input into several brackets according the thresholds, and apply the corresponding rate to each bracket
+  - See previous example
+- Marginal amount tax scale:
+  - Matches the input amount to a set of brackets and returns the sum of cell values from the lowest bracket to the one containing the input
+  - Defined as in the previous YAML example, but replacing `rate` by `amount`, and setting `type` to `marginal_amount` to the parameter's metadata
+- Single amount tax scale:
+  - Matches the input amount to a set of brackets and returns the single cell value that fits within that bracket
+  - Defined as in the previous YAML example, but replacing `rate` by `amount`, and setting `type` to `single_amount` to the parameter's metadata
+
 
 Example: [the french tax scale on income](https://fr.openfisca.org/legislation/impot_revenu.bareme)
 
-#### Import parameters from IPP tables
-
-> This section applies only to OpenFisca-France.
-
-The [<abbr title="Institut des politiques publiques">IPP</abbr>](http://www.ipp.eu/) is a French centre in economics which produces tax and benefit tables in the `XLSX` format, with parameters history.
-
-The OpenFisca team works on importing those data into the YAML parameter files of OpenFisca-France.
-
-See [this README](https://github.com/openfisca/openfisca-france/tree/master/openfisca_france/scripts/parameters/baremes_ipp) for more information.
-
-## Computing a parameter that depends on a variable (fancy indexing)
+#### Computing a parameter that depends on a variable (fancy indexing)
 
 Sometimes, the value of a parameter depends on a variable (e.g. a housing benefit that depends on the zone the house is built on).
 
