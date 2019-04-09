@@ -1,16 +1,12 @@
-# Periods and Instants
+# Specifying periods
 
-A `Period` can be a day, a month, a year, `n` successive days, `n` successive months, `n` successive years or the eternity.  
-An `Instant` is a specific day, such as a cutoff date.
+When you run an OpenFisca simulation to compute a variable, you need to define the period of interest for this variable.
 
-You will mainly use `Period` objects.
+OpenFisca gives you a convenient string syntax to define periods.
 
-The smallest unit for OpenFisca periods is the **day**.  
-Larger periods, like `month` or `year`, are presumed to start on the first day of their first month.
+The general structure is `unit:instant:quantity` (see the [definition of a period](../key-concepts/periodsinstants.md)). Some of the structure can be omitted. 
 
-## Periods in simulations
-
-In OpenFisca inputs, periods are encoded in strings. All the valid period formats are referenced in this table:
+All the valid period formats are referenced in this table:
 
 | Period format     | Period type     | Example             | Represents                                       | Disambiguation                                                        |
 |-------------------|-----------------|---------------------|--------------------------------------------------|-----------------------------------------------------------------------|
@@ -21,8 +17,28 @@ In OpenFisca inputs, periods are encoded in strings. All the valid period format
 | `year:AAAA:N`     | N years         | `'year:2010:3'`     | The years 2010, 2011 and 2012.                   | From the 1st of January 2010 to the 31st of December 2012, inclusive. |
 | `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'`  | The three years period starting in April 2010.   | From the 1st of April 2010 to the 31st of March 2013, inclusive.      |
 | `month:AAAA-MM:N` | N months        | `'month:2010-04:3'` | The three months from April to June 2010.        | From the 1st of April 2010 to the 30th of June 2010, inclusive.       |
+| `month:AAAA-MM-DD:N` | N months        | `'month:2010-04-15:3'` | The three months from mid April to mid July 2010.    | From the April 15th 2010 to the 14th of July 2010, inclusive. |
 | `day:AAAA-MM-DD:N` | N days        | `'day:2010-04-01:30'` | The thirty days of April 2010. | From the 1st of April 2010 to the 30th of April 2010, inclusive.       |
-| `ETERNITY` | Forever        | `ETERNITY` | All of time.        | All past, present and future day, month or year|
+| `ETERNITY` | Forever        | `ETERNITY` | All of time.        | All past, present and future day, month or year. |
+
+> The starting instant can be shortened to a month or a year. Then, OpenFisca will implicitly use the first day of the first month.
+
+
+## Using periods in a simulation
+
+As an example, here is how to calculate a `housing_allowance` on a given month:
+
+```py
+simulation.calculate('housing_allowance', '2019-05')
+```
+
+This is equivalent to this more precise variant:
+
+```py
+simulation.calculate('housing_allowance', 'month:2019-05-01:1')
+```
+
+## Using periods in tests
 
 This [YAML test](writing_yaml_tests.md) on `income_tax` evolution over time shows periods' impact on a variable:
 
@@ -67,10 +83,11 @@ from openfisca_core import periods
 period_2015 = periods.period('2015')
 ```
 
-> Internally, periods are stored as:
-> - a start `Instant`
-> - a unit (`DAY`, `MONTH`, `YEAR`)
-> - a quantity of units.
+Internally, periods are stored as:
+- a unit (`DAY`, `MONTH`, `YEAR`)
+- a starting `Instant`
+- a quantity of units.
+
 
 The previous example could also be defined as:
 
