@@ -1,4 +1,4 @@
-# Publishing results based on OpenFisca
+# <i class="fab fa-creative-commons"></i> Licence
 
 OpenFisca is free software made available under the [AGPL license](https://choosealicense.com/licenses/agpl-3.0/). This means that you are free to use, install and modify it, and that you have to contribute your changes back to the community. This is the only way a contributive digital common can be sustainable, so we are very happy that you take part in this shared effort!
 
