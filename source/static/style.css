@@ -369,3 +369,8 @@ div.sphinxsidebar input {
 .text-logo:hover {
   color: #fff;
 }
+
+/* No next / previous footer section */
+.footer-relations {
+  display: none;
+}
