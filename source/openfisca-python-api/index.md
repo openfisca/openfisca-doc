@@ -1,8 +1,9 @@
-Openfisca Python API
-=================================
+# <i class="fab fa-python"></i> Openfisca Python API
 
-Modules:
+### Modules:
 
+
+```eval_rst
 .. toctree::
    :maxdepth: 1
 
@@ -18,11 +19,15 @@ Modules:
    enum_array
    holder
    simulation_generator
+```
 
-Scripts:
 
+### Scripts:
+
+```eval_rst
 .. toctree::
    :maxdepth: 1
 
    openfisca-run-test
    openfisca_serve
+```
