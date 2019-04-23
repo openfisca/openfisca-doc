@@ -1,13 +1,3 @@
-<ul class="buttons-header">
-  <li><a class="button-appearance" href="https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf"><i class="fas fa-download"></i> Documentation</a>
-
-  <li><a class="button-appearance" href="https://github.com/openfisca"><i class="fab fa-github"></i> GitHub</a></li>
-
-  <li><a class="button-appearance" href="https://openfisca.org/"><i class="fas fa-home"></i> OpenFisca</a></li>
-</ul>
-
-<div class="header-end"></div>
-
 # <i class="fas fa-home"></i> Before you start
 
 [OpenFisca](https://www.openfisca.org) is an open source project that allows you to turn legislation into code.
