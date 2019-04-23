@@ -1,4 +1,4 @@
-# Installation recipes
+# Advanced installation
 
 ```eval_rst
 .. toctree::
