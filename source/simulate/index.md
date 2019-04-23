@@ -1,4 +1,4 @@
-# Running a simulation
+# <i class="fas fa-chart-pie"></i> Running a simulation
 
 ```eval_rst
 .. toctree::

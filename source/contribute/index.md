@@ -1,4 +1,4 @@
-# Contribute
+# <i class="fas fa-users"></i> Contribute
 
 ```eval_rst
 .. toctree::

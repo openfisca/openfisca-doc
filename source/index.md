@@ -10,7 +10,7 @@
 
 <div class="header-end"></div>
 
-# Before you start
+# <i class="fas fa-home"></i> Before you start
 
 [OpenFisca](https://www.openfisca.org) is an open source project that allows you to turn legislation into code. 
 
@@ -67,3 +67,5 @@ Please make sure you read our [licence information](/publishing.html) before usi
 Wonderful products rely on OpenFisca! Check them out on our [showcase page](https://fr.openfisca.org/showcase/). 
 
 Feeling a bit lost? You’re not sure OpenFisca can suit your project? [Fill this form](https://antoningarrone.typeform.com/to/FGkioe) and we’ll tell you! 
+
+<a class="actionbutton" title="Did you find what you were looking for?"><i class="fas fa-question"></i></a>

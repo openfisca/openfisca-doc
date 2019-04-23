@@ -1,4 +1,4 @@
-# Project Components
+# <i class="fas fa-cubes"></i> Project components
 
 OpenFisca is a modular project. Depending on your goals, you will install and interact with one or several of the OpenFisca Components.
 
