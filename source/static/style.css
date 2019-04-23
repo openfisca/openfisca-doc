@@ -316,6 +316,10 @@ div.sphinxsidebar .sidebar-toc a {
   padding: 1em 1.5em;
 }
 
+.sidebar-toc ul li.toctree-l2 a {
+  padding: 5px 50px;
+}
+
 div.sphinxsidebar .sidebar-toc ul ul {
   margin: 0;
   padding: 0;
