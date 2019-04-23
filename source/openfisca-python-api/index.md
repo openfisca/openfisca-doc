@@ -1,7 +1,7 @@
 # <i class="fab fa-python"></i> Openfisca Python API
 
-### Modules:
 
+Modules:
 
 ```eval_rst
 .. toctree::
@@ -14,6 +14,7 @@
    simulations
    simulation_builder
    entities
+   populations
    test_runner
    tracer
    enum_array
@@ -21,8 +22,7 @@
    simulation_generator
 ```
 
-
-### Scripts:
+Scripts:
 
 ```eval_rst
 .. toctree::
