@@ -125,6 +125,7 @@ If you send this situation to your `country-template` model Web API or try it ou
 As we calculated the `disposable_income` for `2017-01`, let's see how the `trace` section describes it:
 
 ```json
+  {
     "disposable_income<2017-01>": {
       "dependencies": [
         "salary<2017-01>",
@@ -136,7 +137,8 @@ As we calculated the `disposable_income` for `2017-01`, let's see how the `trace
       "value": [
         3920
       ]
-    },
+    }
+  }
 ```
 
 It contains these sub-sections:
@@ -151,28 +153,32 @@ Following `dependencies` list, we can also see that:
 
 * OpenFisca didn't need to calculate the `salary` value as it was given in situation inputs; thus the `/trace` doesn't evaluate its `dependencies` and `parameters`:
     ```json
-    "salary<2017-01>": {
-      "dependencies": [],
-      "parameters": {},
-      "value": [
-        4000
-      ]
-    },
+    {
+      "salary<2017-01>": {
+        "dependencies": [],
+        "parameters": {},
+        "value": [
+          4000
+        ]
+      }
+    }
     ```
 * OpenFisca needed to calculate the next variable, `basic_income`, before `disposable_income` evaluation:
     ```json
-    "basic_income<2017-01>": {
-      "dependencies": [
-        "age<2017-01>"
-      ],
-      "parameters": {
-        "benefits.basic_income<2017-01-01>": 600,
-        "general.age_of_majority<2017-01-01>": 18
-      },
-      "value": [
-        600
-      ]
-    },
+    {
+      "basic_income<2017-01>": {
+        "dependencies": [
+          "age<2017-01>"
+        ],
+        "parameters": {
+          "benefits.basic_income<2017-01-01>": 600,
+          "general.age_of_majority<2017-01-01>": 18
+        },
+        "value": [
+          600
+        ]
+      }
+    }
     ```
 
     Note that, as a parameter depends only on its validity period, its evaluation is described in one line that includes its value.
