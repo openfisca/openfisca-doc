@@ -4,5 +4,7 @@
 </div>
 
 <div class="sidebar-block">
-    {% include "sidebar-toc.html" %}
+    <div class="sidebar-toc">
+        {{ toctree(maxdepth=2, collapse=True, includehidden=True) }}
+    </div>
 </div>
