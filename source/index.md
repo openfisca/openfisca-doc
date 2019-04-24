@@ -43,7 +43,7 @@ They are two ways to use your results:
 
 Also, there are tons of libraries to help you illustrate your results ([plot.ly](https://plot.ly) for instance, will get you that nice charts you’ve seen somewhere else).
 
-Please make sure you read our [licence information](/publishing.html) before using results based on OpenFisca.
+Please make sure you read our [licence information](/licence.md) before using results based on OpenFisca.
 
 ## Things OpenFisca won’t do for you:
 
