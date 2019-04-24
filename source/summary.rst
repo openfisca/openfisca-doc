@@ -4,7 +4,6 @@
    index
    projectcomponents
    installation/index
-   tutorials/index
    -------------
    key-concepts/index
    coding-the-legislation/index
