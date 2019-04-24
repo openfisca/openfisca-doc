@@ -12,20 +12,30 @@ _paq.push(['enableLinkTracking']);
   g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
 })();
 
+function getPathName() {
+  if (location.pathname.startsWith('/doc/')) { // Very ugly. Triggered when the doc is hosted under the /doc/ subdomain. A proper configuration system would be preferable.
+    return '/doc';
+  }
+  return '';
+}
+
 $(document).ready(function() {
 
-    $('a[href^="https://"], a[href^="http://"]').attr("target", "_blank"); // Make all external links open in a new Window
+  $('a[href^="https://"], a[href^="http://"]').attr("target", "_blank"); // Make all external links open in a new Window
 
-    // Internal docs containing an anchor are wrongly transpiled to an absolute link starting by '/'. This causes dead links when we serve under openfisca.org/doc. The following manually fix these links in JS. This could be avoided if we served on doc.openfisca.org
-    $( "a[href^='/']" ).attr("href",
-      function( _, href ) {
-        if (location.pathname.startsWith('/doc/')) { // Very ugly. Triggered when the doc is hosted under the /doc/ subdomain. A proper configuration system would be preferable.
-          return '/doc' + href;
-        }
-        return href;
-      }
-    );
+  // Internal docs containing an anchor are wrongly transpiled to an absolute link starting by '/'. This causes dead links when we serve under openfisca.org/doc. The following manually fix these links in JS. This could be avoided if we served on doc.openfisca.org
+  $( "a[href^='/']" ).attr("href",
+    function( _, href ) {
+      return getPathName() + href;
+    }
+  );
 
-    // Activate action button tooltip
-    $('.actionbutton').tooltip()
+  $( "img[src^='/']" ).attr("src",
+    function( _, src ) {
+      return getPathName() + src;
+    }
+  );
+
+  // Activate action button tooltip
+  $('.actionbutton').tooltip()
 });
