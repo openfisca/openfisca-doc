@@ -21,7 +21,7 @@ How to turn legal code into Python code?
 
 * First, identify some legislation that can be expressed as an arithmetic operation
 * More tech than legislation savvy? Take a look at some [recipes](/coding-the-legislation/10_basic_example.html) to easily communicate with expert of the law.
-* Then, try to translate them into [formulas, variables, parameters, etc.](/key-concepts/variables.html)
+* Then, try to translate them into [formulas, variables, parameters, etc.](/coding-the-legislation/10_basic_example.html)
 * You can even [build some tests](/coding-the-legislation/writing_yaml_tests.html) to verify your implementation of the law.
 * Lost? You are not the first one to go through that! Join us [here](https://forms.gle/kA6bijAJBL4kJz4e8) to ask the community for some hints and to celebrate your progress.
 
