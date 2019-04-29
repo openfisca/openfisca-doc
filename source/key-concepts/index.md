@@ -1,4 +1,4 @@
-# Key concepts
+# <i class="fas fa-dice-d6"></i> Key concepts
 
 ```eval_rst
 .. toctree::

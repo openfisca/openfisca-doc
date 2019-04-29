@@ -1,97 +1,385 @@
 .sphinxsidebar .caption {
-  background-color: #2980B9;
+  background-color: #6D69FB;
   color: white;
   font-weight: bold;
   padding: 5px;
   padding-left: 10px;
+  font-family: 'asapregular';
 }
 
-.button-header-link {
-  float: right;
-  padding: 10px;
-  margin-right: 15px;
-  border-radius: 5px;
-  background: #971640;
-  display: inline-block;
+.actionbutton{
+  border-radius: 30px;
+  width: 56px;
+  height: 56px;
+  background: #6D69FB;
+  color: #ffffff;
+  text-align: center;
+  bottom: 2rem;
+  right: 2rem;
+  position: fixed;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px grey;
+  font-size: 1.5em;
+  padding: 15px;
 }
+.actionbutton:hover{
+  color: #ffffff;
+}
+
 
 .button-appearance {
-  color: #fff !important;
   text-decoration: none;
+  border: #6D69FB 1px solid;
+  color: #6D69FB;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-left: 1em;
 }
 
-@media all and (min-width: 700px) {
+a .button-appearance hover {
+  text-decoration: none;
+  border: #6D69FB 1px solid;
+  color: #fff;
+  background: #6D69FB;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-left: 1em;
+}
+
+@media all and (min-width: 800px) {
   .buttons-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
     position: absolute;
-    top: 0px;
-    right: 0px;
-    margin-top: 15px;
+    float: right;
+    top: 1.5em;
+    right: 1em;
+    width: 100%;
   }
 }
 
-@media all and (max-width: 386px) {
-  .logo-margin {
-    margin-top: 20px;
-    margin-bottom: 10px;
+@media all and (max-width: 800px) {
+  .buttons-header {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
   }
-}
-
-@media all and (min-width: 1220px) {
-  .buttons-header-margin {
-    margin-right: 60px;
+  li{
+    margin-bottom: 1.5em;
   }
-}
-
-@media all and (min-width: 1280px) {
-  .buttons-header-margin {
-    margin-right: 160px;
-  }
-}
-
-@media all and (min-width: 1370px) {
-  .buttons-header-margin {
-    margin-right: 260px;
-  }
-}
-
-.button-download {
-  float: left;
-  padding: 10px;
-  border-radius: 5px;
-  background: #337AB7;
-  display: block;
-}
-
-.header-end {
-  margin-top: 75px;
 }
 
 #right-column img {
-  max-width: 750px;
+  max-width: 100%;
 }
 
-blockquote {
-  margin: 0 0 .85em;
-  padding: 0 15px;
-  color: #858585;
-  border: none;
-  border-left: 4px solid #e5e5e5;
-  background-color: inherit;
-}
 
-blockquote p {
-  color: #858585;
-}
-
-pre {
-  background: #f7f7f7;
-}
-
-code {
-  font-size: inherit;
-}
 
 /* Trick to avoid local links to appear in the side bar. We want only pages theres, but mixing markdown and rst creates some confusion. */
 .toctree-l2 a[href*="index.html#"], .toctree-l2 a[href^="#"]:not([href="#"]) {
   display: none;
 }
+/* import fontface */
+@font-face {
+  font-family: 'asapbold';
+  src: url('./fonts/asap-bold-webfont.woff2') format('woff2'),
+       url('./fonts/asap-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'asapbolditalic';
+  src: url('./fonts/asap-bolditalic-webfont.woff2') format('woff2'),
+       url('./fonts/asap-bolditalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'asapitalic';
+  src: url('./fonts/asap-italic-webfont.woff2') format('woff2'),
+       url('./fonts/asap-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'asapmedium';
+  src: url('./fonts/asap-medium-webfont.woff2') format('woff2'),
+       url('./fonts/asap-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'asapmediumitalic';
+  src: url('./fonts/asap-mediumitalic-webfont.woff2') format('woff2'),
+       url('./fonts/asap-mediumitalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'asapregular';
+  src: url('./fonts/asap-regular-webfont.woff2') format('woff2'),
+       url('./fonts/asap-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'asapsymbol';
+  src: url('./fonts/asap-symbol-webfont.woff2') format('woff2'),
+       url('./fonts/asap-symbol-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* style from Guzzle */
+/* -------------------------------------------------- */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'asapregular';
+  font-size: 1.5em;
+  color: #424242;
+  line-height: 150%;
+}
+
+.sidebar-toc ul li.toctree-l1 a {
+  padding: 3% 10%
+}
+
+#left-column {
+  position: fixed;
+  height: 100%;
+  border-right: 1px solid #e0e0e0;
+  max-width: 255px;
+  overflow: auto;
+  background: #ffffff;
+}
+
+#right-column {
+  padding-left: 255px;
+  background-color: #ffffff;
+  max-width: 100%;
+  margin-left: 0;
+}
+
+a.headerlink {
+  visibility: hidden;
+  color: #ddd;
+  padding: 0 4px;
+  text-decoration: none;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+  visibility: visible;
+}
+
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+  color: #6D69FB;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #424242;
+  font-family: "asapbold";
+  background-color: #fff;
+  line-height: 130%;
+}
+
+h1, h2, h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 38px;
+  padding: 10px 10px 10px 45px;
+  margin: 20px 0 35px -45px;
+  width: calc(100% + 90px);
+  color: #6D69FB;
+}
+
+
+a {
+  color: #6D69FB;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: #424242;
+}
+
+
+.breadcrumb {
+  font-size: 1em;
+  margin-bottom: 12px;
+  color: #6D69FB;
+}
+
+blockquote {
+  border-width: .1em 0 .1em 0;
+  border-color: #e5eef2;
+  border-style: solid;
+  background-color: #f3f8f9;
+  color: #424242;
+  margin: 20px 0;
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+/* Sphinx sidebar
+-------------------------------------------------- */
+
+div.sphinxsidebar {
+  word-wrap: break-word;
+}
+
+div.sphinxsidebar.caption img{
+  width: 3em;
+  margin-left: 1.5em;
+}
+
+div.sphinxsidebar .panel-default > .panel-heading {
+    background-image: none;
+}
+
+.sidebar-wrapper {
+  padding: 0 22px;
+}
+
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+  color: #424242;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+div.sphinxsidebar h4 {
+  font-size: 16px;
+}
+
+div.sphinxsidebar p {
+  color: #424242;
+  margin: 10px 0;
+}
+
+.sidebar-toc {
+  font-size: 1em;
+}
+
+div.sphinxsidebar .sidebar-toc ul {
+  margin: 0 0 4px 0;
+  list-style-type: none;
+  color: #424242;
+}
+
+div.sphinxsidebar .sidebar-toc a {
+  font-family: "asapregular";
+  color: #6D69FB;
+  text-decoration: none;
+}
+
+.sidebar-toc > ul {
+    padding: 0 !important;
+    list-style-type: none;
+    margin: 0;
+}
+
+.sidebar-toc ul li a {
+  display: block;
+}
+
+.sidebar-toc ul li a:hover {
+  background-color: #6D69FB;
+  color: #fff;
+}
+
+.sidebar-toc ul li.current > a,
+.sidebar-toc ul li.current > a:hover {
+  background-color: #6D69FB;
+  color: #ffffff;
+}
+
+.sidebar-toc ul li.toctree-l1 a {
+  padding: 0.75em 1.5em;
+}
+
+.sidebar-toc ul li.toctree-l2 a {
+  padding: 5px 50px;
+}
+
+div.sphinxsidebar .sidebar-toc ul ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-localtoc ul {
+    padding-left: 24px;
+}
+
+div.sphinxsidebar input {
+  border: 1px solid #ccc;
+  font-family: "asapregular";
+  font-size: 1em;
+}
+
+.sidebar-block h2 {
+  border-bottom: none;
+  margin: 0 0 17px 0;
+  font-size: 14px;
+  font-family: "asapregular";
+  padding: 0 0 6px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #606060;
+}
+
+.sidebar-block .bd {
+  font-size: 16px;
+}
+
+.sphinxsidebar > .sidebar-block:not(:last-child):after {
+    content: '';
+    display:block;
+    border-top: 1px solid #ccc;
+    margin: 24px 22px 0 22px;
+}
+
+.text-logo {
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  padding: 8px;
+  color: #fff;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 20px 0;
+  font-weight: bold;
+  background-color: #6D69FB;
+  border-bottom: 1px solid #fff;
+}
+
+.text-logo:hover {
+  color: #fff;
+}
+

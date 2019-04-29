@@ -1,4 +1,4 @@
-# OpenFisca Web API
+# <i class="fas fa-cloud"></i> OpenFisca Web API
 
 ```eval_rst
 .. toctree::

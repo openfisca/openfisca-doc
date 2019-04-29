@@ -1,4 +1,4 @@
-# From law to code
+# <i class="fas fa-code"></i> From law to code
 
 ```eval_rst
 .. toctree::

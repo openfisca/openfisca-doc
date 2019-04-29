@@ -1,4 +1,4 @@
-# Installation recipes
+# <i class="fas fa-cogs"></i> Installation
 
 ```eval_rst
 .. toctree::

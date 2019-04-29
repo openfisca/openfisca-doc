@@ -1,3 +1,10 @@
-{% include "logo-text.html" %}
-{% include "searchbox.html" %}
-{% include "globaltoc.html" %}
+<div class="sphinxsidebar caption">
+    <img src="/_static/img/logo_mini.svg" />
+    {% include "searchbox.html" %} <!-- Template defined by the guzzle theme-->
+</div>
+
+<div class="sidebar-block">
+    <div class="sidebar-toc">
+        {{ toctree(maxdepth=2, collapse=True, includehidden=True) }}
+    </div>
+</div>

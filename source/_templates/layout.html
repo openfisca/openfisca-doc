@@ -1,0 +1,22 @@
+{% extends "!layout.html" %}
+
+{%- block htmltitle %}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+  {{ super() }}
+{%- endblock %}
+
+<!-- Page content header -->
+{% block breadcrumbs %}
+  <ul class="buttons-header">
+    <li><a class="button-appearance" href="https://media.readthedocs.org/pdf/openfisca/latest/openfisca.pdf"><i class="fas fa-download"></i> Documentation</a>
+    <li><a class="button-appearance" href="https://github.com/openfisca"><i class="fab fa-github"></i> GitHub</a></li>
+    <li><a class="button-appearance" href="https://openfisca.org/"><i class="fas fa-home"></i> OpenFisca</a></li>
+  </ul>
+  {{ super() }}
+{%- endblock %}
+
+
+<!-- Page content footer -->
+{%- block bottom_rel_links %}
+  <a class="actionbutton" title="Did you find what you were looking for?" data-toggle="tooltip" data-placement="top"  href="https://openfisca.typeform.com/to/WudIsQ"><i class="fas fa-question"></i></a>
+{%- endblock %}

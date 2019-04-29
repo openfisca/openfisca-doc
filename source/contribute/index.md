@@ -1,4 +1,4 @@
-# Contribute
+# <i class="fas fa-users"></i> Contribute
 
 ```eval_rst
 .. toctree::
@@ -20,14 +20,14 @@ OpenFisca is a free software project and contributors are very welcome!
 
 Feel free to fork the [source code repositories](https://github.com/openfisca) on GitHub and send us pull-requests.
 
-You can [contact the community](../community.md) to ask for help.
+You can [contact the community](../find-help.md) to ask for help.
 
 Thanks for enhancing OpenFisca anyway!
 
 ## Why contribute to OpenFisca?
 
 OpenFisca is a project being developed under the [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.en.html) license.
-The source code is freely available and modifiable. Please refer to the [Publishing results based on OpenFisca](../publishing.md) page for a detailed explanation of the implications of this provision.
+The source code is freely available and modifiable. Please refer to the [Publishing results based on OpenFisca](../licence.md) page for a detailed explanation of the implications of this provision.
 
 We encourage users to send their comments and suggestions for improvement,
 and to report any inaccuracy or error they might have found.
@@ -81,5 +81,5 @@ From the point of view of someone (developer, economist, etc.) who wants to impl
 
 ### Enhance other projects linked to OpenFisca
 
-You can also participate in [other projects](../community.md) that make use of
+You can also participate in [other projects](../find-help.md) that make use of
 OpenFisca.
