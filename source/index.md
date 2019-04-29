@@ -13,8 +13,8 @@ Describe your tax & benefit system, provide a situation as input (i.e income), a
 ### 1 - Choose an available tax & benefit system or roll your own:
 
 With OpenFisca, you can:
-* Use an existing tax & benefit system (see the [list of systems already built](https://openfisca.org/en/countries/))
-* [Build a new tax & benefit system](coding-the-legislation/bootstrapping_a_new_country_package.md) if it doesn’t exist already
+* Use an existing tax and benefit system (see the [list of systems already built](https://openfisca.org/en/countries/))
+* [Build a new tax and benefit system](coding-the-legislation/bootstrapping_a_new_country_package.md) if it doesn’t exist already
 * [Contribute](/contribute/) to an existing system by adding or improving elements of the legislation
 
 How to turn legal code into Python code?
