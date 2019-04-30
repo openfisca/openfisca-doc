@@ -12,13 +12,13 @@ The main valid period formats are referenced in this table:
 |-------------------|-----------------|---------------------|--------------------------------------------------|-----------------------------------------------------------------------|
 | `AAAA`            | Calendar year   | `'2010'`            | The year 2010.                                   | From the 1st of January 2010 to the 31st of December 2010, inclusive. |
 | `AAAA-MM`         | Month           | `'2010-04'`         | The month of April 2010.                         | From the 1st of April 2010 to the 30th of April 2010, inclusive.      |
-| `AAAA-MM-DD`      | Day             | `'2010-04-06'`      | The day of the 6th of April 2010.                | The whole day of the 6th of April 2010.      |
+| `AAAA-MM-DD`      | Day             | `'2010-04-06'`      | The day of April 6th 2010.                | The whole day of the 6th of April 2010.      |
 | `year:AAAA-MM`    | Rolling year    | `'year:2010-04'`    | The 1 year period starting in April 2010. | From the 1st of April 2010 to the 31st of March 2011, inclusive       |
 | `year:AAAA:N`     | N years         | `'year:2010:3'`     | The years 2010, 2011 and 2012.                   | From the 1st of January 2010 to the 31st of December 2012, inclusive. |
 | `year:AAAA-MM:N`  | N rolling years | `'year:2010-04:3'`  | The three years period starting in April 2010.   | From the 1st of April 2010 to the 31st of March 2013, inclusive.      |
 | `month:AAAA-MM:N` | N months        | `'month:2010-04:3'` | The three months from April to June 2010.        | From the 1st of April 2010 to the 30th of June 2010, inclusive.       |
 | `month:AAAA-MM-DD:N` | N months        | `'month:2010-04-15:3'` | The three months from mid April to mid July 2010.    | From the April 15th 2010 to the 14th of July 2010, inclusive. |
-| `day:AAAA-MM-DD:N` | N days        | `'day:2010-04-01:30'` | The thirty days of April 2010. | From the 1st of April 2010 to the 30th of April 2010, inclusive.       |
+| `day:AAAA-MM-DD:N` | N days        | `'day:2010-04-01:15'` | The first 15 days of April 2010. | From the 1st of April 2010 to the 15th of April 2010, inclusive.       |
 | `ETERNITY` | Forever        | `ETERNITY` | All of time.        | All past, present and future day, month or year. |
 
 > The starting instant can be shortened to a month or a year. Then, OpenFisca will implicitly use the first day of the first month.
@@ -38,7 +38,7 @@ This is equivalent to this more precise variant:
 simulation.calculate('housing_allowance', 'month:2019-05-01:1')
 ```
 
-## Manipulating Period objects in Python
+## Handling Period objects in Python
 
 To create a `Period`, you can use a simplified syntax. Here is an example for a period of one year covering `2015`:
 
@@ -76,7 +76,6 @@ Therefore, all OpenFisca variables have a `definition_period` attribute:
 
 ```py
 ...
-from openfisca_core.periods import MONTH  # openfisca_core is the architecture of OpenFisca
 
 class salary(Variable):
     value_type = float
@@ -217,7 +216,7 @@ This example sets 3 years salaries for two persons and calculates how much they 
 # Each person earned 60,000 between 2014 and 2016
 simulation.set_input('salary', 'year:2014:3', [60000.0, 60000.0])
 
-one_month_salaries = simulation.calculate('salary', 'month:2014-01:1')
+one_month_salaries = simulation.calculate('salary', '2014-01')
 print(one_month_salaries)  # prints [1666.6666 1666.6666]
 ```
 
