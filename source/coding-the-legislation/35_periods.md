@@ -58,8 +58,9 @@ The previous example could also be defined as:
 
 ```py
 from openfisca_core import periods
+from openfisca_core.model_api import MONTH
 
-period_2015 = periods.Period(('month', periods.Instant((2015, 1, 1)), 12))
+period_2015 = periods.Period((MONTH, periods.Instant((2015, 1, 1)), 12))
 ```
 
 ## Periods in variable definitions
