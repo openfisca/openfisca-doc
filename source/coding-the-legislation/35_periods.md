@@ -1,4 +1,4 @@
-# Specifying periods
+# Periods
 
 When you run an OpenFisca simulation to compute a variable, you need to define the period of interest for this variable.
 
