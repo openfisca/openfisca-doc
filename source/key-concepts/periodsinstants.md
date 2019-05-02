@@ -4,20 +4,18 @@ Most of the values calculated in OpenFisca, such as an _income tax_, or a _housi
 
 In [simulations](simulation.md), parameters and variables, OpenFisca handles time via *periods* and *instants*.
 
-- *Instant*: the atomic unit is a day, so instants are day dates.
+In OpenFisca context, a period consists of:
+- a starting instant (the atomic unit is a day, so instants are day dates),
+- a unit (day, month or year),
+- a quantity of that unit.
 
-_Example: the 15th June 2015._
+Let's look at some examples:
+* here is an instant: the 15th June 2015,
+* and here are some periods: `July 2015` is a month starting on its 1st day, `2015` is a year starting on its 1st day, 
+* we can also define a period of several months, `July and August 2015`, or a period overlapping different months, `one month starting on the 15th of July`.
 
-- *Period*: a succession of days.
+The smallest unit for OpenFisca periods is the **day**.
 
-_Example: a month ("July 2015"), a year ("2015"), several months ("July and August 2015") or the eternity._
+The largest OpenFisca period is the **eternity**, which is used for variables that are constant over time, e.g. a date of birth.
 
-
-The smallest unit for OpenFisca periods is the **month**. Therefore:
-
-- All periods are presumed to start on the first day of their first month.
-- A period cannot be smaller than a month.
-
-The largest unit for OpenFisca periods is the **eternity**, which is used for variables that are constant over time, e.g. a date of birth.
-
-[Read more about the periods implementation in OpenFisca](../coding-the-legislation/35_periods.md)
+[Read more about the periods implementation in OpenFisca](../coding-the-legislation/35_periods.md).
