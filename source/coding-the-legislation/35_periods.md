@@ -21,8 +21,12 @@ The main valid period formats are referenced in this table:
 | `day:AAAA-MM-DD:N` | N days        | `'day:2010-04-01:15'` | The first 15 days of April 2010. | From the 1st of April 2010 to the 15th of April 2010, inclusive.       |
 | `ETERNITY` | Forever        | `ETERNITY` | All of time.        | All past, present and future day, month or year. |
 
-> The starting instant can be shortened to a month or a year. Then, OpenFisca will implicitly use the first day of the first month.
+The starting instant can be shortened to a month or a year. Then, OpenFisca will implicitly use the first day of the first month.
 
+> Internally, periods come from `openfisca_core.periods` and are stored as:
+> - a unit (`DAY`, `MONTH`, `YEAR`)
+> - a starting `Instant`
+> - a quantity of units.
 
 ## Using periods in a simulation
 
@@ -36,31 +40,6 @@ This is equivalent to this more precise variant:
 
 ```py
 simulation.calculate('housing_allowance', 'month:2019-05-01:1')
-```
-
-## Handling Period objects in Python
-
-To create a `Period`, you can use a simplified syntax. Here is an example for a period of one year covering `2015`:
-
-```py
-from openfisca_core import periods
-
-period_2015 = periods.period('2015')
-```
-
-Internally, periods are stored as:
-- a unit (`DAY`, `MONTH`, `YEAR`)
-- a starting `Instant`
-- a quantity of units.
-
-
-The previous example could also be defined as:
-
-```py
-from openfisca_core import periods
-from openfisca_core.model_api import MONTH
-
-period_2015 = periods.Period((MONTH, periods.Instant((2015, 1, 1)), 12))
 ```
 
 ## Periods in variable definitions
