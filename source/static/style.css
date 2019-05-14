@@ -58,6 +58,23 @@ a .button-appearance hover {
     right: 1em;
     width: 100%;
   }
+
+  #left-column {
+    position: fixed;
+    height: 100%;
+    border-right: 1px solid #e0e0e0;
+    max-width: 255px;
+    overflow: auto;
+    background: #ffffff;
+  }
+  
+  #right-column {
+    padding-left: 255px;
+    background-color: #ffffff;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  
 }
 
 @media all and (max-width: 800px) {
@@ -69,13 +86,15 @@ a .button-appearance hover {
   li{
     margin-bottom: 1.5em;
   }
+  
+  #right-column {
+    padding-left: 2em;
+  }
 }
 
 #right-column img {
   max-width: 100%;
 }
-
-
 
 /* Trick to avoid local links to appear in the side bar. We want only pages theres, but mixing markdown and rst creates some confusion. */
 .toctree-l2 a[href*="index.html#"], .toctree-l2 a[href^="#"]:not([href="#"]) {
@@ -152,22 +171,6 @@ body {
 
 .sidebar-toc ul li.toctree-l1 a {
   padding: 3% 10%
-}
-
-#left-column {
-  position: fixed;
-  height: 100%;
-  border-right: 1px solid #e0e0e0;
-  max-width: 255px;
-  overflow: auto;
-  background: #ffffff;
-}
-
-#right-column {
-  padding-left: 255px;
-  background-color: #ffffff;
-  max-width: 100%;
-  margin-left: 0;
 }
 
 a.headerlink {
@@ -382,4 +385,3 @@ div.sphinxsidebar input {
 .text-logo:hover {
   color: #fff;
 }
-
