@@ -54,14 +54,14 @@ Abbreviations should be avoided unless they are undoubtedly transparent.
 OpenFisca currently lacks a namespacing mechanism. In its absence, the need sometimes arises to use prefixes or suffixes to distinguish between variables which would otherwise have the same name, leading to errors or ambiguities. Some conventions have arisen:
 
 Use a prefix to distinguish versions of a variable specific to a sub-domain.
->**OK**: household_tax_nb_parents
+>**OK**: housing_tax_nb_parents
 
->**KO**: nb_parents_household_tax
+>**KO**: nb_parents_housing_tax
 
 Avoid mixing suffixed and non-suffixed versions of a similarly named variables, as this might cause confusion on which version to use where.
->**OK**: household_tax_nb_parents, income_tax_nb_parents
+>**OK**: housing_tax_nb_parents, income_tax_nb_parents
 
->**KO**: nb_parents, household_tax_nb_parents
+>**KO**: nb_parents, housing_tax_nb_parents
 
 Use a suffix if it is necessary to distinguish between versions of a variable at the level of different entities; this is often seen when aggregating from the individual level to e.g. the household level.
 >**OK**: taxable_income_household, work_income_individual
