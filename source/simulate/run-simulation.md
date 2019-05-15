@@ -166,29 +166,24 @@ person_id,person_salary,person_age
 
 ```sh
 $ python --version # Python 3.7.0 or greater should be installed on your computer
-$ pip install --upgrade pip openfisca_country_template pandas ipython
-$ ipython
+$ pip install --upgrade pip openfisca_country_template pandas
 ```
 
 2. Load the `country-template` legislation and, then, the content of the `data.csv` file with the [pandas](https://pandas.pydata.org) library:
 
 ```python
-In [1]: from openfisca_country_template import CountryTaxBenefitSystem
+import pandas as pandas
+from openfisca_country_template import CountryTaxBenefitSystem
 
-In [2]: import pandas as pandas
+tax_benefit_system = CountryTaxBenefitSystem()
 
-In [3]: tax_benefit_system = CountryTaxBenefitSystem()
-
-In [4]: data = pandas.read_csv('./data.csv')  # pandas.DataFrame object
-
-In [5]: length = len(data)  # ignores CSV header
+data = pandas.read_csv('./data.csv')  # pandas.DataFrame object
+length = len(data)  # ignores CSV header
 ```
 
-You can now access the `person_salary` column values:
+You can now access the `print(data.person_salary)` column values and get:
 
 ```python
-In [6]: data.person_salary
-Out[6]:
 0     2694
 1     2720
 2     1865
@@ -205,48 +200,46 @@ Name: person_salary, dtype: int64
 ```
 
 
-3. Build a simulation according to your data's length:
-
+3. Build a simulation according to your data's length with `SimulationBuilder`.
+4. And, configure the simulation and calculate the [income_tax](https://demo.openfisca.org/legislation/income_tax) variable for all persons on the same period:
+   
 ```python
-In [7]: from openfisca_core.simulation_builder import SimulationBuilder
+from openfisca_core.simulation_builder import SimulationBuilder
+import numpy as numpy
 
-In [8]: simulation = SimulationBuilder().build_default_simulation(tax_benefit_system, length)
-```
+# ...step 2 code...
 
-4. Configure the simulation and calculate the [income_tax](https://demo.openfisca.org/legislation/income_tax) variable for all persons on the same period:
-
-```python
-In [9]: import numpy as numpy
-
-In [10]: period = '2018-01'
+simulation = SimulationBuilder().build_default_simulation(tax_benefit_system, length)
+period = '2018-01'
 
 # match data from the 'person_salary' column
 # with the 'salary' variable of our yet to be country's tax-benefit system
-In [11]: simulation.set_input('salary', period, numpy.array(data.person_salary))
+simulation.set_input('salary', period, numpy.array(data.person_salary))
 
-In [12]: income_tax = simulation.calculate('income_tax', period)
+income_tax = simulation.calculate('income_tax', period)
 ```
 
-5. You are all set! The `income_tax` has been calculated for each person on your `data.csv` file.
 
-Persons' order is kept:
+1. You are all set! The `income_tax` has been calculated for each person on your `data.csv` file.
+
+Persons' order is kept. Calling `print(data.person_id.values)` gives:
 
 ```python
-In [13]: data.person_id.values
-Out[13]: array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
+array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
 ```
 
-And `income_tax` is an instance of `numpy.ndarray`:
+And `income_tax` is an instance of `numpy.ndarray` as you can see with `print(income_tax)`:
 
 ```python
-In [14]: income_tax
-Out[14]:
 array([404.1    , 408.00003, 279.75   , 291.15002, 358.95   , 451.2    ,
        342.90002, 507.90002, 439.35   , 597.15   , 546.45   , 311.7    ],
       dtype=float32)
+```
 
-In [15]: income_tax.item(2)  # person_id == 3
-Out[15]: 279.75
+And `print(income_tax.item(2))` (e.g.`person_id == 3`):
+
+```
+279.75
 ```
 
 ## Replicating a situation along axes
