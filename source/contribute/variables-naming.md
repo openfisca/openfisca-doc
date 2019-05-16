@@ -1,12 +1,12 @@
-Openfisca variables naming guidelines
-=====================================
+OpenFisca variables : naming guidelines
+=======================================
 
 General philosophy
 ------------------
 
-If you consider naming variables, you are in a country-specific repository, where the [local language rule](language.md) apply. The domain language is thus one of the native ones of the modeled country. We consider each tax, collecting organism and country regulation as a domain-specific term. In the same fashion, well-known abbreviations of these domain-specific terms are accepted.
+The discussion below is concerned with naming the variables of a country package. In that case, the ["local language rule"](language.md) applies, and the appropriate language for modeling the domain is one of the native ones of the modeled country. We consider each tax, collecting organism and country regulation, and so on, as a domain-specific term. In the same fashion, well-known abbreviations of these domain-specific terms are accepted.
 
-OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the country tax and benefits system, **without necessarily being an expert**.
+OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the country's tax and benefits system, **without necessarily being an expert**.
 
 One should be able to get a rough idea of the meaning of a variable by reading its name, or by quickly researching it on the web.
 
@@ -16,15 +16,17 @@ A particular effort should be made on variables that are likely to be reused.
 
 > **Good naming**
 
-> `als_etudiant`: I don't know what `als` stands for. I look it up on a search engine, and I see ALS are a form of Aides Logement. I thus know this variable should be the amount of ALS for a student. This is enough to tell me if it is interesting in my context.
+> `als_etudiant`: The acronym ALS stands in English for "Amyotrophic lateral sclerosis", but browsing for that term in France is much more likely to return "Allocation de logement sociale", a form of housing aid. The suffix suggests that it is a specific formula for the case of student housing aid.
 
 ----------
 
 > **Bad naming**
 
->`apje_temp`: I could find the meaning of APJE online, but the temp suffix remains a mystery.
+>`vat_sub1`: In English-speaking countries VAT would unambiguously refer to Value Added Tax, but the addition of a suffix for technical purposes (e.g. an intermediate step in the computation) should in
+general be avoided. A better name might be `vat_on_exports` (assuming this is the intermediate step's
+meaning).
 
->`rto_net`. I can guess it's an amout after some kind of deduction, but looking RTO on a search engine doesn't give me anything.
+>`cpstd`. Here the acronym might mean "Company Paid Short-Term Disability", but this acronym is not widely used or recognizable, and will not be found in a web search. Using a longer name is preferable.
 
 
 Do's and don'ts
@@ -32,10 +34,12 @@ Do's and don'ts
 
 ### Acronyms
 
-Acronyms are ok as long as they are broadly accepted and their meaning is quickly findable online.
->**OK**: RSA, RFR
+Acronyms are OK as long as they are broadly accepted and their meaning is quickly findable online. A good
+test for "findable" is that a web search *from the relevant country* should turn up the intended meaning as the first or second hit.
 
->**KO**: PAC
+>**OK**: VAT (Value Added Tax, near-universal except in France), EBITDA (tax, unambiguous), RSA (French, social benefit rather than cryptography, recognizable in context)
+
+>**KO**: most TLAs (Three-Letter Acronyms)…
 
 ### Abbreviations
 
@@ -47,24 +51,22 @@ Abbreviations should be avoided unless they are undoubtedly transparent.
 
 ### Scopes and prefixes
 
-To show a variable belongs to a specific scope, it is better to use a prefix rather than a suffix.
->**OK**: rsa_nb_enfants
+OpenFisca currently lacks a namespacing mechanism. In its absence, the need sometimes arises to use prefixes or suffixes to distinguish between variables which would otherwise have the same name, leading to errors or ambiguities. Some conventions have arisen:
 
->**KO**: nb_enfants_rsa
+Use a prefix to distinguish versions of a variable specific to a sub-domain.
+>**OK**: housing_tax_nb_parents
 
-Not specifying the scope of a specific variable should be avoided, as it is confusing for other users.
->**OK**: ir_nb_pac
+>**KO**: nb_parents_housing_tax
 
->**KO**: nb_pac
+Avoid mixing suffixed and non-suffixed versions of a similarly named variables, as this might cause confusion on which version to use where.
+>**OK**: housing_tax_nb_parents, income_tax_nb_parents
 
-### Entity suffixes
+>**KO**: nb_parents, housing_tax_nb_parents
 
-It happens that several variables have the same meaning, but for different entitities (individus, familles, etc.). Standard suffixes should be used to distinguish them.
->**OK**: ass_base_ressources_individu, statut_occupation_logement_famille
+Use a suffix if it is necessary to distinguish between versions of a variable at the level of different entities; this is often seen when aggregating from the individual level to e.g. the household level.
+>**OK**: taxable_income_household, work_income_individual
 
 
 Legacy
 ------
-Many variables on the current codebase of OpenFisca France do not respect the guidelines presented here. An exhautsive and global renaming is not considered as of today.
-
-However, new variables should be compliant with these guidelines, and legacy ones should progressively and opportunistically be renamed.
+Some existing models (such as the France model, grown over several years) do not respect all the guidelines presented here. These guidelines may also evolve with improvements to the underlying computation engine (such as namespacing or improved approaches to aggregation and other relations between entity and group values). Since variables and parameters represent the external API of a model, and excessive migration labor may discourage the users of an API, it is preferable to avoid global renamings. However, new names should be compliant with these guidelines, and legacy ones should be improved progressively and opportunistically. Communicating your standards to contributors is an important part of maintaining your model.
