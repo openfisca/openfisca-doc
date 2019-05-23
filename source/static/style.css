@@ -76,7 +76,6 @@ a .button-appearance hover {
 }
 
 
-
 /* Trick to avoid local links to appear in the side bar. We want only pages theres, but mixing markdown and rst creates some confusion. */
 .toctree-l2 a[href*="index.html#"], .toctree-l2 a[href^="#"]:not([href="#"]) {
   display: none;
@@ -383,104 +382,181 @@ div.sphinxsidebar input {
   color: #fff;
 }
 
+/* --------------------------------
 
-/* add feedback */
+Feedback style
 
-/* Setup */
-
-#modal {
-  text-align: center;
-  padding: 1em 0;
-  border-radius: 3px;
-  position: relative;
-  border-top: 1px solid #606060
-}
-img.bouncy {
-  cursor: pointer;
-  margin: 0 1em;
-  width: 3em;
-}
-
-textarea {
-  width: 80%;
-  max-width: 80%;
-  border: 2px solid rgba(0,0,0,0.1);
+-------------------------------- */
+.feedback-container {
+  width: 150px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   border-radius: 5px;
-  padding: 1em;
-  font-size: 14px;
-  margin-top: 1em;
+  overflow: hidden;
+  box-shadow: 0 0 10px #d2d2d2;
+  transition: width 0.5s 0.15s, height 0.5s 0.15s;
+  transition-timing-function: cubic-bezier(0.71, -0.34, 0.35, 1.11); 
 }
 
-/* End Setup */
-/* Everything below should be considered */
+.feedback-container .feedback-trigger {
+    width: 150px;
+    height: 50px;
+    display: block;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 13px;
+    font-size: 16px;
+    background: white;
+    transition: border-radius 0s 1s, background-color 1s 0s; }
+    .feedback-container .feedback-trigger img {
+      width: 25px;
+      height: 25px;
+      max-width: none; }
 
-img.bouncy {
-  position: relative;
-  transform: scale3d(0.8,0.8,1);
-  transition: transform 0.2s ease-out;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
+.feedback-container .feedback-trigger img.close {
+        opacity: 0;
+        width: 23px;
+        height: 23px;
+        padding: 5px 3px 3px; }
+    .feedback-container .feedback-trigger .open,
+    .feedback-container .feedback-trigger .close {
+      position: absolute;
+      transition: opacity .2s .5s; }
 
-img.sibling-hover:not(.selected),
-img.sibling-selected {
-  opacity: 0.25;
-  transform: scale3d(0.7,0.7,1);
-}
-
-img:hover {
-  opacity: 1;
-  animation: pop 0.2s forwards;
-}
-
-img.selected,
-img.selected:hover {
-  transform: scale3d(0.9,0.9,0.9);
-  top: 2px;
-  transition: all 0.05s ease-out;
-  animation: none;
-}
-
-textarea {
-  height: 0;
+.feedback-container.isOpen {
+    width: 320px;
+    height: 270px;
+    transition: width 0.35s, height 0.35s;
+    transition-timing-function: cubic-bezier(0.74, -0.18, 0.38, 1.32); }
+    .feedback-container.isOpen .feedback-trigger {
+      border-radius: 0px;
+      transition: border-radius 0s, background-color .8s;
+      background: #f6f6f6; }
+      .feedback-container.isOpen .feedback-trigger .open {
+        opacity: 0; }
+      .feedback-container.isOpen .feedback-trigger .close {
+        opacity: 1;
+        animation: turnin .4s; }
+      .feedback-container.isOpen .feedback-trigger .open,
+      .feedback-container.isOpen .feedback-trigger .close {
+        transition: opacity .2s .15s; }
+@keyframes turnin {
+  0% {
+    transform: rotate(-80deg); }
+  100% {
+    transform: rotate(0deg); } }
+.feedback-pages {
+  width: 300%;
+  height: 100%;
   opacity: 0;
-  transition: height 0.1s ease-in, opacity 0.1s ease-in;
-}
+  transition: opacity 1s .25s; }
+  .isOpen .feedback-pages {
+    opacity: 1;
+    transition: opacity 0s 0s; }
 
-textarea.visible {
-  height: 8em;
+.feedback-pages .feedback-page {
+    background: white;
+    width: 33.33333%;
+    height: 100%;
+    padding: 15px;
+    float: left;
+    transform: translateX(0%);
+    transition: transform .35s;
+    transition-timing-function: cubic-bezier(0.89, -0.37, 0.48, 0.99); }
+    [data-show-page="1"] .feedback-pages .feedback-page {
+      transform: translateX(0%); }
+    [data-show-page="2"] .feedback-pages .feedback-page {
+      transform: translateX(-100%); }
+    [data-show-page="3"] .feedback-pages .feedback-page {
+      transform: translateX(-200%); }
+.feedback-pages .content {
+    font-size: 12px;
+  
+    /* Show-Animation */ }
+.feedback-pages .content h1,
+.feedback-pages .content h2,
+.feedback-pages .content h3 {
+      margin: 0;
+      padding: 0; 
+    }
+    
+.feedback-pages .content .content-title {
+      font-size: 1.33333em;
+      text-align: center;
+      font-weight: bold;
+      padding: 9px;
+      line-height: 1.7; 
+    }
+    
+.feedback-pages .content .content-submit {
+      position: absolute;
+      z-index: 5;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      padding: 16px;
+      text-indent: -50px;
+      text-align: center;
+      color: white;
+      background: #6D69FB;
+      font-size: 1.5em;
+      font-weight: 500;
+      align-items: center;
+      transition: background .25s; 
+    }
+.feedback-pages .content .content-submit:hover {
+  background: #2677ad; 
+}
+.feedback-pages .content .content-textarea,
+.feedback-pages .content .content-input {
+      border-radius: 5px;
+      padding: 12px;
+      width: 100%;
+      margin-top: 10px;
+      border: 1px solid #ddd; }
+.feedback-pages .content .content-textarea:focus,
+.feedback-pages .content .content-input:focus {
+        outline: none;
+        border-color: #6D69FB;
+        box-shadow: 0 0 5px rgba(44, 151, 222, 0.2); }
+.feedback-pages .content .content-textarea.required,
+.feedback-pages .content .content-input.required {
+        background: url("../svg/icon-required.svg") no-repeat 277px -9px transparent; }
+        .feedback-pages .content .content-textarea.required.isValid,
+        .feedback-pages .content .content-input.required.isValid {
+          background: none; }
+.feedback-pages .content .content-textarea {
+      height: 40%; }
+.feedback-pages .content .content-backlink {
+      bottom: 70px; 
+    }
+
+.feedback-pages .content .content-title,
+.feedback-pages .content .content-textarea {
+opacity: 0;
+transition: opacity .5s 0s; }
+.isOpen .feedback-pages .content .content-title, .isOpen
+.feedback-pages .content .content-textarea {
   opacity: 1;
-  transition: height 0.25s ease-out;
-  opacity: 0.1s ease-out;
+  transition: opacity .5s .25s; 
 }
 
-@keyframes unpop {
-  from {
-    transform: scale3d(1,1,1); 
-  }
-  to {
-    transform: scale3d(0.8,0.8,1); 
-  }
+ul.smile{
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
 }
 
-@keyframes pop {
-  from {
-    transform: scale3d(0.8,0.8,1);
-  }
-
-  60% {
-    transform: scale3d(1.07, 1.07, 1);
-  }
-
-  80% {
-    transform: scale3d(1.02, 1.02, 1);
-  }
-
-  90% {
-    transform: scale3d(0.98, 0.98, 1);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-  }
+img.smile{
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
 }
+

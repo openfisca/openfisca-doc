@@ -2,6 +2,9 @@
 
 {%- block htmltitle %}
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+  <script src="static/jquery-2.2.4.min.js"></script>
+  <script src="static/scripts.js" charset="utf-8"></script>
+
   {{ super() }}
 {%- endblock %}
 
@@ -18,16 +21,33 @@
 
 <!-- Page content footer -->
 {%- block bottom_rel_links %}
-<div id="modal">
-  <h5>Did you find what you were looking for?</h5>
-    <img class="bouncy" src="https://d3vv6lp55qjaqc.cloudfront.net/items/3r1n1E2I3i0Y3i1i2H2n/f_face.svg" />
-  
-    <img class="bouncy" src="https://d3vv6lp55qjaqc.cloudfront.net/items/0b3Y0d2G3X2X1m0v1z0a/n_face.svg" />
-  
-    <img class="bouncy" src="https://d3vv6lp55qjaqc.cloudfront.net/items/0F3Q0h2q2h3G0a1O3S3f/h_face.svg" />
-    
-    <textarea placeholder="(Optional) Suggest improvements &hellip;"></textarea>
-    
-  </div>
+  <div class="feedback-container">
+    <a href="#" class="feedback-trigger noSelect">All good?  
+        <img class="open" src="https://www.svgrepo.com/show/42915/hello-speech-bubble-handmade-chatting-symbol.svg" />
+        <img class="close" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/OOjs_UI_icon_close-ltr-progressive.svg" />
+    </a>
+    <div class="feedback-pages">
+        <div class="feedback-page content" data-pagename="one">
+            <h3 class="content-title">How do you like this page?</h3>
+            <ul class="smile">
+              <li><a alt="happy"><img class="smile" src="https://www.svgrepo.com/show/115678/smile-hand-drawn-emoticon.svg" /></li></a>
+              <li><a alt="happy"><img class="smile" src="https://www.svgrepo.com/show/200934/nerd.svg" /></a></li>
+            </ul>
+            <textarea class="content-textarea" placeholder="Do you want to give us your feedback or describe an issue?"></textarea>
+            <a href="#" class="content-submit noSelect" data-go-to-page="two">Next</a>
+        </div>
+        <div class="feedback-page content" data-pagename="two">
+            <h1 class="content-title">Your email address</h1>
+            <input class="content-input" type="text" name="name" value="" placeholder="Name" maxlength="255">
+            <input class="content-input required" type="email" name="email" value="" placeholder="Email address" maxlength="255">
+            <a href="#" class="content-backlink noSelect" data-go-to-page="one">← Edit Message</a>
+            <a href="#" class="content-submit noSelect" data-go-to-page="three">Send</a>
+        </div>
+        <div class="feedback-page content" data-pagename="three">
+            <h1 class="content-title">Thanks! We'll be in touch soon!</h1>
+            <a href="#" class="content-submit noSelect"></a>
+        </div>
+    </div>
+</div>
   
 {%- endblock %}
