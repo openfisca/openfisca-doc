@@ -22,30 +22,34 @@
 <!-- Page content footer -->
 {%- block bottom_rel_links %}
   <div class="feedback-container">
-    <a href="#" class="feedback-trigger noSelect">All good?  
+    <a href="#" class="feedback-trigger noSelect">  
         <img class="open" src="https://www.svgrepo.com/show/42915/hello-speech-bubble-handmade-chatting-symbol.svg" />
-        <img class="close" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/OOjs_UI_icon_close-ltr-progressive.svg" />
+        <img class="close" src="http://cdn.onlinewebfonts.com/svg/img_137113.png" />
     </a>
     <div class="feedback-pages">
         <div class="feedback-page content" data-pagename="one">
             <h3 class="content-title">How do you like this page?</h3>
             <ul class="smile">
               <li><a onclick="_paq.push(['trackEvent', 'Feedback', 'Happy']);" alt="happy"><img class="smile" src="https://www.svgrepo.com/show/115678/smile-hand-drawn-emoticon.svg" /></li></a>
-              
+
               <li><a onclick="_paq.push(['trackEvent', 'Feedback', 'Notsohappy']);" alt="not so happy"><img class="smile" src="https://www.svgrepo.com/show/200934/nerd.svg" /></a></li>
             </ul>
-            <textarea class="content-textarea" placeholder="Do you want to give us your feedback or describe an issue?"></textarea>
+            <textarea class="content-textarea" placeholder="Do you want to tell us more? Give a suggestion or descrive an issue?"></textarea>
             <a href="#" class="content-submit noSelect" data-go-to-page="two">Next</a>
         </div>
         <div class="feedback-page content" data-pagename="two">
             <h1 class="content-title">Your email address</h1>
+
+            <form action="mailto:amandine.audras@gmail.com">
             <input class="content-input" type="text" name="name" value="" placeholder="Name" maxlength="255">
             <input class="content-input required" type="email" name="email" value="" placeholder="Email address" maxlength="255">
             <a href="#" class="content-backlink noSelect" data-go-to-page="one">← Edit Message</a>
             <a href="#" class="content-submit noSelect" data-go-to-page="three">Send</a>
+          </form>
+          
         </div>
         <div class="feedback-page content" data-pagename="three">
-            <h1 class="content-title">Thanks! We'll be in touch soon!</h1>
+            <h1 class="content-title">Thanks! We'll be in touch!</h1>
             <a href="#" class="content-submit noSelect"></a>
         </div>
     </div>

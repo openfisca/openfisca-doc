@@ -388,12 +388,13 @@ Feedback style
 
 -------------------------------- */
 .feedback-container {
-  width: 150px;
+  width: 50px;
   height: 50px;
   position: fixed;
   bottom: 20px;
   right: 20px;
   border-radius: 5px;
+  background-color: #6D69FB;
   overflow: hidden;
   box-shadow: 0 0 10px #d2d2d2;
   transition: width 0.5s 0.15s, height 0.5s 0.15s;
@@ -401,7 +402,7 @@ Feedback style
 }
 
 .feedback-container .feedback-trigger {
-    width: 150px;
+    width: 50px;
     height: 50px;
     display: block;
     border-radius: 5px;

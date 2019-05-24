@@ -41,8 +41,6 @@ $(document).ready(function() {
 });
 
 
-
-
 // FEEDBACK
 
 var Feedback = {
