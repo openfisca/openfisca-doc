@@ -558,5 +558,45 @@ img.smile{
   width: 28px;
   height: 28px;
   cursor: pointer;
+  transform: scale3d(0.8,0.8,1);
+  transition: transform 0.2s ease-out;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
+img:hover {
+  opacity: 1;
+  animation: pop 0.2s forwards;
+}
+
+
+@keyframes unpop {
+  from {
+    transform: scale3d(1,1,1); 
+  }
+  to {
+    transform: scale3d(0.8,0.8,1); 
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale3d(0.8,0.8,1);
+  }
+
+  60% {
+    transform: scale3d(1.07, 1.07, 1);
+  }
+
+  80% {
+    transform: scale3d(1.02, 1.02, 1);
+  }
+
+  90% {
+    transform: scale3d(0.98, 0.98, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
