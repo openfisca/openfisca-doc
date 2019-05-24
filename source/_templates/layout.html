@@ -30,8 +30,9 @@
         <div class="feedback-page content" data-pagename="one">
             <h3 class="content-title">How do you like this page?</h3>
             <ul class="smile">
-              <li><a alt="happy"><img class="smile" src="https://www.svgrepo.com/show/115678/smile-hand-drawn-emoticon.svg" /></li></a>
-              <li><a alt="happy"><img class="smile" src="https://www.svgrepo.com/show/200934/nerd.svg" /></a></li>
+              <li><a onclick="_paq.push(['trackEvent', 'Feedback', 'Happy']);" alt="happy"><img class="smile" src="https://www.svgrepo.com/show/115678/smile-hand-drawn-emoticon.svg" /></li></a>
+              
+              <li><a onclick="_paq.push(['trackEvent', 'Feedback', 'Notsohappy']);" alt="not so happy"><img class="smile" src="https://www.svgrepo.com/show/200934/nerd.svg" /></a></li>
             </ul>
             <textarea class="content-textarea" placeholder="Do you want to give us your feedback or describe an issue?"></textarea>
             <a href="#" class="content-submit noSelect" data-go-to-page="two">Next</a>
