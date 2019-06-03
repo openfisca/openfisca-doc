@@ -111,7 +111,7 @@ This data could come from a survey with aggregated data, data files extracted fr
 Here is a minimal example of data (in CSV format):
 
 ```
-person_id,household_id,person_salary,age
+person_id,household_id,person_salary,person_age
 1,a,2694,40
 2,a,2720,43
 3,b,3865,45
@@ -123,6 +123,7 @@ person_id,household_id,person_salary,age
 8,d,3386,27
 9,d,2929,28
 10,e,0,10
+11,e,1600,35
 ```
 
 As for the *test case* content, you will need the following information:
@@ -133,12 +134,12 @@ As for the *test case* content, you will need the following information:
 - the name of the corresponding variable in your model for every set of values 
   > `person_salary` values become [salary](https://demo.openfisca.org/legislation/salary) values in `OpenFisca-Country-Template` model
 - the period and entity for every set of values
-  > `person_salary` and `age` belong to *Person* entity  
+  > `person_salary` and `person_age` belong to *Person* entity  
   > the reference period isn't in the CSV file but it might, for example, come from the CSV creation time and be identical for the whole data set.
 
 
 
-#### Application: calculate a population's income tax from a CSV file
+#### Application with persons entity: calculate a population's income tax from a CSV file
 
 Let's say you are using the [country-template](https://github.com/openfisca/country-template), which describes the legislation of a yet to be country.
 
@@ -148,16 +149,16 @@ Let's also say you have the following `data.csv` and that you want to calculate 
 person_id,person_salary,person_age
 1,2694,40
 2,2720,43
-3,1865,45
-4,1941,23
-5,2393,31
-6,3008,47
-7,2286,23
-8,3386,28
-9,2929,38
-10,3981,37
-11,3643,38
-12,2078,23
+3,3865,45
+4,1300,23
+5,0,12
+6,0,14
+7,2884,44
+12,1200,38
+8,3386,27
+9,2929,28
+10,0,10
+11,1600,35
 ```
 
 In the following example, we will use the [pandas](https://pandas.pydata.org) library to iterate over the data.
@@ -188,16 +189,16 @@ In the following example, we will use the [pandas](https://pandas.pydata.org) li
 
     0     2694
     1     2720
-    2     1865
-    3     1941
-    4     2393
-    5     3008
-    6     2286
-    7     3386
-    8     2929
-    9     3981
-    10    3643
-    11    2078
+    2     3865
+    3     1300
+    4        0
+    5        0
+    6     2884
+    7     1200
+    8     3386
+    9     2929
+    10       0
+    11    1600
     Name: person_salary, dtype: int64
     ```
 
@@ -226,15 +227,15 @@ Persons' order is kept:
 ```python
 >>> print(data.person_id.values)
 
-array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
+array([ 1  2  3  4  5  6  7 12  8  9 10 11])
 ```
 
 And `income_tax` is an instance of `numpy.ndarray` as you can see with:
 ```python
 >>> print(income_tax)
 
-array([404.1    , 408.00003, 279.75   , 291.15002, 358.95   , 451.2    ,
-       342.90002, 507.90002, 439.35   , 597.15   , 546.45   , 311.7    ],
+array([404.1     408.00003      579.75    195.00002   0.        0.      432.6
+       180.      507.90002      439.35      0.      240.00002],
       dtype=float32)
 ```
 
@@ -242,8 +243,40 @@ Besides, you can get the calculated `income_tax` of one person. For example, get
 ```python
 >>> print(income_tax.item(2))  # person_id == 3
 
-279.75
+579.75
 ```
+
+#### Application with multiple entities: calculate a population's households total taxes from a CSV file
+
+In this example, we will manage `persons` and `households` entities. Persons' `income_tax` are included in households' `total_taxes`. So, we need to link the persons list to the households and define their roles:
+
+`data_persons.csv`
+```csv
+person_id,household_id,role_in_household,salary,age
+1,a,first_parent,2694,40
+2,a,second_parent,2720,43
+3,b,first_parent,3865,45
+4,b,child,1300,23
+5,c,child,0,12
+6,c,child,0,14
+7,c,first_parent,2884,44
+12,e,second_parent,1200,38
+8,d,first_parent,3386,27
+9,d,second_parent,2929,28
+10,e,child,0,10
+11,e,trolol,1600,35
+```
+
+`data_households.csv`
+```csv
+household_id,rent,accommodation_size
+b,1200,64
+a,700,39
+d,750,31
+e,840,37
+c,1100,68
+```
+
 
 ## Replicating a situation along axes
 
