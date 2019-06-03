@@ -173,7 +173,7 @@ In the following example, we will use the [pandas](https://pandas.pydata.org) li
 2. Load the `country-template` legislation and the content of the `data.csv` file with the [pandas](https://pandas.pydata.org) library:
 
     ```python
-    import pandas as pandas
+    import pandas
     from openfisca_country_template import CountryTaxBenefitSystem
 
     tax_benefit_system = CountryTaxBenefitSystem()
@@ -206,7 +206,7 @@ In the following example, we will use the [pandas](https://pandas.pydata.org) li
    
     ```python
     from openfisca_core.simulation_builder import SimulationBuilder
-    import numpy as numpy
+    import numpy
 
     # ...step 2 code...
 
@@ -223,59 +223,138 @@ You are all set! You can now calculate the [income_tax](https://demo.openfisca.o
 income_tax = simulation.calculate('income_tax', period)
 ```
 
-Persons' order is kept:
-```python
->>> print(data.person_id.values)
-
-array([ 1  2  3  4  5  6  7 12  8  9 10 11])
-```
-
-And `income_tax` is an instance of `numpy.ndarray` as you can see with:
+`income_tax` is an instance of `numpy.ndarray` as you can see with:
 ```python
 >>> print(income_tax)
 
 array([404.1     408.00003      579.75    195.00002   0.        0.      432.6
-       180.      507.90002      439.35      0.      240.00002],
+       1.        507.90002      439.35      0.      240.00002],
       dtype=float32)
 ```
 
-Besides, you can get the calculated `income_tax` of one person. For example, get its value for the 3rd person in the list with:
+And, persons' order is kept:
 ```python
->>> print(income_tax.item(2))  # person_id == 3
+>>> print(data.person_id.values)
 
-579.75
+array([ 1  2  3  4  5  6  7 12  8  9 10 11])
+``` 
+
+Thus, you can get the calculated `income_tax` of one person. For example, get its value for the 8th person in the list with:
+```python
+>>> print(income_tax.item(7))  # person_id == 12
+
+180.0
 ```
 
 #### Application with multiple entities: calculate a population's households total taxes from a CSV file
 
-In this example, we will manage `persons` and `households` entities. Persons' `income_tax` are included in households' `total_taxes`. So, we need to link the persons list to the households and define their roles:
+In this example, we will manage `persons` and `households` entities. To calculate households' `total_taxes`, we include persons' `income_tax`. So, we need to link the persons list to the households and define their roles.
 
-`data_persons.csv`
-```csv
-person_id,household_id,role_in_household,salary,age
-1,a,first_parent,2694,40
-2,a,second_parent,2720,43
-3,b,first_parent,3865,45
-4,b,child,1300,23
-5,c,child,0,12
-6,c,child,0,14
-7,c,first_parent,2884,44
-12,e,second_parent,1200,38
-8,d,first_parent,3386,27
-9,d,second_parent,2929,28
-10,e,child,0,10
-11,e,trolol,1600,35
-```
+Let's say that our persons and households lists are defined in distinct files: 
 
-`data_households.csv`
-```csv
-household_id,rent,accommodation_size
-b,1200,64
-a,700,39
-d,750,31
-e,840,37
-c,1100,68
-```
+* `data_persons.csv`
+    ```csv
+    person_id,household_id,person_role_in_household,person_salary,person_age
+    1,a,first_parent,2694,40
+    2,a,second_parent,2720,43
+    3,b,first_parent,3865,45
+    4,b,child,1300,23
+    5,c,child,0,12
+    6,c,child,0,14
+    7,c,first_parent,2884,44
+    12,e,second_parent,1200,38
+    8,d,first_parent,3386,27
+    9,d,second_parent,2929,28
+    10,e,child,0,10
+    11,e,unknown,1600,35
+    ```
+
+* `data_households.csv`
+    ```csv
+    household_id,rent,accommodation_size
+    b,1200,64
+    a,700,39
+    d,750,31
+    e,840,37
+    c,1100,68
+    ```
+
+where `household_id` is used as pivot item linking these files contents.
+
+1. Install the required libraries, by running in your console:
+
+    ```sh
+    $ python --version # Python 3.7.0 or greater should be installed on your computer
+    $ pip install --upgrade pip openfisca_country_template pandas
+    ```
+
+2. Load the `country-template` legislation and the content of the CSV files with the [pandas](https://pandas.pydata.org) library:
+
+    ```python
+    import pandas
+    from openfisca_country_template import CountryTaxBenefitSystem
+
+    tax_benefit_system = CountryTaxBenefitSystem()
+
+    data_persons = pandas.read_csv('./data_persons.csv')
+    data_households = pandas.read_csv('./data_households.csv')
+    ```
+
+    You can now access the entity identifiers columns values:
+
+    ```python
+    persons_ids = data_persons.person_id
+    households_ids = data_households.household_id
+    ```
+
+3. Initialise a simulation builder with the `Person` entity. All you need is the list of persons identifiers:
+   
+    ```python
+    from openfisca_core.simulation_builder import SimulationBuilder
+    import numpy as numpy
+
+    # ...step 2 code...
+
+    sb = SimulationBuilder()
+    sb.create_entities(tax_benefit_system)
+
+    persons_ids = data_persons.person_id
+    sb.declare_person_entity('person', persons_ids)
+    ```
+
+4. Configure the simulation builder with your group entity `Household`. All you need here is the list of households identifiers and the role of each person member of the households:
+
+    ```python
+    # ...step 3 code...
+
+    # Instanciate the household entity:
+    households_ids = data_households.household_id
+    household_instance = sb.declare_entity('household', households_ids)
+    
+    # Join households data on persons:
+    persons_households = data_persons.household_id
+    persons_households_roles = data_persons.person_role_in_household
+    sb.join_with_persons(household_instance, persons_households, persons_households_roles)
+    ```
+
+5. Create a simulation from the configured builder and set other inputs to your calculation like `salary` values:
+
+    ```python
+    simulation = sb.build(tax_benefit_system)
+
+    period = '2019-03'
+    simulation.set_input('salary', period, data_persons.person_salary)
+    ```
+
+
+You are all set! You can now calculate the [total_taxes](https://demo.openfisca.org/legislation/total_taxes) variable for each household of your `data_households.csv` file and the same period:
+
+    ```python
+    total_taxes = simulation.calculate('total_taxes', period)
+    ```
+
+> This example assumes that the calculated variable and its input values share the same period.
+
 
 
 ## Replicating a situation along axes
