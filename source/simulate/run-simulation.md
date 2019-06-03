@@ -101,8 +101,6 @@ print("housing_allowance", housing_allowance)
 You can build a *Simulation* on multiple data formats.
 Any well structured tabular input shoud be fine as long as you are able to iterate over its items in Python.
 
-In the following example, will use the [pandas](https://pandas.pydata.org) library to do so.
-
 ### Data
 
 Data sets describe multiple people situations. It could define a whole population.
@@ -162,83 +160,88 @@ person_id,person_salary,person_age
 12,2078,23
 ```
 
+In the following example, we will use the [pandas](https://pandas.pydata.org) library to iterate over the data.
+
 1. Install the required libraries, by running in your console:
 
-```sh
-$ python --version # Python 3.7.0 or greater should be installed on your computer
-$ pip install --upgrade pip openfisca_country_template pandas
-```
+    ```sh
+    $ python --version # Python 3.7.0 or greater should be installed on your computer
+    $ pip install --upgrade pip openfisca_country_template pandas
+    ```
 
-2. Load the `country-template` legislation and, then, the content of the `data.csv` file with the [pandas](https://pandas.pydata.org) library:
+2. Load the `country-template` legislation and the content of the `data.csv` file with the [pandas](https://pandas.pydata.org) library:
 
-```python
-import pandas as pandas
-from openfisca_country_template import CountryTaxBenefitSystem
+    ```python
+    import pandas as pandas
+    from openfisca_country_template import CountryTaxBenefitSystem
 
-tax_benefit_system = CountryTaxBenefitSystem()
+    tax_benefit_system = CountryTaxBenefitSystem()
 
-data = pandas.read_csv('./data.csv')  # pandas.DataFrame object
-length = len(data)  # ignores CSV header
-```
+    data = pandas.read_csv('./data.csv')  # pandas.DataFrame object
+    length = len(data)  # ignores CSV header
+    ```
 
-You can now access the `print(data.person_salary)` column values and get:
+    You can now access the `data.person_salary` column values and get:
 
-```python
-0     2694
-1     2720
-2     1865
-3     1941
-4     2393
-5     3008
-6     2286
-7     3386
-8     2929
-9     3981
-10    3643
-11    2078
-Name: person_salary, dtype: int64
-```
+    ```python
+    >>> print(data.person_salary)
 
+    0     2694
+    1     2720
+    2     1865
+    3     1941
+    4     2393
+    5     3008
+    6     2286
+    7     3386
+    8     2929
+    9     3981
+    10    3643
+    11    2078
+    Name: person_salary, dtype: int64
+    ```
 
-3. Build a simulation according to your data's length with `SimulationBuilder`.
-4. And, configure the simulation and calculate the [income_tax](https://demo.openfisca.org/legislation/income_tax) variable for all persons on the same period:
+3. Build a simulation according to your data's length with `SimulationBuilder` and configure the simulation:
    
+    ```python
+    from openfisca_core.simulation_builder import SimulationBuilder
+    import numpy as numpy
+
+    # ...step 2 code...
+
+    simulation = SimulationBuilder().build_default_simulation(tax_benefit_system, length)
+    period = '2018-01'
+
+    # match data from the 'person_salary' column
+    # with the 'salary' variable of our yet to be country's tax-benefit system
+    simulation.set_input('salary', period, numpy.array(data.person_salary))
+    ```
+
+You are all set! You can now calculate the [income_tax](https://demo.openfisca.org/legislation/income_tax) variable for each person of your `data.csv` file for the same period:
 ```python
-from openfisca_core.simulation_builder import SimulationBuilder
-import numpy as numpy
-
-# ...step 2 code...
-
-simulation = SimulationBuilder().build_default_simulation(tax_benefit_system, length)
-period = '2018-01'
-
-# match data from the 'person_salary' column
-# with the 'salary' variable of our yet to be country's tax-benefit system
-simulation.set_input('salary', period, numpy.array(data.person_salary))
-
 income_tax = simulation.calculate('income_tax', period)
 ```
 
-
-1. You are all set! The `income_tax` has been calculated for each person on your `data.csv` file.
-
-Persons' order is kept. Calling `print(data.person_id.values)` gives:
-
+Persons' order is kept:
 ```python
+>>> print(data.person_id.values)
+
 array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
 ```
 
-And `income_tax` is an instance of `numpy.ndarray` as you can see with `print(income_tax)`:
-
+And `income_tax` is an instance of `numpy.ndarray` as you can see with:
 ```python
+>>> print(income_tax)
+
 array([404.1    , 408.00003, 279.75   , 291.15002, 358.95   , 451.2    ,
        342.90002, 507.90002, 439.35   , 597.15   , 546.45   , 311.7    ],
       dtype=float32)
 ```
 
-And `print(income_tax.item(2))` (e.g.`person_id == 3`):
+Besides, you can get the calculated `income_tax` of one person. For example, get its value for the 3rd person in the list with:
+```python
+>>> print(income_tax.item(2))  # person_id == 3
 
-```
 279.75
 ```
 
