@@ -20,6 +20,6 @@ Nevertheless, you won't have the same experience defining those various situatio
 - either [test cases](./run-simulation.md#test-cases): you simulate the legislation for a small number of persons,
 - or [bulk data](./run-simulation.md#data): you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation.
 
-Then, when you have a defined situation and need to replicate an input in a range of values (e.g. a `salary` in [0, 100 000]), you can define an axe as described in [the axes section](./replicate-simulation-inputs.md).
+Then, when you have a defined situation and need to replicate an input in a range of values (e.g. a `salary` in [0, 100 000]), you can define an axis as described in [the axes section](./replicate-simulation-inputs.md).
 
-Finally, you might also want to understand how your simulation result was calculated. To trace its steps, you can use the `trace` functions as described in [this section](./analyse-simulation.md).
+Finally, you might want to understand how your simulation result was calculated. To do so, you can use the `trace` feature described in [this section](./analyse-simulation.md).
