@@ -211,10 +211,8 @@ In the following example, we will use the [pandas](https://pandas.pydata.org) li
     # ...step 2 code...
 
     simulation = SimulationBuilder().build_default_simulation(tax_benefit_system, length)
-    period = '2018-01'
 
-    # match data from the 'person_salary' column
-    # with the 'salary' variable of our yet to be country's tax-benefit system
+    period = '2018-01'
     simulation.set_input('salary', period, numpy.array(data.person_salary))
     ```
 
