@@ -139,7 +139,7 @@ As for the *test case* content, you will need the following information:
 
 
 
-#### Application with persons entity: calculate a population's income tax from a CSV file
+#### Application: calculate persons income tax from a CSV file
 
 Let's say you are using the [country-template](https://github.com/openfisca/country-template), which describes the legislation of a yet to be country.
 
@@ -161,7 +161,7 @@ person_id,person_salary,person_age
 11,1600,35
 ```
 
-In the following example, we will use the [pandas](https://pandas.pydata.org) library to iterate over the data.
+In the following example, we will use the [pandas](https://pandas.pydata.org) library to access the data.
 
 1. Install the required libraries, by running in your console:
 
@@ -244,14 +244,14 @@ Thus, you can get the calculated `income_tax` of one person. For example, get it
 180.0
 ```
 
-#### Application with multiple entities: calculate a population's households total taxes from a CSV file
+#### Application: calculate households total taxes from a CSV file
 
 In this example, we will manage `persons` and `households` entities. To calculate households' `total_taxes`, we include persons' `income_tax`. So, we need to link the persons list to the households and define their roles.
 
 Let's say that our persons and households lists are defined in distinct files: 
 
 * `data_persons.csv`
-    ```csv
+    ```
     person_id,household_id,person_role_in_household,person_salary,person_age
     1,a,first_parent,2694,40
     2,a,second_parent,2720,43
@@ -268,7 +268,7 @@ Let's say that our persons and households lists are defined in distinct files:
     ```
 
 * `data_households.csv`
-    ```csv
+    ```
     household_id,rent,accommodation_size
     b,1200,64
     a,700,39
@@ -347,8 +347,8 @@ where `household_id` is used as pivot item linking these files contents.
 
 You are all set! You can now calculate the [total_taxes](https://demo.openfisca.org/legislation/total_taxes) variable for each household of your `data_households.csv` file and the same period:
 
-    ```python
-    total_taxes = simulation.calculate('total_taxes', period)
-    ```
+```python
+total_taxes = simulation.calculate('total_taxes', period)
+```
 
 > Note: This example assumes that the calculated variable and its input values share the same period.
