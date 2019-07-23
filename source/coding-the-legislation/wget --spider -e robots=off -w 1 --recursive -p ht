@@ -1,1 +1,0 @@
-wget --spider -e robots=off --recursive -p http://localhost:8000
