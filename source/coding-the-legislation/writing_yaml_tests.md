@@ -123,6 +123,8 @@ In this case, there is another convention:
         personnes_a_charge: ["enfant1", "enfant2"]
     ```
 
+- (specifying all entities is not mandatory; for any entity that is not specified, all individuals are assumed to be "a group of their own"; that is, if you do not specify any families, OpenFisca assumes that each individual is the lone member of a one-person family; this applies for Web API payloads as well as test cases)
+
 - finally, define a dictionnary of the expected values of the output variables. Each output variable takes a list of length equal to the number of individuals defined in the test. E.g, for a family of four individuals with two working parents and two unemployed children, the output variable salaire_super_brut is defined as follows:
 
     ```yaml
