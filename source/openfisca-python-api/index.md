@@ -28,6 +28,6 @@ Scripts:
 .. toctree::
    :maxdepth: 1
 
-   openfisca-run-test
+   openfisca_test
    openfisca_serve
 ```
