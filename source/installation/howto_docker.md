@@ -66,9 +66,9 @@ Let's say that you want to install the [openfisca-country-template](https://gith
         pip install openfisca_country_template
         ```
 
-   In both cases, the installation should end without error.  
-   And, now, `pip list` response shoud contain `OpenFisca-Country-Template`.
+   In both cases, the installation should end without error, and the `pip list` response should contain `OpenFisca-Country-Template`.
 
 
 You're all set! You can now use `openfisca-country-template`.  
+
 Any changes to your `my-openfisca/` local files will be reflected to `my-openfisca/` files in Docker, and vice-versa.
