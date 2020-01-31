@@ -53,4 +53,4 @@ Please make sure you read our [licence information](licence.html) before using r
 
 Wonderful products rely on OpenFisca! Check them out on our [showcase page](https://fr.openfisca.org/showcase/).
 
-Feeling a bit lost? You’re not sure OpenFisca can suit your project? [Fill this form](https://antoningarrone.typeform.com/to/FGkioe) and we’ll tell you!
+Feeling a bit lost? You’re not sure OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org) and we’ll tell you!
