@@ -33,23 +33,26 @@ A parameter is located inside a **node**, that has the same name as the director
 
 A legislative parameter is defined by a YAML file of the same name. Possible attributes are:
 * `description` (optional) Description;
-* `reference` (optional) Legislative reference;
-* `unit` (optional) Can be:
-  - `year` : The values are years;
-  - `currency`: The values are in the unit of currency of the country;
-  - `/1`: The values are percentages, with `1.0`=100%;
+* `metadata` (optional) Can be:
+  * `reference` (optional) Legislative reference;
+  * `unit` (optional) Can be:
+    * `year`: The values are years;
+    * `currency`: The values are in the unit of currency of the country;
+    * `/1`: The values are percentages, with `1.0`=100%;
 * `values`: Value of the parameter for several dates.
 
 Sample file `parameters/universal_income/amount.yaml`
 ```yaml
 description: Universal income
-unit: currency
+metadata:
+  unit: currency
 values:
   1993-01-01:
     value: 1000
   2010-01-01:
     value: 1500
-    reference: http://law.reference.org/universal_income
+    metadata:
+      reference: http://law.reference.org/universal_income
   2020-01-01:
     expected: 1700
 ```
@@ -84,7 +87,8 @@ Sample `parameters/tax_on_salary.yaml`:
 
 ```yaml
 description: Tax on salaries
-reference: http://fiscaladministration.government/tax_on_salaries.html
+metadata:
+  reference: http://fiscaladministration.government/tax_on_salaries.html
 tax_scale:
   bracket:
     ...
