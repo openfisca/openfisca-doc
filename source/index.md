@@ -48,6 +48,7 @@ Please make sure you read our [licence information](licence.html) before using r
 
 * Behaviour-based analysis. OpenFisca is a static micro-simulation model, so it will provide you with results “as-of-tomorrow” (i.e. a new tax bracket won’t affect consumption).
 * OpenFisca is contributive: if the legislation you need is not described yet, you’re the best person to add it (take a look at our [contribution guidelines](contribute/index.html)).
+* OpenFisca shines in dealing with numbers: Enumerated values are a later addition, and support for serving/testing string values is not built in.
 
 ## Find inspiration
 
