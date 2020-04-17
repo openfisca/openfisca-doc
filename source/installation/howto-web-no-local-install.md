@@ -9,7 +9,7 @@ Let's see how to use OpenFisca on one of those services: [repl.it](https://repl.
 
 1. Go to [repl.it](https://repl.it) and select `Python`:
 
-    [![repl.it homepage](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-homepage.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-homepage.png)
+    [![repl.it homepage](https://raw.githubusercontent.com/openfisca/openfisca-doc/master/source/static/img/replit-homepage.png)](https://github.com/openfisca/openfisca-doc/blob/master/source/static/img/replit-homepage.png)
 
 2. Write the OpenFisca code you wish to run. The default entry point is `main.py` python file. Example of `main.py` content using `openfisca-country-template`:
 
@@ -23,7 +23,7 @@ Let's see how to use OpenFisca on one of those services: [repl.it](https://repl.
     ```
 
     > You can also import files (e.g. JSON files describing input [situations](../openfisca-web-api/input-output-data.md#describing-the-situation)) by clicking on the `import or drop` button.
-    [![repl.it upload & drop button](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-upload-drop-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-upload-drop-button.png)
+    [![repl.it upload & drop button](https://cdn.rawgit.com/openfisca/openfisca-doc/master/source/static/img/replit-upload-drop-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/source/static/img/replit-upload-drop-button.png)
 
 3. Click the `run` button to execute your code [![repl.it run button](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-run-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-run-button.png).
 
