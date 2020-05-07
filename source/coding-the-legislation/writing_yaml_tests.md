@@ -149,7 +149,7 @@ Values can be arithmetic expressions too.
 
 ## Running a test
 
-To run YAML tests, use the command line tool `openfisca test`, documented [here](../../openfisca-python-api/openfisca-run-test.html):
+To run YAML tests, use the command line tool `openfisca test`, documented [here](../../openfisca-python-api/openfisca_test.html):
 
 ```sh
 openfisca test path/to/file.yaml
