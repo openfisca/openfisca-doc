@@ -1,6 +1,6 @@
 # <i class="fas fa-home"></i> Before you start
 
-[OpenFisca](https://www.openfisca.org) is an open source project that allows you to turn legislation into code.
+[OpenFisca](https://www.openfisca.org) is an open source "rules as code" framework to write machine-consummable legislation.
 
 Describe your tax & benefit system, provide a situation as input (i.e income), ask for a calculation as output (i.e. income tax), and get your results.
 
