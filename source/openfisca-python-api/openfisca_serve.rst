@@ -65,3 +65,33 @@ You can setup ``openfisca serve`` using a configuration file. Be careful as para
 .. code-block:: shell
 
   openfisca serve --configuration-file config.py
+
+
+Using gunicorn directly
+^^^^^^^^^^^^^^^^^^^^^^^
+If for any reason you nedd to run ``gunicorn`` directly, you can. See this example of ``gunicorn`` application:
+
+**app.py:**
+
+.. code-block:: py
+
+  from openfisca_core.scripts import build_tax_benefit_system
+  from openfisca_web_api.app import create_app
+
+  country_package = 'openfisca_france'
+  extensions = ['openfisca_paris']
+  reforms = ['openfisca_france.reforms.plf2015.plf2015']
+
+  tax_benefit_system = build_tax_benefit_system(
+      country_package_name = country_package,
+      extensions = extensions,
+      reforms = reforms,
+  )
+
+  application = create_app(tax_benefit_system)
+
+**Command line:**
+
+.. code-block:: shell
+
+  gunicorn app --bind 0.0.0.0:4000 --workers=4
