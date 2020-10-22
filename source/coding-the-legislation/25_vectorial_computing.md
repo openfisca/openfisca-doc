@@ -160,7 +160,7 @@ Basic arithmetic operations such as `+` or `*` behave the same way on vectors th
 
 | Scalar (won't work) | Vectorial alternative |
 |---------------------|-----------------------|
-| `not`               | `not_(x,y)`           |
+| `not`               | `not_(x)`           |
 | `and`               | `x * y`               |
 | `or`             | `x + y`               |
 
