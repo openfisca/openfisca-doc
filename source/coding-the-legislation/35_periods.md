@@ -4,7 +4,7 @@ When you run an OpenFisca simulation to compute a variable, you need to define t
 
 OpenFisca gives you a convenient string syntax to define periods.
 
-The general structure is `unit:instant:quantity` (see the [definition of a period](../key-concepts/periodsinstants.md)). Some of the structure can be omitted. 
+The general structure is `unit:instant:quantity` (see the [definition of a period](../key-concepts/periodsinstants.md)). Some of the structure can be omitted.
 
 The main valid period formats are referenced in this table:
 
@@ -148,7 +148,7 @@ You can generate any period with the following properties and methods:
 
 | Period                            | Meaning                                                      |
 |-----------------------------------|--------------------------------------------------------------|
-| `period.this_month`               | First month-length period that includes the start of `period`|
+| `period.first_month`              | First month-length period that includes the start of `period`|
 | `period.last_month`               | Month preceding `period.this_month`                          |
 | `period.this_year`                | First year-length period that includes the start of `period` |
 | `period.last_year`                | Year preceding `period.this_year`                            |
@@ -189,7 +189,7 @@ class salary(Variable):
 ```
 
 We can now provide an input for `2015` for `salary`: no error will be raised, and the value will be automatically split between the 12 months of `2015`.
-  
+
 This example sets 3 years salaries for two persons and calculates how much they get for one month:
 
 ```py
