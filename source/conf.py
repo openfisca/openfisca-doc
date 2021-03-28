@@ -12,7 +12,6 @@ import recommonmark
 # -- Project information -----------------------------------------------------
 
 project = 'OpenFisca'
-copyright = '2018, contact@openfisca.org'
 author = 'contact@openfisca.org'
 
 # -- General configuration ---------------------------------------------------
