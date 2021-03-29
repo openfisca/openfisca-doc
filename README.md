@@ -7,7 +7,7 @@
 To install dependencies, run:
 
 ```
-pip install -r requirements.txt --use-deprecated=legacy-resolver
+pip install -r requirements.txt
 ```
 
 ## Build
