@@ -19,7 +19,9 @@ jobs:
 
       - run:
           name: Install app dependencies
-          command: pip install -r requirements.txt
+          command: |
+            pip install --upgrade pip
+            pip install -r requirements.txt --use-deprecated=legacy-resolver
 
       - save_cache:
           key: dependency-cache-{{ checksum "requirements.txt" }}

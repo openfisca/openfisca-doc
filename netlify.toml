@@ -1,0 +1,4 @@
+# Use pip's legacy dependencies resolver
+# It is expected to become faster >= 21.1.0
+[build.environment]
+  PIP_USE_DEPRECATED = "legacy-resolver"
