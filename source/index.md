@@ -28,9 +28,9 @@ How to turn legal code into Python code?
 
 With OpenFisca, you can [run a simulation](simulate/index.html) on a single situation or on a whole population. OpenFisca doesn’t provide any data, the data you need depends on what you’re trying to calculate.
 
-Do you want to help your mom find out her eligibility to a social benefit in your country? Go and ask the users of your application to give you the demographics you need in order to provide them with an answer (please do not forget to be GRPD compliant!).
+Do you want to help users find their eligibility for a social benefit in your country? Go and ask the users of your application to give you the income and demographic information you need in order to provide them with an answer (please do not forget to be GDPR compliant!).
 
-Are you trying to simulate the impact of a new housing tax on behalf of the OCDE? ask your government the survey data you need to simulate the impact of that housing tax reform on the poorest 20% of a country.
+Are you trying to simulate the impact of a new housing tax on behalf of the OECD? ask your government for the survey data you need to simulate the impact of that housing tax reform on the poorest 20% of a country.
 
 ### 3 - Use your results
 
