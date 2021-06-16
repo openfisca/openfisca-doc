@@ -149,7 +149,7 @@ You can generate any period with the following properties and methods:
 | Period                            | Meaning                                                      |
 |-----------------------------------|--------------------------------------------------------------|
 | `period.first_month`              | First month-length period that includes the start of `period`|
-| `period.last_month`               | Month preceding `period.this_month`                          |
+| `period.last_month`               | Month preceding `period.first_month`                          |
 | `period.this_year`                | First year-length period that includes the start of `period` |
 | `period.last_year`                | Year preceding `period.this_year`                            |
 | `period.n_2`                      | 2 years before `period.this_year`                            |
