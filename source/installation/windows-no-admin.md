@@ -1,4 +1,4 @@
-# Work on OpenFisca on a Windows without being administrator
+# On Windows without admin rights
 
 _Warning: running OpenFisca on a machine **with** administrator privileges would make your life much easier. Using a MacOS or a Linux would be even better._
 
