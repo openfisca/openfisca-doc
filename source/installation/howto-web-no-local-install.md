@@ -19,7 +19,7 @@ Let's see how to use OpenFisca on one of those services: [repl.it](https://repl.
     tax_benefit_system = CountryTaxBenefitSystem()
     parameters = tax_benefit_system.parameters
 
-    print parameters
+    print(parameters)
     ```
 
     > You can also import files (e.g. JSON files describing input [situations](../openfisca-web-api/input-output-data.md#describing-the-situation)) by clicking on the `import or drop` button.
