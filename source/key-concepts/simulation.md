@@ -12,7 +12,7 @@ It's possible to run many independent simulations using the same `TaxBenefitSyst
 
 #### Computing variables
 
-To compute taxes and benefits, you need to define on who you want to do that and what already know about those persons groups of persons. This is what you will set as input data to your *Simulation*.
+To compute taxes and benefits, you need to define on whom you want to do that and what you already know about those persons or groups of persons. This is what you will set as input data for your *Simulation*.
 
 Then, be aware of the period over which you want to have your result. Some measures are calculated on a monthly basis other an annual one.
 
