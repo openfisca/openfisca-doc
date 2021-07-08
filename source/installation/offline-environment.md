@@ -4,7 +4,7 @@ If you need to install OpenFisca on a server with no Internet access, here is ho
 
 The big picture: download Python packages on a machine with Internet access, copy them to the server and install them in a [virtualenv](https://virtualenv.pypa.io/en/stable/).
 
-We assume that it is possible to copy files to the server, for example via a USB key. Or perhaps the server filters only outgoing connections, but accepts incoming connections allowing to copy the files.
+We assume that it is possible to copy files to the server, for example via a USB stick. Or perhaps the server filters only outgoing connections, but accepts incoming connections allowing to copy the files.
 
 ## On the machine with Internet access
 
