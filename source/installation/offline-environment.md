@@ -1,10 +1,10 @@
-# Installing OpenFisca in an offline environment
+# In an offline environment
 
 If you need to install OpenFisca on a server with no Internet access, here is how to do it.
 
 The big picture: download Python packages on a machine with Internet access, copy them to the server and install them in a [virtualenv](https://virtualenv.pypa.io/en/stable/).
 
-We assume that it is possible to copy files to the server, for example via an USB key. Or perhaps the server filters only outgoing connections, but accepts incoming connections allowing to copy the files.
+We assume that it is possible to copy files to the server, for example via a USB stick. Or perhaps the server filters only outgoing connections, but accepts incoming connections allowing to copy the files.
 
 ## On the machine with Internet access
 
@@ -27,7 +27,7 @@ pip download OpenFisca-France
 # You should see the downloaded files in the current directory.
 ```
 
-Now copy these files on the server (say in the `~/openfisca-packages` directory), either via an USB key, or with `scp`, or any other way.
+Now copy these files on the server (say in the `~/openfisca-packages` directory), either via a USB stick, or with `scp`, or any other way.
 
 Example with `scp`:
 

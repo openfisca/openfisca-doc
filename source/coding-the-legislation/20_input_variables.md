@@ -42,9 +42,9 @@ If you do not explicitly define a default value, the following will be used:
 ### Usecases
 
 Enumerations are variables that have a limited set of possible values. For instance:
-- A person's relationship status: married, single, divorced.
-- A household housing occupancy status: owner, tenant, free-lodger, homeless.
-- The main occupation of a person: employee, freelance, retired, student, unemployed.
+- Highest academic level: high school, associate degree, bachelor's degree, master's degree, doctorate…
+- A household housing occupancy status: owner, tenant, free-lodger, homeless…
+- The main occupation of a person: employee, freelancer, retired, student, unemployed…
 
 ### Defining and using an enumeration variable
 

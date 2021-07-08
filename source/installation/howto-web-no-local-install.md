@@ -1,17 +1,17 @@
-# Use OpenFisca on the web
+# On the web
 
 
-If you want to use OpenFisca for running a simulation or evaluating the impact of a reform, without installing anything in your computer, these online services allow you to run OpenFisca directly on your browser, no installation required: [repl.it](https://repl.it), [python anywhere](https://www.pythonanywhere.com) and [jupyterlab](https://jupyterlab.readthedocs.io/en/stable/).
+Some online services offer the opportunity to run Python code without having to install anything on your machine.
 
-Let's see how to use OpenFisca on one of those services: [repl.it](https://repl.it) 🤓
+If you wish to run OpenFisca directly on your browser for a simulation or to evaluate the impact of a reform, you might find one of the following services useful: [Gitpod](https://www.gitpod.io/), [repl.it](https://repl.it), [python anywhere](https://www.pythonanywhere.com) and [Jupyterlab](https://jupyterlab.readthedocs.io/en/stable/). 
+
+Please be aware that you might need to install the OpenFisca package you need on your online service before using it. You will find a quick generic usage example to test your setup below.
 
 ## Instructions
 
-1. Go to [repl.it](https://repl.it) and select `Python`:
+1. Start by installing the package you need on your online service e.g. `OpenFisca-Country-Template`.
 
-    [![repl.it homepage](https://raw.githubusercontent.com/openfisca/openfisca-doc/master/source/static/img/replit-homepage.png)](https://github.com/openfisca/openfisca-doc/blob/master/source/static/img/replit-homepage.png)
-
-2. Write the OpenFisca code you wish to run. The default entry point is `main.py` python file. Example of `main.py` content using `openfisca-country-template`:
+2. Write the code you wish to run. Example of a code snippet to run:
 
     ```py
     from openfisca_country_template import CountryTaxBenefitSystem
@@ -19,18 +19,7 @@ Let's see how to use OpenFisca on one of those services: [repl.it](https://repl.
     tax_benefit_system = CountryTaxBenefitSystem()
     parameters = tax_benefit_system.parameters
 
-    print parameters
+    print(parameters)
     ```
 
-    > You can also import files (e.g. JSON files describing input [situations](../openfisca-web-api/input-output-data.md#describing-the-situation)) by clicking on the `import or drop` button.
-    [![repl.it upload & drop button](https://cdn.rawgit.com/openfisca/openfisca-doc/master/source/static/img/replit-upload-drop-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/source/static/img/replit-upload-drop-button.png)
-
-3. Click the `run` button to execute your code [![repl.it run button](https://cdn.rawgit.com/openfisca/openfisca-doc/master/img/replit-run-button.png)](https://github.com/openfisca/openfisca-doc/blob/master/img/replit-run-button.png).
-
-    > Your code dependencies are automatically analyzed and imported.
-
-4. You're all set. Check your code results on the right sided python interpreter.
-
-## Example: evaluating a reform with OpenFisca France and repl.it
-
-To see OpenFisca in action in your favourite browser, check out this [example of reform to the French tax-benefit system in repl.it](https://repl.it/@openfisca/framework-openfisca-france) (in French)!
+3. Run your code and check the results.

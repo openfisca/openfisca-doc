@@ -34,13 +34,13 @@ Are you trying to simulate the impact of a new housing tax on behalf of the OECD
 
 ### 3 - Use your results
 
-They are two ways to use your results:
+There are two ways to use your results:
 
 * If you want to build a web service with the results of your simulation, you’ll definitely want to take a look at our [web API](openfisca-web-api/index.html).
 
 * If you’re working on your thesis, you’ll rather use our [Python API](openfisca-python-api/index.html).
 
-Also, there are tons of libraries to help you illustrate your results ([plot.ly](https://plot.ly) for instance, will get you that nice charts you’ve seen somewhere else).
+Also, there are tons of libraries to help you illustrate your results ([plot.ly](https://plot.ly) for instance, will get you those nice charts you’ve seen elsewhere).
 
 Please make sure you read our [licence information](licence.html) before using results based on OpenFisca.
 
@@ -54,4 +54,4 @@ Please make sure you read our [licence information](licence.html) before using r
 
 Wonderful products rely on OpenFisca! Check them out on our [showcase page](https://fr.openfisca.org/showcase/).
 
-Feeling a bit lost? You’re not sure OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org) and we’ll tell you!
+Feeling a bit lost? You’re not sure if OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org) and we’ll tell you!

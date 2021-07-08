@@ -1,17 +1,17 @@
-# Work on OpenFisca on a Windows without being administrator
+# On Windows without admin rights
 
 _Warning: running OpenFisca on a machine **with** administrator privileges would make your life much easier. Using a MacOS or a Linux would be even better._
 
 _If you do not have a choice other than using a restricted Windows, this guide sums up the "recipe" to install OpenFisca in such an environment._
 
-## 1. Install git
+## 1. Install Git
 
 Git is a tool that will help you version your work. It also comes with a shell **terminal** that allows you to type commands in a more standard way than the Windows command line tool.
 
 - Download git from [https://gitforwindows.org/](https://gitforwindows.org/).
 - Install it. While installing, keep the default options.
 
-## 2. Install python
+## 2. Install Python
 
 Python is the programing language used in OpenFisca. It can be installed without administrators rights through a software named Miniconda.
 
@@ -66,7 +66,7 @@ You can now write your own scripts, such as [this tutorial](https://raw.githubus
 
 To edit a script, open it with atom.
 
-To run it, save your modifications, go to the directory containing it, right click and chose "Gith Bash Here". Then type:
+To run it, save your modifications, go to the directory containing it, right click and choose "Git Bash Here". Then type:
 
 ```sh
 python name-of-the-script.py

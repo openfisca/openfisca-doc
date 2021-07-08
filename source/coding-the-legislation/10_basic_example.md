@@ -25,9 +25,9 @@ Let's explain in details the different parts of the code:
 ### The variable attributes
 
 All variables have a set of attributes.
-* `value_type` defines the type of the formula output. Possible types are the basic python types.
+* `value_type` defines the type of the formula output. Possible types are the basic Python types.
 Note however that OpenFisca uses NumPy to [run calculations vectorially](25_vectorial_computing.md),
-so the actual type of data may be slightly different from the builtin Python ones.
+so the actual type of data may be slightly different from the built-in Python ones.
 Available types are :
     - `bool`: boolean
     - `date`: date
@@ -36,9 +36,9 @@ Available types are :
     - `int`: integer
     - `str`: string
 * `entity` defines who or what group the variable concerns, e.g. individuals, households, families.
-* `definition_period` defines the period on which the variable is calculated. It can be `MONTH` (e.g. salary), `YEAR` (e.g. income taxes), or ETERNITY (e.g. date of birth)
-* `label` is a human friendly way to describe the variable
-* `reference` is a list of relevant legislative reference for this variables (usually URLs the text of the law or another trustworthy source)
+* `definition_period` defines the period on which the variable is calculated. It can be `MONTH` (e.g. salary), `YEAR` (e.g. income taxes), or ETERNITY (e.g. date of birth).
+* `label` is a human friendly way to describe the variable.
+* `reference` is a list of relevant legislative reference for this variables (usually URLs the text of the law or another trustworthy source).
 
 ### The formula
 
