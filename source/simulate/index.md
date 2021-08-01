@@ -7,6 +7,7 @@
    run-simulation
    analyse-simulation
    replicate-simulation-inputs
+   profile-simulation
 ```
 
 To calculate Tax and Benefit System variables on people's situations, you need to create and run a new *Simulation*.
