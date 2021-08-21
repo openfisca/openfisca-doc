@@ -17,7 +17,7 @@ For tax and benefit systems models, the following conventions are applied:
 
 - Channels that centralise discussions around a specific tax and benefit system are given the name of the distributed module, suffixed by `-system`. _For example: `france-system`_. If that full name is too long for the Slack channel character limit, then a shortened version of the name is used.
 - Channels that centralise discussions around extensions to tax and benefit systems are given that system’s module name, followed by `-ext-` and an identifier for that extension. _For example: `france-ext-paris`_.
-- System-specific group channels are campfires around which some specific organisations of contributors to a tax and benefits system gather. When a country becomes large enough, it often happens that several employers of contributors work concurrently on different parts of the system, and the main `-system` channel would become unreadable. These channels are called that system’s module name, followed by `-org-` and an identifier for that group. _For example: `france-org-gouv`_.
+- System-specific group channels are campfires around which some specific organisations of contributors to a tax and benefit system gather. When a country becomes large enough, it often happens that several employers of contributors work concurrently on different parts of the system, and the main `-system` channel would become unreadable. These channels are called that system’s module name, followed by `-org-` and an identifier for that group. _For example: `france-org-gouv`_.
 
 ## Contact
 

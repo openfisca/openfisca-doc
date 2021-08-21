@@ -281,7 +281,7 @@ And then to get `parameters(period).housing_benefit.amount_by_zone[zone]`
 
 ## How to navigate the parameters in Python
 
-Set-up your python file by importing a `country package` and building the `tax and benefits system`
+Set-up your python file by importing a `country package` and building the `tax and benefit system`
 
 > Example :
 > ```
