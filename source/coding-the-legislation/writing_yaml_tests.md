@@ -71,6 +71,8 @@ For instance:
 
 ### Testing formulas giving a test case
 
+### Testing formulas by giving a test case
+
 This is the simplest way to test formulas when you need to give input values for many individuals
 which are dispatched into entities.
 
