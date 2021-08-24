@@ -78,7 +78,7 @@ which are dispatched into entities.
 
 In this case, there is another convention:
 
-- do not include the variables directly as keys of the `input` but instead define new keys corresponding to the entities:
+- Do not include the variables directly as keys of the `input`. Instead, define new keys corresponding to the entities:
 
     ```yaml
     - name: "IRPP - Famille ayant des revenus salariaux de 20 000 €"
