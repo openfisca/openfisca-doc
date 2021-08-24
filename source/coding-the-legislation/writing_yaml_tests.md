@@ -116,7 +116,7 @@ In this case, there is another convention:
           date_naissance: 2009-01-01
     ```
 
-- specify the relations between individuals and their entity:
+- Specify the relations between individuals and their entity:
 
     ```yaml
       familles:
