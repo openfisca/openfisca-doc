@@ -157,7 +157,7 @@ Values can be arithmetic expressions too.
 
 ### Testing a variable using a reform
 
-[Reforms](./reforms.md) can be applied to the baseline tax and benefit system as a list to the reforms key.
+[Reforms](./reforms.md) can be applied to the baseline tax and benefit system, in the reforms key, as a list .
 
 ```yaml
 - name: "Combination of 2 reforms"
