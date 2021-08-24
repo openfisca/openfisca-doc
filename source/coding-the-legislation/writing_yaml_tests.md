@@ -97,7 +97,7 @@ In this case, there is another convention:
           # ...
     ```
 
-- define the individuals with their `id` and their variables:
+- Define the individuals with their `id` and their variables:
 
     ```yaml
       individus:
