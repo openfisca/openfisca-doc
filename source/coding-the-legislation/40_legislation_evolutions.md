@@ -127,11 +127,11 @@ Note that if `flat_tax_on_salary` is calculated **before** `2005-05-31` (include
 
 ## Ending a variable at a specific date
 
-As the legislation evolves, some fiscal or benefit mechanisms disappear.
+As legislation evolves, some fiscal or benefit mechanisms disappear.
 
 Let's for instance assume that a `progressive_income_tax` used to exist before the `flat_tax_on_salary` was introduced. This progressive tax then disappeared on the 1st of June 2005.
 
-This is implemented with an `end` attribute that define the _last day_ a variable can be calculated:
+This is implemented with an `end` attribute that defines the _last day_ a variable can be calculated:
 
 ```py
 class progressive_income_tax(Variable):
@@ -158,29 +158,28 @@ Note that:
 
 ## Ending a parameter at a specific date
 
-Similarly to variables, parameters are prone to disappear as the legislation evolves.
+Like variables, parameters tend to disappear as legislation evolves.
 
-For instance, let's assume that the `housing_allowance` is only defined from the 1st of January 2010 to the 30th of November 2016.
+For instance, let's assume that the `housing_allowance` parameter is only defined from 2010 (1st of January) to the end of 2016 (31st of December).
 
-We can end `housing_allowance` at a specific date by simply entering **null** as a value for that date (`2016-12-01` in this case).
+We can end `housing_allowance` at a specific date by simply assigning `null` as a value for that date (`2017-01-01` in this case).
 
 ```yaml
 description: Housing allowance amount (as a fraction of the rent)
+# in parameters/housing_allowance.yaml
 metadata:
   unit: /1
-  reference: https://law.gov.example/housing-allowance-rate
-documentation: |
-  A fraction of the rent.
-  From the 1st of Dec 2016, the housing allowance no longer exists.
 values:
-  # This parameter is only defined from the 1st of Jan 2010 to the 30th of Nov 2016.
+  # This parameter is only defined from the 1st of Jan 2010 to the 1st of Jan 2017 (excluded).
   2010-01-01:
     value: 0.25
-  2016-12-01:
+  2017-01-01:
     value: null
 ```
+If `housing_allowance` is called **before** `2016-12-31`(included) and **after** `2010-01-01` (included), the `0.25` value will be used.
 
-Calling the parameter for a period starting from the 1st of December 2016, **2017** for instance, will render an error:
+However, trying to obtain the parameter **after** `2017-01-01`(included) will raise an error:
+
 
 > Example:
 >```py 
@@ -191,8 +190,9 @@ Calling the parameter for a period starting from the 1st of December 2016, **201
 >ParameterNotFoundError: The parameter 'benefits[housing_allowance]' was not found in the 2017-01-01 tax and benefit system.
 >```
 
+### Ending a scale at a specific date
 
-The same thing can be done for a scale by adding a **null** value for the end date across all rates.
+The same thing can be done for a scale by assigning a `null` value for the end date across all rates.
 
 The following example of `social_security_contribution` ends as of the 1st of January 2017.
 
