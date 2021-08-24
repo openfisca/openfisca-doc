@@ -31,7 +31,7 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/29.3.7/tests
 - `input` (associative array, keys are variable names, values are numbers)
 - `output` (associative array, keys are variable names, values are numbers)
 - `reforms` (list of openfisca reform modules to be applied to the baseline tax-benefit system)
-- other any key defined in the model
+- other (any key defined in the model)
 
 ## Syntax
 
