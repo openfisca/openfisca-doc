@@ -4,7 +4,7 @@ The recommended way to write tests is to use YAML tests.
 
 Each formula should be tested at least with one test, and better with specific boundary values (thresholds for example).
 
-> Terminology: Python dictionnary are called associative arrays in YAML.
+> Terminology: Python dictionaries are called associative arrays in YAML.
 
 ## Example
 
@@ -53,7 +53,7 @@ This is the simplest way to test formulas when you only need to give input value
   absolute_error_margin: 0.5
 ```
 
-- Create nested dictionnaries within the keys `input` and `output`,
+- Create nested dictionaries within the keys `input` and `output`,
 which keys are variable names and values are numbers, respectively input and expected values.
 For instance:
 
@@ -67,9 +67,6 @@ For instance:
   output:
     irpp: -1181
 ```
-
-
-### Testing formulas giving a test case
 
 ### Testing formulas by giving a test case
 
