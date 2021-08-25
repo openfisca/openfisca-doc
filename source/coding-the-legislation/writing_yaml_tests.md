@@ -154,7 +154,7 @@ Values can be arithmetic expressions too.
 
 ### Testing a variable using a reform
 
-[Reforms](./reforms.md) can be applied to the baseline tax and benefit system, in the reforms key, as a list .
+[Reforms](./reforms.md) can be applied to the baseline tax and benefit system, in the reforms key, as a list.
 
 ```yaml
 - name: "Combination of 2 reforms"
@@ -162,6 +162,8 @@ Values can be arithmetic expressions too.
     - module.of.first_reform
     - module.of.second_reform
 ```
+
+You can find examples of YAML tests of tax and benefit systems with reforms applied on the [country template](https://github.com/openfisca/country-template/tree/master/openfisca_country_template/tests/reforms).
 
 ## Running a test
 
