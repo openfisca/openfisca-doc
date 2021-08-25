@@ -2,7 +2,7 @@
 
 [OpenFisca](https://www.openfisca.org) is an open source platform to write rules as code.
 
-Describe your tax & benefit system, provide a situation as input (i.e income), ask for a calculation as output (i.e. income tax), and get your results.
+Describe your tax and benefit system, provide a situation as input (i.e income), ask for a calculation as output (i.e. income tax), and get your results.
 
 * **For economists**: OpenFisca allows you to use survey data to simulate the impact of a  reform on a given government’s budget and on a population’s standard of living.
 * **For developers**: OpenFisca allows you to easily create web applications based on your simulation results, thanks to the web API. You can build a great variety of other services by coding formulas, hosting your own instance or building your own extensions.
@@ -10,7 +10,7 @@ Describe your tax & benefit system, provide a situation as input (i.e income), a
 
 ## How does OpenFisca work?
 
-### 1 - Choose an available tax & benefit system or roll your own:
+### 1 - Choose an available tax and benefit system or roll your own:
 
 With OpenFisca, you can:
 * Use an existing tax and benefit system (see the [list of systems already built](https://openfisca.org/en/countries/))

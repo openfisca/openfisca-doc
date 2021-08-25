@@ -1,12 +1,12 @@
-OpenFisca variables : naming guidelines
-=======================================
+OpenFisca variables: naming guidelines
+======================================
 
 General philosophy
 ------------------
 
 The discussion below is concerned with naming the variables of a country package. In that case, the ["local language rule"](language.md) applies, and the appropriate language for modeling the domain is one of the native ones of the modeled country. We consider each tax, collecting organism and country regulation, and so on, as a domain-specific term. In the same fashion, well-known abbreviations of these domain-specific terms are accepted.
 
-OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the country's tax and benefits system, **without necessarily being an expert**.
+OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the country's tax and benefit system, **without necessarily being an expert**.
 
 One should be able to get a rough idea of the meaning of a variable by reading its name, or by quickly researching it on the web.
 

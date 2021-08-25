@@ -4,7 +4,7 @@ The recommended way to write tests is to use YAML tests.
 
 Each formula should be tested at least with one test, and better with specific boundary values (thresholds for example).
 
-> Terminology: Python dictionnary are called associative arrays in YAML.
+> Terminology: Python dictionaries are called associative arrays in YAML.
 
 ## Example
 
@@ -28,9 +28,10 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/29.3.7/tests
 - `description` (string, optional, multiline)
 - `absolute_error_margin` (number, optional)
 - `relative_error_margin` (number, optional)
-- `input_variables` (associative array, keys are variable names, values are numbers)
-- `output_variables` (associative array, keys are variable names, values are numbers)
-- other any key defined in the model
+- `input` (associative array, keys are variable names, values are numbers)
+- `output` (associative array, keys are variable names, values are numbers)
+- `reforms` (list of openfisca reform modules to be applied to the baseline tax-benefit system)
+- other (any key defined in the model)
 
 ## Syntax
 
@@ -52,7 +53,7 @@ This is the simplest way to test formulas when you only need to give input value
   absolute_error_margin: 0.5
 ```
 
-- Create nested dictionnaries within the keys `input_variables` and `output_variables`,
+- Create nested dictionaries within the keys `input` and `output`,
 which keys are variable names and values are numbers, respectively input and expected values.
 For instance:
 
@@ -67,65 +68,69 @@ For instance:
     irpp: -1181
 ```
 
-
-### Testing formulas giving a test case
+### Testing formulas by giving a test case
 
 This is the simplest way to test formulas when you need to give input values for many individuals
 which are dispatched into entities.
 
-> See the last test of [cotisations_sociales_simulateur_IPP.yaml](https://github.com/openfisca/openfisca-france/blob/29.3.7/tests/cotisations_sociales_simulateur_IPP.yaml#L244-L303)
+> See the last test of [cotisations_sociales_simulateur_IPP.yaml](https://github.com/openfisca/openfisca-france/blob/221147983dabb7d3971b7f1ed86d44346fca449a/tests/cotisations_sociales_simulateur_IPP.yaml#L186-244)
 
 In this case, there is another convention:
 
-- do not include the field `input_variables` but instead define new keys corresponding to the entities:
+- Do not include the variables directly as keys of the `input`. Instead, define new keys corresponding to the entities:
 
     ```yaml
     - name: "IRPP - Famille ayant des revenus salariaux de 20 000 €"
-    period: 2012
-    absolute_error_margin: 0.5
-    input:
+      period: 2012
+      absolute_error_margin: 0.5
+      input:
+        individus:
+          # ...
+        familles:
+          # ...
+        menages:
+          # ...
+        foyers_fiscaux:
+          # ...
+    ```
+
+- Define the individuals with their `id` and their variables:
+
+    ```yaml
+      individus:
+        parent1:
+          date_naissance: 1972-01-01
+          depcom_entreprise: "69381"
+          primes_fonction_publique: 500
+        parent2:
+          date_naissance: 1972-01-01
+          depcom_entreprise: "69381"
+          primes_fonction_publique: 500
+          traitement_indiciaire_brut: 2000
+        enfant1:
+          date_naissance: 2000-01-01
+        enfant2:
+          date_naissance: 2009-01-01
+    ```
+
+- Specify the relations between individuals and their entity:
+
+    ```yaml
       familles:
+          parents: ["parent1", "parent2"]
+          enfants: ["enfant1", "enfant2"]
       menages:
+          personne_de_reference: "parent1"
+          conjoint: "parent2"
+          enfants: ["enfant1", "enfant2"]
       foyers_fiscaux:
+          declarants: ["parent1", "parent2"]
+          personnes_a_charge: ["enfant1", "enfant2"]
     ```
 
-- define the individuals with their `id` and their variables:
+- Specifying all entities is not mandatory. For any entity that is not specified, all individuals are assumed to be in "a group of their own". Which means if you do not specify any families, OpenFisca assumes that each individual is the lone member of a one-person family. This applies to Web API payloads as well as test cases.
 
-    ```yaml
-    individus:
-      parent1:
-        date_naissance: 1972-01-01
-        depcom_entreprise: "69381"
-        primes_fonction_publique: 500
-      parent2:
-        date_naissance: 1972-01-01
-        depcom_entreprise: "69381"
-        primes_fonction_publique: 500
-        traitement_indiciaire_brut: 2000
-      enfant1:
-        date_naissance: 2000-01-01
-      enfant2:
-        date_naissance: 2009-01-01
-    ```
-
-- specify the relations between individuals and their entity:
-
-    ```yaml
-    familles:
-        parents: ["parent1", "parent2"]
-        enfants: ["enfant1", "enfant2"]
-    menages:
-        personne_de_reference: "parent1"
-        conjoint: "parent2"
-        enfants: ["enfant1", "enfant2"]
-    foyers_fiscaux:
-        declarants: ["parent1", "parent2"]
-        personnes_a_charge: ["enfant1", "enfant2"]
-    ```
-
-- (specifying all entities is not mandatory; for any entity that is not specified, all individuals are assumed to be "a group of their own"; that is, if you do not specify any families, OpenFisca assumes that each individual is the lone member of a one-person family; this applies for Web API payloads as well as test cases)
-
-- finally, define a dictionnary of the expected values of the output variables. Each output variable takes a list of length equal to the number of individuals defined in the test. E.g, for a family of four individuals with two working parents and two unemployed children, the output variable salaire_super_brut is defined as follows:
+- Finally, define a dictionary of the expected values of the output variables. Each output variable takes a list of length equal to the number of individuals defined in the test. E.g, for a family of four individuals with two working parents and two unemployed children, the output variable salaire_super_brut is defined as follows:
 
     ```yaml
     output:
@@ -146,6 +151,19 @@ Values can be arithmetic expressions too.
       2013-02: 35 * 52 / 12 * 9
       2013-03: 35 * 52 / 12 * 9
 ```
+
+### Testing a variable using a reform
+
+[Reforms](./reforms.md) can be applied to the baseline tax and benefit system, in the reforms key, as a list.
+
+```yaml
+- name: "Combination of 2 reforms"
+  reforms:
+    - module.of.first_reform
+    - module.of.second_reform
+```
+
+You can find examples of YAML tests of tax and benefit systems with reforms applied on the [country template](https://github.com/openfisca/country-template/tree/master/openfisca_country_template/tests/reforms).
 
 ## Running a test
 
