@@ -125,13 +125,13 @@ Only a few characters changed in comparison with the last example: the suffix `_
 Note that if `flat_tax_on_salary` is calculated **before** `2005-05-31` (included), _none_ of the two formulas is used, as they are _both inactive_ at this time. Instead, **the variable [default value](../key-concepts/variables.md#default-values) is returned**.
 
 
-## Variable end
+## Ending a variable at a specific date
 
-As the legislation evolves, some fiscal or benefit mechanisms disapear.
+As legislation evolves, some fiscal or benefit mechanisms disappear.
 
-Let's for instance assume that a `progressive_income_tax` used to exist before the `flat_tax_on_salary` was introduced. This progressive tax then disapeared on the 1st of June 2005.
+Let's for instance assume that a `progressive_income_tax` used to exist before the `flat_tax_on_salary` was introduced. This progressive tax then disappeared on the 1st of June 2005.
 
-This is implemented with an `end` attribute that define the _last day_ a variable can be calculated:
+This is implemented with an `end` attribute that defines the _last day_ a variable can be calculated:
 
 ```py
 class progressive_income_tax(Variable):
@@ -154,3 +154,100 @@ Note that:
 - The `end` day is **inclusive**: it is the last day a variable and its formulas are active (and not the first day it is not active anymore).
 - The `end` value is a string of format `YYYY-MM-DD` where `YYYY`, `MM` and `DD` are respectively a year, month and day.
 - When defining a date, the month is given **before** the day.
+
+
+## Ending a parameter at a specific date
+
+Like variables, parameters tend to disappear as legislation evolves.
+
+For instance, let's assume that the `housing_allowance` parameter is only defined from 2010 (1st of January) to the end of 2016 (31st of December).
+
+We can end `housing_allowance` at a specific date by simply assigning `null` as a value for that date (`2017-01-01` in this case).
+
+```yaml
+description: Housing allowance amount (as a fraction of the rent)
+# in parameters/housing_allowance.yaml
+metadata:
+  unit: /1
+values:
+  # This parameter is only defined from the 1st of Jan 2010 to the 1st of Jan 2017 (excluded).
+  2010-01-01:
+    value: 0.25
+  2017-01-01:
+    value: null
+```
+If `housing_allowance` is called **before** `2016-12-31`(included) and **after** `2010-01-01` (included), the `0.25` value will be used.
+
+However, trying to obtain the parameter **after** `2017-01-01`(included) will raise an error:
+
+
+> Example:
+>```py 
+>tax_benefit_system.parameters(2017).benefits.housing_allowance
+>```
+> Output:
+>```py
+>ParameterNotFoundError: The parameter 'benefits[housing_allowance]' was not found in the 2017-01-01 tax and benefit system.
+>```
+
+### Ending a scale at a specific date
+
+The same thing can be done for a scale by assigning a `null` value for the end date across all brackets.
+
+The following example of `social_security_contribution` ends as of the 1st of January 2017.
+
+```yaml
+description: Social security contribution tax scale
+metadata:
+  threshold_unit: currency-EUR
+  rate_unit: /1
+brackets:
+- rate:
+    2013-01-01:
+      value: 0.03
+    2017-01-01:
+      value: null
+  threshold:
+    2013-01-01:
+      value: 0.0
+    2017-01-01:
+      value: null
+- rate:
+    2013-01-01:
+      value: 0.1
+    2017-01-01:
+      value: null
+  threshold:
+    2013-01-01:
+      value: 12000.0
+    2017-01-01:
+      value: null
+```
+It is also possible to only end one bracket. We use the same `social_security_contribution` example to illustrate, by ending only the second bracket as of the 1st of January 2017.
+
+```yaml
+description: Social security contribution tax scale
+metadata:
+  threshold_unit: currency-EUR
+  rate_unit: /1
+brackets:
+- rate: # 1st bracket
+    2013-01-01:
+      value: 0.03
+    2017-01-01:
+      value: 0.04
+  threshold:
+    2013-01-01:
+      value: 0.0
+- rate: # 2nd bracket
+    2013-01-01:
+      value: 0.1
+    2017-01-01:
+      value: null
+  threshold:
+    2013-01-01:
+      value: 12000.0
+    2017-01-01:
+      value: null
+```
+
