@@ -192,7 +192,7 @@ However, trying to obtain the parameter **after** `2017-01-01`(included) will ra
 
 ### Ending a scale at a specific date
 
-The same thing can be done for a scale by assigning a `null` value for the end date across all rates.
+The same thing can be done for a scale by assigning a `null` value for the end date across all brackets.
 
 The following example of `social_security_contribution` ends as of the 1st of January 2017.
 
