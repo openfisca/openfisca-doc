@@ -6,3 +6,6 @@ Variables
 
 .. autoclass:: Variable
     :members:
+
+.. automodule:: openfisca_core.variables.typing
+    :members:
