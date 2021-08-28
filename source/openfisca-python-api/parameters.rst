@@ -4,6 +4,9 @@ Parameters
 
 .. module:: openfisca_core.parameters
 
+.. autoclass:: ParameterNodeAtInstant
+    :members:
+
 .. autoclass:: ParameterNode
     :members:
 

@@ -20,6 +20,7 @@ Modules:
    enum_array
    holder
    simulation_generator
+   periods
    errors
 ```
 
