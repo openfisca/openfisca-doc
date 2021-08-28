@@ -2,5 +2,7 @@
 Parameters
 ==========
 
-.. automodule:: openfisca_core.parameters
+.. module:: openfisca_core.parameters
+
+.. autoclass:: ParameterNode
     :members:
