@@ -21,3 +21,6 @@ help:
 dev:
 	rm -Rf $(BUILDDIR)
 	sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)
+
+test:
+	@${SPHINXBUILD} -M dummy "$(SOURCEDIR)" "$(BUILDDIR)" -n -q -W
