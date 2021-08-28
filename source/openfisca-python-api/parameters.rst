@@ -6,3 +6,9 @@ Parameters
 
 .. autoclass:: ParameterNode
     :members:
+
+.. autoclass:: Parameter
+    :members:
+
+.. autoclass:: ParameterScale
+    :members:
