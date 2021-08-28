@@ -2,5 +2,7 @@
 Variables
 =========
 
-.. automodule:: openfisca_core.variables
+.. module:: openfisca_core.variables
+
+.. autoclass:: Variable
     :members:
