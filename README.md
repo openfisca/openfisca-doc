@@ -38,6 +38,49 @@ To test the documentation, run:
 make test
 ```
 
+## Fixing the doc
+
+If the tests fail, here's what you can do:
+
+1. If the errors also concern OpenFisca-Core, please take a look at the [README](https://github.com/openfisca/openfisca-core/blob/master/README.md).
+
+2. If not, clone & install the documentation:
+
+```
+git clone https://github.com/openfisca/openfisca-doc
+make install
+```
+
+3. create a branch to correct the problems:
+
+```
+git checkout -b fix-doc
+```
+
+4. Fix the offending problems.
+
+You can test-drive your fixes by checking that each change works as expected:
+
+```
+make test
+```
+
+5. Commit at each step, so you don't accidentally lose your progress:
+
+```
+git add -A && git commit -m "Fixed missing doctree"
+```
+
+6. Once you're done, push your changes:
+
+```
+git push origin `git branch --show-current`
+```
+
+7. Finally, open a [pull request](https://github.com/openfisca/openfisca-doc/compare/master...fix-doc).
+
+That's it! 🙌
+
 ## Technical note on links
 
 `recommonmark`, the library we use to include Markdown-written pages into the Sphinx-generated documentation, seems to have trouble correctly processing links. The current workarounds are:
