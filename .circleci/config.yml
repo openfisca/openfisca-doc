@@ -27,6 +27,10 @@ jobs:
             - /tmp/venv/openfisca_doc
 
       - run:
+          name: Test doc
+          command: make test
+
+      - run:
           name: Build doc
           command: make build
 
