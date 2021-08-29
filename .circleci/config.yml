@@ -18,7 +18,7 @@ jobs:
             echo "source /tmp/venv/openfisca_doc/bin/activate" >> $BASH_ENV
 
       - run:
-          name: Install app dependencies
+          name: Install doc dependencies
           command: make install
 
       - save_cache:
@@ -27,12 +27,12 @@ jobs:
             - /tmp/venv/openfisca_doc
 
       - run:
-          name: Build app
+          name: Build doc
           command: make html
 
       - run:
-          name: Run app
-          command: python -m http.server 8000 --directory build/html
+          name: Serve doc
+          command: make prod
           background: true
 
       - run:

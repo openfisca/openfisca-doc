@@ -23,6 +23,10 @@ dev:
 	rm -Rf $(BUILDDIR)
 	sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)
 
+# Serve the documentation in prod mode.
+prod:
+	python -m http.server 8000 --directory build/html
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
