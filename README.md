@@ -30,6 +30,13 @@ make dev
 
 The documentation will be served on `http://127.0.0.1:8000`
 
+## Test
+
+To test the documentation, run:
+
+```
+make test
+```
 
 ## Technical note on links
 

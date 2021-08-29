@@ -22,6 +22,10 @@ install:
 build:
 	@${MAKE} html
 
+# Test the doc.
+test:
+	@${MAKE} dummy SPHINXOPTS="-n -q -W"
+
 # Serve the documentation in dev mode.
 dev:
 	@rm -Rf $(BUILDDIR)
@@ -35,6 +39,3 @@ prod:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-test:
-	@${SPHINXBUILD} -M dummy "$(SOURCEDIR)" "$(BUILDDIR)" -n -q -W
