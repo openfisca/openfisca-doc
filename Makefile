@@ -18,14 +18,15 @@ install:
 	pip install --upgrade pip
 	pip install -r requirements.txt --use-deprecated=legacy-resolver
 
+# Serve the documentation in dev mode.
+dev:
+	rm -Rf $(BUILDDIR)
+	sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-dev:
-	rm -Rf $(BUILDDIR)
-	sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)
 
 test:
 	@${SPHINXBUILD} -M dummy "$(SOURCEDIR)" "$(BUILDDIR)" -n -q -W
