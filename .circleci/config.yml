@@ -28,7 +28,7 @@ jobs:
 
       - run:
           name: Build doc
-          command: make html
+          command: make build
 
       - run:
           name: Serve doc

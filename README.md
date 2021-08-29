@@ -15,7 +15,7 @@ make install
 To build the HTML documentation, run:
 
 ```
-make html
+make build
 ```
 
 The HTML output will be generated in the `build/html` directory.
