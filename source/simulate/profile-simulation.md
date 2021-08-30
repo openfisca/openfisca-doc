@@ -70,7 +70,7 @@ You'll be greeted by a very nice looking flame graph like this one:
 
 [![Performance graph](https://cdn.rawgit.com/openfisca/openfisca-doc/master/source/static/img/performance_graph.png)](https://github.com/openfisca/openfisca-doc/blob/master/source/static/img/performance_graph.png)
 
-Now we know that the `impots_directs` formula takes quite a lot of time.
+Looking at the graph, we now know that the `impots_directs` formula takes quite a lot of time.
 
 But, why?
 
