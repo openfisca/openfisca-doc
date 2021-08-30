@@ -162,6 +162,26 @@ Line #   Hits    Time        Per Hit    % Time         Line Contents
 737        48    1615270.0   33651.5     73.0          _P = parameters(period)
 ```
 
+Let's find out where `parameters` is defined by modifying the code as follows:
+
+```diff
+class indemnite_residence(Variable):
+    value_type = float
+    entity = Individu
+    label = "Indemnité de résidence des fonctionnaires"
+    definition_period = MONTH
+    set_input = set_input_divide_by_period
+
+    def formula(individu, period, parameters):
+        traitement_indiciaire_brut = individu('traitement_indiciaire_brut', period)
+        salaire_de_base = individu('salaire_de_base', period)
+        categorie_salarie = individu('categorie_salarie', period)
+        zone_apl = individu.menage('zone_apl', period)
+        TypesZoneApl = zone_apl.possible_values
+-        _P = parameters(period)
++        return parameters
+```
+
 2. The `cotisations_salariales` branch:
 
 ```
