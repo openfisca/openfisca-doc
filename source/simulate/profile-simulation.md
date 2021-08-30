@@ -8,7 +8,7 @@ In the following examples, we use [OpenFisca-France](https://github.com/openfisc
 
 ## Identify a slow simulation
 
-The easier way to spot a slow simulation is to profile your test suite:
+The easier way to spot a slow simulation is to profile your test suite, as follows:
 
 ```
 PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=10" openfisca test --country-package openfisca_france tests
