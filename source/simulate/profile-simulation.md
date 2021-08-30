@@ -76,15 +76,15 @@ The question is, why?
 
 ## Find the bottleneck
 
-In order to why your simulation is slow, we need to find where is the bottleneck.
+In order to identify why the simulation is slow, we need to find the bottleneck. We'll use a line profiler to figure it out.
 
-We'll use a line profiler to figure it out:
+We'll start by installing `line_profiler`:
 
 ```
 pip install line_profiler
 ```
 
-Then we'll `line_profiler` to profile our formula:
+Then we'll use it to profile our formula by adding the `@profile` decorator:
 
 ```python
 class impots_directs(Variable):
@@ -98,7 +98,7 @@ class impots_directs(Variable):
     def formula(menage, period, parameters):
 ```
 
-Finally we run our test with the line profiler enabled:
+Finally, we run our test with the `line_profiler` enabled:
 
 ```
 kernprof -v -l openfisca test --name_filter ir_prets_participatifs_2016 --country-package openfisca_france tests/formulas
@@ -117,7 +117,7 @@ Another formula...
 
 ## Follow the breadcrumbs
 
-We'll repeat the same operation until we find the culprit! (You'll see that results are coherent with the flame graph):
+We'll repeat the same operation until we find the culprit! You'll see that the results are coherent with the flame graph:
 
 ```
 Line #   Hits    Time      Per Hit      % Time         Line Contents
@@ -278,11 +278,11 @@ We can either:
 
 Taking a look at the last line we profiled, we can see that:
 
-- Time per hit is very low —implementing a casting algorithm more efficient than the builtin `int` seems unlikely
-- The range of reasonable values for the `fragment` argument is very low: 31 days, 12 months, 2021 → 2064
-- The are 132300 hits, and that's just for a single simulation (!)
+- time per hit is very low —implementing a casting algorithm more efficient than the builtin `int` seems unlikely
+- the range of reasonable values for the `fragment` argument is very low: 31 days, 12 months, 2021 → 2064
+- there are 132300 hits, and that's just for a single simulation (!)
 
-So let's try to reduce the number of hits.
+So let's try to reduce the number of hits!
 
 Once again, we could for example:
 
@@ -291,11 +291,11 @@ Once again, we could for example:
 
 In this case, creating a lookup table seems more cost-efficient:
 
-- fhe function application has no side effects
-- the range of reasonable values `fragment` is very low
+- the function application has no side effects
+- the range of reasonable values for `fragment` is very low
 - return values are identical for identical values of `fragment`
 
-We'll then use `functools.lru_cache` for our lookup table:
+We'll use `functools.lru_cache` for our lookup table:
 
 ```python
 import functools
@@ -319,7 +319,7 @@ Line #  Hits   Time        Per Hit    % Time         Line Contents
 212       17        40.0       2.4    100.0          return int(fragment)
 ```
 
-Wow! The number of hits to `parse_fragment` decreased by 99%, improving the performance of the generator by 353%!
+Wow! The number of hits to `parse_fragment` decreased by 99%, improving the generator performance by 353%!
 
 That's it!
 
