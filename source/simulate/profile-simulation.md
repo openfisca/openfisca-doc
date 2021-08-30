@@ -208,6 +208,34 @@ Line #   Hits    Time        Per Hit    % Time         Line Contents
 37       2532     359388.0     141.9     77.2          round_base_decimals = round_base_decimals,
 ```
 
+Doing a search to find the definition of `iter_cotisations` gives us the following:
+
+```python
+    def iter_cotisations():
+        # ...
+
+            yield bareme.calc(
+                base * (categorie_salarie == categorie_salarie_type),
+                factor = plafond_securite_sociale,
+                round_base_decimals = round_base_decimals,
+                )
+```
+
+Let's find out where `bareme.calc` is defined by modifying the code as follows:
+
+```diff
+    def iter_cotisations():
+        # ...
+
++            breakpoint()
+            yield bareme.calc(
+                base * (categorie_salarie == categorie_salarie_type),
+                factor = plafond_securite_sociale,
+                round_base_decimals = round_base_decimals,
+                )
+
+```
+
 Great! We've found two performance bottlenecks in OpenFisca-Core:
 
 - `TaxBenefitSystem.get_parameters_at_instant`
