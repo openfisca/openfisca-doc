@@ -173,7 +173,7 @@ class indemnite_residence(Variable):
     set_input = set_input_divide_by_period
 
     def formula(individu, period, parameters):
-+        breakpoint()
++       breakpoint()
 ```
 
 Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
@@ -223,7 +223,7 @@ Let's find out where `bareme.calc` is defined by modifying the code as follows:
     def iter_cotisations():
         # ...
 
-+            breakpoint()
++           breakpoint()
             yield bareme.calc(
                 base * (categorie_salarie == categorie_salarie_type),
                 factor = plafond_securite_sociale,
@@ -577,30 +577,30 @@ class Parameter(AtInstantLike):
         #...
 
         values_list = []
-+        values_dict = sortedcontainers.sorteddict.SortedDict()
++       values_dict = sortedcontainers.sorteddict.SortedDict()
         
         # ...
 
             values_list.append(value_at_instant)
-+            values_dict.update({instant_str: value_at_instant})
++           values_dict.update({instant_str: value_at_instant})
 
         self.values_list: typing.List[ParameterAtInstant] = values_list
-+        self.values_dict = values_dict
++       self.values_dict = values_dict
 
         # ...
 
 
     def _get_at_instant(self, instant):
--        for value_at_instant in self.values_list:
--            if value_at_instant.instant_str <= instant:
--                return value_at_instant.value
--        return None
-+        index = self.values_dict.bisect_right(instant)
+-       for value_at_instant in self.values_list:
+-           if value_at_instant.instant_str <= instant:
+-               return value_at_instant.value
+-       return None
++       index = self.values_dict.bisect_right(instant)
 +
-+        if index > len(self.values_list):
-+            return None
++       if index > len(self.values_list):
++           return None
 +
-+        return self.values_list[::-1][index - 1].value
++       return self.values_list[::-1][index - 1].value
 ```
 
 And performance wise?
