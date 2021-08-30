@@ -58,7 +58,7 @@ performance_graph.html
 
 ## Open the flame graph
 
-Now you can open the file with your favorite browser.
+Now, you can open the file with your favorite browser.
 
 For example, in OS X:
 
