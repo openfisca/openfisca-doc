@@ -490,7 +490,7 @@ ipython
 17.1 s ± 49.2 ms per loop (mean ± std. dev. of 3 runs, 10 loops each)
 ```
 
-Statistically irrelevant :/ but hey! we've learned quite a lot during the journey :)
+Statistically irrelevant :/ but hey! Life is about the journey, not the destination :)
 
 But now what? Reduce recursion? But how? Split-Apply-Combine?
 
