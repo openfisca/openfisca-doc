@@ -14,7 +14,7 @@ The easier way to spot a slow simulation is to profile your test suite, as follo
 PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=10" openfisca test --country-package openfisca_france tests
 
 ...
-
+Which gives you the 10 slowest tests:
 9.69s call     tests/test_basics.py::test_basics[scenario_arguments12]
 9.02s call     tests/reforms/test_plf2016_ayrault_muet.py::test_plf2016_ayrault_muet
 8.91s call     tests/test_basics.py::test_basics[scenario_arguments11]
