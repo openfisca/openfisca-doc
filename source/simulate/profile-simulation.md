@@ -1,6 +1,6 @@
 # How to profile the performance of a simulation
 
-Your simulation is way too slow and you want to know why? We've got you coverred! :)
+Your simulation is way too slow, and you want to know why? We've got you covered! :)
 
 Since [34.4.0](https://github.com/openfisca/openfisca-core/pull/895) you can generate a time performance flame graph in a web page to view the time taken by every calculation in a simulation.
 
