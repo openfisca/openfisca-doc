@@ -113,7 +113,7 @@ Line #   Hits    Time      Per Hit      % Time         Line Contents
 635         1    3488880.0 3488880.0    100.0          isf_ifi_i = menage.members.foyer_fiscal('isf_ifi', period)
 ```
 
-Another formula...
+Another formula... so we'll have to follow the breadcrumbs.
 
 ## Follow the breadcrumbs
 
