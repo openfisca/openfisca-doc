@@ -173,13 +173,22 @@ class indemnite_residence(Variable):
     set_input = set_input_divide_by_period
 
     def formula(individu, period, parameters):
-        traitement_indiciaire_brut = individu('traitement_indiciaire_brut', period)
-        salaire_de_base = individu('salaire_de_base', period)
-        categorie_salarie = individu('categorie_salarie', period)
-        zone_apl = individu.menage('zone_apl', period)
-        TypesZoneApl = zone_apl.possible_values
--        _P = parameters(period)
-+        return parameters
++        breakpoint()
+```
+
+Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
+
+```
+$ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
+
+...
+
+(Pdb) args
+individu = <openfisca_core.populations.population.Population object at 0x11e17fe80>
+period = Period(('month', Instant((2016, 1, 1)), 1))
+parameters = <bound method TaxBenefitSystem.get_parameters_at_instant of <openfisca_france.france_taxbenefitsystem.FranceTaxBenefitSystem object at 0x11c174f98>>
+(Pdb) parameters.__qualname__
+'TaxBenefitSystem.get_parameters_at_instant'
 ```
 
 2. The `cotisations_salariales` branch:
