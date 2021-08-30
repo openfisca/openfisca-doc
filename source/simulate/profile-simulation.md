@@ -183,10 +183,6 @@ $ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
 
 ...
 
-(Pdb) args
-individu = <openfisca_core.populations.population.Population object at 0x11e17fe80>
-period = Period(('month', Instant((2016, 1, 1)), 1))
-parameters = <bound method TaxBenefitSystem.get_parameters_at_instant of <openfisca_france.france_taxbenefitsystem.FranceTaxBenefitSystem object at 0x11c174f98>>
 (Pdb) parameters.__qualname__
 'TaxBenefitSystem.get_parameters_at_instant'
 ```
@@ -234,6 +230,17 @@ Let's find out where `bareme.calc` is defined by modifying the code as follows:
                 round_base_decimals = round_base_decimals,
                 )
 
+```
+
+Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
+
+```
+$ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
+
+...
+
+(Pdb) bareme.calc.__qualname__
+'MarginalRateTaxScale.calc'
 ```
 
 Great! We've found two performance bottlenecks in OpenFisca-Core:
