@@ -472,7 +472,7 @@ In fact, creating a lookup table for parameters would be theoretically more effi
 
 ## Wrap up
 
-Let's finally run our base & proposed scenarios several times so to have something more statistically sound.
+Finally, let's run our base & proposed scenarios several times so as to have something more statistically sound.
 
 IPython's `%timeit` comes handy:
 
