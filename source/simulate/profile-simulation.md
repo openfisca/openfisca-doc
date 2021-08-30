@@ -104,7 +104,7 @@ Finally we run our test with the line profiler enabled:
 kernprof -v -l openfisca test --name_filter ir_prets_participatifs_2016 --country-package openfisca_france tests/formulas
 ``` 
 
-Now we know where lies our most expensive line:
+We now know where our most time consuming line lies:
 
 ```
 Line #   Hits    Time      Per Hit      % Time         Line Contents
