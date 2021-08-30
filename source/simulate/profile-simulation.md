@@ -270,21 +270,67 @@ def get_parameters_at_instant(self, instant):
 Let's see:
 
 ```
-Line #   Hits    Time       Per Hit    % Time             Line Contents
-=======================================================================
-
-355        50    2457587.0  49151.7     99.1              parameters_at_instant = self.parameters.get_at_instant(str(instant))
-16      44100     554056.0     12.6     59.0              instant = str(periods.instant(instant))
-39      44100     277239.0      6.3     44.6              for fragment in instant.split('-', 2)[:3]
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   337                                               @profile
+   338                                               def get_parameters_at_instant(self, instant):
+   339                                                   """
+   340                                                   Get the parameters of the legislation at a given instant
+   341                                           
+   342                                                   :param instant: string of the format 'YYYY-MM-DD' or `openfisca_core.periods.Instant` instance.
+   343                                                   :returns: The parameters of the legislation at a given instant.
+   344                                                   :rtype: :any:`ParameterNodeAtInstant`
+   345                                                   """
+   346      4351       4124.0      0.9      0.2          if isinstance(instant, Period):
+   347      4254       5094.0      1.2      0.2              instant = instant.start
+   348        97        101.0      1.0      0.0          elif isinstance(instant, (str, int)):
+   349                                                       instant = periods.instant(instant)
+   350                                                   else:
+   351        97         54.0      0.6      0.0              assert isinstance(instant, Instant), "Expected an Instant (e.g. Instant((2017, 1, 1)) ). Got: {}.".format(instant)
+   352                                           
+   353      4351       3732.0      0.9      0.2          parameters_at_instant = self._parameters_at_instant_cache.get(instant)
+   354      4351       2108.0      0.5      0.1          if parameters_at_instant is None and self.parameters is not None:
+   355        50    2043730.0  40874.6     99.2              parameters_at_instant = self.parameters.get_at_instant(str(instant))
+   356        50        150.0      3.0      0.0              self._parameters_at_instant_cache[instant] = parameters_at_instant
+   357      4351       1672.0      0.4      0.1          return parameters_at_instant
 ```
 
-This is the whole snippet:
+Let's take a closer look at `parameters.get_at_instant`:
 
 ```python
-instant = periods.Instant(
-    int(fragment)
-    for fragment in instant.split('-', 2)[:3]
-    )
+class AtInstantLike(abc.ABC):
+    # ...
+
+    @profile
+    def get_at_instant(self, instant):
+        instant = str(periods.instant(instant))
+        return self._get_at_instant(instant)
+```
+
+And the results of running the profiler:
+
+```
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    14                                               @profile
+    15                                               def get_at_instant(self, instant):
+    16     54550     681341.0     12.5     61.4          instant = str(periods.instant(instant))
+    17     54550     429057.0      7.9     38.6          return self._get_at_instant(instant)
+```
+
+This is the whole snippet for the expensive `periods.instant` function:
+
+```python
+def instant(instant):
+    # ... 
+
+    if isinstance(instant, str):
+        # ...
+
+        instant = periods.Instant(
+            int(fragment)
+            for fragment in instant.split('-', 2)[:3]
+            )
 ```
 
 We'll refactor it as follows:
