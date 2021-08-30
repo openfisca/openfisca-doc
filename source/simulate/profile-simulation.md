@@ -39,7 +39,7 @@ PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=3" openfisca test --country-package 
 3.02s call     tests/formulas/irpp_prets_participatifs.yaml::
 ```
 
-Terrific! We now know that the first test in `tests/formulas/irpp_prets_participatifs.yaml` is fairly slow.
+Terrific! We now know that the first test in `tests/formulas/irpp_prets_participatifs.yaml` is the slowest, compared to the others.
 
 ## Generate the flame graph
 
