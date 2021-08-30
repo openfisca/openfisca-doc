@@ -150,9 +150,9 @@ Line #   Hits    Time      Per Hit      % Time         Line Contents
 401         4    2579118.0  644779.5     97.2          salaire_imposable = individu('salaire_imposable', period, options = [ADD])
 ```
 
-From `salaire_imposable`, we can follow two different branches.
+From `salaire_imposable`, we can follow two different branches:
 
-The `indemnite_residence` branch:
+1. The `indemnite_residence` branch:
 
 ```
 Line #   Hits    Time        Per Hit    % Time         Line Contents
@@ -162,7 +162,7 @@ Line #   Hits    Time        Per Hit    % Time         Line Contents
 737        48    1615270.0   33651.5     73.0          _P = parameters(period)
 ```
 
-The `cotisations_salariales` branch:
+2. The `cotisations_salariales` branch:
 
 ```
 Line #   Hits    Time        Per Hit    % Time         Line Contents
