@@ -492,6 +492,6 @@ ipython
 
 Statistically irrelevant :/ but hey! we've learned quite a lot during the journey :)
 
-Now what? Reduce recursion? But how? Split-Apply-Combine?
+But now what? Reduce recursion? But how? Split-Apply-Combine?
 
 To be continued...
