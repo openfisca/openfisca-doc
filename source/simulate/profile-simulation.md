@@ -184,7 +184,7 @@ Great! We've found two performance bottlenecks in OpenFisca-Core:
 - `TaxBenefitSystem.get_parameters_at_instant`
 - `MarginalRateTaxScale.calc`
 
-What now?
+How do we proceed?
 
 ## Follow to the core
 
