@@ -45,7 +45,7 @@ Terrific! We now know that the first test in `tests/formulas/irpp_prets_particip
 
 To generate the flame graph, just pass the [`--performance`](https://openfisca.org/doc/openfisca-python-api/openfisca-run-test.html) option to `openfisca test`.
 
-We'll also use the [`--name_filter`](https://openfisca.org/doc/openfisca-python-api/openfisca-run-test.html) option to just profile the first test.
+We'll also use the [`--name_filter`](https://openfisca.org/doc/openfisca-python-api/openfisca-run-test.html) option to profile the first test only.
 
 ```
 openfisca test --performance --name_filter ir_prets_participatifs_2016 --country-package openfisca_france tests/formulas
