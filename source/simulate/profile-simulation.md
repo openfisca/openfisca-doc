@@ -4,7 +4,7 @@ Your simulation is way too slow, and you want to know why? We've got you covered
 
 Since [34.4.0](https://github.com/openfisca/openfisca-core/pull/895) you can generate a time performance flame graph in a web page to view the time taken by every calculation in a simulation.
 
-(We use [OpenFisca-France](https://github.com/openfisca/openfisca-france) in the examples below, but they apply to any package using `openfisca test`).
+In the following examples, we use [OpenFisca-France](https://github.com/openfisca/openfisca-france), but the profiling applies to any country package using `openfisca test`.
 
 ## Identify a slow simulation
 
