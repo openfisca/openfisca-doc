@@ -27,7 +27,7 @@ Which gives you the 10 slowest tests:
 8.17s call     tests/test_tax_rates.py::test_marginal_tax_rate
 ```
 
-Let's now take a closer look at `tests/formulas/irpp_prets_participatifs.yaml`:
+Now, let's take a closer look at this test `tests/formulas/irpp_prets_participatifs.yaml`:
 
 ```
 PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=3" openfisca test --country-package openfisca_france tests/formulas/irpp_prets_participatifs.yaml
