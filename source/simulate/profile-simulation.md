@@ -441,11 +441,20 @@ Once we know it works, can't we go further?
 With a couple of extra caches and code refactoring, we could end up with something like this:
 
 ```python
+from __future__ import annotations
+
+# ...
+
 import functools
 
+# ...
+
+from typing import Optional
+
+# ...
 
 @functools.lru_cache(maxsize = 1000)
-def instant(instant) -> Optional[Instant]:
+def instant(instant) -> Optional[periods.Instant]:
 
     if instant is None:
         return None
@@ -486,19 +495,21 @@ def parse_fragment(fragment: str) -> int:
 
 
 @functools.lru_cache(maxsize = 1000)
-def instant_1(instant: Instant) -> Instant:
+def instant_1(instant: periods.Instant) -> periods.Instant:
     return periods.Instant((instant[0], 1, 1))
 
 
 @functools.lru_cache(maxsize = 1000)
-def instant_2(instant: Instant) -> Instant:
+def instant_2(instant: periods.Instant) -> periods.Instant:
     return periods.Instant((instant[0], instant[1], 1))
 
 
 @functools.lru_cache(maxsize = 1000)
-def instant_3(instant: Instant) -> Instant:
+def instant_3(instant: periods.Instant) -> periods.Instant:
     return periods.Instant(instant)
 ```
+
+Please note that we're importing `annotations` from `__future__` so as to postpone the evaluation of type annotations ([PEP484](https://www.python.org/dev/peps/pep-0484/) and [PEP563](https://www.python.org/dev/peps/pep-0563/)) so as to avoid [cyclic imports](https://discuss.python.org/t/how-to-add-type-hints-for/7459).
 
 Let's profile again:
 
