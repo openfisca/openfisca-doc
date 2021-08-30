@@ -72,7 +72,7 @@ You'll be greeted by a very nice looking flame graph like this one:
 
 Looking at the graph, we now know that the `impots_directs` formula takes quite a lot of time.
 
-But, why?
+The question is, why?
 
 ## Find the bottleneck
 
