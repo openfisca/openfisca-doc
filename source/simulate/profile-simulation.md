@@ -466,7 +466,7 @@ Line #  Hits     Time      Per Hit    % Time         Line Contents
 
 It's actually worse... but why?
 
-One hypothesis: even if, compared to a linear search with complexity _O(n)_, a binary search should more efficient in that it has a complexity of _O(log(n))_, it will actually be more efficient for large numbers of _n_, which is not usually the case here.
+One hypothesis is, even if, compared to a linear search with complexity _O(n)_, a binary search should be more efficient in that it has a complexity of _O(log(n))_, it will actually be more efficient for large numbers of _n_, which is not usually the case here.
 
 In fact, creating a lookup table for parameters would be theoretically more efficient. That would require refactoring as the current `values_list` object is not hashable. Indeed, even using a more appropiate data structure could lead to better performance.
 
