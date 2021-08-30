@@ -363,6 +363,7 @@ instant = periods.Instant(fragments)
 
 # ...
 
+@profile
 def parse_fragment(fragment: str) -> int:
     return int(fragment)
 ```
