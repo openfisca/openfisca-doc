@@ -231,7 +231,7 @@ fragments = [int(fragment) for fragment in fragments]
 instant = periods.Instant(fragment for fragment in fragments)
 ```
 
-So as to see where's the bottleneck:
+So as to see where the bottleneck is:
 
 ```
 Line #  Hits     Time      Per Hit    % Time         Line Contents
