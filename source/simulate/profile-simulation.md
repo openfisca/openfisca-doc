@@ -284,7 +284,7 @@ Taking a look at the last line we profiled, we can see that:
 
 So let's try to reduce the number of hits.
 
-Here again, we could for example:
+Once again, we could for example:
 
 - reduce recursion
 - create a lookup table
