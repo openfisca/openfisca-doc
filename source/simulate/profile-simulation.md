@@ -154,94 +154,94 @@ From `salaire_imposable`, we can follow two different branches:
 
 1. The `indemnite_residence` branch:
 
-```
-Line #   Hits    Time        Per Hit    % Time         Line Contents
-====================================================================
+    ```
+    Line #   Hits    Time        Per Hit    % Time         Line Contents
+    ====================================================================
 
-199        48    1951692.0   40660.2     59.3          indemnite_residence = individu('indemnite_residence', period)
-737        48    1615270.0   33651.5     73.0          _P = parameters(period)
-```
+    199        48    1951692.0   40660.2     59.3          indemnite_residence = individu('indemnite_residence', period)
+    737        48    1615270.0   33651.5     73.0          _P = parameters(period)
+    ```
 
-Let's find out where `parameters` is defined by modifying the code as follows:
+    Let's find out where `parameters` is defined by modifying the code as follows:
 
-```diff
-class indemnite_residence(Variable):
-    value_type = float
-    entity = Individu
-    label = "Indemnité de résidence des fonctionnaires"
-    definition_period = MONTH
-    set_input = set_input_divide_by_period
+    ```diff
+    class indemnite_residence(Variable):
+        value_type = float
+        entity = Individu
+        label = "Indemnité de résidence des fonctionnaires"
+        definition_period = MONTH
+        set_input = set_input_divide_by_period
 
-    def formula(individu, period, parameters):
-+       breakpoint()
-```
+        def formula(individu, period, parameters):
+    +       breakpoint()
+    ```
 
-Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
+    Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
 
-```
-$ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
+    ```
+    $ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
 
-...
+    ...
 
-(Pdb) parameters.__qualname__
-'TaxBenefitSystem.get_parameters_at_instant'
-```
+    (Pdb) parameters.__qualname__
+    'TaxBenefitSystem.get_parameters_at_instant'
+    ```
 
 2. The `cotisations_salariales` branch:
 
-```
-Line #   Hits    Time        Per Hit    % Time         Line Contents
-====================================================================
+    ```
+    Line #   Hits    Time        Per Hit    % Time         Line Contents
+    ====================================================================
 
-202        48    1054648.0   21971.8     32.0          cotisations_salariales = individu('cotisations_salariales', period)
-180        48     784194.0   16337.4     74.7          cotisations_salariales_contributives = individu('cotisations_salariales_contributives', period)
-117        48     265682.0    5535.0     34.1          agff_salarie = individu('agff_salarie', period)
-224        48     264976.0    5520.3     99.9          variable_name = "agff_salarie"
-67        480     583017.0    1214.6     66.7          ) + (
-113        40      50839.0    1271.0     96.1          bareme_name = bareme_name,
-99       1000     360294.0     360.3     44.8          categorie_salarie = categorie_salarie,
-40       1192     449850.0     377.4     98.5          return - sum(iter_cotisations())
-37       2532     359388.0     141.9     77.2          round_base_decimals = round_base_decimals,
-```
+    202        48    1054648.0   21971.8     32.0          cotisations_salariales = individu('cotisations_salariales', period)
+    180        48     784194.0   16337.4     74.7          cotisations_salariales_contributives = individu('cotisations_salariales_contributives', period)
+    117        48     265682.0    5535.0     34.1          agff_salarie = individu('agff_salarie', period)
+    224        48     264976.0    5520.3     99.9          variable_name = "agff_salarie"
+    67        480     583017.0    1214.6     66.7          ) + (
+    113        40      50839.0    1271.0     96.1          bareme_name = bareme_name,
+    99       1000     360294.0     360.3     44.8          categorie_salarie = categorie_salarie,
+    40       1192     449850.0     377.4     98.5          return - sum(iter_cotisations())
+    37       2532     359388.0     141.9     77.2          round_base_decimals = round_base_decimals,
+    ```
 
-Performing a search to find the definition of `iter_cotisations` gives us the following:
+    Performing a search to find the definition of `iter_cotisations` gives us the following:
 
-```python
-    def iter_cotisations():
-        # ...
+    ```python
+        def iter_cotisations():
+            # ...
 
-            yield bareme.calc(
-                base * (categorie_salarie == categorie_salarie_type),
-                factor = plafond_securite_sociale,
-                round_base_decimals = round_base_decimals,
-                )
-```
+                yield bareme.calc(
+                    base * (categorie_salarie == categorie_salarie_type),
+                    factor = plafond_securite_sociale,
+                    round_base_decimals = round_base_decimals,
+                    )
+    ```
 
-Let's find out where `bareme.calc` is defined by modifying the code as follows:
+    Let's find out where `bareme.calc` is defined by modifying the code as follows:
 
-```diff
-    def iter_cotisations():
-        # ...
+    ```diff
+        def iter_cotisations():
+            # ...
 
-+           breakpoint()
-            yield bareme.calc(
-                base * (categorie_salarie == categorie_salarie_type),
-                factor = plafond_securite_sociale,
-                round_base_decimals = round_base_decimals,
-                )
+    +           breakpoint()
+                yield bareme.calc(
+                    base * (categorie_salarie == categorie_salarie_type),
+                    factor = plafond_securite_sociale,
+                    round_base_decimals = round_base_decimals,
+                    )
 
-```
+    ```
 
-Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
+    Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
 
-```
-$ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
+    ```
+    $ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
 
-...
+    ...
 
-(Pdb) bareme.calc.__qualname__
-'MarginalRateTaxScale.calc'
-```
+    (Pdb) bareme.calc.__qualname__
+    'MarginalRateTaxScale.calc'
+    ```
 
 Great! We've found two performance bottlenecks in OpenFisca-Core:
 

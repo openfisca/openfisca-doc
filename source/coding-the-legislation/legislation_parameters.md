@@ -26,48 +26,48 @@ In this file structure:
 
 1. Find where the parameter fits
 
-A parameter is located inside a **node**, that has the same name as the directory it is contained in.
->**Example**: `tax_on_salary.public_sector` is the node that contains the `tax_on_salary.public_sector.rate`parameter.
+    A parameter is located inside a **node**, that has the same name as the directory it is contained in.
+    >**Example**: `tax_on_salary.public_sector` is the node that contains the `tax_on_salary.public_sector.rate`parameter.
 
 2. Create a new parameter YAML file
 
-A legislative parameter is defined by a YAML file of the same name. Possible attributes are:
-* `description` (optional) Description;
-* `metadata` (optional) Can be:
-  * `reference` (optional) Legislative reference;
-  * `unit` (optional) Can be:
-    * `year`: The values are years;
-    * `currency`: The values are in the unit of currency of the country;
-    * `/1`: The values are percentages, with `1.0`=100%;
-* `values`: Value of the parameter for several dates.
+    A legislative parameter is defined by a YAML file of the same name. Possible attributes are:
+    * `description` (optional) Description;
+    * `metadata` (optional) Can be:
+      * `reference` (optional) Legislative reference;
+      * `unit` (optional) Can be:
+        * `year`: The values are years;
+        * `currency`: The values are in the unit of currency of the country;
+        * `/1`: The values are percentages, with `1.0`=100%;
+    * `values`: Value of the parameter for several dates.
 
-Sample file `parameters/universal_income/amount.yaml`
-```yaml
-description: Universal income
-metadata:
-  unit: currency
-values:
-  1993-01-01:
-    value: 1000
-  2010-01-01:
-    value: 1500
+    Sample file `parameters/universal_income/amount.yaml`
+    ```yaml
+    description: Universal income
     metadata:
-      reference: http://law.reference.org/universal_income
-  2020-01-01:
-    expected: 1700
-```
+      unit: currency
+    values:
+      1993-01-01:
+        value: 1000
+      2010-01-01:
+        value: 1500
+        metadata:
+          reference: http://law.reference.org/universal_income
+      2020-01-01:
+        expected: 1700
+    ```
 
-In this example, the parameter `universal_income.amount` is:
-* undefined before 1993;
-* equal to 1000 from 1993 to 2010;
-* equal to 1500 in 2010
-* expected to be raised to 1700 "local currency" in 2020.
+    In this example, the parameter `universal_income.amount` is:
+    * undefined before 1993;
+    * equal to 1000 from 1993 to 2010;
+    * equal to 1500 in 2010
+    * expected to be raised to 1700 "local currency" in 2020.
 
-The ordering of the dates has no effect. It is recommended to add legislative references for every value?
+    The ordering of the dates has no effect. It is recommended to add legislative references for every value?
 
 3. Use the parameter in a variable
 
-See [this example of a variable using legislation parameters](./10_basic_example.md#example-with-legislation-parameters).
+    See [this example of a variable using legislation parameters](./10_basic_example.md#example-with-legislation-parameters).
 
 ### Naming conventions and reserved words
 
