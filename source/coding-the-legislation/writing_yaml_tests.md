@@ -169,7 +169,7 @@ You can find examples of YAML tests of tax and benefit systems with reforms appl
 
 A neutralized variable in a YAML test will return its default value when computed.
 
-This is useful for example when you're testing a [reform](../key-concepts/reforms.md) of the [tax benefit system](../key-concepts/tax_and_benefit_system.md), allowing you to focus on the effects of the specific domains of the reform, [all other things being equal](https://en.wikipedia.org/wiki/Ceteris_paribus).
+This is useful for example when you're testing a [reform](../key-concepts/reforms.md) of the [tax benefit system](../key-concepts/tax_and_benefit_system.md), allowing you to focus only on the effects of the specific domains of the reform, [all other things being equal](https://en.wikipedia.org/wiki/Ceteris_paribus).
 
 ```yaml
 - name: "Result outside neutralized variables"
