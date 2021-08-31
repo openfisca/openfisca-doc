@@ -165,6 +165,32 @@ Values can be arithmetic expressions too.
 
 You can find examples of YAML tests of tax and benefit systems with reforms applied on the [country template](https://github.com/openfisca/country-template/tree/master/openfisca_country_template/tests/reforms).
 
+### Testing formulas using neutralized variables
+
+A neutralized variable in a YAML test will return its default value when computed.
+
+This is useful for example when you're testing a [reform](../key-concepts/reforms.md) of the [tax benefit system](../key-concepts/tax_and_benefit_system.md), allowing you to focus on the effects of the specific domains of the reform, [all other things being equal](https://en.wikipedia.org/wiki/Ceteris_paribus).
+
+```yaml
+- name: "Result outside neutralized variables"
+  period: 2021-01
+  neutralized_variables:
+    - housing_allowance
+  input:
+    age: 30
+  output:
+    basic_income: 600
+
+- name: "Result within neutralized variables"
+  period: 2021-01
+  neutralized_variables:
+    - basic_income
+  input:
+    age: 30
+  output:
+    basic_income: 0
+```
+
 ## Running a test
 
 To run YAML tests, use the command line tool `openfisca test`, documented [here](../../openfisca-python-api/openfisca_test.html):
