@@ -204,7 +204,7 @@ Line #   Hits    Time        Per Hit    % Time         Line Contents
 37       2532     359388.0     141.9     77.2          round_base_decimals = round_base_decimals,
 ```
 
-Doing a search to find the definition of `iter_cotisations` gives us the following:
+Performing a search to find the definition of `iter_cotisations` gives us the following:
 
 ```python
     def iter_cotisations():
@@ -509,7 +509,7 @@ def instant_3(instant: periods.Instant) -> periods.Instant:
     return periods.Instant(instant)
 ```
 
-Please note that we're importing `annotations` from `__future__` so as to postpone the evaluation of type annotations ([PEP484](https://www.python.org/dev/peps/pep-0484/) and [PEP563](https://www.python.org/dev/peps/pep-0563/)) so as to avoid [cyclic imports](https://discuss.python.org/t/how-to-add-type-hints-for/7459).
+Please note that we're importing `annotations` from `__future__` so as to postpone the evaluation of type annotations ([PEP484](https://www.python.org/dev/peps/pep-0484/) and [PEP563](https://www.python.org/dev/peps/pep-0563/)), in order to avoid [cyclic imports](https://discuss.python.org/t/how-to-add-type-hints-for/7459).
 
 Let's profile again:
 
