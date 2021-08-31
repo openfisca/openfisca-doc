@@ -50,3 +50,5 @@ Then you can use the [runsnakerun](http://www.vrplumber.com/programming/runsnake
 > Under Debian GNU/Linux:
 >
 >     aptitude install runsnakerun
+
+For a throughout example on profiling and debugging please take a look at [How to profile the performance of a simulation](../simulate/profile-simulation.md).
