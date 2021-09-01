@@ -6,3 +6,6 @@ Holders
 
 .. autoclass:: Holder
     :members:
+
+.. automodule:: openfisca_core.holders.helpers
+    :members:
