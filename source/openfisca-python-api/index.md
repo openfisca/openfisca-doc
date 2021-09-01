@@ -12,7 +12,6 @@ Modules:
    parameters
    reforms
    simulations
-   simulation_builder
    entities
    populations
    test_runner
