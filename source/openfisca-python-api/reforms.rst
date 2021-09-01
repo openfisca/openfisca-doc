@@ -2,5 +2,7 @@
 Reforms
 =======
 
-.. automodule:: openfisca_core.reforms
+.. module:: openfisca_core.reforms
+
+.. autoclass:: Reform
     :members:
