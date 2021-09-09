@@ -18,10 +18,6 @@ install:
 	@pip install --upgrade pip
 	@pip install -r requirements.txt --use-deprecated=legacy-resolver
 
-# Build the doc.
-build:
-	@${MAKE} html
-
 # Test the doc.
 test:
 	@${MAKE} dummy SPHINXOPTS="-n -q -W"
