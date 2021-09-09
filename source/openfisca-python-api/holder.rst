@@ -2,5 +2,10 @@
 Holders
 =======
 
-.. automodule:: openfisca_core.holders
+.. module:: openfisca_core.holders
+
+.. autoclass:: Holder
+    :members:
+
+.. automodule:: openfisca_core.holders.helpers
     :members:

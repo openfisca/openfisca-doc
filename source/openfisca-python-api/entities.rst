@@ -2,8 +2,16 @@
 Entities
 ========
 
-.. autoclass:: openfisca_core.entities.Entity
+.. module:: openfisca_core.entities
+
+.. autoclass:: Role
     :members:
 
-.. autoclass:: openfisca_core.entities.GroupEntity
+.. autoclass:: Entity
+    :members:
+
+.. autoclass:: GroupEntity
+    :members:
+
+.. automodule:: openfisca_core.entities.helpers
     :members:

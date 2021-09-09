@@ -12,7 +12,6 @@ Modules:
    parameters
    reforms
    simulations
-   simulation_builder
    entities
    populations
    test_runner
@@ -20,6 +19,8 @@ Modules:
    enum_array
    holder
    simulation_generator
+   periods
+   errors
 ```
 
 Scripts:

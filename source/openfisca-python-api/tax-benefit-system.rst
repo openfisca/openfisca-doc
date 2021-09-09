@@ -2,5 +2,7 @@
 TaxBenefitSystem
 =================
 
-.. automodule:: openfisca_core.taxbenefitsystems
+.. module:: openfisca_core.taxbenefitsystems
+
+.. autoclass:: TaxBenefitSystem
     :members:

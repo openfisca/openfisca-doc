@@ -2,10 +2,13 @@
 Enum & EnumArray
 ================
 
-.. currentmodule:: openfisca_core.indexed_enums
+.. module:: openfisca_core.indexed_enums
 
 .. autoclass:: Enum
   :members:
 
 .. autoclass:: EnumArray
   :members:
+
+.. automodule:: openfisca_core.indexed_enums.config
+    :members:
