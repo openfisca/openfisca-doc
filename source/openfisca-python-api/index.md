@@ -7,6 +7,7 @@ Modules:
 .. toctree::
    :maxdepth: 1
 
+   commons
    tax-benefit-system
    variables
    parameters
@@ -21,6 +22,7 @@ Modules:
    simulation_generator
    periods
    errors
+   types
 ```
 
 Scripts:

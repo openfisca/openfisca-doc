@@ -7,7 +7,6 @@
 from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
 import guzzle_sphinx_theme
-import recommonmark
 
 # -- Project information -----------------------------------------------------
 
@@ -25,6 +24,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.imgmath',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
     'sphinx_markdown_tables',
