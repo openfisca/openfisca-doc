@@ -7,7 +7,6 @@
 from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
 import guzzle_sphinx_theme
-import recommonmark
 
 # -- Project information -----------------------------------------------------
 
@@ -25,6 +24,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.imgmath',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
     'sphinx_markdown_tables',
@@ -64,6 +64,12 @@ github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/master/'
 
 suppress_warnings = ['image.nonlocal_uri']
 
+
+def missing_reference(app, env, node, contnode):
+    if node["reftype"] == "class" and node["reftarget"] == "NDArray":
+        return contnode
+
+
 def setup(app):
     app.add_config_value('recommonmark_config', {
         'url_resolver': lambda url: url.replace('.md', '.html'),
@@ -72,3 +78,4 @@ def setup(app):
     app.add_transform(AutoStructify)  # Manage avanced Markdown files with AutoStructify
     app.add_stylesheet('style.css')
     app.add_javascript('scripts.js')
+    app.connect("missing-reference", missing_reference)
