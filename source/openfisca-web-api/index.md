@@ -15,7 +15,7 @@ Using a web interface, app developers can access information and computations wi
 
 ## Public France API
 
-The latest version of the France web API is [`api.fr.openfisca.org/api/latest`](https://api.fr.openfisca.org/api/latest). Its endpoints are documented in [`fr.openfisca.org/legislation/swagger`](https://fr.openfisca.org/legislation/swagger). This API is provided for prototyping purposes only: it has no SLA (service level agreement, i.e. guarantee of availability) and is kept up to date automatically, with no regard for breaking changes. No support will be provided for this instance. You should not build production systems on top of it.
+The latest version of the France web API is [`api.fr.openfisca.org/latest`](https://api.fr.openfisca.org/latest). Its endpoints are documented in [`fr.openfisca.org/legislation/swagger`](https://fr.openfisca.org/legislation/swagger). This API is provided for prototyping purposes only: it has no SLA (service level agreement, i.e. guarantee of availability) and is kept up to date automatically, with no regard for breaking changes. No support will be provided for this instance. You should not build production systems on top of it.
 
 Anyone wanting a stable OpenFisca Web API is invited to [host their own](#hosting-an-api-instance).
 
