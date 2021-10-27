@@ -15,18 +15,9 @@ Using a web interface, app developers can access information and computations wi
 
 ## Public France API
 
-The latest version of the France web api is [`fr.openfisca.org/api/latest`](https://fr.openfisca.org/api/latest). Its endpoints are documented in [`fr.openfisca.org/legislation/swagger`](https://fr.openfisca.org/legislation/swagger). This API has no guarantee of stability over time. Building a web app on top of it is not recommended.
+The latest version of the France web API is [`api.fr.openfisca.org/latest`](https://api.fr.openfisca.org/latest). Its endpoints are documented in [`fr.openfisca.org/legislation/swagger`](https://fr.openfisca.org/legislation/swagger). This API is provided for prototyping purposes only: it has no SLA (service level agreement, i.e. guarantee of availability) and is kept up to date automatically, with no regard for breaking changes. No support will be provided for this instance. You should not build production systems on top of it.
 
-The [DINSIC's OpenFisca Team](https://github.com/orgs/openfisca/teams/france-contrib-dinsic) maintains two stable versions of the Web API. Every 6 months, on January 1st and July 1st, the oldest stable API is shut down, and the current newest version of France is served instead. This means every Web API version is maintained for a year.
-
-Currently served Web API versions are listed in [https://fr.openfisca.org/api](https://fr.openfisca.org/api)
-
-These stable Web APIs are meant to be used for building minimum viable products, proofs of concept and prototypes. The idea is to help web app developers quickly test out new ideas, find their first users or secure funding.
-
-Please keep in mind they become outdated relatively quickly. Anyone wanting an up-to-date and stable OpenFisca Web API is invited to [host their own](#hosting-an-api-instance).
-
-
-The stability of this API is guaranteed over time.
+Anyone wanting a stable OpenFisca Web API is invited to [host their own](#hosting-an-api-instance).
 
 ## Use Cases
 
