@@ -68,6 +68,22 @@ For instance:
     irpp: -1181
 ```
 
+- If variables are defined for different periods, you can
+override the default period specified for the test by providing
+periodic values.
+For instance:
+
+```yaml
+- name: Income below 50,000 and Age at or over 55 qualifies
+  period: 2021-12-01
+  input:
+    age: 55 # Defined with the period DAY
+    income: # Defined with the period YEAR
+      2021: 49999
+  output:
+    eligible: True
+```
+
 ### Testing formulas by giving a test case
 
 This is the simplest way to test formulas when you need to give input values for many individuals
