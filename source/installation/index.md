@@ -19,7 +19,7 @@ To install an existing country model, we advise you to refer to the model reposi
 
 ## Generic requirements
 
-OpenFisca source code is in [Python language](https://www.python.org/). 
+OpenFisca source code is in [Python open source language](https://www.python.org/).
 
 To run or modify the source code of a model, you will need a `Python` installation.
 You may for example want to modify the source code to test OpenFisca syntaxes or write some law or regulation rule.  
@@ -28,6 +28,23 @@ To call the model throught OpenFisca Web API, you can:
 * rely on already installed Web API instances and have nothing to install on your local environement.
 * or, run the Web API on your local environment; this requires a `Python` installation.
 You may for exemple want to call OpenFisca Web API to run some calculations for a Web site.
+
+### How to install Python
+
+Python installation depends on your operating system.
+
+You will find the default installation instructions in [Python official documentation](https://www.python.org/downloads/).
+
+Microsoft Windows users, can also rely [conda](https://docs.conda.io/en/latest/) package and environment manager to use [OpenFisca-Country-Template](https://anaconda.org/search?q=openfisca-country-template) or one of the openfisca packages [published as conda packages](https://anaconda.org/search?q=openfisca).
+We recommend this option for an easier installation but the available packages list is shorter.
+
+To install Python through conda: 
+* install the [Anaconda distribution](https://anaconda.org) for Python and conda.
+* or, for users with less disk space, install the minimal [Miniconda distribution](https://docs.conda.io/en/latest/miniconda.html) for Python and conda.
+
+
+[Docker](https://www.docker.com) users can create a container and rely on [Python official image](https://hub.docker.com/_/python) instead.
+
 
 ## Installation issues in specific environments
 
