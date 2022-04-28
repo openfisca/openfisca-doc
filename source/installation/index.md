@@ -46,6 +46,31 @@ Then here are some recommendations for Docker or Windows users:
   * install the [Anaconda distribution](https://anaconda.org) for Python and conda.
   * or, for users with less disk space, install the minimal [Miniconda distribution](https://docs.conda.io/en/latest/miniconda.html) for Python and conda.
 
+## Install the OpenFisca-Country-Template to run or modify the source code
+
+> This step requires the Python installation described above.
+
+You will find the `OpenFisca-Country-Template` installation instruction in its README: see the [Install Instructions for Users and Contributors](https://github.com/openfisca/country-template#install-instructions-for-users-and-contributors).
+
+Other OpenFisca models have their own documentation. You will find the existing repositories list on [this page of openfisca.org](https://openfisca.org/en/countries/) website.
+
+## Test or install the OpenFisca-Country-Template Web API
+
+You can call `OpenFisca-Country-Template` Web API without installing it by relying on the demonstration instance. Or install it on your local environment for further testing.
+
+### Call a demonstration instance
+
+OpenFisca community hosts a demonstration instance for the `OpenFisca-Country-Template` Web API. 
+
+Here is a [swagger interface](https://legislation.demo.openfisca.org/swagger) allowing you to interact with this Web API endpoints. For further information, [this section of the documentation](./../openfisca-web-api/endpoints.md) describes OpenFisca Web APIs endpoints.
+
+### Run and call a local instance
+
+> This step requires the Python installation described above.
+
+To run a local instance of `OpenFisca-Country-Template` Web API, you need to: 
+1. install `OpenFisca-Country-Template` on your local environment as described by the [Install Instructions for Users and Contributors](https://github.com/openfisca/country-template#install-instructions-for-users-and-contributors) section of the README,
+2. serve the Web API on your environment by running one command as described [here](https://github.com/openfisca/country-template#serve-this-country-package-with-the-openfisca-web-api).
 
 ## Installation issues in specific environments
 
