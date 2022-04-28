@@ -16,6 +16,18 @@ This section allows you to install the `OpenFisca-Country-Template` as a generic
 
 To install an existing country model, we advise you to refer to the model repository documentation (usually, the README file). 
 
+## Generic requirements
+
+OpenFisca source code is in [Python language](https://www.python.org/). 
+
+To run or modify the source code of a model, you will need a `Python` installation.
+You may for example want to modify the source code to test OpenFisca syntaxes or write some law or regulation rule.  
+
+To call the model throught OpenFisca Web API, you can:
+* rely on already installed Web API instances and have nothing to install on your local environement.
+* or, run the Web API on your local environment; this requires a `Python` installation.
+You may for exemple want to call OpenFisca Web API to run some calculations for a Web site.
+
 ## Installation issues in specific environments
 
 As the OpenFisca community becomes larger, issues that only affect a small percentage of users arise.
