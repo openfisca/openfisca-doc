@@ -1,23 +1,26 @@
 # <i class="fas fa-home"></i> Before you start
 
-[OpenFisca](https://openfisca.org) is an open source platform to write rules as code.
+[OpenFisca](https://openfisca.org) is an open source engine to write rules as code.
 
 Describe your tax and benefit system, provide a situation as input (i.e income), ask for a calculation as output (i.e. income tax), and get your results.
 
-* **For economists**: OpenFisca allows you to use survey data to simulate the impact of a  reform on a given government’s budget and on a population’s standard of living.
-* **For developers**: OpenFisca allows you to easily create web applications based on your simulation results, thanks to the web API. You can build a great variety of other services by coding formulas, hosting your own instance or building your own extensions.
-* **For public administrations**: OpenFisca allows you to stop building your micro-simulation software and tax & benefit calculators on your own. Instead, contribute to OpenFisca, collaborate with other administrations and reduce costs to the taxpayer.
+## Who uses OpenFisca
 
-## How does OpenFisca work?
+* **Economists and lawmakers**: calculate the effects of policies. Combine them with survey data to simulate the impact of a reform on a given government’s budget and on a population’s standard of living.
+* **Developers and companies**: easily create web applications based on simulation results, thanks to the [web API](openfisca-web-api/index.md). You can build a great variety of services by coding formulas, hosting your own instance and building your own extensions.
+* **Public administrations**: stop building your own micro-simulation software and tax & benefit calculators. Instead, contribute to OpenFisca, collaborate with other administrations and reduce costs to the taxpayer.
 
-### 1 - Choose an available tax and benefit system or roll your own
+## Path to using OpenFisca
 
-With OpenFisca, you can:
-* Use an existing tax and benefit system (see the [list of systems already built](https://openfisca.org/en/countries/))
-* [Build a new tax and benefit system](coding-the-legislation/bootstrapping_a_new_country_package.md) if it doesn’t exist already
-* [Contribute](contribute/index.md) to an existing system by adding or improving elements of the legislation
+### 1 - Use an available country package or roll your own
 
-How to turn legal code into Python code?
+To get started, you can:
+
+* Use an existing tax and benefit system (see the [list of publicly-available country packages](https://openfisca.org/en/countries/)).
+* [Build a new tax and benefit system](coding-the-legislation/bootstrapping_a_new_country_package.md) if it doesn’t exist already.
+* [Contribute](contribute/index.md) to an existing system by adding or improving elements of the legislation.
+
+Then, you will turn legal code into OpenFisca code, which is a subset of the Python programming language with many helpful tools:
 
 * First, identify some legislation that can be expressed as an arithmetic operation.
 * Then, translate them into [formulas, variables, parameters, etc.](coding-the-legislation/index.md)
@@ -28,13 +31,13 @@ How to turn legal code into Python code?
 
 With OpenFisca, you can [run a simulation](simulate/index.md) on a single situation or on a whole population. Since the data you need depends on what you’re trying to calculate, OpenFisca doesn’t provide any data up front.
 
-Do you want to help users find their eligibility for a social benefit in your country? Go and ask them for their income and demographic information in order to provide them with an answer (do not forget to comply with GDPR!).
+Do you want to help users find their eligibility for a social benefit in your country? Build a user interface asking them for their income and demographic information in order to provide them with an answer (do not forget to comply with GDPR!).
 
 Are you trying to simulate the impact of a new housing tax on behalf of the OECD? Find your government's open survey data to simulate the impact of that tax reform on the poorest 20% of a country.
 
-### 3 - Use your results
+### 3 - Publish your results
 
-There are two ways to use your results:
+There are two ways to generate results:
 
 * If you have a background in web development or want to build a web application with the results of your simulation, you’ll want to use the [web API](openfisca-web-api/index.md).
 * If you have a background in datascience, want to use large datasets, or want to dynamically apply changes to the system, you’ll rather use the [Python API](openfisca-python-api/index.md).
