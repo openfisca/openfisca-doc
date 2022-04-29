@@ -22,7 +22,7 @@ How to turn legal code into Python code?
 * First, identify some legislation that can be expressed as an arithmetic operation.
 * Then, try to translate them into [formulas, variables, parameters, etc.](coding-the-legislation/index.md)
 * You can even [build some tests](coding-the-legislation/writing_yaml_tests.md) to verify your implementation of the law.
-* Lost? You are not the first one to go through that! Join us [here](https://forms.gle/kA6bijAJBL4kJz4e8) to ask the community for some hints and to celebrate your progress.
+* Lost? You are not the first one to go through that! You can [find help](find-help.md) by reaching out to the community.
 
 ### 2 - Choose what kind of input data you need
 
