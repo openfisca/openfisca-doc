@@ -10,7 +10,7 @@ Describe your tax and benefit system, provide a situation as input (i.e income),
 
 ## How does OpenFisca work?
 
-### 1 - Choose an available tax and benefit system or roll your own:
+### 1 - Choose an available tax and benefit system or roll your own
 
 With OpenFisca, you can:
 * Use an existing tax and benefit system (see the [list of systems already built](https://openfisca.org/en/countries/))
@@ -44,7 +44,7 @@ Also, there are tons of libraries to help you illustrate your results ([plot.ly]
 
 Please make sure you read our [licence information](licence.md) before using results based on OpenFisca.
 
-## Things OpenFisca won’t do for you:
+## Things OpenFisca won’t do for you
 
 * Behaviour-based analysis. OpenFisca is a static micro-simulation model, so it will provide you with results “as-of-tomorrow” (i.e. a new tax bracket won’t affect consumption).
 * OpenFisca is contributive: if the legislation you need is not described yet, you’re the best person to add it (take a look at our [contribution guidelines](contribute/index.md)).
