@@ -1,4 +1,4 @@
-# In an offline environment
+# Install in an offline environment
 
 If you need to install OpenFisca on a server with no Internet access, here is how to do it.
 
