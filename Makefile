@@ -1,7 +1,3 @@
-# Minimal makefile for Sphinx documentation
-#
-
-# You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
@@ -13,12 +9,11 @@ help:
 
 .PHONY: help Makefile
 
-# Install doc dependencies.
+# Install dependencies.
 install:
 	@pip install --upgrade pip
 	@pip install -r requirements.txt --use-deprecated=legacy-resolver
 
-# Test the doc.
 test:
 	@${MAKE} dummy SPHINXOPTS="-q -W"
 
@@ -31,7 +26,7 @@ dev:
 prod:
 	@python -m http.server 8000 --directory build/html
 
-# Catch-all target: route all unknown targets to Sphinx using the new
+# Catch-all target: route all unknown targets to Sphinx using the
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
