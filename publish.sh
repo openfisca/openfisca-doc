@@ -11,7 +11,7 @@ git fetch  # Make sure we are up to date with git remote branches
 git add --all
 git config --global user.name "OpenFisca-Bot"
 git config --global user.email "bot@openfisca.org"
-git diff-index --quiet HEAD || git commit --message="[skip ci] Push from openfisca doc"
+git diff-index --quiet HEAD || git commit --message="[skip ci] Update doc"
 git push https://github.com/openfisca/openfisca.org.git gh-pages
 if git status --untracked-files=no ; then
 	echo "There was an issue pushing to openfisca.org"
@@ -23,5 +23,5 @@ git checkout --detach
 git reset --soft origin/doc-html
 git checkout doc-html
 git add --all
-git diff-index --quiet HEAD || git commit --message="[skip ci] Push from openfisca doc"
+git diff-index --quiet HEAD || git commit --message="[skip ci] Update doc"
 git push
