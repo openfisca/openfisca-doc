@@ -4,16 +4,17 @@
 .. toctree::
    :hidden:
 
+   run-web-no-local-install
    install-python
    install-openfisca-country-template
    install-openfisca-web-api
    call-hosted-web-api
 
-howto-web-no-local-install
-howto_docker
-offline-environment
-windows-no-admin
-test_situations
+   
+   howto_docker
+   offline-environment
+   windows-no-admin
+   test_situations
 ```
 
 This section allows you to install the `OpenFisca-Country-Template` as a generic example of an OpenFisca model. This will also allow you to run the documentation examples on your local environment.
@@ -35,7 +36,7 @@ As the OpenFisca community becomes larger, issues that only affect a small perce
 
 The purpose of this section is to bring together the clever solutions the community came up with and share them with all OpenFisca users.
 
-- [How to use OpenFisca on the web (no installation required on your computer)](./howto-web-no-local-install.md)
+- [How to use OpenFisca on the web (no installation required on your computer)](./run-web-no-local-install.md)
 - [How to use OpenFisca with Docker](./howto_docker.md)
 - [How to install OpenFisca in an offline environment](./offline-environment.md)
 - [How to work on OpenFisca on a Windows without being administrator](./windows-no-admin.md)
