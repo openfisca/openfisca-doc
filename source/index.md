@@ -54,8 +54,6 @@ Please make sure you read our [licence information](licence.md) before using res
 * **Magic legislation parsing.** OpenFisca is a framework for humans to collaborate on translating rules into code. It does not ingest lawyer speak and automatically produce developer speak. Regulation is ambiguous and needs human interpretation before being codified.
 * **Textual comparisons.** OpenFisca shines in dealing with numbers: enumerated values are a later addition, and support for serving and testing string values is not built in.
 
-## Find inspiration
+## Feeling lost?
 
-Wonderful products rely on OpenFisca! Check them out on our [showcase](https://fr.openfisca.org/showcase/).
-
-Feeling a bit lost? You’re not sure if OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org) and we’ll tell you!
+You’re not sure if OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org) and we’ll tell you!
