@@ -18,14 +18,19 @@
 
 This section guides you in installing the [`OpenFisca-Country-Template`](https://github.com/openfisca/country-template) country package as a generic example of an OpenFisca country package. This will also allow you to run the documentation examples on your local environment.
 
-This model is fictitious and you will obviously want to work with one that models the set of rules of an actual jurisdiction. The steps for installing should be similar for every package, but we advise you to refer to your target country package repository documentation for specific instructions.
+This model is fictitious and for your project, you will obviously want to work with one that models the set of rules of an actual jurisdiction. The steps for installing should be similar for every package, but we advise you to refer to your target country package repository documentation for specific instructions.
 
-If you are working on a web application or/and would like to test the web API online, no installation is needed. 
-See further information on the [Call a public web API](call-hosted-web-api.md) page. 
+## The path to OpenFisca-Country-Template
 
-To test OpenFisca syntaxes and start writing some law or regulation rule, the [Install the OpenFisca-Country-Template page](./install-openfisca-country-template.md) is here for you!
+You have nothing to install:
 
-Then, if you want to call the model throught your own instance of OpenFisca Web API to run some calculations for a website, see the [Test or install the OpenFisca-Country-Template Web API](./install-openfisca-web-api.md) page.
+* If you are working on a web application or/and would like to test the web API online, no installation is needed. See further information on the [Call a public web API](call-hosted-web-api.md) page. 
+* To test how to use an OpenFisca country package without editing its content, the faster is to run OpenFisca country model on the web! The [Run on the web](./run-web-no-local-install.md) section will allow you to run calculations and skip local installation. 
+
+And here is the install documentation:
+
+* If you want to call the model throught your own instance of OpenFisca Web API to run some calculations for a website. See the [Test or install the OpenFisca-Country-Template Web API](./install-openfisca-web-api.md) page.
+* To test OpenFisca syntaxes and start editing some law or regulation rule. The [Install the OpenFisca-Country-Template page](./install-openfisca-country-template.md) is here for you!
 
 ## Installation issues in specific environments
 
