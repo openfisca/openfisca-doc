@@ -5,12 +5,10 @@
    :hidden:
 
    run-web-no-local-install
-   install-python
    install-openfisca-country-template
    install-openfisca-web-api
    call-hosted-web-api
 
-   
    offline-environment
    windows-no-admin
    test_situations
