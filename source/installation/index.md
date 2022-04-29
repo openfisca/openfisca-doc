@@ -11,7 +11,6 @@
    call-hosted-web-api
 
    
-   howto_docker
    offline-environment
    windows-no-admin
    test_situations
