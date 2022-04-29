@@ -6,7 +6,7 @@ Describe your tax and benefit system, provide a situation as input (i.e income),
 
 * **For economists**: OpenFisca allows you to use survey data to simulate the impact of a  reform on a given government’s budget and on a population’s standard of living.
 * **For developers**: OpenFisca allows you to easily create web applications based on your simulation results, thanks to the web API. You can build a great variety of other services by coding formulas, hosting your own instance or building your own extensions.
-* **For public administrations**: OpenFisca allows you to stop building your micro-simulation software and tax & benefit calculators on your own. Instead, contribute to OpenFisca, collaborate with other administrations and reduce the bill for the taxpayer.
+* **For public administrations**: OpenFisca allows you to stop building your micro-simulation software and tax & benefit calculators on your own. Instead, contribute to OpenFisca, collaborate with other administrations and reduce costs to the taxpayer.
 
 ## How does OpenFisca work?
 
@@ -20,27 +20,26 @@ With OpenFisca, you can:
 How to turn legal code into Python code?
 
 * First, identify some legislation that can be expressed as an arithmetic operation.
-* Then, try to translate them into [formulas, variables, parameters, etc.](coding-the-legislation/index.md)
-* You can even [build some tests](coding-the-legislation/writing_yaml_tests.md) to verify your implementation of the law.
+* Then, translate them into [formulas, variables, parameters, etc.](coding-the-legislation/index.md)
+* [Build some tests](coding-the-legislation/writing_yaml_tests.md) to verify your implementation of the law.
 * Lost? You are not the first one to go through that! You can [find help](find-help.md) by reaching out to the community.
 
-### 2 - Choose what kind of input data you need
+### 2 - Identify the input data you need
 
-With OpenFisca, you can [run a simulation](simulate/index.md) on a single situation or on a whole population. OpenFisca doesn’t provide any data, the data you need depends on what you’re trying to calculate.
+With OpenFisca, you can [run a simulation](simulate/index.md) on a single situation or on a whole population. Since the data you need depends on what you’re trying to calculate, OpenFisca doesn’t provide any data up front.
 
-Do you want to help users find their eligibility for a social benefit in your country? Go and ask the users of your application to give you the income and demographic information you need in order to provide them with an answer (please do not forget to be GDPR compliant!).
+Do you want to help users find their eligibility for a social benefit in your country? Go and ask them for their income and demographic information in order to provide them with an answer (do not forget to comply with GDPR!).
 
-Are you trying to simulate the impact of a new housing tax on behalf of the OECD? ask your government for the survey data you need to simulate the impact of that housing tax reform on the poorest 20% of a country.
+Are you trying to simulate the impact of a new housing tax on behalf of the OECD? Find your government's open survey data to simulate the impact of that tax reform on the poorest 20% of a country.
 
 ### 3 - Use your results
 
 There are two ways to use your results:
 
-* If you want to build a web service with the results of your simulation, you’ll definitely want to take a look at our [web API](openfisca-web-api/index.md).
+* If you have a background in web development or want to build a web application with the results of your simulation, you’ll want to use the [web API](openfisca-web-api/index.md).
+* If you have a background in datascience, want to use large datasets, or want to dynamically apply changes to the system, you’ll rather use the [Python API](openfisca-python-api/index.md).
 
-* If you’re working on your thesis, you’ll rather use our [Python API](openfisca-python-api/index.md).
-
-Also, there are tons of libraries to help you illustrate your results ([plot.ly](https://plot.ly) for instance, will get you those nice charts you’ve seen elsewhere).
+There are tons of libraries to help you illustrate your results ([plot.ly](https://plot.ly) for instance will get you those nice charts you’ve seen elsewhere).
 
 Please make sure you read our [licence information](licence.md) before using results based on OpenFisca.
 
@@ -52,6 +51,6 @@ Please make sure you read our [licence information](licence.md) before using res
 
 ## Find inspiration
 
-Wonderful products rely on OpenFisca! Check them out on our [showcase page](https://fr.openfisca.org/showcase/).
+Wonderful products rely on OpenFisca! Check them out on our [showcase](https://fr.openfisca.org/showcase/).
 
 Feeling a bit lost? You’re not sure if OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org) and we’ll tell you!
