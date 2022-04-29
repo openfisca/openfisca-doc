@@ -44,7 +44,7 @@ There are two ways to calculate the effect of the rules modelled in a country pa
 
 The output of this simulation will be either Python objects or JSON. Many other libraries will then help you represent these results graphically ([plot.ly](https://plot.ly) for instance will get you those nice charts you’ve seen elsewhere).
 
-Please make sure you read our [license](licence.md) before publishing results based on OpenFisca.
+Please make sure you read our [license](license.md) before publishing results based on OpenFisca.
 
 ## Things OpenFisca won’t do for you
 
