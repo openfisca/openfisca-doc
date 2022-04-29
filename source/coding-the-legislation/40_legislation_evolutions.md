@@ -1,6 +1,6 @@
 # Legislation evolutions
 
-Openfisca handles the fact that the legislation changes over time.
+OpenFisca handles the fact that the legislation changes over time.
 
 ## Parameter evolution
 
