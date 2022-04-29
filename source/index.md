@@ -45,9 +45,11 @@ Please make sure you read our [licence information](licence.md) before using res
 
 ## Things OpenFisca won’t do for you
 
-* Behaviour-based analysis. OpenFisca is a static micro-simulation model, so it will provide you with results “as-of-tomorrow” (i.e. a new tax bracket won’t affect consumption).
-* OpenFisca is contributive: if the legislation you need is not described yet, you’re the best person to add it (take a look at our [contribution guidelines](contribute/index.md)).
-* OpenFisca shines in dealing with numbers: Enumerated values are a later addition, and support for serving/testing string values is not built in.
+* **Behaviour-based analysis.** OpenFisca is a static micro-simulation model, so it will provide you with results “as-of-tomorrow”, without taking retroactive effects or “elasticity” into account (e.g. a new tax bracket won’t affect consumption).
+* **Human decisions.** This might seem obvious, but is worth reiterating: any process that includes human judgement can not be automated. Human decisions can be modelled as input variables, but OpenFisca does not aim at doing machine learning on past decisions for probabilistic results, for example.
+* **Zero effort modelling.** While our community is strong and you can often benefit from its shared efforts, OpenFisca is contributive: if the legislation you need is not described yet, you’re the best person to add it (take a look at our [contribution guidelines](contribute/index.md) first).
+* **Magic legislation parsing.** OpenFisca is a framework for humans to collaborate on translating rules into code. It does not ingest lawyer speak and automatically produce developer speak. Regulation is ambiguous and needs human interpretation before being codified.
+* **Textual comparisons.** OpenFisca shines in dealing with numbers: enumerated values are a later addition, and support for serving and testing string values is not built in.
 
 ## Find inspiration
 
