@@ -29,22 +29,22 @@ Then, you will turn legal code into OpenFisca code, which is a subset of the Pyt
 
 ### 2 - Identify the input data you need
 
-With OpenFisca, you can [run a simulation](simulate/index.md) on a single situation or on a whole population. Since the data you need depends on what you’re trying to calculate, OpenFisca doesn’t provide any data up front.
+With OpenFisca, you can calculate the effect of legislation on a single situation or on a whole population by running a “[simulation](simulate/index.md)”. Since the data you need depends on what you’re trying to calculate, OpenFisca doesn’t provide any data up front.
 
 Do you want to help users find their eligibility for a social benefit in your country? Build a user interface asking them for their income and demographic information in order to provide them with an answer (do not forget to comply with GDPR!).
 
-Are you trying to simulate the impact of a new housing tax on behalf of the OECD? Find your government's open survey data to simulate the impact of that tax reform on the poorest 20% of a country.
+Are you trying to assess the impact of a new housing tax on behalf of the OECD? Find your government's open survey data to simulate the impact of that tax reform on the poorest 20% of a country.
 
-### 3 - Publish your results
+### 3 - Run simulations
 
-There are two ways to generate results:
+There are two ways to calculate the effect of the rules modelled in a country package on the given input data with OpenFisca:
 
 * If you have a background in web development or want to build a web application with the results of your simulation, you’ll want to use the [web API](openfisca-web-api/index.md).
 * If you have a background in datascience, want to use large datasets, or want to dynamically apply changes to the system, you’ll rather use the [Python API](openfisca-python-api/index.md).
 
-There are tons of libraries to help you illustrate your results ([plot.ly](https://plot.ly) for instance will get you those nice charts you’ve seen elsewhere).
+The output of this simulation will be either Python objects or JSON. Many other libraries will then help you represent these results graphically ([plot.ly](https://plot.ly) for instance will get you those nice charts you’ve seen elsewhere).
 
-Please make sure you read our [licence information](licence.md) before using results based on OpenFisca.
+Please make sure you read our [license](licence.md) before publishing results based on OpenFisca.
 
 ## Things OpenFisca won’t do for you
 
