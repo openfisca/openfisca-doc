@@ -56,4 +56,4 @@ Please make sure you read our [licence information](licence.md) before using res
 
 ## Feeling lost?
 
-You’re not sure if OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org) and we’ll tell you!
+You’re not sure if OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org?subject=Contact%20from%20doc) and we’ll tell you!
