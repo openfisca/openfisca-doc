@@ -2,7 +2,7 @@
 
 When running a simulation with the Python API, you might want to understand how the result was calculated and what intermediate variables and parameters have been taken into account.
 
-> To trace a simulation calculation with the Web API, please see [/trace endpoint documentation](../openfisca-web-api/trace-simulation.md).
+> To trace a simulation calculation with the web API, please see [/trace endpoint documentation](../openfisca-web-api/trace-simulation.md).
 
 
 ## Activating the simulation tracer

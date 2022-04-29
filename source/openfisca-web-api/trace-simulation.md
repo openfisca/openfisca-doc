@@ -31,7 +31,7 @@ Let's say that you want to calculate the `disposable_income` for one person earn
 }
 ```
 
-If you send this situation to your `country-template` model Web API or try it out on the `/trace` endpoint in the [Swagger interface](https://demo.openfisca.org/legislation/swagger), you get the following response composed of three sections:
+If you send this situation to your `country-template` model web API or try it out on the `/trace` endpoint in the [Swagger interface](https://demo.openfisca.org/legislation/swagger), you get the following response composed of three sections:
 
 * `entitiesDescription`: lists the persons and how they belong to the model group entities,
 * `requestedCalculations`: lists the requested calculations (i.e. variables with values at `null`),

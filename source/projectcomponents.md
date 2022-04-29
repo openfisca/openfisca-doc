@@ -6,12 +6,12 @@ OpenFisca is a modular project. Depending on your goals, you will install and in
 
 ## Web API
 
-The Web API lets you access the legislation [Parameters](./key-concepts/parameters.md) and [Variables](./key-concepts/variables.md).
+The web API lets you access the legislation [Parameters](./key-concepts/parameters.md) and [Variables](./key-concepts/variables.md).
 
->**Example**: [Mes Aides](https://mes-aides.gouv.fr) uses the OpenFisca Web API to calculate OpenFisca-France benefits.
+>**Example**: [Mes Aides](https://mes-aides.gouv.fr) uses the OpenFisca web API to calculate OpenFisca-France benefits.
 
-- To explore the OpenFisca-France Web API services, use the [French Legislation Explorer](https://fr.openfisca.org/legislation/)
-- To query the OpenFisca Web API in your app, see the [Web API endpoints description](./openfisca-web-api/endpoints.md)
+- To explore the OpenFisca-France web API services, use the [French Legislation Explorer](https://fr.openfisca.org/legislation/)
+- To query the OpenFisca web API in your app, see the [web API endpoints description](./openfisca-web-api/endpoints.md)
 - To host your own instance of the OpenFisca API, go to the [installation documentation](./openfisca-web-api/index.md)
 
 ## Extensions Packages

@@ -1,4 +1,4 @@
-# <i class="fas fa-cloud"></i> OpenFisca Web API
+# <i class="fas fa-cloud"></i> OpenFisca web API
 
 ```{toctree}
 :hidden:
@@ -16,11 +16,11 @@ Using a web interface, app developers can access information and computations wi
 
 The latest version of the France web API is [`api.fr.openfisca.org/latest`](https://api.fr.openfisca.org/latest). Its endpoints are documented in [`fr.openfisca.org/legislation/swagger`](https://fr.openfisca.org/legislation/swagger). This API is provided for prototyping purposes only: it has no SLA (service level agreement, i.e. guarantee of availability) and is kept up to date automatically, with no regard for breaking changes. No support will be provided for this instance. You should not build production systems on top of it.
 
-Anyone wanting a stable OpenFisca Web API is invited to [host their own](#hosting-an-api-instance).
+Anyone wanting a stable OpenFisca web API is invited to [host their own](#hosting-an-api-instance).
 
 ## Use Cases
 
-The following services use the OpenFisca Web API:
+The following services use the OpenFisca web API:
 
 - [fr.openfisca.org/legislation](https://fr.openfisca.org/legislation), giving you information on available OpenFisca variables.
 - [Mes Aides](https://mes-aides.gouv.fr), the French social benefits simulator.
