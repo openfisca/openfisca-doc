@@ -4,6 +4,15 @@
 
 ## Installation
 
+This documentation is built with Sphinx, a Python documentation generator. You will thus need to install a [Python runtime](https://www.python.org/downloads/) to build it. The version to install is specified in the `runtime.txt` file.
+
+In order to avoid conflicting dependencies with other projects on your local machine, it is recommended to install its dependencies in a virtual environment. To create a virtual environment, run:
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
 To install dependencies, run:
 
 ```
