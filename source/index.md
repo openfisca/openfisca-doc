@@ -1,4 +1,4 @@
-# <i class="fas fa-home"></i> What is OpenFisca
+# <i class="fas fa-home"></i> Before you start
 
 [OpenFisca](https://openfisca.org) is an open source platform to write rules as code.
 
