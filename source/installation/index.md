@@ -21,12 +21,13 @@ This model is fictitious and for your project, you will obviously want to work w
 
 If you are working on a web application or would like to test the web API online:
 * No installation is needed if you [call a public instance](./call-hosted-web-api.md) of the web API.
-* [Install the country package web API](./install-openfisca-web-api.md) to operate your own web API instance with no usage limitations or send requests with private data, .
+* [Install the country package web API](./install-openfisca-web-api.md) to operate your own web API instance with no usage limitations or to send requests with private data, .
 
-To call country package calculations from scripts or edit the country package:
-* To use an OpenFisca country package without editing the model itself, the fastest is to [load the country package on a web hosted Python runtime](./run-web-no-local-install.md).
-* To use an OpenFisca country package without editing the model itself and call calculations from your machine, you can [install the country package on your local environment](./install-wheel.md).
-* Finally, to both use and contribute to the rules of a country package, [install it in editable mode](./install-openfisca-country-template.md).
+If you want to use an OpenFisca country package without editing the model rules:
+* The fastest is to [load the country package on a web hosted Python runtime](./run-web-no-local-install.md).
+* To call calculations from your machine, you can [install the country package on your local environment](./install-wheel.md).
+
+If you want to both, use and contribute to the rules of a country package, [install it in editable mode](./install-openfisca-country-template.md).
 
 Finally, some edge cases has been identified by the OpenFisca community. Here is some additional documentation to help you:
 * If you need to [install OpenFisca on a Windows machine without administrative rights](./windows-no-admin.md).
