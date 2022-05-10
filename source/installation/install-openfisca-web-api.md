@@ -1,4 +1,4 @@
-# Install the OpenFisca-Country-Template web API
+# Install the country package web API
 
 You can call `OpenFisca-Country-Template` web API without installing it by [relying on the demonstration instance](./call-hosted-web-api.md). Or install it on your local environment for further testing.
 

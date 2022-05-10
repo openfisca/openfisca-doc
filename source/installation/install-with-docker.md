@@ -1,4 +1,4 @@
-# Install OpenFisca-Country-Template with Docker
+# Install the country package with Docker
 
 When you want to use OpenFisca, either to run it or edit its code, you need to setup a specific environement.
 
