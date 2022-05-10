@@ -10,7 +10,7 @@ We assume that it is possible to copy files to the server, for example via a USB
 
 We are going to create a first virtualenv in which we'll use `pip` to download the `.whl` files in a specific directory.
 
-Here we use [pew](https://github.com/berdario/pew) to simplify virtualenv management.
+Here we use [pew](https://github.com/berdario/pew) to simplify virtualenv management. We also use `Python` v3.7 and `OpenFisca-France` model as an example that you can adapt to your country package; then, make sure to choose [your country package Python version](./presets.md#how-to-find-the-python-version-of-a-model)).
 
 ```sh
 pip install pew
@@ -53,7 +53,7 @@ pip list | grep OpenFisca-France
     OpenFisca-France 15.1.0
 ```
 
-Run the basic tests which confirm that OpenFisca-France is correctly installed:
+Run the basic tests which confirm that `OpenFisca-France` country package is correctly installed:
 
 ```sh
 python -m openfisca_france.tests.test_basics
