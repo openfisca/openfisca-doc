@@ -1,8 +1,10 @@
 # Install on Windows without admin rights
 
-_Warning: running OpenFisca on a machine **with** administrator privileges would make your life much easier. Using a MacOS or a Linux would be even better._
+_⚠️ Warning: running OpenFisca on a machine **with** administrator privileges would make your life much easier. Using a MacOS or a Linux would be even better._
 
 _If you do not have a choice other than using a restricted Windows, this guide sums up the "recipe" to install OpenFisca in such an environment._
+
+The following steps are shared as an example of the process and only applied to an old OpenFisca-France revision ([v.18.9.10](https://github.com/openfisca/openfisca-france/blob/master/CHANGELOG.md#18910-829)).
 
 ## 1. Install Git
 
@@ -17,7 +19,7 @@ Python is the programing language used in OpenFisca. It can be installed without
 
 - Download miniconda from [https://conda.io/miniconda](https://conda.io/miniconda). Make sure to choose [your country package Python version](./presets.md#how-to-find-the-python-version-of-a-model) for Windows. If you don't know if your system is 32-bit or 64-bit, pick 32-bit.
 - Install it. At some point, the installer will ask you for a "Destination Folder". You can keep the default or choose another one, but in all case **copy paste the path to this folder somewhere**. It will be useful later. For instance, this path may look like `C:\Users\my-name\AppData\Local\Miniconda2`.
-- Run the program "Git Bash" from the "Start" menu. This should open a command line. Copy and paste the following lines in the console, after **adapting the first line using the path you noted in the last step**:
+- Run the program "Git Bash" from the "Start" menu ("Démarrer"). This should open a command line. Copy and paste the following lines in the console, after **adapting the first line using the path you noted in the last step and the python version** (set to `3.7` here):
 
 ```sh
 echo 'MINICONDA_PATH="C:\Users\form\AppData\Local\Miniconda2"' >> .bashrc
@@ -41,7 +43,7 @@ A version number should be printed, and no error message should appear. Congrats
 
 ## 3. Install OpenFisca
 
-- Download the OpenFisca-France [installation files](https://github.com/openfisca/openfisca-france-offline/archive/master.zip)
+- Download the country package installation files: openfisca package + dependencies. Here is an example with [OpenFisca-France v.18.9.10 files](https://github.com/openfisca/openfisca-france-offline/archive/master.zip)
 - Extract the content of this archive in a directory.
 - Go to that directory, then to the `windows` subdirectory. If you installed Python in 32 bits, **right-click** on `32-bits`. If you installed Python in 64 bits, **right-click** on the `64-bits` subdirectory. Choose "Git Bash Here"
 - Run the command `pip install *`
