@@ -15,7 +15,9 @@
 
 This section guides you in installing the [`OpenFisca-Country-Template`](https://github.com/openfisca/country-template) country package as a generic example of an OpenFisca country package. This will also allow you to run the documentation examples on your local environment.
 
-This model is fictitious and for your project, you will obviously want to work with one that models the set of rules of an actual jurisdiction. We advise you to refer to your target country package repository documentation for specific instructions. Nevertheless, the steps for installing should be similar for every package: 
+This model is fictitious and for your project, you will obviously want to work with one that models the set of rules of an actual jurisdiction. 
+
+We advise you to refer to your target country package repository documentation for specific instructions. Nevertheless, the steps for installing should be similar for every package: 
 
 * If you are working on a web application or would like to test the web API online, no installation is needed if you [call a public instance](./call-hosted-web-api.md) of the web API.
 * To use an OpenFisca country package without editing the model itself, the fastest is to [load the country package on a web hosted Python runtime](./run-web-no-local-install.md).
