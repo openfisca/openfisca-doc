@@ -25,14 +25,14 @@ It should return the version of your installed version control system. If [Git](
 
 ## Install Python
 
-`Python` installation is compulsory to run OpenFisca code on your local environment. And its version depend on the OpenFisca country model that you would like to use.
+`Python` installation is compulsory to run OpenFisca code on your local environment. The `Python` version depend on the OpenFisca country model that you would like to use.
 
 ### How to find the Python version of a model
 
 We describe here how to find the Python version of the `OpenFisca-Country-Template`. Other country models have a similar structure.
 
-To identify the Python revision of the `OpenFisca-Country-Template` we:
-1. Look into the [setup.py file](https://github.com/openfisca/country-template/blob/master/setup.py) of its [repository](https://github.com/openfisca/country-template),
+To identify the Python revision of the `OpenFisca-Country-Template`:
+1. Look into the [setup.py file](https://github.com/openfisca/country-template/blob/master/setup.py) of [OpenFisca-Country-Template repository](https://github.com/openfisca/country-template),
 2. Check the `classifiers` values where the Python version is described by a value like `"Programming Language :: Python :: 3.7"` (here `3.7`)
 3. When multiple Python versions are listed, we advise you to install the most recent one (3.8 for example if 3.7 and 3.8 are listed).
 
