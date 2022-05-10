@@ -1,4 +1,4 @@
-# On Windows without admin rights
+# Install on Windows without admin rights
 
 _Warning: running OpenFisca on a machine **with** administrator privileges would make your life much easier. Using a MacOS or a Linux would be even better._
 
@@ -15,7 +15,7 @@ Git is a tool that will help you version your work. It also comes with a shell *
 
 Python is the programing language used in OpenFisca. It can be installed without administrators rights through a software named Miniconda.
 
-- Download miniconda from [https://conda.io/miniconda](https://conda.io/miniconda). Make sure to choose the **Python 3.7** version for Windows. If you don't know if your system is 32-bit or 64-bit, pick 32-bit.
+- Download miniconda from [https://conda.io/miniconda](https://conda.io/miniconda). Make sure to choose [your country package Python version](./presets.md#how-to-find-the-python-version-of-a-model) for Windows. If you don't know if your system is 32-bit or 64-bit, pick 32-bit.
 - Install it. At some point, the installer will ask you for a "Destination Folder". You can keep the default or choose another one, but in all case **copy paste the path to this folder somewhere**. It will be useful later. For instance, this path may look like `C:\Users\my-name\AppData\Local\Miniconda2`.
 - Run the program "Git Bash" from the "Start" menu. This should open a command line. Copy and paste the following lines in the console, after **adapting the first line using the path you noted in the last step**:
 

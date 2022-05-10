@@ -11,6 +11,7 @@
    install-openfisca-country-template
    install-openfisca-web-api
    install-with-docker
+   windows-no-admin
    offline-environment
 ```
 
@@ -26,3 +27,7 @@ To call country package calculations from scripts or edit the country package:
 * To use an OpenFisca country package without editing the model itself, the fastest is to [load the country package on a web hosted Python runtime](./run-web-no-local-install.md).
 * To use an OpenFisca country package without editing the model itself and call calculations from your machine, you can [install the country package on your local environment](./install-wheel.md).
 * Finally, to both use and contribute to the rules of a country package, [install it in editable mode](./install-openfisca-country-template.md).
+
+Finally, some edge cases has been identified by the OpenFisca community. Here is some additional documentation to help you:
+* If you need to [install OpenFisca on a Windows machine without administrative rights](./windows-no-admin.md).
+* If you need to [install OpenFisca on a server without internet access](./offline-environment.md).
