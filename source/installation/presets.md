@@ -3,7 +3,7 @@
 OpenFisca runs with [Python](https://www.python.org/).
 Its source code is managed through [Git](https://git-scm.com) version control system.
 
-> If your local environement already has `Python` (with `pip`) and `Git`, you can skip the next subsections and go to [Install OpenFisca-Country-Template](./install-wheel.md#install-openfisca-country-template). 🙂
+> If your local environement already has `Python` (with `pip`) and `Git`, you can skip the next subsections and go to [getting started](./index.md) options. 🙂
 
 ## Check Environment presets
 

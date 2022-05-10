@@ -23,4 +23,4 @@ pip list
 ```
 `OpenFisca-Country-Template` should now be in the list.
 
-You're all set! `OpenFisca-Country-Template` is now installed and ready to run your calculations! 🎉 
+You're all set! `OpenFisca-Country-Template` is now installed and ready to run your calculations. 

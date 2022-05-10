@@ -4,7 +4,7 @@ You can call `OpenFisca-Country-Template` web API without installing it by [rely
 
 ## Run and call a local instance
 
-> OpenFisca runs with [Python](https://www.python.org/). If it's not installed on your environment, the [presets Python install section](presets.md#install-python) is here for you!
+OpenFisca runs with [Python](https://www.python.org/). If it's not installed on your environment, the [presets Python install section](presets.md#install-python) is here for you!
 
 To run a local instance of `OpenFisca-Country-Template` web API, you need to: 
 
