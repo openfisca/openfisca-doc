@@ -1,4 +1,4 @@
-## Replicating a situation along axes
+# Replicating a situation along axes
 
 So far we've seen two ways of populating a Simulation object with data:
 - either describe a [small population](./run-simulation.md#test-cases) with fine control over input variables and over the relationship between individuals and group entities;
@@ -51,7 +51,7 @@ array([[   0.     ,    0.     ,    0.     ,    0.     ],
 
 We can see that, for the requested period, the variable `salary` **of the first individual in each group** is varying in increments from 0 to 3000.
 
-### Targeting individuals
+## Targeting individuals
 
 The control provided by an axis is fine-grained and targets one individual. If you wanted to set Javier's salary instead of Ari's, you could do so by providing the *index* of Javier in the original situation; since our indices are 0-based, this is 3:
 
@@ -84,7 +84,7 @@ array([[   0.     ,    0.     ,    0.     ,    0.     ],
 
 Axes are particularly interesting when you want to chart how one variable relates to another, as in [this tutorial notebook](https://mybinder.org/v2/gh/openfisca/tutorial/master?filepath=notebooks/how_to_handle_axes.ipynb).
 
-### Adding axes: parallel axes
+## Adding axes: parallel axes
 
 We noted above that the "axes" are in fact an array of arrays, which allows us to use several axes at once : parallel **or** perpendicular axes.
 
@@ -135,7 +135,7 @@ array([[   0.     ,    0.     ,    0.     ,    0.     ],
 
 For this to work, the `count` values of parallel axes must be the same. An error will be raised if they are different.
 
-### Adding axes: perpendicular axes
+## Adding axes: perpendicular axes
 
 Sets of axes in the outer array are "perpendicular", that is, they result in independent variation. For instance, we might have:
 

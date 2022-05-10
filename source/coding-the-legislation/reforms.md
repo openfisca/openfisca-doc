@@ -12,7 +12,6 @@ Let's for instance assume that we want to simulate the effect of a reform that c
 We would write such a reform this way:
 
 ```py
-
 class income_tax(Variable):
     entity = Household
     label = u'Alternative formula to calculate the income tax, under experimentation'

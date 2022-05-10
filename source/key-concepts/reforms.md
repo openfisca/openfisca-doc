@@ -11,7 +11,7 @@ To use reforms or code your own ones, check the [reform documentation](../coding
 > Note that OpenFisca simulates only the *mechanics* of taxes and benefits, but doesn't take into account the retro-action of economic agents. For instance, you can estimate the increase of the households disposable income in case a universal basic income is introduced, but OpenFisca won't tell you anything about the consumption increase this policy may generate.
 
 
-### Differences between reforms and extensions
+## Differences between reforms and extensions
 
 Reforms are sometimes confused with another mechanism: [extensions](../contribute/extensions.md). These two mechanisms do not have the same purpose:
 

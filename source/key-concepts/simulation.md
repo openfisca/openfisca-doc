@@ -1,6 +1,6 @@
 # Simulation, Computation
 
-#### Simulation: the framework of computation
+## Definition
 
 A *Simulation* is basically the OpenFisca frame for calculating taxes or benefits.
 
@@ -10,7 +10,7 @@ To calculate any variable you need to create a *Simulation* from the *TaxBenefit
 
 It's possible to run many independent simulations using the same `TaxBenefitSystem`.
 
-#### Computing variables
+## Computing variables
 
 To compute taxes and benefits, you need to define on whom you want to do that and what you already know about those persons or groups of persons. This is what you will set as input data for your *Simulation*.
 
@@ -20,7 +20,7 @@ Now all the settings are given to run computation of taxes or benefits.
 
 > For further information: see how to run a simulation in [this section](../simulate/run-simulation.md) and the following [tutorial](http://mybinder.org:/repo/openfisca/tutorial) "How to handle periods"
 
-###### Application: how to calculate a variable
+### Application: how to calculate a variable
 
 ```python
 # Calcul of the 'impot sur le revenu des personnes physiques'
