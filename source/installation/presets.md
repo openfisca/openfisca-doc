@@ -1,9 +1,11 @@
 # Presets to OpenFisca installation
 
+> Some use cases require an OpenFisca installation in a local environment where some tools should be pre-installed. First of all, check your use case in the [getting started](./index.md) page.
+
 OpenFisca runs with [Python](https://www.python.org/).
 Its source code is managed through [Git](https://git-scm.com) version control system.
 
-> If your local environement already has `Python` (with `pip`) and `Git`, you can skip the next subsections and go to [getting started](./index.md) options. 🙂
+If your local environement already has `Python` (with `pip`) and `Git`, you can skip this page and go to [getting started](./index.md) options. 
 
 ## Check Environment presets
 
