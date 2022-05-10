@@ -4,7 +4,6 @@
 #
 # Full list of Sphinx options is available at http://www.sphinx-doc.org/en/master/config
 
-from recommonmark.transform import AutoStructify
 import guzzle_sphinx_theme
 
 # -- Project information -----------------------------------------------------
@@ -70,7 +69,6 @@ def setup(app):
         'url_resolver': lambda url: url.replace('.md', '.html'),
         'enable_auto_toc_tree': False
         }, True)
-    app.add_transform(AutoStructify)  # Manage avanced Markdown files with AutoStructify
     app.add_css_file('style.css')
     app.add_js_file('scripts.js')
     app.connect("missing-reference", missing_reference)
