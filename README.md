@@ -80,9 +80,3 @@ git push origin `git branch --show-current`
 7. Finally, open a [pull request](https://github.com/openfisca/openfisca-doc/compare/master...fix-doc).
 
 That's it! 🙌
-
-## Technical note on links
-
-`recommonmark`, the library we use to include Markdown-written pages into the Sphinx-generated documentation, seems to have trouble correctly processing links. The current workarounds are:
-- Adding an extra `../` to links in Markdown-written pages pointing towards the rST-written pages
-- Dynamically rewriting some links [in Javascript](./source/static/scripts.js)
