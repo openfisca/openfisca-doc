@@ -4,7 +4,6 @@
 #
 # Full list of Sphinx options is available at http://www.sphinx-doc.org/en/master/config
 
-from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
 import guzzle_sphinx_theme
 
@@ -17,6 +16,7 @@ author = 'contact@openfisca.org'
 
 extensions = [
     'guzzle_sphinx_theme',
+    'myst_parser',
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.doctest',
@@ -27,7 +27,6 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
-    'sphinx_markdown_tables',
     'sphinxarg.ext',
 ]
 
@@ -35,10 +34,6 @@ intersphinx_mapping = {
     "numpy": ("https://numpy.org/doc/stable/", None),
     "python": ("https://docs.python.org/3/", None),
     }
-
-source_parsers = {
-    '.md': CommonMarkParser,
-}
 
 source_suffix = ['.rst', '.md']
 
@@ -76,6 +71,6 @@ def setup(app):
         'enable_auto_toc_tree': False
         }, True)
     app.add_transform(AutoStructify)  # Manage avanced Markdown files with AutoStructify
-    app.add_stylesheet('style.css')
-    app.add_javascript('scripts.js')
+    app.add_css_file('style.css')
+    app.add_js_file('scripts.js')
     app.connect("missing-reference", missing_reference)
