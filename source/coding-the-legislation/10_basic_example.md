@@ -31,7 +31,7 @@ so the actual type of data may be slightly different from the built-in Python on
 Available types are :
     - `bool`: boolean
     - `date`: date
-    - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md#advanced-example-enumerations-enum) in the next section.
+    - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md) in the next section.
     - `float`: float (Note that to reduce memory usage, float are stored on 32 bits using NumPy's `float32`)
     - `int`: integer
     - `str`: string

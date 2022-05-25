@@ -55,7 +55,7 @@ Please make sure to update the destination of the source code link if you use a 
 
 ## Changes
 
-If you modify or extend OpenFisca, you are [legally required](https://choosealicense.com/licenses/agpl-3.0/) to make those changes available to the community. The easiest way to do it is to publish your fork of the core package, and of any country package, extension or reform, on a source hosting platform such as GitHub, and to [notify](./contribute/) the core team of this publication.
+If you modify or extend OpenFisca, you are [legally required](https://choosealicense.com/licenses/agpl-3.0/) to make those changes available to the community. The easiest way to do it is to publish your fork of the core package, and of any country package, extension or reform, on a source hosting platform such as GitHub, and to notify the core team of this publication.
 
 You can read [this analysis](https://softwareengineering.stackexchange.com/questions/107883/agpl-what-you-can-do-and-what-you-cant/314908/) to get more insight on what you can and can't do with APGL licensed software.
 

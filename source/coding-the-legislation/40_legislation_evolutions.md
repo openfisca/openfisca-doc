@@ -51,7 +51,7 @@ After this change, in a formula:
 - `parameters('2017-01').taxes.salary.rate` is `0.3`
 - `parameters('2022-01').taxes.salary.rate` is `0.3`
 
-[Read more about how to code parameters](./legislation_parameters.md#parameters-and-time).
+[Read more about how to code parameters](./legislation_parameters.md).
 
 ## Formula evolution
 
@@ -90,7 +90,7 @@ Formula naming rules:
   - For instance, `formula_2017` is equivalent to `formula_2017_01_01`.
 - If no date is specified for a formula, OpenFisca will consider that this formula has been active since the dawn of time (or more precisely, since `0001-01-01`, as Python does not handle B.C. dates).
   - For instance, `formula` is active on `2010`.
-- A formula is active until another formula, starting later, becomes active and replaces it (or until the variable `end` date is reached, as we'll see further down in the [Variable end](#variable-end) section).
+- A formula is active until another formula, starting later, becomes active and replaces it (or until the [variable `end` date](#ending-a-variable-at-a-specific-date) is reached).
   - For instance, `formula` is active until `2016-12-31` (included). On the day after, `2017-01-01`, `formula_2017` becomes active, and `formula` becomes inactive.
 
 

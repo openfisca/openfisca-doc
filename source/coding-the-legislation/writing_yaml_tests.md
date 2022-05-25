@@ -183,7 +183,7 @@ You can find examples of YAML tests of tax and benefit systems with reforms appl
 
 ## Running a test
 
-To run YAML tests, use the command line tool `openfisca test`, documented [here](../../openfisca-python-api/openfisca_test.html):
+To run YAML tests, use the command line tool `openfisca test`, documented [here](../../openfisca-python-api/openfisca_test):
 
 ```sh
 openfisca test path/to/file.yaml
