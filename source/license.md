@@ -59,4 +59,4 @@ If you modify or extend OpenFisca, you are [legally required](https://choosealic
 
 You can read [this analysis](https://softwareengineering.stackexchange.com/questions/107883/agpl-what-you-can-do-and-what-you-cant/314908/) to get more insight on what you can and can't do with APGL licensed software.
 
-If you see opportunities in developing services/business/tools on top of OpenFisca but are concerned with the AGPL3 license implications, please [open an issue](https://github.com/openfisca/openfisca-doc/issues/new) to have a public discussion on the topic.
+If you see opportunities in developing services/business/tools on top of OpenFisca but are concerned with the AGPL3 license implications, please [open an issue](https://github.com/openfisca/openfisca-core/issues/new) to have a public discussion on the topic.
