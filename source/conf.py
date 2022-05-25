@@ -54,6 +54,8 @@ html_static_path = ['static']
 templates_path = ['_templates']
 html_sidebars = {'**': ['sidebar.html']}
 
+myst_heading_anchors = 5  # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#auto-generated-header-anchors
+
 github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/master/'
 
 suppress_warnings = ['image.nonlocal_uri']
