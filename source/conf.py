@@ -30,8 +30,8 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    "numpy": ("https://numpy.org/doc/stable/", None),
-    "python": ("https://docs.python.org/3/", None),
+    'numpy': ('https://numpy.org/doc/stable/', None),
+    'python': ('https://docs.python.org/3/', None),
     }
 
 source_suffix = ['.rst', '.md']
@@ -46,8 +46,8 @@ html_theme_path = guzzle_sphinx_theme.html_theme_path()
 html_theme = 'guzzle_sphinx_theme'
 
 html_theme_options = {
-    "project_nav_name": "OpenFisca",
-    "homepage": "index",  # Different than the master doc
+    'project_nav_name': 'OpenFisca',
+    'homepage': 'index',  # Different than the master doc
 }
 
 html_static_path = ['static']
@@ -62,7 +62,7 @@ suppress_warnings = ['image.nonlocal_uri']
 
 
 def missing_reference(app, env, node, contnode):
-    if node["reftype"] == "class" and node["reftarget"] == "NDArray":
+    if node['reftype'] == 'class' and node['reftarget'] == 'NDArray':
         return contnode
 
 
@@ -73,4 +73,4 @@ def setup(app):
         }, True)
     app.add_css_file('style.css')
     app.add_js_file('scripts.js')
-    app.connect("missing-reference", missing_reference)
+    app.connect('missing-reference', missing_reference)
