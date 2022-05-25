@@ -1,19 +1,18 @@
 # <i class="fas fa-users"></i> Contribute
 
-```eval_rst
-.. toctree::
-   :hidden:
+```{toctree}
+:hidden:
 
-   guidelines
-   language
-   commit-messages
-   variables-naming
-   semver
-   documentation
-   extensions
-   developer-guide
-   tests
-   release-process
+guidelines
+language
+commit-messages
+variables-naming
+semver
+documentation
+extensions
+developer-guide
+tests
+release-process
 ```
 
 OpenFisca is a free software project and contributors are very welcome!

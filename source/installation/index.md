@@ -1,14 +1,13 @@
 # <i class="fas fa-cogs"></i> Installation
 
-```eval_rst
-.. toctree::
-   :hidden:
+```{toctree}
+:hidden:
 
-   howto-web-no-local-install
-   howto_docker
-   offline-environment
-   windows-no-admin
-   test_situations
+howto-web-no-local-install
+howto_docker
+offline-environment
+windows-no-admin
+test_situations
 ```
 
 As the OpenFisca community becomes larger, issues that only affect a small percentage of users arise.
