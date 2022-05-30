@@ -26,6 +26,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
+    'sphinx_autodoc_typehints',
     'sphinxarg.ext',
 ]
 
@@ -62,9 +63,8 @@ suppress_warnings = ['image.nonlocal_uri']
 
 
 def missing_reference(app, env, node, contnode):
-    if node['reftype'] == 'class' and node['reftarget'] == 'NDArray':
+    if node['reftype'] == 'class' and node['reftarget'].startswith('nptyping'):
         return contnode
-
 
 def setup(app):
     app.add_config_value('recommonmark_config', {
