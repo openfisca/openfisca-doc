@@ -137,8 +137,9 @@ def formula(person, period, parameters):
     return scale.calc(salary)
 ```
 
-If `salary` is `3000` and period is `2015-06`, the output of the formula will be `2000 * 0.02 + 1000 * 0.2`
+If `salary` is `3000` and period is `2015-06`, the output of the formula will be `2000 * 0.02 + 1000 * 0.2`.
 
+By default, the interval includes the left but not right edge. To reverse this, use `scale.calc(salary, right=True)`.
 
 The scales built-in OpenFisca are:
 - Marginal rate scale:
