@@ -6,7 +6,7 @@ Depending on your goals, you will interact with one or several components of Ope
 
 ## Country packages
 
-Country packages are what most users will interact with when using OpenFisca. They model the rules of a jurisdiction by defining [Parameters](./key-concepts/parameters.md), [Variables](./key-concepts/variables.md) and [Entities](./key-concepts/person,_entities,_role.md).
+Country packages are what most users will interact with when using OpenFisca. They model the rules of a jurisdiction by defining [Parameters](key-concepts/parameters.md), [Variables](key-concepts/variables.md) and [Entities](key-concepts/person,_entities,_role.md).
 
 > For example, [`openfisca-france`](https://github.com/openfisca/openfisca-france) models French law.
 
@@ -22,9 +22,9 @@ This architecture enables subcommunities to maintain subsets of the rules of a c
 
 OpenFisca Core provides the API, domain-specific language (DSL) and testing tools with which country and extension packages are built.
 
-It defines the [Python API](./python-api) through which the country packages can be queried.
+It defines the [Python API](openfisca-python-api/index.md) through which the country packages can be queried.
 
-The Core also includes an optional [web API](./web-api), which makes it possible to expose [Parameters](./key-concepts/parameters.md) and calculate [Variables](./key-concepts/variables.md) over HTTP and JSON.
+The Core also includes an optional [web API](openfisca-web-api/index.md), which makes it possible to expose [Parameters](key-concepts/parameters.md) and calculate [Variables](key-concepts/variables.md) over HTTP and JSON.
 
 ## Templates
 
