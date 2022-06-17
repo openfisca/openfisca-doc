@@ -1,6 +1,6 @@
 # Tax and Benefit System
 
-#### Definition
+## Definition
 
 The tax and benefit system is the higher-level instance in OpenFisca.
 Its goal is to model the legislation of a country.
@@ -15,7 +15,7 @@ This instance may host as many versions as there are countries in the world.
 
 Therefore you have to instantiate and use the version corresponding to your country of interest.
 
-#### Application: how to call the Python module
+### Application: how to call the Python module
 
 The system for France is currently the only one well implemented, so your first action should be:
 

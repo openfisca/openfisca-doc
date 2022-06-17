@@ -38,7 +38,7 @@ housing_allowance = simulation.calculate('housing_allowance', '2011-01')
 simulation.tracer.print_computation_log()
 ```
 
-> For more information on the `tracer` methods, see this [Tracer class interface](../../openfisca-python-api/tracer.html)
+> For more information on the `tracer` methods, see this [Tracer class interface](../../openfisca-python-api/tracer)
 
 ## Analysing simulation steps
 

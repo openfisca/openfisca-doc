@@ -1,13 +1,12 @@
 # <i class="fas fa-cloud"></i> OpenFisca Web API
 
-```eval_rst
-.. toctree::
-   :hidden:
+```{toctree}
+:hidden:
 
-   endpoints
-   input-output-data
-   trace-simulation
-   config-openapi
+endpoints
+input-output-data
+trace-simulation
+config-openapi
 ```
 
 OpenFisca provides a web API package, compatible with all country packages.

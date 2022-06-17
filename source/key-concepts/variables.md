@@ -9,11 +9,11 @@ For instance:
 * The amount of *income tax* a household has to pay in a year.
 * Whether a family is *living in Paris*, or not.
 
-### Input variables
+## Input variables
 
 Some variables can only be given as inputs of a simulation. For instance, the *birth date* of a person.
 
-### Formulas
+## Formulas
 
 Other variables can be calculated thanks to a **formula**.
 
@@ -25,7 +25,7 @@ For instance:
 
 It is important to note that **all variables can be used as inputs**. This means that even if the *basic income* can be calculated from other variables, I can, for a given simulation, provide it as an input. Then, if another formula asks for the value of *basic income* for a month, the input value will be returned, and the *basic income* formula **won't be executed.**
 
-### Default values
+## Default values
 
 When OpenFisca is not able to calculate the value of a variable for a requested period, it returns a **default value**.
 

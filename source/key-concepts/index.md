@@ -1,16 +1,15 @@
 # <i class="fas fa-dice-d6"></i> Key concepts
 
-```eval_rst
-.. toctree::
-   :hidden:
+```{toctree}
+:hidden:
 
-   tax_and_benefit_system
-   variables
-   parameters
-   person,_entities,_role
-   periodsinstants
-   simulation
-   reforms
+tax_and_benefit_system
+variables
+parameters
+person,_entities,_role
+periodsinstants
+simulation
+reforms
 ```
 
 This section presents the key concepts required to have a good understanding of OpenFisca, without being too technical.

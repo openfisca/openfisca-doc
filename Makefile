@@ -20,7 +20,7 @@ install:
 
 # Test the doc.
 test:
-	@${MAKE} dummy SPHINXOPTS="-n -q -W"
+	@${MAKE} dummy SPHINXOPTS="-q -W"
 
 # Serve the documentation in dev mode.
 dev:

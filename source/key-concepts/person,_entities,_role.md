@@ -3,11 +3,13 @@
 Taxes and benefits can be calculated for different entities: persons, household, companies, etc.
 
 ## Person
+
 Some openfisca variables are defined for a *person*.
 
 Example: a ["salary"](https://fr.openfisca.org/legislation/salaire_net) is defined as the individual level.
 
 ##  Group entities
+
 *Group entities* are clusters of *persons* such as the family, the household or the company.
 A tax and benefit system can define several entities and specifies each time which tax and benefit applies to which entity.
 
@@ -18,7 +20,8 @@ In France the legislation has these *group entities*:
 
 Example: the  ["local tax"](https://fr.openfisca.org/legislation/taxe_habitation) is calculated over the `"menages"`.
 
-###### Roles
+### Roles
+
 Each person related to a *group entity* has a *role* inside this entity.
 
 The *roles* are:

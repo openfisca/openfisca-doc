@@ -161,7 +161,7 @@ You can generate any period with the following properties and methods:
 | `period.start.period('year', n)`  | n-year-long period starting a the same time than `period`    |
 | `period.start.period('month', n)` | n-month-long period starting a the same time than `period`   |
 
-You can find more information on the `Period` object in the [reference documentation]() (_not available yet_)
+You can find more information on the `Period` object in the [reference documentation](../openfisca-python-api/periods).
 
 
 ## Automatically process variable inputs defined for periods not matching the `definition_period`

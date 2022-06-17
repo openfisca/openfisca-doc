@@ -1,21 +1,19 @@
 # <i class="fas fa-code"></i> From law to code
 
-```eval_rst
-.. toctree::
-   :hidden:
+```{toctree}
+:hidden:
 
-   10_basic_example
-   20_input_variables
-   25_vectorial_computing
-   35_periods
-   40_legislation_evolutions
-   50_entities
-   reforms
-   inferences
-   writing_yaml_tests
-   legislation_parameters
-   bootstrapping_a_new_country_package
-
+10_basic_example
+20_input_variables
+25_vectorial_computing
+35_periods
+40_legislation_evolutions
+50_entities
+reforms
+inferences
+writing_yaml_tests
+legislation_parameters
+bootstrapping_a_new_country_package
 ```
 
 Now let's think practical. The following tutorial and documentation offer you an overview of OpenFisca principles.
