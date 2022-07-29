@@ -7,26 +7,6 @@
   font-family: 'asapregular';
 }
 
-.actionbutton{
-  border-radius: 30px;
-  width: 56px;
-  height: 56px;
-  background: #6D69FB;
-  color: #ffffff;
-  text-align: center;
-  bottom: 2rem;
-  right: 2rem;
-  position: fixed;
-  cursor: pointer;
-  box-shadow: 5px 5px 5px grey;
-  font-size: 1.5em;
-  padding: 15px;
-}
-.actionbutton:hover{
-  color: #ffffff;
-}
-
-
 .button-appearance {
   text-decoration: none;
   border: #6D69FB 1px solid;
