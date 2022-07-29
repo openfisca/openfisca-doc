@@ -1,9 +1,9 @@
-Semantic versionning guidelines
+Semantic versioning guidelines
 ===============================
 
 Before merging your contribution to an OpenFisca package, you are required to increment the version of this package.
 
-The [semantic versionning convention](http://semver.org/), applied here, requires you to:
+The [semantic versioning convention](http://semver.org/), applied here, requires you to:
 
 
 >Given a version number MAJOR.MINOR.PATCH, increment the:

@@ -45,7 +45,7 @@ It is considered a good practice to begin the name of the pull request with a ve
 Before allowing you to merge a PR, the continuous integration server will ensure that:
 
 - The automated tests are passing (they are triggered automatically and result is visible from the Pull Request page).
-- The semantic version number has been updated. Check the [semantic versionning guidelines](semver.md) to know more about how to increment the version number.
+- The semantic version number has been updated. Check the [semantic versioning guidelines](semver.md) to know more about how to increment the version number.
 - The [`CHANGELOG.md`](https://github.com/openfisca/openfisca-france/blob/master/CHANGELOG.md) has been updated. Make sure to briefly summarize your work, and to **mention any non backward-compatible changes**.
 
 #### Web API version number
