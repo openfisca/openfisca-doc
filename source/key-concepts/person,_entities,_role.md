@@ -4,7 +4,7 @@ Taxes and benefits can be calculated for different entities: persons, household,
 
 ## Person
 
-Some openfisca variables are defined for a *person*.
+Some OpenFisca variables are defined for a *person*.
 
 Example: a ["salary"](https://fr.openfisca.org/legislation/salaire_net) is defined as the individual level.
 

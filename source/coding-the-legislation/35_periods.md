@@ -89,7 +89,7 @@ class taxes(Variable):
 
 However, sometimes, we do need to estimate a variable for a different period than the one it is defined for.
 
-We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The option `ADD` tells openfisca to split the period into months, compute the variable for each month and sum up the results:
+We may for example want to get the sum of the salaries perceived on the past year, or the past 3 months. The option `ADD` tells OpenFisca to split the period into months, compute the variable for each month and sum up the results:
 
 ```py
 class taxes(Variable):

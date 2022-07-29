@@ -6,7 +6,7 @@ To calculate some legislation variables on people's situations, you need to crea
 
 ## How to run a simulation on a test case
 
-Test cases can be expressed in Python, or in JSON when using the Web API (see the [specific section](../openfisca-web-api/input-output-data.md) of the documentation).
+Test cases can be expressed in Python, or in JSON when using the web API (see the [specific section](../openfisca-web-api/input-output-data.md) of the documentation).
 
 ### Test cases
 
