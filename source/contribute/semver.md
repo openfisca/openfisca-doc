@@ -14,7 +14,7 @@ The [semantic versioning convention](http://semver.org/), applied here, requires
 
 >**PATCH** version when you make backwards-compatible bug fixes.
 
-It is thus crucial to determine whether your changes are **backwards-compatible**. If, during a hackathon, a contributor has written a reform to OpenFisca, would this reform still work after adding your changes ?
+It is thus crucial to determine whether your changes are **backwards-compatible**. If, during a hackathon, a contributor has written a reform to OpenFisca, would this reform still work after adding your changes?
 
 Examples in OpenFisca context
 -----------------------------

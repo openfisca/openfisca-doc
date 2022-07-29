@@ -28,7 +28,7 @@ All variables have a set of attributes.
 * `value_type` defines the type of the formula output. Possible types are the basic Python types.
 Note however that OpenFisca uses NumPy to [run calculations vectorially](25_vectorial_computing.md),
 so the actual type of data may be slightly different from the built-in Python ones.
-Available types are :
+Available types are:
     - `bool`: boolean
     - `date`: date
     - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md) in the next section.
