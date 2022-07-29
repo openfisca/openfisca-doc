@@ -153,7 +153,7 @@ The scales built-in OpenFisca are:
   - Defined as in the previous YAML example, but replacing `rate` by `amount`, and setting `type` to `single_amount` to the parameter's metadata
 
 
-Example: [the french tax scale on income](https://fr.openfisca.org/legislation/impot_revenu.bareme)
+Example: [the French tax scale on income](https://fr.openfisca.org/legislation/impot_revenu.bareme)
 
 
 #### Computing a parameter that depends on a variable (fancy indexing)
