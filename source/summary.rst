@@ -2,7 +2,7 @@
    :maxdepth: -1
 
    index
-   projectcomponents
+   architecture
    installation/index
 
    key-concepts/index
