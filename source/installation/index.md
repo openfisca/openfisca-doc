@@ -20,4 +20,4 @@ The purpose of this section is to bring together the clever solutions the commun
 - [How to work on OpenFisca on a Windows without being administrator](./windows-no-admin.md)
 - [How to test your changes on "ready to use" situations](./test_situations.md)
 
-> You're welcome to share your tips on how to solve technical issues! Please update [this section](https://github.com/openfisca/openfisca-doc/edit/master/recipes.md) (in english) or this [wiki FAQ](https://github.com/openfisca/tutorial/wiki) in your preferred language.
+> You're welcome to share your tips on how to solve technical issues! Please update [this section](https://github.com/openfisca/openfisca-doc/edit/master/recipes.md) (in English) or this [wiki FAQ](https://github.com/openfisca/tutorial/wiki) in your preferred language.

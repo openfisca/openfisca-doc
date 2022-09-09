@@ -1,9 +1,9 @@
-Semantic versionning guidelines
+Semantic versioning guidelines
 ===============================
 
 Before merging your contribution to an OpenFisca package, you are required to increment the version of this package.
 
-The [semantic versionning convention](http://semver.org/), applied here, requires you to:
+The [semantic versioning convention](http://semver.org/), applied here, requires you to:
 
 
 >Given a version number MAJOR.MINOR.PATCH, increment the:
@@ -14,7 +14,7 @@ The [semantic versionning convention](http://semver.org/), applied here, require
 
 >**PATCH** version when you make backwards-compatible bug fixes.
 
-It is thus crucial to determine whether your changes are **backwards-compatible**. If, during a hackathon, a contributor has written a reform to OpenFisca, would this reform still work after adding your changes ?
+It is thus crucial to determine whether your changes are **backwards-compatible**. If, during a hackathon, a contributor has written a reform to OpenFisca, would this reform still work after adding your changes?
 
 Examples in OpenFisca context
 -----------------------------

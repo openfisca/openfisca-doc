@@ -46,7 +46,7 @@ simulation.calculate('housing_allowance', 'month:2019-05-01:1')
 
 With OpenFisca you can calculate variables such as `salary` that can change over time. You can also evaluate the impact of this `salary` on the `income_tax`.
 
-These variables can evolve through time at a diffent periodicity. Here for example, `salary` changes from month to month while the `income_tax` is calculated on a yearly basis.
+These variables can evolve through time at a different periodicity. Here for example, `salary` changes from month to month while the `income_tax` is calculated on a yearly basis.
 
 Therefore, all OpenFisca variables have a `definition_period` attribute:
   - `definition_period = DAY`: The variable may have a different value each day.
@@ -83,7 +83,7 @@ class taxes(Variable):
     definition_period = YEAR
 
     def formula(person, period):  # period is a year because definition_period = YEAR
-        salary_past_year = person('salary', period)  # salary is a montly variable. This will cause an error.
+        salary_past_year = person('salary', period)  # salary is a monthly variable. This will cause an error.
         ...
 ```
 
@@ -170,7 +170,7 @@ By default, when you provide a simulation input, you won't be able to set a vari
 
 For instance, if the `definition_period` of `salary` is `MONTH`, and you input a value for `salary` for `2015` or more than one month, an error will be raised.
 
-It is however possible to define an automatic behaviour to cast yearly inputs into monthy values. To do this, add a `set_input` class attribute to a variable.
+It is however possible to define an automatic behaviour to cast yearly inputs into monthly values. To do this, add a `set_input` class attribute to a variable.
 
 * `set_input = set_input_divide_by_period`: the 12 months are set equal to 1/12th of the input value,
 * `set_input = set_input_dispatch_by_period`: the 12 months are set equal to input value.

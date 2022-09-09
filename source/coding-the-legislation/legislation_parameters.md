@@ -73,7 +73,7 @@ In this file structure:
 
 Names should begin with a lowercase letter and should contain only lowercase letters and the underscore (`_`).
 
-The following keywords are reserved and should not be used as names : `description`, `reference`, `values`, `brackets`.
+The following keywords are reserved and should not be used as names: `description`, `reference`, `values`, `brackets`.
 
 YAML parameter files should not be name `index.yaml`.
 
@@ -153,7 +153,7 @@ The scales built-in OpenFisca are:
   - Defined as in the previous YAML example, but replacing `rate` by `amount`, and setting `type` to `single_amount` to the parameter's metadata
 
 
-Example: [the french tax scale on income](https://fr.openfisca.org/legislation/impot_revenu.bareme)
+Example: [the French tax scale on income](https://fr.openfisca.org/legislation/impot_revenu.bareme)
 
 
 #### Computing a parameter that depends on a variable (fancy indexing)
@@ -233,7 +233,7 @@ def formula(household, period, parameters):
 
 `parameters(period).housing_benefit[zone]` return the parameters for the zone corresponding to the household.
 
-If there are many households in your simulation, this parameter will be **vectorial** : it may have a different value for each household of your entity.
+If there are many households in your simulation, this parameter will be **vectorial**: it may have a different value for each household of your entity.
 
 To be able to use this notation, all the children node of the parameter node `housing_benefit` must be **homogenous**. In the previous example, `housing_benefit.zone_1`, `housing_benefit.zone_2`, `housing_benefit.zone_3` are homogenous, as they have the same subnodes.
 
@@ -285,7 +285,7 @@ And then to get `parameters(period).housing_benefit.amount_by_zone[zone]`
 
 Set-up your python file by importing a `country package` and building the `tax and benefit system`
 
-> Example :
+> Example:
 > ```
 > import openfisca_country_template
 > tax_benefit_system = openfisca_country_template.CountryTaxBenefitSystem()
@@ -294,7 +294,7 @@ Set-up your python file by importing a `country package` and building the `tax a
 ### Access a parameter for all periods
 
 To access a point in the parameter tree, call `tax_benefit_system.parameters`
-> Example :
+> Example:
 > Access the `benefit` branch of the `openfisca-country-template` legislation
 > ```py
 > tax_benefit_system.parameters.benefits

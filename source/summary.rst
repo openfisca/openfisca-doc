@@ -13,5 +13,5 @@
 
    find-help
    contribute/index
-   licence
+   license
    manifest-history
