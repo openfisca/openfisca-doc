@@ -2,7 +2,7 @@
 
 Extensions allow you to define new variables or parameters for a tax and benefit system, while keeping their code separated from the main country package. They can only _add_ variables and parameters to the tax and benefit system: they cannot _modify_ or _neutralize_ existing ones.
 
-They are for instance used to code local prestations.
+They are for instance used to code local benefits.
 
 > Extensions are sometimes confused with another mechanism: reforms. [Read more about their respective uses](../key-concepts/reforms.md#differences-between-reforms-and-extensions).
 

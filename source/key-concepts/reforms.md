@@ -16,4 +16,4 @@ To use reforms or code your own ones, check the [reform documentation](../coding
 Reforms are sometimes confused with another mechanism: [extensions](../contribute/extensions.md). These two mechanisms do not have the same purpose:
 
 - Use a reform if you want to modify a tax and benefit system in order to study the impact of a legislation change.
-- Use an extension if you want to write formulas that are based on a main tax and benefit system, while keeping their code separated from the main country package (e.g. for local prestations).
+- Use an extension if you want to write formulas that are based on a main tax and benefit system, while keeping their code separated from the main country package (e.g. for local benefits).
