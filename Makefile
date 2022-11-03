@@ -18,10 +18,10 @@ test:
 	@${MAKE} dummy SPHINXOPTS="-q -W"
 
 lint:  # requires Node and NPM to be installed
-	@npx --yes markdownlint-cli2 "**/*.md"
+	@npx --yes markdownlint-cli "**/*.md"
 
 format:  # requires Node and NPM to be installed
-	@npx --yes markdownlint-cli2-fix "**/*.md"
+	@npx --yes markdownlint-cli --fix "**/*.md"
 
 # Serve the documentation in dev mode.
 dev:
