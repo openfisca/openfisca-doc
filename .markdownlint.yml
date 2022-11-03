@@ -7,6 +7,7 @@ line_length: false  # do not check for line length; rely on editor wrapping
 
 no-inline-html:
   allowed_elements:
+    - abbr
     - i
 
 emphasis-style:
