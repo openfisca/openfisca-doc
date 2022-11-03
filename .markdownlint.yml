@@ -1,0 +1,7 @@
+# These rules are documented on https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+MD013: false  # do not check for line length; rely on editor wrapping
+
+MD033:  # inline HTML
+  allowed_elements:
+    - i
