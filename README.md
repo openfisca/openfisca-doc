@@ -51,41 +51,39 @@ make test
 
 If the tests fail, here's what you can do:
 
-1. If the errors also concern OpenFisca-Core, please take a look at the [README](https://github.com/openfisca/openfisca-core/blob/master/README.md).
+If the errors also concern OpenFisca-Core, please take a look at the [README](https://github.com/openfisca/openfisca-core/blob/master/README.md).
 
-2. If not, clone & install the documentation:
+If not, clone & install the documentation:
 
 ```sh
 git clone https://github.com/openfisca/openfisca-doc
 make install
 ```
 
-3. create a branch to correct the problems:
+Create a branch to correct the problems:
 
 ```sh
 git checkout -b fix-doc
 ```
 
-4. Fix the offending problems.
-
-You can test-drive your fixes by checking that each change works as expected:
+Fix the offending problems. You can test-drive your fixes by checking that each change works as expected:
 
 ```sh
 make test
 ```
 
-5. Commit at each step, so you don't accidentally lose your progress:
+Commit at each step, so you don't accidentally lose your progress:
 
 ```sh
 git add -A && git commit -m "Fixed missing doctree"
 ```
 
-6. Once you're done, push your changes:
+Once you're done, push your changes:
 
 ```sh
 git push origin `git branch --show-current`
 ```
 
-7. Finally, open a [pull request](https://github.com/openfisca/openfisca-doc/compare/master...fix-doc).
+Finally, open a [pull request](https://github.com/openfisca/openfisca-doc/compare/master...fix-doc).
 
 That's it! 🙌
