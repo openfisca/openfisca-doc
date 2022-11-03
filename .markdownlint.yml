@@ -10,6 +10,9 @@ no-inline-html:
     - abbr
     - i
 
+no-duplicate-header:
+  siblings_only: true
+
 emphasis-style:
   style: underscore
 
