@@ -1,6 +1,7 @@
 # How to run a simulation
 
-To calculate some legislation variables on people's situations, you need to create and run a new *Simulation*. Whether situations are described with [test cases](run-simulation.md#test-cases) or [data](run-simulation.md#data), OpenFisca looks for two kinds of inputs:
+To calculate some legislation variables on people's situations, you need to create and run a new _Simulation_. Whether situations are described with [test cases](run-simulation.md#test-cases) or [data](run-simulation.md#data), OpenFisca looks for two kinds of inputs:
+
 - how persons are dispatched in other entities,
 - what variables' values are already known.
 
@@ -29,7 +30,8 @@ This test case defines 4 persons, `Ari`, `Paul`, `Leila` and `Javier`.
 They belong to 2 households named `h1` and `h2`.
 For example, `Ari` and `Paul` are parents in `h1` and have one child, `Leila`.
 
-You may add information at the *individual* level or at the *group entity* level:
+You may add information at the _individual_ level or at the _group entity_ level:
+
 - known variable values,
 - and definition periods for those variable values.
 
@@ -58,18 +60,20 @@ TEST_CASE = {
 ```
 
 Where `salary` and `rent` names come from the [salary](https://demo.openfisca.org/legislation/salary) and [rent](https://demo.openfisca.org/legislation/rent) variables of the `OpenFisca-Country-Template`. In this [model](https://demo.openfisca.org/legislation/):
+
 - `salary` is a Person entity variable defined on a monthly basis,
 - `rent` is a Household entity variable defined on a monthly basis as well.
 
-It's a Python dictionary object that we will use to build a *Simulation*.
+It's a Python dictionary object that we will use to build a _Simulation_.
 
 #### Application: calculate two households housing allowances
 
 Let's assume that you want to calculate households' `housing_allowance` for the same period.
 You have to follow these steps:
+
 1. Load a tax and benefit system like [OpenFisca-Country-Template](https://demo.openfisca.org/legislation).
-2. Initialise a *SimulationBuilder*.
-3. Create a *Simulation* using, for example, the `build_from_entities(...)` function.
+2. Initialise a _SimulationBuilder_.
+3. Create a _Simulation_ using, for example, the `build_from_entities(...)` function.
 4. Calculate the [housing_allowance](https://demo.openfisca.org/legislation/housing_allowance) and print its value for every test case household.
 
 Which gives:
@@ -98,7 +102,7 @@ print("housing_allowance", housing_allowance)
 
 ## How to run a simulation on data
 
-You can build a *Simulation* on multiple data formats.
+You can build a _Simulation_ on multiple data formats.
 Any well structured tabular input shoud be fine as long as you are able to iterate over its items in Python.
 
 ### Data
@@ -126,18 +130,17 @@ person_id,household_id,person_salary,person_age
 11,e,1600,35
 ```
 
-As for the *test case* content, you will need the following information:
-- unique indentifiers for persons and *group entities*
+As for the _test case_ content, you will need the following information:
+
+- unique indentifiers for persons and _group entities_
   > like `person_id` and `household_id` columns information in the CSV example
-- if you have multiple [entities](../key-concepts/person,_entities,_role.md) types (persons, households, ...), you need to know how your persons list is dispatched over your *group entities*
+- if you have multiple [entities](../key-concepts/person,_entities,_role.md) types (persons, households, ...), you need to know how your persons list is dispatched over your _group entities_
   > in CSV example, every `person_id` is associated with a `household_id` on the same line
 - the name of the corresponding variable in your model for every set of values
   > `person_salary` values become [salary](https://demo.openfisca.org/legislation/salary) values in `OpenFisca-Country-Template` model
 - the period and entity for every set of values
-  > `person_salary` and `person_age` belong to *Person* entity
+  > `person_salary` and `person_age` belong to _Person_ entity
   > the reference period isn't in the CSV file but it might, for example, come from the CSV creation time and be identical for the whole data set.
-
-
 
 #### Application: calculate persons income tax from a CSV file
 
@@ -166,8 +169,8 @@ In the following example, we will use the [pandas](https://pandas.pydata.org) li
 1. Install the required libraries, by running in your console:
 
     ```sh
-    $ python --version # Python 3.7.0 or greater should be installed on your computer
-    $ pip install --upgrade pip openfisca_country_template pandas
+    python --version # Python 3.7.0 or greater should be installed on your computer
+    pip install --upgrade pip openfisca_country_template pandas
     ```
 
 2. Load the `country-template` legislation and the content of the `data.csv` file with the [pandas](https://pandas.pydata.org) library:
@@ -217,11 +220,13 @@ In the following example, we will use the [pandas](https://pandas.pydata.org) li
     ```
 
 You are all set! You can now calculate the [income_tax](https://demo.openfisca.org/legislation/income_tax) variable for each person of your `data.csv` file for the same period:
+
 ```python
 income_tax = simulation.calculate('income_tax', period)
 ```
 
 `income_tax` is an instance of `numpy.ndarray` as you can see with:
+
 ```python
 >>> print(income_tax)
 
@@ -231,6 +236,7 @@ array([404.1     408.00003      579.75    195.00002   0.        0.      432.6
 ```
 
 And, persons' order is kept:
+
 ```python
 >>> print(data.person_id.values)
 
@@ -238,6 +244,7 @@ array([ 1  2  3  4  5  6  7 12  8  9 10 11])
 ```
 
 Thus, you can get the calculated `income_tax` of one person. For example, get its value for the 8th person in the list with:
+
 ```python
 >>> print(income_tax.item(7))  # person_id == 12
 
@@ -250,7 +257,8 @@ In this example, we will manage `persons` and `households` entities. To calculat
 
 Let's say that our persons and households lists are defined in distinct files:
 
-* `data_persons.csv`
+- `data_persons.csv`
+
     ```
     person_id,household_id,person_role_in_household,person_salary,person_age
     1,a,first_parent,2694,40
@@ -267,7 +275,8 @@ Let's say that our persons and households lists are defined in distinct files:
     11,e,unknown,1600,35
     ```
 
-* `data_households.csv`
+- `data_households.csv`
+
     ```
     household_id,rent,accommodation_size
     b,1200,64
@@ -282,8 +291,8 @@ where `household_id` is used as pivot item linking these files contents.
 1. Install the required libraries, by running in your console:
 
     ```sh
-    $ python --version # Python 3.7.0 or greater should be installed on your computer
-    $ pip install --upgrade pip openfisca_country_template pandas
+    python --version # Python 3.7.0 or greater should be installed on your computer
+    pip install --upgrade pip openfisca_country_template pandas
     ```
 
 2. Load the `country-template` legislation and the content of the CSV files with the [pandas](https://pandas.pydata.org) library:
@@ -343,7 +352,6 @@ where `household_id` is used as pivot item linking these files contents.
     period = '2019-03'
     simulation.set_input('salary', period, data_persons.person_salary)
     ```
-
 
 You are all set! You can now calculate the [total_taxes](https://demo.openfisca.org/legislation/total_taxes) variable for each household of your `data_households.csv` file and the same period:
 

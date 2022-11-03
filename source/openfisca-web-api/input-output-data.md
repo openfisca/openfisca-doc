@@ -3,6 +3,7 @@
 > All the examples provided here are from the [country package template](https://github.com/openfisca/country-template).
 
 In order to run a computation on the web API, you will need to send information to the API concerning:
+
 - The situation, meaning describe the [entities](../key-concepts/person,_entities,_role.md) (e.g. individuals, households) that you want to base your calculations on.
 - The variable you need to compute.
 
@@ -16,9 +17,9 @@ Every person has to belong to one of each group entity (e.g. household).
 Every person in a group entity needs a role (e.g. parent)
 
 > For example, if you wish to run a calculation on 2 households:
+>
 > - household_1 is composed of two adults;
 > - household_2 is composed of one adult and one child.
-
 
 ```json
 {
@@ -126,8 +127,8 @@ The time period must respect the [definition period](../coding-the-legislation/3
   }
 }
 ```
-**Note that due to the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their [default value](../key-concepts/variables.md#default-values).**
 
+**Note that due to the default value system in OpenFisca, the variables that have not been defined explicitly are either calculated or take on their [default value](../key-concepts/variables.md#default-values).**
 
 ## Computing a variable
 
@@ -215,6 +216,7 @@ To indicate you want a variable computed, insert the variable in the correspondi
 ## Understanding the result
 
 The API will return an identical JSON file where all the `null` (the variable that you asked OpenFisca to compute, see above for details) have been replace by the computed value.
+
 ```json
 {
   "persons": {
@@ -290,4 +292,5 @@ The API will return an identical JSON file where all the `null` (the variable th
   }
 }
 ```
+
 > Note that elements might appear in a different order in the response. However the structure of the file stays the same.

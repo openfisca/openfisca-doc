@@ -102,7 +102,7 @@ Finally, we run our test with the `line_profiler` enabled:
 
 ```
 kernprof -v -l openfisca test --name_filter ir_prets_participatifs_2016 --country-package openfisca_france tests/formulas
-``` 
+```
 
 We now know where our most time consuming line lies:
 
@@ -537,7 +537,7 @@ PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=3" openfisca test --country-package 
 
 Looks promising!
 
-## Beware of context!
+## Beware of context
 
 So we tried reducing the number of hits, what about reducing the impact per hit?
 

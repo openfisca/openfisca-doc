@@ -3,7 +3,6 @@ Language
 
 The development language is English. All comments and documentation in common repositories should be written in English, so that contributions can be made by developers around the world.
 
-
 Country-specific repositories
 -----------------------------
 

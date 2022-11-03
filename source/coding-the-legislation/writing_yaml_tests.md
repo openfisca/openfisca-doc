@@ -39,7 +39,7 @@ In [`irpp.yaml`](https://github.com/openfisca/openfisca-france/blob/29.3.7/tests
 
 This is the simplest way to test formulas when you only need to give input values for only one individual.
 
-- First, name your test. Start a test with `- `, which is the YAML list separator, followed by a space, the field `name`, and the test name as a string.
+- First, name your test. Start a test with `-`, which is the YAML list separator, followed by a space, the field `name`, and the test name as a string.
 
 ```yaml
 - name: "IRPP - Célibataire ayant des revenus salariaux (1AJ) de 20 000 €"

@@ -9,7 +9,6 @@ Here are the places in which inferences take place in OpenFisca:
 
 These inferences are not considered good practice, as they tend to make computations less consistent and predictable. You should tend to avoid relying on them as much as possible.
 
-
 ## Known issues
 
 ### With `base_function`

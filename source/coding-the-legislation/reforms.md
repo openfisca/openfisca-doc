@@ -4,7 +4,6 @@ A [reform](../key-concepts/reforms.md) is a set of modifications to be applied t
 
 > See the reference documentation of the class [Reform](../../openfisca-python-api/reforms).
 
-
 ## Writing a reform
 
 Let's for instance assume that we want to simulate the effect of a reform that changes the way the `income_tax` is calculated.
@@ -32,15 +31,13 @@ A `Reform` **must** define an `apply()` method that describes all the modificati
 
 All the [methods](../../openfisca-python-api/tax-benefit-system) used to build a tax and benefit system can also be used to reform it.
 
-A reform that modifies a formula (such as our `income_tax_reform` example) is called a *structural reform*. It redefines the way a variable is calculated.
-
+A reform that modifies a formula (such as our `income_tax_reform` example) is called a _structural reform_. It redefines the way a variable is calculated.
 
 ### Parametric reforms
 
-A reform that apply changes to legislation parameters is called a *parametric reform*.
+A reform that apply changes to legislation parameters is called a _parametric reform_.
 
-> Note that a reform can be both structural and parametric, modifying and/or adding variables *and* parameters. In that case, it is common practice to call it a structural reform anyway, the structural part outweighting the parametric one.
-
+> Note that a reform can be both structural and parametric, modifying and/or adding variables _and_ parameters. In that case, it is common practice to call it a structural reform anyway, the structural part outweighting the parametric one.
 
 To modify the legislation parameters in the reform, you can call the method `self.modify_parameters`, which takes a function as a parameter.
 
@@ -118,7 +115,6 @@ class some_reform(Reform):
     def apply(self):
         self.modify_parameters(modifier_function = modify_parameters)
 ```
-
 
 ## Using a reform in Python
 

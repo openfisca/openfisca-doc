@@ -23,6 +23,7 @@ The architecture of an extension folder is the following:
     {extension_name}/tests/{some_formula}.yaml # Optional test files
     {extension_name}/tests/{other_formula}.yaml
 ```
+
 All python files located directly in `{extension_name}/` are imported in the tax and benefit system.
 
 The syntax of the formulas within extension python files is the same than in the general country package formulas (e.g. `from openfisca_france.model.base import *`).

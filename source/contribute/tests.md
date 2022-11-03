@@ -9,20 +9,27 @@ OpenFisca has two sorts of tests:
 
 OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here are some useful commands.
 
-- Run the whole test suite:
+* Run the whole test suite:
+
     ```
     make test
     ```
+
     which is available at least in Core, France and Web-API repositories.
-- Run a specific test:
+* Run a specific test:
+
     ```
     nosetests openfisca_france/tests/test_parameters.py
     ```
-- Hide log of failing test:
+
+* Hide log of failing test:
+
     ```
     nosetests --nologcapture openfisca_france/tests/test_parameters.py
     ```
-- Display log of successful test:
+
+* Display log of successful test:
+
     ```
     nosetests --debug=openfisca_core openfisca_france/tests/test_parameters.py
     ```
@@ -30,7 +37,6 @@ OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here
 ## YAML tests
 
 Formulas are tested with [YAML tests](../coding-the-legislation/writing_yaml_tests.md).
-
 
 ## ipdb debugger
 

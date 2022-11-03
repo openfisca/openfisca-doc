@@ -1,6 +1,7 @@
 # Replicating a situation along axes
 
 So far we've seen two ways of populating a Simulation object with data:
+
 - either describe a [small population](./run-simulation.md#test-cases) with fine control over input variables and over the relationship between individuals and group entities;
 - or provide [inputs in bulk](./run-simulation.md#data), typically using tabular data (CSV, Excel, etc.)
 
@@ -31,7 +32,7 @@ As before, `BASIC_TEST_CASE` describes one household with two parents and one ch
 40
 ```
 
-We started with a "prototype" situation containing 4 individuals, and we specified an axis which replicates this situation 10 times. And so, as expected, we end up with a simulation containing 4 times 10 individuals. 
+We started with a "prototype" situation containing 4 individuals, and we specified an axis which replicates this situation 10 times. And so, as expected, we end up with a simulation containing 4 times 10 individuals.
 
 What happened with respect to the data? It's easier to represent if we first "reshape" the computed data to reflect this structure of 10 groups of 4 individuals:
 
@@ -53,7 +54,7 @@ We can see that, for the requested period, the variable `salary` **of the first 
 
 ## Targeting individuals
 
-The control provided by an axis is fine-grained and targets one individual. If you wanted to set Javier's salary instead of Ari's, you could do so by providing the *index* of Javier in the original situation; since our indices are 0-based, this is 3:
+The control provided by an axis is fine-grained and targets one individual. If you wanted to set Javier's salary instead of Ari's, you could do so by providing the _index_ of Javier in the original situation; since our indices are 0-based, this is 3:
 
 ```python
 WITH_AXES = {

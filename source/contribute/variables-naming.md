@@ -28,14 +28,13 @@ meaning).
 
 >`cpstd`. Here the acronym might mean "Company Paid Short-Term Disability", but this acronym is not widely used or recognizable, and will not be found in a web search. Using a longer name is preferable.
 
-
 Do's and don'ts
 ---------------
 
 ### Acronyms
 
 Acronyms are OK as long as they are broadly accepted and their meaning is quickly findable online. A good
-test for "findable" is that a web search *from the relevant country* should turn up the intended meaning as the first or second hit.
+test for "findable" is that a web search _from the relevant country_ should turn up the intended meaning as the first or second hit.
 
 >**OK**: VAT (Value Added Tax, near-universal except in France), EBITDA (tax, unambiguous), RSA (French, social benefit rather than cryptography, recognizable in context)
 
@@ -47,7 +46,6 @@ Abbreviations should be avoided unless they are undoubtedly transparent.
 >**OK**: nb_parents
 
 >**KO**: nb_par, isol
-
 
 ### Scopes and prefixes
 
@@ -66,7 +64,7 @@ Avoid mixing suffixed and non-suffixed versions of a similarly named variables, 
 Use a suffix if it is necessary to distinguish between versions of a variable at the level of different entities; this is often seen when aggregating from the individual level to e.g. the household level.
 >**OK**: taxable_income_household, work_income_individual
 
-
 Legacy
 ------
+
 Some existing models (such as the France model, grown over several years) do not respect all the guidelines presented here. These guidelines may also evolve with improvements to the underlying computation engine (such as namespacing or improved approaches to aggregation and other relations between entity and group values). Since variables and parameters represent the external API of a model, and excessive migration labor may discourage the users of an API, it is preferable to avoid global renamings. However, new names should be compliant with these guidelines, and legacy ones should be improved progressively and opportunistically. Communicating your standards to contributors is an important part of maintaining your model.

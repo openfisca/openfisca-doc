@@ -4,7 +4,6 @@ OpenFisca calculation are all **vectorial**. That means they operate on arrays r
 
 The practical benefit is that computations are almost as expensive for one entity as they are for hundred thousands. This is how datasets can be analysed and how reforms can be modelled accurately. However, to support this feature, you will need to apply some constraints on how you write formulas.
 
-
 ## Formulas always return vectors
 
 Each [formula](../key-concepts/variables.md#formulas) computation in OpenFisca must return a vector.
@@ -20,7 +19,7 @@ def formula(persons, period, parameters):
 
 will print `array([41, 42, 45])`.
 
-This formula code will work the same if there is one Person or three or three million in the modelled situation. Formulas always receive as their first parameter an array of the [entity](./50_entities.md) on which they operate (e.g. *n* Person, Household…) and they should return an array of the same length.
+This formula code will work the same if there is one Person or three or three million in the modelled situation. Formulas always receive as their first parameter an array of the [entity](./50_entities.md) on which they operate (e.g. _n_ Person, Household…) and they should return an array of the same length.
 
 Most of the time, formulas will refer to other variables and NumPy will do the appropriate computation without you even noticing:
 
@@ -53,11 +52,9 @@ In a similar fashion, if you expect a formula to return a boolean and forget tha
 
 The rest of this page gives practical replacements for situations in which you get such errors.
 
-
 ## Control structures
 
 Some usual control structures such as `if...else`, `switch`, and native Python logical operators such as `or` and `not` do not work with vectors. Semantically however, they all have alternatives, and the only change is in syntax.
-
 
 ### `if` / `else`
 
@@ -104,6 +101,7 @@ This `where` function is provided directly by NumPy. There are many other [NumPy
 ### Multiples conditions
 
 Let's consider a more complex case, where we want to attribute to a person:
+
 - `200` if their salary is less than `500`;
 - `100` if their salary is strictly more than `500`, but less than `1000;`
 - `50` if their salary is strictly more than `1000`, but less than `1500;`
@@ -130,7 +128,7 @@ If no [NumPy function](https://docs.scipy.org/doc/numpy/reference/routines.math.
 
 For instance, let's consider that a person will be granted `200` if either:
 
-- they are more than 25 *and* make less than `1000` per month;
+- they are more than 25 _and_ make less than `1000` per month;
 - or they are disabled.
 
 ```py
@@ -144,7 +142,6 @@ def formula(person, period):
 
 > You should always use [NumPy function](https://docs.scipy.org/doc/numpy/reference/routines.math.html#sums-products-differences) such as [`where`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) and [`select`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.select.html) when they are relevant: logical operations using arithmetic operators should be used as last resort as they are not very readable.
 
-
 ## Arithmetic operations
 
 Basic arithmetic operations such as `+` or `*` behave the same way on vectors than on numbers, you can thus use them in OpenFisca formulas. However, some operations must be adapted.
@@ -155,7 +152,6 @@ Basic arithmetic operations such as `+` or `*` behave the same way on vectors th
 | `max`               | `max_(x,y)`           |
 | `round`             | `round_(x,y)`         |
 
-
 ## Boolean operations
 
 | Scalar (won't work) | Vectorial alternative |
@@ -163,7 +159,6 @@ Basic arithmetic operations such as `+` or `*` behave the same way on vectors th
 | `not`               | `not_(x)`           |
 | `and`               | `x * y`               |
 | `or`             | `x + y`               |
-
 
 ## String concatenation
 

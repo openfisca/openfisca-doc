@@ -5,7 +5,6 @@ Before merging your contribution to an OpenFisca package, you are required to in
 
 The [semantic versioning convention](http://semver.org/), applied here, requires you to:
 
-
 >Given a version number MAJOR.MINOR.PATCH, increment the:
 
 >**MAJOR** version when you make incompatible API changes,
@@ -27,10 +26,12 @@ Examples in OpenFisca context
 - Correcting the value of a parameter.
 
 #### Minor
+
 - Introducing a new formula.
 - Introducing a parameter.
 
 #### Major
+
 - Renaming or deprecating a variable.
 - Changing the default value of a variable.
 - Deprecating a parameter.

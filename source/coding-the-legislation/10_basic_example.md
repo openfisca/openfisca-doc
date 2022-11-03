@@ -25,16 +25,17 @@ Let's explain in details the different parts of the code:
 ### The variable attributes
 
 All variables have a set of attributes.
+
 * `value_type` defines the type of the formula output. Possible types are the basic Python types.
 Note however that OpenFisca uses NumPy to [run calculations vectorially](25_vectorial_computing.md),
 so the actual type of data may be slightly different from the built-in Python ones.
 Available types are:
-    - `bool`: boolean
-    - `date`: date
-    - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md) in the next section.
-    - `float`: float (Note that to reduce memory usage, float are stored on 32 bits using NumPy's `float32`)
-    - `int`: integer
-    - `str`: string
+  - `bool`: boolean
+  - `date`: date
+  - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md) in the next section.
+  - `float`: float (Note that to reduce memory usage, float are stored on 32 bits using NumPy's `float32`)
+  - `int`: integer
+  - `str`: string
 * `entity` defines who or what group the variable concerns, e.g. individuals, households, families.
 * `definition_period` defines the period on which the variable is calculated. It can be `MONTH` (e.g. salary), `YEAR` (e.g. income taxes), or ETERNITY (e.g. date of birth).
 * `label` is a human friendly way to describe the variable.
@@ -42,10 +43,10 @@ Available types are:
 
 ### The formula
 
-  - `def formula(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH`, `period` is constrained to be a month.
-  - `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax and benefit system.
-  - `return salary * 0.25` returns the result for the given period.
-  - [Dated Formulas](40_legislation_evolutions.md) have a start and/or an end date.
+* `def formula(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH`, `period` is constrained to be a month.
+* `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax and benefit system.
+* `return salary * 0.25` returns the result for the given period.
+* [Dated Formulas](40_legislation_evolutions.md) have a start and/or an end date.
 
 ## Testing a formula
 

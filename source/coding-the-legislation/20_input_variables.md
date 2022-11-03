@@ -12,10 +12,10 @@ class salary(Variable):
     definition_period = MONTH
 ```
 
-
 The only difference is that we do **not** have a formula to calculate the value of a variable.
 
 If we ask the value of `salary` for a given month, the returned result will be:
+
 * The **input** that was provided when initializing the simulation if it exists.
 * The **default value** of the Variable if no input has been provided.
 
@@ -34,17 +34,18 @@ class french_citizen(Variable):
 
 If you do not explicitly define a default value, the following will be used:
 
-- For numeric variables: `0`.
-- For boolean variables: `False`.
+* For numeric variables: `0`.
+* For boolean variables: `False`.
 
 ## Advanced example: enumerations (enum)
 
 ### Usecases
 
 Enumerations are variables that have a limited set of possible values. For instance:
-- Highest academic level: high school, associate degree, bachelor's degree, master's degree, doctorate…
-- A household housing occupancy status: owner, tenant, free-lodger, homeless…
-- The main occupation of a person: employee, freelancer, retired, student, unemployed…
+
+* Highest academic level: high school, associate degree, bachelor's degree, master's degree, doctorate…
+* A household housing occupancy status: owner, tenant, free-lodger, homeless…
+* The main occupation of a person: employee, freelancer, retired, student, unemployed…
 
 ### Defining and using an enumeration variable
 
@@ -63,8 +64,9 @@ class HousingOccupancyStatus(Enum):
 ```
 
 > OpenFisca enums are based on Python 3 native enums. Each enum item (for instance `HousingOccupancyStatus.tenant`) has:
-> - a `name` attribute that contains its key (e.g. `tenant`)
-> - a `value` attribute that contains its description (e.g. `"Tenant or lodger who pays a monthly rent"`)
+>
+> * a `name` attribute that contains its key (e.g. `tenant`)
+> * a `value` attribute that contains its description (e.g. `"Tenant or lodger who pays a monthly rent"`)
 
 Then, create an OpenFisca variable `housing_occupancy_status`:
 
@@ -77,7 +79,6 @@ class housing_occupancy_status(Variable):
     definition_period = MONTH
     label = u"Legal housing situation of the household concerning their main residence"
 ```
-
 
 You can now use the enum in variable formulas!
 
