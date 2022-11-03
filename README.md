@@ -49,6 +49,14 @@ make test
 
 This will also lint the source files using [Markdownlint](https://github.com/DavidAnson/markdownlint), for which you will need [Node](https://nodejs.org) and NPM.
 
+## Autoformat
+
+If `make lint` gives you errors, you can try running the following command to automatically format your contributions according to the existing conventions:
+
+```sh
+make format
+```
+
 ## Fixing the doc
 
 If the tests fail, here's what you can do:
