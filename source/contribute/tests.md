@@ -15,7 +15,6 @@ OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here
 make test
 ```
 
-    which is available at least in Core, France and Web-API repositories.
 * Run a specific test:
 
 ```sh
