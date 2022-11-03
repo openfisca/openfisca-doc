@@ -12,7 +12,7 @@ To use the tracer, you should activate the `trace` option with `simulation.trace
 
 Here is an example:
 
-```python
+```py
 # -*- coding: utf-8 -*-
 
 from openfisca_core.simulation_builder import SimulationBuilder
@@ -43,7 +43,7 @@ simulation.tracer.print_computation_log()
 
 If we use the tracer with the following `TEST_CASE`:
 
-```python
+```py
 TEST_CASE = {
     'persons': {
         'Ari': {
@@ -77,7 +77,7 @@ Thus, on the left side of the double chevrons, you can read the trace from top t
 
 Likewise if you are calculating this `housing_allowance` on a large population, you will be able to check your calculation results with aggregated outputs. To do so, you can add the `aggregate=True` option as follows:
 
-```
+```py
 simulation.tracer.print_computation_log(aggregate=True)
 ```
 

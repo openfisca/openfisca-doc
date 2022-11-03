@@ -246,7 +246,7 @@ However, let's imagine that `housing_benefit.yaml` had another subnode named `co
 
 `housing_benefit.yaml` content:
 
-```
+```yaml
 coeff_furnished:
   description: "Coefficient to apply if the accomodation is rented furnished"
     values:
@@ -267,7 +267,7 @@ To solve this issue, the good practice would be to create an intermediate node `
 
 `housing_benefit.yaml` content:
 
-```
+```yaml
 coeff_furnished:
   description: "Coefficient to apply if the accomodation is rented furnished"
     values:
@@ -292,7 +292,7 @@ Set-up your python file by importing a `country package` and building the `tax a
 
 > Example:
 >
-> ```
+> ```py
 > import openfisca_country_template
 > tax_benefit_system = openfisca_country_template.CountryTaxBenefitSystem()
 > ```

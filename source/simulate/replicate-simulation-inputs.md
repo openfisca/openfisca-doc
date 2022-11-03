@@ -9,7 +9,7 @@ A third possibility exists: you can set up a small-scale situation, as in test c
 
 We do this by adding an "axes" entry to a test case:
 
-```python
+```py
 WITH_AXES = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
@@ -27,7 +27,7 @@ Be careful to note the structure of the "axes" field: an **array of arrays** of 
 
 As before, `BASIC_TEST_CASE` describes one household with two parents and one child, and a second household which is in fact a single adult person. However, the specification of an axis results in something quite different now:
 
-```python
+```py
 >>> len(simulation.calculate('salary', '2018-11'))
 40
 ```
@@ -36,7 +36,7 @@ We started with a "prototype" situation containing 4 individuals, and we specifi
 
 What happened with respect to the data? It's easier to represent if we first "reshape" the computed data to reflect this structure of 10 groups of 4 individuals:
 
-```python
+```py
 >>> numpy.reshape(simulation.calculate('salary', '2018-11'),(10,4))
 array([[   0.     ,    0.     ,    0.     ,    0.     ],
        [ 333.33334,    0.     ,    0.     ,    0.     ],
@@ -56,7 +56,7 @@ We can see that, for the requested period, the variable `salary` **of the first 
 
 The control provided by an axis is fine-grained and targets one individual. If you wanted to set Javier's salary instead of Ari's, you could do so by providing the _index_ of Javier in the original situation; since our indices are 0-based, this is 3:
 
-```python
+```py
 WITH_AXES = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
@@ -69,7 +69,7 @@ WITH_AXES = {
 
 And the result is now:
 
-```python
+```py
 >>> numpy.reshape(simulation.calculate('salary', '2018-11'),(10,4))
 array([[   0.     ,    0.     ,    0.     ,    0.     ],
        [   0.     ,    0.     ,    0.     ,  333.33334],
@@ -91,7 +91,7 @@ We noted above that the "axes" are in fact an array of arrays, which allows us t
 
 Sets of axes in the inner array are "parallel". They allow additional variables to be generated in increments. For instance (again take careful note of the position of the square brackets):
 
-```python
+```py
 WITH_PARALLEL_AXES = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
@@ -107,7 +107,7 @@ WITH_PARALLEL_AXES = {
 
 The result should be as follows, with both age and salary changing in lockstep:
 
-```python
+```py
 >>> simulation_builder = SimulationBuilder() 
 >>> simulation = simulation_builder.build_from_entities(tax_benefit_system, WITH_PARALLEL_AXES)
 >>> numpy.reshape(simulation.calculate('age', '2018-11'),(10,4))
@@ -140,7 +140,7 @@ For this to work, the `count` values of parallel axes must be the same. An error
 
 Sets of axes in the outer array are "perpendicular", that is, they result in independent variation. For instance, we might have:
 
-```python
+```py
 WITH_PERPENDICULAR_AXES = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
@@ -156,7 +156,7 @@ WITH_PERPENDICULAR_AXES = {
 
 Note the difference in nesting: we no longer have an inner set of two axes, but two sets of one axis each. The result is more complex:
 
-```python
+```py
 >>> simulation_builder = SimulationBuilder()
 >>> simulation = simulation_builder.build_from_entities(tax_benefit_system, WITH_PERPENDICULAR_AXES)
 >>> len(simulation.calculate('salary', '2018-11'))
@@ -167,7 +167,7 @@ Why? Because we are varying `age` and `salary` independently, and each axis resu
 
 What does the data look like?
 
-```python
+```py
 >>> numpy.reshape(simulation.calculate('salary', '2018-11'),(16,4))
 array([[   0.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.],

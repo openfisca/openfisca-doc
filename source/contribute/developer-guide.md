@@ -11,7 +11,7 @@ The OpenFisca project is distributed across many Git repositories:
 
 If you install [ipdb](https://github.com/gotcha/ipdb) (`pip install ipdb`) the API server will drop you into a debugger when an exception occurs:
 
-```
+```sh
 $ paster serve --reload development-france.ini
 Starting server in PID 3815.
 serving on 0.0.0.0:2000 view at http://127.0.0.1:2000
@@ -49,6 +49,8 @@ Then you can use the [runsnakerun](http://www.vrplumber.com/programming/runsnake
 
 > Under Debian GNU/Linux:
 >
->     aptitude install runsnakerun
+> ```sh
+> aptitude install runsnakerun
+> ```
 
 For a throughout example on profiling and debugging please take a look at [How to profile the performance of a simulation](../simulate/profile-simulation.md).

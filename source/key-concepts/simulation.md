@@ -22,7 +22,7 @@ Now all the settings are given to run computation of taxes or benefits.
 
 ### Application: how to calculate a variable
 
-```python
+```py
 # Calcul of the 'impot sur le revenu des personnes physiques'
 impot = simulation.calculate('irpp', '2015')
 allocations_familiales = simulation.calculate('af', '2015-01')

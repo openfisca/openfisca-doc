@@ -11,28 +11,28 @@ OpenFisca uses [nose](https://nose.readthedocs.org/) to run its unit tests. Here
 
 * Run the whole test suite:
 
-    ```
-    make test
-    ```
+```sh
+make test
+```
 
     which is available at least in Core, France and Web-API repositories.
 * Run a specific test:
 
-    ```
-    nosetests openfisca_france/tests/test_parameters.py
-    ```
+```sh
+nosetests openfisca_france/tests/test_parameters.py
+```
 
 * Hide log of failing test:
 
-    ```
-    nosetests --nologcapture openfisca_france/tests/test_parameters.py
-    ```
+```sh
+nosetests --nologcapture openfisca_france/tests/test_parameters.py
+```
 
 * Display log of successful test:
 
-    ```
-    nosetests --debug=openfisca_core openfisca_france/tests/test_parameters.py
-    ```
+```sh
+nosetests --debug=openfisca_core openfisca_france/tests/test_parameters.py
+```
 
 ## YAML tests
 
@@ -42,7 +42,7 @@ Formulas are tested with [YAML tests](../coding-the-legislation/writing_yaml_tes
 
 If a test fails, you can execute it with the [debug](https://nose.readthedocs.org/en/latest/plugins/debug.html) nose plugin:
 
-```bash
+```sh
 nosetests --pdb openfisca_core/tests/test_tax_scales.py
 ```
 
@@ -50,7 +50,7 @@ You'll be dropped in the `pdf` debugger shell when an error occurs.
 
 You can [specify the exact test to launch](https://nose.readthedocs.org/en/latest/usage.html#selecting-tests):
 
-```bash
+```sh
 nosetests --pdb openfisca_core/tests/test_tax_scales.py:test_linear_average_rate_tax_scale
 ```
 
@@ -62,7 +62,7 @@ nosetests --pdb openfisca_core/tests/test_tax_scales.py:test_linear_average_rate
 In case you want to set a breakpoint manually, in order to enter the debugger shell before an errors occurs,
 copy-paste this line in your code:
 
-```python
+```py
 import nose.tools; nose.tools.set_trace(); import ipdb; ipdb.set_trace()
 ```
 

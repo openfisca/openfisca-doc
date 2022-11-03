@@ -47,7 +47,7 @@ The reform is applied for a certain fixed period. To define the period for which
 
 #### Update the value of a parameter
 
-```python
+```py
 from openfisca_core import periods
 
 def modify_parameters(parameters):
@@ -67,7 +67,7 @@ class increase_minimum_wage(Reform):
 
 You can load new parameters from a directory containing YAML files and add them to the reference parameters.
 
-```python
+```py
 import os
 from openfisca_core.parameters import load_parameter_file
 
@@ -89,7 +89,7 @@ class some_reform(Reform):
 In some cases, loading new parameters from YAML files is not practical. For example, you may want to add parameters from values computed dynamically. In such cases you can use the python objects defined in the [parameters module](../../openfisca-python-api/parameters)
 :
 
-```python
+```py
 from openfisca_core.parameters import ParameterNode
 
 def modify_parameters(parameters):

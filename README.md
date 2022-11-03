@@ -8,14 +8,14 @@ This documentation is built with [Sphinx](https://www.sphinx-doc.org/), a Python
 
 In order to avoid conflicting dependencies with other projects on your local machine, it is recommended to install its dependencies in a virtual environment. To create a virtual environment, run:
 
-```
+```sh
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
 To install dependencies, run:
 
-```
+```sh
 make install
 ```
 
@@ -23,7 +23,7 @@ make install
 
 To build the HTML documentation, run:
 
-```
+```sh
 make html
 ```
 
@@ -33,7 +33,7 @@ The HTML output will be generated in the `build/html` directory.
 
 To serve the documentation in dev mode, run:
 
-```
+```sh
 make dev
 ```
 
@@ -43,7 +43,7 @@ The documentation will be served on `http://127.0.0.1:8000`
 
 To test the documentation, run:
 
-```
+```sh
 make test
 ```
 
@@ -55,14 +55,14 @@ If the tests fail, here's what you can do:
 
 2. If not, clone & install the documentation:
 
-```
+```sh
 git clone https://github.com/openfisca/openfisca-doc
 make install
 ```
 
 3. create a branch to correct the problems:
 
-```
+```sh
 git checkout -b fix-doc
 ```
 
@@ -70,19 +70,19 @@ git checkout -b fix-doc
 
 You can test-drive your fixes by checking that each change works as expected:
 
-```
+```sh
 make test
 ```
 
 5. Commit at each step, so you don't accidentally lose your progress:
 
-```
+```sh
 git add -A && git commit -m "Fixed missing doctree"
 ```
 
 6. Once you're done, push your changes:
 
-```
+```sh
 git push origin `git branch --show-current`
 ```
 

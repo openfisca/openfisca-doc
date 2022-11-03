@@ -17,7 +17,7 @@ Therefore you have to instantiate and use the version corresponding to your coun
 
 The system for France is currently the only one well implemented, so your first action should be:
 
-```python
+```py
 # Call module describing the French System
 from openfisca_france import FranceTaxBenefitSystem
 

@@ -10,7 +10,7 @@ To avoid OpenFisca users to be surprised by a non expected variable renaming bre
 
 Renaming one or several variables will be notified by a commit message with the following syntax, **on one idependant line per renamed variable**:
 
-```
+```txt
 Rename former_name to new_name
 ```
 
@@ -20,7 +20,7 @@ No other information must appear on this line.
 
 Introducing one or several new variables will be notified by a commit message with the following syntax, **on one idependant line per created variable**:
 
-```
+```txt
 Introduce new_name
 ```
 
@@ -30,7 +30,7 @@ No other information must appear on this line.
 
 If a variable must not be used anymore, it will be notified by a commit message with the following syntax, **on one idependant line per deprecated variable**:
 
-```
+```txt
 Deprecate former_name
 ```
 
