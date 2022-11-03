@@ -6,7 +6,7 @@ To avoid OpenFisca users to be surprised by a non expected variable renaming bre
 
 ### Renaming
 
-Renaming one or several variables will be notified by a commit message with the following syntax, **on one idependant line per renamed variable**:
+Renaming one or several variables will be notified by a commit message with the following syntax, **on one independent line per renamed variable**:
 
 ```txt
 Rename former_name to new_name
