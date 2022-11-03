@@ -1,5 +1,8 @@
 # These rules are documented on https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
 
+header-style:
+  style: atx  # use the hash style headers instead of the underlined one
+
 ul: # unordered list style
   style: sublist
 

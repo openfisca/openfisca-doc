@@ -1,8 +1,6 @@
-Commit messages
-===============
+# Commit messages
 
-Variable name changes
----------------------
+## Variable name changes
 
 To avoid OpenFisca users to be surprised by a non expected variable renaming breaking their code, we use standard commit messages when renaming a variable. The syntax is formalized below. It must be respected precisely, to allow automatic information extraction.
 
