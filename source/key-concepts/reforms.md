@@ -8,8 +8,7 @@ To do so, we use OpenFisca **reforms**. A reform is a set of modifications to be
 
 To use reforms or code your own ones, check the [reform documentation](../coding-the-legislation/reforms.md).
 
-> Note that OpenFisca simulates only the *mechanics* of taxes and benefits, but doesn't take into account the retro-action of economic agents. For instance, you can estimate the increase of the households disposable income in case a universal basic income is introduced, but OpenFisca won't tell you anything about the consumption increase this policy may generate.
-
+> Note that OpenFisca simulates only the _mechanics_ of taxes and benefits, but doesn't take into account the retro-action of economic agents. For instance, you can estimate the increase of the households disposable income in case a universal basic income is introduced, but OpenFisca won't tell you anything about the consumption increase this policy may generate.
 
 ## Differences between reforms and extensions
 

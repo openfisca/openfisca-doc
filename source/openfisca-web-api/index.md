@@ -39,6 +39,7 @@ Computations done by <a href="https://openfisca.org">OpenFisca</a>, the <a href=
 ```html
 Calculs effectués par <a href="https://openfisca.org">OpenFisca</a>, le moteur <a href="https://choosealicense.com/licenses/agpl-3.0/" title="AGPL-3.0">libre et ouvert</a> du système social et fiscal. Code source disponible sur <a href="https://github.com/openfisca">github.com/openfisca</a>.
 ```
+
 ## Hosting an API instance
 
 Let app developers access your country package information and computations by serving the web API that comes bundled with the OpenFisca-Core module. See the [technical documentation](https://github.com/openfisca/openfisca-core#serving-the-api) for serving instructions.

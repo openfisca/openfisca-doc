@@ -7,21 +7,23 @@ The parameters are organized with in a [tree structure](https://en.wikipedia.org
 >**Example**: `tax_on_salary.public_sector.rate` can be found in `parameters/tax_on_salary/public_sector/rate.yml`.
 
 Example of a `parameters` directory:
+
 * parameters
-  * tax_on_salary
+  - tax_on_salary
     * **tax_scale.yaml**
     * public_sector
-      * **rate.yaml**
-  * universal_income
+      - **rate.yaml**
+  - universal_income
     * **minimum_age.yaml**
     * **amount.yaml**
 
-
 In this file structure:
- - `tax_on_salaries`, `tax_on_salary.public_sector`, `universal_income` are **nodes**;
- - `tax_on_salaries.tax_scale`, `tax_on_salary.public_sector.rate`,`universal_income.minimum_age`,`universal_income.amount` are **parameters** (or scales).
+
+* `tax_on_salaries`, `tax_on_salary.public_sector`, `universal_income` are **nodes**;
+* `tax_on_salaries.tax_scale`, `tax_on_salary.public_sector.rate`,`universal_income.minimum_age`,`universal_income.amount` are **parameters** (or scales).
 
 ## How to write a new parameter
+
 > if you wish to update a parameter, read our [legislation evolution page](./40_legislation_evolutions.md).
 
 1. Find where the parameter fits
@@ -32,16 +34,17 @@ In this file structure:
 2. Create a new parameter YAML file
 
     A legislative parameter is defined by a YAML file of the same name. Possible attributes are:
-    * `description` (optional) Description;
-    * `metadata` (optional) Can be:
+    - `description` (optional) Description;
+    - `metadata` (optional) Can be:
       * `reference` (optional) Legislative reference;
       * `unit` (optional) Can be:
-        * `year`: The values are years;
-        * `currency`: The values are in the unit of currency of the country;
-        * `/1`: The values are percentages, with `1.0`=100%;
-    * `values`: Value of the parameter for several dates.
+        - `year`: The values are years;
+        - `currency`: The values are in the unit of currency of the country;
+        - `/1`: The values are percentages, with `1.0`=100%;
+    - `values`: Value of the parameter for several dates.
 
     Sample file `parameters/universal_income/amount.yaml`
+
     ```yaml
     description: Universal income
     metadata:
@@ -58,10 +61,10 @@ In this file structure:
     ```
 
     In this example, the parameter `universal_income.amount` is:
-    * undefined before 1993;
-    * equal to 1000 from 1993 to 2010;
-    * equal to 1500 in 2010
-    * expected to be raised to 1700 "local currency" in 2020.
+    - undefined before 1993;
+    - equal to 1000 from 1993 to 2010;
+    - equal to 1500 in 2010
+    - expected to be raised to 1700 "local currency" in 2020.
 
     The ordering of the dates has no effect. It is recommended to add legislative references for every value?
 
@@ -106,6 +109,7 @@ Scales are complex parameters constituted of brackets. They offer convenient bui
 For instance, a marginal rate test scale can be defined in a YAML file with:
 
 Sample file `parameters/tax_on_salary/tax_scale.yaml`
+
 ```yaml
 description: Scale for tax on salaries
 brackets:
@@ -130,6 +134,7 @@ metadata:
 ```
 
 It can then be used in a formula with:
+
 ```py
 def formula(person, period, parameters):
     salary = person('salary', period)
@@ -142,28 +147,28 @@ If `salary` is `3000` and period is `2015-06`, the output of the formula will be
 By default, the interval includes the left but not right edge. To reverse this, use `scale.calc(salary, right=True)`.
 
 The scales built-in OpenFisca are:
-- Marginal rate scale:
+
+* Marginal rate scale:
   - Split the input into several brackets according the thresholds, and apply the corresponding rate to each bracket
   - See previous example
-- Marginal amount tax scale:
+* Marginal amount tax scale:
   - Matches the input amount to a set of brackets and returns the sum of cell values from the lowest bracket to the one containing the input
   - Defined as in the previous YAML example, but replacing `rate` by `amount`, and setting `type` to `marginal_amount` to the parameter's metadata
-- Single amount tax scale:
+* Single amount tax scale:
   - Matches the input amount to a set of brackets and returns the single cell value that fits within that bracket
   - Defined as in the previous YAML example, but replacing `rate` by `amount`, and setting `type` to `single_amount` to the parameter's metadata
 
-
 Example: [the French tax scale on income](https://fr.openfisca.org/legislation/impot_revenu.bareme)
-
 
 #### Computing a parameter that depends on a variable (fancy indexing)
 
 Sometimes, the value of a parameter depends on a variable (e.g. a housing benefit that depends on the zone the house is built on).
 
 To be more specific, let's assume that:
-  - Households who rent their accomodation can get a `housing_benefit`
-  - The amount of this benefit depends on which `zone` the household lives in. The `zone` can take only three values: `zone_1`, `zone_2` or `zone_3`.
-  - The amount also depends on the composition of the household.
+
+* Households who rent their accomodation can get a `housing_benefit`
+* The amount of this benefit depends on which `zone` the household lives in. The `zone` can take only three values: `zone_1`, `zone_2` or `zone_3`.
+* The amount also depends on the composition of the household.
 
 The parameters of this benefit can be defined in a `housing_benefit.yaml` sample file:
 
@@ -241,7 +246,7 @@ However, let's imagine that `housing_benefit.yaml` had another subnode named `co
 
 `housing_benefit.yaml` content:
 
-```
+```yaml
 coeff_furnished:
   description: "Coefficient to apply if the accomodation is rented furnished"
     values:
@@ -262,7 +267,7 @@ To solve this issue, the good practice would be to create an intermediate node `
 
 `housing_benefit.yaml` content:
 
-```
+```yaml
 coeff_furnished:
   description: "Coefficient to apply if the accomodation is rented furnished"
     values:
@@ -286,7 +291,8 @@ And then to get `parameters(period).housing_benefit.amount_by_zone[zone]`
 Set-up your python file by importing a `country package` and building the `tax and benefit system`
 
 > Example:
-> ```
+>
+> ```py
 > import openfisca_country_template
 > tax_benefit_system = openfisca_country_template.CountryTaxBenefitSystem()
 > ```
@@ -296,10 +302,13 @@ Set-up your python file by importing a `country package` and building the `tax a
 To access a point in the parameter tree, call `tax_benefit_system.parameters`
 > Example:
 > Access the `benefit` branch of the `openfisca-country-template` legislation
+>
 > ```py
 > tax_benefit_system.parameters.benefits
 > ```
+>
 > Returns:
+>
 > ```sh
 > basic_income:
 >     2015-12-01: 600.0
@@ -309,10 +318,13 @@ To access a point in the parameter tree, call `tax_benefit_system.parameters`
 > ```
 >
 > Access `basic_income`, a parameter of the `benefits` branch.
+>
 > ```py
 > tax_benefit_system.parameters.benefits.basic_income
 > ```
+>
 > Returns:
+>
 > ```sh
 > 2015-12-01: 600.0
 > ```
@@ -326,11 +338,14 @@ Request a branch of a parameter at a given date with the `parameters.benefits('2
 To add an entry to an existing parameter, use `update`:
 
 > Example:
+>
 > ```py
 > tax_benefit_system.parameters.benefits.basic_bro.update("2017-01", value = 2000)
 > tax_benefit_system.parameters.benefits.basic_bro
 > ```
+>
 > Returns:
+>
 > ```sh
 > 2017-01-01: 2000
 > 2015-12-01: 600.0

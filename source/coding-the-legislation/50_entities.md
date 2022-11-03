@@ -3,6 +3,7 @@
 Every variable is defined for a type of [entity](../key-concepts/person,_entities,_role.md): for instance persons or households.
 
 However, I may for instance:
+
 - in a formula defined for a person, want to know some property of their household.
 - in a formula defined for a household, want to know some property of the household members.
 
@@ -29,7 +30,6 @@ You can know whether a person has a certain role with the `has_role(role)` metho
         is_child = person.has_role(Household.CHILD)
 ```
 
-
 ## Aggregation
 
 For an entity, several methods allow you to aggregate the values of a quantity defined for its members.
@@ -39,8 +39,9 @@ For an entity, several methods allow you to aggregate the values of a quantity d
 `entity.sum(result)` sums previously calculated results. Similar functions such as `min`, `max`, `any`, and `all` work the same way.
 
 For instance, let's imagine a basic income paid to households with the following rules:
-* Any household is entitled to 500€ a month per adult, and 200€ a month per children.
-* The sum of salaries from all household members are deducted from the amount of the benefit.
+
+- Any household is entitled to 500€ a month per adult, and 200€ a month per children.
+- The sum of salaries from all household members are deducted from the amount of the benefit.
 
 ```py
 class basic_income(Variable):

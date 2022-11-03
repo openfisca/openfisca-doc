@@ -24,6 +24,7 @@ The main valid period formats are referenced in this table:
 The starting instant can be shortened to a month or a year. Then, OpenFisca will implicitly use the first day of the first month.
 
 > Internally, periods come from `openfisca_core.periods` and are stored as:
+>
 > - a unit (`DAY`, `MONTH`, `YEAR`)
 > - a starting `Instant`
 > - a quantity of units.
@@ -49,10 +50,11 @@ With OpenFisca you can calculate variables such as `salary` that can change over
 These variables can evolve through time at a different periodicity. Here for example, `salary` changes from month to month while the `income_tax` is calculated on a yearly basis.
 
 Therefore, all OpenFisca variables have a `definition_period` attribute:
-  - `definition_period = DAY`: The variable may have a different value each day.
-  - `definition_period = MONTH`: The variable may have a different value each month. *For example*, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `formula`.
-  - `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. *For example*, if taxes are to be paid yearly, the corresponding variable is yearly. When `formula` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
-  - `definition_period = ETERNITY`: The value of the variable is constant. *For example*, the date of birth of a person never changes. `period` is still the 2nd parameter of `formula`. However when `formula` is executed, the parameter `period` can be anything and it should not be used.
+
+- `definition_period = DAY`: The variable may have a different value each day.
+- `definition_period = MONTH`: The variable may have a different value each month. _For example_, the salary of a person. When `formula` is executed, the parameter `period` will always be a whole month. Trying to compute `salary` with a period that is not a month will raise an error before entering `formula`.
+- `definition_period = YEAR`: The variable is defined for a year or it has always the same value every months of a year. _For example_, if taxes are to be paid yearly, the corresponding variable is yearly. When `formula` is executed, the parameter `period` will always be a whole year (from January 1st to December 31th).
+- `definition_period = ETERNITY`: The value of the variable is constant. _For example_, the date of birth of a person never changes. `period` is still the 2nd parameter of `formula`. However when `formula` is executed, the parameter `period` can be anything and it should not be used.
 
 ```py
 ...
@@ -122,7 +124,6 @@ class salary_net_of_taxes(Variable):
         return salary - monthly_taxes
 ```
 
-
 ### Calculate dependencies for a specific period
 
 It happens that the formula to calculate a variable at a given period needs the value of another variable for another period. Usually, the second period is defined relatively to the first one (previous month, last three month, current year).
@@ -163,7 +164,6 @@ You can generate any period with the following properties and methods:
 
 You can find more information on the `Period` object in the [reference documentation](../openfisca-python-api/periods).
 
-
 ## Automatically process variable inputs defined for periods not matching the `definition_period`
 
 By default, when you provide a simulation input, you won't be able to set a variable value for a period that doesn't match its `definition_period`.
@@ -172,10 +172,11 @@ For instance, if the `definition_period` of `salary` is `MONTH`, and you input a
 
 It is however possible to define an automatic behaviour to cast yearly inputs into monthly values. To do this, add a `set_input` class attribute to a variable.
 
-* `set_input = set_input_divide_by_period`: the 12 months are set equal to 1/12th of the input value,
-* `set_input = set_input_dispatch_by_period`: the 12 months are set equal to input value.
+- `set_input = set_input_divide_by_period`: the 12 months are set equal to 1/12th of the input value,
+- `set_input = set_input_dispatch_by_period`: the 12 months are set equal to input value.
 
 For instance, let's slightly modify the code of `salary`:
+
 ```py
 class salary(Variable):
     value_type = float

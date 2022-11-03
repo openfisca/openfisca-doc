@@ -16,8 +16,9 @@ This configuration is done in the initialisation of your `TaxBenefitSystem`. For
 ```
 
 This defines:
-  - `variable_example`: A variable of your model that you want to appear in the specification. Usually a well known variable (e.g. salary).
-  - `parameter_example`: A parameter of your model that you want to appear in the specification. Usually a well known variable (e.g. minimum wage).
-  - `simulation_example`: A Python `dict` representing a JSON that could be sent to the web API. It should include some input values, and some values set to `null`/`None` so that they are calculated.
+
+- `variable_example`: A variable of your model that you want to appear in the specification. Usually a well known variable (e.g. salary).
+- `parameter_example`: A parameter of your model that you want to appear in the specification. Usually a well known variable (e.g. minimum wage).
+- `simulation_example`: A Python `dict` representing a JSON that could be sent to the web API. It should include some input values, and some values set to `null`/`None` so that they are calculated.
 
 Note that if no OpenAPI configuration is provided, an arbitrary variable and an arbitrary parameter will be used, and no simulation example will be provided as an example.

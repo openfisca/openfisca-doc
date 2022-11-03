@@ -17,9 +17,9 @@ Python is the programing language used in OpenFisca. It can be installed without
 
 - Download miniconda from [https://conda.io/miniconda](https://conda.io/miniconda). Make sure to choose the **Python 3.7** version for Windows. If you don't know if your system is 32-bit or 64-bit, pick 32-bit.
 - Install it. At some point, the installer will ask you for a "Destination Folder". You can keep the default or choose another one, but in all case **copy paste the path to this folder somewhere**. It will be useful later. For instance, this path may look like `C:\Users\my-name\AppData\Local\Miniconda2`.
-- Run the program "Git Bash" from the "Start" menu ("Démarrer"). This should open a command line. Copy and paste the following lines in the console, after **adapting the first line using the path you noted in the last step**:
+- Run the program "Git Bash" from the "Start" menu. This should open a command line. Copy and paste the following lines in the console, after **adapting the first line using the path you noted in the last step**:
 
-```
+```sh
 echo 'MINICONDA_PATH="C:\Users\form\AppData\Local\Miniconda2"' >> .bashrc
 echo 'function convert { echo /$1  | sed '\''s/\\/\//g'\'' | sed '\''s/://'\'' ; }' >> .bashrc
 echo 'function add { export PATH=$(convert $1):$PATH ;}' >> .bashrc
@@ -33,7 +33,7 @@ source activate openfisca
 
 To check that everything worked correctly, type in Git Bash:
 
-```
+```sh
 pip --version
 ```
 
@@ -48,7 +48,7 @@ A version number should be printed, and no error message should appear. Congrats
 
 To check that everything worked correctly, type in Git Bash:
 
-```
+```sh
 python -c "from openfisca_france import CountryTaxBenefitSystem; CountryTaxBenefitSystem()"
 ```
 

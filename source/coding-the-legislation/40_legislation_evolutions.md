@@ -47,6 +47,7 @@ taxes:
 ```
 
 After this change, in a formula:
+
 - `parameters('2016-04').taxes.salary.rate` is `0.25`
 - `parameters('2017-01').taxes.salary.rate` is `0.3`
 - `parameters('2022-01').taxes.salary.rate` is `0.3`
@@ -82,17 +83,17 @@ class flat_tax_on_salary(Variable):
 If the `flat_tax_on_salary` is calculated for a person **before** the 31st of Dec. 2016 (included), `formula` is used. If it is called **after** the 1st of Jan 2017 (included), `formula_2017` is used.
 
 Formula naming rules:
+
 - A formula name must always start with `formula`.
 - To define a starting date for a formula, we add to its name a suffix made of an underscore followed by a date.
-  - For instance, `formula_2017_01_01` is active from the 1st of Jan. 2017.
+  + For instance, `formula_2017_01_01` is active from the 1st of Jan. 2017.
 - When defining a date, the month is given **before** the day.
 - When no month or day is specified, OpenFisca uses '01' as default value.
-  - For instance, `formula_2017` is equivalent to `formula_2017_01_01`.
+  + For instance, `formula_2017` is equivalent to `formula_2017_01_01`.
 - If no date is specified for a formula, OpenFisca will consider that this formula has been active since the dawn of time (or more precisely, since `0001-01-01`, as Python does not handle B.C. dates).
-  - For instance, `formula` is active on `2010`.
+  + For instance, `formula` is active on `2010`.
 - A formula is active until another formula, starting later, becomes active and replaces it (or until the [variable `end` date](#ending-a-variable-at-a-specific-date) is reached).
-  - For instance, `formula` is active until `2016-12-31` (included). On the day after, `2017-01-01`, `formula_2017` becomes active, and `formula` becomes inactive.
-
+  + For instance, `formula` is active until `2016-12-31` (included). On the day after, `2017-01-01`, `formula_2017` becomes active, and `formula` becomes inactive.
 
 ## Formula introduction
 
@@ -124,7 +125,6 @@ Only a few characters changed in comparison with the last example: the suffix `_
 
 Note that if `flat_tax_on_salary` is calculated **before** `2005-05-31` (included), _none_ of the two formulas is used, as they are _both inactive_ at this time. Instead, **the variable [default value](../key-concepts/variables.md#default-values) is returned**.
 
-
 ## Ending a variable at a specific date
 
 As legislation evolves, some fiscal or benefit mechanisms disappear.
@@ -151,10 +151,10 @@ If `progressive_income_tax` is called **before** `2005-05-31`(included), `formul
 However, if `progressive_income_tax` is calculated **after** `2005-06-01` (included), `formula` is **not** used, as it is not active anymore at this time. Instead, **the variable [default value](../key-concepts/variables.md#default-values) is returned**.
 
 Note that:
+
 - The `end` day is **inclusive**: it is the last day a variable and its formulas are active (and not the first day it is not active anymore).
 - The `end` value is a string of format `YYYY-MM-DD` where `YYYY`, `MM` and `DD` are respectively a year, month and day.
 - When defining a date, the month is given **before** the day.
-
 
 ## Ending a parameter at a specific date
 
@@ -176,16 +176,19 @@ values:
   2017-01-01:
     value: null
 ```
+
 If `housing_allowance` is called **before** `2016-12-31`(included) and **after** `2010-01-01` (included), the `0.25` value will be used.
 
 However, trying to obtain the parameter **after** `2017-01-01`(included) will raise an error:
 
-
 > Example:
->```py 
+>
+>```py
 >tax_benefit_system.parameters(2017).benefits.housing_allowance
 >```
+>
 > Output:
+>
 >```py
 >ParameterNotFoundError: The parameter 'benefits[housing_allowance]' was not found in the 2017-01-01 tax and benefit system.
 >```
@@ -223,6 +226,7 @@ brackets:
     2017-01-01:
       value: null
 ```
+
 It is also possible to only end one bracket. We use the same `social_security_contribution` example to illustrate, by ending only the second bracket as of the 1st of January 2017.
 
 ```yaml
@@ -250,4 +254,3 @@ brackets:
     2017-01-01:
       value: null
 ```
-

@@ -10,7 +10,7 @@ In the following examples, we use [OpenFisca-France](https://github.com/openfisc
 
 The easier way to spot a slow simulation is to profile your test suite, as follows:
 
-```
+```py
 PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=10" openfisca test --country-package openfisca_france tests
 
 ...
@@ -29,7 +29,7 @@ Which gives you the 10 slowest tests:
 
 Now, let's take a closer look at this test `tests/formulas/irpp_prets_participatifs.yaml`:
 
-```
+```py
 PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=3" openfisca test --country-package openfisca_france tests/formulas/irpp_prets_participatifs.yaml
 
 ...
@@ -47,7 +47,7 @@ To generate the flame graph, just pass the [`--performance`](https://openfisca.o
 
 We'll also use the [`--name_filter`](https://openfisca.org/doc/openfisca-python-api/openfisca-run-test.html) option to profile the first test only.
 
-```
+```py
 openfisca test --performance --name_filter ir_prets_participatifs_2016 --country-package openfisca_france tests/formulas
 git status | grep html
 
@@ -62,7 +62,7 @@ Now, you can open the file with your favorite browser.
 
 For example, in OS X:
 
-```
+```py
 open performance_graph.html
 ```
 
@@ -80,13 +80,13 @@ In order to identify why the simulation is slow, we need to find the bottleneck.
 
 We'll start by installing `line_profiler`:
 
-```
+```py
 pip install line_profiler
 ```
 
 Then we'll use it to profile our formula by adding the `@profile` decorator:
 
-```python
+```py
 class impots_directs(Variable):
     value_type = float
     entity = Menage
@@ -100,13 +100,13 @@ class impots_directs(Variable):
 
 Finally, we run our test with the `line_profiler` enabled:
 
-```
+```py
 kernprof -v -l openfisca test --name_filter ir_prets_participatifs_2016 --country-package openfisca_france tests/formulas
-``` 
+```
 
 We now know where our most time consuming line lies:
 
-```
+```py
 Line #   Hits    Time      Per Hit      % Time         Line Contents
 ====================================================================
 
@@ -119,7 +119,7 @@ Another formula... so we'll have to follow the breadcrumbs.
 
 We'll repeat the same operation until we find the culprit! You'll see that the results are coherent with the flame graph:
 
-```
+```py
 Line #   Hits    Time      Per Hit      % Time         Line Contents
 ====================================================================
 
@@ -154,7 +154,7 @@ From `salaire_imposable`, we can follow two different branches:
 
 1. The `indemnite_residence` branch:
 
-    ```
+    ```py
     Line #   Hits    Time        Per Hit    % Time         Line Contents
     ====================================================================
 
@@ -178,7 +178,7 @@ From `salaire_imposable`, we can follow two different branches:
 
     Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
 
-    ```
+    ```py
     $ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
 
     ...
@@ -189,7 +189,7 @@ From `salaire_imposable`, we can follow two different branches:
 
 2. The `cotisations_salariales` branch:
 
-    ```
+    ```py
     Line #   Hits    Time        Per Hit    % Time         Line Contents
     ====================================================================
 
@@ -206,7 +206,7 @@ From `salaire_imposable`, we can follow two different branches:
 
     Performing a search to find the definition of `iter_cotisations` gives us the following:
 
-    ```python
+    ```py
         def iter_cotisations():
             # ...
 
@@ -234,7 +234,7 @@ From `salaire_imposable`, we can follow two different branches:
 
     Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
 
-    ```
+    ```py
     $ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
 
     ...
@@ -256,20 +256,20 @@ We'll continue our profiling in core, following `TaxBenefitSystem.get_parameters
 
 For that, we need to install OpenFisca Core in editable mode:
 
-```
+```py
 pip install -e /path/to/openfisca-core
 ```
 
 And as before we add the `@profile` decorator:
 
-```python
+```py
 @profile
 def get_parameters_at_instant(self, instant):
 ```
 
 Let's see:
 
-```
+```py
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
    337                                               @profile
@@ -297,7 +297,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 Let's take a closer look at `parameters.get_at_instant`:
 
-```python
+```py
 class AtInstantLike(abc.ABC):
     # ...
 
@@ -309,7 +309,7 @@ class AtInstantLike(abc.ABC):
 
 And the results of running the profiler:
 
-```
+```py
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
     14                                               @profile
@@ -320,7 +320,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 This is the whole snippet for the expensive `periods.instant` function:
 
-```python
+```py
 def instant(instant):
     # ... 
 
@@ -335,7 +335,7 @@ def instant(instant):
 
 We'll refactor it as follows:
 
-```python
+```py
 fragments = instant.split('-', 2)[:3]
 fragments = [int(fragment) for fragment in fragments]
 instant = periods.Instant(fragment for fragment in fragments)
@@ -343,7 +343,7 @@ instant = periods.Instant(fragment for fragment in fragments)
 
 So as to see where the bottleneck is:
 
-```
+```py
 Line #  Hits     Time      Per Hit    % Time         Line Contents
 ==================================================================
 
@@ -356,7 +356,7 @@ Perfect!
 
 Now we're going to isolate it:
 
-```python
+```py
 fragments = instant.split('-', 2)[:3]
 fragments = [parse_fragment(fragment) for fragment in fragments]
 instant = periods.Instant(fragments)
@@ -370,7 +370,7 @@ def parse_fragment(fragment: str) -> int:
 
 And profile it again:
 
-```
+```py
 Line #  Hits     Time      Per Hit    % Time         Line Contents
 ==================================================================
 
@@ -408,7 +408,7 @@ In this case, creating a lookup table seems more cost-efficient:
 
 We'll use `functools.lru_cache` for our lookup table:
 
-```python
+```py
 import functools
 
 # ...
@@ -420,7 +420,7 @@ def parse_fragment(fragment: str) -> int:
 
 Let's see how it does:
 
-```
+```py
 Line #  Hits   Time        Per Hit    % Time         Line Contents
 ==================================================================
 
@@ -440,7 +440,7 @@ Once we know it works, can't we go further?
 
 With a couple of extra caches and code refactoring, we could end up with something like this:
 
-```python
+```py
 from __future__ import annotations
 
 # ...
@@ -513,7 +513,7 @@ Please note that we're importing `annotations` from `__future__` so as to postpo
 
 Let's profile again:
 
-```
+```py
 Line #  Hits    Time        Per Hit    % Time         Line Contents
 ===================================================================
 
@@ -525,7 +525,7 @@ Line #  Hits    Time        Per Hit    % Time         Line Contents
 
 And overall?
 
-```
+```py
 PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=3" openfisca test --country-package openfisca_france tests/formulas/irpp_prets_participatifs.yaml
 
 ...
@@ -537,13 +537,13 @@ PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=3" openfisca test --country-package 
 
 Looks promising!
 
-## Beware of context!
+## Beware of context
 
 So we tried reducing the number of hits, what about reducing the impact per hit?
 
 Looking back to `get_at_instant`, let's follow the next function call:
 
-```python
+```py
 Line #  Hits     Time      Per Hit    % Time         Line Contents
 ===================================================================
 
@@ -553,7 +553,7 @@ Line #  Hits     Time      Per Hit    % Time         Line Contents
 
 Let's look at that code closer:
 
-```python
+```py
 def _get_at_instant(self, instant):
     for value_at_instant in self.values_list:
         if value_at_instant.instant_str <= instant:
@@ -605,7 +605,7 @@ class Parameter(AtInstantLike):
 
 And performance wise?
 
-```
+```py
 Line #  Hits     Time      Per Hit    % Time         Line Contents
 ===================================================================
 
@@ -626,7 +626,7 @@ Finally, let's run our base & proposed scenarios several times so as to have som
 
 IPython's `%timeit` comes handy:
 
-```
+```py
 pip install ipython
 ipython
 %timeit -n 10 -r 3 !openfisca test --country-package openfisca_france tests/formulas/irpp_prets_participatifs.yaml

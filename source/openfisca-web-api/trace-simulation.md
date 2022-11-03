@@ -152,6 +152,7 @@ You can see those variables and parameters in [disposable_income definition](htt
 Following `dependencies` list, we can also see that:
 
 * OpenFisca didn't need to calculate the `salary` value as it was given in situation inputs; thus the `/trace` doesn't evaluate its `dependencies` and `parameters`:
+
     ```json
     {
       "salary<2017-01>": {
@@ -163,7 +164,9 @@ Following `dependencies` list, we can also see that:
       }
     }
     ```
+
 * OpenFisca needed to calculate the next variable, `basic_income`, before `disposable_income` evaluation:
+
     ```json
     {
       "basic_income<2017-01>": {
@@ -182,7 +185,6 @@ Following `dependencies` list, we can also see that:
     ```
 
     Note that, as a parameter depends only on its validity period, its evaluation is described in one line that includes its value.
-
 
 So, with `/trace` endpoint, you can follow calculation steps by following the variable names and periods in its response `trace` section.
 

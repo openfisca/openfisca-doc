@@ -9,9 +9,9 @@ replicate-simulation-inputs
 profile-simulation
 ```
 
-To calculate Tax and Benefit System variables on people's situations, you need to create and run a new *Simulation*.
+To calculate Tax and Benefit System variables on people's situations, you need to create and run a new _Simulation_.
 
-OpenFisca will work the same if there is one person, seven, or seven million in the modeled situation. 
+OpenFisca will work the same if there is one person, seven, or seven million in the modeled situation.
 
 > Technically speaking, OpenFisca uses [vector computing](../coding-the-legislation/25_vectorial_computing.md) via the [NumPy](http://www.numpy.org/) package for performance reasons.
 

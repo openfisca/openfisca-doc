@@ -77,7 +77,6 @@ From the point of view of someone (developer, economist, etc.) who wants to impl
 
 ### Write reforms
 
-
 ### Enhance other projects linked to OpenFisca
 
 You can also participate in [other projects](../find-help.md) that make use of

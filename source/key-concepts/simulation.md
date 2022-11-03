@@ -2,9 +2,9 @@
 
 ## Definition
 
-A *Simulation* is basically the OpenFisca frame for calculating taxes or benefits.
+A _Simulation_ is basically the OpenFisca frame for calculating taxes or benefits.
 
-To calculate any variable you need to create a *Simulation* from the *TaxBenefitSystem* that is to say the framework where you will compute your result.
+To calculate any variable you need to create a _Simulation_ from the _TaxBenefitSystem_ that is to say the framework where you will compute your result.
 
 > Technically speaking it is the cache of input data and previously computed results.
 
@@ -12,7 +12,7 @@ It's possible to run many independent simulations using the same `TaxBenefitSyst
 
 ## Computing variables
 
-To compute taxes and benefits, you need to define on whom you want to do that and what you already know about those persons or groups of persons. This is what you will set as input data for your *Simulation*.
+To compute taxes and benefits, you need to define on whom you want to do that and what you already know about those persons or groups of persons. This is what you will set as input data for your _Simulation_.
 
 Then, be aware of the period over which you want to have your result. Some measures are calculated on a monthly basis other an annual one.
 
@@ -22,7 +22,7 @@ Now all the settings are given to run computation of taxes or benefits.
 
 ### Application: how to calculate a variable
 
-```python
+```py
 # Calcul of the 'impot sur le revenu des personnes physiques'
 impot = simulation.calculate('irpp', '2015')
 allocations_familiales = simulation.calculate('af', '2015-01')
@@ -31,7 +31,8 @@ allocations_familiales = simulation.calculate('af', '2015-01')
  > HINT: Don't forget to give the period.
 
  The output is an array:
- - positive if it is an amount the *entity* receives from the state.
- - negative if it is an amount the *entity* has to pay.
+
+- positive if it is an amount the _entity_ receives from the state.
+- negative if it is an amount the _entity_ has to pay.
 
 [Read more about how to run a simulation](../simulate/run-simulation.md).

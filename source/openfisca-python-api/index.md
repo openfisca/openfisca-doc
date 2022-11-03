@@ -1,6 +1,5 @@
 # <i class="fab fa-python"></i> OpenFisca Python API
 
-
 Modules:
 
 ```{toctree}
