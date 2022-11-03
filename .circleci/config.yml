@@ -9,7 +9,7 @@ jobs:
       
       - run:
           name: Lint Markdown files
-          command: npx markdownlint-cli2 "**/*.md"
+          command: make lint
 
   build:
     docker:
