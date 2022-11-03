@@ -38,7 +38,7 @@ jobs:
 
       - run:
           name: Test doc
-          command: make test
+          command: make test-build
 
       - run:
           name: Build doc
