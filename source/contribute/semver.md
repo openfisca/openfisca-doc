@@ -4,13 +4,11 @@ Before merging your contribution to an OpenFisca package, you are required to in
 
 The [semantic versioning convention](http://semver.org/), applied here, requires you to:
 
->Given a version number MAJOR.MINOR.PATCH, increment the:
-
->**MAJOR** version when you make incompatible API changes,
-
->**MINOR** version when you add functionality in a backwards-compatible manner, and
-
->**PATCH** version when you make backwards-compatible bug fixes.
+> Given a version number MAJOR.MINOR.PATCH, increment the:
+>
+> - **MAJOR** version when you make incompatible API changes,
+> - **MINOR** version when you add functionality in a backwards-compatible manner, and
+> - **PATCH** version when you make backwards-compatible bug fixes.
 
 It is thus crucial to determine whether your changes are **backwards-compatible**. If, during a hackathon, a contributor has written a reform to OpenFisca, would this reform still work after adding your changes?
 
