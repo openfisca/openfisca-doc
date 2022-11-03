@@ -47,6 +47,8 @@ To test the documentation, run:
 make test
 ```
 
+This will also lint the source files using [Markdownlint](https://github.com/DavidAnson/markdownlint), for which you will need [Node](https://nodejs.org) and NPM.
+
 ## Fixing the doc
 
 If the tests fail, here's what you can do:
