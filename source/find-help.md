@@ -1,4 +1,4 @@
-# <i class="fas fa-hands-helping"></i> To Find help
+# <i class="fas fa-hands-helping"></i> To find help
 
 ## Slack
 
