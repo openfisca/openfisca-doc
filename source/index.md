@@ -73,6 +73,6 @@ OpenFisca is a framework for humans to collaborate on translating rules into cod
 
 OpenFisca shines in dealing with numbers: enumerated values are a later addition, and support for serving and testing with string values is not built-in.
 
-## Feeling lost 😟?
+## Feeling lost?
 
 Not sure how OpenFisca can suit your project? [Drop us a line](mailto:contact@openfisca.org?subject=Contact%20from%20doc), and we will guide you!
