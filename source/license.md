@@ -7,7 +7,7 @@ All contributions are welcome as long as they abide by our contribution guidelin
 
 ## Computation results
 <!--Can be rephrased to be welcoming and appreciative. -->
-If you provide results based on OpenFisca usage, crediting the project would be very welcome in order to increase its visibility and contributor base. More people means more maintenance and more upgrades!
+If you provide results based on OpenFisca usage, crediting the project would be very welcome to increase its visibility and contributor base. More people means more maintenance and more upgrades.
 
 
 The following HTML snippet can be used to credit OpenFisca in your articles and publications:
