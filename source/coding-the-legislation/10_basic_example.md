@@ -70,7 +70,7 @@ To make sure that the formula you have just written works the way you expect, yo
 
 You can check the [YAML tests documentation](writing_yaml_tests.md) to learn more about how to write YAML tests, and how to run them.
 
-## For example with legislation parameters
+## Example with legislation parameters
 
 To access a common legislation parameter, a third parameter can be added to the function signature. The previous formulas could thus be rewritten as:
 
