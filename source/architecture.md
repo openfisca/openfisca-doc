@@ -14,7 +14,6 @@ Country packages are what most users will interact with when using OpenFisca. Th
 
 Extensions add functionalities to a country package while maintaining situation description compatibility, by adding or redefining parameters and variables but not entities.
 
-<!--- Needs clarity here----->
 This architecture enables communities to maintain subsets of the rules of a country, especially those that are too specific to be of interest to the broader OpenFisca community of that country.
 
 > For example, [`openfisca-paris`](https://github.com/openfisca/openfisca-paris) extends `openfisca-france` with benefits specific to the town of Paris and is maintained by the Paris City Council.
