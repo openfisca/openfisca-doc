@@ -28,10 +28,6 @@ The Core also includes an optional [web API](openfisca-web-api/index.md), which 
 
 ## Templates
 
-Country and extension packages are maintained by different communities and depend on legal and cultural contexts. OpenFisca provides two templates aimed at demonstrating its capabilities independently:
+Country and extension packages are maintained by different communities and depend on their legal and cultural contexts. OpenFisca includes two neutral templates aimed at demonstrating their capabilities independently from these contexts: [`country-template`](https://github.com/openfisca/country-template/) and [`extension-template`](https://github.com/openfisca/extension-template/). These templates can also be used as boilerplate for creating a new country or extension package.
 
-- [`country-template`](https://github.com/openfisca/country-template/)
-- [`extension-template`](https://github.com/openfisca/extension-template/)
-
-They can be used as a start for creating a new country or extension package.
-This documentation uses these packages throughout.
+Code examples throughout the OpenFisca documentation use rules defined in both `country-template` and `extension-template`.
