@@ -4,7 +4,7 @@ OpenFisca is a free software made available under the [AGPL license](https://cho
 All contributions are welcome as long as they abide by our contribution guidelines. We are happy to have you here in the OpenFisca community.
 
 ## Computation results
-<!--Can be rephrased to be welcoming and appreciative. -->
+
 If you provide results based on OpenFisca usage, crediting the project would be very welcome to increase its visibility and contributor base. More people means more maintenance and more upgrades.
 
 
