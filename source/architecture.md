@@ -4,13 +4,13 @@ Depending on your goals, you will interact with one or several components of Ope
 
 [![OpenFisca architecture](https://cdn.rawgit.com/openfisca/openfisca-doc/master/source/static/img/architecture.svg)](https://github.com/openfisca/openfisca-doc/blob/master/source/static/img/architecture.svg)
 
-## The Country Packages
+## Country Packages
 
 Country packages are what most users will interact with when using OpenFisca. They model the rules of a jurisdiction by defining [Parameters](key-concepts/parameters.md), [Variables](key-concepts/variables.md) and [Entities](key-concepts/person,_entities,_role.md).
 
 > For example, [`openfisca-france`](https://github.com/openfisca/openfisca-france) models French law.
 
-## The Extensions Packages
+## Extensions Packages
 
 Extensions add functionalities to a country package while maintaining situation description compatibility, by adding or redefining parameters and variables but not entities.
 
@@ -19,7 +19,7 @@ This architecture enables communities to maintain subsets of the rules of a coun
 
 > For example, [`openfisca-paris`](https://github.com/openfisca/openfisca-paris) extends `openfisca-france` with benefits specific to the town of Paris and is maintained by the Paris City Council.
 
-## The Core
+## Core
 
 OpenFisca Core provides the API, domain-specific language (DSL) and testing tools. The country and extension packages are constructed with the Core.
 
