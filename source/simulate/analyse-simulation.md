@@ -1,6 +1,6 @@
 # Analysing or debugging a simulation
 
-When running a simulation with the Python API, you might want to understand how the result was calculated and what intermediate variables and parameters have been taken into account.
+When simulating with the Python API, you might want to understand how the result was calculated and what intermediate variables and parameters have been taken into account.
 
 > To trace a simulation calculation with the web API, please see [/trace endpoint documentation](../openfisca-web-api/trace-simulation.md).
 
@@ -71,11 +71,11 @@ The previous code example would give us this output:
     rent<2011-01> >> [300.   0.]
 ```
 
-The `rent` variable is indented to the right relative to `housing_allowance`. This says that `housing_allowance` variable called the `rent` calculation. It was called on the same period, '2011-01'. As the [rent variable](https://demo.openfisca.org/legislation/rent)'s value was an input value given by our `TEST_CASE`, it was returned to `housing_allowance`. Then, as the [housing_allowance variable](https://demo.openfisca.org/legislation/housing_allowance) has a valid formula on '2011-01', it used the `rent` value to calculate its amount for its two households (`h1` and `h2`): `[75.  0.]`
+The `rent` variable is indented to the right relative to `housing_allowance`. This means that `housing_allowance` variable called the `rent` calculation. It was called on the same period, '2011-01'. As the [rent variable](https://demo.openfisca.org/legislation/rent)'s value was an input value given by our `TEST_CASE`, it was returned to `housing_allowance`. Then, as the [housing_allowance variable](https://demo.openfisca.org/legislation/housing_allowance) has a valid formula on '2011-01', it used the `rent` value to calculate its amount for its two households (`h1` and `h2`): `[75.  0.]`
 
-Thus, on the left side of the double chevrons, you can read the trace from top to bottom to see the dependencies between the variables. And, on the right side, you can read it from bottom to top to see how the simulation result is built.
+Thus, on the left side of the double chevrons, you can read the trace from top to bottom to see the dependencies between the variables. And on the right side, you can read it from bottom to top to see how the simulation result is built.
 
-Likewise if you are calculating this `housing_allowance` on a large population, you will be able to check your calculation results with aggregated outputs. To do so, you can add the `aggregate=True` option as follows:
+Likewise, if you are calculating `housing_allowance` on a large population you will be able to check your calculation results with aggregated outputs. To do so, you can add the `aggregate=True` option as follows:
 
 ```py
 simulation.tracer.print_computation_log(aggregate=True)
