@@ -17,7 +17,7 @@ Developers and companies use Openfisca to effortlessly create web applications b
 * **Public administrations**: 
 Stop building your micro-simulation software and tax & benefit calculators from scratch. Join OpenFisca, contribute to OpenFisca, collaborate with other administrations and reduce costs paid by the taxpayers.
 
-## Ways to use OpenFisca
+## Way to use OpenFisca
 
 ### 1 - Use an available country package or roll your own
 
@@ -57,7 +57,7 @@ Please make sure you read our [license](license.md) before publishing results ba
 
 ## Things OpenFisca won’t do for you
 
-* **Behaviour-based analysis.**
+### Behaviour-based analysis
 <!--Needs more clarity here--->
 OpenFisca is a static micro-simulation model, so it will provide you with results “as of tomorrow”, without taking retroactive effects or “elasticity” into account (e.g. a new tax bracket won’t affect consumption).
 

@@ -4,7 +4,7 @@
 
 The OpenFisca community gathers around a [Slack space](https://openfisca.slack.com), which you can ask to join by sending a mail to [contact@openfisca.org](mailto:contact@openfisca.org?subject=Slack).
 
-This space provides community and official support and centralizes all countries’ channels.
+This space provides community and official support and centralises all countries’ channels.
 
 ### Channels and Naming conventions
 
