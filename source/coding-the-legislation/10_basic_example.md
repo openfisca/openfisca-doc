@@ -87,4 +87,4 @@ class flat_tax_on_salary(Variable):
         return salary * parameters(period).taxes.salary.rate
 ```
 
-The `parameters` is a function that can be called for a given `period` that returns the whole legislation parameters (in a hierarchical tree structure). You can access the specific parameter you are interested in by navigating the tree structure with the  *.* notation.
+The `parameters` is a function that can be called for a given period that returns the whole legislation parameters (in a hierarchical tree structure). You can access the specific parameter you are interested in by navigating the tree structure with the `.` notation.

@@ -12,7 +12,7 @@ The following prefixes are used before channel names to increase discoverability
 
 - `of-` prefixed channels are about quick discussions and requests for help on a technical module. GitHub issues and Pull Requests on dedicated repositories are employed to make decisions on changes to apply to these modules if any.
 
-- `share-` prefixed channels are newsrooms where everyone is encouraged to share their news, learnings and accomplishments. :)
+- `share-` prefixed channels are newsrooms where everyone is encouraged to share their news, learnings and accomplishments.
 
 The following suffix conventions are used on tax and benefit system models by OpenFisca for better clarity:
 - Channels that centralize discussion around a specific tax and benefit system are suffixed with `-system`.

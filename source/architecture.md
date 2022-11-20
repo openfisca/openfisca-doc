@@ -12,16 +12,16 @@ Country packages are what most users will interact with when using OpenFisca. Th
 
 ## The Extensions Packages
 
-Extensions add functionalities to a country package by adding or redefining parameters and variables, but not entities while maintaining situation description compatibility.
+Extensions add functionalities to a country package while maintaining situation description compatibility, by adding or redefining parameters and variables but not entities.
 
 <!--- Needs clarity here----->
-This architecture enables sub-communities to maintain subsets of the rules of a country on which they have the authority, or are too specific to be of interest to the border OpenFisca community.
+This architecture enables communities to maintain subsets of the rules of a country, especially those that are too specific to be of interest to the broader OpenFisca community of that country.
 
 > For example, [`openfisca-paris`](https://github.com/openfisca/openfisca-paris) extends `openfisca-france` with benefits specific to the town of Paris and is maintained by the Paris City Council.
 
 ## The Core
 
-OpenFisca Core provides the API, domain-specific language (DSL) and testing tools. The country and extension packages are constructed based on the Core.
+OpenFisca Core provides the API, domain-specific language (DSL) and testing tools. The country and extension packages are constructed with the Core.
 
 The core defines the [Python API](openfisca-python-api/index.md) through which the country packages can be queried.
 

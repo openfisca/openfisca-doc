@@ -42,7 +42,7 @@ The following could be your use case to use OpenFisca:
 
 Do you want to help users find their eligibility for a social benefit in your country? Then, use OpenFisca to build a user interface asking them for their income and demographic information and provide them with an answer! (Do not forget to comply with GDPR!).
 
-Are you trying to assess the impact of a new housing tax on behalf of the OECD? Find your government's open survey data and use it with the OpenFisca to simulate the effect of that tax reform on the poorest 20% of a country.
+Are you trying to assess the impact of a new housing tax on behalf of the OECD? Find your government's open survey data and use it with OpenFisca to simulate the effect of that tax reform on the poorest 20% of a country.
 
 ### 3 - Run Simulations
 
@@ -51,7 +51,7 @@ With OpenFisca there are two ways to calculate the effect of the rules modelled 
 *With the results of your simulation, efficiently build a web application. Using the [web API](openfisca-web-api/index.md).
 **Using the  [Python API](openfisca-python-api/index.md) data scientist can utilize a large dataset to perform a survey or apply changes to your system dynamically.
 
-The output of this simulation will be either in Python objects or JSON. To represent these results in a graphical or visualized format you can make use of python libraries for ex:([plot.ly](https://plot.ly) for instance will get you those nice charts you’ve seen elsewhere).
+The output of this simulation will be either Python objects or JSON. To represent these results in a graphical format, you can make use of Python libraries such as [plot.ly](https://plot.ly).
 
 Please make sure you read our [license](license.md) before publishing results based on OpenFisca.
 
@@ -70,7 +70,8 @@ While our community is strong and you can often benefit from its shared efforts,
 OpenFisca is a framework for humans to collaborate on translating rules into code. It does not ingest lawyer speak(abstruse jargon of lawyers) and automatically produces developer speak(terminologies used by developers). Regulations are ambiguous and need human interpretation before being codified.
 
 * **Textual comparisons.**
-OpenFisca shines in dealing with numbers: enumerated values are a later addition. Hence support for serving and testing with *string values* is not built-in.
+
+OpenFisca shines in dealing with numbers: enumerated values are a later addition, and support for serving and testing with string values is not built-in.
 
 ## Feeling lost 😟?
 
