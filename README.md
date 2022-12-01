@@ -1,6 +1,6 @@
 # OpenFisca Doc
 
-[OpenFisca](http://openfisca.org/doc/) is a versatile microsimulation free software. This repository contains the source code of its [online documentation](http://openfisca.org/doc/).
+[OpenFisca](http://openfisca.org/doc/) is versatile and free micro-simulation software. This repository contains the source code of its [online documentation](http://openfisca.org/doc/).
 
 ## Installation
 

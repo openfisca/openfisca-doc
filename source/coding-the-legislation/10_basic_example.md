@@ -16,7 +16,7 @@ class flat_tax_on_salary(Variable):
         return salary * 0.25
 ```
 
-Let's explain in details the different parts of the code:
+Let's explain in detail the different parts of the code:
 
 ### The variable name
 
@@ -26,31 +26,31 @@ Let's explain in details the different parts of the code:
 
 All variables have a set of attributes.
 
-* `value_type` defines the type of the formula output. Possible types are the basic Python types.
+* The `value_type` defines the type of the formula output. Possible types are the basic Python types.
 Note however that OpenFisca uses NumPy to [run calculations vectorially](25_vectorial_computing.md),
 so the actual type of data may be slightly different from the built-in Python ones.
 Available types are:
   - `bool`: boolean
   - `date`: date
-  - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md) in the next section.
+  - `Enum`: discrete value (from an enumerable). [See details](20_input_variables.md) in the next section
   - `float`: float (Note that to reduce memory usage, float are stored on 32 bits using NumPy's `float32`)
   - `int`: integer
   - `str`: string
-* `entity` defines who or what group the variable concerns, e.g. individuals, households, families.
-* `definition_period` defines the period on which the variable is calculated. It can be `MONTH` (e.g. salary), `YEAR` (e.g. income taxes), or ETERNITY (e.g. date of birth).
-* `label` is a human friendly way to describe the variable.
-* `reference` is a list of relevant legislative reference for this variables (usually URLs the text of the law or another trustworthy source).
+* An `entity` defines who or what group the variable concerns, e.g. individuals, households, and families.
+* The `definition_period` defines the period on which the variable is calculated. It can be `MONTH` (e.g. salary), `YEAR` (e.g. income taxes), or ETERNITY (e.g. date of birth).
+* The `label` is a human-friendly way to describe the variable.
+* The `reference` is a list of relevant legislative references for a variable (usually URLs the text of the law or another trustworthy source).
 
 ### The formula
 
-* `def formula(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH`, `period` is constrained to be a month.
+* `def formula(person, period):` declares the formula that will be used to calculate the `flat_tax_on_salary` for a given `person` at a given `period`. Because `definition_period = MONTH` the `period` is constrained to be a month.
 * `salary = person('salary', period)` calculates the salary of the person, for the given month. This will, of course, work only if `salary` is another variable in the tax and benefit system.
 * `return salary * 0.25` returns the result for the given period.
 * [Dated Formulas](40_legislation_evolutions.md) have a start and/or an end date.
 
 ## Testing a formula
 
-To make sure that the formula you have just written works the way you expect, you have to test it. Tests about legislation are written in a [YAML syntax](writing_yaml_tests.md). The `flat_tax_on_salary` formula can for instance be tested with the following test file:
+To make sure that the formula you have just written works the way you expect, you have to test it. Tests about the legislation are written in a [YAML syntax](writing_yaml_tests.md). The `flat_tax_on_salary` formula can for instance be tested with the following test file:
 
 ```yaml
 - name: "Flax tax on salary - No income"
@@ -72,7 +72,7 @@ You can check the [YAML tests documentation](writing_yaml_tests.md) to learn mor
 
 ## Example with legislation parameters
 
-To access a common legislation parameter, a third parameter can be added to the function signature. The previous formulas could thus be rewritten:
+To access a common legislation parameter, a third parameter can be added to the function signature. The previous formulas could thus be rewritten as:
 
 ```py
 class flat_tax_on_salary(Variable):
@@ -87,4 +87,4 @@ class flat_tax_on_salary(Variable):
         return salary * parameters(period).taxes.salary.rate
 ```
 
-`parameters` is here a function that be be called for a given period, and returns the whole legislation parameters (in a hierarchical tree structure). You can get the parameter you are interested in by navigating this tree with the `.` notation.
+The `parameters` is a function that can be called for a given period that returns the whole legislation parameters (in a hierarchical tree structure). You can access the specific parameter you are interested in by navigating the tree structure with the `.` notation.
