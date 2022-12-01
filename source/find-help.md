@@ -15,6 +15,7 @@ The following prefixes are used before channel names to increase discoverability
 - `share-` prefixed channels are newsrooms where everyone is encouraged to share their news, learnings and accomplishments.
 
 The following suffix conventions are used on tax and benefit system models by OpenFisca for better clarity:
+
 - Channels that centralize discussion around a specific tax and benefit system are suffixed with `-system`.
  _For example- `france-system`_.
 *Note: If the full name is too long for the Slack channel character limit, then a shortened version of the name is used.

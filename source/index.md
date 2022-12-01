@@ -49,7 +49,7 @@ Are you trying to assess the impact of a new housing tax on behalf of the OECD? 
 With OpenFisca there are two ways to calculate the effect of the rules modelled in a country package on a given input data:
 
 * If you have a background in web development or want to build a web application with the results of your simulation, you’ll want to use the [web API](openfisca-web-api/index.md).
- * If you have a background in datascience, want to use large datasets, or want to dynamically apply changes to the system, you’ll rather use the [Python API](openfisca-python-api/index.md).
+* If you have a background in datascience, want to use large datasets, or want to dynamically apply changes to the system, you’ll rather use the [Python API](openfisca-python-api/index.md).
 
 The output of this simulation will be either Python objects or JSON. To represent these results in a graphical format, you can make use of Python libraries such as [plot.ly](https://plot.ly).
 
