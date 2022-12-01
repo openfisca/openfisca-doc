@@ -10,8 +10,5 @@ Variables
 .. automodule:: openfisca_core.variables.helpers
     :members:
 
-.. automodule:: openfisca_core.variables.typing
-    :members:
-
 .. automodule:: openfisca_core.variables.config
     :members:
