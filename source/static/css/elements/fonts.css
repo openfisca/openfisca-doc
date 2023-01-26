@@ -1,0 +1,23 @@
+/* Inter v.3.19 is a variable font with these axes: slnt, wght */
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  src: url("./../../fonts/Inter-var.woff2?v=3.19") format("woff2");
+}
+
+/* Space Grotesk Bold v2.0 */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./../../fonts/SpaceGrotesk-Bold.eot");
+  src:
+    url("./../../fonts/SpaceGrotesk-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./../../fonts/SpaceGrotesk-Bold.woff2") format("woff2"),
+    url("./../../fonts/SpaceGrotesk-Bold.woff") format("woff"),
+    url("./../../fonts/SpaceGrotesk-Bold.ttf") format("truetype"),
+    url("./../../fonts/SpaceGrotesk-Bold.svg#SpaceGrotesk-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
