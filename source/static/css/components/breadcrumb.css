@@ -1,0 +1,24 @@
+.breadcrumbs-wrapper{
+  display: flex;
+  gap:var(--m);
+  align-items:center;
+}
+
+.breadcrumbs-wrapper > .breadcrumbs-buttons{
+  margin-left: auto;
+  margin-bottom: auto;
+  list-style : none;
+  display:flex;
+  gap:var(--m);
+}
+
+.breadcrumb{
+  display:flex;
+  gap:var(--xs2);
+  font-size:1.4rem;
+  padding: 0;
+  margin-bottom: auto;
+  background: transparent;
+  border-radius:0;
+  margin-top:auto;
+}
