@@ -1,0 +1,81 @@
+name: Main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  lint:
+    container: node-lts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        
+      - name: Lint Markdown files
+        run: make lint
+        
+  build:
+    container: python:3.8
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        
+      - name: Restore cache
+        uses: ylemkimon/cache-restore@v2.1.3
+        with:
+          key: dependency-cache-${{ hashFiles('**/requirements.txt') }}
+          path: /tmp/venv/openfisca_doc
+          
+      - name: Create a virtualenv
+        run: |
+          mkdir -p /tmp/venv/openfisca_doc
+          python -m venv /tmp/venv/openfisca_doc
+          echo "source /tmp/venv/openfisca_doc/bin/activate" >> $BASH_ENV
+      
+      - name: Install doc dependencies
+        run: make install
+        
+      - name: Save cache
+        uses: actions/cache@v3.2.4
+        with:
+          key: dependency-cache-${{ hashFiles('**/requirements.txt') }}
+          path: /tmp/venv/openfisca_doc
+      
+      - name: Test doc
+        run: make test-build
+        
+      - name: Build doc
+        run: make html
+        
+      - name: Serve doc
+        run: make prod &
+        
+      - name: Check for internal dead links
+        run: wget --spider --recursive --page-requisites http://localhost:8000
+
+      - name: Upload artifact result for build job
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: build
+
+  deploy:
+    container: python:3.8
+    runs-on: ubuntu-latest
+    needs: build
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        
+      - name: Download math result for job 1
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+      
+      - name: Publish openfisca.org/doc
+        run: ./publish.sh
+      
