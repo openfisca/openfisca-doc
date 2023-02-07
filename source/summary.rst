@@ -14,4 +14,3 @@
    find-help
    contribute/index
    license
-   manifest-history
