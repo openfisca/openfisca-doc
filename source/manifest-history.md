@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # <i class="fa fa-history"></i> History
 
 The history of OpenFisca is no longer available here.
