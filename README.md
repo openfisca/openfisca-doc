@@ -100,4 +100,4 @@ That's it! 🙌
 
 ## Using icons
 
-You can use icons by choosing one from [Lucide](https://lucide.dev) and adapt the following code `<i icon-name="smile"></i>` with the according icon name.
+You can use icons by choosing one from [Lucide](https://lucide.dev) and adapting the code `<i icon-name="$ICON_NAME"></i>` with the relevant icon name.
