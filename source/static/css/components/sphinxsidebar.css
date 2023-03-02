@@ -4,9 +4,24 @@
 }
 
 .sphinxsidebar-logo {
-  width: 100%;
-  max-width: 300px;
   padding: 0 var(--m);
+}
+
+.sphinxsidebar-logo > a{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  align-items:center;
+}
+
+.logo{
+  height:40px;
+  margin-right: var(--xs);
+}
+
+.sphinxsidebar-logo > a > span{
+  color:var(--colorPrimary);
+  font-weight:500;
 }
 
 .sidebar-block{
