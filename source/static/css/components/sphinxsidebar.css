@@ -27,9 +27,17 @@
 }
 
 .sphinxsidebar-toc ul li a{
-  display: block;
+  display: flex;
+  align-items: center;
   padding: var(--xs2) var(--m);
   border-bottom:1px solid var(--colorGray300);
+}
+
+.sphinxsidebar-toc ul li a svg{
+  margin-right: var(--xs2);
+  stroke: var(--colorPrimary);
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .sphinxsidebar-toc ul li a:hover {

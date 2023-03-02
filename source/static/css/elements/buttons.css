@@ -36,7 +36,7 @@ button:hover:not(:disabled) {
   transition: all 0.1s ease-out;
 }
 
-button > i {
+button > .lucide {
   margin-right: var(--xs2);
 }
 
@@ -46,7 +46,7 @@ button > i {
   color: var(--colorPrimary);
 }
 
-.button-secondary > i {
+.button-secondary > .lucide {
   stroke: var(--colorPrimary);
 }
 
@@ -65,7 +65,7 @@ button > i {
   font-size: 1.4rem;
 }
 
-.button-small > i {
+.button-small > .lucide {
   margin-right: var(--xs2);
   width: 1.6rem;
   height: 1.6rem;

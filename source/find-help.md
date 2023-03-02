@@ -1,4 +1,4 @@
-# <i class="fas fa-hands-helping"></i> To find help
+# <i icon-name="help-circle"></i> To find help
 
 ## Slack
 

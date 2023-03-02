@@ -1,4 +1,4 @@
-# <i class="fas fa-cogs"></i> Installation
+# <i icon-name="settings"></i> Installation
 
 ```{toctree}
 :hidden:

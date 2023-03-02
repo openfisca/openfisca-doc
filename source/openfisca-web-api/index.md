@@ -1,4 +1,4 @@
-# <i class="fas fa-cloud"></i> OpenFisca web API
+# <i icon-name="file-code"></i> OpenFisca web API
 
 ```{toctree}
 :hidden:

@@ -1,4 +1,4 @@
-# <i class="fab fa-python"></i> OpenFisca Python API
+# <i icon-name="file-code"></i> OpenFisca Python API
 
 Modules:
 

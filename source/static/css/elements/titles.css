@@ -9,6 +9,15 @@ h1{
   margin:var(--xl) 0;
   padding:var(--s) 0;
   border-bottom: 1px solid var(--colorGray300);
+  display: flex;
+  align-items: center;
+}
+
+h1 > .lucide{
+  width: 3.4rem;
+  height: 3.4rem;
+  margin-right: var(--xs);
+  stroke: var(--colorPrimary);
 }
 
 h2 {
@@ -52,6 +61,11 @@ h5{
   h1 {
     font-size: 4rem;
     line-height: 5rem;
+  }
+
+  h1 > .lucide{
+    width: 3rem;
+    height: 3rem;
   }
 
   h2 {

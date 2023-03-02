@@ -1,4 +1,4 @@
-# <i class="fas fa-users"></i> Contribute
+# <i icon-name="users"></i> Contribute
 
 ```{toctree}
 :hidden:

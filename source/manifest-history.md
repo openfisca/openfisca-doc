@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# <i class="fa fa-history"></i> History
+# <i icon-name="smile"></i> Manifesto & history
 
 The history of OpenFisca is no longer available here.
 

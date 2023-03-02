@@ -1,4 +1,4 @@
-# <i class="fas fa-cubes"></i> Architecture of OpenFisca
+# <i icon-name="boxes"></i> Architecture of OpenFisca
 
 Depending on your goals, you will interact with one or several components of OpenFisca.
 
