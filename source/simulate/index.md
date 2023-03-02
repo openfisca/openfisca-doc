@@ -1,4 +1,4 @@
-# <i icon-name="pie-chart"></i> Running a simulation
+# <i icon-name="cog"></i> Running a simulation
 
 ```{toctree}
 :hidden:

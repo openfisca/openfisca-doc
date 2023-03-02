@@ -1,4 +1,4 @@
-# <i icon-name="box"></i> Key concepts
+# <i icon-name="lightbulb"></i> Key concepts
 
 ```{toctree}
 :hidden:

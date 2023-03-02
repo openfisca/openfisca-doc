@@ -1,4 +1,4 @@
-# <i icon-name="file-code"></i> OpenFisca web API
+# <i icon-name="curly-braces"></i> OpenFisca web API
 
 ```{toctree}
 :hidden:

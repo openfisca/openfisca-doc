@@ -1,4 +1,4 @@
-# <i icon-name="users"></i> Contribute
+# <i icon-name="git-merge"></i> Contribute
 
 ```{toctree}
 :hidden:

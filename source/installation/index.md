@@ -1,4 +1,4 @@
-# <i icon-name="settings"></i> Installation
+# <i icon-name="download"></i> Installation
 
 ```{toctree}
 :hidden:
