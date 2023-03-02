@@ -1,4 +1,4 @@
-# <i class="fas fa-chart-pie"></i> Running a simulation
+# <i icon-name="cog"></i> Running a simulation
 
 ```{toctree}
 :hidden:

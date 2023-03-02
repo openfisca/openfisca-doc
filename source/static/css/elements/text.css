@@ -1,0 +1,21 @@
+p {
+  color: var(--colorGray700);
+}
+
+blockquote {
+  border:none;
+  border-left:4px solid var(--colorPurple);
+  padding:var(--s) var(--m);
+  margin:var(--m) 0;
+  color:var(--colorGray600);
+  background-color:var(--colorWhite);
+  font-size:1.6rem;
+}
+
+pre{
+  background-color:var(--colorGray100);
+  border:none;
+  margin:var(--l) 0;
+  padding:var(--m);
+  color:var(--colorGray700);
+}

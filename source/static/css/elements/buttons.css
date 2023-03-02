@@ -1,0 +1,72 @@
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  background-color: var(--colorSecondary);
+  display: inline-flex;
+  align-items: center;
+  padding: var(--m) var(--s);
+  color: var(--colorWhite);
+  border-radius: 6px;
+  transition: all 0.1s ease-in;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--colorPrimary);
+  color: var(--colorWhite);
+  transition: all 0.1s ease-out;
+}
+
+button > .lucide {
+  margin-right: var(--xs2);
+}
+
+.button-secondary {
+  background-color: var(--colorWhite);
+  box-shadow: 0 0 0 1px var(--colorPrimary) inset;
+  color: var(--colorPrimary);
+}
+
+.button-secondary > .lucide {
+  stroke: var(--colorPrimary);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: var(--colorWhite);
+  box-shadow: 0 0 0 1px var(--colorSecondary) inset;
+  color: var(--colorSecondary);
+}
+
+.button-secondary:hover:not(:disabled) > i{
+    stroke: var(--colorSecondary);
+}
+
+.button-small {
+  padding: var(--xs);
+  font-size: 1.4rem;
+}
+
+.button-small > .lucide {
+  margin-right: var(--xs2);
+  width: 1.6rem;
+  height: 1.6rem;
+}

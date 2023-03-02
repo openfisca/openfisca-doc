@@ -1,0 +1,47 @@
+/* Custom properties */
+:root {
+  /* Fonts */
+  --defaultFontSize: 1.6rem;
+  --defaultFontFamily: "Inter var", sans-serif;
+
+  /* Grid */
+  --gridColsNumber: 12;
+  --gridColWidth: 84px;
+  --gridGuttersNumber: 11;
+  --gridGutterWidth: 16px;
+
+  /* Colors */
+  --colorPrimary: #240b36;
+  --colorSecondary: #c42323;
+  --colorPurple: #552143;
+  --colorGray800: #222;
+  --colorGray700: #333;
+  --colorGray600: #6a6a6a;
+  --colorGray500: #aaa;
+  --colorGray400: #c7c7c7;
+  --colorGray300: #d8d8d8;
+  --colorGray200: #e6e6e6;
+  --colorGray100: #f6f6f6;
+  --colorWhite: #fff;
+
+  /* Padding & margin */
+  --xs3: 2px;
+  --xs2: 4px;
+  --xs: 8px;
+  --s: 12px;
+  --m: 16px;
+  --l: 24px;
+  --xl: 36px;
+  --xl2: 48px;
+  --xl3: 64px;
+  --xl4: 96px;
+  --xl5: 112px;
+
+  /* Breakpoints */
+  --bpMobileSmall: 480px;
+  --bpMobileExtraLarge: 620px;
+  --bpTabletSmall: 768px;
+  --bpTabletLarge: 1024px;
+  --bpGridPlus: 1184px;
+  --bpDesktopWide: 1440px;
+}

@@ -97,3 +97,7 @@ git push origin `git branch --show-current`
 Finally, open a [pull request](https://github.com/openfisca/openfisca-doc/compare/master...fix-doc).
 
 That's it! 🙌
+
+## Using icons
+
+You can use icons by choosing one from [Lucide](https://lucide.dev) and adapting the code `<i icon-name="$ICON_NAME"></i>` with the relevant icon name.

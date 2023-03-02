@@ -1,20 +1,17 @@
 {% extends "!layout.html" %}
 
 {%- block htmltitle %}
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+  <script src="https://unpkg.com/lucide@latest"></script>
   {{ super() }}
 {%- endblock %}
-
-<!-- Page content header -->
-{% block breadcrumbs %}
-  <ul class="buttons-header">
-    <li><a class="button-appearance" href="https://github.com/openfisca"><i class="fab fa-github"></i> GitHub</a></li>
-    <li><a class="button-appearance" href="https://openfisca.org/"><i class="fas fa-home"></i> OpenFisca</a></li>
-  </ul>
-  {{ super() }}
-{%- endblock %}
-
 
 <!-- Page content footer -->
 {%- block bottom_rel_links %}
+{%- endblock %}
+
+{%- block footer %}
+  {{ super() }}
+  <script>
+    lucide.createIcons();
+  </script>
 {%- endblock %}

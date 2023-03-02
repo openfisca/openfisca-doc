@@ -1,4 +1,4 @@
-# <i class="fas fa-code"></i> From law to code
+# <i icon-name="terminal"></i> From law to code
 
 ```{toctree}
 :hidden:

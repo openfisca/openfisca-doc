@@ -1,4 +1,4 @@
-# <i class="fas fa-home"></i> Before you start
+# <i icon-name="home"></i> Before you start
 
 ## What is OpenFisca
 

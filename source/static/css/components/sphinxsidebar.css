@@ -1,0 +1,79 @@
+.sphinxsidebar{
+  padding-top: var(--m);
+  word-wrap: break-word;
+}
+
+.sphinxsidebar-logo {
+  padding: 0 var(--m);
+}
+
+.sphinxsidebar-logo > a{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  align-items:center;
+}
+
+.logo{
+  height:40px;
+  margin-right: var(--xs);
+}
+
+.sphinxsidebar-logo > a > span{
+  color:var(--colorPrimary);
+  font-weight:500;
+}
+
+.sidebar-block{
+  margin: var(--m) 0 0 0;
+  padding: 0 var(--m);
+}
+
+.sidebar-wrapper{
+  padding: 0;
+}
+
+.sphinxsidebar-toc ul {
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.sphinxsidebar-toc ul li a{
+  display: flex;
+  align-items: center;
+  padding: var(--xs2) var(--m);
+  border-bottom:1px solid var(--colorGray300);
+}
+
+.sphinxsidebar-toc ul li a svg{
+  margin-right: var(--xs2);
+  stroke: var(--colorPrimary);
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.sphinxsidebar-toc ul li a:hover {
+  background-color: var(--colorGray200);
+}
+
+.sphinxsidebar-toc ul li a.current {
+  background-color: var(--colorGray200);
+}
+
+.sphinxsidebar-toc ul li a i{
+  color:var(--colorPrimary);
+  margin-right:var(--xs3);
+}
+
+.sphinxsidebar-toc ul li .toctree-l2 a{
+  padding: var(--xs3) var(--m);
+  font-size:1.4rem;
+  border-bottom:none;
+}
+
+.sphinxsidebar-toc ul li .toctree-l2 a:hover{
+  background-color: var(--colorGray100);
+}

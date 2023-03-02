@@ -1,4 +1,4 @@
-# <i class="fas fa-users"></i> Contribute
+# <i icon-name="git-merge"></i> Contribute
 
 ```{toctree}
 :hidden:

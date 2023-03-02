@@ -1,0 +1,4 @@
+div.footer{
+  padding: var(--l);
+  max-width: calc(300px + 940px + var(--l));
+}

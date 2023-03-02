@@ -1,0 +1,20 @@
+#mobile-toggle{
+  height: 64px;
+  align-items:center;
+  padding-left:var(--m);
+  border-bottom:1px solid var(--colorGray300);
+}
+
+#mobile-toggle a{
+  width:4.4rem;
+  height:4.4rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  #mobile-toggle{
+    display:flex;
+  }
+}

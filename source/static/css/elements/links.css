@@ -1,0 +1,26 @@
+a {
+  color: var(--colorSecondary);
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+}
+
+a:hover{
+  color: var(--colorPrimary);
+  text-decoration: none;
+}
+
+a.headerlink {
+  visibility: hidden;
+  color:var(--colorGray300);
+  padding:0 var(--xs);
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+  visibility: visible;
+}

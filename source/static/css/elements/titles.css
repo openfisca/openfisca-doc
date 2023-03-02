@@ -1,0 +1,75 @@
+h1{
+  background-color: transparent;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 4.7rem;
+  line-height: 6rem;
+  color: var(--colorPrimary);
+  font-weight: 700;
+  width: auto;
+  margin:var(--xl) 0;
+  padding:var(--s) 0;
+  border-bottom: 1px solid var(--colorGray300);
+  display: flex;
+  align-items: center;
+}
+
+h1 > .lucide{
+  width: 3.4rem;
+  height: 3.4rem;
+  margin-right: var(--xs);
+  stroke: var(--colorPrimary);
+}
+
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 3.6rem;
+  line-height: 4.6rem;
+  color: var(--colorPrimary);
+  border-bottom: 1px solid var(--colorGray300);
+  margin:var(--l) 0;
+  padding:var(--xs) 0;
+}
+
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+  color: var(--colorPrimary);
+  margin-top:var(--xl);
+  margin-bottom:var(--l);
+}
+
+h4{
+  font-family: "Inter var", sans-serif;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--colorPrimary);
+  margin-top:var(--l);
+  margin-bottom:var(--m);
+}
+
+h5{
+  font-family: "Inter var", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: var(--colorPrimary);
+  margin-top:var(--m);
+  margin-bottom:var(--s);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  h1 > .lucide{
+    width: 3rem;
+    height: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
