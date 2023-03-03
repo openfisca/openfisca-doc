@@ -23,7 +23,7 @@ Stop building your micro-simulation software and tax & benefit calculators from 
 
 To get started, you can:
 
-* Use an existing tax and benefit system (see the [list of publicly-available country packages](https://openfisca.org/en/countries/)).
+* Use an existing tax and benefit system (see the [list of publicly-available country packages](https://openfisca.org/en/packages/)).
 * [Build a new tax and benefit system](coding-the-legislation/bootstrapping_a_new_country_package.md) if it doesn’t exist already.
 * [Contribute](contribute/index.md) to an existing system by adding or improving elements of the legislation.
 
