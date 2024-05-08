@@ -1,13 +1,13 @@
 # With Docker
 
-When you want to use OpenFisca, either to run it or edit its code, you need to setup a specific environement.
+When you want to use OpenFisca, either to run it or edit its code, you need to set up a specific environment.
 If you don't want the OpenFisca environment to interfere with your pre-existing setup, or if you don't have one, you can use a container platform such as [Docker](https://www.docker.com) that will set everything up for you.
 
-> On Windows operating system, you need to have Windows 10 or higher to use Docker.
+> On Windows operating systems, you need to have Windows 10 or higher to use Docker.
 
 ## Install Docker
 
-Docker allows you to run a minimal image of Unix operating system.
+Docker allows you to run a minimal image of an operating system.
 In this docker container, you will have an isolated environment with user rights to install OpenFisca.
 
 * Install free [Docker Community Edition](https://docs.docker.com/install/#supported-platforms) (also named `Docker Desktop`).
@@ -16,7 +16,7 @@ In this docker container, you will have an isolated environment with user rights
 
 ## Install OpenFisca in a Docker container
 
-Let's say that you want to install the [openfisca-country-template](https://github.com/openfisca/country-template) model (or your specific country model). And you want to work in a directory named `my-openfisca` where any change you do is visible on both sides, locally and on Docker.
+Let's say that you want to install the [openfisca-country-template](https://github.com/openfisca/country-template) model (or your specific country model). You also want to work in a directory named `my-openfisca` where any change you do is visible on both sides, locally and on Docker.
 
 1. Go to your working directory:  
    - If you don't have one, create a new directory named `my-openfisca`.
@@ -27,19 +27,19 @@ Let's say that you want to install the [openfisca-country-template](https://gith
         cd my-openfisca # Updated with the real path to your working directory
         ```
 
-2. Build a container with Python 3.7, Git and console commands.
+2. Build a container with Python 3.9, Git and console commands.
    > Git comes with Python image.
 
    - For Linux/Unix/Mac operating systems, run:
 
         ```sh
-        docker run --rm -it -v $PWD:/my-openfisca -w /my-openfisca python:3.7 bash
+        docker run --rm -it -v $PWD:/my-openfisca -w /my-openfisca python:3.9 bash
         ```
 
    - For Windows operating system, run:
 
         ```sh
-        docker run --rm -it -v %cd%:/my-openfisca -w /my-openfisca python:3.7 bash
+        docker run --rm -it -v %cd%:/my-openfisca -w /my-openfisca python:3.9 bash
         ```
 
 3. Check for installed libraries with `pip list` command.
