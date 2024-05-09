@@ -5,7 +5,11 @@
 The OpenFisca project is distributed across many Git repositories:
 
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
-* [OpenFisca-France](https://github.com/openfisca/openfisca-france)
+* [Country-Template](https://github.com/openfisca/country-template)
+* [OpenFisca-Documentation](https://github.com/openfisca/openfisca-doc)
+* [Legislation-Explorer](https://github.com/openfisca/legislation-explorer)
+* [OpenFisca-Survey-Manager](https://github.com/openfisca/openfisca-survey-manager)
+* [OpenFisca-France](https://github.com/openfisca/openfisca-france) and other models etc.
 
 ## Debugging code
 
@@ -43,7 +47,7 @@ To profile the execution of a portion of code, wrap it with these lines:
 ```
 
 Each time you call the endpoint a `result.profile` file is written.
-To prevent it to be overwritten, generate a dynamic name with [`tempfile.mkstemp`](https://docs.python.org/2/library/tempfile.html#tempfile.mkstemp).
+To prevent it being overwritten, generate a dynamic name with [`tempfile.mkstemp`](https://docs.python.org/2/library/tempfile.html#tempfile.mkstemp).
 
 Then you can use the [runsnakerun](http://www.vrplumber.com/programming/runsnakerun/) GUI to inspect the profile data.
 

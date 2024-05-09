@@ -4,7 +4,7 @@ The development language is English. All comments and documentation in common re
 
 ## Country-specific repositories
 
-Some repositories define the tax and benefit system of a specific country. In such cases, the language used throughout issues and pull requests should be one of the native ones of that country.
+Some repositories define the tax and benefit system of a specific country. In such cases, the language used throughout issues and pull requests should be one of the native languages of that country.
 
 For instance, `openfisca-france` issues and pull-requests should be written in French.
 

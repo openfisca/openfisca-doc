@@ -2,7 +2,7 @@
 
 ## General philosophy
 
-The discussion below is concerned with naming the variables of a country package. In that case, the ["local language rule"](language.md) applies, and the appropriate language for modeling the domain is one of the native ones of the modeled country. We consider each tax, collecting organism and country regulation, and so on, as a domain-specific term. In the same fashion, well-known abbreviations of these domain-specific terms are accepted.
+The discussion below is concerned with naming the variables of a country package. In that case, the ["local language rule"](language.md) applies, and the appropriate language for modelling the domain is one of the native ones of the modelled country. We consider each tax, collecting organism and country regulation, and so on, as a domain-specific term. In the same fashion, well-known abbreviations of these domain-specific terms are accepted.
 
 OpenFisca variables names should, as much as possible, be understandable by an external contributor who is **curious** about the country's tax and benefit system, **without necessarily being an expert**.
 
@@ -19,22 +19,20 @@ A particular effort should be made on variables that are likely to be reused.
 #### Bad naming
 
 - `vat_sub1`: In English-speaking countries VAT would unambiguously refer to Value Added Tax, but the addition of a suffix for technical purposes (e.g. an intermediate step in the computation) should in
-general be avoided. A better name might be `vat_on_exports` (assuming this is the intermediate step's
-meaning).
-- `cpstd`. Here the acronym might mean "Company Paid Short-Term Disability", but this acronym is not widely used or recognizable, and will not be found in a web search. Using a longer name is preferable.
+general be avoided. A better name might be `vat_on_exports` (assuming this is the intermediate step's meaning).
+- `cpstd`. Here the acronym might mean "Company Paid Short-Term Disability", but this acronym is not widely used or recognisable, and will not be found in a web search. Using a longer name is preferable.
 
 ## Do's and don'ts
 
 ### Acronyms
 
-Acronyms are OK as long as they are broadly accepted and their meaning is quickly findable online. A good
-test for "findable" is that a web search _from the relevant country_ should turn up the intended meaning as the first or second hit.
+Acronyms are OK as long as they are broadly accepted and their meaning is quickly findable online. A good test for "findable" is that a web search _from the relevant country_ should turn up the intended meaning as the first or second hit.
 
 #### Good naming
 
 - `VAT` (Value Added Tax, near-universal except in France)
 - `EBITDA` (tax, unambiguous)
-- `RSA` (French, social benefit rather than cryptography, recognizable in context)
+- `RSA` (French, social benefit rather than cryptography, recognisable in context)
 
 #### Bad naming
 
@@ -90,4 +88,4 @@ This is often seen when aggregating from the individual level to e.g. the househ
 
 ## Legacy
 
-Some existing models (such as the France model, grown over several years) do not respect all the guidelines presented here. These guidelines may also evolve with improvements to the underlying computation engine (such as namespacing or improved approaches to aggregation and other relations between entity and group values). Since variables and parameters represent the external API of a model, and excessive migration labor may discourage the users of an API, it is preferable to avoid global renamings. However, new names should be compliant with these guidelines, and legacy ones should be improved progressively and opportunistically. Communicating your standards to contributors is an important part of maintaining your model.
+Some existing models (such as the France model, grown over several years) do not respect all the guidelines presented here. These guidelines may also evolve with improvements to the underlying computation engine (such as namespacing or improved approaches to aggregation and other relations between entity and group values). Since variables and parameters represent the external API of a model, and excessive migration labour may discourage the users of an API, it is preferable to avoid global renaming. However, new names should be compliant with these guidelines, and legacy ones should be improved progressively and opportunistically. Communicating your standards to contributors is an important part of maintaining your model.
