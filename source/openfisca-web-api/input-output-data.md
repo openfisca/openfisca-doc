@@ -4,7 +4,7 @@
 
 In order to run a computation on the web API, you will need to send information to the API concerning:
 
-- The situation, meaning describe the [entities](../key-concepts/person,_entities,_role.md) (e.g. individuals, households) that you want to base your calculations on.
+- The situation, meaning describe the [entities](../key-concepts/person_entities_role.md) (e.g. individuals, households) that you want to base your calculations on.
 - The variable you need to compute.
 
 ## Describing the situation

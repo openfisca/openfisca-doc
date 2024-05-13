@@ -6,7 +6,7 @@ Depending on your goals, you will interact with one or several components of Ope
 
 ## Country Packages
 
-Country packages are what most users will interact with when using OpenFisca. They model the rules of a jurisdiction by defining [Parameters](key-concepts/parameters.md), [Variables](key-concepts/variables.md) and [Entities](key-concepts/person,_entities,_role.md).
+Country packages are what most users will interact with when using OpenFisca. They model the rules of a jurisdiction by defining [Parameters](key-concepts/parameters.md), [Variables](key-concepts/variables.md) and [Entities](key-concepts/person_entities_role.md).
 
 > For example, [`openfisca-france`](https://github.com/openfisca/openfisca-france) models French law.
 
