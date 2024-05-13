@@ -2,7 +2,7 @@
 
 A parameter is a property of the legislation that changes over time.
 
-Unlike a [variable](./variables.md), a parameter is **not** specific to a specific entity (person, household…).
+Unlike a [variable](./variables.md), a parameter is **not** specific to a specific entity (person, family, household…).
 
 For instance:
 
@@ -13,5 +13,7 @@ For instance:
 - the list of regions in which a tax is applicable…
 
 Parameters are used in [formulas](./variables.md#formulas) to calculate variable values.
+
+It is always advisable when modelling legislation in OpenFisca to create a parameter for any number described in the law and used in formulas rather than "hard coding" the number within a formula.
 
 [Read more about their implementation in OpenFisca](../coding-the-legislation/legislation_parameters.md).
