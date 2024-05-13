@@ -4,25 +4,23 @@
 :hidden:
 
 run-simulation
-analyse-simulation
 replicate-simulation-inputs
+analyse-simulation
 profile-simulation
 ```
 
-To calculate Tax and Benefit System variables on people's situations, you need to create and run a new _Simulation_.
+To calculate Tax and Benefit System variables relating to people's situations, you need to create and run a _Simulation_.
 
 OpenFisca will work the same if there is one person, seven, or seven million in the modelled situation.
 
-> Technically speaking, OpenFisca uses [vector computing](../coding-the-legislation/25_vectorial_computing.md) via the [NumPy](http://www.numpy.org/) package for performance reasons.
+> Technically speaking, OpenFisca uses [vector computing](../coding-the-legislation/25_vectorial_computing.md) via the [NumPy](http://www.numpy.org/) package. In simple terms this allows it to process large datasets in one go instead of sequentially processing one line of data at a time.
 
-<!-- The below text is confusing and needs clarification-->
-Nevertheless, you won't have the same experience defining those various situation sizes and linking them to your simulation. So, multiple options could be used to describe this information:
+This allows for a wide range of use cases, from calculating a single entitlement for a person utilising a web service, to modelling population wide simulations and reforms for policy and research purposes.
+In this section the focus is on simulations and the two approaches that can be taken. They are
 
-<!---The below text is confusing here and needs clear wording-->
+- [test cases](./run-simulation.md#test-cases): that utilise small structured data for input,
+- [bulk data](./run-simulation.md#data): in the form of aggregated data, CSV files, etc.
 
-- either [test cases](./run-simulation.md#test-cases): you simulate the legislation for a small number of persons,
-- or [bulk data](./run-simulation.md#data): you provide a population (survey with aggregated data, CSV files with bulk data, etc.) on which you want to apply the legislation.
+It's also possible to extend _Simulations_ by defining an axis which is covered in detail in the section [Replication a situation along axes](./replicate-simulation-inputs.md).
 
-Then, when you have a defined situation and need to replicate an input in a range of values (e.g. a `salary` in [0, 100 000]), you can define an axis as described in [the axes section](./replicate-simulation-inputs.md).
-
-Finally, you might want to understand how your simulation result was calculated. To do so, you can use the `trace` feature described in [this section](./analyse-simulation.md).
+When running Simulations it is also possible to activate the [`trace` feature](./analyse-simulation.md) which provides a way to analyse how the simulation achieved its results. Similarly there are options to trouble-shoot [Simulation performance](./profile-simulation.md).
