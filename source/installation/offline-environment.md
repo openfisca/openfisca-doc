@@ -1,61 +1,68 @@
 # In an offline environment
 
-If you need to install OpenFisca on a server with no Internet access, here is how to do it.
+If you need to install OpenFisca on a server with no internet access, here is how you might do it.
 
-The big picture: download Python packages on a machine with Internet access, copy them to the server and install them in a [virtualenv](https://virtualenv.pypa.io/en/stable/).
+The big picture: download Python packages on a machine with internet access, copy them to the server and install them in a [virtualenv](https://virtualenv.pypa.io/en/stable/).
 
-We assume that it is possible to copy files to the server, for example via a USB stick. Or perhaps the server filters only outgoing connections, but accepts incoming connections allowing to copy the files.
+It's assumed that it is possible to copy files to the server, i.e. via a USB stick.
 
 ## On the machine with Internet access
 
-We are going to create a first virtualenv in which we'll use `pip` to download the `.whl` files in a specific directory.
-
-Here we use [pew](https://github.com/berdario/pew) to simplify virtualenv management.
+First create a virtual environment and use `pip` to download the `.whl` files to a specific directory.
 
 ```sh
-pip install pew
-pew new openfisca-packages --python=python3.7
+mkdir ~/openfisca-packages
+cd ~/openfisca-packages
+
+# Create and instigate a virtual environment
+python3.11 -m venv .venv
+source .venv/bin/activate
 
 # Upgrade pip itself
 pip install --upgrade pip
 pip --version
-# Should print at least 9.0 at the time we write this doc.
+# Prints 24.0 at the time this doc was written.
 
-mkdir ~/openfisca-packages
-cd ~/openfisca-packages
-pip download OpenFisca-France
+mkdir country-template
+cd country-template
+pip download OpenFisca-Country-Template
 # You should see the downloaded files in the current directory.
 ```
 
-Now copy these files on the server (say in the `~/openfisca-packages` directory), either via a USB stick, or with `scp`, or any other way.
+Copy the files in the `~/openfisca-packages/country-template` directory to the server via a USB stick, or for example with `scp`.
 
 Example with `scp`:
 
 ```sh
-scp -r ~/openfisca-packages user@server:
+scp -r ~/openfisca-packages/country-template user@server:
 ```
 
 ## On the server
 
-Starting from here we assume you copied the packages on the server, say in `~/openfisca-packages`.
+The following assumes the files are now stored in `~/openfisca-packages/country-template` on the server.
 
 The following commands show how to install Python packages without any Internet access.
-If you already have a virtualenv, activate it. Otherwise create a new one following the same instructions as above (for example with `pew new`).
+If you already have a virtual environment, activate it. Otherwise create a new one following the same instructions as above.
 
 ```sh
-pip install ~/openfisca-packages/*
+    pip install ~/openfisca-packages/country-template/*
     Processing ./isodate-0.5.4.tar.gz
     [...]
-    Installing collected packages: pytz, Babel, Biryani, numpy, PyYAML, OpenFisca-Core, requests, OpenFisca-France, isodate
-    Successfully installed Babel-2.3.4 Biryani-0.10.4 OpenFisca-Core-7.0.0 OpenFisca-France-15.1.0 PyYAML-3.12 isodate-0.5.4 numpy-1.12.0 pytz-2016.10 requests-2.13.0
+    Installing collected packages: StrEnum, sortedcontainers, typing-extensions... openfisca-country-template
+    Successfully installed StrEnum, sortedcontainers, typing-extensions... openfisca-country-template
 
-pip list | grep OpenFisca-France
-    OpenFisca-France 15.1.0
+    # Step completed, the following can be utilised to confirm success and versions of the packages installed.
+    pip list | grep openfisca-country_template
+    openfisca-country_template 7.1.1
+
+    pip list | grep OpenFisca-Core
+    OpenFisca-Core 41.4.5
 ```
 
-Run the basic tests which confirm that OpenFisca-France is correctly installed:
+To check that everything works correctly, run the following command in Git Bash:
 
 ```sh
-python -m openfisca_france.tests.test_basics
-OpenFisca-France basic test was executed successfully.
+python -c "from openfisca_country_template import CountryTaxBenefitSystem; CountryTaxBenefitSystem()"
 ```
+
+No error message should appear. You can now utilise this environment to [run simulations](../simulate/run-simulation.md).
