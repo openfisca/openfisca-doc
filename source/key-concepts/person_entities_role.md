@@ -16,7 +16,7 @@ A tax and benefit system will likely define several entities and specify for eac
 In France the legislation has these _group entities_:
 
 - `"familles"`,  (families)
-- `"foyers_fiscaux"` (tax homes) and
+- `"foyers_fiscaux"` (tax units) and
 - `"menages"` (households).
 
 In France for example, `"taxe_habitation"` (local tax) is calculated specifically for `"menages"`.
