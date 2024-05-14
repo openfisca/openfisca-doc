@@ -31,7 +31,7 @@ Let's say that you want to calculate the `disposable_income` for one person earn
 }
 ```
 
-If you send this situation to your `country-template` model web API or try it out on the `/trace` endpoint in the [Swagger interface](https://demo.openfisca.org/legislation/swagger), you get the following response composed of three sections:
+If you send this situation to your `country-template` model web API or try it out on the `/trace` endpoint in the [Swagger interface](https://legislation.demo.openfisca.org/swagger), you get the following response composed of three sections:
 
 * `entitiesDescription`: lists the persons and how they belong to the model group entities,
 * `requestedCalculations`: lists the requested calculations (i.e. variables with values at `null`),
@@ -147,7 +147,7 @@ It contains these sub-sections:
 * `dependencies`: the [variables](../key-concepts/variables.md) called by `disposable_income` formula and their calculation periods,
 * `parameters`: the [parameters](../key-concepts/parameters.md) called by `disposable_income` formula and their periods.
 
-You can see those variables and parameters in [disposable_income definition](https://demo.openfisca.org/legislation/disposable_income).
+You can see those variables and parameters in [disposable_income definition](https://legislation.demo.openfisca.org/disposable_income).
 
 Following `dependencies` list, we can also see that:
 
@@ -188,4 +188,4 @@ Following `dependencies` list, we can also see that:
 
 So, with `/trace` endpoint, you can follow calculation steps by following the variable names and periods in its response `trace` section.
 
-> Try it out on the [Swagger interface](https://demo.openfisca.org/legislation/swagger) of `country-template` model.
+> Try it out on the [Swagger interface](https://legislation.demo.openfisca.org/swagger) of `country-template` model.
