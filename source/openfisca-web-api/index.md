@@ -12,15 +12,20 @@ config-openapi
 OpenFisca provides a web API package, compatible with all country packages.
 Using a web interface, app developers can access information and computations without installing anything locally.
 
-## Public France API
+## Demonstration API
 
-The latest version of the France web API is [`api.fr.openfisca.org/latest`](https://api.fr.openfisca.org/latest). Its endpoints are documented in [`fr.openfisca.org/legislation/swagger`](https://fr.openfisca.org/legislation/swagger). This API is provided for prototyping purposes only: it has no SLA (service level agreement, i.e. guarantee of availability) and is kept up to date automatically, with no regard for breaking changes. No support will be provided for this instance. You should not build production systems on top of it.
+The latest version of the OpenFisca Country Template web API can be found at [`api.demo.openfisca.org`](https://api.demo.openfisca.org/). Its endpoints are documented at [`legislation.demo.openfisca.org/swagger`](https://legislation.demo.openfisca.org/swagger). 
+
+## OpenFisca country APIs
+
+Each country/jurisdiction can host an API endpoint and often an OpenFisca instance is deployed multiple times in support of different applications. 
+By way of example, an instance of the French API is available at [api.fr.openfisca.org](https://api.fr.openfisca.org/). It is provided for prototyping purposes only: it has no SLA (service level agreement, i.e. guarantee of availability) and is kept up to date automatically, with no regard for breaking changes. No support is provided for this instance. You should not build production systems against it.
 
 Anyone wanting a stable OpenFisca web API is invited to [host their own](#hosting-an-api-instance).
 
-## Use Cases
+## Example use cases
 
-The following services use the OpenFisca web API:
+The following services utilise the France OpenFisca web API:
 
 - [fr.openfisca.org/legislation](https://fr.openfisca.org/legislation), giving you information on available OpenFisca variables.
 - [Mes Aides](https://mes-aides.gouv.fr), the French social benefits simulator.
@@ -28,7 +33,7 @@ The following services use the OpenFisca web API:
 
 ## Conditions
 
-Please remember that OpenFisca is free software, licensed under an [Affero GPL license](https://choosealicense.com/licenses/agpl-3.0/). That means you have to provide access to the source code of the API you make available, including any changes you might have made on the original code. You also have to provide a link to the OpenFisca source code, and state its license, in a place that is easily discoverable by users of your software.
+Please remember that OpenFisca is free software, licensed under an [Affero GPL licence](https://choosealicense.com/licenses/agpl-3.0/). That means you have to provide access to the source code of the API you make available, including any changes you might have made to the original code. You also have to provide a link to the OpenFisca source code, and state its licence, in a place that is easily discoverable by users of your software.
 
 You could for example add one the following lines to a “credits” page:
 
