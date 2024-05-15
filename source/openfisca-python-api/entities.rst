@@ -5,6 +5,7 @@ Entities
 .. module:: openfisca_core.entities
 
 .. autoclass:: Role
+    :noindex:
     :members:
 
 .. autoclass:: Entity

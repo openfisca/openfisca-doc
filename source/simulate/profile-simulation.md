@@ -179,7 +179,7 @@ From `salaire_imposable`, we can follow two different branches:
     Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
 
     ```py
-    $ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
+    openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
 
     ...
 
@@ -235,7 +235,7 @@ From `salaire_imposable`, we can follow two different branches:
     Then running `openfisca test` with [The Python Debugger](https://docs.python.org/3/library/pdb.html):
 
     ```py
-    $ openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
+    openfisca test --pdb tests/formulas/irpp_prets_participatifs.yaml
 
     ...
 
@@ -629,10 +629,11 @@ IPython's `%timeit` comes handy:
 ```py
 pip install ipython
 ipython
-%timeit -n 10 -r 3 !openfisca test --country-package openfisca_france tests/formulas/irpp_prets_participatifs.yaml
+%timeit -n 10 -r 3 openfisca test --country-package openfisca_france tests/formulas/irpp_prets_participatifs.yaml
 
-...
+```
 
+```text
 # Before
 17.2 s ± 261 ms per loop (mean ± std. dev. of 3 runs, 10 loops each)
 
