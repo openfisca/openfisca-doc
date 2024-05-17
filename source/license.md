@@ -9,7 +9,7 @@ If you provide results based on OpenFisca usage, crediting the project would be 
 
 The following HTML snippet can be used to credit OpenFisca in your articles and publications:
 
-### English
+**English**
 
 ```html
 <a href="https://openfisca.org" target="_blank" rel="noopener">
@@ -17,7 +17,7 @@ The following HTML snippet can be used to credit OpenFisca in your articles and 
 </a>
 ```
 
-### Français
+**Français**
 
 ```html
 <a href="https://openfisca.org" target="_blank" rel="noopener">
@@ -32,7 +32,7 @@ If you provide a service that uses OpenFisca, either bundled in a program or ser
 The following HTML snippet can be used to credit OpenFisca, for example by placing it in your footer or “about” page.
 Please make sure to update the destination of the source code link if you use a modified version!
 
-### English
+**English**
 
 ```html
 <span>Computations powered by
@@ -42,7 +42,7 @@ Please make sure to update the destination of the source code link if you use a 
 </span>
 ```
 
-### Français
+**Français**
 
 ```html
 <span>Calculs fournis par

@@ -12,11 +12,11 @@ A particular effort should be made on variables that are likely to be reused.
 
 ### Examples
 
-#### Good naming
+**Good naming**
 
 - `als_etudiant`: The acronym ALS stands in English for "Amyotrophic lateral sclerosis", but browsing for that term in France is much more likely to return "Allocation de logement sociale", a form of housing aid. The suffix suggests that it is a specific formula for the case of student housing aid.
 
-#### Bad naming
+**Bad naming**
 
 - `vat_sub1`: In English-speaking countries VAT would unambiguously refer to Value Added Tax, but the addition of a suffix for technical purposes (e.g. an intermediate step in the computation) should in
 general be avoided. A better name might be `vat_on_exports` (assuming this is the intermediate step's
@@ -30,13 +30,13 @@ meaning).
 Acronyms are OK as long as they are broadly accepted and their meaning is quickly findable online. A good
 test for "findable" is that a web search _from the relevant country_ should turn up the intended meaning as the first or second hit.
 
-#### Good naming
+**Good naming**
 
 - `VAT` (Value Added Tax, near-universal except in France)
 - `EBITDA` (tax, unambiguous)
 - `RSA` (French, social benefit rather than cryptography, recognizable in context)
 
-#### Bad naming
+**Bad naming**
 
 Most TLAs (Three-Letter Acronyms).
 
@@ -44,11 +44,11 @@ Most TLAs (Three-Letter Acronyms).
 
 Abbreviations should be avoided unless they are unambiguous.
 
-#### Good naming
+**Good naming**
 
 - `nb_parents`: `nb` is an abbreviation for `number`.
 
-#### Bad naming
+**Bad naming**
 
 - `nb_par`
 - `isol`
@@ -59,11 +59,11 @@ OpenFisca currently lacks a namespacing mechanism. In its absence, the need some
 
 #### Use a prefix to distinguish versions of a variable specific to a subdomain
 
-##### Good naming
+**Good naming**
 
 - `housing_tax_nb_parents`
 
-##### Bad naming
+**Bad naming**
 
 - `nb_parents_housing_tax`
 
@@ -71,11 +71,11 @@ OpenFisca currently lacks a namespacing mechanism. In its absence, the need some
 
 This might cause confusion on which version to use where.
 
-##### Good naming
+**Good naming**
 
 - `housing_tax_nb_parents` alongside `income_tax_nb_parents`
 
-##### Bad naming
+**Bad naming**
 
 - `nb_parents` alongside `housing_tax_nb_parents`
 
@@ -83,7 +83,7 @@ This might cause confusion on which version to use where.
 
 This is often seen when aggregating from the individual level to e.g. the household level.
 
-##### Good naming
+**Good naming**
 
 - `taxable_income_household`
 - `work_income_individual`
