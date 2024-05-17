@@ -51,7 +51,7 @@ jobs:
 
       - run:
           name: Check for internal dead links
-          command: wget --spider --recursive --page-requisites http://localhost:8000
+          command: sleep 5 && wget --spider --recursive --page-requisites http://localhost:8000
 
       - persist_to_workspace:
           root: .
