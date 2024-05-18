@@ -1,0 +1,2 @@
+build/_static/**/*.md
+build/html/_static/**/*.md
