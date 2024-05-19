@@ -59,7 +59,7 @@ If you already have a virtual environment, activate it. Otherwise create a new o
     OpenFisca-Core 41.4.5
 ```
 
-To check that everything works correctly, run the following command in Git Bash:
+To check that everything works correctly, run the following command:
 
 ```sh
 python -c "from openfisca_country_template import CountryTaxBenefitSystem; CountryTaxBenefitSystem()"
