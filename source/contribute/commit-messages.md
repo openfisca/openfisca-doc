@@ -26,7 +26,7 @@ No other information must appear on this line.
 
 ### Deprecating
 
-If a variable must not be used anymore, it will be notified by a commit message that utilises **one independant line per deprecated variable** with the following syntax:
+If a variable must not be used anymore, it will be notified by a commit message that utilises **one separate line per deprecated variable** with the following syntax:
 
 ```text
 Deprecate former_name
