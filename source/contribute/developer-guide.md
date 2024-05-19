@@ -47,7 +47,7 @@ To profile the execution of a portion of code, wrap it with these lines:
 ```
 
 Each time you call the endpoint a `result.profile` file is written.
-To prevent it being overwritten, generate a dynamic name with [`tempfile.mkstemp`](https://docs.python.org/2/library/tempfile.html#tempfile.mkstemp).
+To prevent it from being overwritten, generate a dynamic name with [`tempfile.mkstemp`](https://docs.python.org/2/library/tempfile.html#tempfile.mkstemp).
 
 Then you can use the [runsnakerun](http://www.vrplumber.com/programming/runsnakerun/) GUI to inspect the profile data.
 
