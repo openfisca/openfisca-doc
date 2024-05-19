@@ -16,7 +16,7 @@ No other information must appear on this line.
 
 ### Introducing
 
-Introducing one or several new variables will be notified by a commit message that utilises, **one independant line per created variable** with the following syntax:
+Introducing one or several new variables will be notified by a commit message that utilises, **one separate line per created variable** with the following syntax:
 
 ```text
 Introduce new_name
