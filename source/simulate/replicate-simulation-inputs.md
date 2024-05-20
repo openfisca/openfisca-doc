@@ -5,8 +5,7 @@ Further to the two ways of populating a Simulation object with data:
 - either describe a [small population](./run-simulation.md#test-cases) with fine control over input variables and over the relationship between individuals and group entities;
 - or provide [inputs in bulk](./run-simulation.md#data), typically using tabular data (CSV, Excel, etc.)
 
-a third possibility also exists. 
-Suitable for small-scale situations such as test cases; it is possible to generate a number of "copies" of this situation, in which one or more variables of your choice take on a range of values.
+a third possibility also exists. Suitable for small-scale situations such as test cases; it is possible to generate a number of "copies" of this situation, in which one or more variables of your choice take on a range of values.
 
 The following example does this by adding an "axes" entry to a test case:
 
@@ -165,7 +164,7 @@ Note the difference in nesting; there is no longer an inner set of two axes, but
 64
 ```
 
-Why? Because `age` and `salary` are varying independently and each axis results in multiplying by 4 the original population of 4. This resultS in 4 times 4 times 4 individuals, equalling 64.
+Why? Because `age` and `salary` are varying independently and each axis results in multiplying by 4 the original population of 4. This results in 4 times 4 times 4 individuals, equalling 64.
 
 The results are as follows:
 

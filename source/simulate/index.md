@@ -9,7 +9,7 @@ analyse-simulation
 profile-simulation
 ```
 
-To calculate Tax and Benefit System variables relating to people's situations, you need to create and run a _Simulation_.
+To calculate Tax and Benefit System variables relating to populations' situations, you need to create and run a _Simulation_.
 
 OpenFisca will work the same if there is one person, seven, or seven million in the modelled situation.
 
@@ -21,6 +21,6 @@ In this section the focus is on simulations and the two approaches that can be t
 - [test cases](./run-simulation.md#test-cases): that utilise small structured data for input,
 - [bulk data](./run-simulation.md#data): in the form of aggregated data, CSV files, etc.
 
-It's also possible to extend _Simulations_ by defining an axis which is covered in detail in the section [Replication a situation along axes](./replicate-simulation-inputs.md).
+It's also possible to extend _Simulations_ by defining an axis which is covered in detail in the section [Replicating a situation along axes](./replicate-simulation-inputs.md).
 
 When running Simulations it is also possible to activate the [`trace` feature](./analyse-simulation.md) which provides a way to analyse how the simulation achieved its results. Similarly there are options to trouble-shoot [Simulation performance](./profile-simulation.md).
