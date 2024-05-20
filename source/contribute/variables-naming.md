@@ -18,8 +18,7 @@ A particular effort should be made on variables that are likely to be reused.
 
 #### Bad naming
 
-- `vat_sub1`: In English-speaking countries VAT would unambiguously refer to Value Added Tax, but the addition of a suffix for technical purposes (e.g. an intermediate step in the computation) should in
-general be avoided. A better name might be `vat_on_exports` (assuming this is the intermediate step's meaning).
+- `vat_sub1`: In English-speaking countries VAT would unambiguously refer to Value Added Tax, but the addition of a suffix for technical purposes (e.g. an intermediate step in the computation) should in general be avoided. A better name might be `vat_on_exports` (assuming this is the intermediate step's meaning).
 - `cpstd`. Here the acronym might mean "Company Paid Short-Term Disability", but this acronym is not widely used or recognisable, and will not be found in a web search. Using a longer name is preferable.
 
 ## Do's and don'ts
