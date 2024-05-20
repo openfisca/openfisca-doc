@@ -2,14 +2,17 @@
 
 ## Source code repositories
 
-The OpenFisca project is distributed across many Git repositories:
+OpenFisca is distributed across many Git repositories. There are two types of repositories, those shared by everyone and country/jurisdiction specific repositories.
+
+Here are some of the main repositories shared by everyone:
 
 * [OpenFisca-Core](https://github.com/openfisca/openfisca-core)
 * [Country-Template](https://github.com/openfisca/country-template)
-* [OpenFisca-Documentation](https://github.com/openfisca/openfisca-doc)
 * [Legislation-Explorer](https://github.com/openfisca/legislation-explorer)
 * [OpenFisca-Survey-Manager](https://github.com/openfisca/openfisca-survey-manager)
-* [OpenFisca-France](https://github.com/openfisca/openfisca-france) and other models etc.
+* [OpenFisca Documentation (this site)](https://github.com/openfisca/openfisca-doc)
+
+These can all be found at [https://github.com/openfisca](https://github.com/openfisca).
 
 ## Debugging code
 

@@ -1,6 +1,6 @@
 # Contributor guidelines
 
-The OpenFisca project follows the [GitHub Flow](https://guides.github.com/introduction/flow/).
+OpenFisca follows the [GitHub Flow](https://guides.github.com/introduction/flow/).
 
 Each Python package uses [Semantic Versioning](http://semver.org/).
 
@@ -26,7 +26,9 @@ Each OpenFisca repository has its own issues. See [OpenFisca repositories](https
 
 ### Opening a Pull Request
 
-- All code contributions are submitted via a Pull Request towards `main`. The `main` branches are thus [protected](https://help.github.com/articles/about-protected-branches/).
+> Note: It is the intention to generally rename `master` branches across OpenFisca to `main` in accordance with industry practice. 
+
+- All code contributions are submitted via a Pull Request towards `master`. The `master` branches are thus [protected](https://help.github.com/articles/about-protected-branches/).
 - Opening a Pull Request means you want that code to be merged. If you want to only discuss it, send a link to your branch along with your questions through whichever communication channel you prefer.
 - If the Pull Request depends on another opened Pull Request on another repository (like Core or some country model), the requirements should be updated in the dependent project via its `pyproject.toml` (or `setup.py` for older codebases).
 
