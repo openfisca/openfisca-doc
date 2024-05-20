@@ -57,7 +57,7 @@ html_sidebars = {'**': ['sidebar.html']}
 
 myst_heading_anchors = 5  # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#auto-generated-header-anchors
 
-github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/master/'
+github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/main/'
 
 # 'config-cache' supresses: Warning cannot cache unpickable configuration value: 'recommonmark_config' (because it contains a function, class, or module object)
 suppress_warnings = ['image.nonlocal_uri','config.cache']
