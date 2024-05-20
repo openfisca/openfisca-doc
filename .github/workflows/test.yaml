@@ -3,6 +3,7 @@ name: Test
 on:
   pull_request:
   push: # TESTING
+  workflow_call:
 
 jobs:
   lint:
@@ -19,7 +20,12 @@ jobs:
         run: make lint
 
   build:
+    uses: ./.github/workflows/build.yaml
+
+  check-links:
     runs-on: ubuntu-latest
+    needs: [ build ]
+
     steps:
       - uses: actions/checkout@v4
 
@@ -27,23 +33,12 @@ jobs:
         with:
           python-version: 3.11
 
-      - name: Cache dependencies
+      - name: Restore built files
         uses: actions/cache@v4
         with:
-          path: ${{ env.pythonLocation }}
-          key: build-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}-${{ github.sha }} # Cache the entire build Python environment
-          restore-keys: |
-            build-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
-            build-${{ env.pythonLocation }}-
-
-      - name: Install dependencies
-        run: make install
-
-      - name: Test doc
-        run: make test-build
-
-      - name: Build doc
-        run: make html
+          path: build/html
+          key: build-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}-${{ github.sha }}
+          fail-on-cache-miss: true  # depend entirely on the build step
 
       - name: Serve doc
         run: make prod &
