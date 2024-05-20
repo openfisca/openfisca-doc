@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ cd ]  # TESTING
+    branches: [ master ]
 
 jobs:
   build:
@@ -38,4 +38,4 @@ jobs:
           publish_dir: build/html
           external_repository: openfisca/openfisca.org
           destination_dir: doc
-          publish_branch: test-cd  # TESTING
+          publish_branch: gh-pages
