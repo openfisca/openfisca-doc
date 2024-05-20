@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ cd ]  # TESTING
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - run: make install && make html  #TESTING
+
+      - name: Deploy built directory to openfisca.org website
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.OPENFISCADOTORG_DEPLOY_KEY }}
+          publish_dir: build/html
+          external_repository: openfisca/openfisca.org
+          destination_dir: doc
+          publish_branch: test-cd  # TESTING
