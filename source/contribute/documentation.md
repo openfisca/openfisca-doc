@@ -6,7 +6,7 @@ and the source is hosted on this GitHub repository:
 
 ## Collaborative editing
 
-Everybody can participate in the redaction of the documentation.
+Every reader is encouraged to participate in the improvement of the documentation.
 
 On each page there is a link named "Edit this page".
 Just click on it and you'll jump on GitHub on the Markdown source file of the page.

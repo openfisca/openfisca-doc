@@ -28,7 +28,7 @@ Each OpenFisca repository has its own issues. See [OpenFisca repositories](https
 
 - All code contributions are submitted via a Pull Request towards `main`. The `main` branches are thus [protected](https://help.github.com/articles/about-protected-branches/).
 - Opening a Pull Request means you want that code to be merged. If you want to only discuss it, send a link to your branch along with your questions through whichever communication channel you prefer.
-- If the Pull Request depends on another opened Pull Request on another repository (like OpenFisca-Core/OpenFisca-France), the requirements should be updated in the dependent project via its `pyproject.toml`.
+- If the Pull Request depends on another opened Pull Request on another repository (like Core or some country model), the requirements should be updated in the dependent project via its `pyproject.toml` (or `setup.py` for older codebases).
 
 It is considered a good practice to begin the name of the pull request with a verb in the present imperative tense:
 
@@ -59,14 +59,13 @@ Due to a `pip` limitation, it is required to increment the major version number 
 
 #### Peer reviews
 
-Pull requests should generally be **reviewed** by someone other than their authors.
+Pull requests should be **reviewed** by someone other than their authors.
 
 This is mandatory for:
 
 - Any Pull Request with **breaking changes** on `openfisca-france`, `openfisca-web-api`.
 - Any Pull Request bringing **new features**, if these features are not relative to a specific scope.
   + Adding a new route to the API **requires** a review.
-  + A review is not yet mandatory to add a new formula to social contributions in `openfisca-france`. It is though recommended.
 
 To help reviewers, make sure to add to your PR a **clear text explanation** of your changes.
 

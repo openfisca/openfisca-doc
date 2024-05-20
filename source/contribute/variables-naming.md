@@ -26,13 +26,13 @@ general be avoided. A better name might be `vat_on_exports` (assuming this is th
 
 ### Acronyms
 
-Acronyms are OK as long as they are broadly accepted and their meaning is quickly findable online. A good test for "findable" is that a web search _from the relevant country_ should turn up the intended meaning as the first or second hit.
+Acronyms are OK as long as they are broadly accepted and their meaning is quickly findable online. A good test for "findable" is that a web search _from the relevant country_ should turn up the intended meaning as the first or second result.
 
 #### Good naming
 
 - `VAT` (Value Added Tax, near-universal except in France)
 - `EBITDA` (tax, unambiguous)
-- `RSA` (French, social benefit rather than cryptography, recognisable in context)
+- `RSA` (French social benefit rather than cryptography, recognisable in context)
 
 #### Bad naming
 
