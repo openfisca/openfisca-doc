@@ -2,7 +2,7 @@
 
 Depending on your goals, you will interact with one or several components of OpenFisca.
 
-[![OpenFisca architecture](https://cdn.rawgit.com/openfisca/openfisca-doc/master/source/static/img/architecture.svg)](https://github.com/openfisca/openfisca-doc/blob/master/source/static/img/architecture.svg)
+[![OpenFisca architecture](https://cdn.jsdelivr.net/gh/openfisca/openfisca-doc@main/source/static/img/architecture.svg)](https://github.com/openfisca/openfisca-doc/blob/main/source/static/img/architecture.svg)
 
 ## Country Packages
 

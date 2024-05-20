@@ -18,4 +18,4 @@ accepted if relevant.
 
 ## Build it yourself
 
-Check this [documentation's README](https://github.com/openfisca/openfisca-doc/blob/master/README.md).
+Check this [documentation's README](https://github.com/openfisca/openfisca-doc/blob/main/README.md).
