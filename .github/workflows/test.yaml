@@ -1,0 +1,52 @@
+name: Test
+
+on:
+  pull_request:
+  push: # TESTING
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Lint Markdown files
+        run: make lint
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.pythonLocation }}
+          key: build-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}-${{ github.sha }} # Cache the entire build Python environment
+          restore-keys: |
+            build-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
+            build-${{ env.pythonLocation }}-
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Test doc
+        run: make test-build
+
+      - name: Build doc
+        run: make html
+
+      - name: Serve doc
+        run: make prod &
+
+      - name: Check for internal dead links
+        run: wget --retry-connrefused --waitretry=1 --spider --recursive --page-requisites http://localhost:8000
