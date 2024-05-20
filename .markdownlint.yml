@@ -21,3 +21,6 @@ emphasis-style:
 
 strong-style:
   style: asterisk
+
+MD024:
+  siblings_only: true

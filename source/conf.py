@@ -59,8 +59,15 @@ myst_heading_anchors = 5  # https://myst-parser.readthedocs.io/en/latest/syntax/
 
 github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/master/'
 
-suppress_warnings = ['image.nonlocal_uri']
+# 'config-cache' supresses: Warning cannot cache unpickable configuration value: 'recommonmark_config' (because it contains a function, class, or module object)
+suppress_warnings = ['image.nonlocal_uri','config.cache']
 
+# Supresses warning "more than one target found for cross-reference" affecting:
+#  - openfisca_core.periods.Instant
+#  - openfisca_core.simulations.simulation_builder.SimulationBuilder -> TaxBenefitSystem
+autodoc_default_options = {
+    'ignore-module-all': True
+}
 
 def missing_reference(app, env, node, contnode):
     if node['reftype'] == 'class' and node['reftarget'].startswith('nptyping'):

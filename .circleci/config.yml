@@ -13,7 +13,7 @@ jobs:
 
   build:
     docker:
-      - image: python:3.8
+      - image: python:3.11
     steps:
       - checkout
 
@@ -51,7 +51,7 @@ jobs:
 
       - run:
           name: Check for internal dead links
-          command: wget --spider --recursive --page-requisites http://localhost:8000
+          command: wget --retry-connrefused --waitretry=1 --spider --recursive --page-requisites http://localhost:8000
 
       - persist_to_workspace:
           root: .
@@ -60,7 +60,7 @@ jobs:
 
   deploy:
     docker:
-      - image: python:3.8
+      - image: python:3.11
     steps:
       - checkout
       - attach_workspace:

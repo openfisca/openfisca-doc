@@ -57,33 +57,33 @@ Abbreviations should be avoided unless they are unambiguous.
 
 OpenFisca currently lacks a namespacing mechanism. In its absence, the need sometimes arises to use prefixes or suffixes to distinguish between variables which would otherwise have the same name, leading to errors or ambiguities. Some conventions have arisen:
 
-#### Use a prefix to distinguish versions of a variable specific to a subdomain
+The following examples are for a variable considered to be in the `housing tax` domain:
 
-##### Good naming
+#### Good naming
 
 - `housing_tax_nb_parents`
 
-##### Bad naming
+#### Bad naming
 
 - `nb_parents_housing_tax`
 
-#### Avoid mixing suffixed and non-suffixed versions of a similarly named variables
+### Avoid mixing suffixed and non-suffixed versions of a similarly named variables
 
 This might cause confusion on which version to use where.
 
-##### Good naming
+#### Good naming
 
 - `housing_tax_nb_parents` alongside `income_tax_nb_parents`
 
-##### Bad naming
+#### Bad naming
 
 - `nb_parents` alongside `housing_tax_nb_parents`
 
-#### Use a suffix if it is necessary to distinguish between versions of a variable at the level of different entities
+### Use a suffix if it is necessary to distinguish between versions of a variable at the level of different entities
 
 This is often seen when aggregating from the individual level to e.g. the household level.
 
-##### Good naming
+#### Good naming
 
 - `taxable_income_household`
 - `work_income_individual`

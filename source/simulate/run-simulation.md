@@ -114,7 +114,7 @@ This data could come from a survey with aggregated data, data files extracted fr
 
 Here is a minimal example of data (in CSV format):
 
-```csv
+```text
 person_id,household_id,person_salary,person_age
 1,a,2694,40
 2,a,2720,43
@@ -148,7 +148,7 @@ Let's say you are using the [country-template](https://github.com/openfisca/coun
 
 Let's also say you have the following `data.csv` and that you want to calculate [income_tax](https://demo.openfisca.org/legislation/income_tax) for all persons:
 
-```csv
+```text
 person_id,person_salary,person_age
 1,2694,40
 2,2720,43
@@ -259,7 +259,7 @@ Let's say that our persons and households lists are defined in distinct files:
 
 - `data_persons.csv`
 
-    ```csv
+    ```text
     person_id,household_id,person_role_in_household,person_salary,person_age
     1,a,first_parent,2694,40
     2,a,second_parent,2720,43
@@ -277,7 +277,7 @@ Let's say that our persons and households lists are defined in distinct files:
 
 - `data_households.csv`
 
-    ```csv
+    ```text
     household_id,rent,accommodation_size
     b,1200,64
     a,700,39
