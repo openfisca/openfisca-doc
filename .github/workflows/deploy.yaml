@@ -11,7 +11,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    needs: [ validate ]  # also depends on build for caching build, not repeated to avoid building twice
+    needs: [ validate ]  # also depends on `build-and-cache` job for cached build, not repeated to avoid building twice
 
     steps:
       - uses: actions/checkout@v4
