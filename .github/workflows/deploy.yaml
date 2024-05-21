@@ -38,3 +38,4 @@ jobs:
           publish_branch: gh-pages
           user_email: bot@openfisca.org
           user_name: OpenFisca Bot
+          commit_message: Publish latest changes from  # will be suffixed with "openfisca/openfisca-doc@<commit_sha>"
