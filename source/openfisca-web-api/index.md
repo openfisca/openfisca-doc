@@ -14,22 +14,18 @@ Using a web interface, app developers can access information and computations wi
 
 ## Demonstration API
 
-The latest version of the OpenFisca Country Template web API can be found at [`api.demo.openfisca.org`](https://api.demo.openfisca.org/). Its endpoints are documented at [`legislation.demo.openfisca.org/swagger`](https://legislation.demo.openfisca.org/swagger). 
+The latest version of the OpenFisca Country Template web API can be found at [`api.demo.openfisca.org`](https://api.demo.openfisca.org/). Its endpoints are documented at [`legislation.demo.openfisca.org/swagger`](https://legislation.demo.openfisca.org/swagger).
 
 ## OpenFisca country APIs
 
-Each country/jurisdiction can host an API endpoint and often an OpenFisca instance is deployed multiple times in support of different applications. 
+Each country/jurisdiction can host an API endpoint and often an OpenFisca instance is deployed multiple times in support of different applications.
 By way of example, an instance of the French API is available at [api.fr.openfisca.org](https://api.fr.openfisca.org/). It is provided for prototyping purposes only: it has no SLA (service level agreement, i.e. guarantee of availability) and is kept up to date automatically, with no regard for breaking changes. No support is provided for this instance. You should not build production systems against it.
 
 Anyone wanting a stable OpenFisca web API is invited to [host their own](#hosting-an-api-instance).
 
 ## Example use cases
 
-The following services utilise the France OpenFisca web API:
-
-- [fr.openfisca.org/legislation](https://fr.openfisca.org/legislation), giving you information on available OpenFisca variables.
-- [Mes Aides](https://mes-aides.gouv.fr), the French social benefits simulator.
-- [PA-comp](https://pa-comp.firebaseapp.com), a divorce fiscal impact simulator.
+Visit [https://openfisca.org/en/showcase/](https://openfisca.org/en/showcase/) to browse a wide variety of use cases.
 
 ## Conditions
 
