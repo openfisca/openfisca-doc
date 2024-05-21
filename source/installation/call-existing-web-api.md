@@ -1,6 +1,6 @@
 # Call an existing web API
 
-The web API is made for online web applications. Before hosting your country web API, you can check if it already exists or use the demonstration of the `OpenFisca-Country-Template` web API hosted by OpenFisca community. It is available for testing and interacting with its web API endpoints through [this swagger interface](https://legislation.demo.openfisca.org/swagger). As with all OpenFisca country web API's it does not require installing anything to access it.
+The web API is made for online web applications. Before hosting your country web API, you can check if it already exists or use the demonstration of the `OpenFisca-Country-Template` web API hosted by OpenFisca community. It is available for testing and interacting with its web API endpoints through [this swagger interface](https://legislation.demo.openfisca.org/swagger). As with all OpenFisca country web APIs it does not require configuring or installing anything to access it.
 
 For further information on the possible requests, [this section of the documentation](./../openfisca-web-api/endpoints.md) describes OpenFisca web APIs endpoints.
 

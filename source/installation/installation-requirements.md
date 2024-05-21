@@ -64,3 +64,15 @@ git --version
 ```
 
 It should return the version of Git if Git is installed. If [Git](https://git-scm.com) isn't installed, follow the official [documentation to install Git](https://git-scm.com/downloads) for the latest version.
+
+It is recommended to contact those maintaining the relevant package to gain appropriate access first.
+
+Accessing the source code with git should be done via SSH. Using the OpenFisca Country Template as an example the following command demonstrates how that is achieved:
+
+```shell
+git clone git@github.com:openfisca/country-template.git
+```
+
+If new to SSH, follow [these Github instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) on setting up SSH specific to Github.
+
+> Note: accessing via HTTPS is not recommended.
