@@ -1,6 +1,7 @@
 name: Deploy
 
 on:
+  workflow_dispatch:  # triggered by Core to rebuild the documentation when code comments change
   push:
     branches: [ master ]
 
