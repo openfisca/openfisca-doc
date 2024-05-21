@@ -36,3 +36,5 @@ jobs:
           external_repository: openfisca/openfisca.org
           destination_dir: doc
           publish_branch: gh-pages
+          user_email: bot@openfisca.org
+          user_name: OpenFisca Bot
