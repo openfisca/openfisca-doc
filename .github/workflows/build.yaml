@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  workflow_call:
+
+jobs:
+  build-and-cache:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.pythonLocation }}
+          key: build-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}-${{ github.sha }} # Cache the entire build Python environment
+          restore-keys: |
+            build-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
+            build-${{ env.pythonLocation }}-
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Check syntax
+        run: make test-build
+
+      - name: Cache built files
+        uses: actions/cache@v4
+        with:
+          path: build/html
+          key: build-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}-${{ github.sha }}
+
+      - name: Build doc
+        run: make html

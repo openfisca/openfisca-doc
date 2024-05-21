@@ -17,7 +17,7 @@ install:
 test: lint test-build
 
 test-build:
-	@${MAKE} dummy SPHINXOPTS="-q -W"
+	@${MAKE} dummy SPHINXOPTS="--quiet --fail-on-warning"
 
 lint:  # requires Node and NPM to be installed
 	@npx --yes markdownlint-cli "**/*.md"

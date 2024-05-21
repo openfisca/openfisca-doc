@@ -101,3 +101,9 @@ That's it! 🙌
 ## Using icons
 
 You can use icons by choosing one from [Lucide](https://lucide.dev) and adapting the code `<i icon-name="$ICON_NAME"></i>` with the relevant icon name.
+
+## Deploy
+
+The documentation is built as a static website on GitHub Actions with Sphinx. The built files are committed and pushed to the `doc` folder of the GitHub Pages-published branch of the `openfisca.org` repository.
+
+OpenFisca-Core triggers a deployment on the Doc repository whenever a new Core version is deployed, to ensure that the Python and Web API auto-generated documentations are up to date. This is done with [`workflow_dispatch`](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event--fine-grained-access-tokens) using a personal access token of @openfisca-bot. This personal access token has a maximum lifetime of one year, and will thus need to be updated every year.
