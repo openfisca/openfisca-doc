@@ -4,7 +4,7 @@ Taxes and benefits can be calculated for different entities: persons, household,
 
 ## Person
 
-The person entity within OpenFisca is unique and there is only one entity of this type. Some OpenFisca variables are defined for a _person_. 
+The person entity within OpenFisca is unique and there is only one entity of this type. Some OpenFisca variables are defined for a _person_.
 
 Example: a "salary" or someone's age is defined for a person.
 
@@ -42,4 +42,4 @@ You can define as many entities and roles as you want.
 
 #### Entities and roles are instance specific
 
-Entities and roles are described per the country, jurisdiction or domain, independent from the core engine (OpenFisca-Core).
+Entities and roles are described per the country, jurisdiction or domain, independent from the core engine (OpenFisca-Core). They can be identified in the texts of the modelled rules.

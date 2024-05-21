@@ -19,6 +19,6 @@ Let's look at some examples:
 
 The smallest unit for OpenFisca periods is the **day**.
 
-The largest OpenFisca period is the **eternity**, which is used for variables that are constant over time, e.g. a date of birth.
+The largest OpenFisca unit is the **eternity**, which is used for variables that are constant over time, e.g. a date of birth.
 
 [Read more about periods implementation in OpenFisca](../coding-the-legislation/35_periods.md).
