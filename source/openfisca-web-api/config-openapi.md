@@ -2,17 +2,17 @@
 
 The OpenFisca web API exposes a `/spec` route that documents how to use the API, using the OpenAPI standard.
 
-Most the the `/spec` content is automatically built for you. However, some minimal configuration can make the provided examples more complete and relevant, and improve the [Swagger interactive documentation packaged in the Legislation Explorer](http://demo.openfisca.org/legislation/swagger).
+Most of the `/spec` content is automatically built for you. However, some minimal configuration can make the provided examples more complete and relevant, and improve the [Swagger interactive documentation packaged in the Legislation Explorer](http://demo.openfisca.org/legislation/swagger).
 
 This configuration is done in the initialisation of your `TaxBenefitSystem`. For example, in the [country package template](https://github.com/openfisca/country-template/blob/3.5.0/openfisca_country_template/__init__.py#L28-L33), you can see:
 
 ```py
   # We define which variable, parameter and simulation example will be used in the OpenAPI specification
   self.open_api_config = {
-    "variable_example": "disposable_income",
-    "parameter_example": "taxes.income_tax_rate",
-    "simulation_example": couple,
-    }
+      "variable_example": "disposable_income",
+      "parameter_example": "taxes.income_tax_rate",
+      "simulation_example": couple,
+      }
 ```
 
 This defines:

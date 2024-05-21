@@ -31,4 +31,4 @@ It is thus crucial to determine whether your changes are **backwards-compatible*
 - Renaming or deprecating a variable.
 - Changing the default value of a variable.
 - Deprecating a parameter.
-- Changing the sctructure of the parameter tree.
+- Changing the structure of the parameter tree.

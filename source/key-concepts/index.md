@@ -6,8 +6,8 @@
 tax_and_benefit_system
 variables
 parameters
-person,_entities,_role
-periodsinstants
+person_entities_role
+periods_instants
 simulation
 reforms
 ```
@@ -19,12 +19,12 @@ The first entries are dedicated to the **definitions of the structure** of OpenF
 - [Tax and Benefit System](tax_and_benefit_system.md) as the matrix of the software
 - [Variables](variables.md)
 - [Parameters](parameters.md)
-- [Person, entities, role](person,_entities,_role.md)
-- [Periods, Instants](periodsinstants.md)
+- [Person, entities, role](person_entities_role.md)
+- [Periods, Instants](periods_instants.md)
 
-Last sections present different **applications** of OpenFisca.
+The last sections present different **applications** of OpenFisca.
 
 - [Simulation, Computation](simulation.md)
 - [Reforms](reforms.md)
 
-We use the French legislation to illustrate these concepts. French names are kept as it is.
+We use the French legislation to illustrate these concepts. French names are kept as they are.

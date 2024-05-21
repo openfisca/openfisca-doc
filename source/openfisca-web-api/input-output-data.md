@@ -2,19 +2,19 @@
 
 > All the examples provided here are from the [country package template](https://github.com/openfisca/country-template).
 
-In order to run a computation on the web API, you will need to send information to the API concerning:
+In order to run a computation on the web API, you need to send the following information to the API in the JSON format:
 
-- The situation, meaning describe the [entities](../key-concepts/person,_entities,_role.md) (e.g. individuals, households) that you want to base your calculations on.
+- The situation that describes the [entities](../key-concepts/person_entities_role.md) (e.g. individuals, households) that you want to base your calculations on.
 - The variable you need to compute.
 
 ## Describing the situation
 
 ### Describing entities
 
-The most important rule in describing a situation in OpenFisca is:
+When describing situations to OpenFisca, follow these two rules:
 
-Every person has to belong to one of each group entity (e.g. household).
-Every person in a group entity needs a role (e.g. parent)
+ 1. Every person has to belong to one of each group entity (e.g. household).
+ 2. Every person in a group entity needs a role (e.g. parent)
 
 > For example, if you wish to run a calculation on 2 households:
 >
@@ -49,15 +49,15 @@ Every person in a group entity needs a role (e.g. parent)
 
 ### Adding information to entities
 
-To run a precise calculation, you can provide information on each person and group entity.
+To run a precise calculation, you should provide information on each person and group entity.
 
 These are the input [variables](../key-concepts/variables.md) of your simulation.
 
-To provide an input variable, insert the value in the json, for the corresponding time period (e.g. '2015-06') and entity (e.g. 'person', 'household').
+To provide an input variable, insert the value in the json, for the corresponding time period (e.g. `2015-06`) and entity (e.g. `person`, `household`).
 
 The time period must respect the [definition period](../coding-the-legislation/35_periods.md) of the variable, and the entity must be the one the variable is defined for.
 
-> For example, if Ricarda has a salary (defined monthly for a Person) of 3500/month until september 2016, and 4000/month after that and if household_2 were tenant and became homeowners in march 2016 (housing_occupancy_status is defined monthly for a household) of the 57 sqm apartment they live in, you would write:
+> For example, if Ricarda has a salary (defined monthly for a Person) of 3500/month until september 2016, and 4000/month after that and if `household_2` were tenants and became homeowners in March 2016 (`housing_occupancy_status` is defined monthly for a household) of the 57 sqm apartment they live in, you would write:
 
 ```json
 {
@@ -215,7 +215,7 @@ To indicate you want a variable computed, insert the variable in the correspondi
 
 ## Understanding the result
 
-The API will return an identical JSON file where all the `null` (the variable that you asked OpenFisca to compute, see above for details) have been replace by the computed value.
+The API will return an identical JSON file where all the `null` values (the variables that you asked OpenFisca to compute) have been replaced with their computed values.
 
 ```json
 {
@@ -293,4 +293,4 @@ The API will return an identical JSON file where all the `null` (the variable th
 }
 ```
 
-> Note that elements might appear in a different order in the response. However the structure of the file stays the same.
+> Note that elements might appear in a different order in the response. However the structure of the JSON stays the same.

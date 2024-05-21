@@ -4,7 +4,7 @@ When you run an OpenFisca simulation to compute a variable, you need to define t
 
 OpenFisca gives you a convenient string syntax to define periods.
 
-The general structure is `unit:instant:quantity` (see the [definition of a period](../key-concepts/periodsinstants.md)). Some of the structure can be omitted.
+The general structure is `unit:instant:quantity` (see the [definition of a period](../key-concepts/periods_instants.md)). Some of the structure can be omitted.
 
 The main valid period formats are referenced in this table:
 

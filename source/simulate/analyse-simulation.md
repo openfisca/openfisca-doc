@@ -1,16 +1,16 @@
 # Analysing or debugging a simulation
 
-When simulating with the Python API, you might want to understand how the result was calculated and what intermediate variables and parameters have been taken into account.
+To understand how a result was calculated when simulating with the Python API, analysis of the intermediate variables and parameters have been taken into account.
 
 > To trace a simulation calculation with the web API, please see [/trace endpoint documentation](../openfisca-web-api/trace-simulation.md).
 
 ## Activating the simulation tracer
 
-Let's suppose you ran a simulation, calculated the `housing_allowance` for a set of households, and would like to understand in details where the final results come from.
+The following example uses the tracer to understand in detail how the `housing_allowance` for a set of households was calculated.
 
-To use the tracer, you should activate the `trace` option with `simulation.trace = True` _before_ running any calculation with a `simulation` object. This will allow you to inspect calculation steps and print them with `simulation.tracer.print_computation_log()`.
+To use the tracer, activate the `trace` option with `simulation.trace = True` _before_ running any calculation with a `simulation` object. This allows inspection of the calculation steps and prints them with `simulation.tracer.print_computation_log()`.
 
-Here is an example:
+Example:
 
 ```py
 # -*- coding: utf-8 -*-
@@ -37,11 +37,11 @@ housing_allowance = simulation.calculate('housing_allowance', '2011-01')
 simulation.tracer.print_computation_log()
 ```
 
-> For more information on the `tracer` methods, see this [Tracer class interface](../../openfisca-python-api/tracer)
+> For more information on the `tracer` methods, see [Tracer class interface](../../openfisca-python-api/tracer)
 
 ## Analysing simulation steps
 
-If we use the tracer with the following `TEST_CASE`:
+To analyse the output consider the following `TEST_CASE`:
 
 ```py
 TEST_CASE = {
@@ -54,12 +54,12 @@ TEST_CASE = {
         'Javier': {}
     },
     'households': {
-        'h1': {
+        'household_1': {
             'children': ['Leila'], 
             'parents': ['Ari', 'Paul'],
             'rent': {'2011-01': 300}
         },
-        'h2': {'parents': ['Javier']}
+        'household_2': {'parents': ['Javier']}
     },
 }
 ```
@@ -71,17 +71,17 @@ The previous code example would give us this output:
     rent<2011-01> >> [300.   0.]
 ```
 
-The `rent` variable is indented to the right relative to `housing_allowance`. This means that `housing_allowance` variable called the `rent` calculation. It was called on the same period, '2011-01'. As the [rent variable](https://demo.openfisca.org/legislation/rent)'s value was an input value given by our `TEST_CASE`, it was returned to `housing_allowance`. Then, as the [housing_allowance variable](https://demo.openfisca.org/legislation/housing_allowance) has a valid formula on '2011-01', it used the `rent` value to calculate its amount for its two households (`h1` and `h2`): `[75.  0.]`
+The `rent` variable is indented to the right relative to `housing_allowance` indicating that `housing_allowance` variable called the `rent` calculation. It was called on the same period: '2011-01'. The [rent variable](https://legislation.demo.openfisca.org/rent)'s value was an input value given by the `TEST_CASE` and was returned to `housing_allowance`. The [housing_allowance variable](https://legislation.demo.openfisca.org/housing_allowance) has a valid formula for '2011-01' which used the `rent` value to calculate `housing_allowance` for its two households (`household_1` and `household_2`): `[75.  0.]`
 
-Thus, on the left side of the double chevrons, you can read the trace from top to bottom to see the dependencies between the variables. And on the right side, you can read it from bottom to top to see how the simulation result is built.
+Thus, on the left side of the double chevrons, the trace can be read from top to bottom to see the dependencies between the variables. The right side can be read from bottom to top to see how the simulation result is built.
 
-Likewise, if you are calculating `housing_allowance` on a large population you will be able to check your calculation results with aggregated outputs. To do so, you can add the `aggregate=True` option as follows:
+Likewise, in calculating `housing_allowance` on a large population it is possible to aggregate outputs. To do so, add the `aggregate=True` option as follows:
 
 ```py
 simulation.tracer.print_computation_log(aggregate=True)
 ```
 
-If we apply it to our previous short example, it would give us this output:
+If applied to the previous short example, the following would result:
 
 ```sh
   housing_allowance<2011-01> >> {'min': 0.0, 'max': 75.0, 'avg': 37.5}

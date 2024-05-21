@@ -1,20 +1,20 @@
-# How to profile the performance of a simulation
+# Profiling a simulation's performance
 
-Your simulation is way too slow, and you want to know why? We've got you covered! :)
+The following outlines how to tackle a simulation that is running too slow.
 
-Since [34.4.0](https://github.com/openfisca/openfisca-core/pull/895) you can generate a time performance flame graph in a web page to view the time taken by every calculation in a simulation.
+Since [34.4.0](https://github.com/openfisca/openfisca-core/pull/895) it is possible to generate a time performance flame graph in a web page to view the time taken by every calculation in a simulation.
 
-In the following examples, we use [OpenFisca-France](https://github.com/openfisca/openfisca-france), but the profiling applies to any country package using `openfisca test`.
+The following examples utilise the [OpenFisca-France](https://github.com/openfisca/openfisca-france) package but the profiling is available to any package.
 
 ## Identify a slow simulation
 
-The easier way to spot a slow simulation is to profile your test suite, as follows:
+The easier way to spot a slow simulation is to profile a test suite, as follows:
 
 ```py
 PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=10" openfisca test --country-package openfisca_france tests
 
 ...
-Which gives you the 10 slowest tests:
+This returns the 10 slowest tests:
 9.69s call     tests/test_basics.py::test_basics[scenario_arguments12]
 9.02s call     tests/reforms/test_plf2016_ayrault_muet.py::test_plf2016_ayrault_muet
 8.91s call     tests/test_basics.py::test_basics[scenario_arguments11]
@@ -27,7 +27,7 @@ Which gives you the 10 slowest tests:
 8.17s call     tests/test_tax_rates.py::test_marginal_tax_rate
 ```
 
-Now, let's take a closer look at this test `tests/formulas/irpp_prets_participatifs.yaml`:
+Profile `tests/formulas/irpp_prets_participatifs.yaml` from the above results:
 
 ```py
 PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=3" openfisca test --country-package openfisca_france tests/formulas/irpp_prets_participatifs.yaml
@@ -39,13 +39,13 @@ PYTEST_ADDOPTS="$PYTEST_ADDOPTS --durations=3" openfisca test --country-package 
 3.02s call     tests/formulas/irpp_prets_participatifs.yaml::
 ```
 
-Terrific! We now know that the first test in `tests/formulas/irpp_prets_participatifs.yaml` is the slowest, compared to the others.
+This indicates the first test in `tests/formulas/irpp_prets_participatifs.yaml` is the slowest, compared to the others.
 
 ## Generate the flame graph
 
-To generate the flame graph, just pass the [`--performance`](https://openfisca.org/doc/openfisca-python-api/openfisca-run-test.html) option to `openfisca test`.
+To generate the flame graph, pass the [`--performance`](https://openfisca.org/doc/openfisca-python-api/openfisca_test.html) option to `openfisca test`.
 
-We'll also use the [`--name_filter`](https://openfisca.org/doc/openfisca-python-api/openfisca-run-test.html) option to profile the first test only.
+It is also possible to supply the [`--name_filter`](https://openfisca.org/doc/openfisca-python-api/openfisca_test.html) option to profile specific tests only.
 
 ```py
 openfisca test --performance --name_filter ir_prets_participatifs_2016 --country-package openfisca_france tests/formulas
@@ -58,7 +58,7 @@ performance_graph.html
 
 ## Open the flame graph
 
-Now, you can open the file with your favorite browser.
+Now, you can open the file with your favourite browser.
 
 For example, in OS X:
 
@@ -618,7 +618,7 @@ It's actually worse... but why?
 
 One hypothesis is, even if, compared to a linear search with complexity _O(n)_, a binary search should be more efficient in that it has a complexity of _O(log(n))_, it will actually be more efficient for large numbers of _n_, which is not usually the case here.
 
-In fact, creating a lookup table for parameters would be theoretically more efficient. That would require refactoring, as the current `values_list` object is not hashable. Indeed, even using a more appropiate data structure could lead to better performance.
+In fact, creating a lookup table for parameters would be theoretically more efficient. That would require refactoring, as the current `values_list` object is not hashable. Indeed, even using a more appropriate data structure could lead to better performance.
 
 ## Wrap up
 
