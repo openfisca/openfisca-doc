@@ -18,4 +18,4 @@ You can find a selection of existing OpenFisca models at: [https://openfisca.org
 
 Note that there are both country and state level models.
 
-Each instance of OpenFisca is managed and published as open source digital infrastructure by teams positioned within the countries or jurisdictions they are modelling. Each maintains their own instances and as they are able, contributes to `OpenFisca Core` and the wider OpenFisca ecology.
+Each instance of OpenFisca is managed and published as open source digital infrastructure by teams positioned within, or linked to, the countries or jurisdictions they are modelling. Each maintains their own instances and as they are able, contributes to `OpenFisca Core` and the wider OpenFisca ecology.
