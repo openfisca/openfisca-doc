@@ -26,7 +26,7 @@ Each OpenFisca repository has its own issues. See [OpenFisca repositories](https
 
 ### Opening a Pull Request
 
-> Note: It is the intention to generally rename `master` branches across OpenFisca to `main` in accordance with industry practice. 
+> Note: It is the intention to generally rename `master` branches across OpenFisca to `main` in accordance with industry practice.
 
 - All code contributions are submitted via a Pull Request towards `master`. The `master` branches are thus [protected](https://help.github.com/articles/about-protected-branches/).
 - Opening a Pull Request means you want that code to be merged. If you want to only discuss it, send a link to your branch along with your questions through whichever communication channel you prefer.
