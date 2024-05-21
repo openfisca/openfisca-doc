@@ -44,14 +44,14 @@ Follow the default installation instructions in the [Python official documentati
 
 #### Recommendations for Windows users
 
-Microsoft Windows users can also utilise the [conda](https://docs.conda.io/en/latest/) package and environment manager to install the [OpenFisca-Country-Template](https://anaconda.org/search?q=openfisca-country-template) or one of the OpenFisca packages [published as conda packages](https://anaconda.org/search?q=openfisca).
-  
-This option is recommended for easier installation but the [available packages list](https://anaconda.org/search?q=openfisca) is shorter.  
+Microsoft Windows users can also utilise the [conda](https://docs.conda.io/en/latest/) package and environment manager to install the [OpenFisca-Country-Template published on PyPi](https://pypi.org/project/openfisca-country-template/#history) or one of the [OpenFisca packages published on PyPi](https://pypi.org/search/?q=openfisca).
+
+OpenFisca-Country-Template is also published as [conda package](https://anaconda.org/search?q=openfisca-country-template) but the [available openfisca packages list](https://anaconda.org/search?q=openfisca) is shorter.  
   
 To install Python through conda:
 
-* install the [Anaconda distribution](https://anaconda.org) for Python and conda.
-* or, also consider the minimal [Miniconda distribution](https://docs.conda.io/en/latest/miniconda.html) for Python and conda.
+* install the [Anaconda distribution](https://anaconda.org) for Python, pip and conda.
+* or, also consider the minimal [Miniconda distribution](https://docs.conda.io/en/latest/miniconda.html) for Python, pip and conda.
 
 ## Contributing to the rules (Git)
 

@@ -47,8 +47,8 @@ Suitable for "desktop" processing and running large simulations:
 
 If the goal includes contributing to the rules of a country package:
 
-* when it already exists, [access a country's source code](./access-countrys-source-code.md).
-* otherwise [bootstrap a new country package](/coding-the-legislation/bootstrapping_a_new_country_package.md)
+* When it already exists, [access a country's source code](./access-countrys-source-code.md).
+* Otherwise, [bootstrap a new country package](/coding-the-legislation/bootstrapping_a_new_country_package.md)
 
 ## Edge cases
 
