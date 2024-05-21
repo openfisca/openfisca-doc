@@ -1,7 +1,7 @@
-# Endpoints
+# API endpoints
 
 Each OpenFisca Country Package web API comes with a set of endpoints including an OpenAPI specification on the `/spec` route.
-You can check out the demonstration [swagger documentation](http://demo.openfisca.org/legislation/swagger) to see how the endpoints work.
+You can check out the demonstration [swagger documentation](https://legislation.demo.openfisca.org/swagger) to see how the endpoints work.
 
 The OpenFisca web API can be used to:
 
