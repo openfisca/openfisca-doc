@@ -1,8 +1,7 @@
 # <i icon-name="download"></i> Getting started
 
-```eval_rst
-.. toctree::
-   :hidden:
+```{toctree}
+:hidden:
 
 call-existing-web-api
 installation-requirements
