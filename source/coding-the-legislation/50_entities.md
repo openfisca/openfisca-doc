@@ -1,6 +1,6 @@
 # Entities
 
-Every variable is defined for a type of [entity](../key-concepts/person,_entities,_role.md): for instance persons or households.
+Every variable is defined for a type of [entity](../key-concepts/person_entities_role.md): for instance persons or households.
 
 However, I may for instance:
 

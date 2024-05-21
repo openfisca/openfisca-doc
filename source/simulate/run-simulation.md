@@ -133,7 +133,7 @@ As for the _test case_ content, it needs the following information:
 
 - unique identifiers for persons and _group entities_
   > like the `person_id` and `household_id` columns information in the CSV example
-- if there have multiple [entities](../key-concepts/person,_entities,_role.md) types (persons, households, ...), there needs to be a way that the persons list is dispatched over the _group entities_
+- if there have multiple [entities](../key-concepts/person_entities_role.md) types (persons, households, ...), there needs to be a way that the persons list is dispatched over the _group entities_
   > in the CSV example, every `person_id` is associated with a `household_id` on the same line
 - the name of the corresponding variables in the model for each set of values
   > `person_salary` values become [salary](https://legislation.demo.openfisca.org/salary) values in `OpenFisca-Country-Template` model

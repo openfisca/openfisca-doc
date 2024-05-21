@@ -4,7 +4,7 @@
 
 In order to run a computation on the web API, you need to send the following information to the API in the JSON format:
 
-- The situation that describes the [entities](../key-concepts/person,_entities,_role.md) (e.g. individuals, households) that you want to base your calculations on.
+- The situation that describes the [entities](../key-concepts/person_entities_role.md) (e.g. individuals, households) that you want to base your calculations on.
 - The variable you need to compute.
 
 ## Describing the situation

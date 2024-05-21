@@ -14,4 +14,6 @@ For instance:
 
 Parameters are used in [formulas](./variables.md#formulas) to calculate variable values.
 
+It is always advisable when modelling legislation in OpenFisca to create a parameter for any number described in the law and used in formulas rather than "hard coding" the number within a formula. Thus, if the parameter changes over time, OpenFisca will automatically retrieve the right parameter value for your calculation period.
+
 [Read more about their implementation in OpenFisca](../coding-the-legislation/legislation_parameters.md).
