@@ -1,6 +1,6 @@
 # OpenFisca extensions
 
-Extensions allow you to define new variables or parameters for a tax and benefit system, while keeping their code separated from the main country package. They can only _add_ variables and parameters to the tax and benefit system: they cannot _modify_ or _neutralize_ existing ones.
+Extensions allow you to define new variables or parameters for a tax and benefit system, while keeping their code separated from the main country package. They can only _add_ variables and parameters to the tax and benefit system: they cannot _modify_ or _neutralise_ existing ones.
 
 They are for instance used to code local benefits.
 
@@ -28,4 +28,4 @@ All python files located directly in `{extension_name}/` are imported in the tax
 
 The syntax of the formulas within extension python files is the same than in the general country package formulas (e.g. `from openfisca_france.model.base import *`).
 
-Variables inside an extension should not have the same name than any existing formula, nor than any formula in another extension being used.
+Variables inside an extension should not have the same name as any existing formula, nor as any formula in another extension being used.

@@ -2,11 +2,11 @@
 
 ## Variable name changes
 
-To avoid OpenFisca users to be surprised by a non expected variable renaming breaking their code, we use standard commit messages when renaming a variable. The syntax is formalized below. It must be respected precisely, to allow automatic information extraction.
+To avoid OpenFisca users being surprised by the unexpected renaming of a variable that breaks their code, we use standard commit messages when renaming a variable. The syntax is formalised below. It must be respected precisely, to allow automatic information extraction.
 
 ### Renaming
 
-Renaming one or several variables will be notified by a commit message with the following syntax, **on one independent line per renamed variable**:
+Renaming one or several variables will be notified by a commit message that utilises **one independent line per renamed variable** with the following syntax:
 
 ```text
 Rename former_name to new_name
@@ -16,7 +16,7 @@ No other information must appear on this line.
 
 ### Introducing
 
-Introducing one or several new variables will be notified by a commit message with the following syntax, **on one idependant line per created variable**:
+Introducing one or several new variables will be notified by a commit message that utilises, **one separate line per created variable** with the following syntax:
 
 ```text
 Introduce new_name
@@ -26,7 +26,7 @@ No other information must appear on this line.
 
 ### Deprecating
 
-If a variable must not be used anymore, it will be notified by a commit message with the following syntax, **on one idependant line per deprecated variable**:
+If a variable must not be used anymore, it will be notified by a commit message that utilises **one separate line per deprecated variable** with the following syntax:
 
 ```text
 Deprecate former_name

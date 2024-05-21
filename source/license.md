@@ -1,6 +1,6 @@
-# <i icon-name="copyleft"></i> License
+# <i icon-name="copyleft"></i> Licence
 
-OpenFisca is a free software made available under the [AGPL license](https://choosealicense.com/licenses/agpl-3.0/). This means that you are free to use, install and modify it with the promise to contribute back your changes to the community. This is the only way a contributive digital common can be made sustainable.
+OpenFisca is free software made available under the [AGPL licence](https://choosealicense.com/licenses/agpl-3.0/). This means that you are free to use, install and modify it with the promise to contribute back your changes to the community. This is the only way a contributive digital common can be made sustainable.
 All contributions are welcome as long as they abide by our contribution guidelines. We are happy to have you here in the OpenFisca community.
 
 ## Computation results
@@ -27,7 +27,7 @@ The following HTML snippet can be used to credit OpenFisca in your articles and 
 
 ## Hosting an API instance
 
-If you provide a service that uses OpenFisca, either bundled in a program or serving it over the network, be it directly or wrapped through another API layer, you have to credit OpenFisca, by providing a link to its source code and license.
+If you provide a service that uses OpenFisca, either bundled in a program or serving it over the network, be it directly or wrapped through another API layer, you have to credit OpenFisca, by providing a link to its source code and licence.
 
 The following HTML snippet can be used to credit OpenFisca, for example by placing it in your footer or “about” page.
 Please make sure to update the destination of the source code link if you use a modified version!
@@ -38,7 +38,7 @@ Please make sure to update the destination of the source code link if you use a 
 <span>Computations powered by
   <a href="https://openfisca.org" target="_blank" rel="noopener"><img alt="OpenFisca" src="https://openfisca.org/img/logo-openfisca.svg" height="24" /></a>,
   whose <a href="https://github.com/openfisca/openfisca-core">source code</a>
-  is used under an <a href="https://choosealicense.com/licenses/agpl-3.0/" target="_blank" rel="noopener">AGPL</a> license.
+  is used under an <a href="https://choosealicense.com/licenses/agpl-3.0/" target="_blank" rel="noopener">AGPL</a> licence.
 </span>
 ```
 
@@ -58,4 +58,4 @@ If you modify or extend OpenFisca, you are [legally required](https://choosealic
 
 You can read [this analysis](https://softwareengineering.stackexchange.com/questions/107883/agpl-what-you-can-do-and-what-you-cant/314908/) to get more insight into what you can and can't do with APGL-licensed software.
 
-If you see opportunities in developing services/businesses/tools on top of OpenFisca but are concerned with the AGPL3 license implications, please [open an issue](https://github.com/openfisca/openfisca-core/issues/new) to have a public discussion on the topic.
+If you see opportunities in developing services/businesses/tools on top of OpenFisca but are concerned with the AGPL3 licence implications, please [open an issue](https://github.com/openfisca/openfisca-core/issues/new) to have a public discussion on the topic.

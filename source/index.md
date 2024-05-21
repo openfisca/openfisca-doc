@@ -12,10 +12,10 @@ Describe your tax and benefit system, provide a situation as input (i.e income),
 Economists and lawmakers make use of OpenFisca to calculate the effects of policies. By combining them with survey data to simulate the impact of reform on a given government’s budget and a population’s standard of living.
 
 * **Developers and companies**:
-Developers and companies use Openfisca to effortlessly create web applications based on simulation results with the help of the OpenFisca [web API](openfisca-web-api/index.md). You can build a great significant variety of services by coding formulas, hosting your instances and building your extensions.
+Developers and companies use Openfisca to effortlessly create web applications based on simulation results with the help of the OpenFisca [web API](openfisca-web-api/index.md). You can build a significant variety of services by coding formulas, hosting your instances and building your extensions.
 
 * **Public administrations**:
-Stop building your micro-simulation software and tax & benefit calculators from scratch. Join OpenFisca, contribute to OpenFisca, collaborate with other administrations and reduce costs paid by the taxpayers.
+Stop building your micro-simulation software and tax & benefit calculators from scratch. Join OpenFisca, contribute to OpenFisca, collaborate with other administrations and contribute to the practice of shared and open interpretations of legislation.
 
 ## Way to use OpenFisca
 
@@ -27,10 +27,10 @@ To get started, you can:
 * [Build a new tax and benefit system](coding-the-legislation/bootstrapping_a_new_country_package.md) if it doesn’t exist already.
 * [Contribute](contribute/index.md) to an existing system by adding or improving elements of the legislation.
 
-Then, you will make legal code executable by writing it in the OpenFisca [DSL](https://en.wikipedia.org/wiki/Domain-specific_language), which is a subset of the Python programming language with dedicated functions and tools specifically targeted at modelling rules:
+Then, you can make legal code executable by writing it in the OpenFisca [DSL](https://en.wikipedia.org/wiki/Domain-specific_language), which is a subset of the Python programming language with dedicated functions and tools specifically targeted at modelling rules:
 
-* First, identify some legislation that can be expressed as an arithmetic operation.
-* Then, translate them into [formulas, variables, parameters, etc.](coding-the-legislation/index.md)
+* First, identify some legislation that includes arithmetic operations.
+* Then, translate it into [formulas, variables, parameters, etc.](coding-the-legislation/index.md)
 * [Build some tests](coding-the-legislation/writing_yaml_tests.md) to verify your implementation of the law.
 * Lost? You are not the first one to go through that! You can [find help](find-help.md) by reaching out to the community.
 
@@ -38,22 +38,22 @@ Then, you will make legal code executable by writing it in the OpenFisca [DSL](h
 
 With OpenFisca, you can calculate the effect of legislation on a single situation or a whole population by running a [simulation](simulate/index.md). Since the data you need depends on what you are trying to calculate, OpenFisca does not offer any data upfront.
 
-The following could be your use case to use OpenFisca:
+The following is an example OpenFisca use case:
 
 Do you want to help users find their eligibility for a social benefit in your country? Then, use OpenFisca to build a user interface asking them for their income and demographic information and provide them with an answer! (Do not forget to comply with GDPR!).
 
-Are you trying to assess the impact of a new housing tax on behalf of the OECD? Find your government's open survey data and use it with OpenFisca to simulate the effect of that tax reform on the poorest 20% of a country.
+Are you trying to assess the impact of a new housing tax on behalf of the OECD? Find your government's open survey data and use it with OpenFisca to simulate the effect of that tax reform on the poorest 20% of your country.
 
 ### 3 - Run Simulations
 
 With OpenFisca there are two ways to calculate the effect of the rules modelled in a country package on a given input data:
 
 * If you have a background in web development or want to build a web application with the results of your simulation, you’ll want to use the [web API](openfisca-web-api/index.md).
-* If you have a background in datascience, want to use large datasets, or want to dynamically apply changes to the system, you’ll rather use the [Python API](openfisca-python-api/index.md).
+* If you have a background in data science, want to use large datasets, or want to dynamically apply changes to the system, you should use the [Python API](openfisca-python-api/index.md).
 
 The output of this simulation will be either Python objects or JSON. To represent these results in a graphical format, you can make use of Python libraries such as [plot.ly](https://plot.ly).
 
-Please make sure you read our [license](license.md) before publishing results based on OpenFisca.
+Please ensure you read our [licence](license.md) before publishing results based on OpenFisca.
 
 ## What OpenFisca will not do for you
 
