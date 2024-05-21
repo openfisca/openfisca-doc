@@ -5,16 +5,13 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-    uses: ./.github/workflows/build.yaml
-
   test:
     uses: ./.github/workflows/test.yaml
 
   deploy:
     runs-on: ubuntu-latest
 
-    needs: [ build, test ]
+    needs: [ test ]  # also depends on build for caching build, not repeated to avoid building twice
 
     steps:
       - uses: actions/checkout@v4
