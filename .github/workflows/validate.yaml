@@ -5,19 +5,6 @@ on:
   workflow_call:
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Lint Markdown files
-        run: make lint
-
   build:
     uses: ./.github/workflows/build.yaml
 
@@ -44,3 +31,16 @@ jobs:
 
       - name: Check for internal dead links
         run: wget --retry-connrefused --waitretry=1 --spider --recursive --page-requisites http://localhost:8000
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Lint Markdown files
+        run: make lint
