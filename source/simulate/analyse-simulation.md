@@ -1,6 +1,6 @@
 # Analysing or debugging a simulation
 
-To understand how a result was calculated when simulating with the Python API, intermediate variables and parameters have been taken into account.
+To understand how a result was calculated when simulating with the Python API, analysis of the intermediate variables and parameters have been taken into account.
 
 > To trace a simulation calculation with the web API, please see [/trace endpoint documentation](../openfisca-web-api/trace-simulation.md).
 
@@ -54,12 +54,12 @@ TEST_CASE = {
         'Javier': {}
     },
     'households': {
-        'hh1': {
+        'household_1': {
             'children': ['Leila'], 
             'parents': ['Ari', 'Paul'],
             'rent': {'2011-01': 300}
         },
-        'hh2': {'parents': ['Javier']}
+        'household_2': {'parents': ['Javier']}
     },
 }
 ```
@@ -71,7 +71,7 @@ The previous code example would give us this output:
     rent<2011-01> >> [300.   0.]
 ```
 
-The `rent` variable is indented to the right relative to `housing_allowance` indicating that `housing_allowance` variable called the `rent` calculation. It was called on the same period: '2011-01'. The [rent variable](https://legislation.demo.openfisca.org/rent)'s value was an input value given by the `TEST_CASE` and was returned to `housing_allowance`. The [housing_allowance variable](https://legislation.demo.openfisca.org/housing_allowance) used the `rent` value to calculate `housing_allowance` for its two households (`hh1` and `hh2`): `[75.  0.]`
+The `rent` variable is indented to the right relative to `housing_allowance` indicating that `housing_allowance` variable called the `rent` calculation. It was called on the same period: '2011-01'. The [rent variable](https://legislation.demo.openfisca.org/rent)'s value was an input value given by the `TEST_CASE` and was returned to `housing_allowance`. The [housing_allowance variable](https://legislation.demo.openfisca.org/housing_allowance) has a valid formula for '2011-01' which used the `rent` value to calculate `housing_allowance` for its two households (`household_1` and `household_2`): `[75.  0.]`
 
 Thus, on the left side of the double chevrons, the trace can be read from top to bottom to see the dependencies between the variables. The right side can be read from bottom to top to see how the simulation result is built.
 

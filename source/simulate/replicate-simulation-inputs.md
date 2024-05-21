@@ -13,8 +13,8 @@ The following example does this by adding an "axes" entry to a test case:
 WITH_AXES = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
-        'hh1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
-        'hh2': {'parents': ['Javier']}
+        'household_1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
+        'household_2': {'parents': ['Javier']}
         },
     'axes': [[{'count':10, 'name':'salary', 'min':0, 'max':3000, 'period':'2018-11'}]]
     }
@@ -25,7 +25,7 @@ simulation = simulation_builder.build_from_entities(tax_benefit_system, WITH_AXE
 
 Be careful to note the structure of the "axes" field: an **array of arrays** of axis objects.
 
-This example describes one household with two parents and one child, plus a second household which is in fact a single adult person. 
+This example describes one household with two parents and one child, plus a second household which is in fact a single adult person.
 With this simulation the following code indicates that there will be 40 results:
 
 ```py
@@ -61,8 +61,8 @@ The control provided by an axis is fine-grained and targets one individual. To s
 WITH_AXES = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
-        'h1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
-        'h2': {'parents': ['Javier']}
+        'household_1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
+        'household_2': {'parents': ['Javier']}
         },
     'axes': [[{'count':10, 'index': 3, 'name':'salary', 'min':0, 'max':3000, 'period':'2018-11'}]]
     }
@@ -96,8 +96,8 @@ Sets of axes in the inner array are "parallel". They allow additional variables 
 WITH_PARALLEL_AXES = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
-        'h1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
-        'h2': {'parents': ['Javier']}
+        'household_1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
+        'household_2': {'parents': ['Javier']}
         },
     'axes': [[
         {'count':10, 'name':'age', 'min':18, 'max':78, 'period':'2018-11'},
@@ -145,8 +145,8 @@ Sets of axes in the outer array are "perpendicular" resulting in independent var
 WITH_PERPENDICULAR_AXES = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
-        'h1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
-        'h2': {'parents': ['Javier']}
+        'household_1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
+        'household_2': {'parents': ['Javier']}
         },
     'axes': [
         [{'count':4, 'name':'age', 'min':18, 'max':78, 'period':'2018-11'}],

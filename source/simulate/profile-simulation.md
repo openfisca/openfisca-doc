@@ -1,4 +1,4 @@
-# Profiling a simulation's performance 
+# Profiling a simulation's performance
 
 The following outlines how to tackle a simulation that is running too slow.
 

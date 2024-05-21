@@ -1,12 +1,12 @@
 # How to run a simulation
 
-To calculate legislation variables on people's situations, a _Simulation_ needs to be created and run. 
+To calculate legislation variables on people's situations, a _Simulation_ needs to be created and run.
 OpenFisca looks for two kinds of inputs:
 
 - how persons are dispatched in other entities,
 - what variables' values are already known.
 
-This is true for both [test cases](run-simulation.md#test-cases) and [data](run-simulation.md#data), the two approaches to running Simulations, 
+This is true for both [test cases](run-simulation.md#test-cases) and [data](run-simulation.md#data), the two approaches to running Simulations.
 
 ## How to run a simulation on a test case
 
@@ -23,22 +23,22 @@ Here is an example of test case (in Python):
 BASIC_TEST_CASE = {
     'persons': {'Ari': {}, 'Paul': {}, 'Leila': {}, 'Javier': {}},
     'households': {
-        'hh1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
-        'hh2': {'parents': ['Javier']}
+        'household_1': {'children': ['Leila'], 'parents': ['Ari', 'Paul']},
+        'household_2': {'parents': ['Javier']}
         },
     }
 ```
 
 This test case defines 4 persons, `Ari`, `Paul`, `Leila` and `Javier`.
-They belong to 2 households named `hh1` and `hh2`.
-For example, `Ari` and `Paul` are parents in `hh1` and have one child, `Leila`.
+They belong to 2 households named `household_1` and `household_2`.
+For example, `Ari` and `Paul` are parents in `household_1` and have one child, `Leila`.
 
 Information that can be added at the _individual_ level or at the _group entity_ level:
 
 - known variable values,
 - and definition periods for those variable values.
 
-To add a salary to `Ari` and `rent` to `hh1` would look like this:
+To add a salary to `Ari` and `rent` to `household_1` would look like this:
 
 ```py
 TEST_CASE = {
@@ -51,12 +51,12 @@ TEST_CASE = {
         'Javier': {}
     },
     'households': {
-        'hh1': {
+        'household_1': {
             'children': ['Leila'],
             'parents': ['Ari', 'Paul'],
             'rent': {'2011-01': 300}
         },
-        'hh2': {'parents': ['Javier']}
+        'household_2': {'parents': ['Javier']}
     },
 }
 ```
@@ -215,7 +215,7 @@ In the following example, the [pandas](https://pandas.pydata.org) library can be
     simulation.set_input('salary', period, numpy.array(data.person_salary))
     ```
 
-I is now possible to calculate the [income_tax](https://legislation.demo.openfisca.org/income_tax) variable for each person of the `data.csv` file for the same period:
+It is now possible to calculate the [income_tax](https://legislation.demo.openfisca.org/income_tax) variable for each person described in the `data.csv` file for the same period:
 
 ```py
 income_tax = simulation.calculate('income_tax', period)
@@ -249,7 +249,7 @@ The following example calculates the `income_tax` of the 8th person in the list:
 
 #### Application: calculate households total taxes from a CSV file
 
-This example will manage the `persons` and `households` entities. To calculate households' `total_taxes`, it requires each persons' `income_tax`. 
+This example will manage the `persons` and `households` entities. To calculate households' `total_taxes`, it requires each persons' `income_tax`.
 First link the persons list to the households and define their roles.
 
 Persons and households lists in this example are defined in distinct files:
@@ -350,7 +350,7 @@ where `household_id` is used as a pivot item linking these files contents.
     simulation.set_input('salary', period, data_persons.person_salary)
     ```
 
-Calculate the [total_taxes](https://legislation.demo.openfisca.org/total_taxes) variable for each household of the `data_households.csv` file and the same period:
+This now allows calculation of the [total_taxes](https://legislation.demo.openfisca.org/total_taxes) variable for each household of the `data_households.csv` file over the given period:
 
 ```py
 total_taxes = simulation.calculate('total_taxes', period)
