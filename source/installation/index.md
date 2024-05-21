@@ -1,34 +1,59 @@
-# <i class="fas fa-cogs"></i> Get started
+# <i icon-name="download"></i> Getting started
 
 ```eval_rst
 .. toctree::
    :hidden:
 
-   presets
-   call-hosted-web-api
-   run-web-no-local-install
-   install-wheel
-   install-openfisca-country-template
-   install-openfisca-web-api
-   install-with-docker
-   windows-no-admin
-   offline-environment
+call-existing-web-api
+installation-requirements
+install-country-web-api
+install-country-package
+python-api-browser
+access-countrys-source-code
+install-with-docker
+offline-environment
+windows-no-admin
 ```
 
-This section guides you in installing the [`OpenFisca-Country-Template`](https://github.com/openfisca/country-template) country package as a generic example of an OpenFisca country package. This will also allow you to run the documentation examples on your local environment.
+This section is a guide to the various methods of accessing or installing OpenFisca. Follow the guide below to establish what the use case is and get directed to the appropriate section(s).
 
-This model is fictitious and for your project, you will obviously want to work with one that models the set of rules of an actual jurisdiction. We advise you to refer to your target country package repository documentation for specific instructions. Nevertheless, the steps for installing should be similar for every package. 
+## 1) Identify the country package
 
-If you are working on a web application or would like to test the web API online:
-* No installation is needed if you [call a public instance](./call-hosted-web-api.md) of the web API.
-* [Install the country package web API](./install-openfisca-web-api.md) to operate your own web API instance with no usage limitations or to send requests with private data, .
+The most common approach involves a specific country or jurisdiction package and so in this scenario it's important to identify if that package exists and then continue to step 2 _"Clarify use case"_.
+If the goal is contributing to OpenFisca directly (such as this documentation); have a look at the [Contribute](/contribute/index.md) section of this site and also the [OpenFisca Github repositories](https://github.com/openfisca/).
 
-If you want to use an OpenFisca country package without editing the model rules:
-* The fastest is to [load the country package on a web hosted Python runtime](./run-web-no-local-install.md).
-* To call calculations from your machine, you can [install the country package on your local environment](./install-wheel.md).
+## 2) Clarify use case
 
-If you want to both, use and contribute to the rules of a country package, [install it in editable mode](./install-openfisca-country-template.md).
+With a specific country or jurisdiction package in mind; ask whether the use case requires [contributions to the rules](index.md#contributing-to-the-rules), or intends to just [utilise existing rules](index.md#utilising-existing-rules) (for example: run simulations).
 
-Finally, some edge cases has been identified by the OpenFisca community. Here is some additional documentation to help you:
-* If you need to [install OpenFisca on a Windows machine without administrative rights](./windows-no-admin.md).
-* If you need to [install OpenFisca on a server without internet access](./offline-environment.md).
+### Utilising existing rules
+
+If the goal is just to utilise existing rules (rather than contributing to the rules) then consider the following options.
+
+#### Web API
+
+Best for online web applications. The two options are:
+
+* If it exists, [call an existing web API](./call-existing-web-api.md) for your country (no installation necessarily), or
+* [Install a country web API](./install-country-web-api.md) to operate your own web API with no usage limitations (see also [Install with Docker](./install-with-docker.md)).
+
+#### Python API
+
+Suitable for "desktop" processing and running large simulations:
+
+* [Install a country package](./install-country-package.md) in a local environment (see also [Install with Docker](./install-with-docker.md)).
+* Alternatively, access the [Python API in the browser](./python-api-browser.md).
+
+### Contributing to the rules
+
+If the goal includes contributing to the rules of a country package:
+
+* when it already exists, [access a country's source code](./access-countrys-source-code.md).
+* otherwise [bootstrap a new country package](/coding-the-legislation/bootstrapping_a_new_country_package.md)
+
+## Edge cases
+
+Finally, some specific edge cases have been described by the OpenFisca community as follows:
+
+* Installing a specific country OpenFisca package in an [offline environment](./offline-environment.md).
+* Installing a specific country OpenFisca package on a [Windows machine without administrative rights](./windows-no-admin.md).
