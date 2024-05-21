@@ -2,7 +2,7 @@
 
 The legislation of a country contains entities characteristics and computable rules. Entities characteristics are modelled into **input variables**. Computable rules can be modelled into **variables with formulas**.
 
-A **variable** is property of a _person_, or an _entity_ (e.g. a _family_).
+A **variable** is property of a _person_, or a _group entity_ (e.g. a _family_).
 
 For instance:
 
