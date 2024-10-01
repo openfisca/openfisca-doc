@@ -69,9 +69,13 @@ autodoc_default_options = {
     'ignore-module-all': True
 }
 
+napoleon_custom_sections = [('Returns', 'params_style')]
+
+
 def missing_reference(app, env, node, contnode):
     if node['reftype'] == 'class' and node['reftarget'].startswith('nptyping'):
         return contnode
+
 
 def setup(app):
     app.add_config_value('recommonmark_config', {
