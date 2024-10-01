@@ -179,7 +179,7 @@ Values can be arithmetic expressions too.
     - module.of.second_reform
 ```
 
-You can find examples of YAML tests of tax and benefit systems with reforms applied on the [country template](https://github.com/openfisca/country-template/tree/master/openfisca_country_template/tests/reforms).
+You can find examples of YAML tests of tax and benefit systems with reforms applied on the [country template](https://github.com/openfisca/country-template/tree/main/openfisca_country_template/tests/reforms).
 
 ## Running a test
 
