@@ -1,4 +1,4 @@
-# Bootstraping a new country package
+# Bootstrapping a new country package
 
 If you want to use OpenFisca to run simulations about your own country's legislation, our [country package template](https://github.com/openfisca/country-template/) will provide you all the instructions and boilerplate code you need to quickly get something working.
 

@@ -59,10 +59,10 @@ myst_heading_anchors = 5  # https://myst-parser.readthedocs.io/en/latest/syntax/
 
 github_doc_root = 'https://github.com/openfisca/openfisca-doc/tree/main/'
 
-# 'config-cache' supresses: Warning cannot cache unpickable configuration value: 'recommonmark_config' (because it contains a function, class, or module object)
+# 'config-cache' suppresses: Warning cannot cache unpickable configuration value: 'recommonmark_config' (because it contains a function, class, or module object)
 suppress_warnings = ['image.nonlocal_uri','config.cache']
 
-# Supresses warning "more than one target found for cross-reference" affecting:
+# Suppresses warning "more than one target found for cross-reference" affecting:
 #  - openfisca_core.periods.Instant
 #  - openfisca_core.simulations.simulation_builder.SimulationBuilder -> TaxBenefitSystem
 autodoc_default_options = {

@@ -1,0 +1,3 @@
+[tool.codespell]
+ignore-words-list = [ "Calculs", "moteur", "ressource", "ALS" ]
+skip = "*.js,./build"
