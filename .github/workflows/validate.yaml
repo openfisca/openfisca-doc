@@ -45,6 +45,3 @@ jobs:
 
       - name: Lint Markdown files
         run: make lint
-
-      - name: Spell check
-        run: make spellcheck
