@@ -4,6 +4,7 @@ Modules:
 
 ```{toctree}
 commons
+data_storage
 tax-benefit-system
 variables
 parameters

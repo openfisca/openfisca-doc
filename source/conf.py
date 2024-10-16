@@ -69,7 +69,10 @@ autodoc_default_options = {
     'ignore-module-all': True
 }
 
-napoleon_custom_sections = [('Returns', 'params_style')]
+napoleon_custom_sections = [
+    ('Raises', 'params_style'),
+    ('Returns', 'params_style'),
+]
 
 
 def missing_reference(app, env, node, contnode):

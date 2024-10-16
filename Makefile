@@ -14,7 +14,9 @@ install:
 	@pip install --upgrade pip
 	@pip install -r requirements.txt --use-deprecated=legacy-resolver
 
-test: lint test-build
+test:
+	@${MAKE} lint
+	@${MAKE} test-build
 
 test-build:
 	@${MAKE} dummy SPHINXOPTS="--quiet --fail-on-warning"
