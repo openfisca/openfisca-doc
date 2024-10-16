@@ -113,7 +113,7 @@ class housing_tax(Variable):
     def formula(household, period, legislation):
         accommodation_size = household('accomodation_size', period)
         housing_occupancy_status = household('housing_occupancy_status', period)
-        HousingOccupancyStatus = housing_occupancy_status.possible_values  # "Import" the enum type. Careful: do not use python imports accross variables files: comparisons would not work!
+        HousingOccupancyStatus = housing_occupancy_status.possible_values  # "Import" the enum type. Careful: do not use python imports across variables files: comparisons would not work!
         tenant = (housing_occupancy_status == HousingOccupancyStatus.tenant)
         owner = (housing_occupancy_status == HousingOccupancyStatus.owner)
 
@@ -124,7 +124,7 @@ class housing_tax(Variable):
 You can now test the formula in a YAML test:
 
 ```yaml
-- name: Household with free lodger status living in a 100 sq.meters accomodation
+- name: Household with free lodger status living in a 100 sq.meters accommodation
   period: 2017
   input:
     accomodation_size:

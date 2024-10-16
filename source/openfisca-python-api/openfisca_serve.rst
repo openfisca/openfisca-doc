@@ -69,7 +69,7 @@ You can setup ``openfisca serve`` using a configuration file. Be careful as para
 
 Using gunicorn directly
 ^^^^^^^^^^^^^^^^^^^^^^^
-If for any reason you nedd to run ``gunicorn`` directly, you can. See this example of ``gunicorn`` application:
+If for any reason you need to run ``gunicorn`` directly, you can. See this example of ``gunicorn`` application:
 
 **app.py:**
 

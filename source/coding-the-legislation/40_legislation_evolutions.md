@@ -56,7 +56,7 @@ After this change, in a formula:
 
 ## Formula evolution
 
-Some fiscal or benefit mechanism significantly evolve over time and call for a change in the formula that computes them. In this case, a simple parameter adjustement is not enough.
+Some fiscal or benefit mechanism significantly evolve over time and call for a change in the formula that computes them. In this case, a simple parameter adjustment is not enough.
 
 For instance, let's assume that from the 1st of Jan. 2017, the `flat_tax_on_salary` is not applied anymore on the first `1000` earned by a person.
 
