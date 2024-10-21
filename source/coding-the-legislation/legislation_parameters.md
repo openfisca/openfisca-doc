@@ -166,7 +166,7 @@ Sometimes, the value of a parameter depends on a variable (e.g. a housing benefi
 
 To be more specific, let's assume that:
 
-* Households who rent their accomodation can get a `housing_benefit`
+* Households who rent their accommodation can get a `housing_benefit`
 * The amount of this benefit depends on which `zone` the household lives in. The `zone` can take only three values: `zone_1`, `zone_2` or `zone_3`.
 * The amount also depends on the composition of the household.
 
@@ -223,7 +223,7 @@ zone_3:
         value: 50
 ```
 
-Then the formula calculting `housing_benefit` can be implemented with:
+Then the formula calculating `housing_benefit` can be implemented with:
 
 ```py
 def formula(household, period, parameters):
@@ -240,15 +240,15 @@ def formula(household, period, parameters):
 
 If there are many households in your simulation, this parameter will be **vectorial**: it may have a different value for each household of your entity.
 
-To be able to use this notation, all the children node of the parameter node `housing_benefit` must be **homogenous**. In the previous example, `housing_benefit.zone_1`, `housing_benefit.zone_2`, `housing_benefit.zone_3` are homogenous, as they have the same subnodes.
+To be able to use this notation, all the children node of the parameter node `housing_benefit` must be **homogeneous**. In the previous example, `housing_benefit.zone_1`, `housing_benefit.zone_2`, `housing_benefit.zone_3` are homogeneous, as they have the same subnodes.
 
-However, let's imagine that `housing_benefit.yaml` had another subnode named `coeff_furnished`, which described a coefficient to apply to the benefit is the accomodation is rented furnished:
+However, let's imagine that `housing_benefit.yaml` had another subnode named `coeff_furnished`, which described a coefficient to apply to the benefit is the accommodation is rented furnished:
 
 `housing_benefit.yaml` content:
 
 ```yaml
 coeff_furnished:
-  description: "Coefficient to apply if the accomodation is rented furnished"
+  description: "Coefficient to apply if the accommodation is rented furnished"
     values:
       2015-01-01:
         value: 0.75
@@ -269,7 +269,7 @@ To solve this issue, the good practice would be to create an intermediate node `
 
 ```yaml
 coeff_furnished:
-  description: "Coefficient to apply if the accomodation is rented furnished"
+  description: "Coefficient to apply if the accommodation is rented furnished"
     values:
       2015-01-01:
         value: 0.75

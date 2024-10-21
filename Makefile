@@ -16,16 +16,21 @@ install:
 
 test:
 	@${MAKE} lint
+	@${MAKE} spellcheck
 	@${MAKE} test-build
-
-test-build:
-	@${MAKE} dummy SPHINXOPTS="--quiet --fail-on-warning"
 
 lint:  # requires Node and NPM to be installed
 	@npx --yes markdownlint-cli "**/*.md"
 
+spellcheck:  # check for spelling errors
+	@codespell
+
+test-build:
+	@${MAKE} dummy SPHINXOPTS="--quiet --fail-on-warning"
+
 format:  # requires Node and NPM to be installed
 	@npx --yes markdownlint-cli --fix "**/*.md"
+	@codespell --write-changes
 
 # Serve the documentation in dev mode.
 dev:

@@ -1,4 +1,5 @@
 --editable git+https://github.com/openfisca/openfisca-core.git@master#egg=OpenFisca-Core[dev]
+codespell==2.3.0
 guzzle_sphinx_theme==0.7.11
 myst-parser==3.0.1
 sphinx-autobuild==2024.4.16
