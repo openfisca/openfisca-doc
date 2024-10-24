@@ -9,10 +9,14 @@ help:
 
 .PHONY: help Makefile
 
+# Remove all dependencies.
+uninstall:
+	@pip freeze | grep -v "^-e" | sed "s/@.*//" | xargs pip uninstall -y
+
 # Install dependencies.
 install:
 	@pip install --upgrade pip
-	@pip install -r requirements.txt --use-deprecated=legacy-resolver
+	@pip install -r requirements.txt
 
 test:
 	@${MAKE} lint
