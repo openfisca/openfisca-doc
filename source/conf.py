@@ -74,6 +74,10 @@ napoleon_custom_sections = [
     ('Returns', 'params_style'),
 ]
 
+def setup_template_bridge(app, pagename, templatename, context, doctree):
+    if pagename.startswith('training/'):
+        context['trainingtemplate'] = 'true'
+
 
 def missing_reference(app, env, node, contnode):
     if node['reftype'] == 'class' and node['reftarget'].startswith('nptyping'):
@@ -85,6 +89,7 @@ def setup(app):
         'url_resolver': lambda url: url.replace('.md', '.html'),
         'enable_auto_toc_tree': False
         }, True)
+    app.connect('html-page-context', setup_template_bridge)
     app.add_css_file('style.css')
     app.add_js_file('scripts.js')
     app.connect('missing-reference', missing_reference)

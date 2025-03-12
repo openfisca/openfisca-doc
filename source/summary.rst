@@ -12,5 +12,6 @@
    openfisca-web-api/index
 
    find-help
+   training/index
    contribute/index
    license
