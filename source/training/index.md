@@ -15,9 +15,15 @@ session8
 session9
 ```
 
-The following training materials were originally developed with funding under the EU Govtech4all program.
+The following training materials were developed with co-funding from the French government’s DINUM and the European Commission under the [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
 
-They are intended for reuse and/or adaption in future training situations.
+<div class="cofunders">
+  <img src="/_static/img/DINUM_2020_RVB.png" alt="Co-funded by DINUM" />
+  <img src="/_static/img/eu_co_funded_en.png" alt="Co-funded by the European Union" />
+</div>
+
+
+The training materials are intended for reuse and/or adaption in future training situations.
 
 Along with the training materials are the individual graphics/assets required for extending the slides while preserving the OpenFisca brand.
 

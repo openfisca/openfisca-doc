@@ -1,3 +1,10 @@
+.cofunders{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
 .present .reveal{
     max-width: 100%;
     max-height: 60vh;
@@ -23,4 +30,14 @@
 }
 .present .reveal .docaps{
   text-transform: none;
+}
+
+.present small.author{
+  font-size:0.45em;
+}
+
+.present .logo img{
+  height: 70px; 
+  margin: 17rem auto 0 auto; 
+  background: transparent;
 }

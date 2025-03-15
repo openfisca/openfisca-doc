@@ -7,13 +7,13 @@
     <p>
       <small>(Rules as Code + OpenFisca) training series, session one.</small>
     </p>
-    <p><a href="https://openfisca.org"><img src="/_static/img/openfisca.svg" alt="OpenFisca Logo" style="height: 70px; margin: 17rem auto 0 auto; background: transparent;"  ></a></p>
-    <p><small><span style="font-size:0.7em;">created by <a href="https://hamish.dev">Hamish Fraser</a></span></small></p>
+    <p><a href="https://openfisca.org" class="logo"><img src="/_static/img/openfisca.svg" alt="OpenFisca Logo" ></a></p>
+    <p><small class="author">created by <a href="https://hamish.dev">Hamish Fraser</a></small></p>
   </section>
 
   <section class="has-dark-background" data-background="#240b35" data-background-image="/_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
     <h2>Part 1: Rules as Code</h2>
-    <p><a href="https://openfisca.org"><img src="/_static/img/openfisca.svg" alt="OpenFisca Logo" style="height: 70px; margin: 17rem auto 0 auto; background: transparent;"  ></a></p>
+    <p><a href="https://openfisca.org" class="logo"><img src="/_static/img/openfisca.svg" alt="OpenFisca Logo" ></a></p>
   </section>
 
   <section>
@@ -45,15 +45,11 @@
     <div class="column_two">
       <div>
         <h4>Natural Language</h4>
-        <p>Socially agreed shared language. Words find meaning from context. ​</p>
-        <p>Written symbols only have meaning through their association to natural language. ​</p>
-        <p>A rule can be widel through interpretation by the courts​</p>
+        <p>Socially agreed shared language. Words find meaning from context. ​</p><p>Written symbols gain meaning through their association to natural language. ​</p><p>A rule is applied to scenarios through interpretation</p>
       </div>
       <div>
         <h4>Computer Code</h4>
-        <p>Dictatorial instructions intended for single interpretation by machine.​</p>​
-        <p>Shares symbols with natural language but these have only one "meaning" to a machine.​​</p>
-        <p>Requires scenarios to fit the interpretation, cannot extrapolate.​​</p>
+        <p>Specific instructions defining one singular interpretation by machine.​</p><p>Shares symbols with natural language; only one "meaning" to a machine.​</p><p>Requires scenarios to fit the  singular interpretation.​​</p>
       </div>
     </div>
   </section>
@@ -62,12 +58,8 @@
 
 ###### Hotkeys
 
-"f": full screen
-
-"s": speaker notes
-
-"b": pause
-
-arrow keys/space: navigate
-
-cltr+click (or alt_click) to zoom
+- `f`: full screen
+- `s`: speaker notes
+- `b`: pause
+- `←` / `→` / `space`: navigate through slides
+- `cltr` / `alt`  + click to zoom
