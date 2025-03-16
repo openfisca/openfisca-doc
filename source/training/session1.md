@@ -206,7 +206,6 @@
     <p>Allow for more data drive decision making​</p>
   </section>
 
-
 </div></div></div>
 
 ###### Hotkeys
