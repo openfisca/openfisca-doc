@@ -18,8 +18,8 @@ session9
 The following training materials were developed with co-funding from the French government’s DINUM and the European Commission under the [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
 
 <div class="cofunders">
-  <img src="/_static/img/DINUM_2020_RVB.png" alt="Co-funded by DINUM" />
-  <img src="/_static/img/eu_co_funded_en.png" alt="Co-funded by the European Union" />
+  <img src="/_static/img/training/dinum.png" alt="Co-funded by DINUM" />
+  <img src="/_static/img/training/cofunded_by_eu.png" alt="Co-funded by the European Union" />
 </div>
 
 
