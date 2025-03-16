@@ -1,4 +1,4 @@
-# <i icon-name="book"></i> Training Materials
+# <i icon-name="book"></i> Training materials
 
 ```{toctree}
 :hidden:
