@@ -15,18 +15,6 @@ session8
 session9
 ```
 
-The following training materials were developed with co-funding from the French government’s DINUM and the European Commission under the [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
-
-<div class="cofunders">
-  <img src="/_static/img/training/dinum.png" alt="Co-funded by DINUM" />
-  <img src="/_static/img/training/cofunded_by_eu.png" alt="Co-funded by the European Union" />
-</div>
-
-
-The training materials are intended for reuse and/or adaption in future training situations.
-
-Along with the training materials are the individual graphics/assets required for extending the slides while preserving the OpenFisca brand.
-
 
 ## Training Sessions and slide decks
 
@@ -66,3 +54,11 @@ A background to rules-as-code and how it fits with existing practices.
 <a href="https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all">EU Govtech4all program</a> funded recorded sessions.
 
 #TODO
+## Credit
+
+These training materials were co-funded by the French Interministerial Direction for Digital Affairs ([DINUM](https://www.numerique.gouv.fr)) and the European Commission under the [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
+
+<div class="cofunders">
+  <img src="/_static/img/training/dinum.png" alt="Co-funded by DINUM" />
+  <img src="/_static/img/training/cofunded_by_eu.png" alt="Co-funded by the European Union" />
+</div>
