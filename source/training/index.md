@@ -49,11 +49,39 @@ A background to rules-as-code and how it fits with existing practices.
 #TODO
 
 
-## 2024 Training Cohort
+## Videos
 
-<a href="https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all">EU Govtech4all program</a> funded recorded sessions.
+These training sessions were recorded as part of the 2024 Cohort of the EU [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
 
-#TODO
+### Pre Training: Kick-off
+
+- [Augmented version](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1715760590666).
+- [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8096).
+
+### Session 1: RaC Background
+
+- [Augmented version](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716360868420)
+- [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8178).
+
+### Session 2: Getting started
+
+- [Augmented version](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716532557643).
+- [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8178).
+
+### Session 3: Algorithmic transparency
+
+- [Augmented version](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716965399220).
+- [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8176).
+
+### Session 4: Using the web API
+
+- [Augmented version](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1718172092967).
+- [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8218).
+
+### Session 5: Using the Python API
+
+- [Augmented version](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1718779000584).
+
 ## Credit
 
 These training materials were co-funded by the French Interministerial Direction for Digital Affairs ([DINUM](https://www.numerique.gouv.fr)) and the European Commission under the [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
