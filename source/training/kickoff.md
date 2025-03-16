@@ -7,7 +7,7 @@
     <p>
       <small>(Rules as Code + OpenFisca) training series</small>
     </p>
-    <p><a href="https://openfisca.org" class="logo"><img src="/_static/img/openfisca.svg" alt="OpenFisca Logo" ></a></p>
+    <p><a href="https://openfisca.org" class="logo"><img src="/_static/img/openfisca.svg" alt="OpenFisca" ></a></p>
     <p><small class="author">created by <a href="https://hamish.dev">Hamish Fraser</a></small></p>
   </section>
 
@@ -76,7 +76,7 @@
       <li>Not a webapp</li>
     </ul>
     <div>
-      <img src="/_static/img/openfisca_white.svg" alt="OpenFisca Logo" style="height: 70px; margin: 17rem auto 0 auto; background: transparent;"  >
+      <img src="/_static/img/openfisca_white.svg" alt="OpenFisca" style="height: 70px; margin: 17rem auto 0 auto; background: transparent;"  >
     </div>
   </section>
 

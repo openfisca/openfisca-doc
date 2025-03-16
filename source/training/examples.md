@@ -9,7 +9,7 @@
     </p>
     <p>
     <a href="https://openfisca.org">
-      <img src="/_static/img/openfisca.svg" alt="OpenFisca Logo" style="height: 70px; margin: 4rem auto 0 auto; background: transparent;"  >
+      <img src="/_static/img/openfisca.svg" alt="OpenFisca" style="height: 70px; margin: 4rem auto 0 auto; background: transparent;"  >
     </a>
     </p>
   </section>

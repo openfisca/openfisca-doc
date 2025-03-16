@@ -7,7 +7,7 @@
     <p>
       <small>(Rules as Code + OpenFisca) training series, session six.</small>
     </p>
-    <p><a href="https://openfisca.org" class="logo"><img src="/_static/img/openfisca.svg" alt="OpenFisca Logo" ></a></p>
+    <p><a href="https://openfisca.org" class="logo"><img src="/_static/img/openfisca.svg" alt="OpenFisca" ></a></p>
     <p><small class="author">created by <a href="https://hamish.dev">Hamish Fraser</a></small></p>
   </section>
 
