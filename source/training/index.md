@@ -15,8 +15,7 @@ session8
 session9
 ```
 
-
-## Training Sessions and slide decks
+## Slide decks
 
 ### [Pre Training: Kick-off](./kickoff.md)
 An initial get together to ensure everyone has the appropriate tools and understanding to start the training.
