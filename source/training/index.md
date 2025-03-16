@@ -24,28 +24,25 @@ An initial get together to ensure everyone has the appropriate tools and underst
 A background to rules-as-code and how it fits with existing practices.
 
 ### [Session 2: Getting started](./session2.md)
-#TODO
+Clone the country template, setup a public git repository.
 
-### [Session 3: Algorithmic transparency​](./session3.md)
-#TODO
+### [Session 3: Modelling legislation​](./session3.md)
+Variables, formulas, parameters and test suites
 
 ### [Session 4: Using the web API​](./session4.md)
-#TODO
+Examples and guidance
 
 ### [Session 5: Using the Python API​](./session5.md)
-#TODO
+Examples and guidance
 
 ### [Session 6: Data interconnection​​](./session6.md)
-#TODO
+How to run simulations with large and small datasets
 
 ### [Session 7: Updating the model​​](./session7.md)
-#TODO
+Building a historically accurate model
 
 ### [Session 8: Designing policy​​​](./session8.md)
-#TODO
-
-### [Session 9: Scaling the model​​​​](./session9.md)
-#TODO
+OpenFisca reforms
 
 
 ## Videos

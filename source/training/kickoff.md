@@ -15,17 +15,16 @@
     <h2>Curriculum</h2>
     <div class="column_two">
     <ol>
-      <li>Getting started</li>
+      <li>RaC Background</li>
+      <li>Getting started​</li>
       <li>Modelling legislation​</li>
-      <li>Algorithmic transparency​</li>
       <li>Using the web API​</li>
-      <li>Using the Python API​</li>
     </ol>
-    <ol start="6">
+    <ol start="5">
+      <li>Using the Python API​</li>
       <li>Data interconnection​</li>
       <li>Updating the model​​</li>
       <li>Designing policy​​</li>
-      <li>Scaling the model​</li>
     </ol>
     </div>
   </section>
