@@ -41,3 +41,19 @@
   margin: 17rem auto 0 auto; 
   background: transparent;
 }
+
+.present section blockquote{
+  border: 0;
+  box-shadow: none;
+  font-size: 0.9em;
+  width: 95%;
+}
+
+.present .reveal sup{
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.present .footnotes{
+  font-size: 0.6em;
+}

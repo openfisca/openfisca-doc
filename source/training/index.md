@@ -30,13 +30,13 @@ Along with the training materials are the individual graphics/assets required fo
 
 ## Training Sessions and slide decks
 
-### [Pre Training: Kickoff](./kickoff.md)
+### [Pre Training: Kick-off](./kickoff.md)
 An initial get together to ensure everyone has the appropriate tools and understanding to start the training.
 
-### [Session 1: Getting Started](./session1.md)
-An introducion to rules-as-code, constitutional considerations (results may vary dependant on country).
+### [Session 1: RaC Background](./session1.md)
+A background to rules-as-code and how it fits with existing practices.
 
-### [Session 2: Modelling Legislation](./session2.md)
+### [Session 2: Getting started](./session2.md)
 #TODO
 
 ### [Session 3: Algorithmic transparency​](./session3.md)

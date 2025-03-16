@@ -1,9 +1,9 @@
-# Modelling Legislation
+# Getting started
 
 <div class="present"><div class="reveal"><div class="slides">
 
   <section class="has-dark-background" data-background="#240b35" data-background-image="/_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
-    <h2>Modelling Legislation</h2>
+    <h2>Getting started</h2>
     <p>
       <small>(Rules as Code + OpenFisca) training series, session two.</small>
     </p>

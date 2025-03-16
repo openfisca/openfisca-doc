@@ -1,4 +1,4 @@
-# Kickoff
+# Kick-off
 
 <div class="present"><div class="reveal"><div class="slides">
 
