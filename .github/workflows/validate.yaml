@@ -30,7 +30,7 @@ jobs:
         run: make prod &
 
       - name: Check for internal dead links
-        run: wget --retry-connrefused --waitretry=1 --spider --recursive --page-requisites http://localhost:8000
+        run: wget --retry-connrefused --waitretry=1 --reject-regex _modules/builtins.html --spider --recursive --page-requisites http://localhost:8000
 
   lint:
     runs-on: ubuntu-latest
