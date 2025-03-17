@@ -9,6 +9,3 @@ Populations
 
 .. autoclass:: openfisca_core.populations.GroupPopulation
     :members: all, any, max, min, nb_persons, sum
-
-.. automodule:: openfisca_core.populations.config
-    :members:
