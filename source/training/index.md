@@ -12,7 +12,6 @@ session5
 session6
 session7
 session8
-session9
 ```
 
 ## Slide decks
