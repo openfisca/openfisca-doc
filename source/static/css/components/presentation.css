@@ -1,0 +1,59 @@
+.cofunders{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.present .reveal{
+    max-width: 100%;
+    max-height: 60vh;
+    height: 50vh;
+}
+.present .reveal .progress{
+  margin-bottom: 0;
+}
+.present .column_two{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2em;
+    font-size: 0.8em;
+}
+.present .reveal .column_two>p{
+  text-align: left;
+}
+.present li{
+  margin: 0.5em 0;
+}
+.present .reveal ul.dotless {
+  list-style-type: none;
+}
+.present .reveal .docaps{
+  text-transform: none;
+}
+
+.present small.author{
+  font-size:0.45em;
+}
+
+.present .logo img{
+  height: 70px; 
+  margin: 17rem auto 0 auto; 
+  background: transparent;
+}
+
+.present section blockquote{
+  border: 0;
+  box-shadow: none;
+  font-size: 0.9em;
+  width: 95%;
+}
+
+.present .reveal sup{
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.present .footnotes{
+  font-size: 0.6em;
+}
