@@ -60,7 +60,9 @@
 
 </div></div></div>
 
-###### Hotkeys
+<br>
+
+**Hotkeys**
 
 - `f`: full screen
 - `s`: speaker notes

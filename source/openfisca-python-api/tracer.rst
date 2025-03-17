@@ -10,13 +10,7 @@ Tracer
 .. autoclass:: FlatTrace
     :members:
 
-.. autoclass:: FullTracer
-    :members:
-
 .. autoclass:: PerformanceLog
-    :members:
-
-.. autoclass:: SimpleTracer
     :members:
 
 .. autoclass:: TraceNode
