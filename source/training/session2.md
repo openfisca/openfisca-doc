@@ -26,14 +26,14 @@
 
   <section>
     <h3>Contributing</h3>
-    <p>Modify (or not) the contents of your repository's<br>/CONTRIBUTING.md file.</p>
-    <p>Push the newly established repository to your git host.</p>
+    <p>Modify (or not) the contents of the new repository's<br>/CONTRIBUTING.md file.</p>
+    <p>Push the newly established repository to preferred git host.</p>
     <p>Share repository with contributors.</p>
   </section>
 
   <section>
     <h3>Documentation Site</h3>
-    <p>Familiarise yourself with the <a href="https://openfisca.org/doc" target="_blank">https://openfisca.org/doc</a> website. Specifically the following sections:
+    <p>Familiarise the team with the <a href="https://openfisca.org/doc" target="_blank">https://openfisca.org/doc</a> website. Specifically the following sections:
       <ul class="dotless">
         <li><a href="https://openfisca.org/doc/key-concepts/" target="_blank">https://openfisca.org/doc/key-concepts/</a></li>
         <li><a href="https://openfisca.org/doc/coding-the-legislation/" target="_blank">https://openfisca.org/doc/coding-the-legislation/</a></li>
@@ -47,14 +47,14 @@
       <li>Identify with the team a simple rule to start with.</li>
       <li>Ensure everyone has access to the authoritative rule source</li>
       <li>Decide on a collaborative environment that works for the team</li>
-      <li>You may want to consult the <a href="https://betterrules.nz/workshop-manual.html" target="_blank">The Practical Better Rules Workshop Manual</a> for a process to follow.</li>
+      <li>Recommend consulting with the <a href="https://betterrules.nz/workshop-manual.html" target="_blank">The Practical Better Rules Workshop Manual</a> for a process to follow.</li>
     </ul>
   </section>
 
   <section>
     <h3>Rules as Code</h3>
-    <p>You are now ready to begin.</p>
-    <p>Don't forget you're interpreting the law, aim for <a href="https://hamish.dev/research/lac/part-four#highly-reliable-interpretations-are-valuable" target="_blank">"highly reliable" interpretations</a> rather than authoritative.</p>
+    <p>Ready to begin.</p>
+    <p>It's about interpreting the law, aim for <a href="https://hamish.dev/research/lac/part-four#highly-reliable-interpretations-are-valuable" target="_blank">"highly reliable" interpretations</a> rather than authoritative.</p>
     <p>Consider also what <a href="https://law.mit.edu/pub/governingdigitallegalsystems/release/2">governance structures</a> might support the interpretation work.</p>
   </section>
 
