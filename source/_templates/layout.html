@@ -2,13 +2,13 @@
 
 {%- block htmltitle %}
 <!-- Jquery already required by bootstrap, and two uses of $(document), current document site throwing js errors without this -->
-  <script src="https://openfisca.org/doc/_static/jquery.min.js"></script>
-  <script src="https://openfisca.org/doc/_static/lucide/lucide.min.js"></script>
+  <script src="{{ pathto('_static/jquery.min.js', 1) }}"></script>
+  <script src="{{ pathto('_static/lucide/lucide.min.js', 1) }}"></script>
 
   {% if trainingtemplate %}
-  <link rel="stylesheet" href="../_static/reveal/reveal.css">
-  <link rel="stylesheet" href="../_static/css/components/presentation.css">
-  <link rel="stylesheet" href="../_static/reveal/theme/openfisca.css" id="theme">
+  <link rel="stylesheet" href="{{ pathto('_static/reveal/reveal.css', 1) }}">
+  <link rel="stylesheet" href="{{ pathto('_static/css/components/presentation.css', 1) }}">
+  <link rel="stylesheet" href="{{ pathto('_static/reveal/theme/openfisca.css', 1) }}" id="theme">
   {% endif %}
 
   {{ super() }}
@@ -22,12 +22,12 @@
   {{ super() }}
 
   {% if trainingtemplate %}
-  <script src="../_static/reveal/reveal.js"></script>
-  <script src="../_static/reveal/plugin/zoom/zoom.js"></script>
-  <script src="../_static/reveal/plugin/notes/notes.js"></script>
-  <script src="../_static/reveal/plugin/search/search.js"></script>
-  <script src="../_static/reveal/plugin/markdown/markdown.js"></script>
-  <script src="../_static/reveal/plugin/highlight/highlight.js"></script>
+  <script src="{{ pathto('_static/reveal/reveal.js', 1) }}"></script>
+  <script src="{{ pathto('_static/reveal/plugin/zoom/zoom.js', 1) }}"></script>
+  <script src="{{ pathto('_static/reveal/plugin/notes/notes.js', 1) }}"></script>
+  <script src="{{ pathto('_static/reveal/plugin/search/search.js', 1) }}"></script>
+  <script src="{{ pathto('_static/reveal/plugin/markdown/markdown.js', 1) }}"></script>
+  <script src="{{ pathto('_static/reveal/plugin/highlight/highlight.js', 1) }}"></script>
   <script>
     lucide.createIcons();
     // https://revealjs.com/initialization/
