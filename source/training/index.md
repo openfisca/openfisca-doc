@@ -102,6 +102,6 @@ These training sessions were recorded as part of the 2024 Cohort of the EU [GovT
 These training materials were co-funded by the French Interministerial Direction for Digital Affairs ([DINUM](https://www.numerique.gouv.fr)) and the European Commission under the [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
 
 <div class="cofunders">
-  <img src="/_static/img/training/dinum.png" alt="Co-funded by DINUM" />
-  <img src="/_static/img/training/cofunded_by_eu.png" alt="Co-funded by the European Union" />
+  <img src="../_static/img/training/dinum.png" alt="Co-funded by DINUM" />
+  <img src="../_static/img/training/cofunded_by_eu.png" alt="Co-funded by the European Union" />
 </div>

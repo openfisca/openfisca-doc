@@ -2,16 +2,16 @@
 
 <div class="present"><div class="reveal"><div class="slides">
 
-  <section class="has-dark-background" data-background="#240b35" data-background-image="/_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
+  <section class="has-dark-background" data-background="#240b35" data-background-image="../_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
     <h2>Rules as Code Background</h2>
     <p>
       <small>(Rules as Code + OpenFisca) training series, session one.</small>
     </p>
-    <p><a href="https://openfisca.org" class="logo"><img src="/_static/img/openfisca.svg" alt="OpenFisca" ></a></p>
+    <p><a href="https://openfisca.org" class="logo"><img src="../_static/img/openfisca.svg" alt="OpenFisca" ></a></p>
     <p><small class="author">Created by <a href="https://hamish.dev">Hamish Fraser</a></small></p>
   </section>
 
-  <section class="has-dark-background" data-background="#240b35" data-background-image="/_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
+  <section class="has-dark-background" data-background="#240b35" data-background-image="../_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
     <h2>Rules as Code</h2>
     <blockquote>“To understand how to design rules-as-code projects it's important to understand what they are.”</blockquote>
   </section>
@@ -25,7 +25,7 @@
     </ol>
   </section>
 
-  <section class="has-dark-background" data-background="#240b35" data-background-image="/_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
+  <section class="has-dark-background" data-background="#240b35" data-background-image="../_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
     <h2>Perspective 1</h2>
     <p>Constitutional considerations</p>
   </section>
@@ -109,7 +109,7 @@
     <p class="footnotes"><a href="https://hamish.dev/research/lac/part-four#highly-reliable-interpretations-are-valuable" target="_blank">“Highly reliable interpretations” are already valuable​</a>​</p>
   </section>
 
-  <section class="has-dark-background" data-background="#240b35" data-background-image="/_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
+  <section class="has-dark-background" data-background="#240b35" data-background-image="../_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
     <h2>Perspective 2</h2>
     <p>Policy Development</p>
   </section>
@@ -129,11 +129,11 @@
     <p>The first step to explaining policy to a computer​</p>
     <div class="column_two">
       <div>
-        <img src="/_static/img/training/residential_rules_natural_language.png" alt="Natural language rule, example Residential areas" />
+        <img src="../_static/img/training/residential_rules_natural_language.png" alt="Natural language rule, example Residential areas" />
         <p>Natural language city planning rules</p>
       </div>
       <div>
-        <img src="/_static/img/training/residential_rules_data.png" alt="Natural language rule, example Residential areas" />
+        <img src="../_static/img/training/residential_rules_data.png" alt="Natural language rule, example Residential areas" />
         <p>Analysis of planning zones​​​</p>
       </div>
     </div>
@@ -168,7 +168,7 @@
     <p>Goal: avoid “talking past” by utilising concrete examples​​​</p>
   </section>
 
-  <section class="has-dark-background" data-background="#240b35" data-background-image="/_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
+  <section class="has-dark-background" data-background="#240b35" data-background-image="../_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
     <h2>Perspective 3</h2>
     <p>Public Service</p>
   </section>
