@@ -13,6 +13,9 @@ Parameters
 .. autoclass:: ParameterAtInstant
     :members:
 
+.. autoclass:: ParameterNode
+    :members:
+
 .. autoclass:: ParameterNodeAtInstant
     :members:
 
