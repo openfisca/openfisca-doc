@@ -10,6 +10,7 @@ import guzzle_sphinx_theme
 
 project = 'OpenFisca'
 author = 'contact@openfisca.org'
+html_baseurl = 'https://openfisca.org/doc/'
 
 # -- General configuration ---------------------------------------------------
 

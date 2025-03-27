@@ -2,12 +2,12 @@
 
 <div class="present"><div class="reveal"><div class="slides">
 
-  <section class="has-dark-background" data-background="#240b35" data-background-image="/_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
+  <section class="has-dark-background" data-background="#240b35" data-background-image="../_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
     <h2>Kick off</h2>
     <p>
       <small>(Rules as Code + OpenFisca) training series</small>
     </p>
-    <p><a href="https://openfisca.org" class="logo"><img src="/_static/img/openfisca.svg" alt="OpenFisca" ></a></p>
+    <p><a href="https://openfisca.org" class="logo"><img src="../_static/img/openfisca.svg" alt="OpenFisca" ></a></p>
     <p><small class="author">Written by Matti Schneider</small></p>
   </section>
 
@@ -75,13 +75,13 @@
       <li>Not a webapp</li>
     </ul>
     <div>
-      <img src="/_static/img/openfisca_white.svg" alt="OpenFisca" style="height: 70px; margin: 17rem auto 0 auto; background: transparent;"  >
+      <img src="../_static/img/openfisca_white.svg" alt="OpenFisca" style="height: 70px; margin: 17rem auto 0 auto; background: transparent;"  >
     </div>
   </section>
 
   <section>
     <h2 class="docaps">Architecture</h2>
-    <img src="/_static/img/architecture.svg" alt="OpenFisca Architecture" style="width:98%; margin: 6rem auto 0 auto; background: transparent;"  >
+    <img src="../_static/img/architecture.svg" alt="OpenFisca Architecture" style="width:98%; margin: 6rem auto 0 auto; background: transparent;"  >
     <aside class="notes">
       Note that the focus for country templates is the last two columns of the graphic
     </aside>
