@@ -75,7 +75,7 @@ These training sessions were recorded as part of the 2024 Cohort of the EU [GovT
 
 ### Session 1: RaC Background
 
-- [Augmented version](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716360868420)
+- [Augmented version](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716360868420).
 - [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8178).
 
 ### Session 2: Getting started
