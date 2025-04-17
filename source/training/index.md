@@ -119,8 +119,6 @@ These training sessions were recorded as part of the 2024 Cohort of the EU [GovT
 
 ### Session 5: Expand Disposable Income Over Axes With VueJS and D3
 
-- TODO: Plot a variable expansion over axes
-- TODO: Plot the decomposition of a variable expansion over axes
 - [Expand a variable over axes](https://github.com/redte-ch/ReDistributeMe/blob/main/workshop/05-expand-disposable-income-over-axes.md)
 
 ## Credit
