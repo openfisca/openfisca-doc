@@ -101,7 +101,7 @@ These training sessions were recorded as part of the 2024 Cohort of the EU [GovT
 
 ### Building an OpenFisca-powered web application
 
-A workshop created by Mauko Quiroga, building a web application from scratch to provide a graphical user interface over the [web API](../openfisca-web-api/) of the [Country Template](https://github.com/openfisca/country-template/) demonstration model.
+A workshop created by Mauko Quiroga, building a web application from scratch to provide a graphical user interface over the [web API](../openfisca-web-api/index.md) of the [Country Template](https://github.com/openfisca/country-template/) demonstration model.
 
 #### Session 1: Introduction to the Web API
 
