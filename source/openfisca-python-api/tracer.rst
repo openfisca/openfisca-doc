@@ -2,19 +2,6 @@
 Tracer
 ======
 
-.. module:: openfisca_core.tracers
-
-.. autoclass:: ComputationLog
+.. automodule:: openfisca_core.tracers
     :members:
-
-.. autoclass:: FlatTrace
-    :members:
-
-.. autoclass:: PerformanceLog
-    :members:
-
-.. autoclass:: TraceNode
-    :members:
-
-.. autoclass:: TracingParameterNodeAtInstant
-    :members:
+    :imported-members:
