@@ -1,4 +1,6 @@
-Thank you for wanting to contribute to OpenFisca! :smiley:
+# Guidelines for contributing to the OpenFisca documentation
+
+Fist of all, thank you for wanting to contribute to OpenFisca! :smiley:
 
 ## Copywriting
 
