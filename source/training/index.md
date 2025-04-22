@@ -125,6 +125,12 @@ A workshop created by Mauko Quiroga, building a web application from scratch to 
 
 - [Expand a variable over axes](https://github.com/redte-ch/ReDistributeMe/blob/main/workshop/05-expand-disposable-income-over-axes.md)
 
+
+### Modelling collaboratively across silos and disciplines
+
+A workshop created for the European Rules as Code event of March 2025 organizded by DINUM in Paris, France, [full presentation](./OpenFisca-Modelling-collaboratively-across-silos-and-disciplines-March-2025.pdf).
+
+
 ## Credit
 
 These training materials were co-funded by the French Interministerial Direction for Digital Affairs ([DINUM](https://www.numerique.gouv.fr)) and the European Commission under the [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
