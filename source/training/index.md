@@ -128,7 +128,10 @@ A workshop created by Mauko Quiroga, building a web application from scratch to 
 
 ### Modelling collaboratively across silos and disciplines
 
-A workshop created for the European Rules as Code event of March 2025 organized by DINUM in Paris, France, [full presentation](./OpenFisca-Modelling-collaboratively-across-silos-and-disciplines-March-2025.pdf).
+A workshop created by Thomas Guillet, highlighting the need for collaborative modelling in order to deliver a complete model, the difficulties in achieving it and the ways in which OpenFisca supports that goal.
+
+- [Online version](./OpenFisca-Modelling-collaboratively-across-silos-and-disciplines-March-2025-online.pdf) for reading on your own.
+- [Full presentation](./OpenFisca-Modelling-collaboratively-across-silos-and-disciplines-March-2025.pdf) with more intermediary steps for in-person delivery by trainers.
 
 
 ## Credit
