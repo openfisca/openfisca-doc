@@ -1,9 +1,9 @@
-# Updating the model​
+# Updating the model
 
 <div class="present"><div class="reveal"><div class="slides">
 
   <section class="has-dark-background" data-background="#240b35" data-background-image="../_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
-    <h2>Updating the model​​​</h2>
+    <h2>Updating the model</h2>
     <p>
       <small>(Rules as Code + OpenFisca) training series, session seven.</small>
     </p>

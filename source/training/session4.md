@@ -1,9 +1,9 @@
-# Using the web API​
+# Using the web API
 
 <div class="present"><div class="reveal"><div class="slides">
 
   <section class="has-dark-background" data-background="#240b35" data-background-image="../_static/img/openfisca-bg.svg" data-background-position="230% 50%" data-background-size="auto 120%">
-    <h2>Using the web API​​</h2>
+    <h2>Using the web API</h2>
     <p>
       <small>(Rules as Code + OpenFisca) training series, session four.</small>
     </p>
