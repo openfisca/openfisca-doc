@@ -4,10 +4,9 @@ These instructions are for installing an OpenFisca country package in a local en
 
 ## Run and call a local web API
 
-OpenFisca runs with [Python](https://www.python.org/). If it's not installed in the environment, check the [Installation requirements](installation-requirements.md#install-python) section.
+OpenFisca runs with [Python](https://www.python.org/). If that language is not available in your environment, check the [Installation requirements](installation-requirements.md#install-python) section.
 
 To run a local `OpenFisca-Country-Template` web API:
 
-1. Install the `OpenFisca-Country-Template` in the local environment as described by it's `README` [Install Instructions for Users and Contributors](https://github.com/openfisca/country-template#install-instructions-for-users-and-contributors) section,
-
-2. Serve the web API on your environment by running the one command described [here](https://github.com/openfisca/country-template#serve-this-country-package-with-the-openfisca-web-api).
+1. [Install](https://github.com/openfisca/country-template#install-instructions-for-users-and-contributors) the `OpenFisca-Country-Template` package in your local environment.
+2. [Serve the web API](https://github.com/openfisca/country-template#serve-this-country-package-with-the-openfisca-web-api) in your environment.

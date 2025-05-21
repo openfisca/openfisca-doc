@@ -71,7 +71,7 @@ From the point of view of someone (developer, economist, etc.) who wants to impl
 - understand the part of the legislation you want to implement
 - identify the variable dependencies using the [legislation explorer](https://fr.openfisca.org/legislation/)
 - identify the new variables you need to implement
-- write the new variables with their formulas, and make sure their names respect the guidelines you can find [here](./variables-naming.md).
+- write the new variables with their formulas, and make sure their names abide by the [guidelines](./variables-naming.md)
 - store the new parameters
 - if you implement a part of the official legislation, your code should go in OpenFisca-France, but if you implement a new idea or a future reform, your code should go in a reform.
 
