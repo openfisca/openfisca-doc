@@ -10,7 +10,7 @@ session2
 
 ## Training program
 
-The video recordings of the training sessions were recorded as part of the 2024 Cohort of the EU [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
+The videos of the training sessions were recorded as part of the 2024 Cohort of the EU [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
 
 ### Pre Training: Kick-off
 
@@ -59,14 +59,14 @@ Examples and guidance.
 
 ## Modelling collaboratively across silos and disciplines
 
-A workshop created by Thomas Guillet, highlighting the need for collaborative modelling in order to deliver a complete model, the difficulties in achieving it and the ways in which OpenFisca supports that goal.
+A presentation highlighting the need for collaborative modelling in order to deliver a complete model, the difficulties in achieving it and the ways in which OpenFisca supports that goal.
 
 - [Online version](./OpenFisca-Modelling-collaboratively-across-silos-and-disciplines-March-2025-online.pdf) for reading on your own.
 - [Full presentation](./OpenFisca-Modelling-collaboratively-across-silos-and-disciplines-March-2025.pdf) with more intermediary steps for in-person delivery by trainers.
 
 ## Building an OpenFisca-powered web application
 
-A workshop created by Mauko Quiroga, building a web application from scratch to provide a graphical user interface over the [web API](../openfisca-web-api/index.md) of the [Country Template](https://github.com/openfisca/country-template/) demonstration model.
+A workshop guiding through building a web application from scratch to provide a graphical user interface over the [web API](../openfisca-web-api/index.md) of the [Country Template](https://github.com/openfisca/country-template/) demonstration model.
 
 ### Session 1: Introduction to the Web API
 
@@ -92,6 +92,14 @@ A workshop created by Mauko Quiroga, building a web application from scratch to 
 
 
 ## Credit
+
+### Authors
+
+- The training program was co-created by Hamish Fraser and Matti Schneider.
+- The “Building an OpenFisca-powered web application” workshop was created by Mauko Quiroga.
+- The “Modelling collaboratively across silos and disciplines” presentation was created by Thomas Guillet.
+
+### Funders
 
 These training materials were co-funded by the French Interministerial Direction for Digital Affairs ([DINUM](https://www.numerique.gouv.fr)) and the European Commission under the [GovTech4All](https://interoperable-europe.ec.europa.eu/collection/govtechconnect/govtech4all) program.
 
