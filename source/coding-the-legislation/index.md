@@ -17,7 +17,8 @@ bootstrapping_a_new_country_package
 ```
 
 Now let's think practical. The following tutorial and documentation offer you an overview of OpenFisca principles.
-> If you want to try OpenFisca quickly by yourselves in a [Jupyter Notebook](https://jupyter.org/), please read the tutorials [here](http://mybinder.org/repo/openfisca/tutorial).
+
+> If you want to try OpenFisca quickly by yourself in a [Jupyter Notebook](https://jupyter.org/), please read the [tutorials](http://mybinder.org/repo/openfisca/tutorial).
 
 ## Tutorial
 
