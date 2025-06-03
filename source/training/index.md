@@ -59,6 +59,7 @@ Examples and guidance.
 
 Examples and guidance.
 
+- [Slide deck](./session5.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1718779000584) with chapters and chat interactions.
 
 
