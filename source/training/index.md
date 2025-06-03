@@ -41,7 +41,7 @@ Clone the country template, setup a public git repository.
 
 ### Session 3: Modelling legislation
 
-Variables, formulas, parameters and test suites.
+Writing variables, formulas, parameters and test suites.
 
 - [Slide deck](./3-modelling-legislation.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716965399220) with chapters and chat interactions.
@@ -49,7 +49,7 @@ Variables, formulas, parameters and test suites.
 
 ### Session 4: Using the web API
 
-Examples and guidance.
+Integrating OpenFisca calculations in a web or mobile application.
 
 - [Slide deck](./4-web-api.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1718172092967) with chapters and chat interactions.
@@ -57,7 +57,7 @@ Examples and guidance.
 
 ### Session 5: Using the Python API
 
-Examples and guidance.
+Leveraging OpenFisca calculations for datascience and large-scale computation.
 
 - [Slide deck](./5-python-api.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1718779000584) with chapters and chat interactions.
