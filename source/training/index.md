@@ -9,9 +9,6 @@ session2
 session3
 session4
 session5
-session6
-session7
-session8
 ```
 
 ## Training program
@@ -46,6 +43,7 @@ Clone the country template, setup a public git repository.
 
 Variables, formulas, parameters and test suites.
 
+- [Slide deck](./session3.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716965399220) with chapters and chat interactions.
 - [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8176).
 
@@ -53,6 +51,7 @@ Variables, formulas, parameters and test suites.
 
 Examples and guidance.
 
+- [Slide deck](./session4.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1718172092967) with chapters and chat interactions.
 - [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8218).
 
