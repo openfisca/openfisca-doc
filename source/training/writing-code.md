@@ -1,4 +1,4 @@
-# Modelling legislation
+# Writing OpenFisca code
 
 <div class="present"><div class="reveal"><div class="slides">
 
