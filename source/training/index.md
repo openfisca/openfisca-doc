@@ -3,12 +3,12 @@
 ```{toctree}
 :hidden:
 
-kickoff
-session1
-session2
-session3
-session4
-session5
+0-kickoff
+1-background
+2-getting-started
+3-modelling-legislation
+4-web-api
+5-python-api
 ```
 
 ## Training program
@@ -19,7 +19,7 @@ The videos of the training sessions were recorded as part of the 2024 Cohort of 
 
 An initial get together to ensure everyone has the appropriate tools and understanding to start the training.
 
-- [Slide deck](./kickoff.md).
+- [Slide deck](./0-kickoff.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1715760590666) with chapters and chat interactions.
 - [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8096).
 
@@ -27,7 +27,7 @@ An initial get together to ensure everyone has the appropriate tools and underst
 
 A background to rules-as-code and how it fits with existing practices.
 
-- [Slide deck](./session1.md).
+- [Slide deck](./1-background.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716360868420) with chapters and chat interactions.
 - [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8178).
 
@@ -35,7 +35,7 @@ A background to rules-as-code and how it fits with existing practices.
 
 Clone the country template, setup a public git repository.
 
-- [Slide deck](./session2.md).
+- [Slide deck](./2-getting-started.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716532557643) with chapters and chat interactions.
 - [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8178).
 
@@ -43,7 +43,7 @@ Clone the country template, setup a public git repository.
 
 Variables, formulas, parameters and test suites.
 
-- [Slide deck](./session3.md).
+- [Slide deck](./3-modelling-legislation.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1716965399220) with chapters and chat interactions.
 - [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8176).
 
@@ -51,7 +51,7 @@ Variables, formulas, parameters and test suites.
 
 Examples and guidance.
 
-- [Slide deck](./session4.md).
+- [Slide deck](./4-web-api.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1718172092967) with chapters and chat interactions.
 - [Downloadable video](https://cloud.openfisca.org/s/582X5QjoZ6CjTmF?dir=undefined&openfile=8218).
 
@@ -59,7 +59,7 @@ Examples and guidance.
 
 Examples and guidance.
 
-- [Slide deck](./session5.md).
+- [Slide deck](./5-python-api.md).
 - [Augmented video](https://webinaire.bbb-dinum-scalelite.visio.education.fr/playback/presentation/2.3/8a90c519e4ee59747cef18db09714b2ddac0e8b9-1718779000584) with chapters and chat interactions.
 
 
