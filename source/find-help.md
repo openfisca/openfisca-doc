@@ -30,5 +30,4 @@ _For example- `france-ext-paris`_.
 Contact the OpenFisca maintainers through:
 
 - [GitHub](./contribute/guidelines.md#opening-issues) if you have any technical issues.
-- Twitter [@OpenFisca](https://twitter.com/OpenFisca) for general inquiries and feedback.
 - [Email](mailto:contact@openfisca.org) for collaboration opportunities.
