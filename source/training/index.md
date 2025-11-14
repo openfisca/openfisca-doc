@@ -18,7 +18,10 @@ python-api
 Ensuring everyone has the appropriate tools and background knowledge to start the training.
 
 - [Slide deck](./kickoff.md).
-- [Video](https://cloud.openfisca.org/s/yM3RYSd43e2NG7C).
+
+<div class="iframe-wrapper">
+  <iframe title="Training Kickoff" src="https://videos.lescommuns.org/videos/embed/037e9017-c78a-42d9-a575-659e55c18c6d" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+</div>
 
 ### Rules as Code background
 
@@ -33,21 +36,30 @@ Introducing Rules as Code (RaC) and how it fits with existing practices and inst
 Clone the country template, set up a public git repository.
 
 - [Slide deck](./getting-started.md).
-- [Video](https://cloud.openfisca.org/s/C3W8eS3XZEPY942).
+
+<div class="iframe-wrapper">
+  <iframe title="Getting started" src="https://videos.lescommuns.org/videos/embed/693e845f-b50f-4ea8-a9be-ae674c71114d" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+</div>
 
 ### Choosing which rules to start modelling
 
 Understanding policy relevance, technical constraints and testing considerations.
 
 - [Slide deck](https://cloud.openfisca.org/s/ebpn7LDpYNtyXtC).
-- [Video](https://cloud.openfisca.org/s/AXdkgFCkodRmfEC).
+
+<div class="iframe-wrapper">
+  <iframe title="Modelling law" src="https://videos.lescommuns.org/videos/embed/af8c4e01-fe43-427d-944e-043631651ffd" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+</div>
 
 ### Writing OpenFisca code
 
 Writing variables, formulas, parameters and test suites.
 
 - [Slide deck](./writing-code.md).
-- [Video](https://cloud.openfisca.org/s/pRP2RbD9ymHtfck).
+
+<div class="iframe-wrapper">
+  <iframe title="Writing OpenFisca code" src="https://videos.lescommuns.org/videos/embed/6a056675-61bf-4617-9331-5ac32e38fa8a" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+</div>
 
 ### Modelling collaboratively across silos and disciplines
 
@@ -69,7 +81,10 @@ Leveraging OpenFisca calculations for datascience and large-scale computation.
 Integrating OpenFisca calculations in a web or mobile application.
 
 - [Slide deck](./web-api.md).
-- [Video](https://cloud.openfisca.org/s/nd6Zd3CGMwBmBAQ).
+
+<div class="iframe-wrapper">
+  <iframe title="Using the web API" src="https://videos.lescommuns.org/videos/embed/71585a88-8089-495e-bcbd-c06f7e7ba8d3" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+</div>
 
 ### Building an OpenFisca-powered web application from scratch
 
