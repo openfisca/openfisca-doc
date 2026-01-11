@@ -24,7 +24,7 @@ test:
 	@${MAKE} test-build
 
 lint:  # requires Node and NPM to be installed
-	@npx --yes markdownlint-cli "**/*.md"
+	@npx --yes markdownlint-cli@0.45.0 "**/*.md"
 
 spellcheck:  # check for spelling errors
 	@codespell
